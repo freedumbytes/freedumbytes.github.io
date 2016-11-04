@@ -1,0 +1,889 @@
+/*
+ * === Generic Site ===
+ */
+
+html {
+  height: 100%;
+}
+
+.site {
+  display: flex;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  height: 100%;
+}
+
+.site-content {
+  flex: 1 0 auto;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 0 auto;
+  -ms-flex: 1 0 auto;
+}
+
+.table-unbordered td {
+  border: none;
+}
+
+body {
+  font-family: "Ubuntu", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif;
+}
+
+[data-toggle="collapse"] i::before {
+  content: "\f078";
+}
+
+[data-toggle="collapse"].collapsed i::before {
+  content: "\f053";
+}
+
+.full-col-width {
+  padding-right: 0rem;
+  padding-left: 0rem;
+}
+
+.full-col-width img {
+  width: 100%;
+}
+
+@media ( max-width : 543px) {
+  .hidden-xs {
+    display: none !important;
+  }
+}
+
+@media ( min-width : 544px) and (max-width: 767px) {
+  .hidden-sm {
+    display: none !important;
+  }
+}
+
+@media ( min-width : 768px) and (max-width: 991px) {
+  .hidden-md {
+    display: none !important;
+  }
+}
+
+@media ( min-width : 992px) and (max-width: 1199px) {
+  .hidden-lg {
+    display: none !important;
+  }
+}
+
+@media ( min-width : 1200px) {
+  .hidden-xl {
+    display: none !important;
+  }
+}
+
+
+
+/*
+ * === Generic Site Navigation ===
+ */
+
+.site-header {
+  flex: none;
+  -webkit-box-flex: 0;
+  -webkit-flex: none;
+  -ms-flex: none;
+  background-color: white;
+}
+
+.site-header .navbar img {
+  height: 2rem;
+}
+
+@media ( max-width :767px) {
+  .site-content {
+    margin-top: 1rem;
+  }
+}
+
+@media ( min-width :768px) {
+  .site-content {
+    margin-top: 5rem;
+  }
+}
+
+
+
+/*
+ * === Generic Site Footer ===
+ */
+
+.site-footer {
+  flex: none;
+  -webkit-box-flex: 0;
+  -webkit-flex: none;
+  -ms-flex: none;
+  background-color: cornsilk;
+}
+
+.site-footer .blockquote {
+  border-left: .25rem solid orange;
+  font-size: 0.8rem;
+  padding: inherit;
+}
+
+.site-footer .blockquote-reverse {
+  border-left: 0rem;
+  border-right: .25rem solid orange;
+}
+
+.site-footer .useful-links img {
+  height: 3rem;
+  margin: 0.5rem;
+}
+
+.device-display-info {
+  font-size: 0.6rem;
+}
+
+.device-display-info .rotate {
+  font-size: 1.5rem;
+}
+
+.rotate {
+  transition: all 2s linear;
+  -webkit-transition: all 2s linear;
+  -moz-transition: all 2s linear;
+}
+
+.rotate.landscape {
+  transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+}
+
+
+
+/*
+ * === Shadowland Landing Page ===
+ */
+
+.shadowland-cover-page {
+  background-attachment: fixed;
+  background-color: black;
+  background-image: url(../images/wallpaper/what-is-god.jpg);
+  background-position: center 4rem;
+  background-repeat: no-repeat;
+  background-size: contain;
+  -webkit-background-size: contain;
+  -moz-background-size: contain;
+  -o-background-size: contain;
+}
+
+
+
+/*
+ * === Basketball Home Court Page ===
+ */
+
+.basketball-cover-page {
+  background-attachment: fixed;
+  background-color: black;
+  background-image: url(../images/wallpaper/basketball-park-sunset-court.jpg);
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+.application {
+  text-align: center;
+}
+
+.application h1, .application h2, .application h3, .application h4 {
+  color: orange;
+}
+
+
+
+/*
+ * === Photo and Video Gallery ===
+ */
+
+.gallery-cover-page {
+  background-attachment: fixed;
+  background-color: black;
+  background-image: url(../images/wallpaper/dandelion.jpg);
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+.gallery {
+  text-align: center;
+}
+
+.gallery h1, .gallery h2, .gallery h3, .gallery h4 {
+  color: orange;
+}
+
+.gallery-cover-page .gallery .media img {
+  height: 10rem;
+}
+
+.gallery-cover-page .blockquote {
+  border-left: .25rem solid orange;
+  font-size: 0.8rem;
+  padding: inherit;
+}
+
+.gallery-cover-page .blockquote-reverse {
+  border-left: 0rem;
+  border-right: .25rem solid orange;
+}
+
+.gallery-cover-page .mjtakeover img {
+  height: 5rem;
+}
+
+.gallery-cover-page .media img {
+  height: 5rem;
+}
+
+.gallery-cover-page .media img.newspaper {
+  width: 4rem;
+}
+
+.gallery-cover-page .playlist .media img {
+  height: 5rem;
+  width: 5rem;
+}
+
+
+
+/*
+ * === Generic Game Statistics ===
+ */
+
+.game-statistics-cover-page {
+  background-attachment: fixed;
+  background-color: black;
+  background-image: url('../images/wallpaper/basket-broken.jpg');
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+.game-stats.card {
+  max-width: 52rem;
+}
+
+.game-stats th {
+  background-color: lightyellow;
+  font-weight: normal;
+  text-align: center;
+}
+
+.game-stats .table-striped tbody tr:nth-of-type(even) {
+  background-color: yellow;
+}
+
+.game-stats .table-striped tbody tr:nth-of-type(odd) {
+  background-color: black;
+  color: white;
+}
+
+.game-stats .season {
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  text-align: left;
+}
+
+.game-stats .date {
+  background-color: black;
+  color: white;
+  font-weight: bold;
+  text-align: right;
+}
+
+.game-stats .team {
+  background-color: orange;
+  color: black;
+  font-weight: bold;
+  text-align: left;
+}
+
+.game-stats .score {
+  text-align: right;
+}
+
+.game-stats .score.final {
+  background-color: gold;
+  font-weight: bold;
+}
+
+.game-stats .score.subtotal {
+  background-color: gold;
+  font-weight: normal;
+  text-align: left;
+}
+
+.game-stats .total {
+  font-weight: bold;
+}
+
+.game-stats .fouled-out, .game-stats.fouled-out{
+  color: crimson;
+  font-weight: bold;
+}
+
+.game-stats .fouls {
+  text-align: right;
+}
+
+.game-stats-legenda .blockquote {
+  border-left: .25rem solid orange;
+  font-size: 0.8rem;
+  padding: inherit;
+}
+
+
+
+/*
+ * === Generic Game Score Sheet ===
+ */
+
+.score-sheet-cover-page {
+  background-attachment: fixed;
+  background-color: black;
+  background-image: url('../images/wallpaper/basket-sky.jpg');
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+.score-sheet th {
+  background-color: lightyellow;
+  font-weight: normal;
+  text-align: center;
+}
+
+.score-sheet .timeouts-fouls th {
+  text-align: left;
+}
+
+.score-sheet .team {
+  background-color: orange;
+  color: black;
+  font-weight: bold;
+  text-align: left;
+}
+
+.score-sheet .half {
+  color: black;
+  font-weight: normal;
+  text-align: right;
+  min-width: 4.0rem;
+  line-height: 1.0rem;
+}
+
+.score-sheet .quarter-unused {
+  color: lightgrey;
+  text-align: center;
+}
+
+.score-sheet .quarter-first {
+  color: blue;
+  text-align: center;
+}
+
+.score-sheet .quarter-second {
+  color: forestgreen;
+  text-align: center;
+}
+
+.score-sheet .quarter-third {
+  color: black;
+  text-align: center;
+}
+
+.score-sheet .quarter-fourth {
+  color: red;
+  text-align: center;
+}
+
+.score-sheet .overtime {
+  color: maroon;
+  text-align: center;
+}
+
+.score-sheet td.quarter-unused.timeout, .score-sheet td.team-foul.made, .score-sheet td.team-foul.unmade, .score-sheet td.period-indicator, .score-sheet td.player.unused, .score-sheet td.coach.unused, .score-sheet .starter, .score-sheet .substitute, 
+.score-sheet .foul.bonus, .score-sheet .foul.attempt-fg, .score-sheet .foul.attempt-3p, .score-sheet .foul.technical, .score-sheet .foul.technical-coach, .score-sheet .foul.unsportsmanlike, .score-sheet .foul.unsportsmanlike-coach, .score-sheet .foul.disqualifying, 
+.score-chart .quarter-unused, .score-sheet .players td.quarter-unused, 
+.score-chart .player-3p, .score-sheet .quarter-first.final-score, .score-sheet .quarter-second.final-score, .score-sheet .quarter-third.final-score, .score-sheet .quarter-fourth.final-score, .score-sheet .overtime.final-score {
+  position: relative;
+}
+
+.score-sheet td.timeout, .score-sheet td.team-foul {
+  border: 1px solid black;
+  min-width: 1.2rem;
+  line-height: 1.0rem;
+  padding: 0rem;
+  vertical-align: middle;
+}
+
+.score-sheet td.team-foul.sum {
+  border: none;
+}
+
+.score-sheet td.quarter-unused.timeout::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: perspective(1px) translateY(-50%) translateX(-50%);
+  -webkit-transform: perspective(1px) translateY(-50%) translateX(-50%);
+  -ms-transform: perspective(1px) translateY(-50%) translateX(-50%);
+  font-family: FontAwesome;
+  content: "\f068";
+  color: black;
+}
+
+.score-sheet td.team-foul.made::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: perspective(1px) translateY(-50%) translateX(-50%);
+  -webkit-transform: perspective(1px) translateY(-50%) translateX(-50%);
+  -ms-transform: perspective(1px) translateY(-50%) translateX(-50%);
+  font-family: FontAwesome;
+  content: "\f00d";
+  font-size: 1.0rem;
+  font-weight: normal;
+  color: black;
+  opacity: 0.65;
+}
+
+.score-sheet td.team-foul.unmade::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: perspective(1px) translateY(-50%) translateX(-50%);
+  -webkit-transform: perspective(1px) translateY(-50%) translateX(-50%);
+  -ms-transform: perspective(1px) translateY(-50%) translateX(-50%);
+  font-family: FontAwesome;
+  content: "\f068";
+  font-size: 1.0rem;
+  font-weight: normal;
+  color: black;
+  opacity: 0.65;
+}
+
+.score-sheet .period-indicator {
+  font-size: 0.75rem;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+.score-sheet td.period-indicator::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: perspective(1px) translateY(-50%) translateX(-50%);
+  -webkit-transform: perspective(1px) translateY(-50%) translateX(-50%);
+  -ms-transform: perspective(1px) translateY(-50%) translateX(-50%);
+  font-family: FontAwesome;
+  content: "\f1db";
+  font-size: 1.0rem;
+  font-weight: normal;
+}
+
+.score-sheet th.player-license {
+  background-color: orange;
+  width: 2.2rem;
+  text-align: left;
+}
+
+.score-sheet th.player {
+  text-align: left;
+}
+
+.score-sheet td.player, .score-sheet td.coach {
+  line-height: 1.5rem;
+}
+
+.score-sheet td.player.unused, .score-sheet td.coach.unused {
+  height: 2.0rem;
+}
+
+.score-sheet td.player.unused::after, .score-sheet td.coach.unused::after {
+  position: absolute;
+  top: 50%;
+  left: 1.25rem;
+  transform: perspective(1px) translateY(-50%);
+  -webkit-transform: perspective(1px) translateY(-50%);
+  -ms-transform: perspective(1px) translateY(-50%);
+  font-family: FontAwesome;
+  content: "\f068  " attr(number-of-players) "  \f068";
+  color: lightgrey;
+}
+
+.score-sheet td.coach.unused::after {
+  left: 4.5rem;
+}
+
+.score-sheet .player-number {
+  font-weight: bold;
+  text-align: right;
+}
+
+.score-sheet .starter::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: perspective(1px) translateY(-50%) translateX(-50%);
+  -webkit-transform: perspective(1px) translateY(-50%) translateX(-50%);
+  -ms-transform: perspective(1px) translateY(-50%) translateX(-50%);
+  font-family: FontAwesome;
+  content: "\f05c";
+  font-size: 1.0rem;
+}
+
+.score-sheet .substitute::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: perspective(1px) translateY(-50%) translateX(-50%);
+  -webkit-transform: perspective(1px) translateY(-50%) translateX(-50%);
+  -ms-transform: perspective(1px) translateY(-50%) translateX(-50%);
+  font-family: FontAwesome;
+  content: "\f00d";
+  font-size: 0.75rem;
+}
+
+.score-sheet .players thead>tr:nth-child(2)>th {
+  background-color: gold;
+}
+
+.score-sheet .players .foul, .score-sheet .players td.quarter-unused, .score-sheet th.quarter-optional {
+  min-width: 2.0rem;
+  width: 2.0rem;
+  max-width: 2.0rem;
+}
+
+.score-sheet .foul.bonus::after {
+  position: absolute;
+  top: 0%;
+  left: 75%;
+  transform: perspective(1px);
+  -webkit-transform: perspective(1px);
+  -ms-transform: perspective(1px);
+  content: "1";
+  font-size: 0.6rem;
+}
+
+.score-sheet .foul.attempt-fg::after {
+  position: absolute;
+  top: 0%;
+  left: 75%;
+  transform: perspective(1px);
+  -webkit-transform: perspective(1px);
+  -ms-transform: perspective(1px);
+  content: "2";
+  font-size: 0.6rem;
+}
+
+.score-sheet .foul.attempt-3p::after {
+  position: absolute;
+  top: 0%;
+  left: 75%;
+  transform: perspective(1px);
+  -webkit-transform: perspective(1px);
+  -ms-transform: perspective(1px);
+  content: "3";
+  font-size: 0.6rem;
+}
+
+.score-sheet .foul.technical::after {
+  position: absolute;
+  top: 0%;
+  left: 75%;
+  transform: perspective(1px);
+  -webkit-transform: perspective(1px);
+  -ms-transform: perspective(1px);
+  content: "T";
+  font-size: 0.6rem;
+}
+
+.score-sheet .foul.technical-coach::after {
+  position: absolute;
+  top: 0%;
+  left: 75%;
+  transform: perspective(1px);
+  -webkit-transform: perspective(1px);
+  -ms-transform: perspective(1px);
+  content: "B";
+  font-size: 0.6rem;
+}
+
+.score-sheet .foul.unsportsmanlike::after {
+  position: absolute;
+  top: 0%;
+  left: 75%;
+  transform: perspective(1px);
+  -webkit-transform: perspective(1px);
+  -ms-transform: perspective(1px);
+  content: "U";
+  font-size: 0.6rem;
+}
+
+.score-sheet .foul.unsportsmanlike-coach::after {
+  position: absolute;
+  top: 0%;
+  left: 75%;
+  transform: perspective(1px);
+  -webkit-transform: perspective(1px);
+  -ms-transform: perspective(1px);
+  content: "C";
+  font-size: 0.6rem;
+}
+
+.score-sheet .foul.disqualifying::after {
+  position: absolute;
+  top: 0%;
+  left: 75%;
+  transform: perspective(1px);
+  -webkit-transform: perspective(1px);
+  -ms-transform: perspective(1px);
+  content: "D";
+  font-size: 0.6rem;
+}
+
+.score-chart thead>tr:first-child>th {
+  background-color: yellow;
+  color: black;
+  font-size: 1.0rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.score-chart thead>tr>th {
+  border-top: none;
+}
+
+.score-chart tbody>tr:first-child>td {
+  border-top: none;
+}
+
+.score-chart th {
+  font-weight: bold;
+  text-align: center;
+}
+
+.score-chart thead>tr:nth-child(1)>th:nth-child(1) {
+  border-left: 1px solid black;
+  border-right: 1px solid black;
+  border-top: 1px solid black;
+}
+
+.score-chart thead>tr>th:nth-child(12), .score-chart tbody>tr>td:nth-child(20) {
+  border-right: 1px solid black;
+}
+
+.score-chart thead>tr:nth-child(2)>th:nth-child(1), .score-chart thead>tr:nth-child(2)>th:nth-child(4), .score-chart thead>tr:nth-child(2)>th:nth-child(7), .score-chart thead>tr:nth-child(2)>th:nth-child(10), 
+.score-chart tbody>tr>td:nth-child(1), .score-chart tbody>tr>td:nth-child(6), .score-chart tbody>tr>td:nth-child(11), .score-chart tbody>tr>td:nth-child(16) {
+  border-left: 1px solid black;
+}
+
+.score-chart tbody>tr>td:nth-child(3), .score-chart tbody>tr>td:nth-child(8), .score-chart tbody>tr>td:nth-child(13), .score-chart tbody>tr>td:nth-child(18) {
+  background-color: lightgray;
+  font-weight: bold;
+}
+
+.score-chart tbody>tr>td:nth-child(1), .score-chart tbody>tr>td:nth-child(4), 
+.score-chart tbody>tr>td:nth-child(6), .score-chart tbody>tr>td:nth-child(9), 
+.score-chart tbody>tr>td:nth-child(11), .score-chart tbody>tr>td:nth-child(14), 
+.score-chart tbody>tr>td:nth-child(16), .score-chart tbody>tr>td:nth-child(19) {
+  font-weight: bold;
+}
+
+.score-chart tbody>tr>td:nth-child(2), .score-chart tbody>tr>td:nth-child(5), 
+.score-chart tbody>tr>td:nth-child(7), .score-chart tbody>tr>td:nth-child(10), 
+.score-chart tbody>tr>td:nth-child(12), .score-chart tbody>tr>td:nth-child(15), 
+.score-chart tbody>tr>td:nth-child(17), .score-chart tbody>tr>td:nth-child(20) {
+  font-weight: normal;
+}
+
+.score-chart tbody>tr:last-child, table.players {
+  border-bottom: 1px solid black;
+}
+
+.score-chart .score-ft {
+  border-left: 1px double;
+}
+
+.score-chart .score-ft.bonus {
+  border-top: 1px dashed;
+  border-bottom: 1px solid;
+}
+
+.score-chart .score-ft.first {
+  border-top: 1px solid;
+}
+
+.score-chart .score-ft.last {
+  border-bottom: 1px solid;
+}
+
+.score-chart .player-3p::after, 
+.score-sheet .quarter-first.final-score::after, .score-sheet .quarter-second.final-score::after, .score-sheet .quarter-third.final-score::after, .score-sheet .quarter-fourth.final-score::after, .score-sheet .overtime.final-score::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: perspective(1px) translateY(-50%) translateX(-50%);
+  -webkit-transform: perspective(1px) translateY(-50%) translateX(-50%);
+  -ms-transform: perspective(1px) translateY(-50%) translateX(-50%);
+  font-family: FontAwesome;
+  content: "\f1db";
+  font-size: 1.6rem;
+  font-weight: normal;
+}
+
+.score-sheet .final-score {
+  background-color: gold;
+}
+
+.score-sheet .quarter-first.subtotal, .score-sheet .quarter-second.subtotal, .score-sheet .quarter-third.subtotal, .score-sheet .quarter-fourth.subtotal, .score-sheet .overtime.subtotal {
+  border-top: 3px double;
+}
+
+.score-sheet .subtotal {
+  background-color: gold;
+}
+
+.score-chart .quarter-unused::after, .score-sheet .players td.quarter-unused::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: perspective(1px) translateY(-50%) translateX(-50%);
+  -webkit-transform: perspective(1px) translateY(-50%) translateX(-50%);
+  -ms-transform: perspective(1px) translateY(-50%) translateX(-50%);
+  font-family: FontAwesome;
+  content: "\f068";
+  font-size: 0.33rem;
+  opacity: 0.65;
+}
+
+.score-sheet td.subtotal table {
+  margin: auto;
+}
+
+.score-sheet td.subtotal table>tbody>tr>td:nth-child(2) {
+  min-width: 3rem;
+  text-align: right;
+}
+
+.score-sheet td.subtotal table>tbody>tr>td:nth-child(4) {
+  min-width: 3rem;
+  text-align: left;
+}
+
+@media ( max-width : 543px) {
+  .score-sheet .organisation {
+    font-size: 1rem;
+  }
+  .score-sheet .half, .score-sheet .timeouts-fouls td.overtime {
+    font-size: 0.33rem;
+    text-align: right;
+    min-width: 1.7rem;
+    line-height: 1.0rem;
+  }
+  .score-sheet .players .foul, .score-sheet .players td.quarter-unused, .score-sheet th.quarter-optional {
+    min-width: 1.5rem;
+    width: 1.5rem;
+    max-width: 1.5rem;
+  }
+  .score-chart th, .score-chart td {
+    font-size: 0.55rem;
+    min-width: 1.0rem;
+    max-width: 1.0rem;
+    padding: 0.3rem 0rem;
+  }
+}
+
+@media ( min-width : 544px) and (max-width: 767px) {
+  .score-sheet .organisation {
+    font-size: 1.75rem;
+  }
+  .score-chart th, .score-chart td {
+    font-size: 0.9rem;
+    min-width: 1.55rem;
+    max-width: 1.55rem;
+    padding: 0.3rem 0rem;
+  }
+}
+
+@media ( min-width : 768px) and (max-width: 991px) {
+  .score-sheet .organisation {
+    font-size: 2.5rem;
+  }
+  .score-sheet .half, .score-sheet .timeouts-fouls td.overtime {
+    font-size: 0.33rem;
+    text-align: right;
+    min-width: 1.7rem;
+  }
+  .score-sheet .players .foul, .score-sheet .players td.quarter-unused, .score-sheet th.quarter-optional {
+    min-width: 1.5rem;
+    width: 1.5rem;
+    max-width: 1.5rem;
+  }
+  .score-chart th, .score-chart td {
+    font-size: 0.6rem;
+    min-width: 1.0rem;
+    max-width: 1.0rem;
+    padding: 0.6rem 0rem;
+  }
+  .score-chart thead>tr:first-child>th {
+    padding: 1.75rem;
+  }
+}
+
+@media ( min-width : 992px) and (max-width: 1199px) {
+  .score-sheet .organisation {
+    font-size: 2.5rem;
+  }
+  .score-chart th, .score-chart td {
+    font-size: 0.8rem;
+    min-width: 1.3rem;
+    max-width: 1.3rem;
+    padding: 0.45rem 0rem;
+  }
+  .score-chart thead>tr:first-child>th {
+    padding: 0.5rem;
+  }
+}
+
+@media ( min-width : 1200px) {
+  .score-sheet .organisation {
+    font-size: 2.5rem;
+  }
+  .score-chart th, .score-chart td {
+    font-size: 0.9rem;
+    min-width: 1.625rem;
+    max-width: 1.625rem;
+    padding: 0.4rem 0rem;
+  }
+  .score-chart thead>tr:first-child>th {
+    padding: 0.5rem;
+  }
+}
