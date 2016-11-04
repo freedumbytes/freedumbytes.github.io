@@ -1,0 +1,169 @@
+@import url("apache-maven-fluido-1.4.min.css");
+
+@import url("documentation.css");
+
+@import url("highlight.min.css");
+
+@import url("navigation.css");
+
+@import url("print.css") print;
+
+body {
+  background-image: url(../images/community/docbook/paper.jpg);
+  font-family: 
+    Ubuntu, 
+    Noto Sans, 
+    Noto Sans Canadian Aboriginal, 
+    Noto Kufi Arabic, 
+    Noto Sans Hebrew, 
+    Noto Sans CJK KR, 
+    Noto Sans CJK JP, 
+    Noto Sans CJK TC, 
+    Noto Sans CJK SC, 
+    Noto Sans Lao, 
+    Noto Sans Armenian, 
+    Noto Sans Bengali, 
+    Noto Sans Devanagari, 
+    Noto Sans Ethiopic, 
+    Noto Sans Georgian, 
+    Noto Sans Gujarati, 
+    Noto Sans Gurmukhi, 
+    Noto Sans Kannada, 
+    Noto Sans Khmer, 
+    Noto Sans Malayalam, 
+    Noto Sans Oriya, 
+    Noto Sans Sinhala, 
+    Noto Sans Tai Viet, 
+    Noto Sans Tamil, 
+    Noto Sans Telugu, 
+    Noto Sans Thaana, 
+    Noto Sans Thai, 
+    Noto Sans Tibetan, 
+    Noto Sans Yi,
+    Noto Sans Javanese, 
+    Noto Sans Myanmar, 
+    Noto Sans Sundanese, 
+    Noto Sans Tagalog, 
+    Euphemia, 
+    SimSun, 
+    DokChampa, 
+    Batang, 
+    Gulim,
+    Microsoft Himalaya, 
+    Dzongkha, 
+    MV Boli, 
+    Gautami, 
+    Vani, 
+    Iskoola Pota, 
+    Kalinga, 
+    Kartika, 
+    Latha, 
+    Leelawadee, 
+    Mangal, 
+    MoolBoran, 
+    Nyala, 
+    Raavi, 
+    Shruti, 
+    Sylfaen, 
+    Tunga, 
+    Vijaya, 
+    Vrinda, 
+    Microsoft Yi Baiti, 
+    Meiryo, 
+    Lucida Sans Unicode, 
+    Georgia, 
+    Verdana, 
+    Arial Unicode MS, 
+    Arial, 
+    Geneva, 
+    Helvetica, 
+    sans-serif;
+  padding: 0em 2em;
+}
+
+img {
+  vertical-align: baseline;
+}
+
+.figure {
+  text-align: center;
+}
+
+.figure img {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.figure-contents {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #000F55;
+}
+
+hr {
+  border-collapse: collapse;
+  border-style: none;
+  border-top: 1px dotted #ccc;
+  width: 100% !important;
+}
+
+pre.language-provided {
+  background-color: white;
+}
+
+section .octicon {
+  display: inline-block;
+  text-decoration: none;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+section .octicon-link:before {
+	content: url(../images/community/docbook/link-break.png);
+}
+
+section .anchor {
+  display: inline-block;
+  padding-right: 2px;
+  margin-left: -18px;
+}
+
+section .anchor:focus {
+  outline: none;
+}
+
+section h1 .octicon-link,
+section h2 .octicon-link,
+section h3 .octicon-link,
+section h4 .octicon-link,
+section h5 .octicon-link,
+section h6 .octicon-link {
+  vertical-align: super;
+  visibility: hidden;
+}
+
+section h1:hover .anchor,
+section h2:hover .anchor,
+section h3:hover .anchor,
+section h4:hover .anchor,
+section h5:hover .anchor,
+section h6:hover .anchor {
+  text-decoration: none;
+}
+
+section h1:hover .anchor .octicon-link,
+section h2:hover .anchor .octicon-link,
+section h3:hover .anchor .octicon-link,
+section h4:hover .anchor .octicon-link,
+section h5:hover .anchor .octicon-link,
+section h6:hover .anchor .octicon-link {
+  visibility: visible;
+}

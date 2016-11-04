@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE html>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Appendix C. Quality Assurance Sandbox</title><link rel="stylesheet" type="text/css" href="docbook.css"/><link rel="stylesheet" type="text/css" href="css/freedumbytes.css"/><meta name="generator" content="DocBook XSL Stylesheets V1.78.1"/><link rel="prev" href="prj.maven.site.skin.custom.html" title="Appendix B. Custom skins"/><link rel="next" href="src.html" title="Appendix D. Source"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><link rel="shortcut icon" href="./images/community/docbook/glider.ico"/></head><body><header><p id="title"/><ul class="navheader"><li class="previous"><a accesskey="p" href="prj.maven.site.skin.custom.html"><strong>Previous</strong></a></li><li class="next"><a accesskey="n" href="src.html"><strong>Next</strong></a></li></ul></header><section class="appendix" id="prj.maven.qa.sandbox"><div class="titlepage"><div><div><h1 class="title"><a id="prj.maven.qa.sandbox" class="anchor" href="#prj.maven.qa.sandbox"><span class="octicon octicon-link"/></a>Appendix C. Quality Assurance Sandbox</h1></div></div></div><div class="toc"><div class="toc-title">Table of Contents</div><ul class="toc"><li><span class="section"><a href="prj.maven.qa.sandbox.html#prj.maven.java.pom.javadoc.report">C.1. Javadoc report</a></span></li><li><span class="section"><a href="prj.maven.qa.sandbox.html#prj.maven.java.pom.jxr">C.2. Cross-reference</a></span></li><li><span class="section"><a href="prj.maven.qa.sandbox.html#prj.maven.java.pom.qa">C.3. Maven Quality Assurance reports</a></span><ul><li><span class="section"><a href="prj.maven.qa.sandbox.html#qa.maven.reports.checkstyle">C.3.1. Checkstyle</a></span></li><li><span class="section"><a href="prj.maven.qa.sandbox.html#qa.maven.reports.pmd">C.3.2. PMD/CPD</a></span></li><li><span class="section"><a href="prj.maven.qa.sandbox.html#qa.maven.reports.findbugs">C.3.3. FindBugs</a></span></li><li><span class="section"><a href="prj.maven.qa.sandbox.html#qa.maven.reports.javancss">C.3.4. JavaNCSS</a></span></li><li><span class="section"><a href="prj.maven.qa.sandbox.html#qa.maven.reports.jdepend">C.3.5. JDepend</a></span></li><li><span class="section"><a href="prj.maven.qa.sandbox.html#qa.maven.reports.code.coverage">C.3.6. Code Coverage</a></span></li></ul></li></ul></div><p>Lets setup a base structure, for Quality Assurance Sandbox code to
+    come, with the following JIRA project:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><span class="guilabel"><strong>Quality Assurance Sandbox</strong></span> [QASNDBX]:
+        Quality Assurance Sandbox sample code (see also repository <a class="link" href="https://java.net/projects/jmodalwindow/sources/svn/show/branches/qa-sandbox">branches/qa-sandbox</a>).</p><p>With the following components:</p><div class="orderedlist"><ol class="orderedlist compact" type="1"><li class="listitem"><p><span class="guilabel"><strong>sandbox</strong></span>: Code sandbox.</p></li></ol></div><p>and versions:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><span class="guilabel"><strong>1.0-delta</strong></span> - Quality Assurance Plugins
+            config: Javadoc, JXR, JavaNCSS, JDepend, Clover, FindBugs, PMD and
+            Checkstyle.</p></li><li class="listitem"><p><span class="guilabel"><strong>1.1-delta</strong></span> - Switch from Clover to
+            JaCoCo.</p></li></ul></div></li></ul></div><p>Start a new bare Git repository <code class="code">qa-sandbox</code> by calling
+    <code class="command">/p/dev/apps/windows/batch/<a class="link" href="version.control.system.html#vcs.git.bare.project" title="11.1.5. Defining a project">git-create-repo.sh</a>
+    /p/dev/data/repo/git qa-sandbox.git "Quality Assurance Sandbox sample
+    code" -jenkinsHook</code> in <span class="inlinemediaobject"><img src="images/icons/git.png"/></span> <a class="link" href="version.control.system.html#vcs.git.bash.home" title="11.1.2.1. Git bash home directory">Git
+    Bash</a>.</p><p>Clone this remote repository with the following command
+    <code class="command"><a class="link" href="version.control.system.html#vcs.git.clone.project" title="11.1.6. Working on a project">git-clone</a> jjasper
+    qa-sandbox</code>.</p><p>Create the Quality Assurance Sandbox project, with sample code for
+    FindBugs, PMD and Checkstyle to eliminate duplicate checks, in
+    <code class="filename">C:\dev\projects\qa-sandbox\pom.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
++
++&lt;project xmlns="http://maven.apache.org/POM/4.0.0"
++         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
++         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
++                             http://maven.apache.org/maven-v4_0_0.xsd"&gt;
++  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+</code></pre><pre xmlns="" class="language-provided"><code class="language-xml">+  &lt;parent&gt;
++    &lt;groupId&gt;net.dev.freedumbytes.maven&lt;/groupId&gt;
++    &lt;artifactId&gt;java-se-8-base-pom&lt;/artifactId&gt;
++    &lt;version&gt;3.1-beta&lt;/version&gt;
++  &lt;/parent&gt;
+</code></pre><pre xmlns="" class="language-provided"><code class="language-xml">+  &lt;artifactId&gt;qa-sandbox&lt;/artifactId&gt;
++  &lt;version&gt;1.1-delta&lt;/version&gt;
+</code></pre><pre xmlns="" class="language-provided"><code class="language-xml">+  &lt;name&gt;Free Dumb Bytes Quality Assurance Sandbox&lt;/name&gt;
++  &lt;description&gt;
++    Free Dumb Bytes sample code for Javadoc, JXR, JavaNCSS, JDepend, 
++    JaCoCo, FindBugs, PMD and Checkstyle to eliminate duplicate checks.
++  &lt;/description&gt;
++  &lt;url&gt;${mavenHost}/qa-sandbox&lt;/url&gt;
++  &lt;inceptionYear&gt;2010&lt;/inceptionYear&gt;
+</code></pre><pre xmlns="" class="language-provided"><code class="language-xml">+  &lt;scm&gt;
++    &lt;developerConnection&gt;scm:git:${gitHost}/qa-sandbox.git&lt;/developerConnection&gt;
++    &lt;url&gt;${fisheyeHost}/browse/qa-sandbox&lt;/url&gt;
++    &lt;tag&gt;HEAD&lt;/tag&gt;
++  &lt;/scm&gt;
+</code></pre><pre xmlns="" class="language-provided"><code class="language-xml">+  &lt;ciManagement&gt;
++    &lt;system&gt;Jenkins&lt;/system&gt;
++    &lt;url&gt;${jenkinsHost}/job/qa-sandbox&lt;/url&gt;
++  &lt;/ciManagement&gt;
+</code></pre><pre xmlns="" class="language-provided"><code class="language-xml">+  &lt;issueManagement&gt;
++    &lt;system&gt;JIRA&lt;/system&gt;
++    &lt;url&gt;${jiraHost}/projects/QASNDBX&lt;/url&gt;
++  &lt;/issueManagement&gt;
+</code></pre><pre xmlns="" class="language-provided"><code class="language-xml">+  &lt;distributionManagement&gt;
++    &lt;site&gt;
++      &lt;id&gt;mvn-sites&lt;/id&gt;
++      &lt;name&gt;Maven Documentation Sites&lt;/name&gt;
++      &lt;url&gt;dav:${mavenHost}/qa-sandbox&lt;/url&gt;
++    &lt;/site&gt;
++  &lt;/distributionManagement&gt;
+</code></pre><pre xmlns="" class="language-provided"><code class="language-xml">+  &lt;properties&gt;
++    &lt;!--  (see also <a xmlns="http://www.w3.org/1999/xhtml" class="xref" href="project.html#prj.maven.java.base.pom.surefire" title="16.1.7.2. Surefire">Section 16.1.7.2, “Surefire”</a>) --&gt;
++    &lt;skipIntegrationTests&gt;${skipTests}&lt;/skipIntegrationTests&gt;
++
++    &lt;commonsLoggingVersion&gt;1.1.2&lt;/commonsLoggingVersion&gt;
++    &lt;junitVersion&gt;4.12&lt;/junitVersion&gt;
++  &lt;/properties&gt;
+</code></pre><pre xmlns="" class="language-provided"><code class="language-xml">+  &lt;dependencies&gt;
++    &lt;dependency&gt;
++      &lt;groupId&gt;commons-logging&lt;/groupId&gt;
++      &lt;artifactId&gt;commons-logging&lt;/artifactId&gt;
++      &lt;version&gt;${commonsLoggingVersion}&lt;/version&gt;
++      &lt;scope&gt;provided&lt;/scope&gt;
++    &lt;/dependency&gt;
++
++    &lt;dependency&gt;
++      &lt;groupId&gt;junit&lt;/groupId&gt;
++      &lt;artifactId&gt;junit&lt;/artifactId&gt;
++      &lt;version&gt;${junitVersion}&lt;/version&gt;
++      &lt;scope&gt;test&lt;/scope&gt;
++    &lt;/dependency&gt;
++  &lt;/dependencies&gt;
++&lt;/project&gt;
+</code></pre><p>In Eclipse create a Working Set <strong class="userinput"><code>Quality Assurance
+    Sandbox</code></strong> and import this Maven Skins project into it with
+    <span class="guilabel"><strong><span class="accel">F</span>ile</strong></span> → <span class="guilabel"><strong><span class="accel">I</span>mport…</strong></span> → <span class="guilabel"><strong>Maven</strong></span> → <span class="guilabel"><strong>Existing Maven Projects</strong></span> from <span class="guilabel"><strong><span class="accel">R</span>oot directory</strong></span>
+    <code class="filename">C:\dev\projects\qa-sandbox</code> and click
+    <span class="guibutton"><strong><span class="accel">F</span>inish</strong></span>.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="tip"><h2>Tip</h2><p>In case of the following build error <span class="quote">“<span class="quote">Access restriction:
+      The type … is not accessible due to restrictions on required library
+      …\jre\lib\rt.jar</span>”</span> select for the project in question <span class="guimenu"><strong><span class="accel">P</span>roject</strong></span> → <span class="guimenu"><strong><span class="accel">P</span>roperties</strong></span> → <span class="guimenu"><strong>Java Build Path</strong></span> → <span class="guimenu"><strong>Libraries</strong></span> and <span class="guibutton"><strong><span class="accel">R</span>emove</strong></span> the
+      <span class="guilabel"><strong>JRE System Library</strong></span>. After that <span class="guibutton"><strong>Add
+      Libr<span class="accel">a</span>ry…</strong></span> <span class="guilabel"><strong>JRE System
+      Library</strong></span> back again.</p></div><section class="section" id="prj.maven.java.pom.javadoc.report"><div class="titlepage"><div><div><h2 class="title"><a id="prj.maven.java.pom.javadoc.report" class="anchor" href="#prj.maven.java.pom.javadoc.report"><span class="octicon octicon-link"/></a>C.1. Javadoc report</h2></div></div></div><p>Alas configuring the Javadoc plugin in the
+      <code class="code">&lt;reporting/&gt;</code> or <code class="code">&lt;build/&gt;</code> elements
+      in the pom have <span class="emphasis"><em>not</em></span> the same behavior as described
+      in the <a class="link" href="http://maven.apache.org/guides/mini/guide-configuring-plugins.html#Using_the_reporting_Tag_VS_build_Tag">Guide
+      to Configuring Plug-ins</a>. Thus the configuration has to be
+      duplicated in
+      <code class="filename">C:\dev\projects\qa-sandbox\pom.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;/dependencies&gt;
++
++  &lt;reporting&gt;
++    &lt;plugins&gt;
++      &lt;plugin&gt;
++        &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
++        &lt;artifactId&gt;maven-javadoc-plugin&lt;/artifactId&gt;
++        &lt;version&gt;${mavenJavadocPluginVersion}&lt;/version&gt;
++        &lt;configuration&gt;
++          &lt;javadocExecutable&gt;${baseJavadocExecutable}&lt;/javadocExecutable&gt;
++          &lt;javadocVersion&gt;${baseJavadocVersion}&lt;/javadocVersion&gt;
++          &lt;source&gt;${baseJdkVersion}&lt;/source&gt;
++          &lt;quiet&gt;true&lt;/quiet&gt;
++          &lt;detectJavaApiLink&gt;false&lt;/detectJavaApiLink&gt;
++          &lt;detectOfflineLinks&gt;false&lt;/detectOfflineLinks&gt;
++          &lt;breakiterator&gt;true&lt;/breakiterator&gt;
++          &lt;show&gt;protected&lt;/show&gt;
++          &lt;minmemory&gt;128m&lt;/minmemory&gt;
++          &lt;maxmemory&gt;512m&lt;/maxmemory&gt;
++          &lt;encoding&gt;UTF-8&lt;/encoding&gt;
++          &lt;docencoding&gt;UTF-8&lt;/docencoding&gt;
++        &lt;/configuration&gt;
++        &lt;reportSets&gt;
++          &lt;reportSet&gt;
++            &lt;id&gt;javadoc-reports&lt;/id&gt;
++            &lt;reports&gt;
++              &lt;report&gt;javadoc(<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://maven.apache.org/plugins/maven-javadoc-plugin/examples/javadoc-nofork.html">-no-fork</a>)&lt;/report&gt;
++              &lt;report&gt;test-javadoc(-no-fork)&lt;/report&gt;
++            &lt;/reports&gt;
++          &lt;/reportSet&gt;
++        &lt;/reportSets&gt;
++      &lt;/plugin&gt;
++    &lt;/plugins&gt;
++  &lt;/reporting&gt;
+ &lt;/project&gt;
+</code></pre></section><section class="section" id="prj.maven.java.pom.jxr"><div class="titlepage"><div><div><h2 class="title"><a id="prj.maven.java.pom.jxr" class="anchor" href="#prj.maven.java.pom.jxr"><span class="octicon octicon-link"/></a>C.2. Cross-reference</h2></div></div></div><p>The <a class="link" href="http://maven.apache.org/plugins/maven-jxr-plugin/">JXR
+      Plugin</a> produces a cross-reference of the project's sources. The
+      generated reports make it easier for the user to reference or find
+      specific lines of code (see also <a class="link" href="prj.maven.qa.sandbox.html#prj.maven.java.pom.qa" title="C.3. Maven Quality Assurance reports">Quality Assurance
+      plugins</a>).</p><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;properties&gt;
+     …
+     &lt;commonsLoggingVersion&gt;1.1.2&lt;/commonsLoggingVersion&gt;
+     &lt;junitVersion&gt;4.12&lt;/junitVersion&gt;
++
++    &lt;mavenJxrPluginVersion&gt;2.5&lt;/mavenJxrPluginVersion&gt;
+   &lt;/properties&gt;
+    …
+   &lt;reporting&gt;
+     &lt;plugins&gt;
+        …
++      &lt;plugin&gt;
++        &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
++        &lt;artifactId&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="http://maven.apache.org/plugins/maven-jxr-plugin/">maven-jxr-plugin</a>&lt;/artifactId&gt;
++        &lt;version&gt;${mavenJxrPluginVersion}&lt;/version&gt;
++        &lt;configuration&gt;
++          &lt;aggregate&gt;false&lt;/aggregate&gt;
++          &lt;linkJavadoc&gt;true&lt;/linkJavadoc&gt;
++          &lt;inputEncoding&gt;UTF-8&lt;/inputEncoding&gt;
++          &lt;outputEncoding&gt;UTF-8&lt;/outputEncoding&gt;
++        &lt;/configuration&gt;
++      &lt;/plugin&gt;
+     &lt;/plugins&gt;
+   &lt;/reporting&gt;
+ &lt;/project&gt;
+</code></pre><p>Make use of this cross-reference in the surefire report by
+      overriding the inherited <a class="link" href="project.html#prj.maven.java.base.pom.surefire" title="16.1.7.2. Surefire">linkXRef</a> in
+      <code class="filename">C:\dev\projects\qa-sandbox\pom.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;reporting&gt;
+     &lt;plugins&gt;
+        …
++      &lt;plugin&gt;
++        &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
++        &lt;artifactId&gt;maven-surefire-report-plugin&lt;/artifactId&gt;
++        &lt;version&gt;${mavenSurefireReportPluginVersion}&lt;/version&gt;
++        &lt;configuration&gt;
++          &lt;linkXRef&gt;true&lt;/linkXRef&gt;
++        &lt;/configuration&gt;
++      &lt;/plugin&gt;
+     &lt;/plugins&gt;
+   &lt;/reporting&gt;
+</code></pre></section><section class="section" id="prj.maven.java.pom.qa"><div class="titlepage"><div><div><h2 class="title"><a id="prj.maven.java.pom.qa" class="anchor" href="#prj.maven.java.pom.qa"><span class="octicon octicon-link"/></a>C.3. Maven Quality Assurance reports</h2></div></div></div><p>The following sections contain the configuration of the Maven
+      Quality Assurance plugins (see also <a class="link" href="quality.assurance.html#qa.screenshots.walkabout" title="17.2.9. Maven vs SonarQube Quality Assurance reports comparison">Maven vs SonarQube Quality Assurance
+      reports comparison</a>).</p><section class="section" id="qa.maven.reports.checkstyle"><div class="titlepage"><div><div><h3 class="title"><a id="qa.maven.reports.checkstyle" class="anchor" href="#qa.maven.reports.checkstyle"><span class="octicon octicon-link"/></a>C.3.1. Checkstyle</h3></div></div></div><p><span class="inlinemediaobject"><img src="images/icons/checkstyle.png"/></span> <a class="link" href="http://checkstyle.sourceforge.net/">Checkstyle</a> is a
+        development tool to help programmers write Java code that adheres to a
+        coding standard. It automates the process of checking Java code to
+        spare humans of this boring (but important) task. This makes it ideal
+        for projects that want to enforce a coding standard.</p><p>Setup the latest Checkstyle Plugin:</p><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;properties&gt;
+     …
+     &lt;mavenJxrPluginVersion&gt;2.5&lt;/mavenJxrPluginVersion&gt;
++
++    &lt;mavenCheckstylePluginVersion&gt;2.17&lt;/mavenCheckstylePluginVersion&gt;
++    &lt;checkstyleVersion&gt;6.12.1&lt;/checkstyleVersion&gt;
+   &lt;/properties&gt;
+    …
+   &lt;/dependencies&gt;
++
++  &lt;build&gt;
++    &lt;pluginManagement&gt;
++      &lt;plugins&gt;
++        &lt;plugin&gt;
++          &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
++          &lt;artifactId&gt;maven-checkstyle-plugin&lt;/artifactId&gt;
++          &lt;version&gt;${mavenCheckstylePluginVersion}&lt;/version&gt;
++          &lt;dependencies&gt;
++            &lt;dependency&gt;
++              &lt;groupId&gt;com.puppycrawl.tools&lt;/groupId&gt;
++              &lt;artifactId&gt;checkstyle&lt;/artifactId&gt;
++              &lt;version&gt;${checkstyleVersion}&lt;/version&gt;
++              &lt;exclusions&gt;
++                &lt;exclusion&gt;
++                  &lt;groupId&gt;com.sun&lt;/groupId&gt;
++                  &lt;artifactId&gt;tools&lt;/artifactId&gt;
++                &lt;/exclusion&gt;
++              &lt;/exclusions&gt;
++            &lt;/dependency&gt;
++          &lt;/dependencies&gt;
++        &lt;/plugin&gt;
++      &lt;/plugins&gt;
++    &lt;/pluginManagement&gt;
++  &lt;/build&gt;
+</code></pre><p>Configure the report:</p><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;reporting&gt;
+     &lt;plugins&gt;
+        …
++      &lt;plugin&gt;
++        &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
++        &lt;artifactId&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="http://maven.apache.org/plugins/maven-checkstyle-plugin/">maven-checkstyle-plugin</a>&lt;/artifactId&gt;
++        &lt;version&gt;${mavenCheckstylePluginVersion}&lt;/version&gt;
++        &lt;configuration&gt;
++          &lt;configLocation&gt;
++            ${basedir}/src/qa-config/checkstyle.xml
++          &lt;/configLocation&gt;
++          &lt;outputFileFormat&gt;xml&lt;/outputFileFormat&gt;
++          &lt;includeTestSourceDirectory&gt;false&lt;/includeTestSourceDirectory&gt;
++          &lt;includeTestResources&gt;false&lt;/includeTestResources&gt;
++          &lt;enableRSS&gt;true&lt;/enableRSS&gt;
++          &lt;enableSeveritySummary&gt;true&lt;/enableSeveritySummary&gt;
++          &lt;enableRulesSummary&gt;false&lt;/enableRulesSummary&gt;
++          &lt;enableFilesSummary&gt;true&lt;/enableFilesSummary&gt;
++          &lt;linkXRef&gt;true&lt;/linkXRef&gt;
++          &lt;excludes&gt;**/generated/**/*.java&lt;/excludes&gt;
++          &lt;encoding&gt;UTF-8&lt;/encoding&gt;
++        &lt;/configuration&gt;
++        &lt;reportSets&gt;
++          &lt;reportSet&gt;
++            &lt;reports&gt;
++              &lt;report&gt;checkstyle&lt;/report&gt;
++            &lt;/reports&gt;
++          &lt;/reportSet&gt;
++        &lt;/reportSets&gt;
++      &lt;/plugin&gt;
+     &lt;/plugins&gt;
+   &lt;/reporting&gt;
+</code></pre></section><section class="section" id="qa.maven.reports.pmd"><div class="titlepage"><div><div><h3 class="title"><a id="qa.maven.reports.pmd" class="anchor" href="#qa.maven.reports.pmd"><span class="octicon octicon-link"/></a>C.3.2. PMD/CPD</h3></div></div></div><p><span class="inlinemediaobject"><img src="images/icons/pmd.png"/></span> <a class="link" href="http://pmd.sourceforge.net/">PMD</a> scans Java source
+        code and looks for potential problems.</p><p>Duplicate code can be hard to find, especially in a large
+        project. But PMD's Copy/Paste Detector (<a class="link" href="http://pmd.sourceforge.net/cpd.html">CPD</a>) can find
+        it for you.</p><p>Setup the latest PMD Plugin:</p><pre xmlns="" class="language-provided"><code class="language-xml">     &lt;checkstyleVersion&gt;6.12.1&lt;/checkstyleVersion&gt;
++
++    &lt;mavenPmdPluginVersion&gt;3.5&lt;/mavenPmdPluginVersion&gt;
++    &lt;pmdVersion&gt;5.4.0&lt;/pmdVersion&gt;
+   &lt;/properties&gt;
+    …
+   &lt;build&gt;
+     &lt;pluginManagement&gt;
+       &lt;plugins&gt;
+          …
++        &lt;plugin&gt;
++          &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
++          &lt;artifactId&gt;maven-pmd-plugin&lt;/artifactId&gt;
++          &lt;version&gt;${mavenPmdPluginVersion}&lt;/version&gt;
++          &lt;dependencies&gt;
++            &lt;dependency&gt;
++              &lt;groupId&gt;net.sourceforge.pmd&lt;/groupId&gt;
++              &lt;artifactId&gt;pmd-core&lt;/artifactId&gt;
++              &lt;version&gt;${pmdVersion}&lt;/version&gt;
++            &lt;/dependency&gt;
++            &lt;dependency&gt;
++              &lt;groupId&gt;net.sourceforge.pmd&lt;/groupId&gt;
++              &lt;artifactId&gt;pmd-java&lt;/artifactId&gt;
++              &lt;version&gt;${pmdVersion}&lt;/version&gt;
++            &lt;/dependency&gt;
++          &lt;/dependencies&gt;
++        &lt;/plugin&gt;
+       &lt;/plugins&gt;
+     &lt;/pluginManagement&gt;
+   &lt;/build&gt;
+</code></pre><p>Configure the report:</p><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;reporting&gt;
+     &lt;plugins&gt;
+        …
++      &lt;plugin&gt;
++        &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
++        &lt;artifactId&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="http://maven.apache.org/plugins/maven-pmd-plugin/">maven-pmd-plugin</a>&lt;/artifactId&gt;
++        &lt;version&gt;${mavenPmdPluginVersion}&lt;/version&gt;
++        &lt;configuration&gt;
++          &lt;aggregate&gt;false&lt;/aggregate&gt;
++          &lt;includeTests&gt;true&lt;/includeTests&gt;
++          &lt;format&gt;xml&lt;/format&gt;
++          &lt;linkXref&gt;true&lt;/linkXref&gt;
++          &lt;minimumPriority&gt;5&lt;/minimumPriority&gt;
++          &lt;minimumTokens&gt;100&lt;/minimumTokens&gt;
++          &lt;rulesets&gt;
++            &lt;ruleset&gt;${basedir}/src/qa-config/pmd-java.xml&lt;/ruleset&gt;
++          &lt;/rulesets&gt;
++          &lt;excludes&gt;
++            &lt;exclude&gt;**/generated/**/*.java&lt;/exclude&gt;
++          &lt;/excludes&gt;
++          &lt;targetJdk&gt;${baseJdkVersion}&lt;/targetJdk&gt;
++          &lt;sourceEncoding&gt;UTF-8&lt;/sourceEncoding&gt;
++          &lt;outputEncoding&gt;UTF-8&lt;/outputEncoding&gt;
++        &lt;/configuration&gt;
++        &lt;reportSets&gt;
++          &lt;reportSet&gt;
++            &lt;reports&gt;
++              &lt;report&gt;pmd&lt;/report&gt;
++              &lt;report&gt;cpd&lt;/report&gt;
++            &lt;/reports&gt;
++          &lt;/reportSet&gt;
++        &lt;/reportSets&gt;
++      &lt;/plugin&gt;
+     &lt;/plugins&gt;
+   &lt;/reporting&gt;
+</code></pre></section><section class="section" id="qa.maven.reports.findbugs"><div class="titlepage"><div><div><h3 class="title"><a id="qa.maven.reports.findbugs" class="anchor" href="#qa.maven.reports.findbugs"><span class="octicon octicon-link"/></a>C.3.3. FindBugs</h3></div></div></div><p><span class="inlinemediaobject"><img src="images/icons/findbugs.png"/></span> <a class="link" href="http://findbugs.sourceforge.net/">FindBugs</a> uses
+        static analysis to inspect Java bytecode for occurrences of bug
+        patterns. Static analysis means that FindBugs can find bugs by simply
+        inspecting a program's code: executing the program is not
+        necessary.</p><p>Setup the latest FindBugs Plugin:</p><pre xmlns="" class="language-provided"><code class="language-xml">     &lt;pmdVersion&gt;5.4.0&lt;/pmdVersion&gt;
++
++    &lt;findbugsMavenPluginVersion&gt;3.0.3&lt;/findbugsMavenPluginVersion&gt;
++    &lt;findbugsVersion&gt;3.0.1&lt;/findbugsVersion&gt;
+   &lt;/properties&gt;
+    …
+   &lt;build&gt;
+     &lt;pluginManagement&gt;
+       &lt;plugins&gt;
+          …
++        &lt;plugin&gt;
++          &lt;groupId&gt;org.codehaus.mojo&lt;/groupId&gt;
++          &lt;artifactId&gt;findbugs-maven-plugin&lt;/artifactId&gt;
++          &lt;version&gt;${findbugsMavenPluginVersion}&lt;/version&gt;
++        &lt;/plugin&gt;
+       &lt;/plugins&gt;
+     &lt;/pluginManagement&gt;
+   &lt;/build&gt;
+</code></pre><p>Configure the report:</p><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;reporting&gt;
+     &lt;plugins&gt;
+        …
++      &lt;plugin&gt;
++        &lt;groupId&gt;org.codehaus.mojo&lt;/groupId&gt;
++        &lt;artifactId&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="http://gleclaire.github.io/findbugs-maven-plugin/">findbugs-maven-plugin</a>&lt;/artifactId&gt;
++        &lt;version&gt;${findbugsMavenPluginVersion}&lt;/version&gt;
++        &lt;configuration&gt;
++          &lt;effort&gt;Default&lt;/effort&gt;
++          &lt;threshold&gt;Low&lt;/threshold&gt;
++          &lt;debug&gt;false&lt;/debug&gt;
++          &lt;includeTests&gt;true&lt;/includeTests&gt;
++          &lt;maxHeap&gt;512&lt;/maxHeap&gt;
++          &lt;timeout&gt;600000&lt;/timeout&gt;
++          &lt;xmlOutput&gt;true&lt;/xmlOutput&gt;
++          &lt;sourceEncoding&gt;UTF-8&lt;/sourceEncoding&gt;
++          &lt;outputEncoding&gt;UTF-8&lt;/outputEncoding&gt;
++          &lt;includeFilterFile&gt;
++            ${basedir}/src/qa-config/findbugs-include.xml
++          &lt;/includeFilterFile&gt;
++          &lt;excludeFilterFile&gt;
++            ${basedir}/src/qa-config/findbugs-exclude.xml
++          &lt;/excludeFilterFile&gt;
++        &lt;/configuration&gt;
++      &lt;/plugin&gt;
+     &lt;/plugins&gt;
+   &lt;/reporting&gt;
+</code></pre></section><section class="section" id="qa.maven.reports.javancss"><div class="titlepage"><div><div><h3 class="title"><a id="qa.maven.reports.javancss" class="anchor" href="#qa.maven.reports.javancss"><span class="octicon octicon-link"/></a>C.3.4. JavaNCSS</h3></div></div></div><p><span class="inlinemediaobject"><img src="images/icons/kclee.png"/></span> <a class="link" href="http://www.kclee.de/clemens/java/javancss/">JavaNCSS</a>
+        is a source measurement suite for Java which produces quantity &amp;
+        complexity metrics for your java source code.</p><p>Setup the latest JavaNCSS Plugin:</p><pre xmlns="" class="language-provided"><code class="language-xml">     &lt;findbugsVersion&gt;3.0.1&lt;/findbugsVersion&gt;
++
++    &lt;javancssMavenPluginVersion&gt;2.1&lt;/javancssMavenPluginVersion&gt;
++    &lt;javancssVersion&gt;33.54&lt;/javancssVersion&gt;
+   &lt;/properties&gt;
+    …
+   &lt;build&gt;
+     &lt;pluginManagement&gt;
+       &lt;plugins&gt;
+          …
++        &lt;plugin&gt;
++          &lt;groupId&gt;org.codehaus.mojo&lt;/groupId&gt;
++          &lt;artifactId&gt;javancss-maven-plugin&lt;/artifactId&gt;
++          &lt;version&gt;${javancssMavenPluginVersion}&lt;/version&gt;
++          &lt;dependencies&gt;
++            &lt;dependency&gt;
++              &lt;groupId&gt;org.codehaus.javancss&lt;/groupId&gt;
++              &lt;artifactId&gt;javancss&lt;/artifactId&gt;
++              &lt;version&gt;${javancssVersion}&lt;/version&gt;
++            &lt;/dependency&gt;
++          &lt;/dependencies&gt;
++        &lt;/plugin&gt;
+       &lt;/plugins&gt;
+     &lt;/pluginManagement&gt;
+   &lt;/build&gt;
+</code></pre><p>Configure the report:</p><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;reporting&gt;
+     &lt;plugins&gt;
+        …
++      &lt;plugin&gt;
++        &lt;groupId&gt;org.codehaus.mojo&lt;/groupId&gt;
++        &lt;artifactId&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="http://www.mojohaus.org/javancss-maven-plugin/">javancss-maven-plugin</a>&lt;/artifactId&gt;
++        &lt;version&gt;${javancssMavenPluginVersion}&lt;/version&gt;
++        &lt;configuration&gt;
++          &lt;lineThreshold&gt;30&lt;/lineThreshold&gt;
++          &lt;linkXRef&gt;true&lt;/linkXRef&gt;
++          &lt;excludes&gt;
++            &lt;exclude&gt;**/generated/**/*.java&lt;/exclude&gt;
++          &lt;/excludes&gt;
++          &lt;sourceEncoding&gt;UTF-8&lt;/sourceEncoding&gt;
++        &lt;/configuration&gt;
++      &lt;/plugin&gt;
+     &lt;/plugins&gt;
+   &lt;/reporting&gt;
+</code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>JavaNCSS and Java 8 syntax cause <span class="quote">“<span class="quote">ParseException in
+          …\OptionalDemoOne.java Last useful checkpoint:
+          "….OptionalDemoOne.main(String[])" Encountered " ":" ": "" at line
+          x, column y</span>”</span>.</p></div></section><section class="section" id="qa.maven.reports.jdepend"><div class="titlepage"><div><div><h3 class="title"><a id="qa.maven.reports.jdepend" class="anchor" href="#qa.maven.reports.jdepend"><span class="octicon octicon-link"/></a>C.3.5. JDepend</h3></div></div></div><p>While JavaNCSS simply lets you know how much source code you
+        have to deal with (ncss metric), JDepend informs you about the package
+        structure of your code and helps you spotting weaknesses in your
+        global code organization, e.g. identifying dependency cycles, creating
+        a few independent packages on which most other package rely on,
+        etc.</p><p><span class="inlinemediaobject"><img src="images/icons/clarkware.png"/></span> <a class="link" href="http://clarkware.com/software/JDepend.html">JDepend</a>
+        traverses Java class file directories and generates design quality
+        metrics for each Java package. JDepend allows you to automatically
+        measure the quality of a design in terms of its extensibility,
+        reusability, and maintainability to manage package dependencies
+        effectively.</p><p>Setup the latest JDepend Plugin:</p><pre xmlns="" class="language-provided"><code class="language-xml">     &lt;javancssVersion&gt;33.54&lt;/javancssVersion&gt;
++
++    &lt;jdependMavenPluginVersion&gt;2.0&lt;/jdependMavenPluginVersion&gt;
++    &lt;jdependVersion&gt;2.9.1&lt;/jdependVersion&gt;
+   &lt;/properties&gt;
+    …
+   &lt;build&gt;
+     &lt;pluginManagement&gt;
+       &lt;plugins&gt;
+          …
++        &lt;plugin&gt;
++          &lt;groupId&gt;org.codehaus.mojo&lt;/groupId&gt;
++          &lt;artifactId&gt;jdepend-maven-plugin&lt;/artifactId&gt;
++          &lt;version&gt;${jdependMavenPluginVersion}&lt;/version&gt;
++          &lt;dependencies&gt;
++            &lt;dependency&gt;
++              &lt;groupId&gt;jdepend&lt;/groupId&gt;
++              &lt;artifactId&gt;jdepend&lt;/artifactId&gt;
++              &lt;version&gt;${jdependVersion}&lt;/version&gt;
++            &lt;/dependency&gt;
++          &lt;/dependencies&gt;
++        &lt;/plugin&gt;
+       &lt;/plugins&gt;
+     &lt;/pluginManagement&gt;
+   &lt;/build&gt;
+</code></pre><p>Configure the report:</p><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;reporting&gt;
+     &lt;plugins&gt;
+        …
++      &lt;plugin&gt;
++        &lt;groupId&gt;org.codehaus.mojo&lt;/groupId&gt;
++        &lt;artifactId&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="http://www.mojohaus.org/jdepend-maven-plugin/">jdepend-maven-plugin</a>&lt;/artifactId&gt;
++        &lt;version&gt;${jdependMavenPluginVersion}&lt;/version&gt;
++      &lt;/plugin&gt;
+     &lt;/plugins&gt;
+   &lt;/reporting&gt;
+</code></pre></section><section class="section" id="qa.maven.reports.code.coverage"><div class="titlepage"><div><div><h3 class="title"><a id="qa.maven.reports.code.coverage" class="anchor" href="#qa.maven.reports.code.coverage"><span class="octicon octicon-link"/></a>C.3.6. Code Coverage</h3></div></div></div><p>In computer science, <a class="link" href="http://en.wikipedia.org/wiki/Code_coverage">code
+        coverage</a> is a measure used to describe the degree to which the
+        source code of a program is tested by a particular test suite. A
+        program with high code coverage has been more thoroughly tested and
+        has a lower chance of containing software bugs than a program with low
+        code coverage. Many different metrics can be used to calculate code
+        coverage; some of the most basic are the percent of program
+        subroutines and the percent of program statements called during
+        execution of the test suite.</p><section class="section" id="qa.maven.reports.jacoco"><div class="titlepage"><div><div><h4 class="title"><a id="qa.maven.reports.jacoco" class="anchor" href="#qa.maven.reports.jacoco"><span class="octicon octicon-link"/></a>C.3.6.1. JaCoCo</h4></div></div></div><p>To generate reports for the <a class="link" href="project.html#prj.maven.java.base.pom.jacoco" title="16.1.7.3. JaCoCo">JaCoCo code
+          coverage</a>, that was recorded during surefire and failsafe
+          plugin execution, add the following in
+          <code class="filename">C:\dev\projects\qa-sandbox\pom.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">  &lt;reporting&gt;
+    &lt;plugins&gt;
+        …
++      &lt;plugin&gt;
++        &lt;groupId&gt;org.jacoco&lt;/groupId&gt;
++        &lt;artifactId&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="http://www.eclemma.org/jacoco/trunk/doc/maven.html">jacoco-maven-plugin</a>&lt;/artifactId&gt;
++        &lt;reportSets&gt;
++          &lt;reportSet&gt;
++            &lt;id&gt;jacoco-unit-reports&lt;/id&gt;
++            &lt;configuration&gt;
++              &lt;dataFile&gt;${coverageReportsPathUnit}&lt;/dataFile&gt;
++            &lt;/configuration&gt;
++            &lt;reports&gt;
++              &lt;report&gt;report&lt;/report&gt;
++            &lt;/reports&gt;
++          &lt;/reportSet&gt;
++          &lt;reportSet&gt;
++            &lt;id&gt;jacoco-integration-reports&lt;/id&gt;
++            &lt;configuration&gt;
++              &lt;dataFile&gt;${coverageReportsPathIntegration}&lt;/dataFile&gt;
++            &lt;/configuration&gt;
++            &lt;reports&gt;
++              &lt;report&gt;report-integration&lt;/report&gt;
++            &lt;/reports&gt;
++          &lt;/reportSet&gt;
++        &lt;/reportSets&gt;
++      &lt;/plugin&gt;
++
+       &lt;plugin&gt;
+         &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+         &lt;artifactId&gt;maven-surefire-report-plugin&lt;/artifactId&gt;
+</code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="important"><h2>Important</h2><p>When using custom dataFiles and running Clover
+            instrumentation also the <span class="guilabel"><strong>JaCoCo IT Coverage
+            Report</strong></span> will incorrectly show <span class="guilabel"><strong>JaCoCo Test
+            Coverage Report</strong></span> content.</p></div></section><section class="section" id="qa.maven.reports.clover"><div class="titlepage"><div><div><h4 class="title"><a id="qa.maven.reports.clover" class="anchor" href="#qa.maven.reports.clover"><span class="octicon octicon-link"/></a>C.3.6.2. Clover</h4></div></div></div><p><span class="inlinemediaobject"><img src="images/icons/clover.png"/></span> <a class="link" href="http://www.atlassian.com/software/clover/">Clover</a>
+          goes beyond basic code coverage metrics to help you prioritise time
+          spent creating new tests.</p><p>Configure that Clover is run in the
+          <strong class="userinput"><code>pre-site</code></strong> <code class="code">&lt;phase/&gt;</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">     &lt;jdependVersion&gt;2.9.1&lt;/jdependVersion&gt;
++
++    &lt;cloverMavenPluginVersion&gt;4.1.1&lt;/cloverMavenPluginVersion&gt;
+   &lt;/properties&gt;
+    …
+   &lt;build&gt;
+     &lt;pluginManagement&gt;
+       &lt;plugins&gt;
+          …
++        &lt;plugin&gt;
++          &lt;groupId&gt;com.atlassian.maven.plugins&lt;/groupId&gt;
++          &lt;artifactId&gt;clover-maven-plugin&lt;/artifactId&gt;
++          &lt;version&gt;${cloverMavenPluginVersion}&lt;/version&gt;
++          &lt;configuration&gt;
++            &lt;jdk&gt;${baseJdkVersion}&lt;/jdk&gt;
++          &lt;/configuration&gt;
++          &lt;executions&gt;
++            &lt;execution&gt;
++              &lt;id&gt;create-clover-database&lt;/id&gt;
++              &lt;phase&gt;pre-site&lt;/phase&gt;
++              &lt;goals&gt;
++                &lt;goal&gt;instrument&lt;/goal&gt;
++              &lt;/goals&gt;
++            &lt;/execution&gt;
++          &lt;/executions&gt;
++        &lt;/plugin&gt;
+       &lt;/plugins&gt;
+     &lt;/pluginManagement&gt;
+</code></pre><p>Setup the <a class="link" href="https://confluence.atlassian.com/display/CLOVER/Clover-for-Maven+2+and+3+Upgrade+Guide">Clover
+          Plugin</a> (<a class="link" href="https://confluence.atlassian.com/display/CLOVER/Clover-for-Maven+2+and+3+Changelog">Changelog</a>)
+          to run instrument goal:</p><pre xmlns="" class="language-provided"><code class="language-xml">     &lt;/pluginManagement&gt;
+
++    &lt;plugins&gt;
++      &lt;plugin&gt;
++        &lt;groupId&gt;com.atlassian.maven.plugins&lt;/groupId&gt;
++        &lt;artifactId&gt;clover-maven-plugin&lt;/artifactId&gt;
++      &lt;/plugin&gt;
++    &lt;/plugins&gt;
+   &lt;/build&gt;
+</code></pre><p>Configure the report:</p><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;reporting&gt;
+     &lt;plugins&gt;
+        …
++      &lt;plugin&gt;
++        &lt;groupId&gt;com.atlassian.maven.plugins&lt;/groupId&gt;
++        &lt;artifactId&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="http://confluence.atlassian.com/display/CLOVER/Clover-for-Maven+2+and+3+User%27s+Guide">clover-maven-plugin</a>&lt;/artifactId&gt;
++        &lt;version&gt;${cloverMavenPluginVersion}&lt;/version&gt;
++        &lt;configuration&gt;
++          &lt;targetPercentage&gt;70%&lt;/targetPercentage&gt;
++          &lt;generateHistorical&gt;false&lt;/generateHistorical&gt;
++          &lt;generateHtml&gt;true&lt;/generateHtml&gt;
++          &lt;generateJson&gt;false&lt;/generateJson&gt;
++          &lt;generatePdf&gt;false&lt;/generatePdf&gt;
++          &lt;generateXml&gt;true&lt;/generateXml&gt;
++          &lt;charset&gt;UTF-8&lt;/charset&gt;
++          &lt;!--
++            &lt;licenseLocation&gt;
++              ${basedir}/src/qa-config/clover.license
++            &lt;/licenseLocation&gt;
++          --&gt;
++          &lt;excludes&gt;
++            &lt;exclude&gt;**/generated/*.java&lt;/exclude&gt;
++          &lt;/excludes&gt;
++        &lt;/configuration&gt;
++      &lt;/plugin&gt;
+     &lt;/plugins&gt;
+   &lt;/reporting&gt;
+</code></pre><div class="figure" id="prj.maven.site.qa.sandbox.reports.screenshot"><a id="prj.maven.site.qa.sandbox.reports.screenshot"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/qa-sandbox-reports-sample.png" alt="QA Sandbox Reports Sample"/></div></div></div><div class="figure-title">Figure C.1. QA Sandbox Reports Sample</div></div><br class="figure-break"/></section></section></section></section><script xmlns="" type="text/javascript" src="js/highlight.min.js"> </script><script xmlns="" type="text/javascript">hljs.initHighlightingOnLoad();</script><footer><ul class="navfooter"><li class="previous"><a accesskey="p" href="prj.maven.site.skin.custom.html"><strong>Previous</strong>Appendix B. Custom skins</a></li><li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Front page</strong></a></li><li class="next"><a accesskey="n" href="src.html"><strong>Next</strong>Appendix D. Source</a></li></ul></footer></body></html>

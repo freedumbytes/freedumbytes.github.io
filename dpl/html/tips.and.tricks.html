@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE html>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Appendix A. Tips &amp; Tricks</title><link rel="stylesheet" type="text/css" href="docbook.css"/><link rel="stylesheet" type="text/css" href="css/freedumbytes.css"/><meta name="generator" content="DocBook XSL Stylesheets V1.78.1"/><link rel="prev" href="quality.assurance.html" title="Chapter 17. Quality Assurance"/><link rel="next" href="prj.maven.site.skin.custom.html" title="Appendix B. Custom skins"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><link rel="shortcut icon" href="./images/community/docbook/glider.ico"/></head><body><header><p id="title"/><ul class="navheader"><li class="previous"><a accesskey="p" href="quality.assurance.html"><strong>Previous</strong></a></li><li class="next"><a accesskey="n" href="prj.maven.site.skin.custom.html"><strong>Next</strong></a></li></ul></header><section class="appendix" id="tips.and.tricks"><div class="titlepage"><div><div><h1 class="title"><a id="tips.and.tricks" class="anchor" href="#tips.and.tricks"><span class="octicon octicon-link"/></a>Appendix A. Tips &amp; Tricks</h1></div></div></div><div class="toc"><div class="toc-title">Table of Contents</div><ul class="toc"><li><span class="section"><a href="tips.and.tricks.html#tip.archive">A.1. Archives</a></span><ul><li><span class="section"><a href="tips.and.tricks.html#tip.archive.msi">A.1.1. How to extract content from MSI files</a></span></li><li><span class="section"><a href="tips.and.tricks.html#tip.class.path">A.1.2. How to determine absolute path of a loaded Class</a></span></li></ul></li><li><span class="section"><a href="tips.and.tricks.html#tip.version.control.system">A.2. Version Control System</a></span><ul><li><span class="section"><a href="tips.and.tricks.html#vcs.git.gitweb.enhancement">A.2.1. GitWeb enhancement</a></span></li></ul></li></ul></div><section class="section" id="tip.archive"><div class="titlepage"><div><div><h2 class="title"><a id="tip.archive" class="anchor" href="#tip.archive"><span class="octicon octicon-link"/></a>A.1. Archives</h2></div></div></div><section class="section" id="tip.archive.msi"><div class="titlepage"><div><div><h3 class="title"><a id="tip.archive.msi" class="anchor" href="#tip.archive.msi"><span class="octicon octicon-link"/></a>A.1.1. How to extract content from MSI files</h3></div></div></div><p><span class="inlinemediaobject"><img src="images/icons/windows.png"/></span> While there are plenty of utilities available
+        to extract the contents of an MSI file, you can do it straight from
+        the command line: <code class="command"><a class="link" href="http://technet.microsoft.com/en-us/library/bb490936.aspx">msiexec</a>
+        /a <em class="replaceable"><code>file.msi</code></em> /qb
+        TARGETDIR=<em class="replaceable"><code>folder</code></em></code>.</p></section><section class="section" id="tip.class.path"><div class="titlepage"><div><div><h3 class="title"><a id="tip.class.path" class="anchor" href="#tip.class.path"><span class="octicon octicon-link"/></a>A.1.2. How to determine absolute path of a loaded Class</h3></div></div></div><p>Of course, this is not always possible (if you think of
+        dynamically created classes), but if the loaded Class is inside a jar
+        <a class="link" href="http://stackoverflow.com/questions/4546632/how-to-determine-absolute-path-if-any-of-a-loaded-class">how
+        to get the absolute path for this jar</a>?</p><pre xmlns="" class="language-provided"><code class="language-java">package net.dev.freedumbytes.maven.qa.sandbox.classloader;
+
+
+import static org.assertj.core.api.Assertions.*;
+
+import org.junit.*;
+
+
+public class ClassloaderTest
+{
+  @Test()
+  public void testClassloaderResourceRequiresRelativePath()
+  {
+    assertThat(getClass().getClassLoader().getResource("/net/dev/freedumbytes/maven/qa/sandbox/classloader/ClassloaderTest.class")).isNull();
+
+    System.out.println(getClass().getClassLoader().getResource("net/dev/freedumbytes/maven/qa/sandbox/classloader/ClassloaderTest.class"));
+    assertThat(getClass().getClassLoader().getResource("net/dev/freedumbytes/maven/qa/sandbox/classloader/ClassloaderTest.class").toString())
+        .endsWith("qa-sandbox/target/test-classes/net/dev/freedumbytes/maven/qa/sandbox/classloader/ClassloaderTest.class");
+  }
+
+
+  @Test()
+  public void testClassResourceRequiresAbsolutePath()
+  {
+    assertThat(getClass().getResource("net/dev/freedumbytes/maven/qa/sandbox/classloader/ClassloaderTest.class")).isNull();
+
+    System.out.println(getClass().getResource("/net/dev/freedumbytes/maven/qa/sandbox/classloader/ClassloaderTest.class"));
+    assertThat(getClass().getResource("/net/dev/freedumbytes/maven/qa/sandbox/classloader/ClassloaderTest.class").toString())
+        .endsWith("qa-sandbox/target/test-classes/net/dev/freedumbytes/maven/qa/sandbox/classloader/ClassloaderTest.class");
+  }
+
+
+  @Test()
+  public void testAbsolutePathOfLoadedClass()
+  {
+    System.out.println(ClassloaderTest.class.getProtectionDomain().getCodeSource().getLocation().getPath());
+    assertThat(ClassloaderTest.class.getProtectionDomain().getCodeSource().getLocation().getPath())
+        .endsWith("qa-sandbox/target/test-classes/");
+  }
+}
+</code></pre></section></section><section class="section" id="tip.version.control.system"><div class="titlepage"><div><div><h2 class="title"><a id="tip.version.control.system" class="anchor" href="#tip.version.control.system"><span class="octicon octicon-link"/></a>A.2. Version Control System</h2></div></div></div><section class="section" id="vcs.git.gitweb.enhancement"><div class="titlepage"><div><div><h3 class="title"><a id="vcs.git.gitweb.enhancement" class="anchor" href="#vcs.git.gitweb.enhancement"><span class="octicon octicon-link"/></a>A.2.1. GitWeb enhancement</h3></div></div></div><p>Might as well use script <a class="link" href="version.control.system.html#vcs.git.bare.project" title="11.1.5. Defining a project"><code class="filename">git-create-repo.sh</code></a>
+        to add support for creating repositories to GitWeb by patching
+        <code class="filename">P:\dev\apps\vcs\git\share\gitweb\gitweb.cgi</code>:</p><pre xmlns="" class="language-provided"><code class="language-perl">@@ -760,6 +760,8 @@ our @cgi_param_mapping = (
+   extra_options =&gt; "opt",
+   search_use_regexp =&gt; "sr",
+   ctag =&gt; "by_tag",
++  new_project_name =&gt; "pn",
++  new_project_description =&gt; "pd",
+   # this must be last entry (for manipulation from JavaScript)
+   javascript =&gt; "js"
+ );
+</code></pre><pre xmlns="" class="language-provided"><code class="language-perl">@@ -799,6 +801,7 @@ our %actions = (
+   "opml" =&gt; \&amp;git_opml,
+   "project_list" =&gt; \&amp;git_project_list,
+   "project_index" =&gt; \&amp;git_project_index,
++  "create" =&gt; \&amp;git_project_create,
+ );
+ 
+ # finally, we have the hash of allowed extra_options for the commands that
+</code></pre><pre xmlns="" class="language-provided"><code class="language-perl">@@ -976,7 +979,7 @@ sub evaluate_path_info {
+ 
+ our ($action, $project, $file_name, $file_parent, $hash, $hash_parent, $hash_base,
+      $hash_parent_base, @extra_options, $page, $searchtype, $search_use_regexp,
+-     $searchtext, $search_regexp);
++     $searchtext, $search_regexp, $new_project_name, $new_project_description);
+ sub evaluate_and_validate_params {
+   our $action = $input_params{'action'};
+   if (defined $action) {
+</code></pre><pre xmlns="" class="language-provided"><code class="language-perl">@@ -1075,6 +1078,26 @@ sub evaluate_and_validate_params {
+     }
+     $search_regexp = $search_use_regexp ? $searchtext : quotemeta $searchtext;
+   }
++
++  our $new_project_name = $input_params{'new_project_name'};
++  if (defined $new_project_name) {
++    if (length($new_project_name) &lt; 1) {
++      die_error(403, "Project name is a required parameter");
++    }
++    if ($new_project_name =~ m/[^a-zA-Z0-9-]/) {
++      die_error(400, "Invalid project name parameter");
++    }
++  }
++
++  our $new_project_description = $input_params{'new_project_description'};
++  if (defined $new_project_description) {
++    if (length($new_project_description) &lt; 1) {
++      die_error(403, "Project description is a required parameter");
++    }
++    if ($new_project_description =~ m/[^a-zA-Z0-9 -]/) {
++      die_error(400, "Invalid project description parameter");
++    }
++  }
+ }
+ 
+ # path to the current git repository
+</code></pre><pre xmlns="" class="language-provided"><code class="language-perl">@@ -1136,7 +1159,7 @@ sub dispatch {
+   if (!defined($actions{$action})) {
+     die_error(400, "Unknown action");
+   }
+-  if ($action !~ m/^(?:opml|project_list|project_index)$/ &amp;&amp;
++  if ($action !~ m/^(?:opml|project_list|project_index|create)$/ &amp;&amp;
+       !$project) {
+     die_error(400, "Project needed");
+   }
+</code></pre><pre xmlns="" class="language-provided"><code class="language-perl">@@ -6005,9 +6028,6 @@ sub git_project_list {
+   }
+ 
+   my @list = git_get_projects_list();
+-  if (!@list) {
+-    die_error(404, "No projects found");
+-  }
+ 
+   git_header_html();
+   if (defined $home_text &amp;&amp; -f $home_text) {
+</code></pre><pre xmlns="" class="language-provided"><code class="language-perl">@@ -6020,10 +6040,29 @@ sub git_project_list {
+         $cgi-&gt;textfield(-name =&gt; "s", -value =&gt; $searchtext) . "\n" .
+         "&lt;/p&gt;" .
+         $cgi-&gt;end_form() . "\n";
+-  git_project_list_body(\@list, $order);
++  if (!@list) {
++    print "&lt;center&gt;\n".
++          "&lt;b&gt;No projects found&lt;/b&gt;&lt;br /&gt;\n".
++          "&lt;/center&gt;\n&lt;br /&gt;\n";
++  }
++  else {
++    git_project_list_body(\@list, $order);
++  }
++  git_project_create_form();
+   git_footer_html();
+ }
+ 
++sub git_project_create_form {
++  print $cgi-&gt;startform(-method =&gt; "get") .
++        "&lt;p align=\"right\" class=\"projcreate\"&gt;Project Name:\n" .
++        $cgi-&gt;textfield(-name =&gt; "pn", -value =&gt; $searchtext) . "\n" .
++        "Description:\n" .
++        $cgi-&gt;textfield(-name =&gt; "pd", -value =&gt; $searchtext) . "\n" .
++        $cgi-&gt;submit(-name =&gt; "a", -value =&gt; "create") . "\n" .
++        "&lt;/p&gt;" .
++        $cgi-&gt;end_form() . "\n";
++}
++
+ sub git_forks {
+   my $order = $input_params{'order'};
+   if (defined $order &amp;&amp; $order !~ m/none|project|descr|owner|age/) {
+</code></pre><pre xmlns="" class="language-provided"><code class="language-perl">@@ -6069,6 +6108,39 @@ sub git_project_index {
+   }
+ }
+ 
++sub git_project_create {
++  if (!defined $new_project_name) {
++    die_error(400, "Project name is empty");
++  }
++  if (!defined $new_project_description) {
++    die_error(400, "Project description is empty");
++  }
++
++  my $full_project_name = "$new_project_name.git";
++
++  my @result = `git-create-repo.sh $projectroot $full_project_name "$new_project_description"`;
++  my $exit_value = $? &gt;&gt; 8;
++  $result[-1] =~ s/\n/ /g;
++
++  if ($exit_value eq "9") {
++    die_error(400, "Failed to create project $full_project_name - $result[-1]");
++  }
++  elsif ($exit_value eq "1") {
++    die_error(400, "Unable to create Git repository directory - $result[-1]");
++  }
++  elsif ($exit_value eq "2") {
++    die_error(400, "Project $full_project_name already exists.");
++  }
++  elsif ($exit_value eq "3") {
++    die_error(400, "Couldn't create temporary clone for initial commit - $result[-1]");
++  }
++  elsif ($exit_value eq "4") {
++    die_error(400, "Couldn't cleanup temporary clone for initial commit - $result[-1]");
++  }
++
++  git_project_list();
++}
++
+ sub git_summary {
+   my $descr = git_get_project_description($project) || "none";
+   my %co = parse_commit("HEAD");
+</code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>Make sure git-create-repo.sh is available on the <a class="xref" href="operating.system.html#os.windows.batch.home">BATCH_HOME</a> path.</p></div><p>Now it is possible to create a remote repository with GitWeb.
+        Just enter a project name (without <code class="filename">.git</code> suffix) and description by calling
+        http://freedumbytes.dev.net/git-repo?pn=gitweb&amp;pd=GitWeb+CGI+enhancement&amp;a=create
+        direct or through the user interface enhancement:</p><div class="figure" id="vcs.git.gitweb.enhancement.screenshot"><a id="vcs.git.gitweb.enhancement.screenshot"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/vcs/git/gitweb-enhancement.png" alt="GitWeb enhancement"/></div></div></div><div class="figure-title">Figure A.1. GitWeb enhancement</div></div><br class="figure-break"/></section></section></section><script xmlns="" type="text/javascript" src="js/highlight.min.js"> </script><script xmlns="" type="text/javascript">hljs.initHighlightingOnLoad();</script><footer><ul class="navfooter"><li class="previous"><a accesskey="p" href="quality.assurance.html"><strong>Previous</strong>Chapter 17. Quality Assurance</a></li><li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Front page</strong></a></li><li class="next"><a accesskey="n" href="prj.maven.site.skin.custom.html"><strong>Next</strong>Appendix B. Custom skins</a></li></ul></footer></body></html>

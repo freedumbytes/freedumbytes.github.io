@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE html>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Chapter 9. Application Server</title><link rel="stylesheet" type="text/css" href="docbook.css"/><link rel="stylesheet" type="text/css" href="css/freedumbytes.css"/><meta name="generator" content="DocBook XSL Stylesheets V1.78.1"/><link rel="prev" href="web.server.html" title="Chapter 8. Web Server"/><link rel="next" href="database.html" title="Chapter 10. Database"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><link rel="shortcut icon" href="./images/community/docbook/glider.ico"/></head><body><header><p id="title"/><ul class="navheader"><li class="previous"><a accesskey="p" href="web.server.html"><strong>Previous</strong></a></li><li class="next"><a accesskey="n" href="database.html"><strong>Next</strong></a></li></ul></header><section class="chapter" id="application.server"><div class="titlepage"><div><div><h1 class="title"><a id="application.server" class="anchor" href="#application.server"><span class="octicon octicon-link"/></a>Chapter 9. Application Server</h1></div></div></div><div class="toc"><div class="toc-title">Table of Contents</div><ul class="toc"><li><span class="section"><a href="application.server.html#app.glassfish">9.1. GlassFish</a></span><ul><li><span class="section"><a href="application.server.html#app.glassfish.resources">9.1.1. Resources</a></span></li><li><span class="section"><a href="application.server.html#app.glassfish.install.guide">9.1.2. GlassFish installation guide</a></span></li><li><span class="section"><a href="application.server.html#app.glassfish.jdk">9.1.3. Changing JDK version</a></span></li><li><span class="section"><a href="application.server.html#app.glassfish.auto.deploy">9.1.4. Autodeploy</a></span></li><li><span class="section"><a href="application.server.html#app.glassfish.admin.console">9.1.5. Admin console</a></span></li><li><span class="section"><a href="application.server.html#app.glassfish.update.options">9.1.6. Update options</a></span></li><li><span class="section"><a href="application.server.html#app.glassfish.jvm.switches">9.1.7. JVM switches for performance</a></span></li><li><span class="section"><a href="application.server.html#app.glassfish.apache.config">9.1.8. Apache configuration</a></span></li><li><span class="section"><a href="application.server.html#app.glassfish.windows.service">9.1.9. Windows service</a></span></li></ul></li></ul></div><section class="section" id="app.glassfish"><div class="titlepage"><div><div><h2 class="title"><a id="app.glassfish" class="anchor" href="#app.glassfish"><span class="octicon octicon-link"/></a>9.1. GlassFish</h2></div></div></div><p><span class="inlinemediaobject"><img src="images/icons/glassfish.png"/></span> <a class="link" href="http://glassfish.java.net/">GlassFish</a> World's first
+      <a class="link" href="http://www.oracle.com/technetwork/java/javaee/overview/index.html">Java
+      EE</a> Application Server.</p><section class="section" id="app.glassfish.resources"><div class="titlepage"><div><div><h3 class="title"><a id="app.glassfish.resources" class="anchor" href="#app.glassfish.resources"><span class="octicon octicon-link"/></a>9.1.1. Resources</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><a class="link" href="https://glassfish.java.net/download.html">Download</a>
+            GlassFish.</p></li><li class="listitem"><p>Upgrade checklist:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p>Related products: <a class="link" href="https://glassfish.java.net/docs/4.0/upgrade-guide.pdf">Upgrade
+                Guide</a> and <a class="xref" href="application.server.html#app.glassfish.update.options" title="9.1.6. Update options">Section 9.1.6, “Update options”</a>.</p></li><li class="listitem"><p>References: -.</p></li><li class="listitem"><p>Integration configuration changes:</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>Just run
+                  <code class="command">p:\dev\apps\editor\winmerge\WinMergeU.exe
+                  p:\dev\apps\appserver\glassfish-4.1\glassfish\domains\domain1\config
+                  p:\dev\apps\appserver\glassfish-4.0\glassfish\domains\domain1\config</code>
+                  to copy the changes in for example
+                  <code class="filename">domain.xml</code>,</p></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>And run
+                  <code class="command">p:\dev\apps\editor\winmerge\WinMergeU.exe
+                  p:\dev\apps\appserver\glassfish-4.1\glassfish\config
+                  p:\dev\apps\appserver\glassfish-4.0\glassfish\config</code>
+                  for <code class="filename">asenv.bat</code>.</p></div></li></ul></div></li><li class="listitem"><p>GlassFish Server <a class="link" href="https://glassfish.java.net/documentation.html">Documentation</a>.</p></li><li class="listitem"><p><a class="link" href="https://glassfish.java.net/getstarted.html">Get
+            Started Quickly</a>.</p></li><li class="listitem"><p>GlassFish and <a class="link" href="https://glassfish.java.net/ide.html">IDE
+            support</a>.</p></li><li class="listitem"><p>Related <a class="link" href="https://glassfish.java.net/rel-projects.html">Open
+            Source Projects</a>.</p></li><li class="listitem"><p><a class="link" href="https://blogs.oracle.com/theaquarium/">The
+            Aquarium</a> news from the GlassFish Community.</p></li></ul></div></section><section class="section" id="app.glassfish.install.guide"><div class="titlepage"><div><div><h3 class="title"><a id="app.glassfish.install.guide" class="anchor" href="#app.glassfish.install.guide"><span class="octicon octicon-link"/></a>9.1.2. GlassFish installation guide</h3></div></div></div><p><a class="link" href="https://glassfish.java.net/download.html">Download</a>
+        the archive: <code class="filename">glassfish-4.1.zip</code> [version <a class="link" href="http://glassfish.java.net/public/downloadsindex.html">4.1</a>].</p><p>Extract the <code class="filename">.zip</code> file to
+        <code class="filename">P:\dev\apps\appserver</code> and
+        rename <code class="filename">P:\dev\apps\appserver\glassfish4</code> to
+        <code class="filename">P:\dev\apps\appserver\glassfish-4.1</code>.</p><p id="app.glassfish.home"><a id="app.glassfish.home"><span style="display:none;">trick</span></a>Change
+        the listener addresses to localhost <a class="xref" href="application.server.html#app.glassfish.domain.address.localhost"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a> (to restrict
+        access), host IP <a class="xref" href="application.server.html#app.glassfish.domain.address.host.ip"><img src="images/community/docbook/callouts/3.png" alt="3" border="0" height="17px" width="17px" class="callout"/></a> (to allow local area
+        network access; see also <a class="xref" href="http.server.html#http.apache.host.ip">192.168.0.xx host</a>) and
+        optionally disable the ssl <a class="xref" href="application.server.html#app.glassfish.domain.disable.ssl"><img src="images/community/docbook/callouts/2.png" alt="2" border="0" height="17px" width="17px" class="callout"/></a> connections by editing
+        the configuration file
+        <code class="filename">P:\dev\apps\appserver\glassfish-4.1\glassfish\domains\domain1\config\domain.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">&lt;domain
+  …
+ &lt;configs&gt;
+   &lt;config name="server-config"&gt;
+       …
+      &lt;iiop-service&gt;
+         …
+        &lt;iiop-listener address="<span xmlns="http://www.w3.org/1999/xhtml" class="strikethrough">0.0.0.0</span>127.0.0.1<span xmlns="http://www.w3.org/1999/xhtml" id="app.glassfish.domain.address.localhost"/><a xmlns="http://www.w3.org/1999/xhtml" id="app.glassfish.domain.address.localhost"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>" port="3700" …
+        &lt;iiop-listener … address="<span xmlns="http://www.w3.org/1999/xhtml" class="strikethrough">0.0.0.0</span>127.0.0.1<span xmlns="http://www.w3.org/1999/xhtml" id="app.glassfish.domain.address.localhost"/><a xmlns="http://www.w3.org/1999/xhtml" id="app.glassfish.domain.address.localhost"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>" port="3820" 
+              enabled="false"<span xmlns="http://www.w3.org/1999/xhtml" id="app.glassfish.domain.disable.ssl"/><a xmlns="http://www.w3.org/1999/xhtml" id="app.glassfish.domain.disable.ssl"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/2.png" alt="2" height="17px" width="17px" class="callout"/> id="SSL"&gt;
+         …
+        &lt;/iiop-listener&gt;
+        &lt;iiop-listener … address="<span xmlns="http://www.w3.org/1999/xhtml" class="strikethrough">0.0.0.0</span>127.0.0.1<span xmlns="http://www.w3.org/1999/xhtml" id="app.glassfish.domain.address.localhost"/><a xmlns="http://www.w3.org/1999/xhtml" id="app.glassfish.domain.address.localhost"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>" port="3920" 
+              enabled="false"<span xmlns="http://www.w3.org/1999/xhtml" id="app.glassfish.domain.disable.ssl"/><a xmlns="http://www.w3.org/1999/xhtml" id="app.glassfish.domain.disable.ssl"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/2.png" alt="2" height="17px" width="17px" class="callout"/> id="SSL_MUTUALAUTH"&gt;
+         …
+        &lt;/iiop-listener&gt;
+      &lt;/iiop-service&gt;
+      &lt;admin-service … system-jmx-connector-name="system"&gt;
+        &lt;jmx-connector … address="<span xmlns="http://www.w3.org/1999/xhtml" class="strikethrough">0.0.0.0</span><em xmlns="http://www.w3.org/1999/xhtml" class="replaceable"><code>192.168.0.xx</code></em><span xmlns="http://www.w3.org/1999/xhtml" id="app.glassfish.domain.address.host.ip"/><a xmlns="http://www.w3.org/1999/xhtml" id="app.glassfish.domain.address.host.ip"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/3.png" alt="3" height="17px" width="17px" class="callout"/>" port="8686" 
+             name="system" /&gt;
+         …
+      &lt;/admin-service&gt;
+       …
+      &lt;network-config&gt;
+         …
+        &lt;network-listeners&gt;
+          &lt;network-listener port="<span xmlns="http://www.w3.org/1999/xhtml" class="strikethrough">8080</span>8071<span xmlns="http://www.w3.org/1999/xhtml" id="app.glassfish.domain.port.localhost"/><a xmlns="http://www.w3.org/1999/xhtml" id="app.glassfish.domain.port.localhost"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/4.png" alt="4" height="17px" width="17px" class="callout"/>" address="127.0.0.1"<span xmlns="http://www.w3.org/1999/xhtml" id="app.glassfish.domain.address.localhost"/><a xmlns="http://www.w3.org/1999/xhtml" id="app.glassfish.domain.address.localhost"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/> …
+          &lt;network-listener port="8181" address="127.0.0.1"<span xmlns="http://www.w3.org/1999/xhtml" id="app.glassfish.domain.address.localhost"/><a xmlns="http://www.w3.org/1999/xhtml" id="app.glassfish.domain.address.localhost"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/> 
+                   enabled="false"<span xmlns="http://www.w3.org/1999/xhtml" id="app.glassfish.domain.disable.ssl"/><a xmlns="http://www.w3.org/1999/xhtml" id="app.glassfish.domain.disable.ssl"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/2.png" alt="2" height="17px" width="17px" class="callout"/> …  
+          &lt;network-listener port="4848" address="<em xmlns="http://www.w3.org/1999/xhtml" class="replaceable"><code>192.168.0.xx</code></em>"<span xmlns="http://www.w3.org/1999/xhtml" id="app.glassfish.domain.address.host.ip"/><a xmlns="http://www.w3.org/1999/xhtml" id="app.glassfish.domain.address.host.ip"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/3.png" alt="3" height="17px" width="17px" class="callout"/> … 
+        &lt;/network-listeners&gt;
+       …
+      &lt;/network-config&gt;
+     …
+    &lt;/config&gt;
+</code></pre><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;config name="default-config" dynamic-reconfiguration-enabled="true" &gt;
+       …
+      &lt;iiop-service&gt;
+         …
+        &lt;iiop-listener port="${IIOP_LISTENER_PORT}" … 
+              address="<span xmlns="http://www.w3.org/1999/xhtml" class="strikethrough">0.0.0.0</span>127.0.0.1<span xmlns="http://www.w3.org/1999/xhtml" id="app.glassfish.domain.address.localhost"/><a xmlns="http://www.w3.org/1999/xhtml" id="app.glassfish.domain.address.localhost"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>" /&gt;
+        &lt;iiop-listener port="${IIOP_SSL_LISTENER_PORT}" … 
+              address="<span xmlns="http://www.w3.org/1999/xhtml" class="strikethrough">0.0.0.0</span>127.0.0.1<span xmlns="http://www.w3.org/1999/xhtml" id="app.glassfish.domain.address.localhost"/><a xmlns="http://www.w3.org/1999/xhtml" id="app.glassfish.domain.address.localhost"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>" …&gt;
+         …
+        &lt;/iiop-listener&gt;
+        &lt;iiop-listener port="${IIOP_SSL_MUTUALAUTH_PORT}" … 
+              address="<span xmlns="http://www.w3.org/1999/xhtml" class="strikethrough">0.0.0.0</span>127.0.0.1<span xmlns="http://www.w3.org/1999/xhtml" id="app.glassfish.domain.address.localhost"/><a xmlns="http://www.w3.org/1999/xhtml" id="app.glassfish.domain.address.localhost"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>" …&gt;
+         …
+        &lt;/iiop-listener&gt;
+      &lt;/iiop-service&gt;
+      &lt;admin-service system-jmx-connector-name="system" type="server"&gt;
+        &lt;jmx-connector address="<span xmlns="http://www.w3.org/1999/xhtml" class="strikethrough">0.0.0.0</span><em xmlns="http://www.w3.org/1999/xhtml" class="replaceable"><code>192.168.0.xx</code></em><span xmlns="http://www.w3.org/1999/xhtml" id="app.glassfish.domain.address.host.ip"/><a xmlns="http://www.w3.org/1999/xhtml" id="app.glassfish.domain.address.host.ip"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/3.png" alt="3" height="17px" width="17px" class="callout"/>" … 
+             port="${JMX_SYSTEM_CONNECTOR_PORT}" …/&gt;
+         …
+      &lt;/admin-service&gt;
+       …
+      &lt;network-config&gt;
+          …
+        &lt;network-listeners&gt;
+          &lt;network-listener address="127.0.0.1"<span xmlns="http://www.w3.org/1999/xhtml" id="app.glassfish.domain.address.localhost"/><a xmlns="http://www.w3.org/1999/xhtml" id="app.glassfish.domain.address.localhost"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/> 
+                   port="${HTTP_LISTENER_PORT}" … /&gt;
+          &lt;network-listener address="127.0.0.1"<span xmlns="http://www.w3.org/1999/xhtml" id="app.glassfish.domain.address.localhost"/><a xmlns="http://www.w3.org/1999/xhtml" id="app.glassfish.domain.address.localhost"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/> 
+                   port="${HTTP_SSL_LISTENER_PORT}" … /&gt;
+          &lt;network-listener address="<em xmlns="http://www.w3.org/1999/xhtml" class="replaceable"><code>192.168.0.xx</code></em>"<span xmlns="http://www.w3.org/1999/xhtml" id="app.glassfish.domain.address.host.ip"/><a xmlns="http://www.w3.org/1999/xhtml" id="app.glassfish.domain.address.host.ip"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/3.png" alt="3" height="17px" width="17px" class="callout"/> 
+                   port="${ASADMIN_LISTENER_PORT}" … /&gt;
+        &lt;/network-listeners&gt;
+       …
+      &lt;/network-config&gt;
+     …
+    &lt;/config&gt; 
+  &lt;/configs&gt;
+  &lt;property name="administrative.domain.name" value="domain1"/&gt;
+&lt;/domain&gt;
+</code></pre><p>Press <span class="keycap"><strong><span class="inlinemediaobject"><img src="images/os/windows/windows-key.gif"/></span></strong></span>+<span class="keycap"><strong>Break</strong></span> keys to open the Windows System Properties. Select
+        <span class="guisubmenu"><strong>Advanced system settings</strong></span> → <span class="guibutton"><strong>Enviro<span class="accel">n</span>ment Variables</strong></span> and <span class="guibutton"><strong>Ed<span class="accel">i</span>t</strong></span> the
+        <code class="envar">Path</code> to append
+        <strong class="userinput"><code>%GLASSFISH_HOME%\bin;</code></strong>. Also add a
+        <span class="guibutton"><strong>Ne<span class="accel">w</span></strong></span> system variable
+        <code class="envar">GLASSFISH_HOME</code> pointing to <strong class="userinput"><code><code class="filename">P:\dev\apps\appserver\glassfish-4.1</code></code></strong>.</p><p>For administration tasks, the GlassFish server software provides
+        the following tools, which enable administrators to manage server
+        instances:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p>The <span class="application"><strong>Admin Console</strong></span>, a
+              browser-based graphical user interface (GUI).</p></li><li class="listitem"><p>The <span class="application"><strong>asadmin utility</strong></span>, a
+              command-line tool.</p></li></ul></div><p>Start the server by entering the command <code class="command">asadmin
+        start-domain</code>.</p><p>Show domains running on the server by entering the command
+        <code class="command">asadmin list-domains</code>.</p><p>Stop the server by entering the command <code class="command">asadmin
+        stop-domain domain1</code>.</p><p>Verify that the server is running in your browser at <a class="link" href="http://localhost:8071">http://localhost:8071</a>.</p></section><section class="section" id="app.glassfish.jdk"><div class="titlepage"><div><div><h3 class="title"><a id="app.glassfish.jdk" class="anchor" href="#app.glassfish.jdk"><span class="octicon octicon-link"/></a>9.1.3. Changing JDK version</h3></div></div></div><p>Updating GlassFish to run with a JDK version that is different
+        to the one used during installation will affect all local domains. To
+        do this, update the following in the file
+        <code class="filename">P:\dev\apps\appserver\glassfish-4.1\glassfish\config\asenv.bat</code>:</p><pre xmlns="" class="language-provided"><code class="language-bash">REM  Yet, this file is also where users of earlier versions have sometimes added
+REM  a definition of AS_JAVA to control which version of Java GlassFish
+REM  should use.  As a result, in order to run a user-specified version of Java,
+REM  the asadmin and appclient scripts do indeed invoke this file as a
+REM  script - but ONLY to define AS_JAVA.  Any calling script should not
+REM  rely on the other settings because the relative paths will be resolved
+REM  against the current directory when the calling script is run, not the
+REM  installation directory of GlassFish, and such resolution will not work
+REM  correctly unless the script happens to be run from the GlassFish
+REM  installation directory.
+ …
+set AS_JAVA=P:\dev\apps\prg\java-x64\jdk1.8.0_74
+</code></pre></section><section class="section" id="app.glassfish.auto.deploy"><div class="titlepage"><div><div><h3 class="title"><a id="app.glassfish.auto.deploy" class="anchor" href="#app.glassfish.auto.deploy"><span class="octicon octicon-link"/></a>9.1.4. Autodeploy</h3></div></div></div><p>Just copy the application, which is packaged as Java ARchive
+        (JAR), Web ARchive (WAR), or Enterprise ARchive (EAR) file, into
+        <code class="filename">P:\dev\apps\appserver\glassfish-4.1\glassfish\domains\domain1\autodeploy\</code>.</p><p>A prepackaged application that says <span class="quote">“<span class="quote">Hello</span>”</span> can be
+        downloaded from <a class="link" href="http://glassfish.dev.java.net/downloads/quickstart/hello.war">http://glassfish.dev.java.net/downloads/quickstart/hello.war</a>.</p></section><section class="section" id="app.glassfish.admin.console"><div class="titlepage"><div><div><h3 class="title"><a id="app.glassfish.admin.console" class="anchor" href="#app.glassfish.admin.console"><span class="octicon octicon-link"/></a>9.1.5. Admin console</h3></div></div></div><p>Access <a class="link" href="http://freedumbytes.dev.net:4848">http://freedumbytes.dev.net:4848</a>.
+        Enter the admin user name and password.</p><p>In the left pane, click the <span class="guilabel"><strong>Applications</strong></span>
+        node. If you already have the <code class="filename">hello.war</code>
+        application deployed, undeploy it by selecting the checkbox next to it
+        and clicking <span class="guibutton"><strong>Undeploy</strong></span>. To deploy a newly
+        assembled application click <span class="guibutton"><strong>Deploy…</strong></span>.</p><p>To verify that it was deployed properly, click
+        <span class="guilabel"><strong>Launch</strong></span>.</p></section><section class="section" id="app.glassfish.update.options"><div class="titlepage"><div><div><h3 class="title"><a id="app.glassfish.update.options" class="anchor" href="#app.glassfish.update.options"><span class="octicon octicon-link"/></a>9.1.6. Update options</h3></div></div></div><p>GlassFish Server provides the following tools for updating
+        software on a deployed server:</p><div class="orderedlist"><ol class="orderedlist compact" type="1"><li class="listitem"><p>The <a class="link" href="application.server.html#app.glassfish.admin.console" title="9.1.5. Admin console">Administration
+            Console</a> enables you to perform the following tasks that are
+            related to extending and updating GlassFish Server (in Admin
+            Console see <span class="guilabel"><strong>Common Tasks</strong></span> → <span class="guilabel"><strong>Update Center</strong></span> or <span class="inlinemediaobject"><img src="images/icons/update-center.png"/></span> <a class="link" href="http://freedumbytes.dev.net:4848/updateCenter/addOn.jsf">Update
+            Tool</a> lists the <span class="guilabel"><strong>Installed Components</strong></span>,
+            <span class="guilabel"><strong>Available Updates</strong></span> and <span class="guilabel"><strong>Available
+            Add-Ons</strong></span>).</p></li><li class="listitem"><p>Update Tool is a standalone graphical tool bundled with
+            GlassFish Server that can be used to find and install updates and
+            add-ons on a deployed GlassFish Server instance (run with
+            <code class="command">updatetool</code>; to stop the Update Tool notifier
+            process, use the <code class="command">updatetool --notifier
+            --shutdown</code> command).</p></li><li class="listitem"><p>The <code class="command">pkg</code> command is the command-line
+            equivalent to Update Tool. Most of the tasks that can be performed
+            with the graphical Update Tool can be performed from a command
+            line using the pkg tool.</p></li></ol></div></section><section class="section" id="app.glassfish.jvm.switches"><div class="titlepage"><div><div><h3 class="title"><a id="app.glassfish.jvm.switches" class="anchor" href="#app.glassfish.jvm.switches"><span class="octicon octicon-link"/></a>9.1.7. JVM switches for performance</h3></div></div></div><p>JVMs offer a variety of standard and non-standard switches that
+        tune memory allocation and garbage collection behavior. Some of these
+        settings can benefit <a class="link" href="https://glassfish.java.net/docs/4.0/performance-tuning-guide.pdf">glassfish-domain
+        performance</a>:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p><code class="option">-Xms256m</code> - this setting tells the Java
+              virtual machine to set its initial heap size to 256 megabytes.
+              By telling the JVM how much memory it should initially allocate
+              for the heap, we save it growing the heap as applications
+              consume more memory. This switch improves startup time.</p></li><li class="listitem"><p><code class="option">-Xmx512m</code> (default GlassFish setting) -
+              this settings tells the Java virtual machine the maximum amount
+              of memory it should use for the heap. Placing a hard upper limit
+              on this number means that the Java process cannot consume more
+              memory than physical RAM available. This limit can be raised on
+              systems with more memory. Current default value is 512MB.
+              </p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="warning"><h2>Warning</h2><p>Do not set this value to near or greater than the
+                  amount of physical RAM in your system or it will cause
+                  severe swapping during runtime.</p></div></li><li class="listitem"><p><code class="option">-Xverify:none</code> - this switch turns off
+              Java bytecode verification, making classloading faster, and
+              eliminating the need for classes to be loaded during startup
+              solely for the purposes of verification. This switch improves
+              startup time, and there is no reason not to use it.</p></li><li class="listitem"><p><code class="option">-XX:+UseAdaptiveSizePolicy</code> - this switch
+              may help improve garbage collector throughput and memory
+              footprint. It is part of <a class="link" href="http://download.oracle.com/javase/1.5.0/docs/guide/vm/gc-ergonomics.html">garbage
+              collector ergonomics</a> implemented in JDK5.0.</p></li><li class="listitem"><p><code class="option">-XX:+UseParallelGC</code> - some tests have
+              shown that, at least on systems fairly well equipped with
+              memory, the durations of minor garbage collections is halved
+              when using this collection algorithm, on uniprocessor systems.
+              Note that this is paradoxical - this collector is designed to
+              work best on multiprocessor systems with gigabyte heaps. No data
+              is available on its effect on major garbage collections. This
+              collector is mutually exclusive with
+              <code class="option">-XX:+UseConcMarkSweepGC</code>.</p></li><li class="listitem"><p>Optional <code class="option">-XX:CompileThreshold=100</code> - this
+              switch will make startup time slower, by HotSpot to compile many
+              more methods down to native code sooner than it otherwise would.
+              The reported result is snappier performance once the server is
+              running, since more of the code will be compiled rather than
+              interpreted. This value represents the number of times a method
+              must be called before it will be compiled.</p></li><li class="listitem"><p>Optional <code class="option">-XX:MaxPermSize=192m</code> (jdk1.7.0
+              and <span class="emphasis"><em>earlier</em></span>; since GlassFish version 2 beta
+              2 the option is activated with default setting of 192m) - In
+              some cases, such as when applications that request quite a lot
+              of memory, the server can run out of a different type of memory
+              (Permanent Generation), and if this is the case the above
+              settings may not help solve the memory issue. A problem like
+              this may occur when running multiple applications on the same
+              server.</p></li></ul></div><p>You could connect to the GlassFish <a class="link" href="http://localhost:4848/">Admin GUI</a> and select:
+        <span class="guilabel"><strong>Configurations</strong></span> → <span class="guilabel"><strong>server-config</strong></span> → <span class="guilabel"><strong>JVM Settings</strong></span> → <span class="guilabel"><strong>JVM Options</strong></span> and click <span class="guibutton"><strong>Add JVM Option</strong></span>
+        repeatedly. After entering the last option don't forget to click
+        <span class="guibutton"><strong>Save</strong></span> and restarting the service (see the
+        message in the banner <span class="guilabel"><strong><span class="inlinemediaobject"><img src="images/appserver/glassfish/warning_medium.png"/></span> Restart Required</strong></span>).</p><p>Or stop the domain and just edit
+        <code class="filename">P:\dev\apps\appserver\glassfish-4.1\glassfish\domains\domain1\config\domain.xml</code>
+        to try out the jvm options <a class="xref" href="application.server.html#app.glassfish.domain.jvm.opts.max.perm.size"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a>-<a class="xref" href="application.server.html#app.glassfish.domain.jvm.opts.compile.threshold"><img src="images/community/docbook/callouts/8.png" alt="8" border="0" height="17px" width="17px" class="callout"/></a> (some
+        might already configured):</p><pre xmlns="" class="language-provided"><code class="language-xml">  &lt;configs&gt;
+    &lt;config name="server-config"&gt;
+       …
+      &lt;java-config …&gt;
+        <span xmlns="http://www.w3.org/1999/xhtml" class="strikethrough">&lt;jvm-options&gt;-XX:MaxPermSize=192m&lt;/jvm-options&gt;</span><span xmlns="http://www.w3.org/1999/xhtml" id="app.glassfish.domain.jvm.opts.max.perm.size"/><a xmlns="http://www.w3.org/1999/xhtml" id="app.glassfish.domain.jvm.opts.max.perm.size"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>
+        &lt;!--jvm-options&gt;-Xrs&lt;/jvm-options--&gt;<span xmlns="http://www.w3.org/1999/xhtml" id="app.glassfish.domain.jvm.opts.xrs"/><a xmlns="http://www.w3.org/1999/xhtml" id="app.glassfish.domain.jvm.opts.xrs"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/2.png" alt="2" height="17px" width="17px" class="callout"/> &lt;!-- see also <a xmlns="http://www.w3.org/1999/xhtml" class="xref" href="programming.languages.html#prg.java.platform.reference" title="3.1.3.1. Standard Edition Tools Reference">Section 3.1.3.1, “Standard Edition Tools Reference”</a> --&gt;
+        &lt;jvm-options&gt;-server&lt;/jvm-options&gt;
+         …
+        &lt;jvm-options&gt;-Xms256m&lt;/jvm-options&gt;<span xmlns="http://www.w3.org/1999/xhtml" id="app.glassfish.domain.jvm.opts.ms"/><a xmlns="http://www.w3.org/1999/xhtml" id="app.glassfish.domain.jvm.opts.ms"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/3.png" alt="3" height="17px" width="17px" class="callout"/>
+        &lt;jvm-options&gt;-Xmx512m&lt;/jvm-options&gt;<span xmlns="http://www.w3.org/1999/xhtml" id="app.glassfish.domain.jvm.opts.mx"/><a xmlns="http://www.w3.org/1999/xhtml" id="app.glassfish.domain.jvm.opts.mx"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/4.png" alt="4" height="17px" width="17px" class="callout"/>
+        &lt;jvm-options&gt;-Xverify:none&lt;/jvm-options&gt;<span xmlns="http://www.w3.org/1999/xhtml" id="app.glassfish.domain.jvm.opts.verify"/><a xmlns="http://www.w3.org/1999/xhtml" id="app.glassfish.domain.jvm.opts.verify"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/5.png" alt="5" height="17px" width="17px" class="callout"/>
+         …
+        &lt;jvm-options&gt;-XX:NewRatio=2&lt;/jvm-options&gt;
+        &lt;jvm-options&gt;-XX:+UseParallelGC&lt;/jvm-options&gt;<span xmlns="http://www.w3.org/1999/xhtml" id="app.glassfish.domain.jvm.opts.use.parallel.gc"/><a xmlns="http://www.w3.org/1999/xhtml" id="app.glassfish.domain.jvm.opts.use.parallel.gc"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/6.png" alt="6" height="17px" width="17px" class="callout"/>
+        &lt;jvm-options&gt;-XX:+UseAdaptiveSizePolicy&lt;/jvm-options&gt;<span xmlns="http://www.w3.org/1999/xhtml" id="app.glassfish.domain.jvm.opts.use.adaptive.size.policy"/><a xmlns="http://www.w3.org/1999/xhtml" id="app.glassfish.domain.jvm.opts.use.adaptive.size.policy"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/7.png" alt="7" height="17px" width="17px" class="callout"/>
+        &lt;jvm-options&gt;-XX:CompileThreshold=100&lt;/jvm-options&gt;<span xmlns="http://www.w3.org/1999/xhtml" id="app.glassfish.domain.jvm.opts.compile.threshold"/><a xmlns="http://www.w3.org/1999/xhtml" id="app.glassfish.domain.jvm.opts.compile.threshold"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/8.png" alt="8" height="17px" width="17px" class="callout"/>
+      &lt;/java-config&gt;
+</code></pre><p>Restart the domain.</p></section><section class="section" id="app.glassfish.apache.config"><div class="titlepage"><div><div><h3 class="title"><a id="app.glassfish.apache.config" class="anchor" href="#app.glassfish.apache.config"><span class="octicon octicon-link"/></a>9.1.8. Apache configuration</h3></div></div></div><p>Instruct Apache to <a class="link" href="http.server.html#http.apache.config.proxy" title="7.1.9. Proxy configuration">proxy</a> all URLs whose path
+        portions begin with <code class="uri">/glassfish/</code> using the following
+        <code class="filename">P:\dev\apps\httpserver\apache-conf\httpd-vhosts.conf</code>
+        include <a class="xref" href="application.server.html#http.apache.include.httpd.glassfish"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a>:</p><pre xmlns="" class="language-provided"><code class="language-apache">&lt;VirtualHost *:80&gt;
+   …
+
+  &lt;IfModule proxy_module&gt;
+  &lt;IfModule proxy_http_module&gt;
+    …
+
+    &lt;Proxy *&gt;
+      …
+    &lt;/Proxy&gt;
+
+    # GlassFish
+    Include ../apache-conf/httpd-glassfish.conf<span xmlns="http://www.w3.org/1999/xhtml" id="http.apache.include.httpd.glassfish"/><a xmlns="http://www.w3.org/1999/xhtml" id="http.apache.include.httpd.glassfish"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>
+  &lt;/IfModule&gt;
+  &lt;/IfModule&gt;
+&lt;/VirtualHost&gt;
+</code></pre><p>with the following content in
+        <code class="filename">P:\dev\apps\httpserver\apache-conf\httpd-glassfish.conf</code>:</p><pre xmlns="" class="language-provided"><code class="language-apache">&lt;IfModule headers_module&gt;
+&lt;IfModule proxy_html_module&gt;
+&lt;IfModule proxy_module&gt;
+&lt;IfModule proxy_http_module&gt;
+  Redirect /glassfish   /glassfish/
+  ProxyPass /glassfish/ http://localhost:8071/
+
+  &lt;Location /glassfish/&gt;
+    ProxyPassReverse /
+    ProxyHTMLEnable On
+    RequestHeader unset Accept-Encoding
+    ProxyHTMLURLMap http://localhost:8071 /glassfish
+    ProxyHTMLURLMap /                     /glassfish/
+    ProxyHTMLURLMap /glassfish/           /glassfish/
+
+    Include ../apache-conf/httpd-freedumbytes-realm.conf
+  &lt;/Location&gt;
+&lt;/IfModule&gt;
+&lt;/IfModule&gt;
+&lt;/IfModule&gt;
+&lt;/IfModule&gt;
+</code></pre><p>When the domain and the Apache HTTP Server are restarted you
+        should be able to browse GlassFish at <a class="link" href="http://freedumbytes.dev.net/glassfish">http://freedumbytes.dev.net/glassfish</a>.
+        Change/Set the admin password at <span class="guimenuitem"><strong><span class="inlinemediaobject"><img src="images/icons/glassfish-domain.png"/></span> Domain</strong></span> → <span class="guimenuitem"><strong>Administrator Password</strong></span></p></section><section class="section" id="app.glassfish.windows.service"><div class="titlepage"><div><div><h3 class="title"><a id="app.glassfish.windows.service" class="anchor" href="#app.glassfish.windows.service"><span class="octicon octicon-link"/></a>9.1.9. Windows service</h3></div></div></div><p>To restart automatically on Microsoft Windows <a class="link" href="http://techtipsjava.blogspot.nl/2014/11/configuring-glassfish-41-as-windows.html">create
+        a service</a> using <a class="link" href="operating.system.html#os.windows.cmd.elevated" title="1.1.13.1. Elevated Command Prompt">an
+        elevated command prompt</a> as follows:</p><pre xmlns="" class="language-provided"><code class="language-bash">cd /d P:\dev\apps\appserver\glassfish-4.1
+
+set JAVA_HOME=P:\dev\apps\prg\java-x64\jdk1.8.0_74
+set GLASSFISH_HOME=P:\dev\apps\appserver\glassfish-4.1
+asadmin create-service domain1
+
+dir domain1Service.xml /s
+</code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>In case of an upgrade <code class="command">sc delete glassfish</code>
+            first (see also <a class="xref" href="operating.system.html#os.windows.process.explorer" title="1.1.5. Task Manager replacement">Section 1.1.5, “Task Manager replacement”</a> in
+            case of <span class="quote">“<span class="quote">The specified service has been marked for
+            deletion.</span>”</span>).</p></div><p>Edit the following entries <a class="xref" href="application.server.html#app.glassfish.service.id"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a>-<a class="xref" href="application.server.html#app.glassfish.description"><img src="images/community/docbook/callouts/3.png" alt="3" border="0" height="17px" width="17px" class="callout"/></a> in the newly generated service
+        configuration file
+        <code class="filename">P:\dev\apps\appserver\glassfish-4.1\glassfish\domains\domain1\bin\domain1Service.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">&lt;service&gt;
+  &lt;id&gt;<span xmlns="http://www.w3.org/1999/xhtml" class="strikethrough">domain1</span>glassfish<span xmlns="http://www.w3.org/1999/xhtml" id="app.glassfish.service.id"/><a xmlns="http://www.w3.org/1999/xhtml" id="app.glassfish.service.id"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>&lt;/id&gt;
+  &lt;name&gt;<span xmlns="http://www.w3.org/1999/xhtml" class="strikethrough">domain1 GlassFish Server</span>freedumbytes.dev.net GlassFish<span xmlns="http://www.w3.org/1999/xhtml" id="app.glassfish.display.name"/><a xmlns="http://www.w3.org/1999/xhtml" id="app.glassfish.display.name"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/2.png" alt="2" height="17px" width="17px" class="callout"/>&lt;/name&gt;
+  &lt;description&gt;<span xmlns="http://www.w3.org/1999/xhtml" class="strikethrough">GlassFish Server</span>GlassFish Application Server<span xmlns="http://www.w3.org/1999/xhtml" id="app.glassfish.description"/><a xmlns="http://www.w3.org/1999/xhtml" id="app.glassfish.description"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/3.png" alt="3" height="17px" width="17px" class="callout"/>&lt;/description&gt;
+  &lt;executable&gt;
+    P:/dev/apps/appserver/glassfish-4.1/glassfish/lib/nadmin.bat
+  &lt;/executable&gt;
+  &lt;logpath&gt;
+    P:\\dev\\apps\\appserver\\glassfish-4.1\\glassfish\\domains/domain1/bin
+  &lt;/logpath&gt;
+  &lt;logmode&gt;reset&lt;/logmode&gt;
+  &lt;depend&gt;tcpip&lt;/depend&gt;
+  &lt;startargument&gt;start-domain&lt;/startargument&gt;
+  &lt;startargument&gt;--watchdog&lt;/startargument&gt;
+  &lt;startargument&gt;--domaindir&lt;/startargument&gt;
+  &lt;startargument&gt;
+    P:\\dev\\apps\\appserver\\glassfish-4.1\\glassfish\\domains
+  &lt;/startargument&gt;
+  &lt;startargument&gt;domain1&lt;/startargument&gt;
+  &lt;stopargument&gt;stop-domain&lt;/stopargument&gt;
+  &lt;stopargument&gt;--domaindir&lt;/stopargument&gt;
+  &lt;stopargument&gt;
+    P:\\dev\\apps\\appserver\\glassfish-4.1\\glassfish\\domains
+  &lt;/stopargument&gt;
+  &lt;stopargument&gt;domain1&lt;/stopargument&gt;
+&lt;/service&gt;
+</code></pre><p>Activate those changes with:</p><pre xmlns="" class="language-provided"><code class="language-bash">cd glassfish\domains\domain1\bin\
+
+sc delete domain1
+domain1Service.exe install
+</code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="important"><h2>Important</h2><p>The <code class="command">domain1Service install</code> must be run in
+          its directory <code class="filename">glassfish\domains\domain1\bin\</code>
+          otherwise the following error <span class="quote">“<span class="quote">System error 2 has occurred.
+          The system cannot find the file specified.</span>”</span> will occur during
+          <code class="command">net start glassfish</code>.</p></div><p>Start it with <code class="command">net start glassfish</code>.</p><p>Verify the installation at <a class="link" href="http://freedumbytes.dev.net/glassfish">http://freedumbytes.dev.net/glassfish</a>.</p><section class="section" id="app.glassfish.windows.user"><div class="titlepage"><div><div><h4 class="title"><a id="app.glassfish.windows.user" class="anchor" href="#app.glassfish.windows.user"><span class="octicon octicon-link"/></a>9.1.9.1. Log On Windows user</h4></div></div></div><p>For the same reason as <a class="xref" href="web.server.html#web.tomcat.windows.user" title="8.1.3.1. Log On Windows user">Section 8.1.3.1, “Log On Windows user”</a> launch the <span class="application"><strong>Service
+          Management Console</strong></span> with
+          <code class="command">services.msc</code>. Right click on
+          <span class="guilabel"><strong>freedumbytes.dev.net GlassFish</strong></span> and select
+          <span class="guimenuitem"><strong>P<span class="accel">r</span>operties</strong></span> → <span class="guilabel"><strong>Log On</strong></span> to use <span class="guilabel"><strong><span class="accel">T</span>his
+          account</strong></span> <strong class="userinput"><code>.\Tomcat</code></strong>. After password
+          conformation click <span class="guibutton"><strong><span class="accel">A</span>pply</strong></span> and
+          restart the service.</p></section></section></section></section><script xmlns="" type="text/javascript" src="js/highlight.min.js"> </script><script xmlns="" type="text/javascript">hljs.initHighlightingOnLoad();</script><footer><ul class="navfooter"><li class="previous"><a accesskey="p" href="web.server.html"><strong>Previous</strong>Chapter 8. Web Server</a></li><li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Front page</strong></a></li><li class="next"><a accesskey="n" href="database.html"><strong>Next</strong>Chapter 10. Database</a></li></ul></footer></body></html>

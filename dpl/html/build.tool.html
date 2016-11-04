@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE html>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Chapter 4. Build Tool</title><link rel="stylesheet" type="text/css" href="docbook.css"/><link rel="stylesheet" type="text/css" href="css/freedumbytes.css"/><meta name="generator" content="DocBook XSL Stylesheets V1.78.1"/><link rel="prev" href="programming.languages.html" title="Chapter 3. Programming Languages"/><link rel="next" href="documentation.html" title="Chapter 5. Documentation"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><link rel="shortcut icon" href="./images/community/docbook/glider.ico"/></head><body><header><p id="title"/><ul class="navheader"><li class="previous"><a accesskey="p" href="programming.languages.html"><strong>Previous</strong></a></li><li class="next"><a accesskey="n" href="documentation.html"><strong>Next</strong></a></li></ul></header><section class="chapter" id="build.tool"><div class="titlepage"><div><div><h1 class="title"><a id="build.tool" class="anchor" href="#build.tool"><span class="octicon octicon-link"/></a>Chapter 4. Build Tool</h1></div></div></div><div class="toc"><div class="toc-title">Table of Contents</div><ul class="toc"><li><span class="section"><a href="build.tool.html#build.ant">4.1. Ant</a></span><ul><li><span class="section"><a href="build.tool.html#build.ant.resources">4.1.1. Resources</a></span></li><li><span class="section"><a href="build.tool.html#build.ant.install.guide">4.1.2. Ant installation guide</a></span></li></ul></li><li><span class="section"><a href="build.tool.html#build.maven">4.2. Maven</a></span><ul><li><span class="section"><a href="build.tool.html#build.maven.resources">4.2.1. Resources</a></span></li><li><span class="section"><a href="build.tool.html#build.maven.install.guide">4.2.2. Maven installation guide</a></span></li><li><span class="section"><a href="build.tool.html#build.maven.compiler.profile">4.2.3. Compiler profile</a></span></li><li><span class="section"><a href="build.tool.html#build.maven.logging">4.2.4. Logging</a></span></li><li><span class="section"><a href="build.tool.html#build.maven.cleanup">4.2.5. Repository cleanup</a></span></li><li><span class="section"><a href="build.tool.html#build.maven.password.encryption">4.2.6. Password Encryption</a></span></li></ul></li></ul></div><section class="section" id="build.ant"><div class="titlepage"><div><div><h2 class="title"><a id="build.ant" class="anchor" href="#build.ant"><span class="octicon octicon-link"/></a>4.1. Ant</h2></div></div></div><p><span class="inlinemediaobject"><img src="images/icons/ant.png"/></span> <a class="link" href="http://ant.apache.org/">Apache
+      Ant</a> is a Java-based build tool. In theory, it is kind of like
+      Make, but without Make's wrinkles.</p><section class="section" id="build.ant.resources"><div class="titlepage"><div><div><h3 class="title"><a id="build.ant.resources" class="anchor" href="#build.ant.resources"><span class="octicon octicon-link"/></a>4.1.1. Resources</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><a class="link" href="http://ant.apache.org/bindownload.cgi">Download</a>
+            a binary distribution of Ant from one of the mirrors.</p></li><li class="listitem"><p>Upgrade checklist:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p>Related products: -.</p></li><li class="listitem"><p>References: <a class="link" href="continuous.integration.html#ci.jenkins.config" title="14.1.4. Jenkins configuration">Jenkins -
+                configuration <code class="code">Ant</code></a>.</p></li><li class="listitem"><p>Integration configuration changes: -.</p></li></ul></div></li><li class="listitem"><p>Apache Ant <a class="link" href="http://ant.apache.org/manual/index.html">Manual</a>
+            and <a class="link" href="http://ant.apache.org/manual/tasksoverview.html">an
+            overall view of what each task can do</a>.</p></li><li class="listitem"><p><a class="link" href="http://ant.apache.org/external.html">External
+            resources</a> for Apache Ant: Tasks, Compiler Implementations,
+            IDE integration tools, Source Control Systems, loggers, you name
+            it.</p></li></ul></div></section><section class="section" id="build.ant.install.guide"><div class="titlepage"><div><div><h3 class="title"><a id="build.ant.install.guide" class="anchor" href="#build.ant.install.guide"><span class="octicon octicon-link"/></a>4.1.2. Ant installation guide</h3></div></div></div><p><a class="link" href="http://ant.apache.org/bindownload.cgi">Download</a> the
+        archive: <code class="filename">apache-ant-1.9.6-bin.zip</code> [version <a class="link" href="http://ant.apache.org/antnews.html">1.9.6</a>].</p><p>Extract this <code class="filename">.zip</code> file to
+        <code class="filename">P:\dev\apps\build</code>.</p><p id="build.ant.home"><a id="build.ant.home"><span style="display:none;">trick</span></a>Press <span class="keycap"><strong><span class="inlinemediaobject"><img src="images/os/windows/windows-key.gif"/></span></strong></span>+<span class="keycap"><strong>Break</strong></span> keys to open the Windows System Properties. Select
+        <span class="guisubmenu"><strong>Advanced system settings</strong></span> → <span class="guibutton"><strong>Enviro<span class="accel">n</span>ment Variables</strong></span> and <span class="guibutton"><strong>Ed<span class="accel">i</span>t</strong></span> the
+        <code class="envar">Path</code> to append <strong class="userinput"><code>%ANT_HOME%\bin;</code></strong>.
+        Also add a <span class="guibutton"><strong>Ne<span class="accel">w</span></strong></span> system variable
+        <code class="envar">ANT_HOME</code> pointing to <strong class="userinput"><code><code class="filename">P:\dev\apps\build\apache-ant-1.9.6</code></code></strong>.</p><p>Verify the installation with <code class="command">ant
+        -version</code>.</p></section></section><section class="section" id="build.maven"><div class="titlepage"><div><div><h2 class="title"><a id="build.maven" class="anchor" href="#build.maven"><span class="octicon octicon-link"/></a>4.2. Maven</h2></div></div></div><p><span class="inlinemediaobject"><img src="images/icons/apache.png"/></span> <a class="link" href="http://maven.apache.org/">Maven</a> is a software project
+      management and comprehension tool. Based on the concept of a project
+      object model (POM), Maven can manage a project's build, reporting and
+      documentation from a central piece of information.</p><section class="section" id="build.maven.resources"><div class="titlepage"><div><div><h3 class="title"><a id="build.maven.resources" class="anchor" href="#build.maven.resources"><span class="octicon octicon-link"/></a>4.2.1. Resources</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><a class="link" href="http://maven.apache.org/download.html">Download</a>
+            a binary distribution of <a class="link" href="http://maven.apache.org/ref/current/">Maven</a>
+            from a mirror.</p></li><li class="listitem"><p>Upgrade checklist:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p>Related products: -.</p></li><li class="listitem"><p>References: <a class="link" href="continuous.integration.html#ci.jenkins.config" title="14.1.4. Jenkins configuration">Jenkins -
+                configuration <code class="code">Maven</code></a>, <a class="link" href="integrated.development.environment.html#ide.eclipse.plugin.config.maven" title="15.1.5.5.1. Maven configuration">Eclipse -
+                configuration <code class="code">Maven</code></a>, <a class="link" href="project.html#prj.maven.m2e.lifecycle.config.eclipse">Project -
+                M2Eclipse <code class="code">lifecycle configuration</code></a> and
+                <a class="link" href="project.html#prj.maven.info" title="16.1.2. Project information">Project - information
+                <code class="code">prerequisites</code></a>.</p></li><li class="listitem"><p>Integration configuration changes: <a class="link" href="build.tool.html#build.maven.install.guide" title="4.2.2. Maven installation guide">Maven - settings
+                <code class="code">localRepository</code></a>, <a class="link" href="build.tool.html#build.maven.compiler.profile" title="4.2.3. Compiler profile">Maven - profile
+                <code class="code">compiler</code></a>, <a class="link" href="build.tool.html#build.maven.toolchains" title="4.2.3.1. Toolchains">Maven - toolchains
+                <code class="code">jdkHome</code></a>, <a class="link" href="build.tool.html#build.maven.logging" title="4.2.4. Logging">Maven - logging
+                <code class="filename">simplelogger.properties</code></a>, <a class="link" href="build.tool.html#build.maven.password.encryption" title="4.2.6. Password Encryption">Maven - Password
+                Encryption server <code class="code">nexus-releases</code></a>, <a class="link" href="repository.manager.html#repo.nexus.maven.integration" title="13.1.6. Maven integration">Nexus - Maven
+                integration - <code class="code">mirrors</code> / <code class="code">profiles</code> /
+                <code class="code">activeProfiles</code> / <code class="code">servers</code></a> and
+                <a class="link" href="project.html#prj.maven.deploy.site" title="16.1.6.1. Site">Project - Site WebDAV
+                server <code class="code">mvn-sites</code></a>.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>Or just run
+                  <code class="command">p:\dev\apps\editor\winmerge\WinMergeU.exe
+                  P:\dev\apps\build\apache-maven-3.3.3\conf\
+                  P:\dev\apps\build\apache-maven-3.3.9\conf\</code> to copy
+                  the changes in for example
+                  <code class="filename">settings.xml</code>,
+                  <code class="filename">toolchains.xml</code> and
+                  <code class="filename">logging\simplelogger.properties</code>.</p></div></li></ul></div></li><li class="listitem"><p>Maven <a class="link" href="https://maven.apache.org/ref/3-LATEST/">Reference</a>
+            such as <a class="link" href="https://maven.apache.org/ref/3-LATEST/maven-core/">core</a>.</p></li><li class="listitem"><p>Maven <a class="link" href="http://maven.apache.org/guides/index.html">Documentation</a>,
+            <a class="link" href="http://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html">Introduction
+            to the Build Lifecycle</a>, <a class="link" href="http://maven.apache.org/guides/mini/guide-configuring-plugins.html">Guide
+            to Configuring Plug-ins</a> and <a class="link" href="http://maven.apache.org/plugins/">Available
+            Plugins</a>.</p></li><li class="listitem"><p><span class="inlinemediaobject"><img src="images/icons/sonatype.png"/></span> <a class="link" href="http://www.sonatype.org/nexus/resources/resources-book-links-and-downloads/">Books</a>
+            such as <a class="link" href="http://www.sonatype.com/resources/books/maven-the-complete-reference">Maven:
+            The Complete Reference</a> (<a class="link" href="http://books.sonatype.com/mvnref-book/reference/running-sect-options.html">Maven
+            Command Line Options</a>) and <a class="link" href="http://www.sonatype.com/resources/books/maven-by-example">Maven
+            by Example</a>.</p></li><li class="listitem"><p>For some examples of upgrading direct and transitive
+            dependencies of a plugin see also <a class="xref" href="quality.assurance.html#qa.jdocbook.fop" title="17.3.5. Upgrade FOP">Section 17.3.5, “Upgrade FOP”</a> and <a class="xref" href="quality.assurance.html#qa.jdocbook.xsl" title="17.3.4. Upgrade DocBook XSL stylesheets">Section 17.3.4, “Upgrade DocBook XSL stylesheets”</a>.</p></li></ul></div></section><section class="section" id="build.maven.install.guide"><div class="titlepage"><div><div><h3 class="title"><a id="build.maven.install.guide" class="anchor" href="#build.maven.install.guide"><span class="octicon octicon-link"/></a>4.2.2. Maven installation guide</h3></div></div></div><p><a class="link" href="http://maven.apache.org/download.html">Download</a> the
+        archive: <code class="filename">apache-maven-3.3.9-bin.zip</code> [version
+        <a class="link" href="http://maven.apache.org/docs/history.html">3.3.9</a>].</p><p>Extract this <code class="filename">.zip</code> file to
+        <code class="filename">P:\dev\apps\build</code>.</p><p id="build.m2.home"><a id="build.m2.home"><span style="display:none;">trick</span></a>Press <span class="keycap"><strong><span class="inlinemediaobject"><img src="images/os/windows/windows-key.gif"/></span></strong></span>+<span class="keycap"><strong>Break</strong></span> keys to open the Windows System Properties. Select
+        <span class="guisubmenu"><strong>Advanced system settings</strong></span> → <span class="guibutton"><strong>Enviro<span class="accel">n</span>ment Variables</strong></span> and <span class="guibutton"><strong>Ed<span class="accel">i</span>t</strong></span> the
+        <code class="envar">Path</code> to append <strong class="userinput"><code>%M2_HOME%\bin;</code></strong>.
+        Also add a <span class="guibutton"><strong>Ne<span class="accel">w</span></strong></span> system variable
+        <code class="envar">M2_HOME</code> pointing to <strong class="userinput"><code><code class="filename">P:\dev\apps\build\apache-maven-3.3.9</code></code></strong>.</p><p>The location of your local repository <a class="xref" href="build.tool.html#build.maven.local.repo"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a> can be changed in the Maven
+        configuration file
+        <code class="filename">P:\dev\apps\build\apache-maven-3.3.9\conf\settings.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+
+&lt;settings xmlns="http://maven.apache.org/settings/1.0.0" 
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+          …&gt;
+  &lt;!-- localRepository
+   | The path to the local repository maven will use to store artifacts.
+   |
+   | Default: ${user.home}/.m2/repository
+  &lt;localRepository&gt;/path/to/local/repo&lt;/localRepository&gt;
+  --&gt;
+  &lt;localRepository&gt;C:/dev/data/repo/maven/local&lt;/localRepository&gt;<span xmlns="http://www.w3.org/1999/xhtml" id="build.maven.local.repo"/><a xmlns="http://www.w3.org/1999/xhtml" id="build.maven.local.repo"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/></code></pre><p id="build.maven.opts"><a id="build.maven.opts"><span style="display:none;">trick</span></a>Press <span class="keycap"><strong><span class="inlinemediaobject"><img src="images/os/windows/windows-key.gif"/></span></strong></span>+<span class="keycap"><strong>Break</strong></span> keys to open the Windows System Properties. Select
+        <span class="guisubmenu"><strong>Advanced system settings</strong></span> → <span class="guibutton"><strong>Enviro<span class="accel">n</span>ment Variables</strong></span> and supply extra options to Maven with a
+        <span class="guibutton"><strong>Ne<span class="accel">w</span></strong></span> system variable
+        <code class="envar">MAVEN_OPTS</code> and for example the following value
+        <strong class="userinput"><code>-Xmx512m -Xms128m</code></strong>.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>Since JDK 8 <a class="link" href="http://openjdk.java.net/jeps/122">JEP 122: Remove the
+          Permanent Generation</a> from the Hotspot JVM and thus the need
+          to tune the size of the permanent generation with for example:
+          <span class="emphasis"><em>-XX:MaxPermSize=192m</em></span>.</p></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="tip"><h2>Tip</h2><p>Should the Surefire Plugin fail to run with one of the
+          following errors:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><span class="quote">“<span class="quote">Error occurred during initialization of VM Could
+              not reserve enough space for object heap Could not create the
+              Java virtual machine.</span>”</span></p></li><li class="listitem"><p><span class="quote">“<span class="quote">RuntimeException: The forked VM terminated without
+              saying properly goodbye. VM crash or System.exit called
+              ?</span>”</span></p></li></ul></div><p>just temporarily overrule the maximum Java heap size setting
+          with <strong class="userinput"><code>set _JAVA_OPTIONS=-Xmx256m</code></strong>, which will
+          be notified with this message <span class="quote">“<span class="quote">Picked up _JAVA_OPTIONS:
+          -Xmx256m</span>”</span> (see also <a class="link" href="http://docs.oracle.com/javase/8/docs/platform/jvmti/jvmti.html#tooloptions">JAVA_TOOL_OPTIONS</a>).</p></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="important"><a id="build.maven.install.guide.prefer.IPv4"><span style="display:none;">trick</span></a><h2>Important</h2><p>JDK 7 brings support for IPv6 on Windows. If you attempt to
+          connect to an IPv4 address then under the covers it will use an
+          IPv4-mapped IPv6 address. This might cause an
+          <code class="code">org.apache.maven.lifecycle.LifecycleExecutionException</code>
+          with <span class="quote">“<span class="quote">Connection timed out: connect</span>”</span>. Then add <a class="link" href="programming.languages.html#prg.java.platform.resources.ipv6"><strong class="userinput"><code>-Djava.net.preferIPv4Stack=true</code></strong></a>
+          also to the <code class="envar">MAVEN_OPTS</code>.</p></div><p>Verify the installation with <code class="command">mvn -version</code> or
+        <code class="command">mvn -v</code>.</p></section><section class="section" id="build.maven.compiler.profile"><div class="titlepage"><div><div><h3 class="title"><a id="build.maven.compiler.profile" class="anchor" href="#build.maven.compiler.profile"><span class="octicon octicon-link"/></a>4.2.3. Compiler profile</h3></div></div></div><p>Configure Maven with the locations of all available java
+        compilers using a compiler profile in the Maven configuration file
+        <code class="filename">P:\dev\apps\build\apache-maven-3.3.9\conf\settings.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">  &lt;profiles&gt;
+    &lt;profile&gt;
+      &lt;id&gt;compiler&lt;/id&gt;
+      &lt;activation&gt;
+        &lt;activeByDefault&gt;true&lt;/activeByDefault&gt;
+      &lt;/activation&gt;
+      &lt;properties&gt;
+        &lt;jdk.1.3.home&gt;P:\dev\apps\prg\java\jdk1.3.1_20&lt;/jdk.1.3.home&gt;
+        &lt;jdk.1.3.jvm&gt;${jdk.1.3.home}\bin\java.exe&lt;/jdk.1.3.jvm&gt;
+        &lt;jdk.1.3.javac&gt;${jdk.1.3.home}\bin\javac.exe&lt;/jdk.1.3.javac&gt;
+        &lt;jdk.1.3.javadoc&gt;${jdk.1.3.home}\bin\javadoc.exe&lt;/jdk.1.3.javadoc&gt;
+
+        &lt;jdk.1.4.home&gt;P:\dev\apps\prg\java\jdk1.4.2_19&lt;/jdk.1.4.home&gt;
+        &lt;jdk.1.4.jvm&gt;${jdk.1.4.home}\bin\java.exe&lt;/jdk.1.4.jvm&gt;
+        &lt;jdk.1.4.javac&gt;${jdk.1.4.home}\bin\javac.exe&lt;/jdk.1.4.javac&gt;
+        &lt;jdk.1.4.javadoc&gt;${jdk.1.4.home}\bin\javadoc.exe&lt;/jdk.1.4.javadoc&gt;
+
+        &lt;jdk.1.5.home&gt;P:\dev\apps\prg\java\jdk1.5.0_22&lt;/jdk.1.5.home&gt;
+        &lt;jdk.1.5.jvm&gt;${jdk.1.5.home}\bin\java.exe&lt;/jdk.1.5.jvm&gt;
+        &lt;jdk.1.5.javac&gt;${jdk.1.5.home}\bin\javac.exe&lt;/jdk.1.5.javac&gt;
+        &lt;jdk.1.5.javadoc&gt;${jdk.1.5.home}\bin\javadoc.exe&lt;/jdk.1.5.javadoc&gt;
+
+        &lt;jdk.1.6.home&gt;P:\dev\apps\prg\java\jdk1.6.0_45&lt;/jdk.1.6.home&gt;
+        &lt;jdk.1.6.jvm&gt;${jdk.1.6.home}\bin\java.exe&lt;/jdk.1.6.jvm&gt;
+        &lt;jdk.1.6.javac&gt;${jdk.1.6.home}\bin\javac.exe&lt;/jdk.1.6.javac&gt;
+        &lt;jdk.1.6.javadoc&gt;${jdk.1.6.home}\bin\javadoc.exe&lt;/jdk.1.6.javadoc&gt;
+
+        &lt;jdk.1.7.home&gt;P:\dev\apps\prg\java-x64\jdk1.7.0_80&lt;/jdk.1.7.home&gt;
+        &lt;!--jdk.1.7.home&gt;P:\dev\apps\prg\java\jdk1.7.0_80&lt;/jdk.1.7.home--&gt;
+        &lt;jdk.1.7.jvm&gt;${jdk.1.7.home}\bin\java.exe&lt;/jdk.1.7.jvm&gt;
+        &lt;jdk.1.7.javac&gt;${jdk.1.7.home}\bin\javac.exe&lt;/jdk.1.7.javac&gt;
+        &lt;jdk.1.7.javadoc&gt;${jdk.1.7.home}\bin\javadoc.exe&lt;/jdk.1.7.javadoc&gt;
+
+        &lt;jdk.1.8.home&gt;P:\dev\apps\prg\java-x64\jdk1.8.0_74&lt;/jdk.1.8.home&gt;
+        &lt;!--jdk.1.8.home&gt;P:\dev\apps\prg\java\jdk1.8.0_74&lt;/jdk.1.8.home--&gt;
+        &lt;jdk.1.8.jvm&gt;${jdk.1.8.home}\bin\java.exe&lt;/jdk.1.8.jvm&gt;
+        &lt;jdk.1.8.javac&gt;${jdk.1.8.home}\bin\javac.exe&lt;/jdk.1.8.javac&gt;
+        &lt;jdk.1.8.javadoc&gt;${jdk.1.8.home}\bin\javadoc.exe&lt;/jdk.1.8.javadoc&gt;
+      &lt;/properties&gt;
+    &lt;/profile&gt;
+  &lt;/profiles&gt;
+</code></pre><section class="section" id="build.maven.toolchains"><div class="titlepage"><div><div><h4 class="title"><a id="build.maven.toolchains" class="anchor" href="#build.maven.toolchains"><span class="octicon octicon-link"/></a>4.2.3.1. Toolchains</h4></div></div></div><p>In our days it becomes more and more important to be able to
+          use different JDK to be used by Maven itself and which is used to
+          compile/test your production code. This concept is know under the
+          name <a class="link" href="http://maven.apache.org/guides/mini/guide-using-toolchains.html">Toolchains</a>
+          which is unfortunately not very well-known.</p><p>Also configure Maven Toolchains with the locations of all
+          available java compilers in the Maven configuration file
+          <code class="filename">P:\dev\apps\build\apache-maven-3.3.9\conf\toolchains.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;toolchains xmlns="http://maven.apache.org/TOOLCHAINS/1.1.0" 
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xsi:schemaLocation="http://maven.apache.org/TOOLCHAINS/1.1.0 http://maven.apache.org/xsd/toolchains-1.1.0.xsd"&gt;
+  &lt;toolchain&gt;
+    &lt;type&gt;jdk&lt;/type&gt;
+    &lt;provides&gt;
+      &lt;version&gt;1.3&lt;/version&gt;
+      &lt;vendor&gt;oracle&lt;/vendor&gt;
+    &lt;/provides&gt;
+    &lt;configuration&gt;
+      &lt;jdkHome&gt;P:\dev\apps\prg\java\jdk1.3.1_20&lt;/jdkHome&gt;
+    &lt;/configuration&gt;
+  &lt;/toolchain&gt;
+
+  &lt;toolchain&gt;
+    &lt;type&gt;jdk&lt;/type&gt;
+    &lt;provides&gt;
+      &lt;version&gt;1.4&lt;/version&gt;
+      &lt;vendor&gt;oracle&lt;/vendor&gt;
+    &lt;/provides&gt;
+    &lt;configuration&gt;
+      &lt;jdkHome&gt;P:\dev\apps\prg\java\jdk1.4.2_19&lt;/jdkHome&gt;
+    &lt;/configuration&gt;
+  &lt;/toolchain&gt;
+ 
+  &lt;toolchain&gt;
+    &lt;type&gt;jdk&lt;/type&gt;
+    &lt;provides&gt;
+      &lt;version&gt;1.5&lt;/version&gt;
+      &lt;vendor&gt;oracle&lt;/vendor&gt;
+    &lt;/provides&gt;
+    &lt;configuration&gt;
+      &lt;jdkHome&gt;P:\dev\apps\prg\java\jdk1.5.0_22&lt;/jdkHome&gt;
+    &lt;/configuration&gt;
+  &lt;/toolchain&gt;
+ 
+  &lt;toolchain&gt;
+    &lt;type&gt;jdk&lt;/type&gt;
+    &lt;provides&gt;
+      &lt;version&gt;1.6&lt;/version&gt;
+      &lt;vendor&gt;oracle&lt;/vendor&gt;
+    &lt;/provides&gt;
+    &lt;configuration&gt;
+      &lt;jdkHome&gt;P:\dev\apps\prg\java\jdk1.6.0_45&lt;/jdkHome&gt;
+    &lt;/configuration&gt;
+  &lt;/toolchain&gt;
+ 
+  &lt;toolchain&gt;
+    &lt;type&gt;jdk&lt;/type&gt;
+    &lt;provides&gt;
+      &lt;version&gt;1.7&lt;/version&gt;
+      &lt;vendor&gt;oracle&lt;/vendor&gt;
+    &lt;/provides&gt;
+    &lt;configuration&gt;
+      &lt;jdkHome&gt;P:\dev\apps\prg\java-x64\jdk1.7.0_80&lt;/jdkHome&gt;
+    &lt;/configuration&gt;
+  &lt;/toolchain&gt;
+ 
+  &lt;toolchain&gt;
+    &lt;type&gt;jdk&lt;/type&gt;
+    &lt;provides&gt;
+      &lt;version&gt;1.8&lt;/version&gt;
+      &lt;vendor&gt;oracle&lt;/vendor&gt;
+    &lt;/provides&gt;
+    &lt;configuration&gt;
+      &lt;jdkHome&gt;P:\dev\apps\prg\java-x64\jdk1.8.0_74&lt;/jdkHome&gt;
+    &lt;/configuration&gt;
+  &lt;/toolchain&gt; 
+&lt;/toolchains&gt;
+</code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="important"><h2>Important</h2><p>At least the folder of all specified <code class="code">jdkHome</code>
+            locations needs to exist otherwise projects that are <a class="link" href="project.html#prj.maven.java.base.pom.toolchains" title="16.1.7.6. Toolchains">configured</a> to
+            use the toolchains plugin will have build failures: <span class="quote">“<span class="quote">[ERROR]
+            Failed to execute goal
+            org.apache.maven.plugins:maven-toolchains-plugin:1.1:toolchain
+            (default) on project base-pom: Misconfigured toolchains.
+            Non-existing JDK home configuration at
+            P:\dev\apps\prg\java\jdk1.3.1_20-testing-non-existiing-folder
+            -&gt; [Help 1]</span>”</span>.</p></div></section></section><section class="section" id="build.maven.logging"><div class="titlepage"><div><div><h3 class="title"><a id="build.maven.logging" class="anchor" href="#build.maven.logging"><span class="octicon octicon-link"/></a>4.2.4. Logging</h3></div></div></div><p>Configure Maven to include the current date and time in the
+        output in the <a class="link" href="https://maven.apache.org/maven-logging.html">Maven logging
+        configuration</a> file
+        <code class="filename">P:\dev\apps\build\apache-maven-3.3.9\conf\logging\simplelogger.properties</code>:</p><pre xmlns="" class="language-provided"><code class="language-ini"> org.slf4j.simpleLogger.defaultLogLevel=info
+-org.slf4j.simpleLogger.showDateTime=false
++org.slf4j.simpleLogger.showDateTime=true
++org.slf4j.simpleLogger.dateTimeFormat=yyyyMMdd HH:mm:ss.SSS
+ org.slf4j.simpleLogger.showThreadName=false
+ org.slf4j.simpleLogger.showLogName=false
+ org.slf4j.simpleLogger.logFile=System.out
+ org.slf4j.simpleLogger.levelInBrackets=true
+ org.slf4j.simpleLogger.log.Sisu=info
+ org.slf4j.simpleLogger.warnLevelString=WARNING
+</code></pre></section><section class="section" id="build.maven.cleanup"><div class="titlepage"><div><div><h3 class="title"><a id="build.maven.cleanup" class="anchor" href="#build.maven.cleanup"><span class="octicon octicon-link"/></a>4.2.5. Repository cleanup</h3></div></div></div><p>Instead of deleting the local repository completely remove
+        (current) project artifacts with:</p><pre xmlns="" class="language-provided"><code class="language-bash">qa-sandbox&gt;mvn <a xmlns="http://www.w3.org/1999/xhtml" class="link" href="http://www.mojohaus.org/build-helper-maven-plugin/remove-project-artifact-mojo.html">build-helper:remove-project-artifact</a> -Dbuildhelper.removeAll=false
+[INFO] C:\dev\data\repo\maven\local\net\dev\freedumbytes\manual\maven\qa-sandbox\1.1-delta removed.
+
+qa-sandbox&gt;mvn build-helper:remove-project-artifact
+[INFO] C:\dev\data\repo\maven\local\net\dev\freedumbytes\manual\maven\qa-sandbox removed.
+</code></pre><p>To delete or refresh project dependencies from the local
+        repository run:</p><pre xmlns="" class="language-provided"><code class="language-bash">qa-sandbox&gt;mvn <a xmlns="http://www.w3.org/1999/xhtml" class="link" href="http://maven.apache.org/plugins/maven-dependency-plugin/purge-local-repository-mojo.html">dependency:purge-local-repository</a> [-DreResolve=false]
+</code></pre></section><section class="section" id="build.maven.password.encryption"><div class="titlepage"><div><div><h3 class="title"><a id="build.maven.password.encryption" class="anchor" href="#build.maven.password.encryption"><span class="octicon octicon-link"/></a>4.2.6. Password Encryption</h3></div></div></div><p>Maven 2.1.0+ now supports server <a class="link" href="http://maven.apache.org/guides/mini/guide-encryption.html">password
+        encryption</a>.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="warning"><h2>Warning</h2><p><a class="link" href="https://github.com/jelmerk/maven-settings-decoder">maven-settings-decoder</a>
+          lets you decrypt these passwords as long as you have access to both
+          the <code class="filename">settings.xml</code> file and the
+          <code class="filename">settings-security.xml</code> file. To use it <a class="link" href="https://github.com/downloads/jelmerk/maven-settings-decoder/settings-decoder.zip">download</a>
+          the compiled distributable or build it from source (using gradle,
+          because of irony).</p></div><p>Create an encrypted master password with <code class="command">mvn
+        --encrypt-master-password
+        <em class="replaceable"><code>password</code></em></code> and save it <a class="xref" href="build.tool.html#build.maven.master.password"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a> in the file
+        <code class="filename">%USERPROFILE%\.m2\settings-security.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+
+&lt;settingsSecurity&gt;
+  &lt;master&gt;{<em xmlns="http://www.w3.org/1999/xhtml" class="replaceable"><code>encrypted master-password</code></em>}<span xmlns="http://www.w3.org/1999/xhtml" id="build.maven.master.password"/><a xmlns="http://www.w3.org/1999/xhtml" id="build.maven.master.password"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>&lt;/master&gt;
+&lt;/settingsSecurity&gt;
+</code></pre><p>Now encrypt for example the nexus-releases server password
+        <a class="xref" href="build.tool.html#build.maven.server.password"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a> with <code class="command">mvn
+        --encrypt-password <em class="replaceable"><code>password</code></em></code> and
+        place it in the Maven configuration file
+        <code class="filename">P:\dev\apps\build\apache-maven-3.3.9\conf\settings.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">  &lt;servers&gt;
+    &lt;server&gt;
+      &lt;id&gt;nexus-releases&lt;/id&gt;
+      &lt;username&gt;deployment&lt;/username&gt;
+      &lt;password&gt;{<em xmlns="http://www.w3.org/1999/xhtml" class="replaceable"><code>encrypted password</code></em>}<span xmlns="http://www.w3.org/1999/xhtml" id="build.maven.server.password"/><a xmlns="http://www.w3.org/1999/xhtml" id="build.maven.server.password"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>&lt;/password&gt;
+    &lt;/server&gt;
+  &lt;/servers&gt;</code></pre></section></section></section><script xmlns="" type="text/javascript" src="js/highlight.min.js"> </script><script xmlns="" type="text/javascript">hljs.initHighlightingOnLoad();</script><footer><ul class="navfooter"><li class="previous"><a accesskey="p" href="programming.languages.html"><strong>Previous</strong>Chapter 3. Programming Languages</a></li><li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Front page</strong></a></li><li class="next"><a accesskey="n" href="documentation.html"><strong>Next</strong>Chapter 5. Documentation</a></li></ul></footer></body></html>

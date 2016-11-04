@@ -1,0 +1,882 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE html>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Chapter 11. Version Control System</title><link rel="stylesheet" type="text/css" href="docbook.css"/><link rel="stylesheet" type="text/css" href="css/freedumbytes.css"/><meta name="generator" content="DocBook XSL Stylesheets V1.78.1"/><link rel="prev" href="database.html" title="Chapter 10. Database"/><link rel="next" href="issue.tracker.html" title="Chapter 12. Issue Tracker"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><link rel="shortcut icon" href="./images/community/docbook/glider.ico"/></head><body><header><p id="title"/><ul class="navheader"><li class="previous"><a accesskey="p" href="database.html"><strong>Previous</strong></a></li><li class="next"><a accesskey="n" href="issue.tracker.html"><strong>Next</strong></a></li></ul></header><section class="chapter" id="version.control.system"><div class="titlepage"><div><div><h1 class="title"><a id="version.control.system" class="anchor" href="#version.control.system"><span class="octicon octicon-link"/></a>Chapter 11. Version Control System</h1></div></div></div><div class="toc"><div class="toc-title">Table of Contents</div><ul class="toc"><li><span class="section"><a href="version.control.system.html#vcs.git">11.1. Git</a></span><ul><li><span class="section"><a href="version.control.system.html#vcs.git.resources">11.1.1. Resources</a></span></li><li><span class="section"><a href="version.control.system.html#vcs.git.install.guide">11.1.2. Git installation guide</a></span></li><li><span class="section"><a href="version.control.system.html#vcs.git.test.drive">11.1.3. Test drive</a></span></li><li><span class="section"><a href="version.control.system.html#vcs.git.apache.config">11.1.4. Apache configuration</a></span></li><li><span class="section"><a href="version.control.system.html#vcs.git.bare.project">11.1.5. Defining a project</a></span></li><li><span class="section"><a href="version.control.system.html#vcs.git.clone.project">11.1.6. Working on a project</a></span></li></ul></li><li><span class="section"><a href="version.control.system.html#vcs.svn.client">11.2. Subversion (SVN) client only</a></span><ul><li><span class="section"><a href="version.control.system.html#vcs.svn.client.resources">11.2.1. Resources</a></span></li><li><span class="section"><a href="version.control.system.html#vcs.svn.client.install.guide">11.2.2. Subversion installation guide</a></span></li><li><span class="section"><a href="version.control.system.html#vcs.svn.client.ignore">11.2.3. Global ignores</a></span></li><li><span class="section"><a href="version.control.system.html#vcs.svn.client.delete.directories">11.2.4. Delete directories</a></span></li><li><span class="section"><a href="version.control.system.html#vcs.svn.client.credentials">11.2.5. Credentials</a></span></li></ul></li><li><span class="section"><a href="version.control.system.html#vcs.fisheye">11.3. FishEye</a></span><ul><li><span class="section"><a href="version.control.system.html#vcs.fisheye.resources">11.3.1. Resources</a></span></li><li><span class="section"><a href="version.control.system.html#vcs.fisheye.install.guide">11.3.2. FishEye installation guide</a></span></li><li><span class="section"><a href="version.control.system.html#vcs.fisheye.config">11.3.3. FishEye configuration</a></span></li><li><span class="section"><a href="version.control.system.html#vcs.fisheye.apache.config">11.3.4. Apache configuration</a></span></li><li><span class="section"><a href="version.control.system.html#vcs.fisheye.windows.service">11.3.5. Windows service</a></span></li><li><span class="section"><a href="version.control.system.html#vcs.fisheye.mysql">11.3.6. Database migration</a></span></li><li><span class="section"><a href="version.control.system.html#vcs.fisheye.config.repository.settings">11.3.7. Repository Settings</a></span></li><li><span class="section"><a href="version.control.system.html#vcs.fisheye.config.user.settings">11.3.8. User profile</a></span></li></ul></li></ul></div><section class="section" id="vcs.git"><div class="titlepage"><div><div><h2 class="title"><a id="vcs.git" class="anchor" href="#vcs.git"><span class="octicon octicon-link"/></a>11.1. Git</h2></div></div></div><p><span class="inlinemediaobject"><img src="images/icons/git.png"/></span> <a class="link" href="http://git-scm.com/">Git</a>
+      is a free &amp; open source, distributed version control system designed
+      to handle everything from small to very large projects with speed and
+      efficiency. Every Git clone is a full-fledged repository with complete
+      history and full revision tracking capabilities, not dependent on
+      network access or a central server. Branching and merging are fast and
+      easy to do.</p><p><span class="inlinemediaobject"><img src="images/icons/github.png"/></span> <a class="link" href="https://github.com/">GitHub</a> is a web-based hosting
+      service for software development projects that use the Git revision
+      control system.</p><section class="section" id="vcs.git.resources"><div class="titlepage"><div><div><h3 class="title"><a id="vcs.git.resources" class="anchor" href="#vcs.git.resources"><span class="octicon octicon-link"/></a>11.1.1. Resources</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><a class="link" href="https://git-for-windows.github.io/">Download</a>
+            prepackaged binaries from <a class="link" href="https://git-for-windows.github.io/">Git for
+            Windows</a>.</p></li><li class="listitem"><p>Upgrade checklist:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p>Related products: -.</p></li><li class="listitem"><p>References: -.</p></li><li class="listitem"><p>Integration configuration changes: <a class="link" href="version.control.system.html#vcs.git.apache.config.gitweb.perl" title="11.1.4.2. GitWeb Perl implementation">GitWeb - Perl
+                implementation / <code class="code">gitweb.cgi</code></a> and <a class="link" href="version.control.system.html#vcs.git.apache.config.style" title="11.1.4.4. Repository styling">GitWeb - Repository
+                styling <code class="code">git pull gitweb-theme</code></a>.</p></li><li class="listitem"><p>A few <a class="link" href="http://mislav.uniqpath.com/2010/07/git-tips/">git
+                tips you didn't know about</a>.</p></li></ul></div></li><li class="listitem"><p>The <a class="link" href="http://git-scm.com/book/">Pro Git
+            Book</a> (see for example: <a class="link" href="http://git-scm.com/book/ch6-4.html">Git Tools -
+            Rewriting History</a>).</p></li><li class="listitem"><p><a class="link" href="http://help.github.com/">github:help</a> - <a class="link" href="http://help.github.com/win-set-up-git/">Set Up
+            Git</a> for Windows and <a class="link" href="https://github.com/AlexZeitler/gitcheatsheet">gitcheatsheet</a>.</p></li></ul></div></section><section class="section" id="vcs.git.install.guide"><div class="titlepage"><div><div><h3 class="title"><a id="vcs.git.install.guide" class="anchor" href="#vcs.git.install.guide"><span class="octicon octicon-link"/></a>11.1.2. Git installation guide</h3></div></div></div><p><a class="link" href="https://git-for-windows.github.io/">Download</a> the
+        binary: <code class="filename">Git-2.5.2.2-64-bit.exe</code> [version <a class="link" href="http://git-scm.com/">2.5.2</a>].</p><p>Run this <code class="filename">.exe</code> file to
+        install Git in <code class="filename">P:\dev\apps\vcs\git</code> with the default
+        settings.</p><p id="vcs.git.home"><a id="vcs.git.home"><span style="display:none;">trick</span></a>Press <span class="keycap"><strong><span class="inlinemediaobject"><img src="images/os/windows/windows-key.gif"/></span></strong></span>+<span class="keycap"><strong>Break</strong></span> keys to open the Windows System Properties. Select
+        <span class="guisubmenu"><strong>Advanced system settings</strong></span> → <span class="guibutton"><strong>Enviro<span class="accel">n</span>ment Variables</strong></span> and <span class="guibutton"><strong>Ed<span class="accel">i</span>t</strong></span> the
+        <code class="envar">Path</code> to append <strong class="userinput"><code>%GIT_HOME%\bin;</code></strong>.
+        Also add a <span class="guibutton"><strong>Ne<span class="accel">w</span></strong></span> system variable
+        <code class="envar">GIT_HOME</code> pointing to <strong class="userinput"><code><code class="filename">P:\dev\apps\vcs\git</code></code></strong>.</p><p>Verify the installation with <code class="command">git
+        --version</code>.</p><p>Now <code class="command">mkdir P:\dev\data\repo\git</code> where the new
+        project repositories will be residing. Also <code class="command">mkdir
+        P:\dev\apps\vcs\git\tmp</code> to prevent the following message
+        <span class="quote">“<span class="quote">bash.exe: warning: could not find /tmp, please
+        create</span>”</span>.</p><section class="section" id="vcs.git.bash.home"><div class="titlepage"><div><div><h4 class="title"><a id="vcs.git.bash.home" class="anchor" href="#vcs.git.bash.home"><span class="octicon octicon-link"/></a>11.1.2.1. Git bash home directory</h4></div></div></div><p>Right-click on the shortcut for <span class="inlinemediaobject"><img src="images/icons/git.png"/></span> <span class="guilabel"><strong>Git Bash</strong></span> and change
+          <span class="guimenuitem"><strong>P<span class="accel">r</span>operties</strong></span> → <span class="guilabel"><strong><span class="accel">S</span>tart in</strong></span> from <strong class="userinput"><code>%HOMEDRIVE%%HOMEPATH%</code></strong> to
+          <strong class="userinput"><code>C:\dev\projects</code></strong> and remove
+          <code class="option">-cd</code> option from the
+          <span class="guilabel"><strong><span class="accel">T</span>arget</strong></span>.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="tip"><h2>Tip</h2><p>Auto-completion should be preconfigured during installation.
+            When typing a git command press <span class="keycap"><strong>TAB</strong></span> for
+            auto-completion when it should be obvious what the statement will
+            be. Type <span class="keycap"><strong>TAB</strong></span> twice to get the suggestions when it
+            isn't. For example <strong class="userinput"><code>git clo</code></strong> versus
+            <strong class="userinput"><code>git cl</code></strong> (with suggestions:
+            <code class="computeroutput">clean clone</code>).</p></div></section><section class="section" id="vcs.git.global"><div class="titlepage"><div><div><h4 class="title"><a id="vcs.git.global" class="anchor" href="#vcs.git.global"><span class="octicon octicon-link"/></a>11.1.2.2. Global settings</h4></div></div></div><p>Start <span class="guilabel"><strong>Git Bash</strong></span> and setup user specific
+          global settings with (see also
+          <code class="filename">C:\Users\<em class="replaceable"><code>&lt;username&gt;</code></em>\.<a class="link" href="http://git-scm.com/docs/git-config.html">gitconfig</a></code>):</p><pre xmlns="" class="language-provided"><code class="language-bash">git config --global user.name "<em xmlns="http://www.w3.org/1999/xhtml" class="replaceable"><code>Jene Jasper</code></em>"
+git config --global user.email <em xmlns="http://www.w3.org/1999/xhtml" class="replaceable"><code>jjasper@company.org</code></em>
+
+git config --global core.editor \
+    "'P:/dev/apps/editor/notepad++/notepad++.exe' \
+     -multiInst -noPlugins -nosession -notabbar"
+
+git config --global branch.<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="http://mislav.uniqpath.com/2010/07/git-tips/">autosetuprebase</a> always
+
+git config --global push.default simple
+
+git config --list
+</code></pre></section><section class="section" id="vcs.git.difftool"><div class="titlepage"><div><div><h4 class="title"><a id="vcs.git.difftool" class="anchor" href="#vcs.git.difftool"><span class="octicon octicon-link"/></a>11.1.2.3. External diff tool</h4></div></div></div><p>To be able to use <a class="link" href="operating.system.html#os.windows.merge.winmerge" title="1.1.19.2. WinMerge">WinMerge</a> as the <a class="link" href="http://www.kernel.org/pub/software/scm/git/docs/git-difftool.html">diff
+          tool</a> add the following:</p><pre xmlns="" class="language-provided"><code class="language-bash">git config --global diff.tool winmerge
+git config --global difftool.winmerge.cmd \
+    "winmerge.sh \"\$LOCAL\" \"\$BASE\" \"\$REMOTE\""
+git config --global difftool.prompt false
+</code></pre><p>Create the following wrapper
+          <code class="filename">P:\dev\apps\windows\batch\winmerge.sh</code>:</p><pre xmlns="" class="language-provided"><code class="language-bash">#!/bin/sh
+
+# Passing the following parameters to difftool:
+#  LOCAL BASE REMOTE
+
+diffPreImage=$1
+diffFileName=$2
+diffPostImage=$3
+
+NULL="/dev/null"
+
+if [ "$diffPostImage" = "$NULL" ] ; then
+    echo "removed: $diffFileName"
+elif [ "$diffPreImage" = "$NULL" ] ; then
+    echo "added: $diffFileName"
+else
+    echo "changed: $diffFileName"
+    "P:/dev/apps/editor/winmerge/WinMergeU.exe" -e -u \
+     -dl "Working copy $diffFileName" \
+     -dr "Original $diffFileName" "$diffPostImage" "$diffPreImage" 
+fi
+</code></pre></section><section class="section" id="vcs.git.mergetool"><div class="titlepage"><div><div><h4 class="title"><a id="vcs.git.mergetool" class="anchor" href="#vcs.git.mergetool"><span class="octicon octicon-link"/></a>11.1.2.4. External merge tool</h4></div></div></div><p>To be able to use <a class="link" href="operating.system.html#os.windows.merge.kdiff3" title="1.1.19.1. KDiff3">KDiff3</a> as the <a class="link" href="http://www.kernel.org/pub/software/scm/git/docs/git-mergetool.html">merge
+          tool</a> add the following:</p><pre xmlns="" class="language-provided"><code class="language-bash">git config --global merge.tool kdiff
+git config --global mergetool.kdiff.cmd \
+  '3waymerge.sh "$PWD/$LOCAL" "$PWD/$BASE" "$PWD/$REMOTE" "$PWD/$MERGED"'
+git config --global mergetool.kdiff.trustExitCode false
+git config --global mergetool.kdiff.keepBackup false
+git config --global mergetool.prompt false
+</code></pre><p>Create the following wrapper
+          <code class="filename">P:\dev\apps\windows\batch\3waymerge.sh</code>:</p><pre xmlns="" class="language-provided"><code class="language-bash">#!/bin/sh
+
+# Passing the following parameters to mergetool:
+#  LOCAL BASE REMOTE MERGED
+
+currentBranch=$1
+commonBaseMerge=$2
+toBeMerged=$3
+resultOfMerge=$4
+
+if [ -f $commonBaseMerge ]
+then
+    # KDiff3 will display eol choices (if Windows: CRLF, if Unix LF)
+    "P:/dev/apps/editor/kdiff3/kdiff3.exe" \
+    -m "$commonBaseMerge" "$currentBranch" "$toBeMerged" \
+    -o "$resultOfMerge"
+else
+    # KDiff3 however does know how to merge based on 2 files (not just 3)
+    "P:/dev/apps/editor/kdiff3/kdiff3.exe" \
+    -m "$commonBaseMerge" "$toBeMerged" \
+    -o "$resultOfMerge"
+fi
+</code></pre></section><section class="section" id="vcs.git.ignore.template"><div class="titlepage"><div><div><h4 class="title"><a id="vcs.git.ignore.template" class="anchor" href="#vcs.git.ignore.template"><span class="octicon octicon-link"/></a>11.1.2.5. Ignores template</h4></div></div></div><p>Create the following ignores template
+          <code class="filename">P:\dev\data\repo\.gitignore</code>:</p><pre xmlns="" class="language-provided"><code class="language-ini">#general
+*.bak
+*~
+*.log
+
+#compiled
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+#eclipse
+.classpath
+.project
+.settings/
+
+#maven
+target/
+
+#cvs
+CVS/
+.cvsignore
+
+#subversion
+.svn/
+</code></pre></section></section><section class="section" id="vcs.git.test.drive"><div class="titlepage"><div><div><h3 class="title"><a id="vcs.git.test.drive" class="anchor" href="#vcs.git.test.drive"><span class="octicon octicon-link"/></a>11.1.3. Test drive</h3></div></div></div><p>With above settings in place in
+        <code class="filename">C:\Users\<em class="replaceable"><code>&lt;username&gt;</code></em>\.gitconfig</code>:</p><pre xmlns="" class="language-provided"><code class="language-ini">[user]
+  name = Jene Jasper
+  email = jjasper@company.org
+[core]
+  editor = 'P:/dev/apps/editor/notepad++/notepad++.exe' …
+[branch]
+  autosetuprebase = always
+[diff]
+  tool = winmerge
+[difftool "winmerge"]
+  cmd = winmerge.sh \"$LOCAL\" \"$BASE\" \"$REMOTE\"
+[difftool]
+  prompt = false
+[merge]
+  tool = kdiff
+[mergetool "kdiff"]
+  cmd = 3waymerge.sh \"$PWD/$LOCAL\" \"$PWD/$BASE\" \"$PWD/$REMOTE\" …
+  trustExitCode = false
+  keepBackup = false
+[mergetool]
+  prompt = false
+</code></pre><p>A slightly changed example based on <span class="quote">“<span class="quote"><a class="link" href="http://www.davesquared.net/2009/02/setting-up-diff-and-merge-tools-for-git.html">Setting
+        up diff and merge tools for Git on Windows</a></span>”</span> to see
+        everything in action.</p><p>Start <span class="guilabel"><strong>Git Bash</strong></span> and create a sample project
+        <code class="filename">test-drive</code> with ignores in
+        <code class="filename">C:\dev\projects\test-drive</code> as
+        follows:</p><pre xmlns="" class="language-provided"><code class="language-bash">mkdir test-drive
+cd test-drive
+git init
+cp /p/dev/data/repo/.gitignore .
+git add .gitignore
+</code></pre><p>Create the following file
+        <code class="filename">C:\dev\projects\test-drive\hello.txt</code>:</p><pre class="screen">Hello world!
+Second line.
+Third Line.
+</pre><p>Stage <code class="filename">hello.txt</code> also and commit both files
+        with:</p><pre xmlns="" class="language-provided"><code class="language-bash">git status
+git add hello.txt
+git status
+git commit -m 'initial commit.'
+git status
+git log --pretty=oneline
+</code></pre><p>Create a new branch and check it out in one go:</p><pre xmlns="" class="language-provided"><code class="language-bash">git checkout -b hello-git
+git status
+</code></pre><p>Change the branched
+        <code class="filename">C:\dev\projects\test-drive\hello.txt</code> as
+        follows:</p><pre class="screen">Hello Git!
+Second line.
+3rd Line.</pre><p>Skip the staging command by committing the change immediately
+        and switch back to the master branch:</p><pre xmlns="" class="language-provided"><code class="language-bash">git status
+git commit -a -m 'branch commit.'
+git log --pretty=oneline
+git status
+git checkout master
+git status
+</code></pre><p>Append text to the head revision first line and change third
+        line uppercase <span class="emphasis"><em>'L'</em></span> in
+        <code class="filename">C:\dev\projects\test-drive\hello.txt</code> as
+        follows:</p><pre class="screen">Hello world! Hello indeed.
+Second line.
+Third line.</pre><p>Commit this change to the master branch and try to merge both
+        branches:</p><pre xmlns="" class="language-provided"><code class="language-bash">git status
+git commit -a -m 'head commit.'
+git status
+git merge hello-git
+git status
+git diff
+</code></pre><p>Use KDiff3 to fix the merge conflicts:</p><pre xmlns="" class="language-provided"><code class="language-bash">git mergetool</code></pre><p>For the first conflict select the content of both the file C and
+        the file B with <span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>3</strong></span> followed by <span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>2</strong></span>. Move to the next conflict with <span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>Down</strong></span> and select the content of the file B with <span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>2</strong></span>. Finally combine the first line copies of B and C in the
+        output file to look like:</p><pre class="screen">Hello Git! Hello indeed.
+Second line.
+Third line.
+</pre><p>Quit KDiff3 with <span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>Q</strong></span> and verify the resulting patch or diff using
+        WinMerge:</p><pre xmlns="" class="language-provided"><code class="language-bash">git status
+git diff --cached
+git difftool --cached
+git log --pretty=oneline
+git commit -m 'merged file.'
+<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="http://lostechies.com/joshuaflanagan/2010/09/03/use-gitk-to-understand-git/">gitk</a>
+git branch -D hello-git
+gitk
+</code></pre></section><section class="section" id="vcs.git.apache.config"><div class="titlepage"><div><div><h3 class="title"><a id="vcs.git.apache.config" class="anchor" href="#vcs.git.apache.config"><span class="octicon octicon-link"/></a>11.1.4. Apache configuration</h3></div></div></div><p><a class="link" href="http://www.kernel.org/pub/software/scm/git/docs/git-http-backend.html">Git-http-backend</a>
+        is a simple CGI program to serve the contents of a Git repository to
+        Git clients accessing the repository over http and https protocols.
+        The program supports clients fetching using both the smart HTTP
+        protocol and the backwards-compatible dumb HTTP protocol, as well as
+        clients pushing using the smart HTTP protocol.</p><p>Define a <a class="link" href="http.server.html#http.apache.config.macros" title="7.1.8. Module mod_macro configuration">macro</a>
+        to delegate the handling of all URLs whose path portions begin with
+        <code class="uri">/git-repo/</code> to use this <a class="link" href="http://progit.org/2010/03/04/smart-http.html">Smart HTTP
+        Transport</a> with the following include <a class="xref" href="version.control.system.html#http.apache.include.httpd.git.macro"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a> just after
+        <code class="filename">httpd-macro.conf</code> in
+        <code class="filename">P:\dev\apps\httpserver\apache-conf\httpd.conf</code>:</p><pre xmlns="" class="language-provided"><code class="language-apache"># Apache Macro
+Include ../apache-conf/httpd-macro.conf
+Include ../apache-conf/httpd-git-macro.conf<span xmlns="http://www.w3.org/1999/xhtml" id="http.apache.include.httpd.git.macro"/><a xmlns="http://www.w3.org/1999/xhtml" id="http.apache.include.httpd.git.macro"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>
+</code></pre><p>with the following content in
+        <code class="filename">P:\dev\apps\httpserver\apache-conf\httpd-git-macro.conf</code>:</p><pre xmlns="" class="language-provided"><code class="language-apache">&lt;IfModule mod_macro.c&gt;
+&lt;IfModule alias_module&gt;
+&lt;IfModule env_module&gt;
+  &lt;Macro GitRepos $git_uri $project_root&gt;
+    SetEnv GIT_PROJECT_ROOT $project_root
+    SetEnv GIT_HTTP_EXPORT_ALL
+
+    AliasMatch \
+      ^$git_uri/(.*/objects/[0-9a-f]{2}/[0-9a-f]{38})$ \
+      $project_root/$1
+    AliasMatch \
+      ^$git_uri/(.*/objects/pack/pack-[0-9a-f]{40}.(pack|idx))$ \
+      $project_root/$1
+
+    ScriptAliasMatch \
+      (?x)^$git_uri/(.*/(HEAD|info/refs|objects/info/[^/]+ \
+                         |git-(upload|receive)-pack))$ \
+      P:/dev/apps/vcs/git/mingw64/libexec/git-core/git-http-backend.exe/$1
+
+    &lt;Location $git_uri&gt;
+        Include ../apache-conf/httpd-freedumbytes-realm.conf
+    &lt;/Location&gt;
+  &lt;/Macro&gt;
+&lt;/IfModule&gt;
+&lt;/IfModule&gt;
+&lt;/IfModule&gt;
+</code></pre><p>Use <a class="xref" href="version.control.system.html#http.apache.use.httpd.git.macro"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a> this macro
+        in
+        <code class="filename">P:\dev\apps\httpserver\apache-conf\httpd-vhosts.conf</code>:</p><pre xmlns="" class="language-provided"><code class="language-apache">&lt;VirtualHost *:80&gt;
+   …
+
+  &lt;IfModule proxy_module&gt;
+  &lt;IfModule proxy_http_module&gt;
+     …
+
+    &lt;Proxy *&gt;
+      …
+    &lt;/Proxy&gt;
+        
+    # Git
+    Use GitRepos /git-repo P:/dev/data/repo/git<span xmlns="http://www.w3.org/1999/xhtml" id="http.apache.use.httpd.git.macro"/><a xmlns="http://www.w3.org/1999/xhtml" id="http.apache.use.httpd.git.macro"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>
+  &lt;/IfModule&gt;
+  &lt;/IfModule&gt;
+&lt;/VirtualHost&gt;</code></pre><p>Restart the Apache HTTP Server.</p><p>You may need to reboot the server for the <code class="envar">Path</code>
+        setting for <code class="envar"><a class="xref" href="version.control.system.html#vcs.git.home">GIT_HOME</a></code> to take
+        effect.</p><section class="section" id="vcs.git.apache.config.git.repo"><div class="titlepage"><div><div><h4 class="title"><a id="vcs.git.apache.config.git.repo" class="anchor" href="#vcs.git.apache.config.git.repo"><span class="octicon octicon-link"/></a>11.1.4.1. Git repository</h4></div></div></div><p>Also define in this macro to delegate the handling of all URLs
+          whose path portions begin with <code class="uri">/git-repo/</code> to the <a class="link" href="http://httpd.apache.org/docs/2.4/howto/cgi.html">CGI</a>
+          (Common Gateway Interface) of <a class="link" href="https://git.wiki.kernel.org/index.php/Gitweb">GitWeb</a>
+          <a class="xref" href="version.control.system.html#http.apache.git.web"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a> which allows browsing a Git
+          repository (or a set of Git repositories) using a web browser in the
+          above created file <code class="filename">P:\dev\apps\httpserver\apache-conf\httpd-git-macro.conf</code>:</p><pre xmlns="" class="language-provided"><code class="language-apache">&lt;IfModule mod_macro.c&gt;
+&lt;IfModule mod_cgi.c&gt;<span xmlns="http://www.w3.org/1999/xhtml" id="http.apache.git.web"/><a xmlns="http://www.w3.org/1999/xhtml" id="http.apache.git.web"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>
+&lt;IfModule alias_module&gt;
+&lt;IfModule env_module&gt;
+  &lt;Macro GitRepos $git_uri $project_root <span xmlns="http://www.w3.org/1999/xhtml" class="emphasis"><em>$gitweb_conf</em></span><span xmlns="http://www.w3.org/1999/xhtml" id="http.apache.git.web"/><a xmlns="http://www.w3.org/1999/xhtml" id="http.apache.git.web"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>&gt;
+    …
+    &lt;Location $git_uri&gt;
+      Include ../apache-conf/httpd-freedumbytes-realm.conf
+    &lt;/Location&gt;
+
+    SetEnv GITWEB_CONFIG P:/dev/data/httpserver/home/git/$gitweb_conf<span xmlns="http://www.w3.org/1999/xhtml" id="http.apache.git.web"/><a xmlns="http://www.w3.org/1999/xhtml" id="http.apache.git.web"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>
+
+    Alias $git_uri/static P:/dev/apps/vcs/git/mingw64/share/gitweb/static<span xmlns="http://www.w3.org/1999/xhtml" id="http.apache.git.web"/><a xmlns="http://www.w3.org/1999/xhtml" id="http.apache.git.web"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>
+
+    ScriptAlias $git_uri \
+                P:/dev/apps/vcs/git/mingw64/share/gitweb/gitweb.cgi<span xmlns="http://www.w3.org/1999/xhtml" id="http.apache.git.web"/><a xmlns="http://www.w3.org/1999/xhtml" id="http.apache.git.web"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>
+  &lt;/Macro&gt;
+&lt;/IfModule&gt;
+&lt;/IfModule&gt;
+&lt;/IfModule&gt;<span xmlns="http://www.w3.org/1999/xhtml" id="http.apache.git.web"/><a xmlns="http://www.w3.org/1999/xhtml" id="http.apache.git.web"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>
+&lt;/IfModule&gt;
+</code></pre><p>with the following content in
+          <code class="filename">P:\dev\data\httpserver\home\git\gitweb.conf</code>
+          (see also <a class="link" href="http://repo.or.cz/w/alt-git.git?a=blob_plain;f=gitweb/README">gitweb/README</a>):</p><pre xmlns="" class="language-provided"><code class="language-perl">$projectroot = "/p/dev/data/repo/git";
+$stylesheet = "git-repo/static/gitweb.css";
+$logo = "git-repo/static/git-logo.png";
+$favicon = "git-repo/static/git-favicon.png";
+$javascript = "git-repo/static/gitweb.js";
+$projects_list_description_width = 75
+</code></pre><p>Supply the extra parameter for
+          <em class="parameter"><code>$gitweb_conf</code></em> filename in
+          <code class="filename">P:\dev\apps\httpserver\apache-conf\httpd-vhosts.conf</code>:</p><pre xmlns="" class="language-provided"><code class="language-apache">    # Git
+    Use GitRepos /git-repo P:/dev/data/repo/git <span xmlns="http://www.w3.org/1999/xhtml" class="emphasis"><em>gitweb.conf</em></span>
+</code></pre></section><section class="section" id="vcs.git.apache.config.gitweb.perl"><div class="titlepage"><div><div><h4 class="title"><a id="vcs.git.apache.config.gitweb.perl" class="anchor" href="#vcs.git.apache.config.gitweb.perl"><span class="octicon octicon-link"/></a>11.1.4.2. GitWeb Perl implementation</h4></div></div></div><p>Because <a class="link" href="https://git.wiki.kernel.org/index.php/MSysGit:GitWeb">GitWeb</a>
+          isn't working with <a class="link" href="programming.languages.html#prg.perl" title="3.4. Perl">ActivePerl</a>
+          configure it to use the supplied Perl implementation of mysysGit in
+          <code class="filename">P:\dev\apps\vcs\git\mingw64\share\gitweb\gitweb.cgi</code>:</p><pre xmlns="" class="language-provided"><code class="language-bash">#!<span xmlns="http://www.w3.org/1999/xhtml" class="strikethrough">/usr/bin/perl</span><span xmlns="http://www.w3.org/1999/xhtml" class="emphasis"><em>P:/dev/apps/vcs/git/usr/bin/perl.exe</em></span><span xmlns="http://www.w3.org/1999/xhtml" id="http.apache.git.perl"/><a xmlns="http://www.w3.org/1999/xhtml" id="http.apache.git.perl"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>
+</code></pre><p>But this one is missing the CGI.pm module. Just copy it from
+          ActivePerl:</p><pre xmlns="" class="language-provided"><code class="language-bash">copy P:\dev\apps\prg\perl-5.22.0.2200\lib\CGI.pm ^
+     P:\dev\apps\vcs\git\mingw64\share\gitweb
+
+xcopy /E /I P:\dev\apps\prg\perl-5.22.0.2200\lib\CGI ^
+            P:\dev\apps\vcs\git\mingw64\share\gitweb\CGI
+</code></pre><p>When the Apache HTTP Server is restarted you should be able to
+          browse the Git Repository at <a class="link" href="http://freedumbytes.dev.net/git-repo">http://freedumbytes.dev.net/git-repo</a>.</p></section><section class="section" id="vcs.git.apache.config.git.repo.private"><div class="titlepage"><div><div><h4 class="title"><a id="vcs.git.apache.config.git.repo.private" class="anchor" href="#vcs.git.apache.config.git.repo.private"><span class="octicon octicon-link"/></a>11.1.4.3. Git private repository</h4></div></div></div><p>With the above macro setup, it is possible to simply add a
+          private Git repository that is only available at for example <a class="link" href="http://localhost/git-private">http://localhost/git-private</a>
+          with the following changes in
+          <code class="filename">P:\dev\apps\httpserver\apache-conf\httpd-vhosts.conf</code>:</p><pre xmlns="" class="language-provided"><code class="language-apache">&lt;VirtualHost *:80&gt;
+    …
+&lt;/VirtualHost&gt;
+
+&lt;VirtualHost 127.0.0.1:80&gt;
+  Use GitRepos /git-private P:/dev/data/repo/private/git gitweb-private.conf
+&lt;/VirtualHost&gt;
+</code></pre><p>with its own GitWeb configuration file
+          <code class="filename">P:\dev\data\httpserver\home\git\gitweb-private.conf</code>:</p><pre xmlns="" class="language-provided"><code class="language-perl">$projectroot = "/p/dev/data/repo/private/git";
+$stylesheet = "git-private/static/gitweb.css";
+$logo = "git-private/static/git-logo.png";
+$favicon = "git-private/static/git-favicon.png";
+$javascript = "git-private/static/gitweb.js";
+$projects_list_description_width = 75
+</code></pre></section><section class="section" id="vcs.git.apache.config.style"><div class="titlepage"><div><div><h4 class="title"><a id="vcs.git.apache.config.style" class="anchor" href="#vcs.git.apache.config.style"><span class="octicon octicon-link"/></a>11.1.4.4. Repository styling</h4></div></div></div><p>Style the repository with for example the <a class="link" href="http://kogakure.github.com/gitweb-theme/">gitweb-theme</a>
+          (an alternative theme for GitWeb, strongly inspired by
+          GitHub):</p><pre xmlns="" class="language-provided"><code class="language-bash">cd /d P:\dev\data\httpserver\home\git
+git clone git://github.com/kogakure/gitweb-theme
+</code></pre><p>or upgrade with:</p><pre xmlns="" class="language-provided"><code class="language-bash">cd /d P:\dev\data\httpserver\home\git\gitweb-theme
+git pull
+</code></pre><p>Configure the theme in
+          <code class="filename">P:/dev/data/httpserver/home/git/gitweb.conf</code>:</p><pre xmlns="" class="language-provided"><code class="language-perl"> …
+$stylesheet = "git-repo/<span xmlns="http://www.w3.org/1999/xhtml" class="strikethrough">static</span><span xmlns="http://www.w3.org/1999/xhtml" class="emphasis"><em>gitweb-theme</em></span>/gitweb.css";
+$logo = "git-repo/<span xmlns="http://www.w3.org/1999/xhtml" class="strikethrough">static</span><span xmlns="http://www.w3.org/1999/xhtml" class="emphasis"><em>gitweb-theme</em></span>/git-logo.png";
+$favicon = "git-repo/<span xmlns="http://www.w3.org/1999/xhtml" class="strikethrough">static</span><span xmlns="http://www.w3.org/1999/xhtml" class="emphasis"><em>gitweb-theme</em></span>/git-favicon.png";
+$javascript = "git-repo/<span xmlns="http://www.w3.org/1999/xhtml" class="strikethrough">static</span><span xmlns="http://www.w3.org/1999/xhtml" class="emphasis"><em>gitweb-theme</em></span>/gitweb.js";
+ …
+</code></pre><p>Point Apache HTTP Server to the correct location in
+          <code class="filename">P:\dev\apps\httpserver\apache-conf\httpd-git-macro.conf</code>:</p><pre xmlns="" class="language-provided"><code class="language-apache">  …
+  Alias /git-repo/static P:/dev/apps/vcs/git/share/gitweb/static
+  Alias /git-repo/gitweb-theme P:/dev/data/httpserver/home/git/gitweb-theme<span xmlns="http://www.w3.org/1999/xhtml" id="http.apache.git.web.theme"/><a xmlns="http://www.w3.org/1999/xhtml" id="http.apache.git.web.theme"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>
+</code></pre><p>When the Apache HTTP Server is restarted you should be able to
+          browse the Git Repository with a new theme at <a class="link" href="http://freedumbytes.dev.net/git-repo">http://freedumbytes.dev.net/git-repo</a>.</p></section></section><section class="section" id="vcs.git.bare.project"><div class="titlepage"><div><div><h3 class="title"><a id="vcs.git.bare.project" class="anchor" href="#vcs.git.bare.project"><span class="octicon octicon-link"/></a>11.1.5. Defining a project</h3></div></div></div><p>Create a shell script
+        <code class="filename">P:\dev\apps\windows\batch\git-create-repo.sh</code>:</p><pre xmlns="" class="language-provided"><code class="language-bash">#!/bin/bash
+
+if [ $# -lt 3  ]
+then
+  echo "Usage: git-create-repo &lt;git-repo-location&gt; &lt;project-name&gt; \"&lt;project-description&gt;\" [-jenkinsHook]."
+  exit 9
+</code></pre><pre xmlns="" class="language-provided"><code class="language-bash">else
+  git_repo="$1"
+  project_name="$2"
+  project_description="$3"
+  jenkins_hook="$4"
+
+  echo "Project request for $project_name - $project_description"
+</code></pre><pre xmlns="" class="language-provided"><code class="language-bash">  if [ -d "$git_repo" ]
+  then
+    echo "Located Git repository at $git_repo"
+  else
+    echo "Create Git repository at $git_repo"
+    mkdir $git_repo || exit 1
+  fi
+</code></pre><pre xmlns="" class="language-provided"><code class="language-bash">  if [ -d "$git_repo/$project_name" ]
+  then
+    echo "Project $project_name already exists."
+    exit 2
+</code></pre><pre xmlns="" class="language-provided"><code class="language-bash">  else
+    echo "Create project $project_name"
+    cd $git_repo
+    git init --bare $project_name
+    
+    echo "Set project description to $project_description"
+    cd $project_name
+    echo "$project_description" &gt; description
+
+    echo "Set description $project_description"
+    git config http.receivepack true
+
+    echo "Disable auto-converting CRLF line endings into LF"
+    git config core.autocrlf false
+
+    echo "Make 'git pull' on master always use <a xmlns="http://www.w3.org/1999/xhtml" class="link" href="http://stevenharman.net/blog/archive/2011/06/09/git-pull-with-automatic-rebase.aspx">rebase</a>"
+    git config branch.master.rebase true
+
+    echo "Setup rebase for every tracking branch"
+    git config branch.autosetuprebase always
+</code></pre><pre xmlns="" class="language-provided"><code class="language-bash">    if [[ "$jenkins_hook" == "-jenkinsHook" ]]
+    then
+      echo "Setup Jenkins git hook"
+      echo "#!/bin/sh" &gt; hooks/post-receive
+      echo "" &gt;&gt; hooks/post-receive
+      echo "curl http://freedumbytes.dev.net/jenkins/git/notifyCommit?url=http://freedumbytes.dev.net/git-repo/$project_name" &gt;&gt; hooks/post-receive
+    else
+      echo "DONT setup Jenkins git hook"
+    fi
+</code></pre><pre xmlns="" class="language-provided"><code class="language-bash">    tmp=${TMPDIR-/tmp}
+    tmp=$tmp/git-clone.$RANDOM.$RANDOM.$RANDOM.$$
+    echo "Create temporary clone of project $project_name in $tmp"
+    mkdir $tmp || exit 3
+    cd $tmp
+    git clone $git_repo/$project_name $tmp/$project_name
+    cd $project_name
+</code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>See <a class="link" href="http://www.linuxsecurity.com/content/view/115462/151/#mozTocId440182">Safely
+            Creating Temporary Files in Shell Scripts</a>.</p></div><pre xmlns="" class="language-provided"><code class="language-bash">    echo "Add <a xmlns="http://www.w3.org/1999/xhtml" class="link" href="version.control.system.html#vcs.git.ignore.template" title="11.1.2.5. Ignores template">.gitignore</a> to project"
+    cp P:/dev/data/repo/.gitignore $tmp/$project_name
+    git config user.name "freedumbytes.dev.net GitWeb"
+    git config user.email gitweb.noreply@<em xmlns="http://www.w3.org/1999/xhtml" class="replaceable"><code>company.org</code></em>
+    git config core.autocrlf false     (see also <a xmlns="http://www.w3.org/1999/xhtml" class="link" href="version.control.system.html#vcs.git.bare.project.autocrlf.note" title="Note">note</a> below about line endings)
+    git add .gitignore
+    git commit -am "initial commit."
+    git push origin master
+</code></pre><pre xmlns="" class="language-provided"><code class="language-bash">    echo "Cleanup temporary clone of project $project_name in $tmp"
+    cd ../..
+    rm -rf $tmp || exit 4
+  fi
+fi
+</code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><a id="vcs.git.bare.project.autocrlf.note"><span style="display:none;">trick</span></a><h2>Note</h2><p><a class="link" href="http://help.github.com/line-endings/">Line
+          endings</a>… the scourge of every Windows-based developer that
+          tries to mingle with linux- or mac-based developers. Though most
+          modern text editors can handle both newline types without issue, git
+          is not as graceful. Combined with Eclipse <a class="link" href="https://bugs.eclipse.org/bugs/show_bug.cgi?id=301775">issue
+          301775</a>: <span class="quote">“<span class="quote">EGit/JGit ignores the
+          <code class="option">core.autocrlf</code> flag which may be quite inconvenient
+          for Windows users</span>”</span> the command <code class="command">git config
+          core.autocrlf false</code> is added to the above script. The
+          article linked at the beginning of this note also supplies
+          information to fix this setting issue and how to reset your repos at
+          a later stage.</p></div><p>Create a new <a class="link" href="http://progit.org/book/ch4-2.html">bare repository</a>
+        with the following command <code class="command">git-create-repo.sh
+        P:/dev/data/repo/git <em class="replaceable"><code>dpl-manual.git</code></em>
+        "<em class="replaceable"><code>Production Development Line manual</code></em>"
+        -jenkinsHook</code>.</p><section class="section" id="vcs.git.bare.project.anonymous.hook"><div class="titlepage"><div><div><h4 class="title"><a id="vcs.git.bare.project.anonymous.hook" class="anchor" href="#vcs.git.bare.project.anonymous.hook"><span class="octicon octicon-link"/></a>11.1.5.1. Anonymous Jenkins Notify Hook</h4></div></div></div><p>To enable anonymous access from the <a class="link" href="http.server.html#http.apache.access" title="7.1.4. Apache HTTP Server access">local area network</a> <a class="xref" href="version.control.system.html#vcs.git.bare.project.anonymous.hook.local.access.only"><img src="images/community/docbook/callouts/2.png" alt="2" border="0" height="17px" width="17px" class="callout"/></a> to
+          the Jenkins hook <a class="xref" href="version.control.system.html#vcs.git.bare.project.anonymous.hook.notify.commit"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a> edit
+          <code class="filename">P:\dev\apps\httpserver\apache-conf\httpd-jenkins.conf</code>:</p><pre xmlns="" class="language-provided"><code class="language-apache">&lt;IfModule proxy_module&gt;
+&lt;IfModule proxy_ajp_module&gt;
+  AllowEncodedSlashes NoDecode
+  ProxyPass /jenkins        ajp://localhost:8069/jenkins nocanon
+  ProxyPassReverse /jenkins ajp://localhost:8069/jenkins
+
+  &lt;Location /jenkins&gt;
+    Include ../apache-conf/httpd-freedumbytes-realm.conf
+  &lt;/Location&gt;
+
+  &lt;Location /jenkins/git/notifyCommit&gt;<span xmlns="http://www.w3.org/1999/xhtml" id="vcs.git.bare.project.anonymous.hook.notify.commit"/><a xmlns="http://www.w3.org/1999/xhtml" id="vcs.git.bare.project.anonymous.hook.notify.commit"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>
+    &lt;RequireAll&gt;
+      Include ../apache-conf/httpd-lan-access.conf<span xmlns="http://www.w3.org/1999/xhtml" id="vcs.git.bare.project.anonymous.hook.local.access.only"/><a xmlns="http://www.w3.org/1999/xhtml" id="vcs.git.bare.project.anonymous.hook.local.access.only"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/2.png" alt="2" height="17px" width="17px" class="callout"/>
+    &lt;/RequireAll&gt;
+  &lt;/Location&gt;
+&lt;/IfModule&gt;
+&lt;/IfModule&gt;
+</code></pre></section></section><section class="section" id="vcs.git.clone.project"><div class="titlepage"><div><div><h3 class="title"><a id="vcs.git.clone.project" class="anchor" href="#vcs.git.clone.project"><span class="octicon octicon-link"/></a>11.1.6. Working on a project</h3></div></div></div><p>Ask Git to clone a copy of a repository with the following batch
+        file
+        <code class="filename">P:\dev\apps\windows\batch\git-clone.bat</code>:</p><pre xmlns="" class="language-provided"><code class="language-bash">@echo off
+
+if not "%2"=="" goto cloneRepo
+
+echo Usage: git-clone ^&lt;username^&gt; ^&lt;projectname^&gt;
+goto end
+
+:cloneRepo
+cd /d C:\dev\projects
+if exist \projects\%2 ren "%2" "%2.old"
+git clone http://%1@freedumbytes.dev.net/git-repo/%2
+cd %2
+git config core.autocrlf false            (see also <a xmlns="http://www.w3.org/1999/xhtml" class="link" href="version.control.system.html#vcs.git.bare.project.autocrlf.note" title="Note">note</a> about line endings)
+
+:end
+</code></pre><p>Clone the remote repository with the following command
+        <code class="command">git-clone jjasper
+        <em class="replaceable"><code>dpl-manual</code></em></code>.</p><p>Now you have a personal copy of the remote repository in a new
+        directory named <code class="filename">C:\dev\projects\<em class="replaceable"><code>dpl-manual</code></em></code>.
+        You can edit the files in your working copy and then commit and push
+        those changes back into the remote repository.</p><p>Other useful Git command options are:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><code class="command">git help &lt;command&gt;</code> for more
+              information on a specific command.</p></li><li class="listitem"><p><code class="command">git branch</code> to list, create, or delete
+              branches.</p></li><li class="listitem"><p><code class="command">git status</code> to list files changed in
+              <a class="link" href="http://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository">working
+              directory</a>.</p></li><li class="listitem"><p><code class="command">git add</code> file contents to the index aka
+              <a class="link" href="http://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository">staging
+              area</a>.</p></li><li class="listitem"><p><code class="command">git checkout</code> a branch or paths to the
+              working directory.</p></li><li class="listitem"><p><code class="command">git commit</code> record (or
+              <code class="option">--amend</code>) changes to the local repository (for
+              example <code class="command">git commit -am "use -a to skip add of modified
+              file to staging area first."</code>).</p></li><li class="listitem"><p><code class="command">git fetch</code> latest changes from origin to
+              local repository.</p></li><li class="listitem"><p><code class="command">git pull</code> latest changes from origin and
+              then merge into your current branch.</p></li><li class="listitem"><p><code class="command">git push</code> your work back up to the
+              origin.</p></li><li class="listitem"><p><code class="command">git diff</code> displays changes between
+              commits, commit and working directory, etc.</p></li><li class="listitem"><p><code class="command">git mv</code> is a convenience function for
+              renaming files.</p></li><li class="listitem"><p><code class="command">git revert</code> some existing
+              commits.</p></li><li class="listitem"><p><code class="command">git merge</code> joins two or more development
+              histories together.</p></li><li class="listitem"><p><code class="command">git rebase</code> takes all the changes that
+              were committed on one branch and replays them on another one.
+              <span class="emphasis"><em>Do not</em></span> <a class="link" href="http://git-scm.com/book/en/v2/Git-Branching-Rebasing">rebase</a>
+              commits that you have pushed to a public repository.</p></li></ul></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="tip"><h2>Tip</h2><p>Currently the design of the Git staging area only permits
+          files to be listed. If you really need a directory to exist in
+          checkouts you should create a file in it. A
+          <code class="filename">.gitignore</code> file works well for this purpose,
+          you can leave it empty or fill in the names of files you expect to
+          show up in the directory and don't want to check-in (see also <a class="link" href="https://git.wiki.kernel.org/index.php/MarkEmptyDirs">MarkEmptyDirs</a>).</p></div></section></section><section class="section" id="vcs.svn.client"><div class="titlepage"><div><div><h2 class="title"><a id="vcs.svn.client" class="anchor" href="#vcs.svn.client"><span class="octicon octicon-link"/></a>11.2. Subversion (SVN) client only</h2></div></div></div><p><span class="inlinemediaobject"><img src="images/icons/subversion.png"/></span> <a class="link" href="http://subversion.apache.org/">Subversion</a> is a
+      version control system that is a compelling replacement for CVS in the
+      open source community.</p><section class="section" id="vcs.svn.client.resources"><div class="titlepage"><div><div><h3 class="title"><a id="vcs.svn.client.resources" class="anchor" href="#vcs.svn.client.resources"><span class="octicon octicon-link"/></a>11.2.1. Resources</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><a class="link" href="http://subversion.apache.org/packages.html">Download</a>
+            prepackaged binaries.</p></li><li class="listitem"><p>Upgrade checklist:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p>Related products: -.</p></li><li class="listitem"><p>References: -.</p></li><li class="listitem"><p>Integration configuration changes: -.</p></li></ul></div></li><li class="listitem"><p>The Subversion Book: <a class="link" href="http://svnbook.red-bean.com/">Version Control with
+            Subversion</a>.</p></li><li class="listitem"><p>Subversion <a class="link" href="http://svnbook.red-bean.com/nightly/en/svn.intro.quickstart.html">Quick
+            Start</a>, <a class="link" href="http://svnbook.red-bean.com/nightly/en/svn.ref.html">Complete
+            Reference</a> and CVS to SVN <a class="link" href="http://svn.apache.org/repos/asf/subversion/trunk/doc/user/cvs-crossover-guide.html">Crossover
+            Guide</a>.</p></li><li class="listitem"><p><span class="inlinemediaobject"><img src="images/icons/svnkit.png"/></span> <a class="link" href="http://svnkit.com/">SVNKit</a> is a pure Java
+            Subversion library. You would like to use SVNKit when you need to
+            access or modify Subversion repository from your Java application,
+            be it a standalone program, plugin or web application.</p></li></ul></div></section><section class="section" id="vcs.svn.client.install.guide"><div class="titlepage"><div><div><h3 class="title"><a id="vcs.svn.client.install.guide" class="anchor" href="#vcs.svn.client.install.guide"><span class="octicon octicon-link"/></a>11.2.2. Subversion installation guide</h3></div></div></div><p><a class="link" href="http://sourceforge.net/projects/win32svn/files/">Download</a>
+        the archive (<a class="link" href="http://alagazam.net/">alternative
+        location</a>): <code class="filename">svn-win32-1.8.14-ap24.zip</code> for
+        Apache 2.4.x [version <a class="link" href="http://sourceforge.net/projects/win32svn/files/">1.8.14</a>].</p><p>Extract this <code class="filename">.zip</code> file to
+        <code class="filename">P:\dev\apps\vcs</code>.</p><p id="vcs.svn.client.home"><a id="vcs.svn.client.home"><span style="display:none;">trick</span></a>Press
+        <span class="keycap"><strong><span class="inlinemediaobject"><img src="images/os/windows/windows-key.gif"/></span></strong></span>+<span class="keycap"><strong>Break</strong></span> keys to open the Windows System Properties. Select
+        <span class="guisubmenu"><strong>Advanced system settings</strong></span> → <span class="guibutton"><strong>Enviro<span class="accel">n</span>ment Variables</strong></span> and <span class="guibutton"><strong>Ed<span class="accel">i</span>t</strong></span> the
+        <code class="envar">Path</code> to append <strong class="userinput"><code>%SVN_HOME%\bin;</code></strong>.
+        Also add a <span class="guibutton"><strong>Ne<span class="accel">w</span></strong></span> system variable
+        <code class="envar">SVN_HOME</code> pointing to <strong class="userinput"><code><code class="filename">P:\dev\apps\vcs\svn-win32-1.8.14</code></code></strong>.
+        Optionally add a <span class="guibutton"><strong>Ne<span class="accel">w</span></strong></span> system
+        variable <code class="envar">SVN_EDITOR</code> pointing to for example
+        <strong class="userinput"><code><code class="filename">P:\dev\apps\editor\ultraedit\Uedit32.exe</code></code></strong>.</p><p>Verify the installation with <code class="command">svn
+        --version</code>.</p></section><section class="section" id="vcs.svn.client.ignore"><div class="titlepage"><div><div><h3 class="title"><a id="vcs.svn.client.ignore" class="anchor" href="#vcs.svn.client.ignore"><span class="octicon octicon-link"/></a>11.2.3. Global ignores</h3></div></div></div><p>Edit the <code class="filename">%APPDATA%\subversion\config</code> file
+        to ignore Eclipse, Maven and backup files as follows:</p><pre xmlns="" class="language-provided"><code class="language-ini">### Section for configuring miscelleneous Subversion options.
+[miscellany]
+global-ignores = .classpath .project .settings target *.bak *~ *.log
+</code></pre></section><section class="section" id="vcs.svn.client.delete.directories"><div class="titlepage"><div><div><h3 class="title"><a id="vcs.svn.client.delete.directories" class="anchor" href="#vcs.svn.client.delete.directories"><span class="octicon octicon-link"/></a>11.2.4. Delete directories</h3></div></div></div><p>To immediately delete a directory with its subdirectories use
+        <code class="command">svn delete -m "Delete resources from project X."
+        http://freedumbytes.dev.net/svn-repo/project-x/trunk/src/main/resources/</code>.</p><p>This is useful when <code class="command">svn delete
+        src\main\resources</code> followed by <code class="command">svn commit -m
+        "Delete resources from project X."</code> results in <span class="quote">“<span class="quote">svn:
+        Aborting commit: 'C:\dev\projects\project-x\src\main\resources'
+        remains in conflict</span>”</span>.</p></section><section class="section" id="vcs.svn.client.credentials"><div class="titlepage"><div><div><h3 class="title"><a id="vcs.svn.client.credentials" class="anchor" href="#vcs.svn.client.credentials"><span class="octicon octicon-link"/></a>11.2.5. Credentials</h3></div></div></div><p>Sometimes users will want to remove specific credentials from
+        the disk cache. To do this, you need to navigate into the <code class="filename">%APPDATA%\Subversion\auth\svn.simple</code> area
+        and manually delete the appropriate cache file. Credentials are cached
+        in individual files; if you look inside each file, you will see keys
+        and values. The <code class="code">svn:realmstring</code> key describes the
+        particular server realm that the file is associated with, for
+        example:</p><pre xmlns="" class="language-provided"><code class="language-ini">K 8
+passtype
+ …
+K 15
+svn:realmstring
+V 61
+&lt;http://viewvc.tigris.org:80&gt; CollabNet Subversion Repository
+K 8
+username
+ …
+END
+</code></pre></section></section><section class="section" id="vcs.fisheye"><div class="titlepage"><div><div><h2 class="title"><a id="vcs.fisheye" class="anchor" href="#vcs.fisheye"><span class="octicon octicon-link"/></a>11.3. FishEye</h2></div></div></div><p><span class="inlinemediaobject"><img src="images/icons/fisheye.png"/></span> Your source code repository contains an abundance
+      of useful information that is not easy to extract, comprehend or keep up
+      to date. <a class="link" href="http://www.atlassian.com/software/fisheye/">FishEye</a>
+      painlessly opens up your repository to help you better understand your
+      changing source.</p><section class="section" id="vcs.fisheye.resources"><div class="titlepage"><div><div><h3 class="title"><a id="vcs.fisheye.resources" class="anchor" href="#vcs.fisheye.resources"><span class="octicon octicon-link"/></a>11.3.1. Resources</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><a class="link" href="https://www.atlassian.com/software/fisheye/download">Download</a>
+            FishEye Standalone and <a class="link" href="https://marketplace.atlassian.com/plugins/app/fisheye">plugins</a>.</p></li><li class="listitem"><p><a class="link" href="https://confluence.atlassian.com/display/FISHEYE/FishEye+Upgrade+Guide">Upgrade</a>
+            checklist:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p>Related products: -.</p></li><li class="listitem"><p>References: -.</p></li><li class="listitem"><p>Integration configuration changes: <a class="link" href="version.control.system.html#vcs.fisheye.apache.config" title="11.3.4. Apache configuration">FishEye - Apache
+                configuration <code class="code">Alias /fisheye/static</code></a>, <a class="link" href="version.control.system.html#vcs.fisheye.mysql" title="11.3.6. Database migration">FishEye - MySQL Connector/J
+                <code class="code">mysql-connector-java-x.y.z-bin.jar</code></a> and
+                <a class="link" href="version.control.system.html#vcs.fisheye.windows.service" title="11.3.5. Windows service">FishEye - Windows
+                service <code class="code">Fisheye-Control.bat</code> / <code class="code">wrapper
+                folder</code> /
+                <code class="code">Fisheye-Install-NTService.bat</code></a>.</p></li></ul></div></li><li class="listitem"><p>FishEye <a class="link" href="https://confluence.atlassian.com/display/FISHEYE/FishEye+Documentation+Home">Documentation
+            Home</a>, <a class="link" href="https://confluence.atlassian.com/display/FISHEYE/Getting+started">Getting
+            started</a>, <a class="link" href="https://confluence.atlassian.com/display/FISHEYE/Backing+up+and+restoring+FishEye+data">Backing
+            up and restoring FishEye data</a>, <a class="link" href="https://confluence.atlassian.com/display/FISHEYE/Running+FishEye+as+a+Windows+service">Running
+            FishEye as a Windows service</a>, <a class="link" href="https://confluence.atlassian.com/display/FISHEYE/JVM+system+properties">JVM
+            system properties</a> and <a class="link" href="https://confluence.atlassian.com/display/FISHEYE/Git+manifest">Git
+            manifest</a>..</p></li><li class="listitem"><p><a class="link" href="https://confluence.atlassian.com/display/CRUCIBLE/Migrating+to+MySQL">Migrating
+            to MySQL</a>.</p></li><li class="listitem"><p>Atlassian <a class="link" href="http://blogs.atlassian.com/blog-cat/fisheye/">Blogs</a>.</p></li></ul></div></section><section class="section" id="vcs.fisheye.install.guide"><div class="titlepage"><div><div><h3 class="title"><a id="vcs.fisheye.install.guide" class="anchor" href="#vcs.fisheye.install.guide"><span class="octicon octicon-link"/></a>11.3.2. FishEye installation guide</h3></div></div></div><p><a class="link" href="https://www.atlassian.com/software/fisheye/download">Download</a>
+        the archive: <code class="filename">fisheye-3.9.1.zip</code> [version <a class="link" href="https://www.atlassian.com/software/fisheye/download">3.9.1</a>].</p><p>Extract this <code class="filename">.zip</code> file to
+        <code class="filename">P:\dev\apps\vcs</code>.</p><p id="vcs.fisheye.home"><a id="vcs.fisheye.home"><span style="display:none;">trick</span></a>Press
+        <span class="keycap"><strong><span class="inlinemediaobject"><img src="images/os/windows/windows-key.gif"/></span></strong></span>+<span class="keycap"><strong>Break</strong></span> keys to open the Windows System Properties. Select
+        <span class="guisubmenu"><strong>Advanced system settings</strong></span> → <span class="guibutton"><strong>Enviro<span class="accel">n</span>ment Variables</strong></span> and <span class="guibutton"><strong>Ed<span class="accel">i</span>t</strong></span> the
+        <code class="envar">Path</code> to append
+        <strong class="userinput"><code>%FISHEYE_HOME%\bin;</code></strong>. Also add a
+        <span class="guibutton"><strong>Ne<span class="accel">w</span></strong></span> system variable
+        <code class="envar">FISHEYE_HOME</code> pointing to <strong class="userinput"><code><code class="filename">P:\dev\apps\vcs\fecru-3.9.1</code></code></strong>.</p><p>Verify the installation with: .</p><pre xmlns="" class="language-provided"><code class="language-bash">cd /d %FISHEYE_HOME%
+set JAVA_HOME=P:\dev\apps\prg\java-x64\jdk1.8.0_74
+fisheyectl.bat run
+</code></pre><p>Terminate the server with <span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>C</strong></span>.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="warning"><h2>Warning</h2><p>If you now notice that FishEye tries to start spontaneously in
+          its own Windows <span class="application"><strong>Command Processor</strong></span>
+          (cmd.exe) when the server is rebooted, you might have some startup
+          setting that triggers the <code class="filename">start.bat</code> file. In my
+          case it was the auto-start of the Task Manager during boot up. Just
+          delete the <code class="filename">start.bat</code>,
+          <code class="filename">stop.bat</code> and <code class="filename">run.bat</code> (or
+          rename to <code class="filename">start.bat.disable</code> for example)
+          because they redirect to <code class="filename">fisheyectl.bat</code>
+          anyway.</p></div><p>Terminate the server with <span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>C</strong></span>.</p><p id="vcs.fisheye.work"><a id="vcs.fisheye.work"><span style="display:none;">trick</span></a>For the ease
+        of future upgrades press <span class="keycap"><strong><span class="inlinemediaobject"><img src="images/os/windows/windows-key.gif"/></span></strong></span>+<span class="keycap"><strong>Break</strong></span> keys to open the Windows System Properties. Select
+        <span class="guisubmenu"><strong>Advanced system settings</strong></span> → <span class="guibutton"><strong>Enviro<span class="accel">n</span>ment Variables</strong></span> and add a <span class="guibutton"><strong>Ne<span class="accel">w</span></strong></span>
+        system variable <code class="envar">FISHEYE_INST</code> pointing to
+        <strong class="userinput"><code><code class="filename">P:\dev\data\vcs\fisheye</code></code></strong>. And
+        perform the following steps:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><code class="command">mkdir %FISHEYE_INST%</code></p></li><li class="listitem"><p><code class="command">move P:\dev\apps\vcs\fecru-3.9.1\config.xml
+            P:\dev\data\vcs\fisheye</code></p></li><li class="listitem"><p><code class="command">mkdir %FISHEYE_INST%\lib</code></p></li><li class="listitem"><p><code class="command">move P:\dev\apps\vcs\fecru-3.9.1\var
+            P:\dev\data\vcs\fisheye</code></p></li></ul></div></section><section class="section" id="vcs.fisheye.config"><div class="titlepage"><div><div><h3 class="title"><a id="vcs.fisheye.config" class="anchor" href="#vcs.fisheye.config"><span class="octicon octicon-link"/></a>11.3.3. FishEye configuration</h3></div></div></div><p>Restart FishEye again with <code class="command">fisheyectl start</code>.
+        Verify that the server is running in your browser at <a class="link" href="http://freedumbytes.dev.net:8060">http://freedumbytes.dev.net:8060</a>.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>In case of <span class="quote">“<span class="quote">java.lang.OutOfMemoryError: PermGen
+          space</span>”</span> just <code class="command">set FISHEYE_OPTS=-Xmx512m
+          -Xms128m</code> before running <code class="command">fisheyectl
+          start</code> (see also <a class="xref" href="version.control.system.html#vcs.fisheye.windows.service" title="11.3.5. Windows service">Section 11.3.5, “Windows service”</a>).</p></div><p>When you access FishEye for the first time you will be asked
+        for:</p><div class="orderedlist"><ol class="orderedlist compact" type="1"><li class="listitem"><p>To <a class="link" href="https://my.atlassian.com/"><span class="guibutton"><strong>Obtain
+            evaluation license</strong></span></a> and <span class="guibutton"><strong>Enter
+            existing license</strong></span>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Please include Crucible as part of this
+            evaluation</strong></span>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Skip</strong></span> for now <span class="guilabel"><strong>Connect to
+            JIRA</strong></span>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Create password</strong></span> and <span class="guilabel"><strong>Confirm
+            password</strong></span>.</p></li></ol></div><p>If you need to reset the administrator password, delete the <code class="sgmltag-attribute">admin-hash</code> in the <code class="sgmltag-element">config</code> element of your
+        <code class="filename">config.xml</code>.</p><p>Connect to the FishEye Admin GUI <a class="link" href="http://freedumbytes.dev.net:8060/admin/">http://freedumbytes.dev.net:8060/admin/</a>
+        and configure FishEye.</p><section class="section" id="vcs.fisheye.config.global.settings"><div class="titlepage"><div><div><h4 class="title"><a id="vcs.fisheye.config.global.settings" class="anchor" href="#vcs.fisheye.config.global.settings"><span class="octicon octicon-link"/></a>11.3.3.1. Global Settings</h4></div></div></div><p>Select <span class="guimenuitem"><strong>Global Settings</strong></span> → <span class="guilabel"><strong>Server</strong></span> → <span class="guilabel"><strong>Web Server</strong></span> → <span class="guibutton"><strong>Edit settings</strong></span>:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><span class="guilabel"><strong>Web context</strong></span>:
+                <strong class="userinput"><code>fisheye</code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong>HTTP Bind Address</strong></span>:
+                <strong class="userinput"><code>127.0.0.1:8060</code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Ajp13 Bind Address</strong></span>:
+                <strong class="userinput"><code>127.0.0.1:8061</code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Site URL</strong></span>:
+                <strong class="userinput"><code>http://freedumbytes.dev.net/fisheye/</code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Timezone </strong></span>:
+                <span class="guilabel"><strong>Europe/Amsterdam</strong></span> and click
+                <span class="guibutton"><strong>Update</strong></span>.</p></li></ul></div><p>Select <span class="guimenuitem"><strong>Global Settings</strong></span> → <span class="guilabel"><strong>Server</strong></span> → <span class="guilabel"><strong>Mail Server</strong></span> → <span class="guibutton"><strong>Edit config</strong></span>: </p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><span class="guilabel"><strong>Send mail from</strong></span>: <span class="guilabel"><strong>Server
+                Address (below)</strong></span>.</p></li><li class="listitem"><p><span class="guilabel"><strong>From Address</strong></span>:
+                <strong class="userinput"><code><em class="replaceable"><code>fisheye.noreply@company.org</code></em></code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong>SMTP Host name</strong></span>:
+                <strong class="userinput"><code>mail.freedumbytes.dev.net</code></strong> and click
+                <span class="guibutton"><strong>Save</strong></span>, followed by <span class="guilabel"><strong>Send test
+                email</strong></span>.</p></li></ul></div><p>Stop/start FishEye using <code class="command">fisheyectl</code>. Verify
+          that the server is running in your browser at <a class="link" href="http://localhost:8060/fisheye">http://localhost:8060/fisheye</a>.</p></section></section><section class="section" id="vcs.fisheye.apache.config"><div class="titlepage"><div><div><h3 class="title"><a id="vcs.fisheye.apache.config" class="anchor" href="#vcs.fisheye.apache.config"><span class="octicon octicon-link"/></a>11.3.4. Apache configuration</h3></div></div></div><p>Instruct Apache to <a class="link" href="http.server.html#http.apache.config.proxy" title="7.1.9. Proxy configuration">proxy</a> (using <a class="link" href="http.server.html#http.apache.config.mod.proxy.ajp" title="7.1.9.1.1. Module mod_proxy_ajp configuration">mod_proxy_ajp</a>) all
+        URLs whose path portions begin with <code class="uri">/fisheye/</code> using the
+        following
+        <code class="filename">P:\dev\apps\httpserver\apache-conf\httpd-vhosts.conf</code>
+        include <a class="xref" href="version.control.system.html#http.apache.include.httpd.fisheye"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a>:</p><pre xmlns="" class="language-provided"><code class="language-apache">&lt;VirtualHost *:80&gt;
+   …
+
+  &lt;IfModule proxy_module&gt;
+  &lt;IfModule proxy_http_module&gt;
+     …
+
+    &lt;Proxy *&gt;
+      …
+    &lt;/Proxy&gt;
+
+    # FishEye
+    Include ../apache-conf/httpd-fisheye.conf<span xmlns="http://www.w3.org/1999/xhtml" id="http.apache.include.httpd.fisheye"/><a xmlns="http://www.w3.org/1999/xhtml" id="http.apache.include.httpd.fisheye"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>
+  &lt;/IfModule&gt;
+  &lt;/IfModule&gt;
+&lt;/VirtualHost&gt;
+</code></pre><p>with the following content in
+        <code class="filename">P:\dev\apps\httpserver\apache-conf\httpd-fisheye.conf</code>:</p><pre xmlns="" class="language-provided"><code class="language-apache">&lt;IfModule proxy_module&gt;
+&lt;IfModule proxy_ajp_module&gt;
+  ProxyPass /fisheye        ajp://localhost:8061/fisheye
+  ProxyPassReverse /fisheye ajp://localhost:8061/fisheye
+
+#  ProxyPass /fisheye        http://localhost:8060/fisheye
+#  ProxyPassReverse /fisheye http://localhost:8060/fisheye
+
+#  &lt;IfModule mod_jk.c&gt;
+#    JkMount /fisheye   fisheye
+#    JkMount /fisheye/* fisheye
+#  &lt;/IfModule&gt;
+
+  Alias /fisheye/static       "P:\dev\apps\vcs\fecru-3.9.1\content\static"
+
+  ProxyPass /fisheye/static/  !
+
+  &lt;Location /fisheye&gt;
+    Include ../apache-conf/httpd-freedumbytes-realm.conf
+  &lt;/Location&gt;
+&lt;/IfModule&gt;
+&lt;/IfModule&gt;
+</code></pre><p>When the Apache HTTP Server is restarted you should be able to
+        browse FishEye at <a class="link" href="http://freedumbytes.dev.net/fisheye">http://freedumbytes.dev.net/fisheye</a>.</p><section class="section" id="vcs.fisheye.privacy.policy"><div class="titlepage"><div><div><h4 class="title"><a id="vcs.fisheye.privacy.policy" class="anchor" href="#vcs.fisheye.privacy.policy"><span class="octicon octicon-link"/></a>11.3.4.1. Privacy Policy</h4></div></div></div><p>Next configure if <a class="link" href="http://freedumbytes.dev.net/fisheye/plugins/servlet/analytics/configuration">Analytics</a>
+          collects data about the usage of FishEye and sends it to Atlassian
+          (see the <a class="link" href="https://www.atlassian.com/legal/privacy-policy">privacy
+          policy</a> for details).</p></section><section class="section" id="vcs.fisheye.apache.config.ajp"><div class="titlepage"><div><div><h4 class="title"><a id="vcs.fisheye.apache.config.ajp" class="anchor" href="#vcs.fisheye.apache.config.ajp"><span class="octicon octicon-link"/></a>11.3.4.2. Security</h4></div></div></div><p>Next configure at the FishEye Admin GUI <a class="link" href="http://freedumbytes.dev.net/fisheye/admin/">http://freedumbytes.dev.net/fisheye/admin/</a>
+          the <span class="guilabel"><strong>Security Settings</strong></span> → <span class="guilabel"><strong>Authentication</strong></span>:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p>For <span class="guilabel"><strong>Global Permissions</strong></span>:
+                <span class="guilabel"><strong>Global Anonymous Access</strong></span> and
+                <span class="guilabel"><strong>Crucible Anonymous Access</strong></span> select
+                <span class="guilabel"><strong>Turn Off</strong></span>.</p></li><li class="listitem"><p>For <span class="guilabel"><strong>Built-in</strong></span>: <span class="guilabel"><strong>Public
+                Signup</strong></span> select <span class="guilabel"><strong>Turn Off</strong></span>.</p></li><li class="listitem"><p>For <span class="guilabel"><strong>User List Visibility</strong></span> and
+                <span class="guilabel"><strong>Email Visibility</strong></span>: select
+                <span class="guilabel"><strong>Visible to logged in users only</strong></span>.</p></li><li class="listitem"><p>For <span class="guilabel"><strong>Authentication settings</strong></span> click
+                <span class="guibutton"><strong>Setup AJP13
+                authentication</strong></span>:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><span class="guilabel"><strong>Cache TTL (positive)</strong></span>:
+                      <strong class="userinput"><code>5 mins</code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Auto-add</strong></span>: <code class="option">Create a
+                      FishEye user on successful login</code> and
+                      <span class="guibutton"><strong>Apply</strong></span> those settings.</p></li></ul></div></li></ul></div><p>Also configure the <span class="guilabel"><strong>Repository Settings</strong></span> → <span class="guilabel"><strong>Defaults</strong></span>:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p>For <span class="guilabel"><strong>Permissions</strong></span>:
+                <span class="guilabel"><strong>Anonymous</strong></span> uncheck <span class="guilabel"><strong>Can
+                Read</strong></span>, <span class="guilabel"><strong>All logged-in users</strong></span>
+                check <span class="guilabel"><strong>Can Read</strong></span> and <span class="guibutton"><strong>Save
+                changes</strong></span>.</p></li></ul></div><p>Stop/start FishEye using
+          <code class="command">fisheyectl</code>. When the Apache HTTP Server is
+          restarted you should be able to browse FishEye with your
+          freedumbytes.dev.net realm username and password.</p><p>Once the user, who is also the FishEye administrator, has
+          logged in select <span class="guilabel"><strong>Security Settings</strong></span> → <span class="guilabel"><strong>Administrators</strong></span> and place yourself in the <span class="guilabel"><strong>Admin
+          Users</strong></span>. This way you no longer need to enter the
+          Administration Password.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="tip"><a id="vcs.fisheye.http.bind.tip"><span style="display:none;">trick</span></a><h2>Tip</h2><p>The <span class="guilabel"><strong>HTTP Bind Address</strong></span>
+            <strong class="userinput"><code>127.0.0.1:8060</code></strong> could be removed now that
+            the AJP authentication is setup and running. In case of problems
+            with the AJP Bind Address you will be able to reset the HTTP Bind
+            Address by reinserting it <a class="xref" href="version.control.system.html#vcs.fisheye.http.bind"><img style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/></a>
+            in the <code class="filename">config.xml</code> as follows:</p><pre class="language-provided"><code class="language-xml">&lt;web-server context="fisheye" 
+            site-url="http://freedumbytes.dev.net/fisheye/"&gt;
+  &lt;http bind="127.0.0.1:8060"/&gt;<span id="vcs.fisheye.http.bind"/><a id="vcs.fisheye.http.bind"><span style="display:none;">trick</span></a><img style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>
+  &lt;ajp13 bind="127.0.0.1:8061"/&gt;
+&lt;/web-server&gt;</code></pre></div></section></section><section class="section" id="vcs.fisheye.windows.service"><div class="titlepage"><div><div><h3 class="title"><a id="vcs.fisheye.windows.service" class="anchor" href="#vcs.fisheye.windows.service"><span class="octicon octicon-link"/></a>11.3.5. Windows service</h3></div></div></div><p>To restart automatically on Microsoft Windows, <a class="link" href="https://confluence.atlassian.com/display/FISHEYE/Running+FishEye+as+a+Windows+service">create
+        a Windows service</a>.</p><p><a class="link" href="https://confluence.atlassian.com/download/attachments/298976961/wrapper.zip?version=4&amp;modificationDate=1397721492229&amp;api=v2">Download</a>
+        the <span class="application"><strong><a class="link" href="http://wrapper.tanukisoftware.org/doc/english/introduction.html">Tanuki
+        Java Service Wrapper</a></strong></span> archive:
+        <code class="filename">wrapper.zip</code>.</p><p>Extract this <code class="filename">.zip</code> file to
+        <code class="filename">P:\dev\apps\vcs\fecru-3.9.1</code>.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>In case of an upgrade just copy the one extracted in the prior
+          FishEye version:</p><pre class="language-provided"><code class="language-bash">copy P:\dev\apps\vcs\fecru-3.7.0\Fisheye-Control.* ^
+     P:\dev\apps\vcs\fecru-3.9.1
+xcopy /E /I P:\dev\apps\vcs\fecru-3.7.0\wrapper ^
+      P:\dev\apps\vcs\fecru-3.9.1\wrapper</code></pre></div><p>Optionally comment out the jmx entries <a class="xref" href="version.control.system.html#vcs.fisheye.jmx"><img src="images/community/docbook/callouts/2.png" alt="2" border="0" height="17px" width="17px" class="callout"/></a> and edit the following entries <a class="xref" href="version.control.system.html#vcs.fisheye.java.command"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a>-<a class="xref" href="version.control.system.html#vcs.fisheye.description"><img src="images/community/docbook/callouts/12.png" alt="12" border="0" height="17px" width="17px" class="callout"/></a> in the service wrapper
+        configuration file
+        <code class="filename">P:\dev\apps\vcs\fecru-3.9.1\wrapper\conf\wrapper.conf</code>:</p><pre xmlns="" class="language-provided"><code class="language-ini"> …
+
+# Java Application
+wrapper.java.command=P:\dev\apps\prg\java-x64\jdk1.8.0_74\bin\java<span xmlns="http://www.w3.org/1999/xhtml" id="vcs.fisheye.java.command"/><a xmlns="http://www.w3.org/1999/xhtml" id="vcs.fisheye.java.command"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>
+
+ …
+
+# Java Additional Parameters
+<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="http://wrapper.tanukisoftware.org/doc/english/prop-java-additional-n.html">wrapper.java.additional</a>.1=-server
+wrapper.java.additional.2=-showversion
+wrapper.java.additional.3=-Djava.awt.headless=true
+
+# JDK 1.5 Additional Parameters for jmx
+#<span xmlns="http://www.w3.org/1999/xhtml" id="vcs.fisheye.jmx"/><a xmlns="http://www.w3.org/1999/xhtml" id="vcs.fisheye.jmx"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/2.png" alt="2" height="17px" width="17px" class="callout"/>wrapper.java.additional.4=-Dcom.sun.management.jmxremote
+#<span xmlns="http://www.w3.org/1999/xhtml" id="vcs.fisheye.jmx"/><a xmlns="http://www.w3.org/1999/xhtml" id="vcs.fisheye.jmx"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/2.png" alt="2" height="17px" width="17px" class="callout"/>wrapper.java.additional.5=-Dcom.sun.management.jmxremote.port=4242
+#<span xmlns="http://www.w3.org/1999/xhtml" id="vcs.fisheye.jmx"/><a xmlns="http://www.w3.org/1999/xhtml" id="vcs.fisheye.jmx"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/2.png" alt="2" height="17px" width="17px" class="callout"/>wrapper.java.additional.6=-Dcom.sun.management.jmxremote.authenticate=false
+#<span xmlns="http://www.w3.org/1999/xhtml" id="vcs.fisheye.jmx"/><a xmlns="http://www.w3.org/1999/xhtml" id="vcs.fisheye.jmx"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/2.png" alt="2" height="17px" width="17px" class="callout"/>wrapper.java.additional.7=-Dcom.sun.management.jmxremote.ssl=false
+#<span xmlns="http://www.w3.org/1999/xhtml" id="vcs.fisheye.jmx"/><a xmlns="http://www.w3.org/1999/xhtml" id="vcs.fisheye.jmx"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/2.png" alt="2" height="17px" width="17px" class="callout"/>wrapper.java.additional.8=-Dcom.sun.management.jmxremote.password.file=./wrapper/jmxremote.password
+#<span xmlns="http://www.w3.org/1999/xhtml" id="vcs.fisheye.jmx"/><a xmlns="http://www.w3.org/1999/xhtml" id="vcs.fisheye.jmx"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/2.png" alt="2" height="17px" width="17px" class="callout"/>wrapper.java.additional.9=-Dwrapper.mbean.name="wrapper:type=Java Service Wrapper Control"
+
+wrapper.java.additional.<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="http://wrapper.tanukisoftware.org/doc/english/prop-java-additional-n.html"><span class="strikethrough">10</span></a>4=-Dfile.encoding=UTF-8<span xmlns="http://www.w3.org/1999/xhtml" id="vcs.fisheye.java.additional.encoding"/><a xmlns="http://www.w3.org/1999/xhtml" id="vcs.fisheye.java.additional.encoding"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/3.png" alt="3" height="17px" width="17px" class="callout"/>
+wrapper.java.additional.5=-Dfisheye.inst=%FISHEYE_INST%<span xmlns="http://www.w3.org/1999/xhtml" id="vcs.fisheye.java.additional.inst"/><a xmlns="http://www.w3.org/1999/xhtml" id="vcs.fisheye.java.additional.inst"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/4.png" alt="4" height="17px" width="17px" class="callout"/>
+#wrapper.java.additional.6=-Xrs<span xmlns="http://www.w3.org/1999/xhtml" id="vcs.fisheye.java.additional.xrs"/><a xmlns="http://www.w3.org/1999/xhtml" id="vcs.fisheye.java.additional.xrs"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/5.png" alt="5" height="17px" width="17px" class="callout"/> see also <a xmlns="http://www.w3.org/1999/xhtml" class="xref" href="programming.languages.html#prg.java.platform.reference" title="3.1.3.1. Standard Edition Tools Reference">Section 3.1.3.1, “Standard Edition Tools Reference”</a>
+
+# Initial Java Heap Size (in MB)
+wrapper.java.initmemory=256<span xmlns="http://www.w3.org/1999/xhtml" id="vcs.fisheye.java.additional.ms"/><a xmlns="http://www.w3.org/1999/xhtml" id="vcs.fisheye.java.additional.ms"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/6.png" alt="6" height="17px" width="17px" class="callout"/>
+
+# Maximum Java Heap Size (in MB)
+wrapper.java.maxmemory=1024<span xmlns="http://www.w3.org/1999/xhtml" id="vcs.fisheye.java.additional.mx"/><a xmlns="http://www.w3.org/1999/xhtml" id="vcs.fisheye.java.additional.mx"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/7.png" alt="7" height="17px" width="17px" class="callout"/>
+
+ …
+
+# Log file to use for wrapper output logging.
+wrapper.logfile==<span xmlns="http://www.w3.org/1999/xhtml" class="strikethrough">var/log/wrapper.log</span>%FISHEYE_INST%/var/log/wrapper.log<span xmlns="http://www.w3.org/1999/xhtml" id="vcs.fisheye.logfile"/><a xmlns="http://www.w3.org/1999/xhtml" id="vcs.fisheye.logfile"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/8.png" alt="8" height="17px" width="17px" class="callout"/>
+
+ …
+
+#********************************************************************
+# Wrapper Windows Properties
+#********************************************************************
+# Title to use when running as a console
+wrapper.console.title=<span xmlns="http://www.w3.org/1999/xhtml" class="strikethrough">Fisheye</span>freedumbytes.dev.net FishEye<span xmlns="http://www.w3.org/1999/xhtml" id="vcs.fisheye.console.title"/><a xmlns="http://www.w3.org/1999/xhtml" id="vcs.fisheye.console.title"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/9.png" alt="9" height="17px" width="17px" class="callout"/>
+
+#********************************************************************
+# Wrapper Windows NT/2000/XP Service Properties
+#********************************************************************
+# WARNING - Do not modify any of these properties when an application
+#  using this configuration file has been installed as a service.
+#  Please uninstall the service before modifying this section.  The
+#  service can then be reinstalled.
+
+# Name of the service
+wrapper.ntservice.name=<span xmlns="http://www.w3.org/1999/xhtml" class="strikethrough">Fisheye</span>fisheye<span xmlns="http://www.w3.org/1999/xhtml" id="vcs.fisheye.service.name"/><a xmlns="http://www.w3.org/1999/xhtml" id="vcs.fisheye.service.name"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/10.png" alt="10" height="17px" width="17px" class="callout"/>
+wrapper.ping.timeout=300                       (see also <a xmlns="http://www.w3.org/1999/xhtml" class="link" href="http://confluence.atlassian.com/pages/viewpage.action?pageId=186712400">Error "JVM appears hung" in wrapper.log</a>)
+
+# Display name of the service
+wrapper.ntservice.displayname=freedumbytes.dev.net FishEye<span xmlns="http://www.w3.org/1999/xhtml" id="vcs.fisheye.display.name"/><a xmlns="http://www.w3.org/1999/xhtml" id="vcs.fisheye.display.name"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/11.png" alt="11" height="17px" width="17px" class="callout"/>
+
+# Description of the service
+wrapper.ntservice.description=FishEye gives Git, Subversion and CVS a Web interface.<span xmlns="http://www.w3.org/1999/xhtml" id="vcs.fisheye.description"/><a xmlns="http://www.w3.org/1999/xhtml" id="vcs.fisheye.description"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/12.png" alt="12" height="17px" width="17px" class="callout"/>
+</code></pre><p>Register the FishEye service from folder <code class="command">cd /d
+        %FISHEYE_HOME%</code> in <a class="link" href="operating.system.html#os.windows.cmd.elevated" title="1.1.13.1. Elevated Command Prompt">an
+        elevated command prompt</a>:
+        <code class="command">wrapper\bin\Fisheye-Install-NTService.bat</code>. Start
+        FishEye with <code class="command">net start fisheye</code>.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>In case of an upgrade <code class="command">sc delete fisheye</code>
+          first (see also <a class="xref" href="operating.system.html#os.windows.process.explorer" title="1.1.5. Task Manager replacement">Section 1.1.5, “Task Manager replacement”</a> in
+          case of <span class="quote">“<span class="quote">The specified service has been marked for
+          deletion.</span>”</span>).</p></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="important"><h2>Important</h2><p>In case of a new jdk installation use <a class="link" href="operating.system.html#os.windows.cmd.elevated" title="1.1.13.1. Elevated Command Prompt">an elevated command prompt</a>
+          just run <code class="command">net stop fisheye</code> and <code class="command">net start
+          fisheye</code>. Verify the upgrade at <a class="link" href="http://freedumbytes.dev.net/fisheye/admin/sysinfo.do">http://freedumbytes.dev.net/fisheye/admin/sysinfo.do</a>.</p></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>Should the following error <span class="quote">“<span class="quote">Error: no `server' JVM at
+            `P:\dev\apps\prg\java\jre…\bin\server\jvm.dll'</span>”</span> occur check
+            for stray java.exe files (see tip and warning in <a class="xref" href="programming.languages.html#prg.java.platform.install.guide" title="3.1.2. JDK installation guide">Section 3.1.2, “JDK installation guide”</a>)</p></div><section class="section" id="vcs.fisheye.windows.user"><div class="titlepage"><div><div><h4 class="title"><a id="vcs.fisheye.windows.user" class="anchor" href="#vcs.fisheye.windows.user"><span class="octicon octicon-link"/></a>11.3.5.1. Log On Windows user</h4></div></div></div><p>For the same reason as <a class="xref" href="web.server.html#web.tomcat.windows.user" title="8.1.3.1. Log On Windows user">Section 8.1.3.1, “Log On Windows user”</a> launch the <span class="application"><strong>Service
+          Management Console</strong></span> with
+          <code class="command">services.msc</code>. Right click on
+          <span class="guilabel"><strong>freedumbytes.dev.net FishEye</strong></span> and select
+          <span class="guimenuitem"><strong>P<span class="accel">r</span>operties</strong></span> → <span class="guilabel"><strong>Log On</strong></span> to use <span class="guilabel"><strong><span class="accel">T</span>his
+          account</strong></span> <strong class="userinput"><code>.\Tomcat</code></strong>. After password
+          conformation click <span class="guibutton"><strong><span class="accel">A</span>pply</strong></span> and
+          restart the service.</p></section></section><section class="section" id="vcs.fisheye.mysql"><div class="titlepage"><div><div><h3 class="title"><a id="vcs.fisheye.mysql" class="anchor" href="#vcs.fisheye.mysql"><span class="octicon octicon-link"/></a>11.3.6. Database migration</h3></div></div></div><p>For migration from the default embedded FishEye <a class="link" href="http://hsqldb.org/">HSQLDB</a> database to an external
+        database create a MySQL user called fishseye-user and database called
+        fisheye with the following commands:</p><pre xmlns="" class="language-provided"><code class="language-sql">mysql -u root -p
+mysql&gt; create database fisheye character set utf8 collate utf8_bin;
+mysql&gt; grant all privileges on fisheye.*
+    -&gt;  to 'fisheye-user'@'localhost' identified by '<em xmlns="http://www.w3.org/1999/xhtml" class="replaceable"><code>password</code></em>';
+mysql&gt; flush privileges;
+mysql&gt; select host,user from mysql.user;
+mysql&gt; select host,db,user from mysql.db;
+mysql&gt; quit
+</code></pre><p><a class="link" href="https://dev.mysql.com/downloads/connector/j/">Download</a>
+        the <a class="link" href="database.html#db.mysql.jdbc.driver">Connector/J</a> [version
+        <a class="link" href="https://dev.mysql.com/downloads/connector/j/">5.1.36</a>]
+        and add the driver
+        <code class="filename">mysql-connector-java-5.1.36-bin.jar</code> from the
+        archive <code class="filename">mysql-connector-java-5.1.36.zip</code> to the
+        FishEye classpath placing it into <code class="filename">P:\dev\data\vcs\fisheye\lib</code>. For older
+        versions of FishEye remove the one that is already in <code class="filename">P:\dev\apps\vcs\fecru-3.9.1\lib\dbdrivers\mysql</code>.
+        Requires a restart of FishEye to locate this new jar.</p><p>Connect to the FishEye Admin GUI <a class="link" href="http://freedumbytes.dev.net/fisheye/admin/">http://freedumbytes.dev.net/fisheye/admin/</a>
+        and configure MySQL database.</p><p>Select <span class="guimenuitem"><strong>Systems Settings</strong></span> → <span class="guilabel"><strong>Database</strong></span> → <span class="guibutton"><strong>Edit</strong></span>:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><span class="guilabel"><strong>Test Connection</strong></span> of
+              <span class="guilabel"><strong>Built-In</strong></span> hsqldb.</p></li><li class="listitem"><p><span class="guilabel"><strong>Type</strong></span>:
+              <span class="guilabel"><strong>MySQL</strong></span>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Driver Location</strong></span>: <span class="guilabel"><strong>User
+              Supplied - FISHEYE_INST\lib</strong></span>.</p></li><li class="listitem"><p><span class="guilabel"><strong>URL</strong></span>:
+              <strong class="userinput"><code>jdbc:mysql://localhost/fisheye</code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong>User Name</strong></span>:
+              <strong class="userinput"><code>fisheye-user</code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Password</strong></span>:
+              <strong class="userinput"><code><em class="replaceable"><code>password</code></em></code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Minimum Pool Connections</strong></span>:
+              <strong class="userinput"><code>5</code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Maximum Pool Connections</strong></span>:
+              <strong class="userinput"><code>20</code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Parameters</strong></span>:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><strong class="userinput"><code>useUnicode=true</code></strong></p></li><li class="listitem"><p><strong class="userinput"><code>characterEncoding=UTF8</code></strong></p></li><li class="listitem"><p><strong class="userinput"><code>connectionCollation=UTF8_bin</code></strong></p></li></ul></div></li><li class="listitem"><p><span class="guilabel"><strong>Test Connection</strong></span> and click
+              <span class="guibutton"><strong>Save &amp; Migrate</strong></span>.</p></li></ul></div></section><section class="section" id="vcs.fisheye.config.repository.settings"><div class="titlepage"><div><div><h3 class="title"><a id="vcs.fisheye.config.repository.settings" class="anchor" href="#vcs.fisheye.config.repository.settings"><span class="octicon octicon-link"/></a>11.3.7. Repository Settings</h3></div></div></div><p>Connect to the FishEye Admin GUI <a class="link" href="http://freedumbytes.dev.net/fisheye/admin/">http://freedumbytes.dev.net/fisheye/admin/</a>
+        and configure <span class="guilabel"><strong>Repository Settings</strong></span>.</p><p>Select <span class="guimenuitem"><strong>Repositories</strong></span> → <span class="guimenuitem"><strong>Native Repository Access</strong></span> → <span class="guibutton"><strong>Add Existing…</strong></span> with: </p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><span class="guilabel"><strong>Repository type</strong></span>:
+              <span class="guilabel"><strong>Git</strong></span>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Name</strong></span>:
+              <strong class="userinput"><code>dpl-manual</code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Description</strong></span>: <strong class="userinput"><code>Production
+              Development Line manual.</code></strong> and click
+              <span class="guibutton"><strong>Next</strong></span>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Repository Location</strong></span>:
+              <strong class="userinput"><code>http://fisheye@freedumbytes.dev.net/git-repo/dpl-manual.git</code></strong>
+              (see also <a class="xref" href="http.server.html#http.apache.access.config" title="7.1.4.1. Authentication, authorization and access control">Section 7.1.4.1, “Authentication, authorization and access control”</a>).</p></li><li class="listitem"><p><span class="guilabel"><strong>Authentication Style</strong></span>:
+              <span class="guilabel"><strong>Password for http(s)</strong></span>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Password</strong></span>:
+              <em class="replaceable"><code>password</code></em> and click <span class="guibutton"><strong>Show
+              advanced settings</strong></span>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Rename Detection</strong></span>:
+              <span class="guilabel"><strong>copies</strong></span> and click
+              <span class="guibutton"><strong>Next</strong></span>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Store Diff Info</strong></span>: enabled.</p></li><li class="listitem"><p><span class="guilabel"><strong>Enable Repository After
+              Adding</strong></span>:disabled, click <span class="guibutton"><strong>Test
+              Connection</strong></span> and <span class="guibutton"><strong>Add</strong></span> this
+              repository when <code class="computeroutput">Connection
+              succeeded</code>.</p></li></ul></div><p>Select <span class="guimenuitem"><strong>Repositories</strong></span> → <span class="guimenuitem"><strong>Native Repository Access</strong></span> → <span class="guibutton"><strong>Add Existing…</strong></span> with: </p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><span class="guilabel"><strong>Repository type</strong></span>:
+              <span class="guilabel"><strong>Subversion</strong></span>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Name</strong></span>:
+              <strong class="userinput"><code>svn</code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Description</strong></span>: <strong class="userinput"><code>Subversion
+              Repository.</code></strong> and click
+              <span class="guibutton"><strong>Next</strong></span>.</p></li><li class="listitem"><p><span class="guilabel"><strong>SVN URL</strong></span>:
+              <strong class="userinput"><code>http://localhost/svn-repo</code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Username</strong></span>:
+              <strong class="userinput"><code>fisheye</code></strong> (see also <a class="xref" href="http.server.html#http.apache.access.config" title="7.1.4.1. Authentication, authorization and access control">Section 7.1.4.1, “Authentication, authorization and access control”</a>).</p></li><li class="listitem"><p><span class="guilabel"><strong>Password</strong></span>:
+              <em class="replaceable"><code>password</code></em> and click <span class="guibutton"><strong>Show
+              advanced settings</strong></span>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Charset</strong></span>: <span class="guilabel"><strong>default
+              (UTF-8)</strong></span>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Initial Import</strong></span>: <span class="guilabel"><strong>Do not
+              Import</strong></span>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Use Built-in Symbolic Rules</strong></span>:
+              enabled.</p></li><li class="listitem"><p><span class="guilabel"><strong>And then Apply the Following Rules</strong></span>:
+              <code class="option">/project/trunk/…, /project/branches/NAME/…,
+              /project/tags/NAME/…</code> and click
+              <span class="guibutton"><strong>Next</strong></span>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Store Diff Info</strong></span>: enabled.</p></li><li class="listitem"><p><span class="guilabel"><strong>Enable Repository After
+              Adding</strong></span>:disabled, click <span class="guibutton"><strong>Test
+              Connection</strong></span> and <span class="guibutton"><strong>Add</strong></span> this
+              repository when <code class="computeroutput">Connection
+              succeeded</code>.</p></li></ul></div><p>To activate a repository select for example <span class="guimenuitem"><strong>Repositories</strong></span> → <span class="guibutton"><strong>dpl-manual</strong></span> → <span class="guibutton"><strong>Summary</strong></span> and <span class="guimenuitem"><strong>Actions</strong></span> → <span class="guibutton"><strong>Enable</strong></span> → <span class="guibutton"><strong>Start</strong></span> → <span class="guibutton"><strong>Save</strong></span>.</p></section><section class="section" id="vcs.fisheye.config.user.settings"><div class="titlepage"><div><div><h3 class="title"><a id="vcs.fisheye.config.user.settings" class="anchor" href="#vcs.fisheye.config.user.settings"><span class="octicon octicon-link"/></a>11.3.8. User profile</h3></div></div></div><p>On the <span class="guilabel"><strong>Dashboard</strong></span> page click on the
+        logged-in user <span class="inlinemediaobject"><img src="images/icons/fisheye-user.png"/></span> at the top right of the menu bar and select
+        <span class="guimenuitem"><strong><a class="link" href="https://confluence.atlassian.com/display/FISHEYE/Changing+your+user+profile">Settings</a></strong></span>
+        to edit for example:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><span class="guilabel"><strong>Display Settings</strong></span>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Profile &amp; Email</strong></span>.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="important"><h2>Important</h2><p>The repository types CVS and Subversion map commits based
+              on the username. To match Git commits select <span class="guimenuitem"><strong>Administration</strong></span> → <span class="guimenuitem"><strong>Users</strong></span> and <span class="guibutton"><strong>Edit</strong></span> for example
+              <span class="guilabel"><strong><em class="replaceable"><code>jjasper</code></em></strong></span> to set
+              his <span class="guilabel"><strong>Email</strong></span> to the one supplied to
+              <code class="command">git config --global user.email
+              <em class="replaceable"><code>jjasper@company.org</code></em></code>.</p></div></li><li class="listitem"><p><span class="guimenuitem"><strong>Author Mapping</strong></span> and
+            <span class="guibutton"><strong>Add</strong></span> for CVS the
+            <span class="guilabel"><strong>commiter</strong></span>:
+            <span class="guilabel"><strong><em class="replaceable"><code>%USERDOMAIN%</code></em>\jjasper</strong></span>.</p></li></ul></div></section></section></section><script xmlns="" type="text/javascript" src="js/highlight.min.js"> </script><script xmlns="" type="text/javascript">hljs.initHighlightingOnLoad();</script><footer><ul class="navfooter"><li class="previous"><a accesskey="p" href="database.html"><strong>Previous</strong>Chapter 10. Database</a></li><li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Front page</strong></a></li><li class="next"><a accesskey="n" href="issue.tracker.html"><strong>Next</strong>Chapter 12. Issue Tracker</a></li></ul></footer></body></html>

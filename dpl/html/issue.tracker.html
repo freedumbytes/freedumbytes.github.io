@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE html>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Chapter 12. Issue Tracker</title><link rel="stylesheet" type="text/css" href="docbook.css"/><link rel="stylesheet" type="text/css" href="css/freedumbytes.css"/><meta name="generator" content="DocBook XSL Stylesheets V1.78.1"/><link rel="prev" href="version.control.system.html" title="Chapter 11. Version Control System"/><link rel="next" href="repository.manager.html" title="Chapter 13. Repository Manager"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><link rel="shortcut icon" href="./images/community/docbook/glider.ico"/></head><body><header><p id="title"/><ul class="navheader"><li class="previous"><a accesskey="p" href="version.control.system.html"><strong>Previous</strong></a></li><li class="next"><a accesskey="n" href="repository.manager.html"><strong>Next</strong></a></li></ul></header><section class="chapter" id="issue.tracker"><div class="titlepage"><div><div><h1 class="title"><a id="issue.tracker" class="anchor" href="#issue.tracker"><span class="octicon octicon-link"/></a>Chapter 12. Issue Tracker</h1></div></div></div><div class="toc"><div class="toc-title">Table of Contents</div><ul class="toc"><li><span class="section"><a href="issue.tracker.html#it.jira">12.1. JIRA</a></span><ul><li><span class="section"><a href="issue.tracker.html#it.jira.resources">12.1.1. Resources</a></span></li><li><span class="section"><a href="issue.tracker.html#it.jira.install.guide">12.1.2. JIRA installation guide</a></span></li><li><span class="section"><a href="issue.tracker.html#it.jira.config">12.1.3. JIRA configuration</a></span></li><li><span class="section"><a href="issue.tracker.html#it.jira.apache.config">12.1.4. Apache configuration</a></span></li><li><span class="section"><a href="issue.tracker.html#it.jira.windows.service">12.1.5. Windows service</a></span></li><li><span class="section"><a href="issue.tracker.html#it.jira.config.global.settings">12.1.6. Global settings</a></span></li><li><span class="section"><a href="issue.tracker.html#it.jira.config.project">12.1.7. Project</a></span></li><li><span class="section"><a href="issue.tracker.html#it.jira.fisheye.integration">12.1.8. FishEye integration</a></span></li><li><span class="section"><a href="issue.tracker.html#it.jira.config.user.settings">12.1.9. User profile</a></span></li></ul></li></ul></div><section class="section" id="it.jira"><div class="titlepage"><div><div><h2 class="title"><a id="it.jira" class="anchor" href="#it.jira"><span class="octicon octicon-link"/></a>12.1. JIRA</h2></div></div></div><p><span class="inlinemediaobject"><img src="images/icons/jira.png"/></span> <a class="link" href="http://www.atlassian.com/software/jira/">JIRA</a> is a
+      bug tracking, issue tracking, and project management application.</p><section class="section" id="it.jira.resources"><div class="titlepage"><div><div><h3 class="title"><a id="it.jira.resources" class="anchor" href="#it.jira.resources"><span class="octicon octicon-link"/></a>12.1.1. Resources</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><a class="link" href="https://www.atlassian.com/software/jira/download">Download</a>
+            JIRA and <a class="link" href="https://marketplace.atlassian.com/plugins/app/jira">plugins</a>.</p></li><li class="listitem"><p><a class="link" href="https://confluence.atlassian.com/display/JIRA/JIRA+6.3+Upgrade+Notes">Upgrade</a>
+            checklist:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p>Related products: -.</p></li><li class="listitem"><p>References: -.</p></li><li class="listitem"><p>Integration configuration changes: <a class="link" href="issue.tracker.html#it.jira.http.binding" title="12.1.2.1. HTTP Binding">JIRA - HTTP Binding
+                <code class="code">address</code></a>, <a class="link" href="issue.tracker.html#it.jira.mysql" title="12.1.2.2. Database settings">JIRA - MySQL Connector/J
+                <code class="code">mysql-connector-java-x.y.z-bin.jar</code></a>, <a class="link" href="issue.tracker.html#it.jira.config" title="12.1.3. JIRA configuration">JIRA - Properties
+                <code class="code">jira.home</code></a>, <a class="link" href="issue.tracker.html#it.jira.apache.config" title="12.1.4. Apache configuration">JIRA - Apache Configuration
+                <code class="code">Context path</code> / <code class="code">Connector protocol
+                AJP</code></a>, <a class="link" href="issue.tracker.html#it.jira.windows.service" title="12.1.5. Windows service">JIRA - Windows service
+                <code class="code">tomcat7.exe.x64</code> / <code class="code">tcnative-1.dll.x64</code>
+                / <code class="code">tomcat7.exe //US//jira</code></a> and <a class="link" href="issue.tracker.html#it.jira.fisheye.plugin.upgrade" title="12.1.8.3. FishEye plugin upgrade">JIRA - FishEye
+                <code class="code">plugin upgrade</code></a>.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>Or just run
+                  <code class="command">p:\dev\apps\editor\winmerge\WinMergeU.exe
+                  P:\dev\apps\issue\atlassian-jira-6.3.14-standalone\conf
+                  P:\dev\apps\issue\atlassian-jira-6.4.11-standalone\conf</code>
+                  to copy the changes in for example
+                  <code class="filename">server.xml</code>,</p></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>And run
+                  <code class="command">p:\dev\apps\editor\winmerge\WinMergeU.exe
+                  P:\dev\apps\issue\atlassian-jira-6.3.14-standalone\atlassian-jira\WEB-INF\classes\jira-application.properties
+                  P:\dev\apps\issue\atlassian-jira-6.4.11-standalone\atlassian-jira\WEB-INF\classes</code>
+                  for <code class="filename">jira-application.properties</code>.</p></div></li></ul></div></li><li class="listitem"><p>JIRA <a class="link" href="https://confluence.atlassian.com/display/JIRA/JIRA+Documentation">Documentation</a>,
+            <a class="link" href="https://confluence.atlassian.com/display/JIRA/Important+Directories+and+Files">Important
+            Directories and Files</a> and <a class="link" href="https://confluence.atlassian.com/display/JIRA/JIRA+User%27s+Guide">User's
+            Guide</a>.</p></li><li class="listitem"><p><a class="link" href="https://confluence.atlassian.com/display/JIRA/Integrating+JIRA+with+FishEye">FishEye
+            integration</a> with the <a class="link" href="https://ecosystem.atlassian.net/wiki/display/FISH/JIRA+FishEye+Plugin">FishEye
+            plugin</a> to view <a class="link" href="https://confluence.atlassian.com/display/JIRA/Viewing+an+Issue%27s+FishEye+Changesets">Issue</a>
+            and <a class="link" href="https://confluence.atlassian.com/display/JIRA/Browsing+a+Project%27s+FishEye+Changesets">Project</a>
+            changesets.</p></li><li class="listitem"><p>Atlassian <a class="link" href="http://blogs.atlassian.com/blog-cat/jira/">Blogs</a>.</p></li></ul></div></section><section class="section" id="it.jira.install.guide"><div class="titlepage"><div><div><h3 class="title"><a id="it.jira.install.guide" class="anchor" href="#it.jira.install.guide"><span class="octicon octicon-link"/></a>12.1.2. JIRA installation guide</h3></div></div></div><p><a class="link" href="https://www.atlassian.com/software/jira/download">Download</a>
+        the archive from <span class="guibutton"><strong>All JIRA Download Options</strong></span>:
+        <code class="filename">atlassian-jira-6.4.11.zip</code> [version <a class="link" href="https://www.atlassian.com/software/jira/download">6.4.11</a>].</p><p>Extract this <code class="filename">.zip</code> file to
+        <code class="filename">P:\dev\apps\issue</code>.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="important"><h2>Important</h2><p>As of JIRA 4.3 'in-place database upgrades' is officially
+          supported.</p></div><section class="section" id="it.jira.http.binding"><div class="titlepage"><div><div><h4 class="title"><a id="it.jira.http.binding" class="anchor" href="#it.jira.http.binding"><span class="octicon octicon-link"/></a>12.1.2.1. HTTP Binding</h4></div></div></div><p>Change the listening ports <a class="xref" href="issue.tracker.html#it.jira.control.bind"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a> and <a class="xref" href="issue.tracker.html#it.jira.http.bind"><img src="images/community/docbook/callouts/2.png" alt="2" border="0" height="17px" width="17px" class="callout"/></a> and restricted to localhost <a class="xref" href="issue.tracker.html#it.jira.address"><img src="images/community/docbook/callouts/3.png" alt="3" border="0" height="17px" width="17px" class="callout"/></a> by editing the configuration file
+          <code class="filename">P:\dev\apps\issue\atlassian-jira-6.4.11-standalone\conf\server.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">&lt;Server port="<span xmlns="http://www.w3.org/1999/xhtml" class="strikethrough">8005</span>8062<span xmlns="http://www.w3.org/1999/xhtml" id="it.jira.control.bind"/><a xmlns="http://www.w3.org/1999/xhtml" id="it.jira.control.bind"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>" address="127.0.0.1"<span xmlns="http://www.w3.org/1999/xhtml" id="it.jira.address"/><a xmlns="http://www.w3.org/1999/xhtml" id="it.jira.address"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/3.png" alt="3" height="17px" width="17px" class="callout"/> shutdown="SHUTDOWN"&gt;
+   …
+  &lt;Service name="Catalina"&gt;
+    &lt;Connector port="<span xmlns="http://www.w3.org/1999/xhtml" class="strikethrough">8080</span>8063<span xmlns="http://www.w3.org/1999/xhtml" id="it.jira.http.bind"/><a xmlns="http://www.w3.org/1999/xhtml" id="it.jira.http.bind"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/2.png" alt="2" height="17px" width="17px" class="callout"/>" address="127.0.0.1"<span xmlns="http://www.w3.org/1999/xhtml" id="it.jira.address"/><a xmlns="http://www.w3.org/1999/xhtml" id="it.jira.address"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/3.png" alt="3" height="17px" width="17px" class="callout"/>
+</code></pre></section><section class="section" id="it.jira.mysql"><div class="titlepage"><div><div><h4 class="title"><a id="it.jira.mysql" class="anchor" href="#it.jira.mysql"><span class="octicon octicon-link"/></a>12.1.2.2. Database settings</h4></div></div></div><p>Create a MySQL user called jira-user and database called jira
+          with the following commands:</p><pre xmlns="" class="language-provided"><code class="language-sql">mysql -u root -p
+mysql&gt; create database jira character set utf8 collate utf8_bin;
+mysql&gt; grant all privileges on jira.*
+    -&gt;  to 'jira-user'@'localhost' identified by '<em xmlns="http://www.w3.org/1999/xhtml" class="replaceable"><code>password</code></em>';
+mysql&gt; flush privileges;
+mysql&gt; select host,user from mysql.user;
+mysql&gt; select host,db,user from mysql.db;
+mysql&gt; quit
+</code></pre><p><a class="link" href="https://dev.mysql.com/downloads/connector/j/">Download</a>
+          the <a class="link" href="database.html#db.mysql.jdbc.driver">Connector/J</a> [version
+          <a class="link" href="https://dev.mysql.com/downloads/connector/j/">5.1.36</a>]
+          and add the driver
+          <code class="filename">mysql-connector-java-5.1.36-bin.jar</code> from the
+          archive <code class="filename">mysql-connector-java-5.1.36.zip</code> to the
+          JIRA classpath placing it into <code class="filename">P:\dev\apps\issue\atlassian-jira-6.4.11-standalone\lib</code>.
+          For older versions of JIRA remove the one that is already
+          there.</p><p>Create the JIRA database connection information in
+          <code class="filename">P:\dev\data\issue\jira\dbconfig.xml</code> (see also
+          <a class="link" href="https://confluence.atlassian.com/display/JIRA/Tuning+Database+Connections">Tuning
+          Database Connections</a>):</p><pre xmlns="" class="language-provided"><code class="language-xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+
+&lt;jira-database-config&gt;
+  &lt;name&gt;defaultDS&lt;/name&gt;
+  &lt;delegator-name&gt;default&lt;/delegator-name&gt;
+  &lt;database-type&gt;mysql&lt;/database-type&gt;
+  &lt;schema-name&gt;&lt;/schema-name&gt;
+  &lt;jdbc-datasource&gt;
+    &lt;url&gt;jdbc:mysql://localhost/jira?useUnicode=true&amp;amp;characterEncoding=UTF8&amp;amp;connectionCollation=UTF8_bin&lt;/url&gt;
+    &lt;driver-class&gt;com.mysql.jdbc.Driver&lt;/driver-class&gt;
+    &lt;username&gt;jira-user&lt;/username&gt;
+    &lt;password&gt;<em xmlns="http://www.w3.org/1999/xhtml" class="replaceable"><code>password</code></em>&lt;/password&gt;
+    &lt;pool-min-size&gt;20&lt;/pool-min-size&gt;
+    &lt;pool-max-size&gt;20&lt;/pool-max-size&gt;
+    &lt;pool-max-wait&gt;30000&lt;/pool-max-wait&gt;
+    &lt;pool-max-idle&gt;20&lt;/pool-max-idle&gt;
+    &lt;pool-remove-abandoned&gt;true&lt;/pool-remove-abandoned&gt;
+    &lt;pool-remove-abandoned-timeout&gt;300&lt;/pool-remove-abandoned-timeout&gt;
+    &lt;validation-query&gt;select 1&lt;/validation-query&gt;
+    &lt;min-evictable-idle-time-millis&gt;60000&lt;/min-evictable-idle-time-millis&gt;
+    &lt;time-between-eviction-runs-millis&gt;300000&lt;/time-between-eviction-runs-millis&gt;
+    &lt;pool-test-while-idle&gt;true&lt;/pool-test-while-idle&gt;
+    &lt;validation-query-timeout&gt;3&lt;/validation-query-timeout&gt;
+  &lt;/jdbc-datasource&gt;
+&lt;/jira-database-config&gt;
+</code></pre></section></section><section class="section" id="it.jira.config"><div class="titlepage"><div><div><h3 class="title"><a id="it.jira.config" class="anchor" href="#it.jira.config"><span class="octicon octicon-link"/></a>12.1.3. JIRA configuration</h3></div></div></div><p>Edit the data directory by changing the following property <a class="xref" href="issue.tracker.html#it.jira.config.home"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a> in the
+        <code class="filename">P:\dev\apps\issue\atlassian-jira-6.4.11-standalone\atlassian-jira\WEB-INF\classes\jira-application.properties</code>
+        file:</p><pre xmlns="" class="language-provided"><code class="language-ini"># The jira.home configuration must be set and specifies the directory
+# in which JIRA will store its data files.
+# This must be set to an absolute path. Relative paths are not allowed.
+# Ensure that only one JIRA instance uses the selected JIRA Home.
+#
+jira.home = P:/dev/data/issue/jira<span xmlns="http://www.w3.org/1999/xhtml" id="it.jira.config.home"/><a xmlns="http://www.w3.org/1999/xhtml" id="it.jira.config.home"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>
+</code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>It is possible to overwrite this value with
+            <code class="envar">JIRA_HOME</code> (see also <a class="xref" href="issue.tracker.html#it.jira.windows.service" title="12.1.5. Windows service">Section 12.1.5, “Windows service”</a>).</p></div><p>Disable <a class="link" href="http://confluence.atlassian.com/display/JIRA/Configuring+Secure+Administrator+Sessions">Secure
+        Administrator Sessions</a> by creating the following property <a class="xref" href="issue.tracker.html#it.jira.config.websudo"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a> in the
+        <code class="filename">P:\dev\data\issue\jira\jira-config.properties</code>
+        file:</p><pre xmlns="" class="language-provided"><code class="language-ini">jira.websudo.is.disabled=true<span xmlns="http://www.w3.org/1999/xhtml" id="it.jira.config.websudo"/><a xmlns="http://www.w3.org/1999/xhtml" id="it.jira.config.websudo"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/></code></pre><p>Verify the installation by changing to <code class="command">cd /d
+        P:\dev\apps\issue\atlassian-jira-6.4.11-standalone</code> and
+        running <code class="command">bin\startup.bat</code>.</p><p>Verify that the server is running in your browser at <a class="link" href="http://localhost:8063">http://localhost:8063</a>. The
+        Server ID for this JIRA instance is required to retrieve a new license
+        from <a class="link" href="https://my.atlassian.com/products">my.atlassian.com</a>.</p><section class="section" id="it.jira.config.required.settings"><div class="titlepage"><div><div><h4 class="title"><a id="it.jira.config.required.settings" class="anchor" href="#it.jira.config.required.settings"><span class="octicon octicon-link"/></a>12.1.3.1. Required settings</h4></div></div></div><p>You should see the JIRA setup wizard:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p><span class="guilabel"><strong>Application Properties</strong></span>:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><span class="guilabel"><strong>Application Title:
+                  </strong></span><strong class="userinput"><code>freedumbytes.dev.net
+                  JIRA</code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Mode</strong></span>:
+                  <span class="guimenuitem"><strong>Private</strong></span>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Base URL</strong></span>:
+                  <strong class="userinput"><code>http://freedumbytes.dev.net/jira</code></strong> and
+                  click <span class="guibutton"><strong>Next</strong></span>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Automated Backups</strong></span>:
+                  <span class="guimenuitem"><strong>Disable Automated Backups</strong></span>.
+                  TODO</p></li></ul></div></li><li class="listitem"><p><span class="guilabel"><strong>Specify Your License Key</strong></span>:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><span class="guilabel"><strong><a class="link" href="https://my.atlassian.com/products">Your License
+                  Key</a></strong></span>: <strong class="userinput"><code>…</code></strong> and click
+                  <span class="guibutton"><strong>Next</strong></span>.</p></li></ul></div></li><li class="listitem"><p><span class="guilabel"><strong>Set Up Administrator
+              Account</strong></span>:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><span class="guilabel"><strong>Fullname</strong></span>: <strong class="userinput"><code>JIRA
+                    Administrator</code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Email</strong></span>:
+                    <strong class="userinput"><code><em class="replaceable"><code>jira.admin@company.org</code></em></code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Username</strong></span>:
+                    <strong class="userinput"><code>admin</code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Password</strong></span>:
+                    <strong class="userinput"><code><em class="replaceable"><code>password</code></em></code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Confirm Password</strong></span>:
+                    <strong class="userinput"><code><em class="replaceable"><code>password</code></em></code></strong>
+                    and click <span class="guibutton"><strong>Next</strong></span>.</p></li></ul></div></li><li class="listitem"><p><span class="guilabel"><strong>Set Up Email
+              Notifications</strong></span>:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><span class="guilabel"><strong>Configure Email Notifications</strong></span>:
+                    <span class="guilabel"><strong>Now</strong></span>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Name</strong></span>: <strong class="userinput"><code>JIRA SMTP
+                    Server</code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong>From address</strong></span>:
+                    <strong class="userinput"><code><em class="replaceable"><code>jira.noreply@company.org</code></em></code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Email prefix</strong></span>:
+                    <strong class="userinput"><code>[JIRA]</code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Server Type</strong></span>: <span class="guilabel"><strong>SMTP
+                    Host</strong></span>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Service Provider</strong></span>:
+                    <span class="guilabel"><strong>Custom</strong></span>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Host Name</strong></span>:
+                    <strong class="userinput"><code>mail.freedumbytes.dev.net</code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Protocol</strong></span>:
+                    <span class="guilabel"><strong>SMTP</strong></span>.</p></li><li class="listitem"><p><span class="guilabel"><strong>SMTP Port</strong></span>:
+                    <strong class="userinput"><code>25</code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Username</strong></span>: leave empty.</p></li><li class="listitem"><p><span class="guilabel"><strong>Password</strong></span>: leave empty and click
+                    <span class="guibutton"><strong>Finish</strong></span>.</p></li></ul></div></li></ol></div></section><section class="section" id="it.jira.config.users.groups.roles"><div class="titlepage"><div><div><h4 class="title"><a id="it.jira.config.users.groups.roles" class="anchor" href="#it.jira.config.users.groups.roles"><span class="octicon octicon-link"/></a>12.1.3.2. User, groups &amp; roles</h4></div></div></div><p><span class="guilabel"><strong>User Management</strong></span> menu:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>Select <span class="guilabel"><strong>Groups</strong></span> and in <span class="guilabel"><strong>Add
+              Group</strong></span> form type:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><span class="guilabel"><strong>Name</strong></span>:
+                  <strong class="userinput"><code>jira-system-administrators</code></strong> and click
+                  <span class="guibutton"><strong>Add Group</strong></span>.</p></li></ul></div><p>For <span class="guilabel"><strong>jira-system-administrators</strong></span> select
+              <span class="guilabel"><strong>Edit Members</strong></span>:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p>Under <span class="guilabel"><strong>Add members to selected
+                    group(s)</strong></span> select user for group by clicking
+                    <span class="inlinemediaobject"><img src="images/issuetracker/jira/filter_public.gif"/></span>.</p></li><li class="listitem"><p>Check <span class="guilabel"><strong>admin</strong></span> and click
+                    <span class="guibutton"><strong>Select</strong></span>.</p></li><li class="listitem"><p>Next click <span class="guibutton"><strong>&lt;&lt;
+                    Join</strong></span>.</p></li></ul></div></li><li class="listitem"><p>Select <span class="guilabel"><strong>Users</strong></span> and click <span class="guilabel"><strong>Add
+              User</strong></span>:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><span class="guilabel"><strong>Username</strong></span>:
+                  <strong class="userinput"><code>jjasper</code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Password</strong></span>:
+                  <strong class="userinput"><code><em class="replaceable"><code>password</code></em></code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Confirm</strong></span>:
+                  <strong class="userinput"><code><em class="replaceable"><code>password</code></em></code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Full Name</strong></span>: <strong class="userinput"><code>Jene
+                  Jasper</code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Email</strong></span>:
+                  <strong class="userinput"><code><em class="replaceable"><code>jjasper@company.org</code></em></code></strong>
+                  and click <span class="guibutton"><strong>Create</strong></span> and <span class="guilabel"><strong>Edit
+                  Groups</strong></span>:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p>In <span class="guilabel"><strong>Available Groups</strong></span> select
+                      <span class="guilabel"><strong>jira-system-administrators</strong></span> /
+                      <span class="guilabel"><strong>jira-administrators</strong></span> /
+                      <span class="guilabel"><strong>jira-developers</strong></span> and click
+                      <span class="guibutton"><strong>Join &gt;&gt;</strong></span> and
+                      <span class="guilabel"><strong>&lt;&lt; Return to viewing user 'Jene
+                      Jasper'</strong></span>.</p></li></ul></div></li></ul></div></li><li class="listitem"><p>Select <span class="guilabel"><strong>Global permissions</strong></span> in
+              <span class="guilabel"><strong>Add Permission</strong></span> form choose:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><span class="guilabel"><strong>Permission</strong></span>: <span class="guilabel"><strong>JIRA System
+                  Administrators</strong></span>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Group</strong></span>:
+                  <span class="guilabel"><strong>jira-system-administrators</strong></span> and click
+                  <span class="guibutton"><strong>Add</strong></span>.</p></li></ul></div><p>In <span class="guilabel"><strong>JIRA Permissions</strong></span>
+              form:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p>For <span class="guilabel"><strong>JIRA System Administrators</strong></span>
+                    select <span class="guilabel"><strong>delete</strong></span> the
+                    <span class="guilabel"><strong>jira-administrators</strong></span> and confirm
+                    <span class="guibutton"><strong>Delete</strong></span>.</p></li></ul></div></li><li class="listitem"><p>Select <span class="guimenuitem"><strong>User Default Settings</strong></span>
+              and click <span class="guibutton"><strong>Edit default values</strong></span>:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><span class="guilabel"><strong>Default outgoing email format</strong></span>:
+                  <span class="guilabel"><strong>html</strong></span>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Notify users of their own
+                  changes</strong></span>: <span class="guilabel"><strong>No</strong></span> and click
+                  <span class="guibutton"><strong>Update</strong></span>.</p></li></ul></div><p>And <span class="guilabel"><strong>Apply</strong></span> the email format setting
+              for existing users.</p></li></ul></div></section></section><section class="section" id="it.jira.apache.config"><div class="titlepage"><div><div><h3 class="title"><a id="it.jira.apache.config" class="anchor" href="#it.jira.apache.config"><span class="octicon octicon-link"/></a>12.1.4. Apache configuration</h3></div></div></div><p>Configure the JIRA application server to accept an ajp
+        connection <a class="xref" href="issue.tracker.html#it.jira.connector.ajp"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a> on web context
+        <code class="uri">/jira</code> <a class="xref" href="issue.tracker.html#it.jira.host.context"><img src="images/community/docbook/callouts/4.png" alt="4" border="0" height="17px" width="17px" class="callout"/></a> by editing the
+        configuration file
+        <code class="filename">P:\dev\apps\issue\atlassian-jira-6.4.11-standalone\conf\server.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">&lt;Server port="8062"  address="127.0.0.1" shutdown="SHUTDOWN"&gt;
+
+  &lt;Service name="Catalina"&gt;
+     …
+<span xmlns="http://www.w3.org/1999/xhtml" class="strikethrough">
+        &lt;!--  </span><span xmlns="http://www.w3.org/1999/xhtml" id="it.jira.connector.ajp"/><a xmlns="http://www.w3.org/1999/xhtml" id="it.jira.connector.ajp"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>
+    &lt;Connector port="<span xmlns="http://www.w3.org/1999/xhtml" class="strikethrough">8009</span>8064<span xmlns="http://www.w3.org/1999/xhtml" id="it.jira.ajp.bind"/><a xmlns="http://www.w3.org/1999/xhtml" id="it.jira.ajp.bind"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/2.png" alt="2" height="17px" width="17px" class="callout"/>" address="127.0.0.1"<span xmlns="http://www.w3.org/1999/xhtml" id="it.jira.ajp.address"/><a xmlns="http://www.w3.org/1999/xhtml" id="it.jira.ajp.address"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/3.png" alt="3" height="17px" width="17px" class="callout"/>
+      redirectPort="8443" enableLookups="false" 
+      protocol="AJP/1.3" URIEncoding="UTF-8" /&gt;
+<span xmlns="http://www.w3.org/1999/xhtml" class="strikethrough">        --&gt;  </span><span xmlns="http://www.w3.org/1999/xhtml" id="it.jira.connector.ajp"/><a xmlns="http://www.w3.org/1999/xhtml" id="it.jira.connector.ajp"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>
+
+    &lt;Engine name="Catalina" defaultHost="localhost"&gt;
+      &lt;Host name="localhost" appBase="webapps" …&gt;
+
+        &lt;Context path="/jira<span xmlns="http://www.w3.org/1999/xhtml" id="it.jira.host.context"/><a xmlns="http://www.w3.org/1999/xhtml" id="it.jira.host.context"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/4.png" alt="4" height="17px" width="17px" class="callout"/>" docBase="${catalina.home}/atlassian-jira" …&gt;
+         …
+  &lt;/Service&gt;
+
+ …
+&lt;/Server&gt;
+</code></pre><p>Instruct Apache to <a class="link" href="http.server.html#http.apache.config.proxy" title="7.1.9. Proxy configuration">proxy</a> all URLs whose path
+        portions begin with <code class="uri">/jira/</code> using the following
+        <code class="filename">P:\dev\apps\httpserver\apache-conf\httpd-vhosts.conf</code>
+        include <a class="xref" href="issue.tracker.html#http.apache.include.httpd.jira"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a>:</p><pre xmlns="" class="language-provided"><code class="language-apache">&lt;VirtualHost *:80&gt;
+  …
+
+  &lt;IfModule proxy_module&gt;
+  &lt;IfModule proxy_http_module&gt;
+    …
+
+    &lt;Proxy *&gt;
+      …
+    &lt;/Proxy&gt;
+
+    # JIRA
+    Include ../apache-conf/httpd-jira.conf<span xmlns="http://www.w3.org/1999/xhtml" id="http.apache.include.httpd.jira"/><a xmlns="http://www.w3.org/1999/xhtml" id="http.apache.include.httpd.jira"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>
+  &lt;/IfModule&gt;
+  &lt;/IfModule&gt;
+&lt;/VirtualHost&gt;
+</code></pre><p>with the following content in
+        <code class="filename">P:\dev\apps\httpserver\apache-conf\httpd-jira.conf</code>:</p><pre xmlns="" class="language-provided"><code class="language-apache">&lt;IfModule proxy_module&gt;
+&lt;IfModule proxy_http_module&gt;
+#&lt;IfModule proxy_ajp_module&gt;
+#  ProxyPass /jira        ajp://localhost:8064/jira
+#  ProxyPassReverse /jira ajp://localhost:8064/jira
+
+  ProxyPass /jira        http://localhost:8063/jira
+  ProxyPassReverse /jira http://localhost:8063/jira
+
+  &lt;Location /jira&gt;
+    Include ../apache-conf/httpd-freedumbytes-realm.conf
+  &lt;/Location&gt;
+#&lt;/IfModule&gt;
+&lt;/IfModule&gt;
+&lt;/IfModule&gt;
+</code></pre><p>When JIRA and the Apache HTTP Server are restarted you should be
+        able to browse JIRA at <a class="link" href="http://freedumbytes.dev.net/jira">http://freedumbytes.dev.net/jira</a>.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="tip"><h2>Tip</h2><p>If the browser displays a 401 HTTP error then the Apache HTTP
+          Server logged-in user doesn't exist in JIRA or the password doesn't
+          match.</p></div><section class="section" id="it.jira.privacy.policy"><div class="titlepage"><div><div><h4 class="title"><a id="it.jira.privacy.policy" class="anchor" href="#it.jira.privacy.policy"><span class="octicon octicon-link"/></a>12.1.4.1. Privacy Policy</h4></div></div></div><p>Next configure if <a class="link" href="http://freedumbytes.dev.net/jira/plugins/servlet/analytics/configuration">Analytics</a>
+          collects data about the usage of JIRA and sends it to Atlassian (see
+          the <a class="link" href="https://www.atlassian.com/legal/privacy-policy">privacy
+          policy</a> for details).</p></section></section><section class="section" id="it.jira.windows.service"><div class="titlepage"><div><div><h3 class="title"><a id="it.jira.windows.service" class="anchor" href="#it.jira.windows.service"><span class="octicon octicon-link"/></a>12.1.5. Windows service</h3></div></div></div><p>To restart automatically on Microsoft Windows <a class="link" href="http://confluence.atlassian.com/display/JIRA/Running+JIRA+Standalone+as+a+Service">create
+        a service</a> using <a class="link" href="operating.system.html#os.windows.cmd.elevated" title="1.1.13.1. Elevated Command Prompt">an
+        elevated command prompt</a> as follows:</p><pre xmlns="" class="language-provided"><code class="language-bash">cd /d P:\dev\apps\issue\atlassian-jira-6.4.11-standalone
+
+rename bin\tomcat7.exe tomcat7.exe.x86
+rename bin\apr\tcnative-1.dll tcnative-1.dll.x86
+rename bin\tomcat7.exe.x64 tomcat7.exe
+rename bin\apr\tcnative-1.dll.x64 tcnative-1.dll
+
+set JAVA_HOME=P:\dev\apps\prg\java-x64\jdk1.8.0_74
+set CATALINA_HOME=P:\dev\apps\issue\atlassian-jira-6.4.11-standalone
+bin\service.bat install jira
+
+bin\tomcat7.exe //US//jira --DisplayName="freedumbytes.dev.net JIRA" ^
+  --Description="JIRA - Issue tracking and project management." ^
+  --Startup=auto
+
+bin\tomcat7.exe //US//jira --JvmMx=768 --JvmMs=256 ^
+  ++JvmOptions=-Djava.awt.headless=true;-Datlassian.standalone=JIRA
+
+bin\tomcat7.exe //US//jira ++JvmOptions=-D<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://confluence.atlassian.com/display/JIRA/__setting_mail.mime.decodeparameters">mail.mime.decodeparameters</a>=true
+</code></pre><p>Start it with <code class="command">net start jira</code>.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>In case of an upgrade <code class="command">sc delete jira</code> first
+          (see also <a class="xref" href="operating.system.html#os.windows.process.explorer" title="1.1.5. Task Manager replacement">Section 1.1.5, “Task Manager replacement”</a> in case of
+          <span class="quote">“<span class="quote">The specified service has been marked for
+          deletion.</span>”</span>).</p></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="tip"><h2>Tip</h2><p>As an alternative to change the additional settings of the
+          JIRA service run:
+          <code class="command">P:\dev\apps\issue\atlassian-jira-6.4.11-standalone\bin\tomcat7w.exe
+          //ES//jira</code> such as <span class="guilabel"><strong>Java</strong></span> → <span class="guilabel"><strong>Java Virtual Machine</strong></span>
+          <strong class="userinput"><code>P:\dev\apps\prg\java\jdk1.8.0_74\jre\bin\server\jvm.dll</code></strong>.</p></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="important"><h2>Important</h2><p>In case of a new jdk installation just run
+          <code class="command">P:\dev\apps\issue\atlassian-jira-6.4.11-standalone\bin\tomcat7.exe
+          //US//jira --Jvm auto</code> (when <code class="envar">JAVA_HOME</code> is
+          still pointing to the 64-bit version; see also <a class="xref" href="web.server.html#web.tomcat.manager" title="8.1.3.2. Tomcat Manager">Section 8.1.3.2, “Tomcat Manager”</a>).</p></div><p>Verify the installation and the JVM memory usage at <a class="link" href="http://freedumbytes.dev.net/jira/secure/admin/ViewSystemInfo.jspa">http://freedumbytes.dev.net/jira/secure/admin/ViewSystemInfo.jspa</a>.</p><section class="section" id="it.jira.windows.user"><div class="titlepage"><div><div><h4 class="title"><a id="it.jira.windows.user" class="anchor" href="#it.jira.windows.user"><span class="octicon octicon-link"/></a>12.1.5.1. Log On Windows user</h4></div></div></div><p>For the same reason as <a class="xref" href="web.server.html#web.tomcat.windows.user" title="8.1.3.1. Log On Windows user">Section 8.1.3.1, “Log On Windows user”</a> launch the <span class="application"><strong>Service
+          Management Console</strong></span> with
+          <code class="command">services.msc</code>. Right click on
+          <span class="guilabel"><strong>freedumbytes.dev.net JIRA</strong></span> and select
+          <span class="guimenuitem"><strong>P<span class="accel">r</span>operties</strong></span> → <span class="guilabel"><strong>Log On</strong></span> to use <span class="guilabel"><strong><span class="accel">T</span>his
+          account</strong></span> <strong class="userinput"><code>.\Tomcat</code></strong>. After password
+          conformation click <span class="guibutton"><strong><span class="accel">A</span>pply</strong></span> and
+          restart the service.</p></section></section><section class="section" id="it.jira.config.global.settings"><div class="titlepage"><div><div><h3 class="title"><a id="it.jira.config.global.settings" class="anchor" href="#it.jira.config.global.settings"><span class="octicon octicon-link"/></a>12.1.6. Global settings</h3></div></div></div><p><span class="guilabel"><strong>System</strong></span> menu:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>Select <span class="guimenuitem"><strong>General Configuration</strong></span> and
+            click <span class="guilabel"><strong>Edit Settings</strong></span>:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><span class="guilabel"><strong>Allow unassigned issues</strong></span>:
+                <span class="guilabel"><strong>On</strong></span>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Accept remote API calls</strong></span>:
+                <span class="guilabel"><strong>On</strong></span> (for Eclipse <a class="link" href="integrated.development.environment.html#ide.eclipse.plugin.install.guide.mylyn" title="15.1.5.4. Mylyn">Mylyn
+                plugin</a> support) and click
+                <span class="guibutton"><strong>Update</strong></span>.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>When using Mylyn and <span class="quote">“<span class="quote">Submit failed</span>”</span> in
+                  Eclipse with following error message <span class="quote">“<span class="quote">JIRA could not
+                  complete this action due to a missing form token.</span>”</span>
+                  disable <a class="link" href="http://confluence.atlassian.com/display/JIRADEV/Form+Token+Handling">Form
+                  Token Checking</a> by creating/editing the following
+                  property <a class="xref" href="issue.tracker.html#it.jira.config.xsrf"><img style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/></a> in the
+                  <code class="filename">P:\dev\data\issue\jira\jira-config.properties</code>
+                  file:</p><pre class="language-provided"><code class="language-ini">jira.xsrf.enabled=false<span id="it.jira.config.xsrf"/><a id="it.jira.config.xsrf"><span style="display:none;">trick</span></a><img style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>
+jira.websudo.is.disabled=true
+</code></pre></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="important"><h2>Important</h2><p>Shut down JIRA first before editing
+                  <code class="filename">P:\dev\data\issue\jira\jira-config.properties</code>.</p></div></li></ul></div></li><li class="listitem"><p>Under <span class="guimenuitem"><strong>Advanced</strong></span> select
+            <span class="guilabel"><strong>Attachments</strong></span> and click <span class="guibutton"><strong>Edit
+            Settings</strong></span>:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><span class="guilabel"><strong><a class="link" href="http://confluence.atlassian.com/display/JIRA/Configuring+File+Attachments">Attachment</a>
+                Path</strong></span>: <span class="guilabel"><strong>Use Default Directory</strong></span>
+                and click <span class="guibutton"><strong>Update</strong></span>.</p></li></ul></div></li><li class="listitem"><p>Under <span class="guimenuitem"><strong>Issue Features</strong></span> activate
+            <span class="guilabel"><strong><a class="link" href="http://confluence.atlassian.com/display/JIRA/Configuring+Time+Tracking">Time
+            Tracking</a></strong></span>.</p></li><li class="listitem"><p>Under <span class="guimenuitem"><strong>Issue Features</strong></span> activate
+            <span class="guilabel"><strong><a class="link" href="http://confluence.atlassian.com/display/JIRA/Configuring+Issue+Linking">Issue
+            Linking</a></strong></span>.</p></li><li class="listitem"><p>Under <span class="guimenuitem"><strong>User Interface</strong></span> select
+            <span class="guilabel"><strong>Look and Feel</strong></span> and click <span class="guibutton"><strong>Edit
+            Settings</strong></span>:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><span class="guilabel"><strong>Time Format</strong></span>:
+                <strong class="userinput"><code>HH:mm</code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Day Format</strong></span>: <strong class="userinput"><code>EEEE
+                HH:mm</code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Complete Date/Time Format</strong></span>:
+                <strong class="userinput"><code>yyyy-MM-dd HH:mm</code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Day/Month/Year Format</strong></span>:
+                <strong class="userinput"><code>yyyy-MM-dd</code></strong>.</p></li><li class="listitem"><p>Check <span class="guilabel"><strong>Use ISO8601 standard in Date</strong></span>
+                and click <span class="guibutton"><strong>Update</strong></span>.</p></li></ul></div></li><li class="listitem"><p>Under <span class="guimenuitem"><strong>General Configuration</strong></span> click
+            <span class="guibutton"><strong>Advanced Settings</strong></span> and select every
+            <span class="guilabel"><strong>Value</strong></span> to be edited:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><span class="guilabel"><strong>jira.date.picker.java.format</strong></span>:
+                <strong class="userinput"><code>yyyy-MM-dd</code></strong> and click
+                <span class="guibutton"><strong>Update</strong></span>.</p></li><li class="listitem"><p><span class="guilabel"><strong>
+                jira.date.picker.javascript.format</strong></span>:
+                <strong class="userinput"><code>%Y-%m-%d</code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong>jira.date.time.picker.java.format</strong></span>:
+                <strong class="userinput"><code>yyyy-MM-dd HH:mm</code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong>jira.date.time.picker.javascript.format</strong></span>:
+                <strong class="userinput"><code>%Y-%m-%d %H:%M</code></strong>.</p></li></ul></div></li><li class="listitem"><p>Under <span class="guimenuitem"><strong>User Interface</strong></span> select
+            <span class="guibutton"><strong>System Dashboard</strong></span> and click <span class="guilabel"><strong>Add
+            Gadget</strong></span> such as <span class="guilabel"><strong>FishEye
+            Charts</strong></span>.</p></li></ul></div><p><span class="guilabel"><strong>Issues</strong></span> menu:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>Under <span class="guimenuitem"><strong>Issue Types</strong></span> select
+            <span class="guimenuitem"><strong>Sub-Tasks</strong></span> and
+            <span class="guilabel"><strong>Enable</strong></span> <span class="guilabel"><strong><a class="link" href="http://confluence.atlassian.com/display/JIRA/Configuring+Sub-tasks">Sub-Tasks</a></strong></span>.</p></li></ul></div></section><section class="section" id="it.jira.config.project"><div class="titlepage"><div><div><h3 class="title"><a id="it.jira.config.project" class="anchor" href="#it.jira.config.project"><span class="octicon octicon-link"/></a>12.1.7. Project</h3></div></div></div><p><span class="guilabel"><strong>Projects</strong></span> menu:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>Select <span class="guilabel"><strong>Projects</strong></span> and in <span class="guilabel"><strong>Add
+            Project</strong></span> form type:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><span class="guilabel"><strong>Name</strong></span>: <strong class="userinput"><code>Development
+                Production Line manual</code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Key</strong></span>:
+                <strong class="userinput"><code>DPLMNL</code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Project Lead</strong></span>: <strong class="userinput"><code>Jene
+                Jasper</code></strong> and click
+                <span class="guibutton"><strong>Add</strong></span>.</p></li></ul></div><p>Click <span class="guilabel"><strong>Edit Project</strong></span> to supply a
+            <span class="guilabel"><strong>Description</strong></span>: <strong class="userinput"><code>DocBook about setting
+            up a Production Development Line.</code></strong> and click
+            <span class="guibutton"><strong>Update</strong></span>.</p><p>Under <span class="guimenuitem"><strong>Roles</strong></span> for
+            <span class="guibutton"><strong>Default Assignee</strong></span> click <span class="inlinemediaobject"><img src="images/issuetracker/jira/pencil.png"/></span> to change it to
+            <span class="guilabel"><strong>Unassigned</strong></span> and click
+            <span class="guibutton"><strong>Update</strong></span>.</p><p>Under <span class="guimenuitem"><strong>Components</strong></span>:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><span class="guilabel"><strong>Name</strong></span>:
+                  <strong class="userinput"><code>manual</code></strong> with
+                  <span class="guilabel"><strong>Description</strong></span>: <strong class="userinput"><code>The Short
+                  Story.</code></strong> and click
+                  <span class="guibutton"><strong>Add</strong></span>.</p></li></ul></div><p>Under <span class="guimenuitem"><strong>Versions</strong></span>:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><span class="guilabel"><strong>Name</strong></span>: <strong class="userinput"><code>2.0</code></strong>
+                  <span class="guilabel"><strong>Description</strong></span>: <strong class="userinput"><code>The complete
+                  picture.</code></strong> with expected <span class="guilabel"><strong>Release
+                  Date</strong></span> <strong class="userinput"><code>2011-08-31</code></strong> and click
+                  <span class="guibutton"><strong>Add</strong></span>.</p></li></ul></div></li></ul></div></section><section class="section" id="it.jira.fisheye.integration"><div class="titlepage"><div><div><h3 class="title"><a id="it.jira.fisheye.integration" class="anchor" href="#it.jira.fisheye.integration"><span class="octicon octicon-link"/></a>12.1.8. FishEye integration</h3></div></div></div><section class="section" id="it.jira.fisheye.integration.users"><div class="titlepage"><div><div><h4 class="title"><a id="it.jira.fisheye.integration.users" class="anchor" href="#it.jira.fisheye.integration.users"><span class="octicon octicon-link"/></a>12.1.8.1. Integration users</h4></div></div></div><p>To auto-add the <strong class="userinput"><code>jira</code></strong> user (see also
+          <a class="xref" href="http.server.html#http.apache.access.config" title="7.1.4.1. Authentication, authorization and access control">Section 7.1.4.1, “Authentication, authorization and access control”</a>) in FishEye just login
+          with that user at <a class="link" href="http://freedumbytes.dev.net/fisheye/">http://freedumbytes.dev.net/fisheye/</a>
+          and logout again.</p><p>Optionally at the FishEye Admin GUI <a class="link" href="http://freedumbytes.dev.net/fisheye/admin/">http://freedumbytes.dev.net/fisheye/admin/</a>
+          select the <span class="guilabel"><strong>User Settings</strong></span> → <span class="guilabel"><strong>Users</strong></span> and <span class="guibutton"><strong>Edit</strong></span> user
+          <span class="guilabel"><strong>jira</strong></span>:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><span class="guilabel"><strong>Display name</strong></span>: <strong class="userinput"><code>JIRA
+                Integration</code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Email</strong></span>:
+                <strong class="userinput"><code><em class="replaceable"><code>jira-integration@company.org</code></em></code></strong>
+                and click <span class="guibutton"><strong>Apply</strong></span>.</p></li></ul></div><p>Next at the JIRA Admin GUI <a class="link" href="http://freedumbytes.dev.net/jira/secure/admin/user/UserBrowser.jspa">http://freedumbytes.dev.net/jira/secure/admin/user/UserBrowser.jspa</a>
+          <span class="guibutton"><strong>Create User</strong></span>:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><span class="guilabel"><strong>Username</strong></span>:
+                <strong class="userinput"><code>fisheye</code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Password</strong></span>:
+                <strong class="userinput"><code><em class="replaceable"><code>password</code></em></code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Confirm</strong></span>:
+                <strong class="userinput"><code><em class="replaceable"><code>password</code></em></code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Full Name</strong></span>: <strong class="userinput"><code>FishEye
+                Integration</code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Email</strong></span>:
+                <strong class="userinput"><code><em class="replaceable"><code>fisheye-integration@company.org</code></em></code></strong>
+                and click <span class="guibutton"><strong>Create</strong></span>.</p></li></ul></div></section><section class="section" id="it.jira.fisheye.integration.links"><div class="titlepage"><div><div><h4 class="title"><a id="it.jira.fisheye.integration.links" class="anchor" href="#it.jira.fisheye.integration.links"><span class="octicon octicon-link"/></a>12.1.8.2. Application links</h4></div></div></div><p>At the FishEye Admin GUI <a class="link" href="http://freedumbytes.dev.net/fisheye/admin/">http://freedumbytes.dev.net/fisheye/admin/</a>
+          select the <span class="guilabel"><strong>Global Settings</strong></span> → <span class="guilabel"><strong>Application Links</strong></span> and <span class="guibutton"><strong>Create new link</strong></span>:
+          <strong class="userinput"><code>http://freedumbytes.dev.net/jira</code></strong>. Disable
+          <span class="guilabel"><strong>I am an administrator on both instances</strong></span> and
+          click <span class="guibutton"><strong>Continue</strong></span>. Ignore <span class="guilabel"><strong>Create
+          reciprocal link</strong></span> and click <span class="guibutton"><strong>Close</strong></span>.
+          <span class="guibutton"><strong>Edit</strong></span> this new Application Link
+          <span class="guilabel"><strong>freedumbytes.dev.net JIRA</strong></span> to change the
+          <span class="guilabel"><strong>Outgoing Authentication</strong></span> to <span class="guilabel"><strong>Basic
+          Access</strong></span> using the <strong class="userinput"><code>fisheye</code></strong>
+          integration user from the prior paragraph and click
+          <span class="guibutton"><strong>Close</strong></span>.</p><p>Next at the JIRA Admin GUI <span class="guilabel"><strong>Add-ons</strong></span> <a class="link" href="http://freedumbytes.dev.net/jira/plugins/servlet/applinks/listApplicationLinks">http://freedumbytes.dev.net/jira/plugins/servlet/applinks/listApplicationLinks</a>
+          <span class="guibutton"><strong>Create new link</strong></span>:
+          <strong class="userinput"><code>http://freedumbytes.dev.net/fisheye</code></strong>. Disable
+          <span class="guilabel"><strong>I am an administrator on both instances</strong></span> and
+          click <span class="guibutton"><strong>Continue</strong></span>. Ignore <span class="guilabel"><strong>Create
+          reciprocal link</strong></span> and click <span class="guibutton"><strong>Close</strong></span>.
+          <span class="guibutton"><strong>Edit</strong></span> this new Application Link
+          <span class="guilabel"><strong>freedumbytes</strong></span> to change:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><span class="guilabel"><strong>Application Details</strong></span> the
+              <span class="guilabel"><strong>Application Name</strong></span> to
+              <strong class="userinput"><code>freedumbytes.dev.net FishEye</code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Outgoing Authentication</strong></span> to enable
+              <span class="guilabel"><strong>Basic Access</strong></span> using the
+              <strong class="userinput"><code>jira</code></strong> integration user from the prior
+              paragraph and click <span class="guibutton"><strong>Close</strong></span>.</p></li></ul></div><p>Optionally <span class="guibutton"><strong>Configure FishEye Server</strong></span> to
+          switch <span class="guilabel"><strong>Integration setup</strong></span> to <span class="guilabel"><strong>FishEye
+          integration only</strong></span>,</p><section class="section" id="it.jira.fisheye.integration.entity.mapping"><div class="titlepage"><div><div><h5 class="title"><a id="it.jira.fisheye.integration.entity.mapping" class="anchor" href="#it.jira.fisheye.integration.entity.mapping"><span class="octicon octicon-link"/></a>12.1.8.2.1. FishEye entity mappings</h5></div></div></div><p>Optionally link a FishEye repository to a JIRA project via a
+            project link. For example select <span class="guimenu"><strong>Projects</strong></span> → <span class="guimenu"><strong>Development Production Line manual</strong></span> → <span class="guimenu"><strong>Settings</strong></span> → <span class="guimenu"><strong>Configure Project Links</strong></span> → <span class="guimenu"><strong>Add Link</strong></span> → <span class="guimenu"><strong>freedumbytes.dev.net FishEye</strong></span> and in the <span class="guilabel"><strong>Enter link details</strong></span>
+            form type:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><span class="guilabel"><strong>Type</strong></span>: <span class="guilabel"><strong>FishEye
+                Repository</strong></span>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Key</strong></span>:
+                <strong class="userinput"><code>dpl-manual</code></strong> and click
+                <span class="guibutton"><strong>Create</strong></span>.</p></li></ul></div><p>After this there should be something to see under the
+            <span class="guilabel"><strong>FishEye/Crucible entity mappings</strong></span> in the
+            <span class="guilabel"><strong>FishEye Configuration</strong></span>.</p></section></section><section class="section" id="it.jira.fisheye.plugin.upgrade"><div class="titlepage"><div><div><h4 class="title"><a id="it.jira.fisheye.plugin.upgrade" class="anchor" href="#it.jira.fisheye.plugin.upgrade"><span class="octicon octicon-link"/></a>12.1.8.3. FishEye plugin upgrade</h4></div></div></div><p>At the FishEye Admin GUI <a class="link" href="http://freedumbytes.dev.net/fisheye/admin/">http://freedumbytes.dev.net/fisheye/admin/</a>
+          select the <span class="guilabel"><strong>Systems Settings</strong></span> → <span class="guilabel"><strong>Manage Add-ons</strong></span> to filter <span class="guibutton"><strong>Action required</strong></span> and
+          just <span class="guibutton"><strong>Update</strong></span> or <span class="guibutton"><strong>Update
+          All</strong></span>.</p><p>Next at the JIRA Admin GUI <span class="guilabel"><strong>Add-ons</strong></span> <a class="link" href="http://freedumbytes.dev.net/jira/plugins/servlet/upm#manage">http://freedumbytes.dev.net/jira/plugins/servlet/upm#manage</a>
+          filter <span class="guilabel"><strong>Manage add-ons</strong></span> that have
+          <span class="guibutton"><strong>Action required</strong></span> and just
+          <span class="guibutton"><strong>Update</strong></span> or <span class="guibutton"><strong>Update
+          All</strong></span>.</p></section></section><section class="section" id="it.jira.config.user.settings"><div class="titlepage"><div><div><h3 class="title"><a id="it.jira.config.user.settings" class="anchor" href="#it.jira.config.user.settings"><span class="octicon octicon-link"/></a>12.1.9. User profile</h3></div></div></div><p>On the <span class="guilabel"><strong>Dashboard</strong></span> page click on the
+        logged-in user <span class="inlinemediaobject"><img src="images/icons/jira-user.png"/></span> at the top right of the menu bar and select
+        <span class="guimenuitem"><strong><a class="link" href="https://confluence.atlassian.com/display/JIRA/Managing+your+User+Profile">Profile</a></strong></span>
+        to edit for example:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><span class="guilabel"><strong>Preferences</strong></span>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Navigator Columns</strong></span>.</p></li></ul></div></section></section></section><script xmlns="" type="text/javascript" src="js/highlight.min.js"> </script><script xmlns="" type="text/javascript">hljs.initHighlightingOnLoad();</script><footer><ul class="navfooter"><li class="previous"><a accesskey="p" href="version.control.system.html"><strong>Previous</strong>Chapter 11. Version Control System</a></li><li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Front page</strong></a></li><li class="next"><a accesskey="n" href="repository.manager.html"><strong>Next</strong>Chapter 13. Repository Manager</a></li></ul></footer></body></html>

@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE html>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Chapter 6. Mail Server</title><link rel="stylesheet" type="text/css" href="docbook.css"/><link rel="stylesheet" type="text/css" href="css/freedumbytes.css"/><meta name="generator" content="DocBook XSL Stylesheets V1.78.1"/><link rel="prev" href="documentation.html" title="Chapter 5. Documentation"/><link rel="next" href="http.server.html" title="Chapter 7. HTTP Server"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><link rel="shortcut icon" href="./images/community/docbook/glider.ico"/></head><body><header><p id="title"/><ul class="navheader"><li class="previous"><a accesskey="p" href="documentation.html"><strong>Previous</strong></a></li><li class="next"><a accesskey="n" href="http.server.html"><strong>Next</strong></a></li></ul></header><section class="chapter" id="mail.server"><div class="titlepage"><div><div><h1 class="title"><a id="mail.server" class="anchor" href="#mail.server"><span class="octicon octicon-link"/></a>Chapter 6. Mail Server</h1></div></div></div><div class="toc"><div class="toc-title">Table of Contents</div><ul class="toc"><li><span class="section"><a href="mail.server.html#mail.client.thunderbird">6.1. Thunderbird</a></span><ul><li><span class="section"><a href="mail.server.html#mail.thunderbird.resources">6.1.1. Resources</a></span></li><li><span class="section"><a href="mail.server.html#mail.thunderbird.install.guide">6.1.2. Thunderbird installation guide</a></span></li></ul></li><li><span class="section"><a href="mail.server.html#mail.james">6.2. Apache James</a></span><ul><li><span class="section"><a href="mail.server.html#mail.james.resources">6.2.1. Resources</a></span></li><li><span class="section"><a href="mail.server.html#mail.james.install.guide">6.2.2. Apache James installation guide</a></span></li><li><span class="section"><a href="mail.server.html#mail.james.config">6.2.3. Apache James configuration</a></span></li><li><span class="section"><a href="mail.server.html#mail.james.windows.service">6.2.4. Windows service</a></span></li></ul></li></ul></div><section class="section" id="mail.client.thunderbird"><div class="titlepage"><div><div><h2 class="title"><a id="mail.client.thunderbird" class="anchor" href="#mail.client.thunderbird"><span class="octicon octicon-link"/></a>6.1. Thunderbird</h2></div></div></div><p><span class="inlinemediaobject"><img src="images/icons/thunderbird.png"/></span> Reclaim your inbox with Mozilla's email
+      application <a class="link" href="http://www.mozilla.com/en-US/thunderbird/">Thunderbird</a>.</p><section class="section" id="mail.thunderbird.resources"><div class="titlepage"><div><div><h3 class="title"><a id="mail.thunderbird.resources" class="anchor" href="#mail.thunderbird.resources"><span class="octicon octicon-link"/></a>6.1.1. Resources</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><a class="link" href="http://www.mozilla.org/en-US/thunderbird/all.html">Download</a>
+              a fully localized version.</p></li><li class="listitem"><p>Thunderbird <a class="link" href="http://www.mozillamessaging.com/en-US/thunderbird/features/">features</a>
+              many enhancements to help you better manage your unruly inbox,
+              and stay informed.</p></li><li class="listitem"><p><a class="link" href="https://addons.mozilla.org/en-US/thunderbird/">Add-ons</a>
+              extend Thunderbird, letting you personalize your email
+              client:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><span class="inlinemediaobject"><img src="images/icons/lightning-calendar.png"/></span> <a class="link" href="https://www.mozilla.org/en-US/projects/calendar/">Lightning
+                    Calendar</a> to organize your life — it's about time!
+                    Integrated by default with your Thunderbird.</p></li><li class="listitem"><p><span class="inlinemediaobject"><img src="images/icons/deepdarktheme.png"/></span> <a class="link" href="https://addons.mozilla.org/en-us/thunderbird/addon/tt-deepdark/">TT
+                    DeepDark</a> is a smooth dark theme for
+                    Thunderbird.</p></li></ul></div></li></ul></div></section><section class="section" id="mail.thunderbird.install.guide"><div class="titlepage"><div><div><h3 class="title"><a id="mail.thunderbird.install.guide" class="anchor" href="#mail.thunderbird.install.guide"><span class="octicon octicon-link"/></a>6.1.2. Thunderbird installation guide</h3></div></div></div><p><a class="link" href="http://www.mozilla.org/en-US/thunderbird/all.html">Download</a>
+        the Win32 binary: <code class="filename">Thunderbird Setup 38.6.0.exe</code>
+        [version <a class="link" href="http://www.mozilla.org/en-US/thunderbird/all.html">38.6.0</a>].</p><p>Run this <code class="filename">.exe</code> file to
+        install Thunderbird in <code class="filename">P:\dev\apps\mail\thunderbird</code>.</p><p>Optionally install useful extensions and pimp the email client
+        theme for example with the the above mentioned addons.</p><section class="section" id="mail.thunderbird.profile.folder"><div class="titlepage"><div><div><h4 class="title"><a id="mail.thunderbird.profile.folder" class="anchor" href="#mail.thunderbird.profile.folder"><span class="octicon octicon-link"/></a>6.1.2.1. Custom profile folder</h4></div></div></div><p>Mozilla Thunderbird stores all your personal settings, such as
+          your mail, passwords and extensions, in a <a class="link" href="http://support.mozillamessaging.com/en-US/kb/Profiles">profile
+          folder</a>.</p><p>To move it to a new location, all you have to do is close
+          Thunderbird and move the default profile folder <a class="xref" href="mail.server.html#mail.thunderbird.profile.folder.old"><img src="images/community/docbook/callouts/2.png" alt="2" border="0" height="17px" width="17px" class="callout"/></a> and set the absolute
+          path <a class="xref" href="mail.server.html#mail.thunderbird.profile.folder.is.relative"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a>
+          for the new location <a class="xref" href="mail.server.html#mail.thunderbird.profile.folder.new"><img src="images/community/docbook/callouts/3.png" alt="3" border="0" height="17px" width="17px" class="callout"/></a> in <code class="filename">%<a class="link" href="http://technet.microsoft.com/en-us/library/cc749104.aspx">APPDATA</a>%\Thunderbird\profiles.ini</code>:</p><pre xmlns="" class="language-provided"><code class="language-ini">[General]
+StartWithLastProfile=1
+
+[Profile0]
+Name=default
+IsRelative=<span xmlns="http://www.w3.org/1999/xhtml" class="strikethrough">1</span><span xmlns="http://www.w3.org/1999/xhtml" id="mail.thunderbird.profile.folder.is.relative"/><a xmlns="http://www.w3.org/1999/xhtml" id="mail.thunderbird.profile.folder.is.relative"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>0
+Path=<span xmlns="http://www.w3.org/1999/xhtml" class="strikethrough">Profiles/….default</span><span xmlns="http://www.w3.org/1999/xhtml" id="mail.thunderbird.profile.folder.old"/><a xmlns="http://www.w3.org/1999/xhtml" id="mail.thunderbird.profile.folder.old"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/2.png" alt="2" height="17px" width="17px" class="callout"/>P:\dev\data\mail\thunderbird\profiles\default<span xmlns="http://www.w3.org/1999/xhtml" id="mail.thunderbird.profile.folder.new"/><a xmlns="http://www.w3.org/1999/xhtml" id="mail.thunderbird.profile.folder.new"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/3.png" alt="3" height="17px" width="17px" class="callout"/>
+</code></pre></section></section></section><section class="section" id="mail.james"><div class="titlepage"><div><div><h2 class="title"><a id="mail.james" class="anchor" href="#mail.james"><span class="octicon octicon-link"/></a>6.2. Apache James</h2></div></div></div><p><span class="inlinemediaobject"><img src="images/icons/apache.png"/></span> The <a class="link" href="http://james.apache.org/server/index.html">Apache Java
+      Enterprise Mail Server</a> (a.k.a. Apache James) is a 100% pure Java
+      SMTP and POP3 Mail server and NNTP News server.</p><section class="section" id="mail.james.resources"><div class="titlepage"><div><div><h3 class="title"><a id="mail.james.resources" class="anchor" href="#mail.james.resources"><span class="octicon octicon-link"/></a>6.2.1. Resources</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><a class="link" href="http://james.apache.org/download.cgi">Download</a>
+            the Apache James Mail Server.</p></li><li class="listitem"><p>Upgrade checklist:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p>Related products: -.</p></li><li class="listitem"><p>References: <a class="link" href="version.control.system.html#vcs.fisheye.config.global.settings" title="11.3.3.1. Global Settings">FishEye - Global
+                Settings <code class="code">SMTP Host name</code></a>, <a class="link" href="issue.tracker.html#it.jira.config.required.settings" title="12.1.3.1. Required settings">JIRA - Required
+                settings <code class="code">Host Name</code></a>, <a class="link" href="repository.manager.html#repo.nexus.config.server" title="13.1.5.2. Server Administration">Nexus - Server
+                Administration <code class="code">Hostname</code></a>, <a class="link" href="continuous.integration.html#ci.jenkins.config.system" title="14.1.4.1. System">Jenkins - System <code class="code">SMTP
+                server</code></a> and <a class="link" href="quality.assurance.html#qa.sonar.config.settings" title="17.2.4.2. Settings">SonarQube - Settings
+                <code class="code">SMTP host</code></a>.</p></li><li class="listitem"><p>Integration configuration changes: <a class="link" href="mail.server.html#mail.james.server.config" title="6.2.3.2. Global server configuration">Apache James -
+                configuration Global server</a>, <a class="link" href="mail.server.html#mail.james.dns.config" title="6.2.3.3. DNS configuration">Apache James - configuration
+                <code class="code">DNS</code></a>, <a class="link" href="mail.server.html#mail.james.remote.manager.config" title="6.2.3.4. Remote Manager configuration">Apache James -
+                configuration <code class="code">Remote Manager</code></a>, <a class="link" href="mail.server.html#mail.james.smtp.config" title="6.2.3.5. SMTP configuration">Apache James - configuration
+                <code class="code">SMTP</code></a>, <a class="link" href="mail.server.html#mail.james.pop3.config" title="6.2.3.6. POP3 configuration">Apache James - configuration
+                <code class="code">POP3</code></a>, <a class="link" href="mail.server.html#mail.james.nntp.config" title="6.2.3.7. NNTP configuration">Apache James - configuration
+                <code class="code">NNTP</code></a>, <a class="link" href="mail.server.html#mail.james.transport.processor.config" title="6.2.3.8. Transport processor configuration">Apache James -
+                configuration <code class="code">Transport processor</code></a>, <a class="link" href="mail.server.html#mail.james.data.storage" title="6.2.3.9. Data storage">Apache James - configuration
+                <code class="code">Data storage</code></a> and <a class="link" href="mail.server.html#mail.james.windows.service" title="6.2.4. Windows service">Apache James - Windows
+                Service <code class="code">wrapper.conf</code></a>.</p></li></ul></div></li><li class="listitem"><p><a class="link" href="http://james.apache.org/server/2/index.html">Introduction</a>
+            to the concepts behind the James implementation, as well as a
+            guide to installing, configuring, (and for developers) building
+            the James server.</p></li></ul></div></section><section class="section" id="mail.james.install.guide"><div class="titlepage"><div><div><h3 class="title"><a id="mail.james.install.guide" class="anchor" href="#mail.james.install.guide"><span class="octicon octicon-link"/></a>6.2.2. Apache James installation guide</h3></div></div></div><p><a class="link" href="http://james.apache.org/download.cgi">Download</a> the
+        archive: <code class="filename">apache-james-2.3.2.zip</code> [version <a class="link" href="http://james.apache.org/download.cgi">2.3.2</a>].</p><p>Extract this <code class="filename">.zip</code> file to
+        <code class="filename">P:\dev\apps\mail</code>.</p><p id="mail.james.home"><a id="mail.james.home"><span style="display:none;">trick</span></a>Press <span class="keycap"><strong><span class="inlinemediaobject"><img src="images/os/windows/windows-key.gif"/></span></strong></span>+<span class="keycap"><strong>Break</strong></span> keys to open the Windows System Properties. Select
+        <span class="guimenu"><strong>Advanced system settings</strong></span> → <span class="guibutton"><strong>Enviro<span class="accel">n</span>ment Variables</strong></span> and add a <span class="guibutton"><strong>Ne<span class="accel">w</span></strong></span>
+        system variable <code class="envar">JAMES_HOME</code> pointing to
+        <strong class="userinput"><code><code class="filename">P:\dev\apps\mail\james-2.3.2</code></code></strong>.</p></section><section class="section" id="mail.james.config"><div class="titlepage"><div><div><h3 class="title"><a id="mail.james.config" class="anchor" href="#mail.james.config"><span class="octicon octicon-link"/></a>6.2.3. Apache James configuration</h3></div></div></div><p>To get the configuration files extracted to <code class="filename">P:\dev\apps\mail\james-2.3.2\apps\james\conf</code>
+        and <code class="filename">P:\dev\apps\mail\james-2.3.2\apps\james\SAR-INF</code>
+        start the server with the following command <code class="command">%<a class="xref" href="mail.server.html#mail.james.home">JAMES_HOME</a>%\bin\run.bat</code>. Terminate the
+        server with <span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>C</strong></span>.</p><section class="section" id="mail.james.host.config"><div class="titlepage"><div><div><h4 class="title"><a id="mail.james.host.config" class="anchor" href="#mail.james.host.config"><span class="octicon octicon-link"/></a>6.2.3.1. Host configuration</h4></div></div></div><p>In <code class="filename">C:\WINDOWS\system32\drivers\etc\hosts</code>
+          file on the Mail Server computer add the following host mapping
+          <a class="xref" href="mail.server.html#mail.james.host.mapping"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a>:</p><pre xmlns="" class="language-provided"><code class="language-ini"># Copyright (c) 1993-2009 Microsoft Corp.
+#
+# This is a sample HOSTS file used by Microsoft TCP/IP for Windows.
+#
+# This file contains the mappings of IP addresses to host names. Each
+# entry should be kept on an individual line. The IP address should
+# be placed in the first column followed by the corresponding host name.
+# The IP address and the host name should be separated by at least one
+# space.
+#
+# Additionally, comments (such as these) may be inserted on individual
+# lines or following the machine name denoted by a '#' symbol.
+
+# localhost name resolution is handled within DNS itself.
+# 127.0.0.1       localhost
+# ::1             localhost
+
+127.0.0.1    mail.freedumbytes.dev.net<span xmlns="http://www.w3.org/1999/xhtml" id="mail.james.host.mapping"/><a xmlns="http://www.w3.org/1999/xhtml" id="mail.james.host.mapping"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>
+</code></pre></section><section class="section" id="mail.james.server.config"><div class="titlepage"><div><div><h4 class="title"><a id="mail.james.server.config" class="anchor" href="#mail.james.server.config"><span class="octicon octicon-link"/></a>6.2.3.2. Global server configuration</h4></div></div></div><p>Edit the following settings <a class="xref" href="mail.server.html#mail.james.postmaster"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a>-<a class="xref" href="mail.server.html#mail.james.server.name"><img src="images/community/docbook/callouts/4.png" alt="4" border="0" height="17px" width="17px" class="callout"/></a> in
+          <code class="filename">P:\dev\apps\mail\james-2.3.2\apps\james\SAR-INF\config.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;James&gt;
+      &lt;postmaster&gt;<em xmlns="http://www.w3.org/1999/xhtml" class="replaceable"><code>james.postmaster@company.org</code></em><span xmlns="http://www.w3.org/1999/xhtml" id="mail.james.postmaster"/><a xmlns="http://www.w3.org/1999/xhtml" id="mail.james.postmaster"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>&lt;/postmaster&gt;
+      &lt;servernames autodetect="false"<span xmlns="http://www.w3.org/1999/xhtml" id="mail.james.autodetect.name"/><a xmlns="http://www.w3.org/1999/xhtml" id="mail.james.autodetect.name"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/2.png" alt="2" height="17px" width="17px" class="callout"/> autodetectIP="false"<span xmlns="http://www.w3.org/1999/xhtml" id="mail.james.autodetect.ip"/><a xmlns="http://www.w3.org/1999/xhtml" id="mail.james.autodetect.ip"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/3.png" alt="3" height="17px" width="17px" class="callout"/>&gt;
+         &lt;servername&gt;mail.freedumbytes.dev.net<span xmlns="http://www.w3.org/1999/xhtml" id="mail.james.server.name"/><a xmlns="http://www.w3.org/1999/xhtml" id="mail.james.server.name"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/4.png" alt="4" height="17px" width="17px" class="callout"/>&lt;/servername&gt;
+      &lt;/servernames&gt;
+      &lt;usernames ignoreCase="true" enableAliases="true" enableForwarding="true"/&gt;
+      &lt;inboxRepository&gt;
+         &lt;repository destinationURL="file://var/mail/inboxes/" type="MAIL"/&gt;
+      &lt;/inboxRepository&gt;
+   &lt;/James&gt;
+</code></pre></section><section class="section" id="mail.james.dns.config"><div class="titlepage"><div><div><h4 class="title"><a id="mail.james.dns.config" class="anchor" href="#mail.james.dns.config"><span class="octicon octicon-link"/></a>6.2.3.3. DNS configuration</h4></div></div></div><p>Edit the following settings <a class="xref" href="mail.server.html#mail.james.dns.server.ip"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a>-<a class="xref" href="mail.server.html#mail.james.autodetect.dns"><img src="images/community/docbook/callouts/2.png" alt="2" border="0" height="17px" width="17px" class="callout"/></a> in
+          <code class="filename">P:\dev\apps\mail\james-2.3.2\apps\james\SAR-INF\config.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;dnsserver&gt;
+      &lt;servers&gt;
+        &lt;server&gt;<em xmlns="http://www.w3.org/1999/xhtml" class="replaceable"><code>IP address of DNS Server</code></em><span xmlns="http://www.w3.org/1999/xhtml" id="mail.james.dns.server.ip"/><a xmlns="http://www.w3.org/1999/xhtml" id="mail.james.dns.server.ip"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>&lt;/server&gt;
+      &lt;/servers&gt;
+      &lt;autodiscover&gt;false<span xmlns="http://www.w3.org/1999/xhtml" id="mail.james.autodetect.dns"/><a xmlns="http://www.w3.org/1999/xhtml" id="mail.james.autodetect.dns"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/2.png" alt="2" height="17px" width="17px" class="callout"/>&lt;/autodiscover&gt;
+      &lt;authoritative&gt;false&lt;/authoritative&gt;
+
+      &lt;!-- Maximum number of entries to maintain in the DNS cache --&gt;
+      &lt;maxcachesize&gt;50000&lt;/maxcachesize&gt;
+   &lt;/dnsserver&gt;
+</code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="tip"><h2>Tip</h2><p>To find the DNS server, type: <code class="command">ipconfig
+            /all</code>.</p></div></section><section class="section" id="mail.james.remote.manager.config"><div class="titlepage"><div><div><h4 class="title"><a id="mail.james.remote.manager.config" class="anchor" href="#mail.james.remote.manager.config"><span class="octicon octicon-link"/></a>6.2.3.4. Remote Manager configuration</h4></div></div></div><p>Edit the following settings <a class="xref" href="mail.server.html#mail.james.remote.manager.bind"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a>-<a class="xref" href="mail.server.html#mail.james.remote.manager.pass"><img src="images/community/docbook/callouts/5.png" alt="5" border="0" height="17px" width="17px" class="callout"/></a> and uncomment the prompt
+          setting <a class="xref" href="mail.server.html#mail.james.remote.manager.prompt"><img src="images/community/docbook/callouts/6.png" alt="6" border="0" height="17px" width="17px" class="callout"/></a> in
+          <code class="filename">P:\dev\apps\mail\james-2.3.2\apps\james\SAR-INF\config.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;remotemanager enabled="true"&gt;
+      &lt;port&gt;4555&lt;/port&gt;
+      &lt;bind&gt;127.0.0.1&lt;/bind&gt;<span xmlns="http://www.w3.org/1999/xhtml" id="mail.james.remote.manager.bind"/><a xmlns="http://www.w3.org/1999/xhtml" id="mail.james.remote.manager.bind"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>
+      &lt;handler&gt;
+         &lt;helloName autodetect="false"<span xmlns="http://www.w3.org/1999/xhtml" id="mail.james.remote.manager.autodetect.hello.name"/><a xmlns="http://www.w3.org/1999/xhtml" id="mail.james.remote.manager.autodetect.hello.name"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/2.png" alt="2" height="17px" width="17px" class="callout"/>&gt;mail.freedumbytes.dev.net<span xmlns="http://www.w3.org/1999/xhtml" id="mail.james.remote.manager.hello.name"/><a xmlns="http://www.w3.org/1999/xhtml" id="mail.james.remote.manager.hello.name"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/3.png" alt="3" height="17px" width="17px" class="callout"/>&lt;/helloName&gt;
+         &lt;administrator_accounts&gt;
+            &lt;account login="admin"<span xmlns="http://www.w3.org/1999/xhtml" id="mail.james.remote.manager.user"/><a xmlns="http://www.w3.org/1999/xhtml" id="mail.james.remote.manager.user"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/4.png" alt="4" height="17px" width="17px" class="callout"/> password="<em xmlns="http://www.w3.org/1999/xhtml" class="replaceable"><code>password</code></em>"<span xmlns="http://www.w3.org/1999/xhtml" id="mail.james.remote.manager.pass"/><a xmlns="http://www.w3.org/1999/xhtml" id="mail.james.remote.manager.pass"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/5.png" alt="5" height="17px" width="17px" class="callout"/>/&gt;
+         &lt;/administrator_accounts&gt;
+         &lt;connectiontimeout&gt; 60000 &lt;/connectiontimeout&gt;
+         &lt;prompt&gt;james&amp;gt;&lt;/prompt&gt;<span xmlns="http://www.w3.org/1999/xhtml" id="mail.james.remote.manager.prompt"/><a xmlns="http://www.w3.org/1999/xhtml" id="mail.james.remote.manager.prompt"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/6.png" alt="6" height="17px" width="17px" class="callout"/>
+      &lt;/handler&gt;
+   &lt;/remotemanager&gt;
+</code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="important"><h2>Important</h2><p>After the Mail Server is restarted access to the Remote
+            Administration Tool should now only possible with <code class="command"><a class="link" href="http://www.mobilefish.com/popupwindow/windows_telnet.html">telnet</a>
+            127.0.0.1 4555</code> and the new username and password. Type
+            <code class="command">shutdown</code> to kill the current JVM (convenient
+            when James is run as a daemon) or type <code class="command">quit</code> to
+            close the connection.</p></div><section class="section" id="mail.james.remote.manager.config.putty"><div class="titlepage"><div><div><h5 class="title"><a id="mail.james.remote.manager.config.putty" class="anchor" href="#mail.james.remote.manager.config.putty"><span class="octicon octicon-link"/></a>6.2.3.4.1. PuTTY configuration</h5></div></div></div><p>Run <a class="link" href="operating.system.html#os.windows.ssh.putty" title="1.1.20.1. PuTTY">PuTTY</a> and
+            configure the following custom
+            <span class="guilabel"><strong>Session</strong></span>:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><span class="guilabel"><strong>Host <span class="accel">N</span>ame</strong></span>:
+                <strong class="userinput"><code>mail.freedumbytes.dev.net</code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong><span class="accel">T</span>elnet</strong></span>.</p></li><li class="listitem"><p><span class="guilabel"><strong><span class="accel">P</span>ort</strong></span>:
+                <strong class="userinput"><code>4555</code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Connection</strong></span> → <span class="guilabel"><strong>Telnet</strong></span> → <span class="guilabel"><strong><span class="accel">T</span>elnet negotiation
+                    mode</strong></span>: <span class="guilabel"><strong>Passive</strong></span>.</p></li></ul></div><p>In <span class="guilabel"><strong>Session</strong></span> set
+            <span class="guilabel"><strong>Sav<span class="accel">e</span>d Sessions</strong></span>:
+            <strong class="userinput"><code>mail.freedumbytes.dev.net remote manager</code></strong>
+            and click <span class="guibutton"><strong>Sa<span class="accel">v</span>e</strong></span> and
+            <span class="guibutton"><strong><span class="accel">O</span>pen</strong></span>. Login with
+            <strong class="userinput"><code>admin</code></strong>. Type <strong class="userinput"><code>quit</code></strong> to
+            exit.</p></section></section><section class="section" id="mail.james.smtp.config"><div class="titlepage"><div><div><h4 class="title"><a id="mail.james.smtp.config" class="anchor" href="#mail.james.smtp.config"><span class="octicon octicon-link"/></a>6.2.3.5. SMTP configuration</h4></div></div></div><p>Edit the following settings <a class="xref" href="mail.server.html#mail.james.smtp.bind"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a>-<a class="xref" href="mail.server.html#mail.james.smtp.hello.name"><img src="images/community/docbook/callouts/3.png" alt="3" border="0" height="17px" width="17px" class="callout"/></a> in
+          <code class="filename">P:\dev\apps\mail\james-2.3.2\apps\james\SAR-INF\config.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;smtpserver enabled="true"&gt;
+      &lt;!-- port 25 is the well-known/IANA registered port for SMTP --&gt;
+      &lt;port&gt;25&lt;/port&gt;
+      &lt;bind&gt;127.0.0.1&lt;/bind&gt;<span xmlns="http://www.w3.org/1999/xhtml" id="mail.james.smtp.bind"/><a xmlns="http://www.w3.org/1999/xhtml" id="mail.james.smtp.bind"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>
+      &lt;handler&gt;
+         &lt;helloName autodetect="false"<span xmlns="http://www.w3.org/1999/xhtml" id="mail.james.smtp.autodetect.hello.name"/><a xmlns="http://www.w3.org/1999/xhtml" id="mail.james.smtp.autodetect.hello.name"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/2.png" alt="2" height="17px" width="17px" class="callout"/>&gt;mail.freedumbytes.dev.net<span xmlns="http://www.w3.org/1999/xhtml" id="mail.james.smtp.hello.name"/><a xmlns="http://www.w3.org/1999/xhtml" id="mail.james.smtp.hello.name"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/3.png" alt="3" height="17px" width="17px" class="callout"/>&lt;/helloName&gt;
+         &lt;connectiontimeout&gt;360000&lt;/connectiontimeout&gt;
+         &lt;authorizedAddresses&gt;127.0.0.0/8&lt;/authorizedAddresses&gt;
+         &lt;maxmessagesize&gt;0&lt;/maxmessagesize&gt;
+      &lt;/handler&gt;
+   &lt;/smtpserver&gt;
+</code></pre><p>After the Mail Server is restarted verify the connection with
+          <code class="command"><a class="link" href="http://www.mobilefish.com/popupwindow/windows_telnet.html">telnet</a>
+          127.0.0.1 25</code>. When all goes well the response will be:
+          <code class="computeroutput">220 mail.freedumbytes.dev.net SMTP Server (JAMES
+          SMTP Server 2.3.1) ready…</code>. Type
+          <code class="command">quit</code> to close the connection.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="tip"><h2>Tip</h2><p>When telnet is <code class="computeroutput">Connecting To
+            127.0.0.1…</code> and reports the following error
+            <span class="quote">“<span class="quote">Could not open connection to the host, on port 25: Connect
+            failed</span>”</span> use for example the <a class="link" href="operating.system.html#os.windows.resources" title="1.1.1. Resources">PortQueryUI</a> tool (see also
+            <a class="link" href="http://support.microsoft.com/kb/832919/en-us">features
+            and functionality</a>) to get additional information with the
+            command <code class="command">portqry.exe -n 127.0.0.1 -e 25 -p TCP</code>.
+            In case of <span class="quote">“<span class="quote">Error opening socket: 10053 A Winsock error has
+            been encountered</span>”</span>. A firewall or a virus scanner is
+            probably blocking the port.</p></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="important"><h2>Important</h2><p>In case the INFO message <span class="quote">“<span class="quote">James.Mailet:
+            RemoteDelivery: Could not connect to SMTP host: …, port: 25,
+            response: 421</span>”</span> and the virus scanner is <a class="link" href="operating.system.html#os.windows.antivirus" title="1.1.12. Antivirus">Avast</a> select <span class="guimenuitem"><strong><span class="accel">O</span>pen Avast user
+                interface</strong></span> → <span class="guimenuitem"><strong>REAL-TIME SHIELDS</strong></span> → <span class="guimenuitem"><strong>Mail Shield</strong></span> to disable <span class="guilabel"><strong>Scan outbound
+            messages</strong></span>.</p></div><section class="section" id="mail.james.smtp.config.putty"><div class="titlepage"><div><div><h5 class="title"><a id="mail.james.smtp.config.putty" class="anchor" href="#mail.james.smtp.config.putty"><span class="octicon octicon-link"/></a>6.2.3.5.1. PuTTY configuration</h5></div></div></div><p>Run <a class="link" href="operating.system.html#os.windows.ssh.putty" title="1.1.20.1. PuTTY">PuTTY</a> and
+            configure the following custom
+            <span class="guilabel"><strong>Session</strong></span>:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><span class="guilabel"><strong>Host <span class="accel">N</span>ame</strong></span>:
+                <strong class="userinput"><code>mail.freedumbytes.dev.net</code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong><span class="accel">T</span>elnet</strong></span>.</p></li><li class="listitem"><p><span class="guilabel"><strong><span class="accel">P</span>ort</strong></span>:
+                <strong class="userinput"><code>25</code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Connection</strong></span> → <span class="guilabel"><strong>Telnet</strong></span> → <span class="guilabel"><strong><span class="accel">T</span>elnet negotiation
+                    mode</strong></span>: <span class="guilabel"><strong>Passive</strong></span>.</p></li></ul></div><p>In <span class="guilabel"><strong>Session</strong></span> set
+            <span class="guilabel"><strong>Sav<span class="accel">e</span>d Sessions</strong></span>:
+            <strong class="userinput"><code>mail.freedumbytes.dev.net telnet</code></strong> and click
+            <span class="guibutton"><strong>Sa<span class="accel">v</span>e</strong></span> and
+            <span class="guibutton"><strong><span class="accel">O</span>pen</strong></span>. Type
+            <strong class="userinput"><code>quit</code></strong> to exit.</p></section></section><section class="section" id="mail.james.pop3.config"><div class="titlepage"><div><div><h4 class="title"><a id="mail.james.pop3.config" class="anchor" href="#mail.james.pop3.config"><span class="octicon octicon-link"/></a>6.2.3.6. POP3 configuration</h4></div></div></div><p>Disable the following setting <a class="xref" href="mail.server.html#mail.james.pop3.enabled"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a> in
+          <code class="filename">P:\dev\apps\mail\james-2.3.2\apps\james\SAR-INF\config.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;pop3server enabled="false"<span xmlns="http://www.w3.org/1999/xhtml" id="mail.james.pop3.enabled"/><a xmlns="http://www.w3.org/1999/xhtml" id="mail.james.pop3.enabled"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>&gt;
+      &lt;!-- port 995 is the well-known/IANA registered port for POP3S --&gt;
+      &lt;!-- port 110 is the well-known/IANA registered port for Standard POP3 --&gt;
+      &lt;port&gt;110&lt;/port&gt;
+
+      &lt;handler&gt;
+         &lt;helloName autodetect="false"<span xmlns="http://www.w3.org/1999/xhtml" id="mail.james.pop3.autodetect.hello.name"/><a xmlns="http://www.w3.org/1999/xhtml" id="mail.james.pop3.autodetect.hello.name"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/2.png" alt="2" height="17px" width="17px" class="callout"/>&gt;mail.freedumbytes.dev.net<span xmlns="http://www.w3.org/1999/xhtml" id="mail.james.pop3.hello.name"/><a xmlns="http://www.w3.org/1999/xhtml" id="mail.james.pop3.hello.name"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/3.png" alt="3" height="17px" width="17px" class="callout"/>&lt;/helloName&gt;
+         &lt;connectiontimeout&gt;120000&lt;/connectiontimeout&gt;
+      &lt;/handler&gt;
+   &lt;/pop3server&gt;
+</code></pre></section><section class="section" id="mail.james.nntp.config"><div class="titlepage"><div><div><h4 class="title"><a id="mail.james.nntp.config" class="anchor" href="#mail.james.nntp.config"><span class="octicon octicon-link"/></a>6.2.3.7. NNTP configuration</h4></div></div></div><p>Disable the following settings <a class="xref" href="mail.server.html#mail.james.nntp.enabled"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a> and <a class="xref" href="mail.server.html#mail.james.nntp.thread"><img src="images/community/docbook/callouts/4.png" alt="4" border="0" height="17px" width="17px" class="callout"/></a> in
+          <code class="filename">P:\dev\apps\mail\james-2.3.2\apps\james\SAR-INF\config.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">    &lt;!-- NNTP-specific: <span xmlns="http://www.w3.org/1999/xhtml" class="bold"><strong>if you disable the NNTP Server, 
+         you should also set the nntp-repository's threadCount to 0, 
+         otherwise there will be threads active and polling</strong></span>  --&gt;
+   &lt;nntpserver enabled="false"<span xmlns="http://www.w3.org/1999/xhtml" id="mail.james.nntp.enabled"/><a xmlns="http://www.w3.org/1999/xhtml" id="mail.james.nntp.enabled"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>&gt;
+      &lt;!-- port 563 is the well-known/IANA registered port for NNTP SSL/TLS --&gt;
+      &lt;!-- port 119 is the well-known/IANA registered port for Standard NNTP --&gt;
+      &lt;port&gt;119&lt;/port&gt;
+
+      &lt;handler&gt;
+         &lt;helloName autodetect="false"<span xmlns="http://www.w3.org/1999/xhtml" id="mail.james.nntp.autodetect.hello.name"/><a xmlns="http://www.w3.org/1999/xhtml" id="mail.james.nntp.autodetect.hello.name"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/2.png" alt="2" height="17px" width="17px" class="callout"/>&gt;mail.freedumbytes.dev.net<span xmlns="http://www.w3.org/1999/xhtml" id="mail.james.nntp.hello.name"/><a xmlns="http://www.w3.org/1999/xhtml" id="mail.james.nntp.hello.name"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/3.png" alt="3" height="17px" width="17px" class="callout"/>&lt;/helloName&gt;
+         &lt;connectiontimeout&gt;120000&lt;/connectiontimeout&gt;
+         &lt;authRequired&gt;false&lt;/authRequired&gt;
+      &lt;/handler&gt;
+   &lt;/nntpserver&gt;
+
+   &lt;nntp-repository&gt;
+       …
+
+      &lt;spool&gt;
+         &lt;configuration&gt;
+            &lt;spoolPath&gt;file://var/nntp/spool&lt;/spoolPath&gt;
+            &lt;threadCount&gt;<span xmlns="http://www.w3.org/1999/xhtml" class="strikethrough">1</span><span xmlns="http://www.w3.org/1999/xhtml" id="mail.james.nntp.thread"/><a xmlns="http://www.w3.org/1999/xhtml" id="mail.james.nntp.thread"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/4.png" alt="4" height="17px" width="17px" class="callout"/>0&lt;/threadCount&gt;
+            &lt;threadIdleTime&gt;60000&lt;/threadIdleTime&gt;
+         &lt;/configuration&gt;
+      &lt;/spool&gt;
+   &lt;/nntp-repository&gt;
+</code></pre></section><section class="section" id="mail.james.transport.processor.config"><div class="titlepage"><div><div><h4 class="title"><a id="mail.james.transport.processor.config" class="anchor" href="#mail.james.transport.processor.config"><span class="octicon octicon-link"/></a>6.2.3.8. Transport processor configuration</h4></div></div></div><p>In case of a Microsoft Exhange Server edit the following
+          settings <a class="xref" href="mail.server.html#mail.james.processor.transport.gateway"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a>-<a class="xref" href="mail.server.html#mail.james.processor.transport.gateway.port"><img src="images/community/docbook/callouts/2.png" alt="2" border="0" height="17px" width="17px" class="callout"/></a> in
+          <code class="filename">P:\dev\apps\mail\james-2.3.2\apps\james\SAR-INF\config.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">      &lt;processor name="transport"&gt;
+          …
+
+         &lt;mailet match="All" class="RemoteDelivery"&gt;
+             …
+   
+            &lt;gateway&gt;<em xmlns="http://www.w3.org/1999/xhtml" class="replaceable"><code>IP address of Microsoft Exhange Server</code></em>&lt;/gateway&gt;<span xmlns="http://www.w3.org/1999/xhtml" id="mail.james.processor.transport.gateway"/><a xmlns="http://www.w3.org/1999/xhtml" id="mail.james.processor.transport.gateway"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>
+            &lt;gatewayPort&gt;25&lt;/gatewayPort&gt;<span xmlns="http://www.w3.org/1999/xhtml" id="mail.james.processor.transport.gateway.port"/><a xmlns="http://www.w3.org/1999/xhtml" id="mail.james.processor.transport.gateway.port"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/2.png" alt="2" height="17px" width="17px" class="callout"/>
+         &lt;/mailet&gt;
+      &lt;/processor&gt;
+</code></pre></section><section class="section" id="mail.james.data.storage"><div class="titlepage"><div><div><h4 class="title"><a id="mail.james.data.storage" class="anchor" href="#mail.james.data.storage"><span class="octicon octicon-link"/></a>6.2.3.9. Data storage</h4></div></div></div><p>For the ease of future upgrades replace
+          <strong class="userinput"><code>file://var/</code></strong> with
+          <strong class="userinput"><code>file:///P:/dev/data/mail/james/</code></strong> for the
+          following file locations in
+          <code class="filename">P:\dev\apps\mail\james-2.3.2\apps\james\SAR-INF\config.xml</code>:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p>/mail/inboxes/</p></li><li class="listitem"><p>/mail/error/</p></li><li class="listitem"><p>/mail/outgoing/</p></li><li class="listitem"><p>/mail/spam/</p></li><li class="listitem"><p>/mail/address-error/</p></li><li class="listitem"><p>/mail/relay-denied/</p></li><li class="listitem"><p>/nntp/groups</p></li><li class="listitem"><p>/nntp/temp</p></li><li class="listitem"><p>/nntp/articleid</p></li><li class="listitem"><p>/nntp/spool</p></li><li class="listitem"><p>/mail/spool/</p></li><li class="listitem"><p>/dbmail (2x)</p></li><li class="listitem"><p>/users/</p></li></ul></div><p>The old now unused location <code class="filename">P:\dev\apps\mail\james-2.3.2\apps\james\var</code>
+          and its subdirectories can be deleted.</p><p>Logging can be found in <code class="filename">P:\dev\apps\mail\james-2.3.2\logs</code> and
+          <code class="filename">P:\dev\apps\mail\james-2.3.2\apps\james\logs</code>.</p></section></section><section class="section" id="mail.james.windows.service"><div class="titlepage"><div><div><h3 class="title"><a id="mail.james.windows.service" class="anchor" href="#mail.james.windows.service"><span class="octicon octicon-link"/></a>6.2.4. Windows service</h3></div></div></div><p>To restart automatically on Microsoft Windows, create a Windows
+        service. Use the <span class="application"><strong><a class="link" href="http://wrapper.tanukisoftware.org/doc/english/introduction.html">Tanuki
+        Java Service Wrapper</a> </strong></span>shipped with James.</p><p>Optionally edit the following entries <a class="xref" href="mail.server.html#mail.james.java.command"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a>-<a class="xref" href="mail.server.html#mail.james.description"><img src="images/community/docbook/callouts/5.png" alt="5" border="0" height="17px" width="17px" class="callout"/></a> in the service wrapper
+        configuration file
+        <code class="filename">P:\dev\apps\mail\james-2.3.2\conf\wrapper.conf</code>:</p><pre xmlns="" class="language-provided"><code class="language-ini"> …
+
+# Java Application
+wrapper.java.command=P:\dev\apps\prg\java\jdk1.8.0_74\bin\java<span xmlns="http://www.w3.org/1999/xhtml" id="mail.james.java.command"/><a xmlns="http://www.w3.org/1999/xhtml" id="mail.james.java.command"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>
+
+ …
+
+# Wrapper Windows Properties
+wrapper.console.title=<span xmlns="http://www.w3.org/1999/xhtml" class="strikethrough">James Mail Server 2.3.2</span>freedumbytes.dev.net Apache James<span xmlns="http://www.w3.org/1999/xhtml" id="mail.james.console.title"/><a xmlns="http://www.w3.org/1999/xhtml" id="mail.james.console.title"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/2.png" alt="2" height="17px" width="17px" class="callout"/>
+
+ …
+
+# Wrapper Windows NT/2000/XP Service Properties
+wrapper.ntservice.name=<span xmlns="http://www.w3.org/1999/xhtml" class="strikethrough">James 2.3.2</span>james<span xmlns="http://www.w3.org/1999/xhtml" id="mail.james.service.name"/><a xmlns="http://www.w3.org/1999/xhtml" id="mail.james.service.name"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/3.png" alt="3" height="17px" width="17px" class="callout"/>
+wrapper.ntservice.displayname=freedumbytes.dev.net Apache James<span xmlns="http://www.w3.org/1999/xhtml" id="mail.james.display.name"/><a xmlns="http://www.w3.org/1999/xhtml" id="mail.james.display.name"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/4.png" alt="4" height="17px" width="17px" class="callout"/>
+wrapper.ntservice.description=The Java Apache Mail Enterprise Server.<span xmlns="http://www.w3.org/1999/xhtml" id="mail.james.description"/><a xmlns="http://www.w3.org/1999/xhtml" id="mail.james.description"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/5.png" alt="5" height="17px" width="17px" class="callout"/>
+</code></pre><p>Register the Apache James service with the command in <a class="link" href="operating.system.html#os.windows.cmd.elevated" title="1.1.13.1. Elevated Command Prompt">an elevated command
+        processor</a>: <code class="command">%JAMES_HOME%\bin\Wrapper.exe -i
+        %JAMES_HOME%\conf\wrapper.conf</code>. Start Apache James with
+        <code class="command">net start james</code>.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="important"><h2>Important</h2><p>In case of a new jdk installation use <a class="link" href="operating.system.html#os.windows.cmd.elevated" title="1.1.13.1. Elevated Command Prompt">an elevated command prompt</a>
+          just run <code class="command">net stop james</code> and <code class="command">net start
+          james</code>.</p></div><section class="section" id="mail.james.windows.user"><div class="titlepage"><div><div><h4 class="title"><a id="mail.james.windows.user" class="anchor" href="#mail.james.windows.user"><span class="octicon octicon-link"/></a>6.2.4.1. Log On Windows user</h4></div></div></div><p>For the same reason as <a class="xref" href="web.server.html#web.tomcat.windows.user" title="8.1.3.1. Log On Windows user">Section 8.1.3.1, “Log On Windows user”</a> launch the <span class="application"><strong>Service
+          Management Console</strong></span> with
+          <code class="command">services.msc</code>. Right click on
+          <span class="guilabel"><strong>freedumbytes.dev.net Apache James</strong></span> and select
+          <span class="guimenuitem"><strong>P<span class="accel">r</span>operties</strong></span> → <span class="guilabel"><strong>Log On</strong></span> to use <span class="guilabel"><strong><span class="accel">T</span>his
+          account</strong></span> <strong class="userinput"><code>.\Tomcat</code></strong>. After password
+          conformation click <span class="guibutton"><strong><span class="accel">A</span>pply</strong></span> and
+          restart the service.</p></section></section></section></section><script xmlns="" type="text/javascript" src="js/highlight.min.js"> </script><script xmlns="" type="text/javascript">hljs.initHighlightingOnLoad();</script><footer><ul class="navfooter"><li class="previous"><a accesskey="p" href="documentation.html"><strong>Previous</strong>Chapter 5. Documentation</a></li><li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Front page</strong></a></li><li class="next"><a accesskey="n" href="http.server.html"><strong>Next</strong>Chapter 7. HTTP Server</a></li></ul></footer></body></html>

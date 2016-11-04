@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE html>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Chapter 10. Database</title><link rel="stylesheet" type="text/css" href="docbook.css"/><link rel="stylesheet" type="text/css" href="css/freedumbytes.css"/><meta name="generator" content="DocBook XSL Stylesheets V1.78.1"/><link rel="prev" href="application.server.html" title="Chapter 9. Application Server"/><link rel="next" href="version.control.system.html" title="Chapter 11. Version Control System"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><link rel="shortcut icon" href="./images/community/docbook/glider.ico"/></head><body><header><p id="title"/><ul class="navheader"><li class="previous"><a accesskey="p" href="application.server.html"><strong>Previous</strong></a></li><li class="next"><a accesskey="n" href="version.control.system.html"><strong>Next</strong></a></li></ul></header><section class="chapter" id="database"><div class="titlepage"><div><div><h1 class="title"><a id="database" class="anchor" href="#database"><span class="octicon octicon-link"/></a>Chapter 10. Database</h1></div></div></div><div class="toc"><div class="toc-title">Table of Contents</div><ul class="toc"><li><span class="section"><a href="database.html#db.mysql">10.1. MySQL</a></span><ul><li><span class="section"><a href="database.html#db.mysql.resources">10.1.1. Resources</a></span></li><li><span class="section"><a href="database.html#db.mysql.install.guide">10.1.2. MySQL installation guide</a></span></li><li><span class="section"><a href="database.html#db.mysql.windows.service">10.1.3. Windows service</a></span></li><li><span class="section"><a href="database.html#db.mysql.backup.options">10.1.4. Backup options</a></span></li><li><span class="section"><a href="database.html#db.mysql.upgrading">10.1.5. Upgrading</a></span></li><li><span class="section"><a href="database.html#db.mysql.sqlmanager">10.1.6. SQL Manager installation guide</a></span></li><li><span class="section"><a href="database.html#db.mysql.navicat">10.1.7. Navicat installation guide</a></span></li></ul></li><li><span class="section"><a href="database.html#db.oracle">10.2. Oracle</a></span><ul><li><span class="section"><a href="database.html#db.oracle.resources">10.2.1. Resources</a></span></li></ul></li></ul></div><section class="section" id="db.mysql"><div class="titlepage"><div><div><h2 class="title"><a id="db.mysql" class="anchor" href="#db.mysql"><span class="octicon octicon-link"/></a>10.1. MySQL</h2></div></div></div><p><span class="inlinemediaobject"><img src="images/icons/mysql.png"/></span> <a class="link" href="https://www.mysql.com/">MySQL</a> is the world's most
+      popular open source database.</p><section class="section" id="db.mysql.resources"><div class="titlepage"><div><div><h3 class="title"><a id="db.mysql.resources" class="anchor" href="#db.mysql.resources"><span class="octicon octicon-link"/></a>10.1.1. Resources</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><a class="link" href="https://dev.mysql.com/downloads/">Download</a> and
+            <a class="link" href="https://dev.mysql.com/doc/refman/5.6/en/mysql-upgrade.html">Upgrading</a>
+            MySQL (from <a class="link" href="https://dev.mysql.com/doc/refman/5.6/en/upgrading.html">previous
+            series</a>).</p></li><li class="listitem"><p>Upgrade checklist:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p>Related products: -.</p></li><li class="listitem"><p>References: -.</p></li><li class="listitem"><p>Integration configuration changes: <a class="link" href="database.html#db.mysql.upgrading" title="10.1.5. Upgrading">MySQL - Upgrading <code class="code">backup
+                xcopy</code> / <code class="code">sc delete mysqlmaster</code> /
+                <code class="code">unzip lastest</code> / <code class="code">MYSQL_HOME</code> /
+                <code class="code">basedir</code> / <code class="code">mysql-create-service
+                master</code> / <code class="code">mysql_upgrade</code> /
+                <code class="code">mysql_upgrade_info</code></a>.</p></li></ul></div></li><li class="listitem"><p>MySQL <a class="link" href="https://dev.mysql.com/doc/refman/5.6/en/">Reference
+            Manual</a> and <a class="link" href="https://dev.mysql.com/doc/">Documentation</a>.</p></li><li class="listitem"><p><a class="link" href="https://dev.mysql.com/downloads/workbench/">Download</a>
+            MySQL <a class="link" href="https://dev.mysql.com/doc/workbench/en/index.html">Workbench</a>
+            provides DBAs and developers an integrated tools environment for:
+            Database Design &amp; Modeling, SQL Development (replacing MySQL
+            Query Browser) and Database Administration (replacing MySQL
+            Administrator).</p></li><li class="listitem" id="db.mysql.jdbc.driver"><p><a id="db.mysql.jdbc.driver"><span style="display:none;">trick</span></a><a class="link" href="https://dev.mysql.com/downloads/connector/j/">Download</a>
+            the official JDBC driver <a class="link" href="https://dev.mysql.com/doc/refman/5.6/en/connector-j.html">Connector/J</a>
+            for MySQL.</p></li><li class="listitem"><p><a class="link" href="https://dev.mysql.com/downloads/tools/utilities/">Download</a>
+            MySQL <a class="link" href="https://dev.mysql.com/doc/workbench/en/mysql-utils-man-overview.html">Utilities</a>
+            a collection of command-line utilities that are used for
+            maintaining and administering MySQL servers.</p></li><li class="listitem"><p><a class="link" href="https://dev.mysql.com/downloads/mysql-proxy/">Download</a>
+            MySQL <a class="link" href="https://dev.mysql.com/doc/refman/5.6/en/mysql-proxy.html">Proxy</a>
+            is a simple program that sits between your client and MySQL
+            server(s) that can monitor, analyze or transform their
+            communication. Its flexibility allows for a wide variety of uses,
+            including load balancing; failover; query analysis; query
+            filtering and modification; and many more.</p></li><li class="listitem"><p><span class="inlinemediaobject"><img src="images/icons/percona.png"/></span> MySQL Performance <a class="link" href="http://www.mysqlperformanceblog.com/">Blog</a>:
+            <a class="link" href="http://www.mysqlperformanceblog.com/2008/08/02/recovery-beyond-data-restore/">Recovery
+            beyond data restore</a>.</p></li><li class="listitem"><p><span class="inlinemediaobject"><img src="images/icons/xaprb.png"/></span> Xaprb <a class="link" href="http://www.xaprb.com/blog/">Blog</a>: <a class="link" href="http://www.xaprb.com/blog/2007/01/20/how-to-make-mysql-replication-reliable/">How
+            to make replication reliable</a>, <a class="link" href="http://www.xaprb.com/blog/2007/11/08/how-mysql-replication-got-out-of-sync/">How
+            replication got out of sync</a>, <a class="link" href="http://www.xaprb.com/blog/2008/10/04/how-to-check-mysql-replication-integrity-continually/">How
+            to check replication integrity continually</a> and <a class="link" href="http://www.xaprb.com/blog/2011/04/05/oracle-is-not-screwing-mysql/">Oracle
+            is not screwing MySQL</a>.</p></li><li class="listitem"><p>How to <a class="link" href="https://mathiasbynens.be/notes/mysql-utf8mb4">support
+            full Unicode</a> in MySQL databases.</p></li></ul></div></section><section class="section" id="db.mysql.install.guide"><div class="titlepage"><div><div><h3 class="title"><a id="db.mysql.install.guide" class="anchor" href="#db.mysql.install.guide"><span class="octicon octicon-link"/></a>10.1.2. MySQL installation guide</h3></div></div></div><p><a class="link" href="https://dev.mysql.com/downloads/mysql/">Download</a>
+        the archive: <code class="filename">mysql-5.6.26-winx64.zip</code> [version
+        <a class="link" href="http://dev.mysql.com/doc/relnotes/mysql/5.6/en/">5.6.26</a>].</p><p>Extract this <code class="filename">.zip</code> file to
+        <code class="filename">P:\dev\apps\db</code>.</p><p id="db.mysql.home"><a id="db.mysql.home"><span style="display:none;">trick</span></a>Press <span class="keycap"><strong><span class="inlinemediaobject"><img src="images/os/windows/windows-key.gif"/></span></strong></span>+<span class="keycap"><strong>Break</strong></span> keys to open the Windows System Properties. Select
+        <span class="guisubmenu"><strong>Advanced system settings</strong></span> → <span class="guibutton"><strong>Enviro<span class="accel">n</span>ment Variables</strong></span> and <span class="guibutton"><strong>Ed<span class="accel">i</span>t</strong></span> the
+        <code class="envar">Path</code> to append
+        <strong class="userinput"><code>%MYSQL_HOME%\bin;</code></strong>. Also add a
+        <span class="guibutton"><strong>Ne<span class="accel">w</span></strong></span> system variable
+        <code class="envar">MYSQL_HOME</code> pointing to <strong class="userinput"><code><code class="filename">P:\dev\apps\db\mysql-5.6.26-winx64</code></code></strong>.</p><p>Verify the installation with <code class="command">mysql
+        --version</code>.</p><section class="section" id="db.mysql.install.custom.data"><div class="titlepage"><div><div><h4 class="title"><a id="db.mysql.install.custom.data" class="anchor" href="#db.mysql.install.custom.data"><span class="octicon octicon-link"/></a>10.1.2.1. Custom data directory</h4></div></div></div><p>Initialize a custom MySQL data directory with a copy of the
+          installation data folder <code class="filename">P:\dev\apps\db\mysql-5.6.26-winx64\data</code>
+          from the command line with <code class="command">xcopy /E /I
+          P:\dev\apps\db\mysql-5.6.26-winx64\data
+          K:\dev\data\db\mysql\data</code>.</p><p>Create a MySQL Server configuration file
+          <code class="filename">K:\dev\data\db\mysql\conf\mysql-master.ini</code>:</p><pre xmlns="" class="language-provided"><code class="language-ini">[mysqld]
+<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://dev.mysql.com/doc/refman/5.6/en/server-options.html#option_mysqld_basedir">basedir</a>="P:/dev/apps/db/mysql-5.6.26-winx64"
+<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://dev.mysql.com/doc/refman/5.6/en/server-options.html#option_mysqld_datadir">datadir</a>="K:/dev/data/db/mysql/data"
+<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://dev.mysql.com/doc/refman/5.6/en/server-options.html#option_mysqld_tmpdir">tmpdir</a>="K:/dev/data/db/mysql/tmp"
+<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="http://dev.mysql.com/doc/refman/5.6/en/server-options.html#option_mysqld_log-error">log-error</a>="K:/dev/data/db/mysql/mysql-master-error.log"
+<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://dev.mysql.com/doc/refman/5.6/en/server-options.html#option_mysqld_port">port</a>=3306
+<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://dev.mysql.com/doc/refman/5.6/en/server-system-variables.html#sysvar_server_id">server_id</a>=3306
+<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="http://dev.mysql.com/doc/refman/5.6/en/server-options.html#option_mysqld_default-storage-engine">default-storage-engine</a>=INNODB
+<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://dev.mysql.com/doc/refman/5.6/en/server-system-variables.html#sysvar_explicit_defaults_for_timestamp">explicit_defaults_for_timestamp</a>=true
+<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://dev.mysql.com/doc/refman/5.6/en/server-system-variables.html#sysvar_sql_mode">sql-mode</a>="<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://dev.mysql.com/doc/refman/5.6/en/server-sql-mode.html#sqlmode_strict_trans_tables">STRICT_TRANS_TABLES</a>,<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://dev.mysql.com/doc/refman/5.6/en/server-sql-mode.html#sqlmode_no_auto_create_user">NO_AUTO_CREATE_USER</a>,<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://dev.mysql.com/doc/refman/5.6/en/server-sql-mode.html#sqlmode_no_engine_substitution">NO_ENGINE_SUBSTITUTION</a>"
+</code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="important"><h2>Important</h2><p>To avoid the error <span class="quote">“<span class="quote">InnoDB: Error: unable to create
+            temporary file; errno: 2</span>”</span> create the tmpdir with
+            <code class="command">mkdir K:\dev\data\db\mysql\tmp</code>.</p></div><p>From the command line start MySQL Server with <code class="command"><a class="link" href="https://dev.mysql.com/doc/refman/5.6/en/mysqld.html">mysqld</a>
+          <a class="link" href="https://dev.mysql.com/doc/refman/5.6/en/option-file-options.html#option_general_defaults-file">--defaults-file</a>=K:\dev\data\db\mysql\conf\mysql-master.ini</code>.</p><p>Verify the installation with <code class="command">mysqlshow mysql -u
+          root</code> and/or <code class="command">mysqladmin version status proc -u
+          root</code>. To see a list of options provided by
+          <code class="command">mysql</code>, invoke it with the
+          <code class="command">--help</code> option.</p><p>To shutdown the SQL Server use <code class="command"><a class="link" href="http://dev.mysql.com/doc/refman/5.6/en/mysqladmin.html">mysqladmin</a>
+          -u root --port=3306 shutdown</code>.</p></section><section class="section" id="db.mysql.utf8"><div class="titlepage"><div><div><h4 class="title"><a id="db.mysql.utf8" class="anchor" href="#db.mysql.utf8"><span class="octicon octicon-link"/></a>10.1.2.2. MySQL character set configuration</h4></div></div></div><p>Change the default character set and collation in
+          <code class="filename">K:\dev\data\db\mysql\conf\mysql-master.ini</code>:</p><pre xmlns="" class="language-provided"><code class="language-ini">[client]
+<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://dev.mysql.com/doc/refman/5.6/en/charset-configuration.html">default-character-set</a>=<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://dev.mysql.com/doc/refman/5.6/en/charset-unicode-utf8mb4.html">utf8mb4</a>
+
+[mysql]
+default-character-set=utf8mb4
+
+[mysqld]
+ …
+
+<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://dev.mysql.com/doc/refman/5.6/en/server-options.html#option_mysqld_character-set-client-handshake">character-set-client-handshake</a>=false
+<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://dev.mysql.com/doc/refman/5.6/en/server-options.html#option_mysqld_character-set-server">character-set-server</a>=utf8mb4
+<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://dev.mysql.com/doc/refman/5.6/en/server-options.html#option_mysqld_collation-server">collation-server</a>=utf8mb4_unicode_ci
+</code></pre><p>Verify those settings before and after restarting service
+          mysql-1 with:</p><pre xmlns="" class="language-provided"><code class="language-sql">mysql -u root
+mysql&gt; show variables where variable_name
+    -&gt;  like 'character\_set\_%' or variable_name LIKE 'collation%';
+mysql&gt; quit</code></pre></section><section class="section" id="db.mysql.root.pass"><div class="titlepage"><div><div><h4 class="title"><a id="db.mysql.root.pass" class="anchor" href="#db.mysql.root.pass"><span class="octicon octicon-link"/></a>10.1.2.3. MySQL root password</h4></div></div></div><p>If you have never set a root password for MySQL server, the
+          server does not require a password at all for connecting as root. To
+          setup root password for first time, use
+          <code class="command">mysqladmin</code> command at shell prompt as follows and
+          enter and confirm the new password:</p><pre xmlns="" class="language-provided"><code class="language-bash">mysqladmin -u root password</code></pre><p>However, if you want to change a root password, then you need
+          to use the following command and enter the old password followed by
+          the new password:</p><pre xmlns="" class="language-provided"><code class="language-bash">mysqladmin -u root -p  password
+</code></pre></section></section><section class="section" id="db.mysql.windows.service"><div class="titlepage"><div><div><h3 class="title"><a id="db.mysql.windows.service" class="anchor" href="#db.mysql.windows.service"><span class="octicon octicon-link"/></a>10.1.3. Windows service</h3></div></div></div><p>With the following batch file
+        <code class="filename">P:\dev\apps\windows\batch\mysql-create-service.bat</code>:</p><pre xmlns="" class="language-provided"><code class="language-bash">@echo off
+
+if not "%1"=="" goto createService
+
+echo Usage: mysql-create-service ^&lt;master^|slave^&gt;
+goto end
+
+:createService
+setlocal
+
+set SERVICE_ID=mysql%1
+set SERVICE_DISPLAY_NAME="freedumbytes.dev.net MySQL %1"
+set SERVICE_EXE=%MYSQL_HOME%\bin\mysqld.exe
+set SERVICE_START_CMD=--defaults-file=\"K:\dev\data\db\mysql\conf\mysql-%1.ini\"
+set SERVICE_STOP_CMD=
+
+sc create %SERVICE_ID% ^
+   binPath= "%SERVICE_EXE% %SERVICE_START_CMD% %SERVICE_ID% %SERVICE_STOP_CMD%" ^
+   start= auto ^
+   DisplayName= %SERVICE_DISPLAY_NAME%
+
+sc description %SERVICE_ID% "MySQL is a SQL database management system."
+
+endlocal
+
+:end
+</code></pre><p>Define the service for the master from <a class="link" href="operating.system.html#os.windows.cmd.elevated" title="1.1.13.1. Elevated Command Prompt">an elevated command prompt</a>
+        with: <code class="command">mysql-create-service master</code>. Start the server
+        with <code class="command">sc start mysqlmaster</code> or <code class="command">net start
+        mysqlmaster</code>.</p><section class="section" id="db.mysql.windows.user"><div class="titlepage"><div><div><h4 class="title"><a id="db.mysql.windows.user" class="anchor" href="#db.mysql.windows.user"><span class="octicon octicon-link"/></a>10.1.3.1. Log On Windows user</h4></div></div></div><p>For the same reason as <a class="xref" href="web.server.html#web.tomcat.windows.user" title="8.1.3.1. Log On Windows user">Section 8.1.3.1, “Log On Windows user”</a> launch the <span class="application"><strong>Service
+          Management Console</strong></span> with
+          <code class="command">services.msc</code>. Right click on
+          <span class="guilabel"><strong>freedumbytes.dev.net MySQL master</strong></span> and select
+          <span class="guimenuitem"><strong>P<span class="accel">r</span>operties</strong></span> → <span class="guilabel"><strong>Log On</strong></span> to use <span class="guilabel"><strong><span class="accel">T</span>his
+          account</strong></span> <strong class="userinput"><code>.\Tomcat</code></strong>. After password
+          conformation click <span class="guibutton"><strong><span class="accel">A</span>pply</strong></span> and
+          restart the service.</p></section></section><section class="section" id="db.mysql.backup.options"><div class="titlepage"><div><div><h3 class="title"><a id="db.mysql.backup.options" class="anchor" href="#db.mysql.backup.options"><span class="octicon octicon-link"/></a>10.1.4. Backup options</h3></div></div></div><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p>The <a class="link" href="https://dev.mysql.com/doc/refman/5.6/en/mysqldump.html">mysqldump</a>
+            client is a backup program. It can be used to dump a database or a
+            collection of databases for backup or transfer to another SQL
+            server (not necessarily a MySQL server).</p><p>Create a batch file
+            <code class="filename">P:\dev\apps\windows\batch\mysql-backup-all.bat</code>:</p><pre xmlns="" class="language-provided"><code class="language-bash">@echo off
+
+if not "%1"=="" goto backupDatabases
+
+echo Usage: mysql-backup-all ^&lt;isodate^&gt;
+goto end
+
+:backupDatabases
+if not exist S:\dev\backup\db\mysqldump mkdir S:\dev\backup\db\mysqldump
+cd /d S:\dev\backup\db\mysqldump
+mysqldump --single-transaction --routines --triggers -q --all-databases ^
+          -u root -p &gt; S:\dev\backup\db\mysqldump\all.%1.sql
+
+:end
+</code></pre><p>To dump all databases use the following statement:
+            <code class="command">mysql-backup-all
+            <em class="replaceable"><code>20091205</code></em></code>.</p><p>Create a batch file
+            <code class="filename">P:\dev\apps\windows\batch\mysql-backup-db.bat</code>:</p><pre xmlns="" class="language-provided"><code class="language-bash">@echo off
+
+if not "%2"=="" goto backupDatabase
+
+echo Usage: mysql-backup-db ^&lt;databasename^&gt; ^&lt;isodate^&gt;
+goto end
+
+:backupDatabase
+if not exist S:\dev\backup\db\mysqldump mkdir S:\dev\backup\db\mysqldump
+cd /d S:\dev\backup\db\mysqldump
+mysqldump --single-transaction --routines --triggers -q %1 ^
+          -u root -p &gt; S:\dev\backup\db\mysqldump\%1.%2.sql
+
+:end
+</code></pre><p>To dump a specific database (for example mysql) use the
+            following statement: <code class="command">mysql-backup-db
+            <em class="replaceable"><code>mysql</code></em>
+            <em class="replaceable"><code>20091205</code></em></code>. And import will
+            look like <code class="command">mysql -u root -p mysql &lt;
+            S:\dev\backup\db\mysqldump\mysql.20091205.sql</code>.</p></li><li class="listitem"><p>You can also create a binary backup by simply archiving the
+            complete <code class="filename">K:\dev\data\db\mysql</code> directory, when
+            the MySQL service is shut down.</p></li></ol></div></section><section class="section" id="db.mysql.upgrading"><div class="titlepage"><div><div><h3 class="title"><a id="db.mysql.upgrading" class="anchor" href="#db.mysql.upgrading"><span class="octicon octicon-link"/></a>10.1.5. Upgrading</h3></div></div></div><p>Backup the mysql database separately, for example:</p><pre xmlns="" class="language-provided"><code class="language-bash">mysql-backup-db mysql 20150917
+mysql-backup-db fisheye 20150917
+mysql-backup-db jira 20150917
+mysql-backup-db sonarqube 20150917
+mysql-backup-db test 20150917
+</code></pre><p>Or stop the master service (after stopping services that might
+        rely on a database such as glassfish, tomcat, fisheye, jira and
+        sonarqube):</p><pre xmlns="" class="language-provided"><code class="language-bash">net stop mysqlmaster
+</code></pre><p>And create a binary backup of the MySQL configuration and the
+        data directory:</p><pre xmlns="" class="language-provided"><code class="language-bash">xcopy /E /I K:\dev\data\db\mysql S:\dev\backup\db\mysql-20150917</code></pre><p>After extracting the latest zip as described in <a class="link" href="database.html#db.mysql.install.guide" title="10.1.2. MySQL installation guide">installation guide</a> and
+        updating <code class="envar">MYSQL_HOME</code> also update the basedir <a class="xref" href="database.html#db.mysql.ini.basedir"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a> in
+        <code class="filename">K:\dev\data\db\mysql\conf\mysql-master.ini</code>:</p><pre xmlns="" class="language-provided"><code class="language-ini">[mysqld]
+<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://dev.mysql.com/doc/refman/5.6/en/server-options.html#option_mysqld_basedir">basedir</a>="P:/dev/apps/db/mysql-5.6.26-winx64"<span xmlns="http://www.w3.org/1999/xhtml" id="db.mysql.ini.basedir"/><a xmlns="http://www.w3.org/1999/xhtml" id="db.mysql.ini.basedir"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>
+</code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>In case of an upgrade <code class="command">sc delete
+            mysqlmaster</code> first (see also <a class="xref" href="operating.system.html#os.windows.process.explorer" title="1.1.5. Task Manager replacement">Section 1.1.5, “Task Manager replacement”</a> in case of <span class="quote">“<span class="quote">The
+            specified service has been marked for deletion.</span>”</span>).</p></div><p>Redefine the <a class="link" href="database.html#db.mysql.windows.service" title="10.1.3. Windows service">Windows
+        service</a> for the master: <code class="command">mysql-create-service
+        master</code>.</p><p>Restart the master with <code class="command">net start
+        mysqlmaster</code>.</p><p><a class="link" href="https://dev.mysql.com/doc/refman/5.6/en/mysql-upgrade.html">Mysql_upgrade</a>
+        examines all tables in all databases for incompatibilities with the
+        current version of MySQL Server. Mysql_upgrade also upgrades the
+        system tables so that you can take advantage of new privileges or
+        capabilities that might have been added.</p><p>Finally upgrade the master tables with <code class="command">mysql_upgrade -P
+        3306 -u root -p</code>. After successfully running this command,
+        <code class="command">type K:\dev\data\db\mysql\data\mysql_upgrade_info</code>
+        should display: <code class="computeroutput">5.6.26</code>.</p></section><section class="section" id="db.mysql.sqlmanager"><div class="titlepage"><div><div><h3 class="title"><a id="db.mysql.sqlmanager" class="anchor" href="#db.mysql.sqlmanager"><span class="octicon octicon-link"/></a>10.1.6. SQL Manager installation guide</h3></div></div></div><p><span class="inlinemediaobject"><img src="images/icons/ems.png"/></span> <a class="link" href="http://www.sqlmanager.net/products/mysql/manager">EMS SQL
+        Manager for MySQL Freeware</a> is an excellent freeware graphical
+        tool for MySQL Server administration. It has minimal required set of
+        instruments for those users who are new to MySQL server and need only
+        its basic functionality.</p><p><a class="link" href="http://www.sqlmanager.net/en/products/mysql/manager/download">Download</a>
+        the SQLManager for MySQL archive:
+        <code class="filename">mymanager_lite.zip</code> [version <a class="link" href="http://www.sqlmanager.net/en/products/mysql/manager/download">5.5.3.46192</a>].</p><p>Extract this <code class="filename">.zip</code> file to
+        <code class="filename">C:\tmp</code> and run the
+        <code class="filename">C:\tmp\MyManagerLite.msi</code> to install SQL Manager
+        in <code class="filename">P:\dev\apps\db\sqlmanager</code>.</p><p>Run the SQLManager and select <span class="guimenu"><strong><span class="accel">D</span>atabase</strong></span> → <span class="guimenuitem"><strong>Register Database…</strong></span> and enter the following settings:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><span class="guilabel"><strong><span class="accel">H</span>ost name</strong></span>:
+              <span class="guimenuitem"><strong>localhost</strong></span> on
+              <span class="guilabel"><strong><span class="accel">P</span>ort</strong></span>:
+              <span class="guimenuitem"><strong>3306</strong></span>.</p></li><li class="listitem"><p><span class="guilabel"><strong><span class="accel">U</span>ser name</strong></span>:
+              <span class="guimenuitem"><strong>root</strong></span>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Pa<span class="accel">s</span>sword</strong></span>:
+              <strong class="userinput"><code><em class="replaceable"><code>password</code></em></code></strong> and
+              select <span class="guibutton"><strong><span class="accel">N</span>ext</strong></span>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Database <span class="accel">n</span>ame</strong></span>:
+              <span class="guimenuitem"><strong>mysql</strong></span> and click
+              <span class="guibutton"><strong><span class="accel">F</span>inish</strong></span>.</p></li></ul></div></section><section class="section" id="db.mysql.navicat"><div class="titlepage"><div><div><h3 class="title"><a id="db.mysql.navicat" class="anchor" href="#db.mysql.navicat"><span class="octicon octicon-link"/></a>10.1.7. Navicat installation guide</h3></div></div></div><p><span class="inlinemediaobject"><img src="images/icons/navicat.png"/></span> <a class="link" href="http://www.navicat.com/products/navicat-for-mysql">Navicat</a>
+        is a fast, reliable and affordable Database Administration <a class="link" href="http://www.navicat.com/manual/online_manual/en/navicat/win_manual/index.html">tool</a>
+        purpose-built for simplifying database management and reducing
+        administrative costs. Designed to meet the needs of database
+        administrators, developers, and small and medium businesses, Navicat
+        is built with an intuitive GUI which lets you create, organize, access
+        and share information in a secure and easy way.</p><p><a class="link" href="http://www.navicat.com/download/navicat-for-mysql">Download</a>
+        the Win32 binary: <code class="filename">navicat111_mysql_en_x64.exe</code>
+        [version <a class="link" href="http://www.navicat.com/download/navicat-for-mysql">11.1.13</a>].</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>At the time of writing there isn't a lite version available
+          anymore.</p></div><p>Run this <code class="filename">.exe</code> file to
+        install Navicat Lite in <code class="filename">P:\dev\apps\db\navicat</code>.</p><p>Run the Navicat and select <span class="guimenu"><strong><span class="accel">F</span>ile</strong></span> → <span class="guimenuitem"><strong>New Connection…</strong></span> → <span class="guimenuitem"><strong>MySQL…</strong></span> and enter the following settings:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><span class="guilabel"><strong>Connection name</strong></span>:
+              <strong class="userinput"><code>MySQL</code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Host name/IP address</strong></span>:
+              <strong class="userinput"><code>localhost</code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Port</strong></span>:
+              <strong class="userinput"><code>3306</code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong>User name</strong></span>:
+              <strong class="userinput"><code>root</code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Password</strong></span>:
+              <strong class="userinput"><code><em class="replaceable"><code>password</code></em></code></strong> and
+              click <span class="guibutton"><strong>Ok</strong></span>.</p></li></ul></div></section></section><section class="section" id="db.oracle"><div class="titlepage"><div><div><h2 class="title"><a id="db.oracle" class="anchor" href="#db.oracle"><span class="octicon octicon-link"/></a>10.2. Oracle</h2></div></div></div><p>Oracle <a class="link" href="http://www.oracle.com/technetwork/database/index.html">Database</a>.</p><section class="section" id="db.oracle.resources"><div class="titlepage"><div><div><h3 class="title"><a id="db.oracle.resources" class="anchor" href="#db.oracle.resources"><span class="octicon octicon-link"/></a>10.2.1. Resources</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p>Oracle <a class="link" href="http://www.oracle.com/technetwork/database/enterprise-edition/overview/index.html">Database</a>
+            <a class="link" href="http://www.oracle.com/technetwork/indexes/downloads/index.html">Software</a>
+            <a class="link" href="http://www.oracle.com/technetwork/database/enterprise-edition/downloads/index.html">Downloads</a>.</p></li><li class="listitem"><p>Get Oracle JDBC drivers from the <a class="link" href="https://blogs.oracle.com/dev2dev/entry/oracle_maven_repository_instructions_for">Oracle
+            Maven Repository</a>.</p></li><li class="listitem"><p>Oracle <a class="link" href="http://www.oracle.com/technetwork/developer-tools/sql-developer/overview/index.html">SQL
+            Developer</a> is a free integrated development environment that
+            simplifies the development and management of Oracle Database in
+            both traditional and Cloud deployments. SQL Developer offers
+            complete end-to-end development of your PL/SQL applications, a
+            worksheet for running queries and scripts, a DBA console for
+            managing the database, a reports interface, a complete data
+            modeling solution, and a migration platform for moving your 3rd
+            party databases to Oracle.</p></li></ul></div></section></section></section><script xmlns="" type="text/javascript" src="js/highlight.min.js"> </script><script xmlns="" type="text/javascript">hljs.initHighlightingOnLoad();</script><footer><ul class="navfooter"><li class="previous"><a accesskey="p" href="application.server.html"><strong>Previous</strong>Chapter 9. Application Server</a></li><li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Front page</strong></a></li><li class="next"><a accesskey="n" href="version.control.system.html"><strong>Next</strong>Chapter 11. Version Control System</a></li></ul></footer></body></html>
