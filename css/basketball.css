@@ -164,6 +164,24 @@ body {
 
 
 /*
+ * === Free Dumb Bytes Landing Page ===
+ */
+
+.freedumbytes-cover-page {
+  background-attachment: fixed;
+  background-color: black;
+  background-image: url(../images/wallpaper/clouds.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+
+
+/*
  * === Shadowland Landing Page ===
  */
 
