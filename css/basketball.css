@@ -185,6 +185,12 @@ body {
   padding: inherit;
 }
 
+.freedumbytes-cover-page .site-footer .blockquote {
+  border-left: .25rem solid orange;
+  font-size: 0.8rem;
+  padding: inherit;
+}
+
 .freedumbytes-cover-page .media img {
   height: 5rem;
 }
