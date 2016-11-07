@@ -179,6 +179,12 @@ body {
   -o-background-size: cover;
 }
 
+.freedumbytes-cover-page .blockquote {
+  border-left: .25rem solid orange;
+  font-size: 1.25rem;
+  padding: inherit;
+}
+
 
 
 /*

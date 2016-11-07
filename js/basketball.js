@@ -132,7 +132,7 @@ function msToTime(duration) {
 function copyrightPeriod() {
   var currentTime = new Date();
   var currentYear = currentTime.getFullYear();
-  var inceptionYear = "${project.inceptionYear}";
+  var inceptionYear = "2004";
 
   if (isNaN(inceptionYear) || (inceptionYear == currentYear)) {
     $("#copyrightPeriod").html(currentYear);
