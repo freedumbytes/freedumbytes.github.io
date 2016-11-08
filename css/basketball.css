@@ -101,7 +101,7 @@ body {
 
 @media ( max-width :767px) {
   .freedumbytes-cover-page .site-content {
-    margin-top: 0.75rem;
+    margin-top: 0rem;
   }
   
   .site-content {
