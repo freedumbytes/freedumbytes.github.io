@@ -106,8 +106,12 @@ body {
 }
 
 @media ( min-width :768px) {
-  .site-content {
+  .freedumbytes-cover-page .site-content {
     margin-top: 3.75rem;
+  }
+  
+  .site-content {
+    margin-top: 5rem;
   }
 }
 
