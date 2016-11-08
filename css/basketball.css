@@ -168,21 +168,34 @@ body {
  */
 
 .freedumbytes-cover-page {
-  background-attachment: fixed;
-  background-color: black;
-  background-image: url(../images/wallpaper/clouds.png);
-  background-position: center;
+  background-color: rosybrown;
+}
+
+.freedumbytes-jumbotron-org {
+  background-color: linen;
+}
+
+.freedumbytes-jumbotron-org .container {
+  background-image: url(../images/wallpaper/clouds.jpg);
   background-repeat: no-repeat;
-  background-size: cover;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
+  background-size: 100% 100%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
 }
 
 .freedumbytes-cover-page .blockquote {
   border-left: .25rem solid orange;
   font-size: 1.25rem;
   padding: inherit;
+}
+
+.text-forecast {
+  color: navy;
+}
+
+.text-cloudy {
+  color: white;
 }
 
 .freedumbytes-cover-page .site-footer .blockquote {
@@ -192,6 +205,39 @@ body {
 }
 
 .freedumbytes-cover-page .media img {
+  width: 5rem;
+}
+
+
+/*
+ * === JModalWindow Landing Page ===
+ */
+
+.jmodalwindow-cover-page {
+  background-attachment: fixed;
+  background-color: black;
+  background-image: url(../images/wallpaper/clouds.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+.jmodalwindow-cover-page .blockquote {
+  border-left: .25rem solid orange;
+  font-size: 1.25rem;
+  padding: inherit;
+}
+
+.jmodalwindow-cover-page .site-footer .blockquote {
+  border-left: .25rem solid orange;
+  font-size: 0.8rem;
+  padding: inherit;
+}
+
+.jmodalwindow-cover-page .media img {
   height: 5rem;
 }
 
