@@ -34,17 +34,11 @@
         <h1>JModalWindow</h1>
 
         <div class="alert alert-warning" role="alert">
-          <p>
-            <span class="text-nowrap"><strong>Version</strong> 2.3</span>
-          </p>
+          <p><span class="text-nowrap"><strong>Version</strong> 2.3</span> </p>
 
-          <p class="m-b-0">
-            <span class="text-nowrap"><span class="fa fa-copyright" aria-hidden="true" /> <span id="copyrightPeriod" /></span> Free Dumb Bytes
-          </p>
+          <p class="m-b-0"><span class="text-nowrap"><span class="fa fa-copyright" aria-hidden="true" /> <span id="copyrightPeriod" /></span> Free Dumb Bytes</p>
 
-          <p>
-            <small>Last update: 2016/11/07 00:58</small>
-          </p>
+          <p><small>Last update: 2016/11/07 00:58</small></p>
         </div>
       </div>
     </div>
@@ -52,30 +46,45 @@
 
   <div class="container m-t-3">
     <div class="row">
-      <div class="col-xs-12">
-        <blockquote class="blockquote card">
-          <div class="media m-t-1">
-            <div class="media-left media-top">
-              <a href="jmodalwindow.xhtml"><img src="images/jmw/jmodalwindow.gif" alt="The JModalWindow Project" class="img-thumbnail" /></a>
-            </div>
-
-            <div class="media-body">
-              <p>The JModalWindow project was created to support modal functionality, similar to JDialog, without blocking all frames.</p>
-
-              <p class="hidden-xs-down">
-                Source code, binaries, API documentation, and a demo are all available for <a href="#download">download</a>.
-              </p>
-
-              <p class="hidden-xs-down">
-                Since the Java.net and Kenai.com forges will be going dark on April 28, 2017 the <a href="#issues">issues</a> are just listed below.
-              </p>
-
-              <p class="hidden-xs-down">
-                For the same reason the Source Code Repository will be relocated to <a href="https://bitbucket.org/freedumbytes/jmodalwindow">jmodalwindow.git</a>.
-              </p>
-            </div>
+      <div class="col-xs-12 card">
+        <div class="media m-t-1">
+          <div class="media-left media-top">
+            <img src="images/jmw/jmodalwindow.gif" alt="The JModalWindow Project" class="fixed-resize" />
           </div>
-        </blockquote>
+
+          <div class="media-body">
+            <h2>JModalWindow</h2>
+
+            <p>The JModalWindow project was created to support modal functionality, similar to JDialog, without blocking all frames.</p>
+          </div>
+        </div>
+
+        <p class="hidden-xs-down">Source code, binaries, API documentation and a demo are all available for <a href="#downloads">download</a>.</p>
+
+        <p class="hidden-xs-down">
+          Since the <span class="text-nowrap"><img src="images/jmw/javanet.png" alt="java.net" class="img-thumbnail" /> java.net</span> and <span class="text-nowrap"><img src="images/jmw/kenai.png" alt="kenai.com" class="img-thumbnail" /> kenai.com</span> forges will be going dark on April 28, 2017 
+          the <a href="#issues">issues</a> are just listed below.
+        </p>
+
+        <p class="hidden-xs-down">For the same reason the Source Code Repository will be relocated to <a href="https://bitbucket.org/freedumbytes/jmodalwindow">jmodalwindow.git</a>.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="container m-t-3">
+    <div class="row">
+      <div class="col-xs-12 card">
+        <h3 class="m-t-1 m-b-2">Analytics</h3>
+
+        <p><a href="https://www.openhub.net/"><img src="images/jmw/blackduck.png" alt="openhub.net" class="img-thumbnail" /></a></p>
+
+        <p>
+          The <a href="https://www.openhub.net/">Black Duck Open Hub</a> analytics about <a href="https://www.openhub.net/p/jmodalwindow/commits/summary">Commits</a>, <a href="https://www.openhub.net/p/jmodalwindow/analyses/latest/languages_summary">Languages</a> and 
+          <a href="https://www.openhub.net/p/jmodalwindow/estimated_cost">Estimated Cost</a> of the old <span class="text-nowrap"><img src="images/jmw/javanet.png" alt="java.net" class="img-thumbnail" /> java.net</span> jmodalwindow project had the html count upped a bit when I started hosting the 
+          <a href="dpl/html/index.html">Development Production Line manual</a> there also. ;-)
+        </p>
+
+        <div id="article" />
       </div>
     </div>
   </div>
@@ -85,9 +94,442 @@
       <div class="col-xs-12 card">
         <h3 class="m-t-1 m-b-2">SUN Article</h3>
 
-        <p>Upcoming...</p>
+        <h2><img src="images/jmw/jmodalwindow.gif" alt="The JModalWindow Project" /> JModalWindow Project</h2>
 
-        <div id="download"></div>
+        <p class="text-sm-right">by <em>Jene Jasper</em> on <strong>7 september 2004</strong></p>
+
+        <p>
+          There are times when you want a modal window that implements window-specific modality rather than the application-wide modality provided by the standard <code>JDialog</code> class. This article explains the workings of the JModalWindow project, which provides two top-level components, 
+          called <em><code>ModalWindow</code>s</em>, that introduce such modality. The first <code>ModalWindow</code> class, <code>JModalWindow</code>, is a subclass of <code>JWindow</code> that's generally used for dialogs that block other windows. The second, <code>JModalFrame</code>, 
+          is a subclass of <code>JFrame</code> that can be used either as a blocked window or as a blocking window. Both classes implement an interface named <code>InputBlocker</code>.
+        </p>
+
+        <p>
+          Why create a <code>ModalWindow</code> instead of using the standard <code>JDialog</code> component? We were working on a pension-planner application to give users insight into their financial situations before and after retirement. This was done with the aid of a financial graphic. 
+          Throughout the application, help information for various pension-specific terms was available in a separate help window. In order to make comparisons, the user should be able to change different variables that influence pension savings. While doing this, the underlying financial graphic had to be blocked. 
+          A <code>JDialog</code> could have been used, but then the necessary help window would have also been blocked, and thus useless. Furthermore, the title bar presented by <code>JDialog</code> didn't fit in with the rest of the look and feel of the application.
+        </p>
+
+        <p>
+          I searched the Internet for a possible solution for our problem and found several suggestions, but they all had drawbacks or loopholes. That is why I decided to create my own modal window implementation based on the ideas that came closest to our needs. 
+          The JModalWindow project is an open source version of our solution to this challenge and is part of the JavaDesktop community at <span class="text-nowrap"><img src="images/jmw/javanet.png" alt="java.net" class="img-thumbnail" /> java.net</span>.
+        </p>
+
+        <h3>Parent and Child Windows</h3>
+
+        <p>
+          It helps to have a common language when referring to the various windows involved. The window to be blocked is known as the <em>parent window</em> or <em>owner</em>; another term for <em>blocked</em> is <em>busy</em>. The window blocking the parent is the <em>child window</em>. 
+          A parent window can have more than one child window blocking it. Each child can block its parent and, in recently added functionality, some additional windows. Ideally, the parent window and the child window should both be <code>ModalWindow</code>s; at the very least, 
+          they should both implement the <code>InputBlocker</code> interface.
+        </p>
+
+        <p>An example will clarify these concepts. Here is a snapshot of a GUI produced by a <code>JModalWindow</code> that is modal with respect to a <code>JModalFrame</code>:</p>
+
+        <div class="text-xs-center">
+          <figure class="figure">
+            <img src="images/jmw/raster-stop.jpg" alt="Figure 1" class="img-fluid text-xs-center" />
+            <figcaption class="figure-caption">Figure 1. A JModalWindow that is modal with respect to a JModalFrame.</figcaption>
+          </figure>
+        </div>
+
+        <p>
+          As the preceding figure shows, a <code>JModalFrame</code>'s busy status is marked using a blur effect and stop cursor. You can customize the following aspects of the display:
+        </p>
+
+        <ul>
+          <li><strong>Stop cursor</strong>: By default, this is a stop sign, but you can specify a custom cursor.</li>
+          <li><strong>Busy effect</strong>: The built-in effects are raster or line.</li>
+          <li><strong>Initial position of dialog</strong>: The dialog can be initially centered onscreen, centered over a window, relative to a component, or at a specific <code>X</code>, <code>Y</code> location.</li>
+        </ul>
+
+        <p>
+          The following figure shows the same GUI as the preceding one, but with a line busy effect, custom stop cursor, and initial <code>Y</code> position relative to the bottom of the Update button that brought up the dialog. The <code>X</code> position of the dialog depends on the <code>JModalWindow</code> release. 
+          The dialog is be positioned at the same <code>X</code> position as the button, as long as the dialog stays onscreen; otherwise it will be moved to the left to <code>keepWindowCompletelyOnScreen</code>.
+        </p>
+
+        <div class="text-xs-center">
+          <figure class="figure">
+            <img src="images/jmw/line-custom.jpg" alt="Figure 2" class="img-fluid text-xs-center" />
+            <figcaption class="figure-caption">Figure 2. A line busy effect, custom stop cursor, and relative positioning of the dialog.</figcaption>
+          </figure>
+        </div>
+
+        <p>The following code creates a dialog that is modal relative to the window <code>owner</code> containing <code>returnFocusComponent</code> and that is optionally placed relative to <code>returnFocusComponent</code>. The dialog has a single button, which closes the dialog.</p>
+
+        <pre class="pre-scrollable"><code>private JModalWindow createStatusWindow(Component returnFocusComponent, boolean relative, String text) {
+    Window owner = SwingUtilities.windowForComponent(returnFocusComponent);
+    final JModalWindow jmw = new JModalWindow(owner, returnFocusComponent);
+    jmw.getContentPane().setBackground(bg);
+    jmw.getContentPane().setForeground(fg);
+    jmw.getContentPane().setLayout(new GridBagLayout());
+
+    JButton jbClose = createJButton("Cancel");
+    jbClose.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent ae) {
+         jmw.dispose();
+      }
+    });
+
+    BorderLayout bl = new BorderLayout();
+    jmw.getContentPane().setLayout(bl);
+
+    jmw.getContentPane().add(createLabel(text), BorderLayout.CENTER);
+    jmw.getContentPane().add(jbClose, BorderLayout.SOUTH);
+
+    jmw.setSize(300, 75);
+
+    if (relative) {
+        jmw.relativeToOwnerChild(returnFocusComponent);
+    } else {
+        jmw.centerOfOwner();
+//      jmw.centerOfScreen();  //another positioning possibility
+    }
+
+    return jmw;
+}</code>
+        </pre>
+
+        <p>
+          For the best results, the <code>owner</code> should be a <code>ModalWindow</code>. In the preceding code, the <code>JModalWindow</code> constructor sets up the dialog, and the <code>relativeToOwnerChild</code> method causes the dialog to be positioned just under the <code>returnFocusComponent</code>'s onscreen 
+          representation.
+        </p>
+
+        <h3>The InputBlocker Interface</h3>
+
+        <p>Both <code>JModalFrame</code> and <code>JModalWindow</code> implement an interface called <code>InputBlocker</code>. The interface defines the following two methods:</p>
+
+        <ul>
+          <li><code>public boolean isBusy();</code></li>
+          <li><code>public void setBusy(boolean busy, Window blockingWindow);</code></li>
+        </ul>
+
+        <p>With those methods, it is possible to check whether a window is currently blocked and let any child window signal that it is blocking or unblocking its parent.</p>
+
+        <p>
+          <strong>Note</strong>: The draft version of this article was written based on the sources of version 1.2. But since then I have added some new functionality that is detailed in the section <a href="#development-ideas">Latest Developments and Ideas</a>. 
+          One of those new functionalities led to a third method definition in the <code>InputBlocker</code> interface:
+        </p>
+      
+        <ul>
+          <li><code>public void addAdditionalModalToWindow(Window window);</code></li>
+        </ul>
+      
+        <p>
+          With this method, it is possible to add additional windows that should be blocked at the same time as the parent window. This is the reason why in the next paragraphs the variable <code>modalToWindows</code> is plural instead of <code>modalToWindow</code>, 
+          which you would expect because a child window only has one parent window.
+        </p>
+      
+        <p>The <code>isBusy</code> and <code>setBusy</code> methods are useful for the parent window; the <code>addAdditionalModalToWindow</code> method is useful for the child window.</p>
+
+        <h3>Visualization and Blocking</h3>
+
+        <p>
+          To block all keyboard and mouse action for the underlying window, a <code>JBusyPanel</code> object can be used as a <code>GlassPane</code> for the blocked window. The <code>JBusyPanel</code>, when activated, consumes all keyboard strokes for the underlying window and grabs the focus for any mouse action on it.
+        </p>
+
+        <p>To make it obvious that the window is blocked, you can apply one of two types of blurring:</p>
+
+        <dl class="row">
+          <dt class="col-md-3"><code>BLUR_STYLE_LINE</code></dt>
+          <dd class="col-md-9">Blurring with horizontal lines. A bit of a legacy style, because the first raster implementation (drawing the separate dots) was too slow on older computers.</dd>
+      
+          <dt class="col-md-3"><code>BLUR_STYLE_RASTER</code></dt>
+          <dd class="col-md-9">Blurring with diagonal, parallel lines from top left to bottom right, which leads to a raster effect.</dd>
+        </dl>
+
+        <p>The desired blur style, gap, and color are applied by the <code>paint</code> method of the <code>JBusyPanel</code>. When blocked, the <code>ModalWindow</code> also changes the shape of the cursor (see <a href="#utils"><code>getBusyCursor</code></a>).</p>
+
+        <p>To block the <code>FocusManager</code> in Java<sup>TM</sup> 1.3, <code>JBusyPanel</code> overrides the deprecated method <code>isManagingFocus</code>.</p>
+
+        <h3>Construction of ModalWindows</h3>
+
+        <p>The constructors for <code>JModalWindow</code> and <code>JModalFrame</code> accept the following parameters, as needed:</p>
+
+        <dl class="row">
+          <dt class="col-md-4"><code>Window <strong>owner</strong></code></dt>
+          <dd class="col-md-8">To set the parent window for the newly constructed window.</dd>
+      
+          <dt class="col-md-4"><code>Component <strong>returnFocus</strong></code></dt>
+          <dd class="col-md-8">To set the component that should get the focus when this window is closed.</dd>
+      
+          <dt class="col-md-4"><code>String <strong>title</strong></code></dt>
+          <dd class="col-md-8">To set a title for the frame (<code>JModalFrame</code> only).</dd>
+      
+          <dt class="col-md-4"><code>boolean <strong>modal</strong></code></dt>
+          <dd class="col-md-8">To change the default modal setting for the window.</dd>
+        </dl>
+      
+        <p>Each <code>ModalWindow</code> constructor performs the following actions:</p>
+
+        <ol>
+          <li>The appropriate <code>super</code> is called to set the <code>title</code> for the <code>JFrame</code> and the <code>owner</code> for the <code>JWindow</code>. <strong>Note</strong>: If no <code>owner</code> is specified, the Swing <code>SharedOwnerFrame</code> is used.</li>
+          <li>The optional <code>returnFocus</code> is stored.</li>
+          <li>The list <code>modalToWindows</code> is set to contain the supplied <code>owner</code> when this <code>Window</code> is constructed as being modal. Because the parent isn't blocked yet, the status variable <code>notifiedModalToWindow</code> is set to <code>true</code>.</li>
+          <li>The list with <code>blockingWindows</code> is initialized. This <code>Vector</code> is used to make it possible to have multiple modal child windows.</li>
+          <li>
+            The <code>JBusyPanel</code> that will block this window is initialized with the following settings:
+
+            <ul>
+              <li>A color that is a bit darker than the default white background color.</li>
+              <li>A fixed <code>BLUR_STEP</code> of 2.</li>
+              <li>A <code>BLUR_STYLE</code> of the type <code>raster</code>.
+              </li>
+            </ul> 
+            
+            These settings were chosen because that combination looks best, in my humble opinion. However, if performance is an issue, these values can be changed in your own copy of the source code.
+          </li>
+          <li>Finally, the <code>WINDOW_EVENT_MASK</code> is used to activate the processing of <code>WindowEvents</code>.</li>
+        </ol>
+
+        <p>Each <code>JModalWindow</code> also performs the following initialization:</p>
+
+        <ul>
+          <li>Creates a raised border to indicate that the window can be dragged.</li>
+          <li>Activates <code>MOUSE_MOTION_EVENT_MASK</code> for the processing of <code>MouseEvents</code>, to support dragging of the window.</li>
+        </ul>
+
+        <p>Each <code>JModalFrame</code> performs the following additional initialization:</p>
+
+        <ul>
+          <li>Sets up a <code>MinimumFrameSizeAdapter</code> to keep the frame from being resized smaller than <code>minWidth</code> by <code>minHeight</code> when those values are supplied through the method <code>setMinSize</code>.</li>
+          <li>Checks whether a default icon, for which the resource location can be filed under the key <code>swingx.frame.icon</code> in the <code>UIManager</code>, is available. If this is the case, the <a href="#utils">support utility</a> is used to fetch it.</li>
+        </ul>
+
+        <h3>Activation and Blocking of the Parent Window</h3>
+
+        <p>
+          As soon as a child <code>ModalWindow</code> is activated through a call to the method <code>show</code>, it checks whether it is modal to a parent window stored in the list <code>modalToWindows</code>. 
+          When this is the case and the parent window implements the interface <code>InputBlocker</code>, its <code>setBusy</code> method is called to notify that parent window that it is blocked by this child window. Should the parent window not implement the interface <code>InputBlocker</code>, 
+          then the parent window is only disabled.
+        </p>
+
+        <p>
+          Unlike the <code>JDialog</code> behavior, calling the method <code>show</code> doesn't halt the calling thread. To create the same effect, call the method <code>wait_for_close</code> after calling <code>show</code>. 
+          <strong>Note</strong>: This method will be renamed to <code>waitForClose</code> in a later release.
+        </p>
+
+        <p>
+          <strong>Note</strong>: Activating the window with a call to the method <code>setVisible(boolean visible)</code> results in an indirect call to the method <code>show</code>. 
+          That is the reason why the situation for <code>visible</code> is <code>true</code> isn't handled in the <code>setVisible</code> method itself.
+        </p>
+
+        <p>
+          Placement of the <code>ModalWindow</code> is aided with the following helper methods: <code>centerOfScreen</code>, <code>centerOfOwner</code>, and <code>relativeToOwnerChild</code>. See <a href="#utils">support utility</a> for a description of these methods.
+        </p>
+
+        <h3>Deactivation and Unblocking of Parent Window</h3>
+
+        <p>
+          Upon closing a child <code>ModalWindow</code> through a <code>WindowEvent.WINDOW_CLOSED</code> (see the methods <code>processWindowEvent</code> and <code>close</code>), or a call to the method <code>setVisible</code>, the <code>ModalWindow</code> calls the method <code>restoreOwner</code> 
+          to check whether it is modal to a parent window stored in the list <code>modalToWindows</code>. When this is the case, the parent window is notified that this child window is no longer blocking it by a call to the parent window's method <code>setBusy</code> or, 
+          if the parent window doesn't implement the <code>InputBlocker</code>, by enabling it.
+        </p>
+      
+        <p>
+          Because a call to <code>setVisible(false)</code> results in a <code>WindowEvent.WINDOW_CLOSED</code> event and thus in multiple calls to the method <code>restoreOwner</code>, the variable <code>notifiedModalToWindow</code> is used to prevent multiple calls to the parent window's method <code>setBusy</code>. 
+          This helps when the parent window's <code>setBusy</code> implementation doesn't handle multiple invocations by the same child window well. My first implementation, for example, decremented a <code>blockedCounter</code>.
+        </p>
+
+        <p>If the parent window is no longer blocked by any child window, the focus is returned to the optional <code>returnFocus</code> component, if it's supplied.</p>
+
+        <p>Finally, a call to the method <code>release</code> is made to notify any waiting threads that were halted by a call to the method <code>waitForClose</code>.</p>
+
+        <h3>Blocked by Child Window</h3>
+
+        <p>When a <code>ModalWindow</code> is blocked by a child window calling its <code>setBusy</code> method, the following actions are taken:</p>
+
+        <ol>
+          <li>Retrieve the default or the custom busy cursor.</li>
+          <li>If the <code>ModalWindow</code> is not already blocked, save the current cursor and set the cursor to the busy cursor.</li>
+          <li><code><em>JModalFrame</em></code><em> only</em>: Save current resizable status if the frame is not already blocked, and disable the resizing of the frame.</li>
+          <li>Enable the <code>JBusyPanel</code> glass pane.</li>
+          <li>Add the calling child window to the list of <code>blockingWindows</code>.</li>
+          <li>Force the glass pane to get the focus so that it consumes <code>KeyEvents</code>.</li>
+          <li>Set the cursor for the glass pane to the busy cursor.</li>
+        </ol>
+
+        <p><strong>Note</strong>: Setting the window cursor and the glass pane cursor in this order works around the Win32 problem where you have to move the mouse one pixel to get the cursor to change.</p>
+
+        <h3>Behavior when Blocked</h3>
+
+        <p>To check whether a <code>ModalWindow</code> is currently blocked, a call to the method <code>isBusy</code> results in a confirmation if there are any known <code>blockingWindows</code>. As soon as a <code>ModalWindow</code> is blocked, its behavior changes in the following situations:</p>
+
+        <ul>
+          <li><code><em>JModalFrame</em></code><em> only</em>: A call to <code>getDefaultCloseOperation</code> always returns <code>JFrame.DO_NOTHING_ON_CLOSE</code>.</li>
+          <li>
+            The following <code>WindowEvents</code> are handled differently by <code>processWindowEvent</code>:
+
+            <ul>
+              <li>
+                <code><em>JModalFrame</em></code><em> only</em>: <code>WindowEvent.WINDOW_ICONIFIED</code> is reversed by setting the state back to <code>NORMAL</code> (see the method <code>checkIconifyAllowed</code>). This behavior will be changed with the release of version 1.5. 
+                For more information, see the section <a href="#development-ideas">Latest Developments and Ideas</a>.
+              </li>
+              <li>
+                <code><em>JModalFrame</em></code><em> only</em>: <code>WindowEvent.WINDOW_ACTIVATED</code> results in moving its child windows to the front and in restoring the state of its child frames to <code>NORMAL</code>. See the method <code>checkForBlockingWindows</code>, 
+                which will be renamed to <code>checkActivationAllowed</code> in a later release.
+              </li>
+              <li><code>WindowEvent.WINDOW_CLOSING</code> is not allowed (see the method <code>tryToDispose</code>).</li>
+            </ul>
+          </li>
+        </ul>
+
+        <h3>Unblocked by Child Window</h3>
+
+        <p>When a <code>ModalWindow</code> is unblocked by a child window calling its <code>setBusy</code> method, the following actions occur:</p>
+
+        <ol>
+          <li>Remove the calling child window from the list of <code>blockingWindows</code>.</li>
+          <li>Reset the cursor for the glass pane to the old cursor and disable the glass pane.</li>
+          <li>Try to retrieve focus in the <code>ModalWindow</code>.</li>
+          <li><code><em>JModalFrame</em></code><em> only</em>: Reset the resizable status to the stored <code>wasResizable</code> value.</li>
+          <li>Reset the <code>ModalWindow</code>'s cursor to the old cursor.</li>
+        </ol>
+
+        <p><strong>Note</strong>: Setting the glass pane cursor and the window cursor in this order works around the Win32 problem where you have to move the mouse one pixel to get the cursor to change.</p>
+
+        <h3>Window Drag Support</h3>
+
+        <p>To support the dragging of a <code>JModalWindow</code>, the method <code>processMouseMotionEvent</code> checks the following things:</p>
+
+        <dl class="row">
+          <dt class="col-md-2"><code>checkDragZone</code></dt>
+          <dd class="col-md-10">
+            If the mouse is moved near the edge of the window (based on the value of the variable <code>DRAG_BORDER_DISTANCE</code>; currently only a value of 1 seems to work properly), then the cursor is changed to the <code>MOVE_CURSOR</code> to indicate the possibility of dragging the window across the screen, 
+            and the current mouse position is stored in <code>priorDragLocation</code>.
+          </dd>
+
+          <dt class="col-md-2"><code>dragWindow</code></dt>
+          <dd class="col-md-10">
+            If the mouse is dragged, and the cursor has the <code>MOVE_CURSOR</code> shape and a <code>priorDragLocation</code> is available, then the window is moved along the delta <code>x</code> and delta <code>y</code> relative to the current mouse position
+             and the <code>priorDragLocation</code> is reset to <code>null</code> to signal that the last mouse-drag event is handled completely. If there was no <code>priorDragLocation</code> available, then the current mouse position is saved for the next mouse drag event.
+          </dd>
+        </dl>
+        
+        <div id="utils" />
+
+        <h3>Decorated Window Border</h3>
+
+        <p>To decorate <code>JModalWindow</code>s with a raised border the following methods are overridden: <code>paint</code>, <code>setBackground</code>, and <code>setForeground</code>.</p>
+
+        <h3>Support Utility</h3>
+
+        <p>The <code>Utils</code> class handles various handy functions for <code>JModalWindow</code> and <code>JModalFrame</code>:</p>
+
+        <dl class="row">
+          <dt class="col-md-3"><code>getBusyCursor</code></dt>
+          <dd class="col-md-9">Retrieves the busy cursor. You can define a custom busy cursor under the key <code>swingx.busy.cursor</code> in <code>UIManager</code>. A Win32 problem requires the cursor to be <code>32 x 32</code>.</dd>
+      
+          <dt class="col-md-3"><code>getIcon</code></dt>
+          <dd class="col-md-9">Retrieves the specified image resource as an icon. If the resource can't be found, returns the missing image icon (see <code>getMissingImage</code> below).</dd>
+      
+          <dt class="col-md-3"><code>getStopImage</code></dt>
+          <dd class="col-md-9">Creates a stop sign <img src="images/jmw/stop-cursor.gif" alt="Stop Cursor" class="img-thumbnail" /> as the default busy cursor.</dd>
+
+          <dt class="col-md-3"><code>getMissingImage</code></dt>
+          <dd class="col-md-9">Creates a red cross on a white background to indicate that the specified icon/image couldn't be found.</dd>
+      
+          <dt class="col-md-3"><code>centerOfScreen</code></dt>
+          <dd class="col-md-9">Positions a window in the center of the screen.</dd>
+      
+          <dt class="col-md-3"><code>centerOfOwner</code></dt>
+          <dd class="col-md-9">Positions a window so it's centered above the parent window. This method uses some slack at the edges of the screen, with the currently hard coded variable <code>SCREEN_SAFETY_MARGIN</code>, just in case of operating system toolbars situated there.</dd>
+      
+          <dt class="col-md-3"><code>relativeToOwnerChild</code></dt>
+          <dd class="col-md-9">Positions a window just below the supplied component, similar to how a combo box's drop-down list is positioned. This method also uses some slack at the edges of the screen with <code>SCREEN_SAFETY_MARGIN</code>.</dd>
+      
+          <dt class="col-md-3"><code>keepWindowOnScreen</code></dt>
+          <dd class="col-md-9">
+            Positions a <code>Window</code> at the specified <code>x</code>, <code>y</code> location, adjusting the location if it results in the window falling outside of the screen and becoming unreachable. This method also uses some slack at the edges of the screen with <code>SCREEN_SAFETY_MARGIN</code>. 
+            <strong>Note</strong>: This method will be renamed to <code>keepWindowPartiallyOnScreen</code> because of the introduction of another method called <code>keepWindowCompletelyOnScreen</code>.
+          </dd>
+        </dl>
+
+        <p>The <code>Utils</code> class also provides the following functionality, which isn't currently used by the <code>JModalWindow</code> and <code>JModalFrame</code> classes:</p>
+
+        <div id="development-ideas" />
+        
+        <dl class="row">
+          <dt class="col-md-3"><code>updateComponentTreeUI</code></dt>
+          <dd class="col-md-9">Updates the component tree on changes in the look and feel. It works from the bottom up instead of the top down as in the Swing version, because some of our required look and feel changes otherwise didn't show without user intervention.</dd>
+        </dl>
+
+        <h3>Latest Developments and Ideas</h3>
+
+        <p>
+          Recent additions to the JModalWindow project have been guided by discussions in a variety of forums. For example, one question on whether it is possible to make a dialog modal for some frames and non-modal for others led to the addition of the method <code>addAdditionalModalToWindow(Window window)</code> 
+          to the <code>InputBlocker</code> interface.
+        </p>
+      
+        <p>
+          A comment on a Spanish-language forum pointed out an additional use of modal windows due to the feature that a blocked <code>JModalFrame</code>, upon activation, automatically moves the blocking child window to the front. 
+          <strong>Note</strong>: In a later release this feature will also be added for the mouse click in a blocked <code>JModalWindow</code>. Here is a translated excerpt:
+        </p>
+      
+        <blockquote class="blockquote">
+          When using a modal dialog in a Swing application the following undesirable effect takes place: when the user changes to another application and back to the Java application, the modal window is hidden under the main window. Due to the nature of modality, 
+          you cannot interact with the main one, and to top it all, the only way to return to the modal dialog is to use the combination of <code>Alt+Tab</code> keys.
+        </blockquote>
+
+        <p>
+          This discussion also triggered me to complete the project with a <code>JModalDialog</code> with the same functionality as the <code>JDialog</code>; in other words, blocking all active frames and windows, but using the same approach as the <code>JModalFrame</code> and thus creating the same visual effect. 
+          Because the <code>InputBlocker</code> now had the additional method <code>addAdditionalModalToWindow(Window window)</code>, it was possible to create a simple <code>JModalDialog</code> by extending it from the <code>JModalFrame</code> and just <code>markAllWindows()</code>, 
+          except for the dialog itself and the Swing shared owner frame, to the list of windows that must be blocked. For a <code>JModalDialog</code> to work properly, all used windows should be <code>ModalWindow</code>s or, at the very least, implement <code>InputBlocker</code>, 
+          because you can call <code>setEnabled(false)</code> only so many times.
+        </p>
+      
+        <p>
+          Another user asked in a forum posting if I had noticed a severe flicker when one or two modal windows are opened. Once I knew where to look, I saw a rather annoying flicker that I had never noticed before. The flicker was caused by the call to <code>setResizable(false)</code>. 
+          That is why I changed the way resizing is prohibited when the frame is blocked.
+        </p>
+
+        <p>As a result of an issue reported on a problem with the use of window positioning <code>relativeToOwnerChild</code> in a dual-monitor environment, I added support for the <code>GraphicsConfiguration</code> and the use of its supplied <code>getBounds()</code> method for correct window positioning.</p>
+
+        <p>The following cosmetic changes were made, which in some cases provide more leeway than one would normally expect for modal windows:</p>
+
+        <ul>
+          <li>To keep the duplication of code to a minimum, a helper class named <code>JModalHelper</code> was introduced.</li>
+          <li>Resizing and moving of blocked windows was enabled.</li>
+          <li>The method <code>activateFirstAvailableBlockingWindow(WindowEvent windowEvent)</code> was added to the <code>InputBlocker</code> for the prior mentioned feature that a blocked <code>JModalFrame</code> upon activation automatically moves the blocking child window to the front.</li>
+          <li>To enable the use of "Show Desktop", it is necessary that a blocked <code>JModalFrame</code> is allowed to be iconified.</li>
+          <li>A fix for the incomplete repainting of a frame that sometimes occurs when a frame is de-iconified immediately after it was iconified. When the frame is first moved <code>toFront</code> before is it de-iconified, this problem doesn't manifest itself anymore.</li>
+        </ul>
+
+        <h3>Conclusion and Credits</h3>
+
+        <p>
+          As always, if a standard Swing component meets your needs, you are encouraged to use it. In the case where you are looking for a window that does not block the entire application but is modal only with respect to some of your open windows, you may want to consider using JModalWindow. 
+          Check the <a href="#downloads">JModalWindow downloads</a>. I look forward to your feedback and suggestions for further enhancements and comments on how you may be using this project in ways that we may not have anticipated.
+        </p>
+
+        <p>A runnable .jar, which was used to create the screenshots and is based on the above shown sample code, is also available for <a href="download/swingx-1.5-sample.jar">download</a>.</p>
+
+        <p>I would like to mention the people whose ideas contributed to the creation of this project (in alphabetical order):</p>
+
+        <ul>
+          <li>Sandip Chitale, for his ideas on creating a modal window.</li>
+          <li>Maks Smits, web designer at <a href="http://www.quobell.nl/"><img src="images/jmw/quobell.png" alt="Quobell" class="img-thumbnail" /></a>, for his suggestion to blur the blocked window.</li>
+          <li>Dan Syrstad, for his idea on creating a busy frame.</li>
+        </ul>
+
+        <p>I would like to thank the people whose support contributed to the existence of this project (in alphabetical order):</p>
+
+        <ul>
+          <li>Ise Douwes at <a href="http://www.quobell.nl/"><img src="images/jmw/quobell.png" alt="Quobell" class="img-thumbnail" /></a>, my former employer, for letting me have the copyright on the source code, based on, as he put it, <q>intellectual ownership</q>.</li>
+          <li>Oleg N. Sukhodolsky at Sun, for reviewing the source code and for his suggestion for added functionality.</li>
+          <li>Scott Violet at Sun, for noticing my email, among other things.</li>
+          <li>Kathy Walrath at Sun, for editing this article.</li>
+        </ul>
+
+        <p class="text-info text-xs-right">
+          <span class="text-nowrap">Jene Jasper holds a degree in Mathematics</span> <span class="text-nowrap">and works as a Developer for <a href="http://www.abz.nl">ABZ</a> a <a href="http://www.solerainc.com/">Solera</a> company.</span>
+        </p>
+
+        <div class="row flex-items-xs-between">
+          <a href="http://www.abz.nl"><img src="images/jmw/abz.png" alt="ABZ" class="fixed-resize flex-start" /></a>
+          <a href="http://www.solerainc.com/"><img src="images/jmw/solera.png" alt="Solera" class="fixed-resize flex-end" /></a>
+        </div>
+
+        <div id="downloads" />
       </div>
     </div>
   </div>
@@ -181,7 +623,7 @@
             <tr>
               <td colspan="2"></td>
               <td class="hidden-sm-down"></td>
-              <th class="hidden-xs-down">Sample from Article</th>
+              <th class="hidden-xs-down">Sample from <a href="#article">Article</a></th>
             </tr>
 
             <tr>
@@ -192,31 +634,20 @@
           </tbody>
         </table>
 
-        <p>
-          To run demo type:
-          <code>
-            java -jar <a href="download/swingx-2.3-demo.jar">swingx-2.3-demo.jar</a>
-          </code>
-        </p>
+        <p>To run demo type:<code>java -jar <a href="download/swingx-2.3-demo.jar">swingx-2.3-demo.jar</a></code></p>
 
-        <p>
-          To run with minimal configuration type:
-          <code>java -jar swingx-2.3-demo.jar -minimal</code>
-          <br /> <small>(no blurring of blocked window, no busy cursor when moving the mouse cursor over the blocked window and disabled iconify of a blocked internal frame.)</small>
-        </p>
+        <p>To run with minimal configuration type: <code>java -jar swingx-2.3-demo.jar -minimal<sup class="text-info">1)</sup></code></p>
 
-        <p>
-          To run SUN Article sample type:
-          <code>
-            java -jar <a href="download/swingx-1.5-sample.jar">swingx-1.5-sample.jar</a>
-          </code>
-        </p>
+        <p class="hidden-xs-down">To run <a href="#article">SUN Article</a> sample type: <code>java -jar <a href="download/swingx-1.5-sample.jar">swingx-1.5-sample.jar</a></code></p>
 
-        <div id="issues"></div>
+        <hr />
+
+        <small class="text-info"><sup>1)</sup> no blurring of blocked window, no busy cursor when moving the mouse cursor over the blocked window and disabled iconify of a blocked internal frame.</small>
+
+        <div id="issues" />
       </div>
     </div>
   </div>
-
 
   <div class="container m-t-3 hidden-xs-down">
     <div class="row">
@@ -276,8 +707,7 @@
 
             <tr>
               <td>6</td>
-              <td>The library does not work properly in the second monitor in a dual monitor configuration. When you click the 'Open modal Window' button in the 'Test Modal Main Frame' (placed in the second monitor) the modal window does not appear
-                relative to the button but in the first monitor.</td>
+              <td>The library does not work properly in the second monitor in a dual monitor configuration. When you click the 'Open modal Window' button in the 'Test Modal Main Frame' (placed in the second monitor) the modal window does not appear relative to the button but in the first monitor.</td>
               <td>1.5</td>
             </tr>
 
@@ -319,7 +749,7 @@
 
             <tr>
               <td>14</td>
-              <td>Enable configuration of settings (see also <a href="#faq1">FAQ 1</a>).
+              <td>Enable configuration of settings (see also <a href="#faq-1">FAQ 1</a>).
               </td>
               <td>1.6</td>
             </tr>
@@ -350,7 +780,7 @@
 
             <tr>
               <td>19</td>
-              <td>waitForClose on event dispatch thread (see also <a href="#faq2">FAQ 2</a>).
+              <td>waitForClose on event dispatch thread (see also <a href="#faq-2">FAQ 2</a>).
               </td>
               <td>2.1</td>
             </tr>
@@ -398,14 +828,11 @@
         <h3 class="m-t-1 m-b-2">Alternatives</h3>
 
         <ul>
-          <li><p>
-              If you just need a window-specific modal frame <a href="http://www.jroller.com/page/santhosh?entry=are_you_missing_maximize_button">Santhosh Kumar's Weblog</a> might provide a less intrusive alternative.
-            </p></li>
-
+          <li><p>If you just need a window-specific modal frame <a href="http://www.jroller.com/page/santhosh?entry=are_you_missing_maximize_button">Santhosh Kumar's Weblog</a> might provide a less intrusive alternative.</p></li>
           <li><p>Or take a look at the New Modality API in Mustang.</p></li>
         </ul>
 
-        <div id="faq1"></div>
+        <div id="faq-1" />
       </div>
     </div>
   </div>
@@ -416,88 +843,45 @@
       <div class="col-xs-12 card">
         <h3 class="m-t-1 m-b-2">FAQ 1</h3>
 
-        <blockquote class="blockquote card">
-          <p class="text-primary">I can't change the STOP-icon! I've tried:</p>
+        <blockquote class="blockquote text-primary card">
+          <p>I can't change the STOP-icon! I've tried:</p>
 
-          <blockquote>
-            <code>
-              UIManager.put("swingx.busy.cursor", "/home/images/custom-cursor.gif");<sup class="text-info">1)</sup>
-            </code>
-          </blockquote>
+          <blockquote><code>UIManager.put("swingx.busy.cursor", "/home/images/custom-cursor.gif");<sup class="text-info">2)</sup></code></blockquote>
 
-          <p class="text-primary">but then the STOP-icon is only changed to a smaller red square with a white X in it, which is not my icon&#8230; How can I fix this?</p>
+          <p>but then the STOP-icon is only changed to a smaller red square with a white X in it, which is not my icon&#8230;</p>
+
+          <p>How can I fix this?</p>
         </blockquote>
 
-        <p>
-          The white cross on the red background is generated with
-          <code>Utils.getMissingImage()</code>
-          to indicate that the specified icon/image couldn't be found.
-        </p>
+        <p>The white cross on the red background is generated with <code>Utils.getMissingImage()</code> to indicate that the specified icon/image couldn't be found.</p>
 
         <p>To make the image available on the classpath there are two options:</p>
 
         <ol>
-          <li><p>
-              Place the image
-              <code>busy_cursor.gif</code>
-              in for example a subdirectory
-              <code>&#8230;/classes/images</code>
-              and add the following line to your code:
-            </p>
-
-            <blockquote>
-              <code>UIManager.put("swingx.busy.cursor", "images/busy_cursor.gif");</code>
-            </blockquote>
-
-            <p>
-              <strong>Note</strong>: if the class files are packaged in a jar make sure the images are also packaged in that jar.
-            </p></li>
-
           <li>
-            <p>
-              The image
-              <code>cursor.gif</code>
-              is available in the directory
-              <code>/usr/images</code>
-              . Create a zip or jar file
-              <code>&#8230;/dist/lib/usr.zip</code>
-              containing the image and including the subfolders
-              <code>/usr/images</code>
-              . Then add the following line to your code:
-            </p>
+            <p>Place the image <code>busy_cursor.gif</code> in for example a subdirectory <code>&#8230;/classes/images</code> and add the following line to your code:</p>
 
-            <blockquote>
-              <code>UIManager.put("swingx.busy.cursor", "usr/images/cursor.gif")</code>
-            </blockquote>
+            <blockquote><code>UIManager.put("swingx.busy.cursor", "images/busy_cursor.gif");</code></blockquote>
 
-            <p>
-              And suppose the application is packaged in
-              <code>&#8230;/dist/swingx-1.4-demo.jar</code>
-              then run the application with the following command:
-            </p>
+            <p><strong>Note</strong>: if the class files are packaged in a jar make sure the images are also packaged in that jar.</p>
+          </li>
+          <li>
+            <p>The image <code>cursor.gif</code> is available in the directory <code>/usr/images</code>. Create a zip or jar file <code>&#8230;/dist/lib/usr.zip</code> containing the image and including the subfolders <code>/usr/images</code>. Then add the following line to your code:</p>
 
-            <blockquote>
-              <code>java -classpath "swingx-1.4-demo.jar;lib/usr.zip" nl.jj.swingx.gui.modal.test.TestModalFrame</code>
-            </blockquote>
+            <blockquote><code>UIManager.put("swingx.busy.cursor", "usr/images/cursor.gif")</code></blockquote>
+
+            <p>And suppose the application is packaged in <code>&#8230;/dist/swingx-1.4-demo.jar</code> then run the application with the following command:</p>
+
+            <blockquote><code>java -classpath "swingx-1.4-demo.jar;lib/usr.zip" nl.jj.swingx.gui.modal.test.TestModalFrame</code></blockquote>
           </li>
         </ol>
 
         <p>
-          <strong>Note</strong>: In
-          <code>
-            UIManager.put("swingx.busy.cursor", "<strong class="text-success">/</strong>home/images/custom-cursor");
-          </code>
-          remove the <em class="text-success">first slash</em>, because there is a difference between
-        </p>
+          <strong>Note</strong>: In <code>UIManager.put("swingx.busy.cursor", "<strong class="text-success">/</strong>home/images/custom-cursor");</code> remove the <em class="text-success">first slash</em>, because there is a difference between:</p>
 
         <ul>
-          <li><code>
-              getInstance().getClass().<strong>getClassLoader()</strong>.getResource(&#8230;);
-            </code> which I used and</li>
-
-          <li><code>
-              getInstance().<strong>getClass()</strong>.getResource(&#8230;);
-            </code></li>
+          <li><code>getInstance().getClass().<strong>getClassLoader()</strong>.getResource(&#8230;);</code> which I used and</li>
+          <li><code>getInstance().<strong>getClass()</strong>.getResource(&#8230;);</code></li>
         </ul>
 
         <p>in the way they retrieve the resource.</p>
@@ -506,9 +890,9 @@
 
         <hr />
 
-        <small class="text-info"><sup>1)</sup> Since enhancement <a href="#issues">14</a> it is possible to use <code>JModalConfiguration.setBusyCursor(java.awt.Cursor)</code> as well.</small>
+        <small class="text-info"><sup>2)</sup> Since enhancement <a href="#issues">14</a> it is possible to use <code>JModalConfiguration.setBusyCursor(java.awt.Cursor)</code> as well.</small>
 
-        <div id="faq2"></div>
+        <div id="faq-2" />
       </div>
     </div>
   </div>
@@ -519,50 +903,27 @@
       <div class="col-xs-12 card">
         <h3 class="m-t-1 m-b-2">FAQ 2</h3>
 
-        <blockquote class="blockquote card">
-          <p class="text-primary">
-            I'm having a problem using the
-            <code>waitForClose()</code>
-            method. Basically, when I use this method, the entire application freezes and won't respond to events or repaint itself.
-          </p>
+        <blockquote class="blockquote text-primary card">
+          <p>I'm having a problem using the <code>waitForClose()</code> method. Basically, when I use this method, the entire application freezes and won't respond to events or repaint itself.</p>
         </blockquote>
 
         <p>
-          This is due to the fact that
-          <code>wait()</code>
-          shouldn't be called on the event dispatch thread. Which means the
-          <code>waitForClose()</code>
-          is useless in ActionListeners and the like. For this reason
-          <code>waitForClose()</code>
-          now throws the following
-          <code>
-            Error("Cannot call wait from the event dispatcher thread")<sup class="text-info">2)</sup>
-          </code>
-          when the method is called on the event dispath thread.
+          This is due to the fact that <code>wait()</code> shouldn't be called on the event dispatch thread. Which means the <code>waitForClose()</code> is useless in ActionListeners and the like. For this reason <code>waitForClose()</code> now throws 
+          the following <code>Error("Cannot call wait from the event dispatcher thread")<sup class="text-info">3)</sup></code> when the method is called on the event dispath thread.
         </p>
 
         <p>
-          If you need to implement some action, when the window is closed, use the
-          <code>windowClosed</code>
-          method of for example the
-          <code>WindowAdapter</code>
-          and supply this to the
-          <code>addWindowListener</code>
-          method of the window, you want to monitor. For an example of its usage see:
-          <code>TestModalFrame</code>
-          method
-          <code>init()</code>
-          command
-          <code>jbNormalWindow.addActionListener(&#8230;);</code>
+          If you need to implement some action, when the window is closed, use the <code>windowClosed</code> method of for example the <code>WindowAdapter</code> and supply this to the <code>addWindowListener</code> method of the window, you want to monitor. For an example of its usage see:
+          <code>TestModalFrame</code> method <code>init()</code> command <code>jbNormalWindow.addActionListener(&#8230;);</code>
         </p>
 
         <hr />
 
+        <p><small><sup class="text-info">3)</sup> Since enhancement <a href="#issues">19</a> it is now also possible to simulate wait on the event dispatch thread (EDT). Just call the <code>enableWaitOnEDT()</code> method of the <code>JModalConfiguration</code> class to activate this.</small></p>
+
         <p>
-          <small> <sup class="text-info">2)</sup> Since enhancement <a href="#issues">19</a> it is now also possible to simulate wait on the event dispatch thread (EDT). Just call the <code>enableWaitOnEDT()</code> method of the <code>JModalConfiguration</code>
-            class to activate this. <strong>Note</strong>: Because this method could throw a <code>java.lang.SecurityException</code> if a security manager exists and its <code>SecurityManager.checkAwtEventQueueAccess()</code> method denies access to the <code>EventQueue</code>
-            , it <strong>isn't</strong> activated by <em>default</em>.
-          </small>
+          <small><strong>Note</strong>: Because this method could throw a <code>java.lang.SecurityException</code> if a security manager exists and its <code>SecurityManager.checkAwtEventQueueAccess()</code> method denies access to the <code>EventQueue</code>, 
+          it <strong>isn't</strong> activated by <strong>default</strong>.</small>
         </p>
       </div>
     </div>

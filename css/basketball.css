@@ -217,6 +217,7 @@ body {
 }
 
 
+
 /*
  * === JModalWindow Landing Page ===
  */
@@ -245,8 +246,12 @@ body {
   padding: inherit;
 }
 
-.jmodalwindow-cover-page .media img {
+.jmodalwindow-cover-page img.fixed-resize {
   height: 5rem;
+}
+
+code {
+  padding: 0rem;
 }
 
 
