@@ -103,7 +103,7 @@ body {
   .freedumbytes-cover-page .site-content {
     margin-top: 0rem;
   }
-  
+
   .site-content {
     margin-top: 1rem;
   }
@@ -113,7 +113,7 @@ body {
   .freedumbytes-cover-page .site-content {
     margin-top: 3.75rem;
   }
-  
+
   .site-content {
     margin-top: 5rem;
   }
@@ -204,6 +204,11 @@ body {
 
 .text-cloudy {
   color: white;
+}
+
+.img-repo {
+  background-color: white;
+  border-radius: 0.3rem;
 }
 
 .freedumbytes-cover-page .site-footer .blockquote {
@@ -433,7 +438,7 @@ code {
   font-weight: bold;
 }
 
-.game-stats .fouled-out, .game-stats.fouled-out{
+.game-stats .fouled-out, .game-stats.fouled-out {
   color: crimson;
   font-weight: bold;
 }
