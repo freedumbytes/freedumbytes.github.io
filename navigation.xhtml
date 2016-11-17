@@ -2,18 +2,18 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-<meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
 
-<title>Navigation</title>
-<meta name="description" content="Generic Site Navigation" />
-<meta name="author" content="Jene Jasper" />
-<meta name="robots" content="noindex, follow" />
+  <title>Navigation</title>
+  <meta name="description" content="Generic Site Navigation" />
+  <meta name="author" content="Jene Jasper" />
+  <meta name="robots" content="noindex, follow" />
 
-<link rel="stylesheet" href="css/bootstrap.min.css" />
-<link rel="stylesheet" href="css/font-awesome.min.css" />
-<link rel="stylesheet" href="css/basketball.css" />
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/font-awesome.min.css" />
+  <link rel="stylesheet" href="css/basketball.css" />
 </head>
 
 <body class="site-header freedumbytes-cover-page">
@@ -26,17 +26,22 @@
 
     <div class="collapse navbar-toggleable-xs" id="hamburgerMenu">
       <div class="nav navbar-nav">
-        <div class="nav-item">
-          <a class="nav-link" href="http://www.shadowland.demon.nl/"><img src="images/logo/mike-muir-front.jpg" class="img-rounded" /></a>
+        <div class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="https://freedumbytes.bitbucket.io/" id="responsive-navbar-dropdown-home" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/logo/mike-muir-back.jpg" class="img-rounded" /> Home</a>
+
+          <div class="dropdown-menu" aria-labelledby="responsive-navbar-dropdown-home">
+            <a class="dropdown-item" href="http://www.shadowland.demon.nl/index.xhtml"><img src="images/logo/mike-muir-front.jpg" class="img-rounded" /> shadowland</a>
+            <a class="dropdown-item" href="https://freedumbytes.bitbucket.io/"><img src="images/logo/mike-muir-back.jpg" class="img-rounded" /> freedumbytes</a>
+          </div>
         </div>
-        <div class="nav-item">
-          <a class="nav-link" href="https://bitbucket.org/freedumbytes/"><img src="images/logo/bitbucket.png" class="img-repo" /></a>
-        </div>
-        <div class="nav-item">
-          <a class="nav-link" href="https://github.com/jenejasper"><img src="images/logo/github.png" class="img-repo" /></a>
-        </div>
-        <div class="nav-item">
-          <a class="nav-link" href="https://gitlab.com/jenejasper"><img src="images/logo/gitlab.png" class="img-repo" /></a>
+        <div class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="https://bitbucket.org/freedumbytes/" id="responsive-navbar-dropdown-repo" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/logo/git.png" class="img-repo" /> Repository</a>
+
+          <div class="dropdown-menu" aria-labelledby="responsive-navbar-dropdown-repo">
+            <a class="dropdown-item" href="https://bitbucket.org/freedumbytes/"><img src="images/logo/bitbucket.png" class="img-repo" /> Bitbucket</a>
+            <a class="dropdown-item" href="https://github.com/jenejasper"><img src="images/logo/github.png" class="img-repo" /> GitHub</a>
+            <a class="dropdown-item" href="https://gitlab.com/jenejasper"><img src="images/logo/gitlab.png" class="img-rounded" /> GitLab</a>
+          </div>
         </div>
         <div class="nav-item">
           <a class="nav-link" href="dpl/html/index.html"><img src="images/logo/java.png" /> Development Production Line</a>
