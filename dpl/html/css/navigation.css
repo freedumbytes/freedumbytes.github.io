@@ -1,121 +1,121 @@
-.navheader, .navfooter {
-  margin: 0 auto;
-  padding: 0em;
-  position: relative;
-  text-align: center;
-}
-
-.navheader {
-  border-bottom: 1px dotted #ccc;
-  padding-bottom: 90px;
-}
-
-.navfooter {
-  border-top: 1px dotted #ccc;
-  padding-top: 70px;
-  margin-top: 10px;
-}
-
-.navheader li, .navfooter li {
-  display: inline;
-  font-size: 0.8em;
-  list-style: none;
-  padding: 0em;
-}
-
-.navheader li.previous, .navheader li.next, .navfooter li.previous, .navfooter li.next {
-  position: absolute;
-  top: 2.5em;
-}
-
-.navheader li.previous, .navfooter li.previous {
-  left: 0px;
-  text-align: left;
-}
-
-.navheader li.next, .navfooter li.next {
-  right: 0px;
-  text-align: right;
-}
-
-.navheader li.previous strong, .navheader li.next strong, .navfooter li.previous strong, .navfooter li.next strong {
-  display: block;
-}
-
-.navheader li.previous a strong, .navfooter li.previous a strong {
-  background: url(../images/community/docbook/navigation/previous.png) top left no-repeat;
-  font-size: 1.2em;
-  height: 32px;
-  padding-bottom: 0px;
-  padding-left: 50px;
-  padding-top: 15px;
-}
-
-.navheader li.next a strong, .navfooter li.next a strong {
-  background: url(../images/community/docbook/navigation/next.png) top right no-repeat;
-  font-size: 1.2em;
-  height: 32px;
-  padding-bottom: 0px;
-  padding-right: 50px;
-  padding-top: 15px;
-}
-
-.navfooter li.up, .navfooter li.home {
-  position: absolute;
-  top: 0.2em;
-}
-
-.navfooter li.up {
-  left: 25%;
-  text-align: left;
-}
-
-.navfooter li.home {
-  right: 25%;
-  text-align: left;
-}
-
-.navfooter li.up strong, .navfooter li.home strong {
-  display: block;
-}
-
-.navfooter li.up a strong {
-  background: url(../images/community/docbook/navigation/top.png) top left no-repeat;
-  font-size: 1.2em;
-  height: 32px;
-  padding-bottom: 0px;
-  padding-left: 50px;
-  padding-top: 15px;
-}
-
-.navfooter li.home a strong {
-  background: url(../images/community/docbook/navigation/home.png) top left no-repeat;
-  font-size: 1.2em;
-  height: 32px;
-  padding-bottom: 0px;
-  padding-left: 50px;
-  padding-top: 15px;
-}
-
-.navheader a, .navfooter a {
-  max-width: 10em;
-  overflow: hidden;
-}
-
-.navheader a, .navheader strong, .navfooter a, .navfooter strong {
-  font-weight: normal;
-  text-decoration: none;
-}
-
-.navheader a:link, .navheader a:visited, .navfooter a:link, .navfooter a:visited {
-  color: #666 !important;
-  text-decoration: none;
-}
-
-.navheader a:link strong, .navfooter a:link strong {
-  text-decoration: none;
-}
-
-.navheader a:hover, .navheader a:focus, .navheader a:active, .navfooter a:hover, .navfooter a:focus, .navfooter a:active {
-  color: black !important;
+.navheader, .navfooter {
+  margin: 0 auto;
+  padding: 0em;
+  position: relative;
+  text-align: center;
+}
+
+.navheader {
+  border-bottom: 1px dotted #ccc;
+  padding-bottom: 90px;
+}
+
+.navfooter {
+  border-top: 1px dotted #ccc;
+  padding-top: 70px;
+  margin-top: 10px;
+}
+
+.navheader li, .navfooter li {
+  display: inline;
+  font-size: 0.8em;
+  list-style: none;
+  padding: 0em;
+}
+
+.navheader li.previous, .navheader li.next, .navfooter li.previous, .navfooter li.next {
+  position: absolute;
+  top: 2.5em;
+}
+
+.navheader li.previous, .navfooter li.previous {
+  left: 0px;
+  text-align: left;
+}
+
+.navheader li.next, .navfooter li.next {
+  right: 0px;
+  text-align: right;
+}
+
+.navheader li.previous strong, .navheader li.next strong, .navfooter li.previous strong, .navfooter li.next strong {
+  display: block;
+}
+
+.navheader li.previous a strong, .navfooter li.previous a strong {
+  background: url(../images/community/docbook/navigation/previous.png) top left no-repeat;
+  font-size: 1.2em;
+  height: 32px;
+  padding-bottom: 0px;
+  padding-left: 50px;
+  padding-top: 15px;
+}
+
+.navheader li.next a strong, .navfooter li.next a strong {
+  background: url(../images/community/docbook/navigation/next.png) top right no-repeat;
+  font-size: 1.2em;
+  height: 32px;
+  padding-bottom: 0px;
+  padding-right: 50px;
+  padding-top: 15px;
+}
+
+.navfooter li.up, .navfooter li.home {
+  position: absolute;
+  top: 0.2em;
+}
+
+.navfooter li.up {
+  left: 25%;
+  text-align: left;
+}
+
+.navfooter li.home {
+  right: 25%;
+  text-align: left;
+}
+
+.navfooter li.up strong, .navfooter li.home strong {
+  display: block;
+}
+
+.navfooter li.up a strong {
+  background: url(../images/community/docbook/navigation/top.png) top left no-repeat;
+  font-size: 1.2em;
+  height: 32px;
+  padding-bottom: 0px;
+  padding-left: 50px;
+  padding-top: 15px;
+}
+
+.navfooter li.home a strong {
+  background: url(../images/community/docbook/navigation/home.png) top left no-repeat;
+  font-size: 1.2em;
+  height: 32px;
+  padding-bottom: 0px;
+  padding-left: 50px;
+  padding-top: 15px;
+}
+
+.navheader a, .navfooter a {
+  max-width: 10em;
+  overflow: hidden;
+}
+
+.navheader a, .navheader strong, .navfooter a, .navfooter strong {
+  font-weight: normal;
+  text-decoration: none;
+}
+
+.navheader a:link, .navheader a:visited, .navfooter a:link, .navfooter a:visited {
+  color: #666 !important;
+  text-decoration: none;
+}
+
+.navheader a:link strong, .navfooter a:link strong {
+  text-decoration: none;
+}
+
+.navheader a:hover, .navheader a:focus, .navheader a:active, .navfooter a:hover, .navfooter a:focus, .navfooter a:active {
+  color: black !important;
 }

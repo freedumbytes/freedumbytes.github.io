@@ -48,7 +48,7 @@ org.eclipse.platform
 --launcher.defaultAction
 openFile
 -vm<span xmlns="http://www.w3.org/1999/xhtml" id="ide.eclipse.vm.parameter"/><a xmlns="http://www.w3.org/1999/xhtml" id="ide.eclipse.vm.parameter"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>
-P:/dev/apps/prg/java-x64/jdk1.8.0_74/jre/bin/server/jvm.dll<span xmlns="http://www.w3.org/1999/xhtml" id="ide.eclipse.vm.value"/><a xmlns="http://www.w3.org/1999/xhtml" id="ide.eclipse.vm.value"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/2.png" alt="2" height="17px" width="17px" class="callout"/>
+P:/dev/apps/prg/java-x64/jdk1.8.0_102/jre/bin/server/jvm.dll<span xmlns="http://www.w3.org/1999/xhtml" id="ide.eclipse.vm.value"/><a xmlns="http://www.w3.org/1999/xhtml" id="ide.eclipse.vm.value"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/2.png" alt="2" height="17px" width="17px" class="callout"/>
 --launcher.appendVmargs
 -vmargs
 -Dosgi.requiredJavaVersion=1.7
@@ -369,8 +369,8 @@ ${task.url}
                 <span class="guilabel"><strong>m2e Update Site -
                 http://download.eclipse.org/technology/m2e/releases/</strong></span>.</p></li><li class="listitem"><p>Type filter text: <strong class="userinput"><code>m2e</code></strong>.</p></li><li class="listitem"><p>Select the following components:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><span class="guilabel"><strong>m2e - Maven Integration for Eclipse
                       (includes Incubating components)
-                      [1.6.2]</strong></span></p></li><li class="listitem"><p><span class="guilabel"><strong>m2e - slf4j over logback logging
-                      (Optional) [1.6.2]</strong></span> and click
+                      [1.7.0]</strong></span></p></li><li class="listitem"><p><span class="guilabel"><strong>m2e - slf4j over logback logging
+                      (Optional) [1.7.0]</strong></span> and click
                       <span class="guibutton"><strong><span class="accel">N</span>ext</strong></span> twice.</p></li></ul></div></li><li class="listitem"><p>Choose <span class="guilabel"><strong>I <span class="accel">a</span>ccept the terms of
                 the license agreements</strong></span> <span class="emphasis"><em>after reading
                 them</em></span> and
@@ -382,11 +382,22 @@ ${task.url}
             installs.</span>”</span></p><p>Select <span class="guimenu"><strong><span class="accel">W</span>indow</strong></span> → <span class="guimenu"><strong><span class="accel">P</span>references</strong></span> → <span class="guilabel"><strong>Java</strong></span> → <span class="guilabel"><strong>Installed JREs</strong></span> → <span class="guilabel"><strong><span class="accel">A</span>dd…</strong></span> a <span class="guilabel"><strong>Standard VM</strong></span> and
             <span class="guibutton"><strong><span class="accel">N</span>ext</strong></span> set the
             <span class="guilabel"><strong><span class="accel">J</span>RE home</strong></span> with
-            <span class="guibutton"><strong>Direct<span class="accel">o</span>ry…</strong></span> to <code class="filename">P:\dev\apps\prg\java-x64\jdk1.8.0_74</code>
+            <span class="guibutton"><strong>Direct<span class="accel">o</span>ry…</strong></span> to <code class="filename">P:\dev\apps\prg\java-x64\jdk1.8.0_102</code>
             and click <span class="guibutton"><strong><span class="accel">F</span>inish</strong></span>. Now check
-            this jdk1.8.0_74 and <span class="guibutton"><strong><span class="accel">R</span>emove</strong></span>
+            this jdk1.8.0_102 and <span class="guibutton"><strong><span class="accel">R</span>emove</strong></span>
             the old jre1.x.x_xx and apply with <span class="guibutton"><strong>OK</strong></span> (see
-            also <a class="xref" href="integrated.development.environment.html#ide.eclipse.ini">Section 15.1.2, “Eclipse installation guide”</a>).</p></div><section class="section" id="ide.eclipse.plugin.config.maven"><div class="titlepage"><div><div><h5 class="title"><a id="ide.eclipse.plugin.config.maven" class="anchor" href="#ide.eclipse.plugin.config.maven"><span class="octicon octicon-link"/></a>15.1.5.5.1. Maven configuration</h5></div></div></div><p>Set the following preferences <span class="guimenu"><strong><span class="accel">W</span>indow</strong></span> → <span class="guimenu"><strong><span class="accel">P</span>references</strong></span>:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p>In <span class="guilabel"><strong>Team</strong></span> → <span class="guilabel"><strong>Ignored Resources</strong></span> → <span class="guibutton"><strong>Add <span class="accel">P</span>attern…</strong></span> for <code class="filename">target</code>, <code class="filename">.settings</code>,
+            also <a class="xref" href="integrated.development.environment.html#ide.eclipse.ini">Section 15.1.2, “Eclipse installation guide”</a>).</p></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="caution"><h2>Caution</h2><p>After upgrading maven-jar-plugin to 3.x Eclipse reports
+            <a class="link" href="http://stackoverflow.com/questions/37555557/m2e-error-in-mavenarchiver-getmanifest">the
+            following error</a>
+            <span class="quote">“<span class="quote">org.apache.maven.archiver.MavenArchiver.getManifest(org.apache.maven.project.MavenProject,
+            org.apache.maven.archiver.MavenArchiveConfiguration)</span>”</span></p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p>Select <span class="guimenu"><strong><span class="accel">H</span>elp</strong></span> → <span class="guisubmenu"><strong>Install New
+                      <span class="accel">S</span>oftware…</strong></span>.</p></li><li class="listitem"><p><span class="guibutton"><strong><span class="accel">A</span>dd…</strong></span> the
+                  <span class="guilabel"><strong><span class="accel">L</span>ocation</strong></span>
+                  <strong class="userinput"><code>https://otto.takari.io/content/sites/m2e.extras/m2eclipse-mavenarchiver/0.17.2/N/LATEST/</code></strong>
+                  and click <span class="guibutton"><strong>Ok</strong></span>.</p></li><li class="listitem"><p>Select the following components:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><span class="guilabel"><strong>m2e connector for mavenarchiver pom
+                        properties [0.17.2]</strong></span> and click
+                        <span class="guibutton"><strong><span class="accel">N</span>ext</strong></span>
+                        twice.</p></li></ul></div></li></ul></div></div><section class="section" id="ide.eclipse.plugin.config.maven"><div class="titlepage"><div><div><h5 class="title"><a id="ide.eclipse.plugin.config.maven" class="anchor" href="#ide.eclipse.plugin.config.maven"><span class="octicon octicon-link"/></a>15.1.5.5.1. Maven configuration</h5></div></div></div><p>Set the following preferences <span class="guimenu"><strong><span class="accel">W</span>indow</strong></span> → <span class="guimenu"><strong><span class="accel">P</span>references</strong></span>:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p>In <span class="guilabel"><strong>Team</strong></span> → <span class="guilabel"><strong>Ignored Resources</strong></span> → <span class="guibutton"><strong>Add <span class="accel">P</span>attern…</strong></span> for <code class="filename">target</code>, <code class="filename">.settings</code>,
                   <code class="filename">.classpath</code> and
                   <code class="filename">.project</code> and click
                   <span class="guibutton"><strong><span class="accel">A</span>pply</strong></span>.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>As an alternative see also <a class="xref" href="version.control.system.html#vcs.git.ignore.template" title="11.1.2.5. Ignores template">Section 11.1.2.5, “Ignores template”</a> for Git and <a class="xref" href="version.control.system.html#vcs.svn.client.ignore" title="11.2.3. Global ignores">Section 11.2.3, “Global ignores”</a> for Subversion.</p></div></li><li class="listitem"><p>In <span class="guilabel"><strong>Maven</strong></span> → <span class="guilabel"><strong>Installations</strong></span>:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><span class="guilabel"><strong><span class="accel">A</span>dd…</strong></span> the

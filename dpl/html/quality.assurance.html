@@ -14,6 +14,7 @@
             SonarQube.</p></li><li class="listitem"><p><a class="link" href="http://docs.sonarqube.org/display/SONAR/Setup+and+Upgrade">Setup</a>
             and browsing <a class="link" href="http://docs.sonarqube.org/display/SONAR/Browsing+SonarQube">SonarQube</a>
             and <a class="link" href="http://docs.sonarqube.org/display/SONAR/Project+Dashboards">Projects</a>
+            <a class="link" href="http://docs.sonarqube.org/display/SONAR/Project+Administration">Administration</a>
             <a class="link" href="http://docs.sonarqube.org/display/SONAR/Hunting+Services">Drilling
             Down</a>.Viewing <a class="link" href="http://docs.sonarqube.org/display/SONAR/Historical+Information">Historical
             Information</a>, <a class="link" href="http://docs.sonarqube.org/display/SONAR/Differential+Views">Differential
@@ -480,7 +481,7 @@ sonar.jdbc.maxWait=5000<span xmlns="http://www.w3.org/1999/xhtml" id="qa.sonar.d
         <code class="filename">P:\dev\apps\qa\sonarqube-5.5\conf\wrapper.conf</code>:</p><pre xmlns="" class="language-provided"><code class="language-ini"># Path to JVM executable. By default it must be available in PATH.
 # Can be an absolute path, for example:
 #wrapper.java.command=/path/to/my/jdk/bin/java
-wrapper.java.command=P:\dev\apps\prg\java-x64\jdk1.8.0_74\bin\java<span xmlns="http://www.w3.org/1999/xhtml" id="qa.sonar.java.command"/><a xmlns="http://www.w3.org/1999/xhtml" id="qa.sonar.java.command"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>
+wrapper.java.command=P:\dev\apps\prg\java-x64\jdk1.8.0_102\bin\java<span xmlns="http://www.w3.org/1999/xhtml" id="qa.sonar.java.command"/><a xmlns="http://www.w3.org/1999/xhtml" id="qa.sonar.java.command"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>
 
  …
 
@@ -535,7 +536,8 @@ wrapper.ntservice.description=SonarQube is an open source quality management pla
           conformation click <span class="guibutton"><strong><span class="accel">A</span>pply</strong></span> and
           restart the service.</p></section></section><section class="section" id="qa.sonar.maven.integration"><div class="titlepage"><div><div><h3 class="title"><a id="qa.sonar.maven.integration" class="anchor" href="#qa.sonar.maven.integration"><span class="octicon octicon-link"/></a>17.2.7. Maven integration</h3></div></div></div><p>Configure Maven Setup project in
         <code class="filename">C:\dev\projects\maven-setup\pom.xml</code> to enable
-        command line action <code class="command">mvn sonar:sonar</code>. The <a class="link" href="http://www.mojohaus.org/sonar-maven-plugin/index.html">SonarQube
+        command line action <code class="command">mvn sonar:sonar</code> (see also <a class="link" href="http://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner+for+Maven">Analyzing
+        with SonarQube Scanner for Maven</a>). The <a class="link" href="https://github.com/SonarSource/sonar-scanner-maven">SonarQube
         Maven Plugin</a> triggers the code analyzers using <a class="link" href="http://docs.sonarqube.org/display/SONAR/Analysis+Parameters">Analysis
         Parameters</a> and the <a class="link" href="http://docs.sonarqube.org/display/PLUG/Maven+Report+Plugin">SonarQube
         Maven Report Plugin</a> adds a report link to the Maven site, that
@@ -562,7 +564,7 @@ wrapper.ntservice.description=SonarQube is an open source quality management pla
      &lt;mavenProjectInfoReportsPluginVersion&gt;
        2.8.1
      &lt;/mavenProjectInfoReportsPluginVersion&gt;
-+    &lt;sonarMavenPluginVersion&gt;2.7.1&lt;/sonarMavenPluginVersion&gt;
++    &lt;sonarMavenPluginVersion&gt;3.0.2&lt;/sonarMavenPluginVersion&gt;
 +    &lt;mavenSonarReportPluginVersion&gt;0.1&lt;/mavenSonarReportPluginVersion&gt;
 
      &lt;wagonMavenPluginVersion&gt;1.0&lt;/wagonMavenPluginVersion&gt;
@@ -577,8 +579,8 @@ wrapper.ntservice.description=SonarQube is an open source quality management pla
          &lt;/plugin&gt;
 +
 +        &lt;plugin&gt;
-+          &lt;groupId&gt;org.codehaus.mojo&lt;/groupId&gt;
-+          &lt;artifactId&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="http://www.mojohaus.org/sonar-maven-plugin/index.html">sonar-maven-plugin</a>&lt;/artifactId&gt;
++          &lt;groupId&gt;org.sonarsource.scanner.maven&lt;/groupId&gt;
++          &lt;artifactId&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://github.com/SonarSource/sonar-scanner-maven">sonar-maven-plugin</a>&lt;/artifactId&gt;
 +          &lt;version&gt;${sonarMavenPluginVersion}&lt;/version&gt;
 +        &lt;/plugin&gt;
        &lt;/plugins&gt;

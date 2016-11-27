@@ -175,7 +175,7 @@ mysql-backup-db jira 20150917
 mysql-backup-db sonarqube 20150917
 mysql-backup-db test 20150917
 </code></pre><p>Or stop the master service (after stopping services that might
-        rely on a database such as glassfish, tomcat, fisheye, jira and
+        rely on a database such as payara, tomcat, fisheye, jira and
         sonarqube):</p><pre xmlns="" class="language-provided"><code class="language-bash">net stop mysqlmaster
 </code></pre><p>And create a binary backup of the MySQL configuration and the
         data directory:</p><pre xmlns="" class="language-provided"><code class="language-bash">xcopy /E /I K:\dev\data\db\mysql S:\dev\backup\db\mysql-20150917</code></pre><p>After extracting the latest zip as described in <a class="link" href="database.html#db.mysql.install.guide" title="10.1.2. MySQL installation guide">installation guide</a> and

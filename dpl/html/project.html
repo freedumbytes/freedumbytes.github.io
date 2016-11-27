@@ -125,7 +125,7 @@
 +    &lt;devHost&gt;http://freedumbytes.dev.net&lt;/devHost&gt;
 +    &lt;mavenHost&gt;http://freedumbytes.dev.net/mvn-sites&lt;/mavenHost&gt;
 +    &lt;tomcatHost&gt;http://freedumbytes.dev.net/tomcat&lt;/tomcatHost&gt;
-+    &lt;glassfishHost&gt;http://freedumbytes.dev.net/glassfish&lt;/glassfishHost&gt;
++    &lt;payaraHost&gt;http://freedumbytes.dev.net/payara&lt;/payaraHost&gt;
 +    &lt;apacheHost&gt;http://freedumbytes.dev.net/manual&lt;/apacheHost&gt;
 +    &lt;organizationHost&gt;http://freedumbytes.dev.net/mvn-sites/maven-setup/team-list.html&lt;/organizationHost&gt;
 +    &lt;gitHost&gt;http://freedumbytes.dev.net/git-repo&lt;/gitHost&gt;
@@ -186,7 +186,7 @@
 +      &lt;item name="Nexus" href="${nexusHost}" /&gt;
 +      &lt;item name="HTTP Server" href="${apacheHost}" /&gt;
 +      &lt;item name="Tomcat" href="${tomcatHost}" /&gt;
-+      &lt;item name="GlassFish" href="${glassfishHost}" /&gt;
++      &lt;item name="Payara" href="${payaraHost}" /&gt;
 +      &lt;item name="Development Production Line"
 +            href="http://jmodalwindow.java.net/manual/dpl/html/index.html" /&gt;
 +      &lt;item name="Recent releases" 
@@ -350,42 +350,51 @@
         <code class="filename">C:\dev\projects\maven-setup\pom.xml</code> (see also
         <a class="link" href="http://blog.soebes.de/blog/categories/maven-plugin-releases/">SoftwareEntwicklung
         Beratung Schulung</a> for latest release notes):</p><pre xmlns="" class="language-provided"><code class="language-xml">     &lt;mavenFluidoSkinVersion&gt;1.4&lt;/mavenFluidoSkinVersion&gt;
-+    &lt;mavenCleanPluginVersion&gt;2.6.1&lt;/mavenCleanPluginVersion&gt;
++    &lt;mavenCleanPluginVersion&gt;3.0.0&lt;/mavenCleanPluginVersion&gt;
 +    &lt;mavenToolchainsPluginVersion&gt;1.1&lt;/mavenToolchainsPluginVersion&gt;
-+    &lt;versionsMavenPluginVersion&gt;2.2&lt;/versionsMavenPluginVersion&gt;
++    &lt;versionsMavenPluginVersion&gt;2.3&lt;/versionsMavenPluginVersion&gt;
 +    &lt;mavenPluginPluginVersion&gt;3.4&lt;/mavenPluginPluginVersion&gt;
 +    &lt;mavenDependencyPluginVersion&gt;2.10&lt;/mavenDependencyPluginVersion&gt;
 +    &lt;truezipMavenPluginVersion&gt;1.2&lt;/truezipMavenPluginVersion&gt;
-+    &lt;mavenResourcesPluginVersion&gt;2.7&lt;/mavenResourcesPluginVersion&gt;
++    &lt;mavenResourcesPluginVersion&gt;3.0.1&lt;/mavenResourcesPluginVersion&gt;
 +    &lt;mavenAntrunPluginVersion&gt;1.8&lt;/mavenAntrunPluginVersion&gt;
-+    &lt;mavenCompilerPluginVersion&gt;3.3&lt;/mavenCompilerPluginVersion&gt;
++    &lt;mavenCompilerPluginVersion&gt;3.5.1&lt;/mavenCompilerPluginVersion&gt;
 +    &lt;mavenAnimalSnifferPluginVersion&gt;1.15&lt;/mavenAnimalSnifferPluginVersion&gt;
-+    &lt;mavenDependencyCheckVersion&gt;1.3.6&lt;/mavenDependencyCheckVersion&gt;
-+    &lt;jacocoMavenPluginVersion&gt;0.7.5.201505241946&lt;/jacocoMavenPluginVersion&gt;
-+    &lt;mavenSurefirePluginVersion&gt;2.18.1&lt;/mavenSurefirePluginVersion&gt;
++    &lt;mavenDependencyCheckVersion&gt;1.4.2&lt;/mavenDependencyCheckVersion&gt;
++    &lt;jacocoMavenPluginVersion&gt;0.7.7.201606060606&lt;/jacocoMavenPluginVersion&gt;
++    &lt;mavenSurefirePluginVersion&gt;2.19.1&lt;/mavenSurefirePluginVersion&gt;
 +    &lt;mavenSurefireReportPluginVersion&gt;
 +      ${mavenSurefirePluginVersion}
 +    &lt;/mavenSurefireReportPluginVersion&gt;
 +    &lt;mavenFailsafePluginVersion&gt;
 +      ${mavenSurefirePluginVersion}
 +    &lt;/mavenFailsafePluginVersion&gt;
-+    &lt;mavenJarPluginVersion&gt;2.6&lt;/mavenJarPluginVersion&gt;
++    &lt;mavenJarPluginVersion&gt;3.0.2&lt;/mavenJarPluginVersion&gt;
 +    &lt;mavenEjbPluginVersion&gt;2.5.1&lt;/mavenEjbPluginVersion&gt;
 +    &lt;mavenWarPluginVersion&gt;2.6&lt;/mavenWarPluginVersion&gt;
 +    &lt;mavenRarPluginVersion&gt;2.4&lt;/mavenRarPluginVersion&gt;
 +    &lt;mavenEarPluginVersion&gt;2.10.1&lt;/mavenEarPluginVersion&gt;
-+    &lt;mavenSourcePluginVersion&gt;2.4&lt;/mavenSourcePluginVersion&gt;
-+    &lt;mavenJavadocPluginVersion&gt;2.10.3&lt;/mavenJavadocPluginVersion&gt;
++    &lt;mavenSourcePluginVersion&gt;3.0.1&lt;/mavenSourcePluginVersion&gt;
++    &lt;mavenJavadocPluginVersion&gt;2.10.4&lt;/mavenJavadocPluginVersion&gt;
 +    &lt;mavenAssemblyPluginVersion&gt;2.6&lt;/mavenAssemblyPluginVersion&gt;
 +    &lt;mavenInstallPluginVersion&gt;2.5.2&lt;/mavenInstallPluginVersion&gt;
 +    &lt;mavenDeployPluginVersion&gt;2.8.2&lt;/mavenDeployPluginVersion&gt;
-+    &lt;mavenReleasePluginVersion&gt;2.5.2&lt;/mavenReleasePluginVersion&gt;
-+    &lt;mavenScmPluginVersion&gt;1.9.4&lt;/mavenScmPluginVersion&gt;
++    &lt;mavenReleasePluginVersion&gt;2.5.3&lt;/mavenReleasePluginVersion&gt;
++    &lt;mavenScmPluginVersion&gt;1.9.5&lt;/mavenScmPluginVersion&gt;
 +    &lt;mavenSitePluginVersion&gt;3.4&lt;/mavenSitePluginVersion&gt;
-+    &lt;mavenProjectInfoReportsPluginVersion&gt;2.8.1&lt;/mavenProjectInfoReportsPluginVersion&gt;
++    &lt;mavenProjectInfoReportsPluginVersion&gt;2.9&lt;/mavenProjectInfoReportsPluginVersion&gt;
   &lt;/properties&gt;
 
-</code></pre><pre xmlns="" class="language-provided"><code class="language-xml">+  &lt;build&gt;
+</code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="caution"><h2>Caution</h2><p>Not upgrading site plugin to 3.5.x yet because of the
+          following 3 issues:</p><div class="orderedlist"><ol class="orderedlist compact" type="1"><li class="listitem"><p><span class="quote">“<span class="quote">Error parsing site descriptor: TEXT must be
+              immediately followed by END_TAG and not START_TAG (position:
+              START_TAG seen ...</span>”</span></p></li><li class="listitem"><p><span class="quote">“<span class="quote">Execution default-site of goal
+              org.apache.maven.plugins:maven-site-plugin:3.5.1:site failed:
+              Illegal character in path at index 1:
+              ${mavenHost}</span>”</span></p></li><li class="listitem"><p><a class="link" href="https://github.com/andriusvelykis/reflow-maven-skin/issues/49">Reflow
+              Skin does not work with Maven Site Plugin 3.5</a> due to the
+              fact that the new Maven Site plugin is not loading Velocity
+              tools.</p></li></ol></div></div><pre xmlns="" class="language-provided"><code class="language-xml">+  &lt;build&gt;
 +    &lt;pluginManagement&gt;
 +      &lt;plugins&gt;
 +        &lt;plugin&gt;
@@ -601,7 +610,10 @@
 +  &lt;/profiles&gt;
 
    &lt;build&gt;
-</code></pre><p>This is for example a property-updates-report:</p><div class="figure" id="prj.figure.maven.versions.property.updates.report"><a id="prj.figure.maven.versions.property.updates.report"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/build/maven/maven-versions-property-updates-report.png" alt="Maven Versions Property Updates Report"/></div></div></div><div class="figure-title">Figure 16.2. Maven Versions Property Updates Report</div></div><br class="figure-break"/><p>Create a rule set file
+</code></pre><p>This is for example a property-updates-report:</p><div class="figure" id="prj.figure.maven.versions.property.updates.report"><a id="prj.figure.maven.versions.property.updates.report"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/build/maven/maven-versions-property-updates-report.png" alt="Maven Versions Property Updates Report"/></div></div></div><div class="figure-title">Figure 16.2. Maven Versions Property Updates Report</div></div><br class="figure-break"/><div style="margin-left: 0.5in; margin-right: 0.5in;" class="tip"><h2>Tip</h2><p><a class="link" href="https://www.versioneye.com/search?lang=Java&amp;q=&amp;g=">VersionEye</a>
+          is a cross-platform search engine for free/libre/open source
+          software libraries, which also shows out of date dependencies of for
+          example <a class="link" href="https://www.versioneye.com/java/javax:javaee-api">javaee-api</a>.</p></div><p>Create a rule set file
         <code class="filename">C:\dev\projects\maven-setup\src\config\maven-versions-rules.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 +
 +&lt;ruleset comparisonMethod="maven"
@@ -845,7 +857,7 @@
           descriptor
           <code class="filename">C:\dev\projects\maven-setup\src\site\site.xml</code>
           attach it as an artifact along with the pom.xml:</p><pre xmlns="" class="language-provided"><code class="language-xml">     &lt;mavenAssemblyPluginVersion&gt;2.5.3&lt;/mavenAssemblyPluginVersion&gt;
-+    &lt;buildHelperMavenPluginVersion&gt;1.9.1&lt;/buildHelperMavenPluginVersion&gt;
++    &lt;buildHelperMavenPluginVersion&gt;1.12&lt;/buildHelperMavenPluginVersion&gt;
      &lt;mavenInstallPluginVersion&gt;2.5.2&lt;/mavenInstallPluginVersion&gt;
       …
    &lt;/properties&gt;
@@ -1422,15 +1434,15 @@ mvn clean verify -Dmaven.test.skip=true
           maven-javadoc-plugin will overrule the one of
           maven-toolchains-plugin:</p><pre xmlns="" class="language-provided"><code class="language-bash">[INFO] --- maven-toolchains-plugin:1.1:toolchain (default) @ qa-sandbox ---
 [INFO] Required toolchain: jdk [ vendor='oracle' version='1.8' ]
-[INFO] Found matching toolchain for type jdk: JDK[P:\dev\apps\prg\java-x64\jdk1.8.0_74]
+[INFO] Found matching toolchain for type jdk: JDK[P:\dev\apps\prg\java-x64\jdk1.8.0_102]
 
 [INFO] --- maven-compiler-plugin:3.3:compile (default-compile) @ qa-sandbox ---
-[INFO] Toolchain in maven-compiler-plugin: JDK[P:\dev\apps\prg\java-x64\jdk1.8.0_74]
-[WARNING] Toolchains are ignored, 'executable' parameter is set to P:\dev\apps\prg\java-x64\jdk1.8.0_74\bin\javac.exe
+[INFO] Toolchain in maven-compiler-plugin: JDK[P:\dev\apps\prg\java-x64\jdk1.8.0_102]
+[WARNING] Toolchains are ignored, 'executable' parameter is set to P:\dev\apps\prg\java-x64\jdk1.8.0_102\bin\javac.exe
 
 [INFO] --- maven-javadoc-plugin:2.10.3:jar (attach-javadoc) @ qa-sandbox ---
-[INFO] Toolchain in maven-javadoc-plugin: JDK[P:\dev\apps\prg\java-x64\jdk1.8.0_74]
-[WARNING] Toolchains are ignored, 'javadocExecutable' parameter is set to P:\dev\apps\prg\java-x64\jdk1.8.0_74\bin\javadoc.exe
+[INFO] Toolchain in maven-javadoc-plugin: JDK[P:\dev\apps\prg\java-x64\jdk1.8.0_102]
+[WARNING] Toolchains are ignored, 'javadocExecutable' parameter is set to P:\dev\apps\prg\java-x64\jdk1.8.0_102\bin\javadoc.exe
 </code></pre></section><section class="section" id="prj.maven.java.base.pom.animal.sniffer"><div class="titlepage"><div><div><h4 class="title"><a id="prj.maven.java.base.pom.animal.sniffer" class="anchor" href="#prj.maven.java.base.pom.animal.sniffer"><span class="octicon octicon-link"/></a>16.1.7.7. Animal Sniffer</h4></div></div></div><p>The <a class="link" href="http://www.mojohaus.org/animal-sniffer/animal-sniffer-maven-plugin/">Animal
           Sniffer Plugin</a> is used to build signatures of APIs and to
           check your classes against previously generated signatures. This
