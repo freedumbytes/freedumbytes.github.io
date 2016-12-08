@@ -23,7 +23,7 @@
             do I edit an incorrect commit message in git (I've
             pushed)?</a>.</p></li><li class="listitem"><p><a class="link" href="https://github.com/Microsoft/Git-Credential-Manager-for-Windows">Git
             Credential Manager</a> for Windows.</p></li></ul></div></section><section class="section" id="vcs.git.install.guide"><div class="titlepage"><div><div><h3 class="title"><a id="vcs.git.install.guide" class="anchor" href="#vcs.git.install.guide"><span class="octicon octicon-link"/></a>11.1.2. Git installation guide</h3></div></div></div><p><a class="link" href="https://git-for-windows.github.io/">Download</a> the
-        binary: <code class="filename">Git-2.5.2.2-64-bit.exe</code> [version <a class="link" href="https://git-scm.com/">2.5.2</a>].</p><p>Run this <code class="filename">.exe</code> file to
+        binary: <code class="filename">Git-2.10.2-64-bit.exe</code> [version <a class="link" href="https://git-scm.com/">2.10.2</a>].</p><p>Run this <code class="filename">.exe</code> file to
         install Git in <code class="filename">P:\dev\apps\vcs\git</code> with the default
         settings.</p><p id="vcs.git.home"><a id="vcs.git.home"><span style="display:none;">trick</span></a>Press <span class="keycap"><strong><span class="inlinemediaobject"><img src="images/os/windows/windows-key.gif"/></span></strong></span>+<span class="keycap"><strong>Break</strong></span> keys to open the Windows System Properties. Select
         <span class="guisubmenu"><strong>Advanced system settings</strong></span> → <span class="guibutton"><strong>Enviro<span class="accel">n</span>ment Variables</strong></span> and <span class="guibutton"><strong>Ed<span class="accel">i</span>t</strong></span> the
@@ -47,7 +47,7 @@
             <code class="computeroutput">clean clone</code>).</p></div></section><section class="section" id="vcs.git.global"><div class="titlepage"><div><div><h4 class="title"><a id="vcs.git.global" class="anchor" href="#vcs.git.global"><span class="octicon octicon-link"/></a>11.1.2.2. Global settings</h4></div></div></div><p>Start <span class="guilabel"><strong>Git Bash</strong></span> and setup user specific
           global settings with (see also
           <code class="filename">C:\Users\<em class="replaceable"><code>&lt;username&gt;</code></em>\.<a class="link" href="https://git-scm.com/docs/git-config.html">gitconfig</a></code>):</p><pre xmlns="" class="language-provided"><code class="language-bash">git config --global user.name "<em xmlns="http://www.w3.org/1999/xhtml" class="replaceable"><code>Jene Jasper</code></em>"
-git config --global user.email <em xmlns="http://www.w3.org/1999/xhtml" class="replaceable"><code>jjasper@company.org</code></em>
+git config --global user.email <em xmlns="http://www.w3.org/1999/xhtml" class="replaceable"><code>jene.jasper@company.org</code></em>
 
 git config --global core.editor \
     "'P:/dev/apps/editor/notepad++/notepad++.exe' \
@@ -443,7 +443,7 @@ then
     rm -rf $tmp || exit 4
   fi
 fi
-</code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><a id="vcs.git.bare.project.autocrlf.note"><span style="display:none;">trick</span></a><h2>Note</h2><p><a class="link" href="http://help.github.com/line-endings/">Line
+</code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><a id="vcs.git.bare.project.autocrlf.note"><span style="display:none;">trick</span></a><h2>Note</h2><p><a class="link" href="https://help.github.com/articles/dealing-with-line-endings/#platform-all">Line
           endings</a>… the scourge of every Windows-based developer that
           tries to mingle with linux- or mac-based developers. Though most
           modern text editors can handle both newline types without issue, git
@@ -454,7 +454,11 @@ fi
           core.autocrlf false</code> is added to the above script. The
           article linked at the beginning of this note also supplies
           information to fix this setting issue and how to reset your repos at
-          a later stage.</p></div><p>Create a new <a class="link" href="http://progit.org/book/ch4-2.html">bare repository</a>
+          a later stage.</p><p>If you're using Git to collaborate with others on
+          <span class="inlinemediaobject"><img src="images/icons/github.png"/></span> <a class="link" href="https://github.com/jenejasper">GitHub</a>,
+          <span class="inlinemediaobject"><img src="images/icons/gitlab.png"/></span> <a class="link" href="https://gitlab.com/jenejasper">GitLab</a> and
+          <span class="inlinemediaobject"><img src="images/icons/bitbucket.png"/></span> <a class="link" href="https://bitbucket.org/freedumbytes/">Bitbucket</a>,
+          ensure that Git is properly configured to <a class="link" href="tips.and.tricks.html#tip.vcs.svn2git.eol" title="A.2.1.6. End Of Line">handle line endings</a>.</p></div><p>Create a new <a class="link" href="http://progit.org/book/ch4-2.html">bare repository</a>
         with the following command <code class="command">git-create-repo.sh
         P:/dev/data/repo/git <em class="replaceable"><code>dpl-manual.git</code></em>
         "<em class="replaceable"><code>Production Development Line manual</code></em>"
@@ -881,7 +885,7 @@ mysql&gt; quit
               <span class="guilabel"><strong><em class="replaceable"><code>jjasper</code></em></strong></span> to set
               his <span class="guilabel"><strong>Email</strong></span> to the one supplied to
               <code class="command">git config --global user.email
-              <em class="replaceable"><code>jjasper@company.org</code></em></code>.</p></div></li><li class="listitem"><p><span class="guimenuitem"><strong>Author Mapping</strong></span> and
+              <em class="replaceable"><code>jene.jasper@company.org</code></em></code>.</p></div></li><li class="listitem"><p><span class="guimenuitem"><strong>Author Mapping</strong></span> and
             <span class="guibutton"><strong>Add</strong></span> for CVS the
             <span class="guilabel"><strong>commiter</strong></span>:
             <span class="guilabel"><strong><em class="replaceable"><code>%USERDOMAIN%</code></em>\jjasper</strong></span>.</p></li></ul></div></section></section></section><script xmlns="" type="text/javascript" src="js/highlight.min.js"> </script><script xmlns="" type="text/javascript">hljs.initHighlightingOnLoad();</script><footer><ul class="navfooter"><li class="previous"><a accesskey="p" href="database.html"><strong>Previous</strong>Chapter 10. Database</a></li><li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Front page</strong></a></li><li class="next"><a accesskey="n" href="issue.tracker.html"><strong>Next</strong>Chapter 12. Issue Tracker</a></li></ul></footer></body></html>

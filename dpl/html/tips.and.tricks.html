@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE html>
 <!DOCTYPE html
   PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Appendix A. Tips &amp; Tricks</title><link rel="stylesheet" type="text/css" href="docbook.css"/><link rel="stylesheet" type="text/css" href="css/freedumbytes.css"/><meta name="generator" content="DocBook XSL Stylesheets V1.78.1"/><link rel="prev" href="quality.assurance.html" title="Chapter 17. Quality Assurance"/><link rel="next" href="prj.maven.site.skin.custom.html" title="Appendix B. Custom skins"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><link rel="shortcut icon" href="./images/community/docbook/glider.ico"/></head><body><header><p id="title"/><ul class="navheader"><li class="previous"><a accesskey="p" href="quality.assurance.html"><strong>Previous</strong></a></li><li class="next"><a accesskey="n" href="prj.maven.site.skin.custom.html"><strong>Next</strong></a></li></ul></header><section class="appendix" id="tips.and.tricks"><div class="titlepage"><div><div><h1 class="title"><a id="tips.and.tricks" class="anchor" href="#tips.and.tricks"><span class="octicon octicon-link"/></a>Appendix A. Tips &amp; Tricks</h1></div></div></div><div class="toc"><div class="toc-title">Table of Contents</div><ul class="toc"><li><span class="section"><a href="tips.and.tricks.html#tip.archive">A.1. Archives</a></span><ul><li><span class="section"><a href="tips.and.tricks.html#tip.archive.msi">A.1.1. How to extract content from MSI files</a></span></li><li><span class="section"><a href="tips.and.tricks.html#tip.class.path">A.1.2. How to determine absolute path of a loaded Class</a></span></li></ul></li><li><span class="section"><a href="tips.and.tricks.html#tip.version.control.system">A.2. Version Control System</a></span><ul><li><span class="section"><a href="tips.and.tricks.html#vcs.git.gitweb.enhancement">A.2.1. GitWeb enhancement</a></span></li></ul></li></ul></div><section class="section" id="tip.archive"><div class="titlepage"><div><div><h2 class="title"><a id="tip.archive" class="anchor" href="#tip.archive"><span class="octicon octicon-link"/></a>A.1. Archives</h2></div></div></div><section class="section" id="tip.archive.msi"><div class="titlepage"><div><div><h3 class="title"><a id="tip.archive.msi" class="anchor" href="#tip.archive.msi"><span class="octicon octicon-link"/></a>A.1.1. How to extract content from MSI files</h3></div></div></div><p><span class="inlinemediaobject"><img src="images/icons/windows.png"/></span> While there are plenty of utilities available
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Appendix A. Tips &amp; Tricks</title><link rel="stylesheet" type="text/css" href="docbook.css"/><link rel="stylesheet" type="text/css" href="css/freedumbytes.css"/><meta name="generator" content="DocBook XSL Stylesheets V1.78.1"/><link rel="prev" href="quality.assurance.html" title="Chapter 17. Quality Assurance"/><link rel="next" href="prj.maven.site.skin.custom.html" title="Appendix B. Custom skins"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><link rel="shortcut icon" href="./images/community/docbook/glider.ico"/></head><body><header><p id="title"/><ul class="navheader"><li class="previous"><a accesskey="p" href="quality.assurance.html"><strong>Previous</strong></a></li><li class="next"><a accesskey="n" href="prj.maven.site.skin.custom.html"><strong>Next</strong></a></li></ul></header><section class="appendix" id="tips.and.tricks"><div class="titlepage"><div><div><h1 class="title"><a id="tips.and.tricks" class="anchor" href="#tips.and.tricks"><span class="octicon octicon-link"/></a>Appendix A. Tips &amp; Tricks</h1></div></div></div><div class="toc"><div class="toc-title">Table of Contents</div><ul class="toc"><li><span class="section"><a href="tips.and.tricks.html#tip.archive">A.1. Archives</a></span><ul><li><span class="section"><a href="tips.and.tricks.html#tip.archive.msi">A.1.1. How to extract content from MSI files</a></span></li><li><span class="section"><a href="tips.and.tricks.html#tip.class.path">A.1.2. How to determine absolute path of a loaded Class</a></span></li></ul></li><li><span class="section"><a href="tips.and.tricks.html#tip.version.control.system">A.2. Version Control System</a></span><ul><li><span class="section"><a href="tips.and.tricks.html#tip.vcs.svnsgit.migration">A.2.1. SVN to Git Migration</a></span></li><li><span class="section"><a href="tips.and.tricks.html#vcs.git.gitweb.enhancement">A.2.2. GitWeb enhancement</a></span></li></ul></li></ul></div><section class="section" id="tip.archive"><div class="titlepage"><div><div><h2 class="title"><a id="tip.archive" class="anchor" href="#tip.archive"><span class="octicon octicon-link"/></a>A.1. Archives</h2></div></div></div><section class="section" id="tip.archive.msi"><div class="titlepage"><div><div><h3 class="title"><a id="tip.archive.msi" class="anchor" href="#tip.archive.msi"><span class="octicon octicon-link"/></a>A.1.1. How to extract content from MSI files</h3></div></div></div><p><span class="inlinemediaobject"><img src="images/icons/windows.png"/></span> While there are plenty of utilities available
         to extract the contents of an MSI file, you can do it straight from
         the command line: <code class="command"><a class="link" href="http://technet.microsoft.com/en-us/library/bb490936.aspx">msiexec</a>
         /a <em class="replaceable"><code>file.msi</code></em> /qb
@@ -48,7 +48,177 @@ public class ClassloaderTest
         .endsWith("qa-sandbox/target/test-classes/");
   }
 }
-</code></pre></section></section><section class="section" id="tip.version.control.system"><div class="titlepage"><div><div><h2 class="title"><a id="tip.version.control.system" class="anchor" href="#tip.version.control.system"><span class="octicon octicon-link"/></a>A.2. Version Control System</h2></div></div></div><section class="section" id="vcs.git.gitweb.enhancement"><div class="titlepage"><div><div><h3 class="title"><a id="vcs.git.gitweb.enhancement" class="anchor" href="#vcs.git.gitweb.enhancement"><span class="octicon octicon-link"/></a>A.2.1. GitWeb enhancement</h3></div></div></div><p>Might as well use script <a class="link" href="version.control.system.html#vcs.git.bare.project" title="11.1.5. Defining a project"><code class="filename">git-create-repo.sh</code></a>
+</code></pre></section></section><section class="section" id="tip.version.control.system"><div class="titlepage"><div><div><h2 class="title"><a id="tip.version.control.system" class="anchor" href="#tip.version.control.system"><span class="octicon octicon-link"/></a>A.2. Version Control System</h2></div></div></div><section class="section" id="tip.vcs.svnsgit.migration"><div class="titlepage"><div><div><h3 class="title"><a id="tip.vcs.svnsgit.migration" class="anchor" href="#tip.vcs.svnsgit.migration"><span class="octicon octicon-link"/></a>A.2.1. SVN to Git Migration</h3></div></div></div><p>Migrating from Subversion to Git with svn2git, a Ruby tool for
+        importing existing svn projects into git.</p><p><span class="inlinemediaobject"><img src="images/icons/github.png"/></span> <a class="link" href="https://github.com/nirvdrum/svn2git">svn2git</a> is a
+        tiny utility for migrating projects from Subversion to Git while
+        keeping the trunk, branches and tags where they should be. It uses
+        git-svn to clone an svn repository and does some clean-up to make sure
+        branches and tags are imported in a meaningful way, and that the code
+        checked into master ends up being what's currently in your svn trunk
+        rather than whichever svn branch your last commit was in.</p><section class="section" id="tip.vcs.svnsgit.migration.resources"><div class="titlepage"><div><div><h4 class="title"><a id="tip.vcs.svnsgit.migration.resources" class="anchor" href="#tip.vcs.svnsgit.migration.resources"><span class="octicon octicon-link"/></a>A.2.1.1. Resources</h4></div></div></div><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p>Migrating from Subversion to Git with svn2git on Windows
+              (<a class="link" href="https://www.troyhunt.com/migrating-from-subversion-to-git-with/">the
+              tricky bits explained)</a>.</p></li><li class="listitem"><p>Issue <a class="link" href="https://github.com/nirvdrum/svn2git/issues/121">#121</a>
+              "--exclude" option does not work on Windows.</p></li><li class="listitem"><p>Issue <a class="link" href="https://github.com/nirvdrum/svn2git/issues/20">#20</a>
+              --exclude works great, but is there a way to not include the
+              empty commits?</p></li><li class="listitem"><p><a class="link" href="https://help.github.com/articles/dealing-with-line-endings/#platform-all">Dealing
+              with line endings</a>.</p></li><li class="listitem"><p><a class="link" href="https://git-scm.com/book/en/v2/Customizing-Git-Git-Attributes">Customizing
+              Git - Git Attributes</a> from the Pro Git book.</p></li><li class="listitem"><p><a class="link" href="https://git-scm.com/docs/git-config">git-config</a>
+              - Get and set repository or global options.</p></li><li class="listitem"><p><a class="link" href="http://adaptivepatchwork.com/2012/03/01/mind-the-end-of-your-line/">Mind
+              the End of Your Line</a>.</p></li><li class="listitem"><p><a class="link" href="http://stackoverflow.com/questions/1510798/trying-to-fix-line-endings-with-git-filter-branch-but-having-no-luck/1511273#1511273">Trying
+              to fix line-endings with git filter-branch</a>, but having no
+              luck.</p></li><li class="listitem"><p><span class="inlinemediaobject"><img src="images/icons/github.png"/></span> <a class="link" href="https://github.com/alexkaratarakis/gitattributes">A
+              Collection of Useful <code class="filename">.gitattributes</code>
+              Templates</a>.</p></li></ul></div></section><section class="section" id="prg.ruby.install.guide"><div class="titlepage"><div><div><h4 class="title"><a id="prg.ruby.install.guide" class="anchor" href="#prg.ruby.install.guide"><span class="octicon octicon-link"/></a>A.2.1.2. Ruby installation guide</h4></div></div></div><p><a class="link" href="https://www.ruby-lang.org/">Ruby</a> is a
+          dynamic, open source programming language with a focus on simplicity
+          and productivity. It has an elegant syntax that is natural to read
+          and easy to write.</p><p><a class="link" href="http://rubyinstaller.org/downloads/">Download</a> the
+          Ruby Installer <code class="filename">rubyinstaller-2.3.1-x64.exe</code> for
+          Windows [version <a class="link" href="http://rubyinstaller.org/">2.3.1</a>].</p><p>Run this <code class="filename">.exe</code> file to
+          install Ruby in <code class="filename">P:\dev\apps\prg\ruby-2.3.1</code>.</p><p id="prg.ruby.home"><a id="prg.ruby.home"><span style="display:none;">trick</span></a>Press <span class="keycap"><strong><span class="inlinemediaobject"><img src="images/os/windows/windows-key.gif"/></span></strong></span>+<span class="keycap"><strong>Break</strong></span> keys to open the Windows System Properties. Select
+          <span class="guisubmenu"><strong>Advanced system settings</strong></span> → <span class="guibutton"><strong>Enviro<span class="accel">n</span>ment Variables</strong></span> and <span class="guibutton"><strong>Ed<span class="accel">i</span>t</strong></span> the
+          <code class="envar">Path</code> to append
+          <strong class="userinput"><code>%RUBY_HOME%\bin;</code></strong>. Also add a
+          <span class="guibutton"><strong>Ne<span class="accel">w</span></strong></span> system variable
+          <code class="envar">RUBY_HOME</code> pointing to <strong class="userinput"><code><code class="filename">P:\dev\apps\prg\ruby-2.3.1</code></code></strong>.</p><p>Verify the installation with <code class="command">ruby
+          --version</code>.</p></section><section class="section" id="prg.rubygems.install.guide"><div class="titlepage"><div><div><h4 class="title"><a id="prg.rubygems.install.guide" class="anchor" href="#prg.rubygems.install.guide"><span class="octicon octicon-link"/></a>A.2.1.3. RubyGems upgrade guide</h4></div></div></div><p><a class="link" href="https://rubygems.org/">RubyGems</a> is a
+          package management framework for Ruby.</p><p><a class="link" href="https://rubygems.org/pages/download">Download</a> the
+          archive <code class="filename">rubygems-2.6.8.zip</code> for Windows [version
+          <a class="link" href="http://blog.rubygems.org/">2.6.8</a>].</p><p>Extract this <code class="filename">.zip</code> file
+          to <code class="filename">C:\tmp</code>. In <code class="filename">C:\tmp\rubygems-2.6.8</code> run <code class="command">ruby
+          setup.rb</code>.</p><p>Verify the installation with <code class="command">gem
+          --version</code>.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="important"><h2>Important</h2><p>This upgrade fixes the following issue when installing
+            svn2git: <span class="quote">“<span class="quote">ERROR: Could not find a valid gem 'svn2git' (&gt;=
+            0), here is why: Unable to download data from
+            https://rubygems.org/ - SSL_connect returned=1 errno=0 state=SSLv3
+            read server certificate</span>”</span>.</p></div></section><section class="section" id="prg.ruby.gem.svn2git.install.guide"><div class="titlepage"><div><div><h4 class="title"><a id="prg.ruby.gem.svn2git.install.guide" class="anchor" href="#prg.ruby.gem.svn2git.install.guide"><span class="octicon octicon-link"/></a>A.2.1.4. svn2git installation guide</h4></div></div></div><p>Install the svn2git gem with <code class="command">gem install svn2git
+          --version 2.3.2</code> [version <a class="link" href="https://rubygems.org/gems/svn2git">2.4.0</a>].</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="warning"><h2>Warning</h2><p>Usage of version 2.4.0 results in an empty Git repository
+            and the error message: <span class="quote">“<span class="quote">command failed: git checkout -f
+            master</span>”</span>.</p></div><p>Verify the installation with <code class="command">gem list</code> or
+          <code class="command">svn2git --help</code>.</p></section><section class="section" id="tip.vcs.svn2git.example"><div class="titlepage"><div><div><h4 class="title"><a id="tip.vcs.svn2git.example" class="anchor" href="#tip.vcs.svn2git.example"><span class="octicon octicon-link"/></a>A.2.1.5. Migration example</h4></div></div></div><p>Because the Java.net and Kenai.com forges will be <a class="link" href="https://community.oracle.com/community/java/javanet-forge-sunset">going
+          dark</a> on April 28, 2017 lets migrate the jmodalwindow's
+          sources that I was hosting there.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>To convert all the svn <a class="link" href="https://github.com/nirvdrum/svn2git#authors">authors</a>
+            to git format, create the file
+            <code class="filename">C:\dev\projects\demo\users.txt</code> with for
+            example:</p><pre class="language-provided"><code class="language-ini">(no author) = Jene Jasper &lt;jene.jasper@shadowland.demon.nl&gt;
+jjasper = Jene Jasper &lt;jene.jasper@shadowland.demon.nl&gt;
+tigrisc = Jene Jasper &lt;jene.jasper@shadowland.demon.nl&gt;
+</code></pre></div><pre xmlns="" class="language-provided"><code class="language-bash">cd /d C:\dev\projects
+mkdir jmodalwindow
+cd jmodalwindow
+
+svn2git --verbose https://svn.java.net/svn/jmodalwindow~svn/ ^
+        --no-minimize-url --nobranches ^
+        --author c:\dev\projects\demo\users.txt
+</code></pre><section class="section" id="tip.vcs.svn2git.example.exclude.fix"><div class="titlepage"><div><div><h5 class="title"><a id="tip.vcs.svn2git.example.exclude.fix" class="anchor" href="#tip.vcs.svn2git.example.exclude.fix"><span class="octicon octicon-link"/></a>A.2.1.5.1. Exclude fix</h5></div></div></div><p>But this way the whole history of the website that is
+            maintained in the <code class="filename">www</code>
+            folder. Thus lets try the option <code class="option">--exclude www</code>.
+            Alas this results in the following error <span class="quote">“<span class="quote">'tags[' is not
+            recognized as an internal or external command,</span>”</span> when
+            <code class="computeroutput">Running command: git svn fetch
+            '--ignore-paths=^(?:trunk[/]|tags[/][^/]+[/])(?:www)'</code>
+            (see also the above mentioned resource about issue <a class="link" href="https://github.com/nirvdrum/svn2git/issues/121">#121</a>).</p><p>To avoid this error edit
+            <code class="filename">P:\dev\apps\prg\ruby-2.3.1\lib\ruby\gems\2.3.0\gems\svn2git-2.3.2\lib\svn2git\migration.rb</code>:</p><pre xmlns="" class="language-provided"><code class="language-ruby">         regex = '^(?:' + regex.join('|') + ')(?:' + exclude.join('|') + ')'
+-        cmd += "'--ignore-paths=#{regex}'"
++        cmd += "\"--ignore-paths=#{regex}\""
+       end
+</code></pre><p>Run the fixed script again:</p><pre xmlns="" class="language-provided"><code class="language-bash">svn2git --verbose https://svn.java.net/svn/jmodalwindow~svn/ ^
+        --no-minimize-url --nobranches ^
+        --exclude www ^
+        --author c:\dev\projects\demo\users.txt
+</code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="important"><h2>Important</h2><p>In case of a failure delete the <code class="filename">.git</code>
+              init folder and any other files first before rerunning
+              svn2git.</p></div></section><section class="section" id="tip.vcs.svn2git.example.empty.commits"><div class="titlepage"><div><div><h5 class="title"><a id="tip.vcs.svn2git.example.empty.commits" class="anchor" href="#tip.vcs.svn2git.example.empty.commits"><span class="octicon octicon-link"/></a>A.2.1.5.2. Empty commits</h5></div></div></div><p>Now the content of the folder <code class="filename">www</code> is gone but the commits
+            themselves are still there as empty remnants.</p><pre xmlns="" class="language-provided"><code class="language-bash">git log --pretty=oneline
+</code></pre><p>To remove them just run (see also the above mentioned
+            resource about issue <a class="link" href="https://github.com/nirvdrum/svn2git/issues/20">#20</a>):</p><pre xmlns="" class="language-provided"><code class="language-bash">git filter-branch -f --prune-empty --tag-name-filter cat -- --all
+git filter-branch -f
+git reflog expire --expire=now --all
+git gc --prune=now --aggressive
+git log --pretty=oneline
+</code></pre></section></section><section class="section" id="tip.vcs.svn2git.eol"><div class="titlepage"><div><div><h4 class="title"><a id="tip.vcs.svn2git.eol" class="anchor" href="#tip.vcs.svn2git.eol"><span class="octicon octicon-link"/></a>A.2.1.6. End Of Line</h4></div></div></div><p>Git's primary solution is to specify that <code class="option">LF</code>
+          is the best way to store line endings for text files in a Git
+          repository's object database (see also <a class="link" href="http://adaptivepatchwork.com/2012/03/01/mind-the-end-of-your-line/">Mind
+          the End of Your Line</a>). When writing to the object database or
+          writing out into the working directory Git has a chance to run
+          filters and do things like converting line endings. Originally the
+          conversion was handled with <code class="option">core.autocrlf</code>. Run
+          <code class="command">git config --list --show-origin</code> or <code class="command">git
+          config --show-origin core.autocrlf</code> to see what this value
+          is set to. On Windows, you simply pass true to the configuration
+          with <code class="command">git config --global core.autocrlf
+          true</code>.</p><p>Alternatively define all of this in the
+          <code class="filename">.gitattributes</code> file that you keep with your
+          repository. This means that line endings can be encapsulated
+          entirely within a repository and don't depend on everyone having the
+          proper global settings. For example
+          <code class="filename">C:\dev\projects\jmodalwindow\.gitattributes</code>
+          based on <code class="filename">Java.gitattributes</code> of
+          <span class="inlinemediaobject"><img src="images/icons/github.png"/></span> <a class="link" href="https://github.com/alexkaratarakis/gitattributes">.gitattributes
+          Templates</a>:</p><pre xmlns="" class="language-provided"><code class="language-ini"># Handle line endings automatically for files detected as text
+# and leave all files detected as binary untouched.
+* text=auto
+
+#
+# The above will handle all files NOT found below
+#
+# These files are text and should be normalized (Convert crlf =&gt; lf)
+*.css           text
+*.df            text
+*.htm           text
+*.html          text
+*.xhtml         text
+*.java          text
+*.js            text
+*.json          text
+*.jsp           text
+*.jspf          text
+*.jspx          text
+*.properties    text
+*.sh            text
+*.tld           text
+*.txt           text
+*.tag           text
+*.tagx          text
+*.xml           text
+
+# These files are binary and should be left untouched
+# (binary is a macro for -text -diff)
+*.class         binary
+*.dll           binary
+*.ear           binary
+*.gif           binary
+*.ico           binary
+*.jar           binary
+*.jpg           binary
+*.jpeg          binary
+*.png           binary
+*.so            binary
+*.war           binary
+</code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>Seeing the <code class="filename">.class</code>
+            binary mapping reminds me to add an
+            <code class="filename">C:\dev\projects\jmodalwindow\.gitignore</code> based
+            on the <a class="link" href="version.control.system.html#vcs.git.ignore.template" title="11.1.2.5. Ignores template">ignores
+            template</a>.</p></div><section class="section" id="tip.vcs.svn2git.eol.refresh"><div class="titlepage"><div><div><h5 class="title"><a id="tip.vcs.svn2git.eol.refresh" class="anchor" href="#tip.vcs.svn2git.eol.refresh"><span class="octicon octicon-link"/></a>A.2.1.6.1. Refreshing the repository after changing line
+            endings</h5></div></div></div><p>Save your current files in Git, so that none of your work is
+            lost (see also <a class="link" href="https://help.github.com/articles/dealing-with-line-endings/#platform-all">Dealing
+            with line endings</a>):</p><pre xmlns="" class="language-provided"><code class="language-bash">git add . -u
+git add .gitignore
+git add .gitattributes
+git commit -m "Config git ignore and attributes"
+</code></pre><p>Remove every file from Git's index:</p><pre xmlns="" class="language-provided"><code class="language-bash">git rm --cached -r .
+</code></pre><p>Rewrite the Git index to pick up all the new line
+            endings:</p><pre xmlns="" class="language-provided"><code class="language-bash">git reset --hard
+</code></pre><p>Add all your changed files back, and prepare them for a
+            commit. This is your chance to inspect which files, if any, were
+            unchanged:</p><pre xmlns="" class="language-provided"><code class="language-bash">git status
+git add .
+</code></pre><p>Commit the changes to your repository:</p><pre xmlns="" class="language-provided"><code class="language-bash">git commit -m "Normalize all the line endings"
+</code></pre></section></section><section class="section" id="tip.vcs.svn2git.cloudy"><div class="titlepage"><div><div><h4 class="title"><a id="tip.vcs.svn2git.cloudy" class="anchor" href="#tip.vcs.svn2git.cloudy"><span class="octicon octicon-link"/></a>A.2.1.7. Bitbucket Cloud</h4></div></div></div><p>Push the migrated repository to the cloud:</p><pre xmlns="" class="language-provided"><code class="language-bash">git remote -v
+git remote add origin https://bitbucket.org/freedumbytes/jmodalwindow.git
+git remote -v
+git push --all
+</code></pre><p>Also push all the tags to this git repo:</p><pre xmlns="" class="language-provided"><code class="language-bash">git push --tags
+</code></pre></section></section><section class="section" id="vcs.git.gitweb.enhancement"><div class="titlepage"><div><div><h3 class="title"><a id="vcs.git.gitweb.enhancement" class="anchor" href="#vcs.git.gitweb.enhancement"><span class="octicon octicon-link"/></a>A.2.2. GitWeb enhancement</h3></div></div></div><p>Might as well use script <a class="link" href="version.control.system.html#vcs.git.bare.project" title="11.1.5. Defining a project"><code class="filename">git-create-repo.sh</code></a>
         to add support for creating repositories to GitWeb by patching
         <code class="filename">P:\dev\apps\vcs\git\share\gitweb\gitweb.cgi</code>:</p><pre xmlns="" class="language-provided"><code class="language-perl">@@ -760,6 +760,8 @@ our @cgi_param_mapping = (
    extra_options =&gt; "opt",
