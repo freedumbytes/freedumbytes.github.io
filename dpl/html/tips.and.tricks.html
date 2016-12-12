@@ -64,7 +64,7 @@ public class ClassloaderTest
               with line endings</a>.</p></li><li class="listitem"><p><a class="link" href="https://git-scm.com/book/en/v2/Customizing-Git-Git-Attributes">Customizing
               Git - Git Attributes</a> from the Pro Git book.</p></li><li class="listitem"><p><a class="link" href="https://git-scm.com/docs/git-config">git-config</a>
               - Get and set repository or global options.</p></li><li class="listitem"><p><a class="link" href="http://adaptivepatchwork.com/2012/03/01/mind-the-end-of-your-line/">Mind
-              the End of Your Line</a>.</p></li><li class="listitem"><p><a class="link" href="http://stackoverflow.com/questions/1510798/trying-to-fix-line-endings-with-git-filter-branch-but-having-no-luck/1511273#1511273">Trying
+              the End of Your Line</a>.</p></li><li class="listitem"><p><a class="link" href="http://stackoverflow.com/questions/1510798/trying-to-fix-line-endings-with-git-filter-branch-but-having-no-luck/4683783#4683783">Trying
               to fix line-endings with git filter-branch</a>, but having no
               luck.</p></li><li class="listitem"><p><span class="inlinemediaobject"><img src="images/icons/github.png"/></span> <a class="link" href="https://github.com/alexkaratarakis/gitattributes">A
               Collection of Useful <code class="filename">.gitattributes</code>
@@ -201,17 +201,18 @@ git log --pretty=oneline
             template</a>.</p></div><section class="section" id="tip.vcs.svn2git.eol.refresh"><div class="titlepage"><div><div><h5 class="title"><a id="tip.vcs.svn2git.eol.refresh" class="anchor" href="#tip.vcs.svn2git.eol.refresh"><span class="octicon octicon-link"/></a>A.2.1.6.1. Refreshing the repository after changing line
             endings</h5></div></div></div><p>Save your current files in Git, so that none of your work is
             lost (see also <a class="link" href="https://help.github.com/articles/dealing-with-line-endings/#platform-all">Dealing
-            with line endings</a>):</p><pre xmlns="" class="language-provided"><code class="language-bash">git add . -u
-git add .gitignore
+            with line endings</a>):</p><pre xmlns="" class="language-provided"><code class="language-bash">git add .gitignore
 git add .gitattributes
 git commit -m "Config git ignore and attributes"
-</code></pre><p>Remove every file from Git's index:</p><pre xmlns="" class="language-provided"><code class="language-bash">git rm --cached -r .
+</code></pre><p>Remove Git's index:</p><pre xmlns="" class="language-provided"><code class="language-bash">del .git\index
 </code></pre><p>Rewrite the Git index to pick up all the new line
-            endings:</p><pre xmlns="" class="language-provided"><code class="language-bash">git reset --hard
+            endings:</p><pre xmlns="" class="language-provided"><code class="language-bash">git reset
 </code></pre><p>Add all your changed files back, and prepare them for a
             commit. This is your chance to inspect which files, if any, were
-            unchanged:</p><pre xmlns="" class="language-provided"><code class="language-bash">git status
-git add .
+            unchanged. Also check that the only changes you are committing are
+            the line endings:</p><pre xmlns="" class="language-provided"><code class="language-bash">git status
+git diff --ignore-space-at-eol
+git add . -u
 </code></pre><p>Commit the changes to your repository:</p><pre xmlns="" class="language-provided"><code class="language-bash">git commit -m "Normalize all the line endings"
 </code></pre></section></section><section class="section" id="tip.vcs.svn2git.cloudy"><div class="titlepage"><div><div><h4 class="title"><a id="tip.vcs.svn2git.cloudy" class="anchor" href="#tip.vcs.svn2git.cloudy"><span class="octicon octicon-link"/></a>A.2.1.7. Bitbucket Cloud</h4></div></div></div><p>Push the migrated repository to the cloud:</p><pre xmlns="" class="language-provided"><code class="language-bash">git remote -v
 git remote add origin https://bitbucket.org/freedumbytes/jmodalwindow.git
