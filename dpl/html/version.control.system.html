@@ -116,7 +116,10 @@ else
     -o "$resultOfMerge"
 fi
 </code></pre></section><section class="section" id="vcs.git.ignore.template"><div class="titlepage"><div><div><h4 class="title"><a id="vcs.git.ignore.template" class="anchor" href="#vcs.git.ignore.template"><span class="octicon octicon-link"/></a>11.1.2.5. Ignores template</h4></div></div></div><p>Create the following ignores template
-          <code class="filename">P:\dev\data\repo\.gitignore</code>:</p><pre xmlns="" class="language-provided"><code class="language-ini">#general
+          <code class="filename">P:\dev\data\repo\.gitignore</code> based on
+          <code class="filename">Java.gitignore</code> and
+          <code class="filename">Java.gitignore</code> of <span class="inlinemediaobject"><img src="images/icons/github.png"/></span> <a class="link" href="https://github.com/github/gitignore">.gitignore
+          templates</a>:</p><pre xmlns="" class="language-provided"><code class="language-ini">#general
 *.bak
 *~
 *.log
@@ -129,6 +132,11 @@ fi
 *.o
 *.so
 
+#archive
+*.jar
+*.ear
+*.war
+
 #eclipse
 .classpath
 .project
@@ -136,6 +144,11 @@ fi
 
 #maven
 target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
 
 #cvs
 CVS/

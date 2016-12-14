@@ -68,7 +68,8 @@ public class ClassloaderTest
               to fix line-endings with git filter-branch</a>, but having no
               luck.</p></li><li class="listitem"><p><span class="inlinemediaobject"><img src="images/icons/github.png"/></span> <a class="link" href="https://github.com/alexkaratarakis/gitattributes">A
               Collection of Useful <code class="filename">.gitattributes</code>
-              Templates</a>.</p></li></ul></div></section><section class="section" id="prg.ruby.install.guide"><div class="titlepage"><div><div><h4 class="title"><a id="prg.ruby.install.guide" class="anchor" href="#prg.ruby.install.guide"><span class="octicon octicon-link"/></a>A.2.1.2. Ruby installation guide</h4></div></div></div><p><a class="link" href="https://www.ruby-lang.org/">Ruby</a> is a
+              Templates</a>.</p></li><li class="listitem"><p><span class="inlinemediaobject"><img src="images/icons/github.png"/></span> <a class="link" href="https://github.com/github/gitignore">A Collection of
+              <code class="filename">.gitignore</code> templates</a>.</p></li></ul></div></section><section class="section" id="prg.ruby.install.guide"><div class="titlepage"><div><div><h4 class="title"><a id="prg.ruby.install.guide" class="anchor" href="#prg.ruby.install.guide"><span class="octicon octicon-link"/></a>A.2.1.2. Ruby installation guide</h4></div></div></div><p><a class="link" href="https://www.ruby-lang.org/">Ruby</a> is a
           dynamic, open source programming language with a focus on simplicity
           and productivity. It has an elegant syntax that is natural to read
           and easy to write.</p><p><a class="link" href="http://rubyinstaller.org/downloads/">Download</a> the
@@ -157,43 +158,109 @@ git log --pretty=oneline
           Templates</a>:</p><pre xmlns="" class="language-provided"><code class="language-ini"># Handle line endings automatically for files detected as text
 # and leave all files detected as binary untouched.
 * text=auto
-
-#
+</code></pre><pre xmlns="" class="language-provided"><code class="language-ini">#
 # The above will handle all files NOT found below
 #
 # These files are text and should be normalized (Convert crlf =&gt; lf)
-*.css           text
-*.df            text
-*.htm           text
-*.html          text
-*.xhtml         text
-*.java          text
-*.js            text
-*.json          text
+.gitattributes  text
+.gitignore      text
+.gitconfig      text
+</code></pre><pre xmlns="" class="language-provided"><code class="language-ini">*.bat           text
+*.sh            text
+Makefile        text
+makefile        text
+</code></pre><pre xmlns="" class="language-provided"><code class="language-ini">*.java          text
 *.jsp           text
 *.jspf          text
 *.jspx          text
-*.properties    text
-*.sh            text
 *.tld           text
-*.txt           text
-*.tag           text
-*.tagx          text
+*.sql           text
+*.yml           text
+*.yaml          text
+*.diff          text
+*.properties    text
+*.ini           text
+*.cnf           text
+*.conf          text
+*.config        text
+</code></pre><pre xmlns="" class="language-provided"><code class="language-ini">*.txt           text
 *.xml           text
-
-# These files are binary and should be left untouched
+*.md            text
+*.adoc          text
+*.csv           text
+*.doc           diff
+*.docx          diff
+*.dot           diff
+*.pdf           diff
+*.rtf           diff
+</code></pre><pre xmlns="" class="language-provided"><code class="language-ini">*.css           text
+*.less          text
+*.sass          text
+*.scss          text
+*.htm           text
+*.html          text
+*.xhtml         text
+*.js            text
+*.jsx           text
+*.json          text
+*.coffee        text
+.htaccess       text
+</code></pre><pre xmlns="" class="language-provided"><code class="language-ini"># These files are binary and should be left untouched
 # (binary is a macro for -text -diff)
-*.class         binary
-*.dll           binary
-*.ear           binary
+*.bmp           binary
+*.eps           binary
 *.gif           binary
 *.ico           binary
-*.jar           binary
+*.jng           binary
 *.jpg           binary
 *.jpeg          binary
+*.jpx           binary
+*.jp2           binary
+*.jxr           binary
+*.mng           binary
 *.png           binary
-*.so            binary
+*.psb           binary
+*.psd           binary
+*.svg           binary
+*.svgz          binary
+*.tif           binary
+*.tiff          binary
+*.wbmp          binary
+*.webp          binary
+</code></pre><pre xmlns="" class="language-provided"><code class="language-ini">*.m4a           binary
+*.mid           binary
+*.midi          binary
+*.mp3           binary
+*.ogg           binary
+*.ra            binary
+</code></pre><pre xmlns="" class="language-provided"><code class="language-ini">*.3gpp          binary
+*.3gp           binary
+*.asf           binary
+*.fla           binary
+*.flv           binary
+*.m4v           binary
+*.mov           binary
+*.mp4           binary
+*.mpeg          binary
+*.mpg           binary
+*.swc           binary
+*.swf           binary
+*.webm          binary
+</code></pre><pre xmlns="" class="language-provided"><code class="language-ini">*.eot           binary
+*.otf           binary
+*.ttf           binary
+*.woff          binary
+*.woff2         binary
+</code></pre><pre xmlns="" class="language-provided"><code class="language-ini">*.class         binary
+*.jar           binary
+*.ear           binary
 *.war           binary
+*.7z            binary
+*.rar           binary
+*.tar           binary
+*.zip           binary
+*.gz            binary
+*.tgz           binary
 </code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>Seeing the <code class="filename">.class</code>
             binary mapping reminds me to add an
             <code class="filename">C:\dev\projects\jmodalwindow\.gitignore</code> based
