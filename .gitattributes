@@ -1,0 +1,116 @@
+# Handle line endings automatically for files detected as text
+# and leave all files detected as binary untouched.
+* text=auto
+
+#
+# The above will handle all files NOT found below
+#
+# These files are text and should be normalized (Convert crlf => lf)
+.gitattributes  text
+.gitignore      text
+.gitconfig      text
+
+*.bat           text
+*.sh            text
+Makefile        text
+makefile        text
+
+*.java          text
+*.jsp           text
+*.jspf          text
+*.jspx          text
+*.tld           text
+*.sql           text
+*.yml           text
+*.yaml          text
+*.diff          text
+*.properties    text
+*.ini           text
+*.cnf           text
+*.conf          text
+*.config        text
+
+*.txt           text
+*.xml           text
+*.md            text
+*.adoc          text
+*.csv           text
+*.doc           diff
+*.docx          diff
+*.dot           diff
+*.pdf           diff
+*.rtf           diff
+
+*.css           text
+*.less          text
+*.sass          text
+*.scss          text
+*.htm           text
+*.html          text
+*.xhtml         text
+*.js            text
+*.jsx           text
+*.json          text
+*.coffee        text
+.htaccess       text
+
+# These files are binary and should be left untouched
+# (binary is a macro for -text -diff)
+*.bmp           binary
+*.eps           binary
+*.gif           binary
+*.ico           binary
+*.jng           binary
+*.jpg           binary
+*.jpeg          binary
+*.jpx           binary
+*.jp2           binary
+*.jxr           binary
+*.mng           binary
+*.png           binary
+*.psb           binary
+*.psd           binary
+*.svg           binary
+*.svgz          binary
+*.tif           binary
+*.tiff          binary
+*.wbmp          binary
+*.webp          binary
+
+*.m4a           binary
+*.mid           binary
+*.midi          binary
+*.mp3           binary
+*.ogg           binary
+*.ra            binary
+
+*.3gpp          binary
+*.3gp           binary
+*.asf           binary
+*.fla           binary
+*.flv           binary
+*.m4v           binary
+*.mov           binary
+*.mp4           binary
+*.mpeg          binary
+*.mpg           binary
+*.swc           binary
+*.swf           binary
+*.webm          binary
+
+*.eot           binary
+*.otf           binary
+*.ttf           binary
+*.woff          binary
+*.woff2         binary
+
+*.class         binary
+*.jar           binary
+*.ear           binary
+*.war           binary
+*.7z            binary
+*.rar           binary
+*.tar           binary
+*.zip           binary
+*.gz            binary
+*.tgz           binary

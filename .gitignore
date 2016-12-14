@@ -11,6 +11,11 @@
 *.o
 *.so
 
+#archive
+*.jar
+*.ear
+*.war
+
 #eclipse
 .classpath
 .project
@@ -18,6 +23,11 @@
 
 #maven
 target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
 
 #cvs
 CVS/
