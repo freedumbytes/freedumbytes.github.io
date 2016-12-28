@@ -14,6 +14,7 @@
 function includeGenericNavigation() {
   $("#generic-navigation").load("navigation.xhtml #navigation-container", function() {
     activateCurrentPageMenu();
+    activateCloudIO();
     removeFixedNavbarsForMobileAndTablet();
   });
 }
@@ -22,6 +23,35 @@ function activateCurrentPageMenu() {
   var path = window.location.pathname.split("/").pop();
 
   $('.nav-item>a[href="' + path + '"]').parent().addClass('active');
+}
+
+function activateCloudIO() {
+  var hostname = window.location.hostname;
+
+  if (hostname != null) {
+    var parts = hostname.split('.').reverse();
+
+    if (parts != null && parts.length > 1) {
+      cloud = parts[1];
+
+      if (parts[0] == 'io') {
+        $("#home-avatar").attr('src', "images/logo/mike-muir-back.jpg");
+
+        if (cloud == 'bitbucket') {
+          $("#home-logo").attr('src', "images/logo/bitbucket.png");
+          $("#responsive-navbar-dropdown-repo").attr('href', "https://bitbucket.org/freedumbytes/");
+        }
+        else if (cloud == 'github') {
+          $("#home-logo").attr('src', "images/logo/github.png");
+          $("#responsive-navbar-dropdown-repo").attr('href', "https://github.com/freedumbytes/");
+        }
+        else if (cloud == 'gitlab') {
+          $("#home-logo").attr('src', "images/logo/gitlab.png");
+          $("#responsive-navbar-dropdown-repo").attr('href', "https://gitlab.com/freedumbytes/");
+        }
+      }
+    }
+  }
 }
 
 function removeFixedNavbarsForMobileAndTablet() {
