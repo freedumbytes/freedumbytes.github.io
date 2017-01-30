@@ -1432,15 +1432,15 @@ mvn clean verify -Dmaven.test.skip=true
           maven-javadoc-plugin will overrule the one of
           maven-toolchains-plugin:</p><pre xmlns="" class="language-provided"><code class="language-bash">[INFO] --- maven-toolchains-plugin:1.1:toolchain (default) @ qa-sandbox ---
 [INFO] Required toolchain: jdk [ vendor='oracle' version='1.8' ]
-[INFO] Found matching toolchain for type jdk: JDK[P:\dev\apps\prg\java-x64\jdk1.8.0_102]
+[INFO] Found matching toolchain for type jdk: JDK[P:\dev\apps\prg\java-x64\jdk1.8.0_121]
 
 [INFO] --- maven-compiler-plugin:3.3:compile (default-compile) @ qa-sandbox ---
-[INFO] Toolchain in maven-compiler-plugin: JDK[P:\dev\apps\prg\java-x64\jdk1.8.0_102]
-[WARNING] Toolchains are ignored, 'executable' parameter is set to P:\dev\apps\prg\java-x64\jdk1.8.0_102\bin\javac.exe
+[INFO] Toolchain in maven-compiler-plugin: JDK[P:\dev\apps\prg\java-x64\jdk1.8.0_121]
+[WARNING] Toolchains are ignored, 'executable' parameter is set to P:\dev\apps\prg\java-x64\jdk1.8.0_121\bin\javac.exe
 
 [INFO] --- maven-javadoc-plugin:2.10.3:jar (attach-javadoc) @ qa-sandbox ---
-[INFO] Toolchain in maven-javadoc-plugin: JDK[P:\dev\apps\prg\java-x64\jdk1.8.0_102]
-[WARNING] Toolchains are ignored, 'javadocExecutable' parameter is set to P:\dev\apps\prg\java-x64\jdk1.8.0_102\bin\javadoc.exe
+[INFO] Toolchain in maven-javadoc-plugin: JDK[P:\dev\apps\prg\java-x64\jdk1.8.0_121]
+[WARNING] Toolchains are ignored, 'javadocExecutable' parameter is set to P:\dev\apps\prg\java-x64\jdk1.8.0_121\bin\javadoc.exe
 </code></pre></section><section class="section" id="prj.maven.java.base.pom.animal.sniffer"><div class="titlepage"><div><div><h4 class="title"><a id="prj.maven.java.base.pom.animal.sniffer" class="anchor" href="#prj.maven.java.base.pom.animal.sniffer"><span class="octicon octicon-link"/></a>16.1.7.7. Animal Sniffer</h4></div></div></div><p>The <a class="link" href="http://www.mojohaus.org/animal-sniffer/animal-sniffer-maven-plugin/">Animal
           Sniffer Plugin</a> is used to build signatures of APIs and to
           check your classes against previously generated signatures. This

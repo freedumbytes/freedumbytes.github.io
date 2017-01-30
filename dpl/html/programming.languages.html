@@ -15,7 +15,23 @@
             Releases</a>. The <a class="link" href="http://www.oracle.com/technetwork/java/archive-139210.html">Archive</a>
             is providing the products available as a courtesy to developers
             for problem resolution. The products available here have completed
-            the Sun EOL process.</p></li><li class="listitem"><p>What is <a class="link" href="http://java.com/en/download/help/java_update.xml">Java
+            the Sun EOL process.</p></li><li class="listitem"><p>Upgrade checklist:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p>Related products: -.</p></li><li class="listitem"><p>References: <a class="link" href="build.tool.html#build.maven.compiler.profile" title="4.2.3. Compiler profile">Maven - compiler
+                profile <code class="code">jdk.1.8.home</code></a>, <a class="link" href="build.tool.html#build.maven.toolchains" title="4.2.3.1. Toolchains">Maven - toolchains
+                <code class="code">jdkHome</code></a>, <a class="link" href="mail.server.html#mail.james.windows.service" title="6.2.4. Windows service">Apache James - Windows
+                Service <code class="code">wrapper.java.command</code></a>, <a class="link" href="web.server.html#web.tomcat.windows.service" title="8.1.3. Windows service">Tomcat - Windows Service
+                <code class="code">tomcat8.exe</code> or <code class="code">tomcat8w.exe</code></a>,
+                <a class="link" href="application.server.html#app.payara.jdk" title="9.1.3. Changing JDK version">Payara - asenv.bat
+                <code class="code">AS_JAVA</code></a>, <a class="link" href="version.control.system.html#vcs.fisheye.windows.service" title="11.3.5. Windows service">FishEye - Windows
+                Service <code class="code">wrapper.java.command</code></a>, <a class="link" href="issue.tracker.html#it.jira.windows.service" title="12.1.5. Windows service">JIRA - Windows Service
+                <code class="code">tomcat7.exe</code> or <code class="code">tomcat7w.exe</code></a>,
+                <a class="link" href="repository.manager.html#repo.nexus.windows.service" title="13.1.3. Windows service">Nexus - Windows
+                Service <code class="code">wrapper.java.command</code></a>, <a class="link" href="continuous.integration.html#ci.jenkins.config.slave" title="14.1.6. Slave configuration">Jenkins - Slave
+                Configuration
+                <code class="filename">jeeves\jenkins-slave.xml</code></a>, <a class="link" href="integrated.development.environment.html#ide.eclipse.ini">Eclipse - installation guide
+                eclipse.ini <code class="code">-vm</code></a>, <a class="link" href="integrated.development.environment.html#ide.eclipse.plugin.install.guide.maven" title="15.1.5.5. Maven">Eclipse -
+                Maven integration <code class="code">Installed JREs</code></a> and <a class="link" href="quality.assurance.html#qa.sonar.windows.service" title="17.2.6. Windows service">SonarQube - Windows Service
+                <code class="code">wrapper.java.command</code></a>.</p></li><li class="listitem"><p>Integration configuration changes: <a class="link" href="programming.languages.html#prg.java.platform.jce" title="3.1.3. Thoughts on Java SE, Java Security and Usability">Java - Security and Usability
+                <code class="code">JCE</code></a>.</p></li></ul></div></li><li class="listitem"><p>What is <a class="link" href="http://java.com/en/download/help/java_update.xml">Java
             Auto Update</a>? How do I change notify settings? Where is the
             <a class="link" href="http://java.com/en/download/help/win_controlpanel.xml">Java
             Control Panel</a> on Windows?</p></li><li class="listitem"><p>Oracle Java on Windows: <a class="link" href="http://marxsoftware.blogspot.nl/2015/07/windows-oracle-java-path.html">C:\ProgramData\Oracle\Java\javapath</a>.
@@ -50,23 +66,7 @@
                 Polluters</a>.</p></li><li class="listitem"><p>My <a class="link" href="https://blog.frankel.ch/my-case-against-autowiring">case
                 against autowiring</a>.</p></li><li class="listitem"><p>I was wrong: <a class="link" href="https://steveschols.wordpress.com/2012/06/05/i-was-wrong-constructor-vs-setter-injection/">constructor
                 vs. setter injection</a>.</p></li></ul></div></li><li class="listitem"><p><span class="inlinemediaobject"><img src="images/icons/martinfowler.png"/></span> <a class="link" href="http://www.martinfowler.com/bliki/FluentInterface.html">Fluent
-            Interface</a> by Martin Fowler.</p></li><li class="listitem"><p>Creation, dynamic loading and instrumentation with <a class="link" href="http://dhruba.name/2010/02/07/creation-dynamic-loading-and-instrumentation-with-javaagents/">javaagents</a>.</p></li><li class="listitem"><p>Upgrade checklist:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p>Related products: -.</p></li><li class="listitem"><p>References: <a class="link" href="build.tool.html#build.maven.compiler.profile" title="4.2.3. Compiler profile">Maven - compiler
-                profile <code class="code">jdk.1.8.home</code></a>, <a class="link" href="build.tool.html#build.maven.toolchains" title="4.2.3.1. Toolchains">Maven - toolchains
-                <code class="code">jdkHome</code></a>, <a class="link" href="mail.server.html#mail.james.windows.service" title="6.2.4. Windows service">Apache James - Windows
-                Service <code class="code">wrapper.java.command</code></a>, <a class="link" href="web.server.html#web.tomcat.windows.service" title="8.1.3. Windows service">Tomcat - Windows Service
-                <code class="code">tomcat8.exe</code> or <code class="code">tomcat8w.exe</code></a>,
-                <a class="link" href="application.server.html#app.payara.jdk" title="9.1.3. Changing JDK version">Payara - asenv.bat
-                <code class="code">AS_JAVA</code></a>, <a class="link" href="version.control.system.html#vcs.fisheye.windows.service" title="11.3.5. Windows service">FishEye - Windows
-                Service <code class="code">wrapper.java.command</code></a>, <a class="link" href="issue.tracker.html#it.jira.windows.service" title="12.1.5. Windows service">JIRA - Windows Service
-                <code class="code">tomcat7.exe</code> or <code class="code">tomcat7w.exe</code></a>,
-                <a class="link" href="repository.manager.html#repo.nexus.windows.service" title="13.1.3. Windows service">Nexus - Windows
-                Service <code class="code">wrapper.java.command</code></a>, <a class="link" href="continuous.integration.html#ci.jenkins.config.slave" title="14.1.6. Slave configuration">Jenkins - Slave
-                Configuration
-                <code class="filename">jeeves\jenkins-slave.xml</code></a>, <a class="link" href="integrated.development.environment.html#ide.eclipse.ini">Eclipse - installation guide
-                eclipse.ini <code class="code">-vm</code></a>, <a class="link" href="integrated.development.environment.html#ide.eclipse.plugin.install.guide.maven" title="15.1.5.5. Maven">Eclipse -
-                Maven integration <code class="code">Installed JREs</code></a> and <a class="link" href="quality.assurance.html#qa.sonar.windows.service" title="17.2.6. Windows service">SonarQube - Windows Service
-                <code class="code">wrapper.java.command</code></a>.</p></li><li class="listitem"><p>Integration configuration changes: <a class="link" href="programming.languages.html#prg.java.platform.jce" title="3.1.3. Thoughts on Java SE, Java Security and Usability">Java - Security and Usability
-                <code class="code">JCE</code></a>.</p></li></ul></div></li><li class="listitem"><p><span class="inlinemediaobject"><img src="images/icons/javacup.png"/></span> <a class="link" href="http://www.oracle.com/technetwork/index.html">Oracle
+            Interface</a> by Martin Fowler.</p></li><li class="listitem"><p>Creation, dynamic loading and instrumentation with <a class="link" href="http://dhruba.name/2010/02/07/creation-dynamic-loading-and-instrumentation-with-javaagents/">javaagents</a>.</p></li><li class="listitem"><p><span class="inlinemediaobject"><img src="images/icons/javacup.png"/></span> <a class="link" href="http://www.oracle.com/technetwork/index.html">Oracle
             Technology Network</a> (OTN) <a class="link" href="http://www.oracle.com/technetwork/java/index.html">Java</a>
             is Oracle Corporation's official, interactive online/offline
             community for Oracle technical professionals.</p></li><li class="listitem"><p><span class="inlinemediaobject"><img src="images/icons/javanet.png"/></span> <a class="link" href="http://home.java.net/">java.net</a> the Source for
@@ -83,44 +83,25 @@
                     - Machine Learning for Video Games.</p></li><li class="listitem"><p>Destination NASA - <a class="link" href="https://www.youtube.com/watch?v=B7KdN4PRgj4">Evolutionary
                     Antenna Synthesis</a>.</p></li></ul></div></li><li class="listitem"><p><a class="link" href="http://www.crealysm.com/">Crealysm</a> (<a class="link" href="http://www.crealysm.com/page/booh.html">BooH</a>)
                 by Cris Kop.</p></li></ul></div></li></ul></div></section><section class="section" id="prg.java.platform.install.guide"><div class="titlepage"><div><div><h3 class="title"><a id="prg.java.platform.install.guide" class="anchor" href="#prg.java.platform.install.guide"><span class="octicon octicon-link"/></a>3.1.2. JDK installation guide</h3></div></div></div><p><a class="link" href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Download</a>
-        the Win32 binary: <code class="filename">jdk-8u102-windows-i586.exe</code>
-        [version <a class="link" href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">1.8.0_102</a>]
+        the Win32 binary: <code class="filename">jdk-8u121-windows-i586.exe</code>
+        [version <a class="link" href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">1.8.0_121</a>]
         for the use with for example Firefox and the Win64 binary:
-        <code class="filename">jdk-8u102-windows-x64.exe</code> for development
+        <code class="filename">jdk-8u121-windows-x64.exe</code> for development
         purposes.</p><p>Run the 32-bit <code class="filename">.exe</code> file
         to install the JDK <span class="guilabel"><strong>Development Tools</strong></span> with
-        <span class="guibutton"><strong>Change…</strong></span> into <code class="filename">P:\dev\apps\prg\java\jdk1.8.0_102</code>. After
+        <span class="guibutton"><strong>Change…</strong></span> into <code class="filename">P:\dev\apps\prg\java\jdk1.8.0_121</code>. After
         the JDK is installed <span class="guibutton"><strong>Change…</strong></span> the JRE
-        <span class="guilabel"><strong>Destination Folder</strong></span> into <code class="filename">P:\dev\apps\prg\java\jre1.8.0_102</code>.</p><p>Run the 64-bit <code class="filename">.exe</code> file
+        <span class="guilabel"><strong>Destination Folder</strong></span> into <code class="filename">P:\dev\apps\prg\java\jre1.8.0_121</code>.</p><p>Run the 64-bit <code class="filename">.exe</code> file
         to install the JDK <span class="guilabel"><strong>Development Tools</strong></span> with
-        <span class="guibutton"><strong>Change…</strong></span> into <code class="filename">P:\dev\apps\prg\java-x64\jdk1.8.0_102</code>.
+        <span class="guibutton"><strong>Change…</strong></span> into <code class="filename">P:\dev\apps\prg\java-x64\jdk1.8.0_121</code>.
         After the JDK is installed <span class="guibutton"><strong>Change…</strong></span> the JRE
-        <span class="guilabel"><strong>Destination Folder</strong></span> into <code class="filename">P:\dev\apps\prg\java-x64\jre1.8.0_102</code>.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>It seems Java SE 8 Update 60 doesn't have Public JRE
+        <span class="guilabel"><strong>Destination Folder</strong></span> into <code class="filename">P:\dev\apps\prg\java-x64\jre1.8.0_121</code>.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>It seems Java SE 8 Update 60 doesn't have Public JRE
           installation included.</p></div><p id="prg.java.home"><a id="prg.java.home"><span style="display:none;">trick</span></a>Press <span class="keycap"><strong><span class="inlinemediaobject"><img src="images/os/windows/windows-key.gif"/></span></strong></span>+<span class="keycap"><strong>Break</strong></span> keys to open the Windows System Properties. Select
         <span class="guisubmenu"><strong>Advanced system settings</strong></span> → <span class="guibutton"><strong>Enviro<span class="accel">n</span>ment Variables</strong></span> and <span class="guibutton"><strong>Ed<span class="accel">i</span>t</strong></span> the
         <code class="envar">Path</code> to append <strong class="userinput"><code>%JAVA_HOME%\bin;</code></strong>.
         Also add a <span class="guibutton"><strong>Ne<span class="accel">w</span></strong></span> system variable
-        <code class="envar">JAVA_HOME</code> pointing to <strong class="userinput"><code><code class="filename">P:\dev\apps\prg\java-x64\jdk1.8.0_102</code></code></strong>.</p><p>Verify the installation with <code class="command">java
-        -version</code>.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="tip"><h2>Tip</h2><p>If you want to be able to run different versions of java by
-          changing the <code class="envar"><a class="xref" href="programming.languages.html#prg.java.home">JAVA_HOME</a></code> and the
-          <code class="envar">Path</code> settings make sure there are no files installed
-          at <code class="command">dir %SystemRoot%\System32\java*.*</code>. If there
-          are, just delete the files <code class="filename">java.exe</code>,
-          <code class="filename">javaw.exe</code> and <code class="filename">javaws.exe</code>.
-          Keep the file <code class="filename">javacpl.cpl</code> to start the
-          <span class="application"><strong>Java Control Panel</strong></span> and on the
-          <span class="guilabel"><strong>Java</strong></span> tab <span class="guibutton"><strong>View…</strong></span> which
-          JREs are enabled.</p></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="warning"><h2>Warning</h2><p>Old files at <code class="command">dir
-          %SystemRoot%\SysWow64\java*.*</code> can cause the following
-          error <span class="quote">“<span class="quote">Registry key 'Software\JavaSoft\Java Runtime
-          Environment\CurrentVersion' has value '1.6', but '1.5' is
-          required.</span>”</span>.</p></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>If you also install the older JDK versions 1.4 and 1.3 (see
-          also <a class="xref" href="operating.system.html#os.windows.dep" title="1.1.15. Data Execution Prevention">Section 1.1.15, “Data Execution Prevention”</a>) and you don't want to use the
-          default directories make sure that you right click on
-          <span class="guilabel"><strong>Public JRE</strong></span> to select <span class="guilabel"><strong>Don't install
-          this feature for now.</strong></span> Because it isn't possible to change
-          the default directory for the included JRE. Install those JREs with
-          their separate install file.</p></div></section><section class="section" id="prg.java.platform.jce"><div class="titlepage"><div><div><h3 class="title"><a id="prg.java.platform.jce" class="anchor" href="#prg.java.platform.jce"><span class="octicon octicon-link"/></a>3.1.3. Thoughts on Java SE, Java Security and Usability</h3></div></div></div><p>When building inter-connected applications, developers
+        <code class="envar">JAVA_HOME</code> pointing to <strong class="userinput"><code><code class="filename">P:\dev\apps\prg\java-x64\jdk1.8.0_121</code></code></strong>.</p><p>Verify the installation with <code class="command">java
+        -version</code>.</p></section><section class="section" id="prg.java.platform.jce"><div class="titlepage"><div><div><h3 class="title"><a id="prg.java.platform.jce" class="anchor" href="#prg.java.platform.jce"><span class="octicon octicon-link"/></a>3.1.3. Thoughts on Java SE, Java Security and Usability</h3></div></div></div><p>When building inter-connected applications, developers
         frequently interact with TLS-enabled protocols like HTTPS:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><a class="link" href="https://blogs.oracle.com/java-platform-group/entry/diagnosing_tls_ssl_and_https">Diagnosing
             TLS, SSL, and HTTPS</a>.</p></li><li class="listitem"><p>JDK 8 will use <a class="link" href="https://blogs.oracle.com/java-platform-group/entry/java_8_will_use_tls">TLS
             1.2 as default</a>.</p></li><li class="listitem"><p>Instructions to <a class="link" href="http://www.oracle.com/technetwork/java/javase/documentation/cve-2014-3566-2342133.html">disable

@@ -3,7 +3,7 @@
   PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><head><title>Development Production Line</title><link rel="stylesheet" type="text/css" href="docbook.css"/><link rel="stylesheet" type="text/css" href="css/freedumbytes.css"/><meta name="generator" content="DocBook XSL Stylesheets V1.78.1"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><link rel="shortcut icon" href="./images/community/docbook/glider.ico"/></head><body><div xml:lang="en-US" class="book" id="development.production.line"><div class="titlepage"><div><div><h1 class="title">Development Production Line</h1></div><div><h2 class="subtitle">The Short Story</h2></div><div class="cover">
       <div class="screenshot"><div class="mediaobject"><img src="images/gleisumbau.jpg"/></div></div>
-    </div><div class="authorgroup"><div class="author"><h5 class="author"><span class="firstname">Jene</span> <span class="surname">Jasper</span></h5></div><br xmlns=""/></div><p class="copyright">Copyright © 2007-2017 freedumbytes.dev.net (Free Dumb Bytes)</p><h4 class="pubdate">Published 29 January 2017</h4><h3 class="edition">3.2-beta Edition</h3><div class="legalnotice" id="legal.notice"><a id="legal.notice"><span style="display:none;">trick</span></a><p>While every precaution has been taken in the preparation of this
+    </div><div class="authorgroup"><div class="author"><h5 class="author"><span class="firstname">Jene</span> <span class="surname">Jasper</span></h5></div><br xmlns=""/></div><p class="copyright">Copyright © 2007-2017 freedumbytes.dev.net (Free Dumb Bytes)</p><h4 class="pubdate">Published 30 January 2017</h4><h3 class="edition">3.2-beta Edition</h3><div class="legalnotice" id="legal.notice"><a id="legal.notice"><span style="display:none;">trick</span></a><p>While every precaution has been taken in the preparation of this
       installation manual, the publisher and author assume no responsibility
       for errors or omissions, or for damages resulting from the use of the
       information contained herein.</p><p>This work is licensed under a <a class="link" href="http://creativecommons.org/licenses/by-nc-nd/4.0/legalcode"><span class="inlinemediaobject"><img src="images/license/creativecommons/cc_by_nc_nd.png"/></span></a> <a class="link" href="http://creativecommons.org/licenses/by-nc-nd/4.0/">Creative
@@ -949,7 +949,23 @@ junction -s "%PROGRAMFILES(X86)%\Google"
             Releases</a>. The <a class="link" href="http://www.oracle.com/technetwork/java/archive-139210.html">Archive</a>
             is providing the products available as a courtesy to developers
             for problem resolution. The products available here have completed
-            the Sun EOL process.</p></li><li class="listitem"><p>What is <a class="link" href="http://java.com/en/download/help/java_update.xml">Java
+            the Sun EOL process.</p></li><li class="listitem"><p>Upgrade checklist:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p>Related products: -.</p></li><li class="listitem"><p>References: <a class="link" href="#build.maven.compiler.profile" title="4.2.3. Compiler profile">Maven - compiler
+                profile <code class="code">jdk.1.8.home</code></a>, <a class="link" href="#build.maven.toolchains" title="4.2.3.1. Toolchains">Maven - toolchains
+                <code class="code">jdkHome</code></a>, <a class="link" href="#mail.james.windows.service" title="6.2.4. Windows service">Apache James - Windows
+                Service <code class="code">wrapper.java.command</code></a>, <a class="link" href="#web.tomcat.windows.service" title="8.1.3. Windows service">Tomcat - Windows Service
+                <code class="code">tomcat8.exe</code> or <code class="code">tomcat8w.exe</code></a>,
+                <a class="link" href="#app.payara.jdk" title="9.1.3. Changing JDK version">Payara - asenv.bat
+                <code class="code">AS_JAVA</code></a>, <a class="link" href="#vcs.fisheye.windows.service" title="11.3.5. Windows service">FishEye - Windows
+                Service <code class="code">wrapper.java.command</code></a>, <a class="link" href="#it.jira.windows.service" title="12.1.5. Windows service">JIRA - Windows Service
+                <code class="code">tomcat7.exe</code> or <code class="code">tomcat7w.exe</code></a>,
+                <a class="link" href="#repo.nexus.windows.service" title="13.1.3. Windows service">Nexus - Windows
+                Service <code class="code">wrapper.java.command</code></a>, <a class="link" href="#ci.jenkins.config.slave" title="14.1.6. Slave configuration">Jenkins - Slave
+                Configuration
+                <code class="filename">jeeves\jenkins-slave.xml</code></a>, <a class="link" href="#ide.eclipse.ini">Eclipse - installation guide
+                eclipse.ini <code class="code">-vm</code></a>, <a class="link" href="#ide.eclipse.plugin.install.guide.maven" title="15.1.5.5. Maven">Eclipse -
+                Maven integration <code class="code">Installed JREs</code></a> and <a class="link" href="#qa.sonar.windows.service" title="17.2.6. Windows service">SonarQube - Windows Service
+                <code class="code">wrapper.java.command</code></a>.</p></li><li class="listitem"><p>Integration configuration changes: <a class="link" href="#prg.java.platform.jce" title="3.1.3. Thoughts on Java SE, Java Security and Usability">Java - Security and Usability
+                <code class="code">JCE</code></a>.</p></li></ul></div></li><li class="listitem"><p>What is <a class="link" href="http://java.com/en/download/help/java_update.xml">Java
             Auto Update</a>? How do I change notify settings? Where is the
             <a class="link" href="http://java.com/en/download/help/win_controlpanel.xml">Java
             Control Panel</a> on Windows?</p></li><li class="listitem"><p>Oracle Java on Windows: <a class="link" href="http://marxsoftware.blogspot.nl/2015/07/windows-oracle-java-path.html">C:\ProgramData\Oracle\Java\javapath</a>.
@@ -984,23 +1000,7 @@ junction -s "%PROGRAMFILES(X86)%\Google"
                 Polluters</a>.</p></li><li class="listitem"><p>My <a class="link" href="https://blog.frankel.ch/my-case-against-autowiring">case
                 against autowiring</a>.</p></li><li class="listitem"><p>I was wrong: <a class="link" href="https://steveschols.wordpress.com/2012/06/05/i-was-wrong-constructor-vs-setter-injection/">constructor
                 vs. setter injection</a>.</p></li></ul></div></li><li class="listitem"><p><span class="inlinemediaobject"><img src="images/icons/martinfowler.png"/></span> <a class="link" href="http://www.martinfowler.com/bliki/FluentInterface.html">Fluent
-            Interface</a> by Martin Fowler.</p></li><li class="listitem"><p>Creation, dynamic loading and instrumentation with <a class="link" href="http://dhruba.name/2010/02/07/creation-dynamic-loading-and-instrumentation-with-javaagents/">javaagents</a>.</p></li><li class="listitem"><p>Upgrade checklist:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p>Related products: -.</p></li><li class="listitem"><p>References: <a class="link" href="#build.maven.compiler.profile" title="4.2.3. Compiler profile">Maven - compiler
-                profile <code class="code">jdk.1.8.home</code></a>, <a class="link" href="#build.maven.toolchains" title="4.2.3.1. Toolchains">Maven - toolchains
-                <code class="code">jdkHome</code></a>, <a class="link" href="#mail.james.windows.service" title="6.2.4. Windows service">Apache James - Windows
-                Service <code class="code">wrapper.java.command</code></a>, <a class="link" href="#web.tomcat.windows.service" title="8.1.3. Windows service">Tomcat - Windows Service
-                <code class="code">tomcat8.exe</code> or <code class="code">tomcat8w.exe</code></a>,
-                <a class="link" href="#app.payara.jdk" title="9.1.3. Changing JDK version">Payara - asenv.bat
-                <code class="code">AS_JAVA</code></a>, <a class="link" href="#vcs.fisheye.windows.service" title="11.3.5. Windows service">FishEye - Windows
-                Service <code class="code">wrapper.java.command</code></a>, <a class="link" href="#it.jira.windows.service" title="12.1.5. Windows service">JIRA - Windows Service
-                <code class="code">tomcat7.exe</code> or <code class="code">tomcat7w.exe</code></a>,
-                <a class="link" href="#repo.nexus.windows.service" title="13.1.3. Windows service">Nexus - Windows
-                Service <code class="code">wrapper.java.command</code></a>, <a class="link" href="#ci.jenkins.config.slave" title="14.1.6. Slave configuration">Jenkins - Slave
-                Configuration
-                <code class="filename">jeeves\jenkins-slave.xml</code></a>, <a class="link" href="#ide.eclipse.ini">Eclipse - installation guide
-                eclipse.ini <code class="code">-vm</code></a>, <a class="link" href="#ide.eclipse.plugin.install.guide.maven" title="15.1.5.5. Maven">Eclipse -
-                Maven integration <code class="code">Installed JREs</code></a> and <a class="link" href="#qa.sonar.windows.service" title="17.2.6. Windows service">SonarQube - Windows Service
-                <code class="code">wrapper.java.command</code></a>.</p></li><li class="listitem"><p>Integration configuration changes: <a class="link" href="#prg.java.platform.jce" title="3.1.3. Thoughts on Java SE, Java Security and Usability">Java - Security and Usability
-                <code class="code">JCE</code></a>.</p></li></ul></div></li><li class="listitem"><p><span class="inlinemediaobject"><img src="images/icons/javacup.png"/></span> <a class="link" href="http://www.oracle.com/technetwork/index.html">Oracle
+            Interface</a> by Martin Fowler.</p></li><li class="listitem"><p>Creation, dynamic loading and instrumentation with <a class="link" href="http://dhruba.name/2010/02/07/creation-dynamic-loading-and-instrumentation-with-javaagents/">javaagents</a>.</p></li><li class="listitem"><p><span class="inlinemediaobject"><img src="images/icons/javacup.png"/></span> <a class="link" href="http://www.oracle.com/technetwork/index.html">Oracle
             Technology Network</a> (OTN) <a class="link" href="http://www.oracle.com/technetwork/java/index.html">Java</a>
             is Oracle Corporation's official, interactive online/offline
             community for Oracle technical professionals.</p></li><li class="listitem"><p><span class="inlinemediaobject"><img src="images/icons/javanet.png"/></span> <a class="link" href="http://home.java.net/">java.net</a> the Source for
@@ -1017,44 +1017,25 @@ junction -s "%PROGRAMFILES(X86)%\Google"
                     - Machine Learning for Video Games.</p></li><li class="listitem"><p>Destination NASA - <a class="link" href="https://www.youtube.com/watch?v=B7KdN4PRgj4">Evolutionary
                     Antenna Synthesis</a>.</p></li></ul></div></li><li class="listitem"><p><a class="link" href="http://www.crealysm.com/">Crealysm</a> (<a class="link" href="http://www.crealysm.com/page/booh.html">BooH</a>)
                 by Cris Kop.</p></li></ul></div></li></ul></div></section><section class="section" id="prg.java.platform.install.guide"><div class="titlepage"><div><div><h3 class="title"><a id="prg.java.platform.install.guide" class="anchor" href="#prg.java.platform.install.guide"><span class="octicon octicon-link"/></a>3.1.2. JDK installation guide</h3></div></div></div><p><a class="link" href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Download</a>
-        the Win32 binary: <code class="filename">jdk-8u102-windows-i586.exe</code>
-        [version <a class="link" href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">1.8.0_102</a>]
+        the Win32 binary: <code class="filename">jdk-8u121-windows-i586.exe</code>
+        [version <a class="link" href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">1.8.0_121</a>]
         for the use with for example Firefox and the Win64 binary:
-        <code class="filename">jdk-8u102-windows-x64.exe</code> for development
+        <code class="filename">jdk-8u121-windows-x64.exe</code> for development
         purposes.</p><p>Run the 32-bit <code class="filename">.exe</code> file
         to install the JDK <span class="guilabel"><strong>Development Tools</strong></span> with
-        <span class="guibutton"><strong>Change…</strong></span> into <code class="filename">P:\dev\apps\prg\java\jdk1.8.0_102</code>. After
+        <span class="guibutton"><strong>Change…</strong></span> into <code class="filename">P:\dev\apps\prg\java\jdk1.8.0_121</code>. After
         the JDK is installed <span class="guibutton"><strong>Change…</strong></span> the JRE
-        <span class="guilabel"><strong>Destination Folder</strong></span> into <code class="filename">P:\dev\apps\prg\java\jre1.8.0_102</code>.</p><p>Run the 64-bit <code class="filename">.exe</code> file
+        <span class="guilabel"><strong>Destination Folder</strong></span> into <code class="filename">P:\dev\apps\prg\java\jre1.8.0_121</code>.</p><p>Run the 64-bit <code class="filename">.exe</code> file
         to install the JDK <span class="guilabel"><strong>Development Tools</strong></span> with
-        <span class="guibutton"><strong>Change…</strong></span> into <code class="filename">P:\dev\apps\prg\java-x64\jdk1.8.0_102</code>.
+        <span class="guibutton"><strong>Change…</strong></span> into <code class="filename">P:\dev\apps\prg\java-x64\jdk1.8.0_121</code>.
         After the JDK is installed <span class="guibutton"><strong>Change…</strong></span> the JRE
-        <span class="guilabel"><strong>Destination Folder</strong></span> into <code class="filename">P:\dev\apps\prg\java-x64\jre1.8.0_102</code>.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>It seems Java SE 8 Update 60 doesn't have Public JRE
+        <span class="guilabel"><strong>Destination Folder</strong></span> into <code class="filename">P:\dev\apps\prg\java-x64\jre1.8.0_121</code>.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>It seems Java SE 8 Update 60 doesn't have Public JRE
           installation included.</p></div><p id="prg.java.home"><a id="prg.java.home"><span style="display:none;">trick</span></a>Press <span class="keycap"><strong><span class="inlinemediaobject"><img src="images/os/windows/windows-key.gif"/></span></strong></span>+<span class="keycap"><strong>Break</strong></span> keys to open the Windows System Properties. Select
         <span class="guisubmenu"><strong>Advanced system settings</strong></span> → <span class="guibutton"><strong>Enviro<span class="accel">n</span>ment Variables</strong></span> and <span class="guibutton"><strong>Ed<span class="accel">i</span>t</strong></span> the
         <code class="envar">Path</code> to append <strong class="userinput"><code>%JAVA_HOME%\bin;</code></strong>.
         Also add a <span class="guibutton"><strong>Ne<span class="accel">w</span></strong></span> system variable
-        <code class="envar">JAVA_HOME</code> pointing to <strong class="userinput"><code><code class="filename">P:\dev\apps\prg\java-x64\jdk1.8.0_102</code></code></strong>.</p><p>Verify the installation with <code class="command">java
-        -version</code>.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="tip"><h2>Tip</h2><p>If you want to be able to run different versions of java by
-          changing the <code class="envar"><a class="xref" href="#prg.java.home">JAVA_HOME</a></code> and the
-          <code class="envar">Path</code> settings make sure there are no files installed
-          at <code class="command">dir %SystemRoot%\System32\java*.*</code>. If there
-          are, just delete the files <code class="filename">java.exe</code>,
-          <code class="filename">javaw.exe</code> and <code class="filename">javaws.exe</code>.
-          Keep the file <code class="filename">javacpl.cpl</code> to start the
-          <span class="application"><strong>Java Control Panel</strong></span> and on the
-          <span class="guilabel"><strong>Java</strong></span> tab <span class="guibutton"><strong>View…</strong></span> which
-          JREs are enabled.</p></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="warning"><h2>Warning</h2><p>Old files at <code class="command">dir
-          %SystemRoot%\SysWow64\java*.*</code> can cause the following
-          error <span class="quote">“<span class="quote">Registry key 'Software\JavaSoft\Java Runtime
-          Environment\CurrentVersion' has value '1.6', but '1.5' is
-          required.</span>”</span>.</p></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>If you also install the older JDK versions 1.4 and 1.3 (see
-          also <a class="xref" href="#os.windows.dep" title="1.1.15. Data Execution Prevention">Section 1.1.15, “Data Execution Prevention”</a>) and you don't want to use the
-          default directories make sure that you right click on
-          <span class="guilabel"><strong>Public JRE</strong></span> to select <span class="guilabel"><strong>Don't install
-          this feature for now.</strong></span> Because it isn't possible to change
-          the default directory for the included JRE. Install those JREs with
-          their separate install file.</p></div></section><section class="section" id="prg.java.platform.jce"><div class="titlepage"><div><div><h3 class="title"><a id="prg.java.platform.jce" class="anchor" href="#prg.java.platform.jce"><span class="octicon octicon-link"/></a>3.1.3. Thoughts on Java SE, Java Security and Usability</h3></div></div></div><p>When building inter-connected applications, developers
+        <code class="envar">JAVA_HOME</code> pointing to <strong class="userinput"><code><code class="filename">P:\dev\apps\prg\java-x64\jdk1.8.0_121</code></code></strong>.</p><p>Verify the installation with <code class="command">java
+        -version</code>.</p></section><section class="section" id="prg.java.platform.jce"><div class="titlepage"><div><div><h3 class="title"><a id="prg.java.platform.jce" class="anchor" href="#prg.java.platform.jce"><span class="octicon octicon-link"/></a>3.1.3. Thoughts on Java SE, Java Security and Usability</h3></div></div></div><p>When building inter-connected applications, developers
         frequently interact with TLS-enabled protocols like HTTPS:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><a class="link" href="https://blogs.oracle.com/java-platform-group/entry/diagnosing_tls_ssl_and_https">Diagnosing
             TLS, SSL, and HTTPS</a>.</p></li><li class="listitem"><p>JDK 8 will use <a class="link" href="https://blogs.oracle.com/java-platform-group/entry/java_8_will_use_tls">TLS
             1.2 as default</a>.</p></li><li class="listitem"><p>Instructions to <a class="link" href="http://www.oracle.com/technetwork/java/javase/documentation/cve-2014-3566-2342133.html">disable
@@ -1410,8 +1391,8 @@ junction -s "%PROGRAMFILES(X86)%\Google"
         &lt;jdk.1.7.javac&gt;${jdk.1.7.home}\bin\javac.exe&lt;/jdk.1.7.javac&gt;
         &lt;jdk.1.7.javadoc&gt;${jdk.1.7.home}\bin\javadoc.exe&lt;/jdk.1.7.javadoc&gt;
 
-        &lt;jdk.1.8.home&gt;P:\dev\apps\prg\java-x64\jdk1.8.0_102&lt;/jdk.1.8.home&gt;
-        &lt;!--jdk.1.8.home&gt;P:\dev\apps\prg\java\jdk1.8.0_102&lt;/jdk.1.8.home--&gt;
+        &lt;jdk.1.8.home&gt;P:\dev\apps\prg\java-x64\jdk1.8.0_121&lt;/jdk.1.8.home&gt;
+        &lt;!--jdk.1.8.home&gt;P:\dev\apps\prg\java\jdk1.8.0_121&lt;/jdk.1.8.home--&gt;
         &lt;jdk.1.8.jvm&gt;${jdk.1.8.home}\bin\java.exe&lt;/jdk.1.8.jvm&gt;
         &lt;jdk.1.8.javac&gt;${jdk.1.8.home}\bin\javac.exe&lt;/jdk.1.8.javac&gt;
         &lt;jdk.1.8.javadoc&gt;${jdk.1.8.home}\bin\javadoc.exe&lt;/jdk.1.8.javadoc&gt;
@@ -1490,7 +1471,7 @@ junction -s "%PROGRAMFILES(X86)%\Google"
       &lt;vendor&gt;oracle&lt;/vendor&gt;
     &lt;/provides&gt;
     &lt;configuration&gt;
-      &lt;jdkHome&gt;P:\dev\apps\prg\java-x64\jdk1.8.0_102&lt;/jdkHome&gt;
+      &lt;jdkHome&gt;P:\dev\apps\prg\java-x64\jdk1.8.0_121&lt;/jdkHome&gt;
     &lt;/configuration&gt;
   &lt;/toolchain&gt; 
 &lt;/toolchains&gt;
@@ -1829,7 +1810,7 @@ Path=<span xmlns="http://www.w3.org/1999/xhtml" class="strikethrough">Profiles/�
         <code class="filename">P:\dev\apps\mail\james-2.3.2\conf\wrapper.conf</code>:</p><pre xmlns="" class="language-provided"><code class="language-ini"> …
 
 # Java Application
-wrapper.java.command=P:\dev\apps\prg\java\jdk1.8.0_102\bin\java<span xmlns="http://www.w3.org/1999/xhtml" id="mail.james.java.command"/><a xmlns="http://www.w3.org/1999/xhtml" id="mail.james.java.command"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>
+wrapper.java.command=P:\dev\apps\prg\java\jdk1.8.0_121\bin\java<span xmlns="http://www.w3.org/1999/xhtml" id="mail.james.java.command"/><a xmlns="http://www.w3.org/1999/xhtml" id="mail.james.java.command"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>
 
  …
 
@@ -2811,7 +2792,7 @@ Include ../apache-conf/httpd-macro.conf
         a service</a> using <a class="link" href="#os.windows.cmd.elevated" title="1.1.13.1. Elevated Command Prompt">an
         elevated command prompt</a> as follows:</p><pre xmlns="" class="language-provided"><code class="language-bash">cd /d P:\dev\apps\webserver\apache-tomcat-8.0.26
 
-set JAVA_HOME=P:\dev\apps\prg\java-x64\jdk1.8.0_102
+set JAVA_HOME=P:\dev\apps\prg\java-x64\jdk1.8.0_121
 set CATALINA_HOME=P:\dev\apps\webserver\apache-tomcat-8.0.26
 bin\service.bat install tomcat
 
@@ -2868,7 +2849,7 @@ echo machine freedumbytes.dev.net login jenkins password <em xmlns="http://www.w
             Tomcat service run:
             <code class="command">P:\dev\apps\webserver\apache-tomcat-8.0.26\bin\tomcat8w.exe
             //MS//tomcat</code> such as <span class="guilabel"><strong>Java</strong></span> → <span class="guilabel"><strong>Java Virtual Machine</strong></span>
-            <strong class="userinput"><code>P:\dev\apps\prg\java-x64\jdk1.8.0_102\jre\bin\server\jvm.dll</code></strong>.</p></div></section></section><section class="section" id="web.tomcat.logging"><div class="titlepage"><div><div><h3 class="title"><a id="web.tomcat.logging" class="anchor" href="#web.tomcat.logging"><span class="octicon octicon-link"/></a>8.1.4. Logging</h3></div></div></div><p>Tomcat 7.0 uses Commons Logging throughout its internal code
+            <strong class="userinput"><code>P:\dev\apps\prg\java-x64\jdk1.8.0_121\jre\bin\server\jvm.dll</code></strong>.</p></div></section></section><section class="section" id="web.tomcat.logging"><div class="titlepage"><div><div><h3 class="title"><a id="web.tomcat.logging" class="anchor" href="#web.tomcat.logging"><span class="octicon octicon-link"/></a>8.1.4. Logging</h3></div></div></div><p>Tomcat 7.0 uses Commons Logging throughout its internal code
         allowing the developer to choose a logging configuration that suits
         their needs such as Log4J.</p><p>To switch to Log4J apply the following steps after shutting down
         tomcat with <code class="command">net stop tomcat</code>:</p><div class="orderedlist"><ol class="orderedlist compact" type="1"><li class="listitem"><p>Tomcat replacements:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><a class="link" href="http://archive.apache.org/dist/tomcat/tomcat-8/v8.0.26/bin/extras/">Download</a>:
@@ -3150,7 +3131,7 @@ REM when the calling script is run, not the installation directory of Payara,
 REM and such resolution will not work correctly unless the script happens to be 
 REM run from the Payara installation directory.
  …
-set AS_JAVA=P:\dev\apps\prg\java-x64\jdk1.8.0_102
+set AS_JAVA=P:\dev\apps\prg\java-x64\jdk1.8.0_121
 </code></pre></section><section class="section" id="app.payara.auto.deploy"><div class="titlepage"><div><div><h3 class="title"><a id="app.payara.auto.deploy" class="anchor" href="#app.payara.auto.deploy"><span class="octicon octicon-link"/></a>9.1.4. Autodeploy</h3></div></div></div><p>A prepackaged application that says <span class="quote">“<span class="quote">Hello</span>”</span> can be
         downloaded from <a class="link" href="http://glassfish.java.net/downloads/quickstart/hello.war">http://glassfish.java.net/downloads/quickstart/hello.war</a>.</p><p>Just copy the application, which is packaged as Java ARchive
         (JAR), Web ARchive (WAR), or Enterprise ARchive (EAR) file, into
@@ -3210,7 +3191,7 @@ set AS_JAVA=P:\dev\apps\prg\java-x64\jdk1.8.0_102
         a service</a> using <a class="link" href="#os.windows.cmd.elevated" title="1.1.13.1. Elevated Command Prompt">an
         elevated command prompt</a> as follows:</p><pre xmlns="" class="language-provided"><code class="language-bash">cd /d P:\dev\apps\appserver\payara-4.1.1.163
 
-set JAVA_HOME=P:\dev\apps\prg\java-x64\jdk1.8.0_102
+set JAVA_HOME=P:\dev\apps\prg\java-x64\jdk1.8.0_121
 set PAYARA_HOME=P:\dev\apps\appserver\payara-4.1.1.163
 asadmin create-service payaradomain
 
@@ -4117,7 +4098,7 @@ END
         <strong class="userinput"><code>%FISHEYE_HOME%\bin;</code></strong>. Also add a
         <span class="guibutton"><strong>Ne<span class="accel">w</span></strong></span> system variable
         <code class="envar">FISHEYE_HOME</code> pointing to <strong class="userinput"><code><code class="filename">P:\dev\apps\vcs\fecru-3.9.1</code></code></strong>.</p><p>Verify the installation with: .</p><pre xmlns="" class="language-provided"><code class="language-bash">cd /d %FISHEYE_HOME%
-set JAVA_HOME=P:\dev\apps\prg\java-x64\jdk1.8.0_102
+set JAVA_HOME=P:\dev\apps\prg\java-x64\jdk1.8.0_121
 fisheyectl.bat run
 </code></pre><p>Terminate the server with <span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>C</strong></span>.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="warning"><h2>Warning</h2><p>If you now notice that FishEye tries to start spontaneously in
           its own Windows <span class="application"><strong>Command Processor</strong></span>
@@ -4251,7 +4232,7 @@ xcopy /E /I P:\dev\apps\vcs\fecru-3.7.0\wrapper ^
         <code class="filename">P:\dev\apps\vcs\fecru-3.9.1\wrapper\conf\wrapper.conf</code>:</p><pre xmlns="" class="language-provided"><code class="language-ini"> …
 
 # Java Application
-wrapper.java.command=P:\dev\apps\prg\java-x64\jdk1.8.0_102\bin\java<span xmlns="http://www.w3.org/1999/xhtml" id="vcs.fisheye.java.command"/><a xmlns="http://www.w3.org/1999/xhtml" id="vcs.fisheye.java.command"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>
+wrapper.java.command=P:\dev\apps\prg\java-x64\jdk1.8.0_121\bin\java<span xmlns="http://www.w3.org/1999/xhtml" id="vcs.fisheye.java.command"/><a xmlns="http://www.w3.org/1999/xhtml" id="vcs.fisheye.java.command"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>
 
  …
 
@@ -4632,7 +4613,7 @@ rename bin\apr\tcnative-1.dll tcnative-1.dll.x86
 rename bin\tomcat7.exe.x64 tomcat7.exe
 rename bin\apr\tcnative-1.dll.x64 tcnative-1.dll
 
-set JAVA_HOME=P:\dev\apps\prg\java-x64\jdk1.8.0_102
+set JAVA_HOME=P:\dev\apps\prg\java-x64\jdk1.8.0_121
 set CATALINA_HOME=P:\dev\apps\issue\atlassian-jira-6.4.11-standalone
 bin\service.bat install jira
 
@@ -4651,7 +4632,7 @@ bin\tomcat7.exe //US//jira ++JvmOptions=-D<a xmlns="http://www.w3.org/1999/xhtml
           JIRA service run:
           <code class="command">P:\dev\apps\issue\atlassian-jira-6.4.11-standalone\bin\tomcat7w.exe
           //ES//jira</code> such as <span class="guilabel"><strong>Java</strong></span> → <span class="guilabel"><strong>Java Virtual Machine</strong></span>
-          <strong class="userinput"><code>P:\dev\apps\prg\java\jdk1.8.0_102\jre\bin\server\jvm.dll</code></strong>.</p></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="important"><h2>Important</h2><p>In case of a new jdk installation just run
+          <strong class="userinput"><code>P:\dev\apps\prg\java\jdk1.8.0_121\jre\bin\server\jvm.dll</code></strong>.</p></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="important"><h2>Important</h2><p>In case of a new jdk installation just run
           <code class="command">P:\dev\apps\issue\atlassian-jira-6.4.11-standalone\bin\tomcat7.exe
           //US//jira --Jvm auto</code> (when <code class="envar">JAVA_HOME</code> is
           still pointing to the 64-bit version; see also <a class="xref" href="#web.tomcat.manager" title="8.1.3.2. Tomcat Manager">Section 8.1.3.2, “Tomcat Manager”</a>).</p></div><p>Verify the installation and the JVM memory usage at <a class="link" href="http://freedumbytes.dev.net/jira/secure/admin/ViewSystemInfo.jspa">http://freedumbytes.dev.net/jira/secure/admin/ViewSystemInfo.jspa</a>.</p><section class="section" id="it.jira.windows.user"><div class="titlepage"><div><div><h4 class="title"><a id="it.jira.windows.user" class="anchor" href="#it.jira.windows.user"><span class="octicon octicon-link"/></a>12.1.5.1. Log On Windows user</h4></div></div></div><p>For the same reason as <a class="xref" href="#web.tomcat.windows.user" title="8.1.3.1. Log On Windows user">Section 8.1.3.1, “Log On Windows user”</a> launch the <span class="application"><strong>Service
@@ -4832,7 +4813,7 @@ runtime=${bundleBasedir}/nexus/WEB-INF
         configuration file
         <code class="filename">P:\dev\apps\repo\nexus-2.11.4-01\bin\jsw\conf\wrapper.conf</code>:</p><pre xmlns="" class="language-provided"><code class="language-ini"># Set the JVM executable
 # (modify this to absolute path if you need a Java that is not on the OS path)
-wrapper.java.command=<span xmlns="http://www.w3.org/1999/xhtml" class="strikethrough">java</span>P:\dev\apps\prg\java\jdk1.8.0_102\bin\java<span xmlns="http://www.w3.org/1999/xhtml" id="repo.nexus.java.command"/><a xmlns="http://www.w3.org/1999/xhtml" id="repo.nexus.java.command"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>
+wrapper.java.command=<span xmlns="http://www.w3.org/1999/xhtml" class="strikethrough">java</span>P:\dev\apps\prg\java\jdk1.8.0_121\bin\java<span xmlns="http://www.w3.org/1999/xhtml" id="repo.nexus.java.command"/><a xmlns="http://www.w3.org/1999/xhtml" id="repo.nexus.java.command"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>
 
 
 # Additional JVM parameters (tune if needed, but match the sequence of numbers!)
@@ -5525,7 +5506,7 @@ wrapper.ntservice.description=Nexus is a Maven repository manager.<span xmlns="h
   &lt;description&gt;
    This service runs a slave for Jenkins continuous integration system.
   &lt;/description&gt;
-  &lt;executable&gt;P:\dev\apps\prg\java\jre1.8.0_102\bin\java.exe&lt;/executable&gt;
+  &lt;executable&gt;P:\dev\apps\prg\java\jre1.8.0_121\bin\java.exe&lt;/executable&gt;
   &lt;arguments&gt;
     &lt;!-- -Xrs see also <a xmlns="http://www.w3.org/1999/xhtml" class="xref" href="#prg.java.platform.reference" title="3.1.3.1. Standard Edition Tools Reference">Section 3.1.3.1, “Standard Edition Tools Reference”</a> --&gt;
     -jar "%BASE%\slave.jar" -jnlpUrl 
@@ -5560,7 +5541,7 @@ Waiting 10 seconds before retry
 </pre><p>Which is also displayed in
         http://freedumbytes.dev.net/jenkins/computer/jeeves/ node page as
         <span class="quote">“<span class="quote">Connection was broken</span>”</span> and
-        <code class="filename">P:/dev/logs/httpserver/freedumbytes.dev.net-access.log:</code></p><pre class="screen">[201605 01:11:16] "GET /jenkins/computer/jeeves/slave-agent.jnlp?encrypt=true HTTP/1.1" 401 381 "-" "Java/1.8.0_102"
+        <code class="filename">P:/dev/logs/httpserver/freedumbytes.dev.net-access.log:</code></p><pre class="screen">[201605 01:11:16] "GET /jenkins/computer/jeeves/slave-agent.jnlp?encrypt=true HTTP/1.1" 401 381 "-" "Java/1.8.0_121"
 </pre><p>Just allow anonymous access for the local area network by
         editing
         <code class="filename">P:\dev\apps\httpserver\apache-conf\httpd-jenkins.conf</code>:</p><pre xmlns="" class="language-provided"><code class="language-apache">&lt;IfModule proxy_module&gt;
@@ -5596,8 +5577,8 @@ SEVERE: http://freedumbytes.dev.net/jenkins/tcpSlaveAgentListener/ is invalid: 4
   java.lang.Exception: …/tcpSlaveAgentListener/ is invalid: 401 Unauthorized
     at hudson.remoting.Engine.run(Engine.java:215)
 </pre><p>See also
-        <code class="filename">P:/dev/logs/httpserver/freedumbytes.dev.net-access.log:</code></p><pre class="screen">[20160507 01:25:27] "GET …/computer/jeeves/slave-agent.jnlp?encrypt=true HTTP/1.1" 200 736 "-" "Java/1.8.0_102"
-[20160507 01:25:28] "GET …/tcpSlaveAgentListener/ HTTP/1.1" 401 381 "-" "Java/1.8.0_102"
+        <code class="filename">P:/dev/logs/httpserver/freedumbytes.dev.net-access.log:</code></p><pre class="screen">[20160507 01:25:27] "GET …/computer/jeeves/slave-agent.jnlp?encrypt=true HTTP/1.1" 200 736 "-" "Java/1.8.0_121"
+[20160507 01:25:28] "GET …/tcpSlaveAgentListener/ HTTP/1.1" 401 381 "-" "Java/1.8.0_121"
 </pre><p>Again allow anonymous access for the local area network by editing
         <code class="filename">P:\dev\apps\httpserver\apache-conf\httpd-jenkins.conf</code>:</p><pre xmlns="" class="language-provided"><code class="language-apache">&lt;IfModule proxy_module&gt;
 &lt;IfModule proxy_ajp_module&gt;
@@ -5632,8 +5613,8 @@ INFO: Trying protocol: JNLP2-connect
 May 07, 2016 1:38:02 AM hudson.remoting.jnlp.Main$CuiListener status
 INFO: Connected
 </pre><p>See also
-        <code class="filename">P:/dev/logs/httpserver/freedumbytes.dev.net-access.log:</code></p><pre class="screen">[20160507 01:38:01] "GET …/computer/jeeves/slave-agent.jnlp?encrypt=true HTTP/1.1" 200 736 "-" "Java/1.8.0_102"
-[20160507 01:38:02] "GET …/tcpSlaveAgentListener/ HTTP/1.1" 200 12 "-" "Java/1.8.0_102"
+        <code class="filename">P:/dev/logs/httpserver/freedumbytes.dev.net-access.log:</code></p><pre class="screen">[20160507 01:38:01] "GET …/computer/jeeves/slave-agent.jnlp?encrypt=true HTTP/1.1" 200 736 "-" "Java/1.8.0_121"
+[20160507 01:38:02] "GET …/tcpSlaveAgentListener/ HTTP/1.1" 200 12 "-" "Java/1.8.0_121"
 </pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>And access to slave-agnet-jnlp is still not possible without
             the secret code:</p><div class="figure" id="prj.figure.jenkins.slave.agent.jnlp"><a id="prj.figure.jenkins.slave.agent.jnlp"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/ci/jenkins/jnlp-secret-oops.png" alt="Jenkins Slave Agent"/></div></div></div><div class="figure-title">Figure 14.1. Jenkins Slave Agent</div></div><br class="figure-break"/></div><p>Optionally select <span class="guilabel"><strong>Jenkins</strong></span> → <span class="guilabel"><strong>Manage Jenkins</strong></span> → <span class="guilabel"><strong>Manage Nodes</strong></span> to change:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><span class="guilabel"><strong>master</strong></span> → <span class="guilabel"><strong>Configure</strong></span> with:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><span class="guilabel"><strong># of executors</strong></span>:
                     <strong class="userinput"><code>2</code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Labels</strong></span>:
@@ -5699,7 +5680,7 @@ org.eclipse.platform
 --launcher.defaultAction
 openFile
 -vm<span xmlns="http://www.w3.org/1999/xhtml" id="ide.eclipse.vm.parameter"/><a xmlns="http://www.w3.org/1999/xhtml" id="ide.eclipse.vm.parameter"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>
-P:/dev/apps/prg/java-x64/jdk1.8.0_102/jre/bin/server/jvm.dll<span xmlns="http://www.w3.org/1999/xhtml" id="ide.eclipse.vm.value"/><a xmlns="http://www.w3.org/1999/xhtml" id="ide.eclipse.vm.value"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/2.png" alt="2" height="17px" width="17px" class="callout"/>
+P:/dev/apps/prg/java-x64/jdk1.8.0_121/jre/bin/server/jvm.dll<span xmlns="http://www.w3.org/1999/xhtml" id="ide.eclipse.vm.value"/><a xmlns="http://www.w3.org/1999/xhtml" id="ide.eclipse.vm.value"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/2.png" alt="2" height="17px" width="17px" class="callout"/>
 --launcher.appendVmargs
 -vmargs
 -Dosgi.requiredJavaVersion=1.7
@@ -6033,9 +6014,9 @@ ${task.url}
             installs.</span>”</span></p><p>Select <span class="guimenu"><strong><span class="accel">W</span>indow</strong></span> → <span class="guimenu"><strong><span class="accel">P</span>references</strong></span> → <span class="guilabel"><strong>Java</strong></span> → <span class="guilabel"><strong>Installed JREs</strong></span> → <span class="guilabel"><strong><span class="accel">A</span>dd…</strong></span> a <span class="guilabel"><strong>Standard VM</strong></span> and
             <span class="guibutton"><strong><span class="accel">N</span>ext</strong></span> set the
             <span class="guilabel"><strong><span class="accel">J</span>RE home</strong></span> with
-            <span class="guibutton"><strong>Direct<span class="accel">o</span>ry…</strong></span> to <code class="filename">P:\dev\apps\prg\java-x64\jdk1.8.0_102</code>
+            <span class="guibutton"><strong>Direct<span class="accel">o</span>ry…</strong></span> to <code class="filename">P:\dev\apps\prg\java-x64\jdk1.8.0_121</code>
             and click <span class="guibutton"><strong><span class="accel">F</span>inish</strong></span>. Now check
-            this jdk1.8.0_102 and <span class="guibutton"><strong><span class="accel">R</span>emove</strong></span>
+            this jdk1.8.0_121 and <span class="guibutton"><strong><span class="accel">R</span>emove</strong></span>
             the old jre1.x.x_xx and apply with <span class="guibutton"><strong>OK</strong></span> (see
             also <a class="xref" href="#ide.eclipse.ini">Section 15.1.2, “Eclipse installation guide”</a>).</p></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="caution"><h2>Caution</h2><p>After upgrading maven-jar-plugin to 3.x Eclipse reports
             <a class="link" href="http://stackoverflow.com/questions/37555557/m2e-error-in-mavenarchiver-getmanifest">the
@@ -7751,15 +7732,15 @@ mvn clean verify -Dmaven.test.skip=true
           maven-javadoc-plugin will overrule the one of
           maven-toolchains-plugin:</p><pre xmlns="" class="language-provided"><code class="language-bash">[INFO] --- maven-toolchains-plugin:1.1:toolchain (default) @ qa-sandbox ---
 [INFO] Required toolchain: jdk [ vendor='oracle' version='1.8' ]
-[INFO] Found matching toolchain for type jdk: JDK[P:\dev\apps\prg\java-x64\jdk1.8.0_102]
+[INFO] Found matching toolchain for type jdk: JDK[P:\dev\apps\prg\java-x64\jdk1.8.0_121]
 
 [INFO] --- maven-compiler-plugin:3.3:compile (default-compile) @ qa-sandbox ---
-[INFO] Toolchain in maven-compiler-plugin: JDK[P:\dev\apps\prg\java-x64\jdk1.8.0_102]
-[WARNING] Toolchains are ignored, 'executable' parameter is set to P:\dev\apps\prg\java-x64\jdk1.8.0_102\bin\javac.exe
+[INFO] Toolchain in maven-compiler-plugin: JDK[P:\dev\apps\prg\java-x64\jdk1.8.0_121]
+[WARNING] Toolchains are ignored, 'executable' parameter is set to P:\dev\apps\prg\java-x64\jdk1.8.0_121\bin\javac.exe
 
 [INFO] --- maven-javadoc-plugin:2.10.3:jar (attach-javadoc) @ qa-sandbox ---
-[INFO] Toolchain in maven-javadoc-plugin: JDK[P:\dev\apps\prg\java-x64\jdk1.8.0_102]
-[WARNING] Toolchains are ignored, 'javadocExecutable' parameter is set to P:\dev\apps\prg\java-x64\jdk1.8.0_102\bin\javadoc.exe
+[INFO] Toolchain in maven-javadoc-plugin: JDK[P:\dev\apps\prg\java-x64\jdk1.8.0_121]
+[WARNING] Toolchains are ignored, 'javadocExecutable' parameter is set to P:\dev\apps\prg\java-x64\jdk1.8.0_121\bin\javadoc.exe
 </code></pre></section><section class="section" id="prj.maven.java.base.pom.animal.sniffer"><div class="titlepage"><div><div><h4 class="title"><a id="prj.maven.java.base.pom.animal.sniffer" class="anchor" href="#prj.maven.java.base.pom.animal.sniffer"><span class="octicon octicon-link"/></a>16.1.7.7. Animal Sniffer</h4></div></div></div><p>The <a class="link" href="http://www.mojohaus.org/animal-sniffer/animal-sniffer-maven-plugin/">Animal
           Sniffer Plugin</a> is used to build signatures of APIs and to
           check your classes against previously generated signatures. This
@@ -9972,7 +9953,7 @@ sonar.jdbc.maxWait=5000<span xmlns="http://www.w3.org/1999/xhtml" id="qa.sonar.d
         <code class="filename">P:\dev\apps\qa\sonarqube-5.5\conf\wrapper.conf</code>:</p><pre xmlns="" class="language-provided"><code class="language-ini"># Path to JVM executable. By default it must be available in PATH.
 # Can be an absolute path, for example:
 #wrapper.java.command=/path/to/my/jdk/bin/java
-wrapper.java.command=P:\dev\apps\prg\java-x64\jdk1.8.0_102\bin\java<span xmlns="http://www.w3.org/1999/xhtml" id="qa.sonar.java.command"/><a xmlns="http://www.w3.org/1999/xhtml" id="qa.sonar.java.command"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>
+wrapper.java.command=P:\dev\apps\prg\java-x64\jdk1.8.0_121\bin\java<span xmlns="http://www.w3.org/1999/xhtml" id="qa.sonar.java.command"/><a xmlns="http://www.w3.org/1999/xhtml" id="qa.sonar.java.command"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>
 
  …
 
