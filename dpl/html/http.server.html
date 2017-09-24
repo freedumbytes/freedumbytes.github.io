@@ -81,7 +81,7 @@ ServerName <span xmlns="http://www.w3.org/1999/xhtml" class="strikethrough">www.
         <code class="envar">APACHE_HOME</code> pointing to <strong class="userinput"><code><code class="filename">P:\dev\apps\httpserver\apache-2.4.16</code></code></strong>
         .</p><p>Verify the installation with <code class="command">httpd -v</code>.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="tip"><h2>Tip</h2><p>From the command line run <code class="command">httpd -t</code> to run a
           syntax check on the changed config files.</p></div></section><section class="section" id="http.apache.windows.service"><div class="titlepage"><div><div><h3 class="title"><a id="http.apache.windows.service" class="anchor" href="#http.apache.windows.service"><span class="octicon octicon-link"/></a>7.1.3. Windows service</h3></div></div></div><p>To restart automatically on Microsoft Windows listening on port
-        80 install the service with the command in <a class="link" href="operating.system.html#os.windows.cmd.elevated" title="1.1.13.1. Elevated Command Prompt">an elevated command
+        80 install the service with the command in <a class="link" href="operating.system.html#os.windows.cmd.elevated" title="1.1.14.1. Elevated Command Prompt">an elevated command
         processor</a>: <code class="command">httpd -k install -n "freedumbytes.dev.net
         Apache HTTP"</code> (which will result in a service named
         <span class="guilabel"><strong>freedumbytes.dev.netApacheHTTP</strong></span>) and start it with
@@ -317,7 +317,7 @@ Include ../apache-conf/httpd-vhosts.conf<span xmlns="http://www.w3.org/1999/xhtm
         create <code class="filename">P:\dev\apps\httpserver\apache-conf\modules</code>
         for storing third-party modules.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>It is also possible to create subdomains with VirtualHost (see
           also <a class="xref" href="http.server.html#http.apache.config.mod.proxy.ajp.sample" title="7.1.9.1.1.1. Subdomain sample">Section 7.1.9.1.1.1, “Subdomain sample”</a>).</p></div><p id="http.apache.host.ip"><a id="http.apache.host.ip"><span style="display:none;">trick</span></a>In
-        <code class="filename">C:\WINDOWS\system32\drivers\etc\<a class="link" href="operating.system.html#os.windows.cmd.hosts" title="1.1.13.3. Edit the Hosts File">hosts</a></code> file add the
+        <code class="filename">C:\WINDOWS\system32\drivers\etc\<a class="link" href="operating.system.html#os.windows.cmd.hosts" title="1.1.14.3. Edit the Hosts File">hosts</a></code> file add the
         following mapping (on all developer machines that want to access
         http://freedumbytes.dev.net and subdomains on the above configured
         host machine<a class="xref" href="http.server.html#http.apache.host.mapping"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a>-<a class="xref" href="http.server.html#http.apache.host.mapping.subdomain.sample"><img src="images/community/docbook/callouts/2.png" alt="2" border="0" height="17px" width="17px" class="callout"/></a>):</p><pre xmlns="" class="language-provided"><code class="language-ini"># Copyright (c) 1993-2009 Microsoft Corp.
@@ -592,8 +592,8 @@ ProxyHTMLEvents onclick ondblclick onmousedown onmouseup \
                 onmouseover onmousemove onmouseout onkeypress \
                 onkeydown onkeyup onfocus onblur onload \
                 onunload onsubmit onreset onselect onchange
-</code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>The other files <a class="link" href="operating.system.html#os.windows.gnuwin.zlib" title="1.1.18.4. ZLib">zlib1.dll</a>, <a class="link" href="operating.system.html#os.windows.gnuwin.libiconv" title="1.1.18.3. LibIconv">libiconv2.dll</a> and
-              <a class="link" href="operating.system.html#os.windows.gnuwin.libxml2" title="1.1.18.5. LibXml2">libxml2.dll</a> are
+</code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>The other files <a class="link" href="operating.system.html#os.windows.gnuwin.zlib" title="1.1.19.4. ZLib">zlib1.dll</a>, <a class="link" href="operating.system.html#os.windows.gnuwin.libiconv" title="1.1.19.3. LibIconv">libiconv2.dll</a> and
+              <a class="link" href="operating.system.html#os.windows.gnuwin.libxml2" title="1.1.19.5. LibXml2">libxml2.dll</a> are
               already available in <code class="filename">P:\dev\apps\httpserver\apache-2.4.16\bin</code>.</p></div><p>Activate the extra required module <a class="xref" href="http.server.html#http.apache.module.mod.headers"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a> in
           <code class="filename">P:\dev\apps\httpserver\apache-conf\httpd-proxy-html.conf</code>:</p><pre xmlns="" class="language-provided"><code class="language-apache">LoadModule proxy_html_module modules/mod_proxy_html.so
 LoadModule xml2enc_module modules/mod_xml2enc.so

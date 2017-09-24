@@ -23,7 +23,7 @@
             do I edit an incorrect commit message in git (I've
             pushed)?</a>.</p></li><li class="listitem"><p><a class="link" href="https://github.com/Microsoft/Git-Credential-Manager-for-Windows">Git
             Credential Manager</a> for Windows.</p></li></ul></div></section><section class="section" id="vcs.git.install.guide"><div class="titlepage"><div><div><h3 class="title"><a id="vcs.git.install.guide" class="anchor" href="#vcs.git.install.guide"><span class="octicon octicon-link"/></a>11.1.2. Git installation guide</h3></div></div></div><p><a class="link" href="https://git-for-windows.github.io/">Download</a> the
-        binary: <code class="filename">Git-2.10.2-64-bit.exe</code> [version <a class="link" href="https://git-scm.com/">2.10.2</a>].</p><p>Run this <code class="filename">.exe</code> file to
+        binary: <code class="filename">Git-2.13.0-64-bit.exe</code> [version <a class="link" href="https://git-scm.com/">2.13.0</a>].</p><p>Run this <code class="filename">.exe</code> file to
         install Git in <code class="filename">P:\dev\apps\vcs\git</code> with the default
         settings.</p><p id="vcs.git.home"><a id="vcs.git.home"><span style="display:none;">trick</span></a>Press <span class="keycap"><strong><span class="inlinemediaobject"><img src="images/os/windows/windows-key.gif"/></span></strong></span>+<span class="keycap"><strong>Break</strong></span> keys to open the Windows System Properties. Select
         <span class="guisubmenu"><strong>Advanced system settings</strong></span> → <span class="guibutton"><strong>Enviro<span class="accel">n</span>ment Variables</strong></span> and <span class="guibutton"><strong>Ed<span class="accel">i</span>t</strong></span> the
@@ -58,7 +58,7 @@ git config --global branch.<a xmlns="http://www.w3.org/1999/xhtml" class="link" 
 git config --global push.default simple
 
 git config --list
-</code></pre></section><section class="section" id="vcs.git.difftool"><div class="titlepage"><div><div><h4 class="title"><a id="vcs.git.difftool" class="anchor" href="#vcs.git.difftool"><span class="octicon octicon-link"/></a>11.1.2.3. External diff tool</h4></div></div></div><p>To be able to use <a class="link" href="operating.system.html#os.windows.merge.winmerge" title="1.1.19.2. WinMerge">WinMerge</a> as the <a class="link" href="http://www.kernel.org/pub/software/scm/git/docs/git-difftool.html">diff
+</code></pre></section><section class="section" id="vcs.git.difftool"><div class="titlepage"><div><div><h4 class="title"><a id="vcs.git.difftool" class="anchor" href="#vcs.git.difftool"><span class="octicon octicon-link"/></a>11.1.2.3. External diff tool</h4></div></div></div><p>To be able to use <a class="link" href="operating.system.html#os.windows.merge.winmerge" title="1.1.20.2. WinMerge">WinMerge</a> as the <a class="link" href="http://www.kernel.org/pub/software/scm/git/docs/git-difftool.html">diff
           tool</a> add the following:</p><pre xmlns="" class="language-provided"><code class="language-bash">git config --global diff.tool winmerge
 git config --global difftool.winmerge.cmd \
     "winmerge.sh \"\$LOCAL\" \"\$BASE\" \"\$REMOTE\""
@@ -85,7 +85,7 @@ else
      -dl "Working copy $diffFileName" \
      -dr "Original $diffFileName" "$diffPostImage" "$diffPreImage" 
 fi
-</code></pre></section><section class="section" id="vcs.git.mergetool"><div class="titlepage"><div><div><h4 class="title"><a id="vcs.git.mergetool" class="anchor" href="#vcs.git.mergetool"><span class="octicon octicon-link"/></a>11.1.2.4. External merge tool</h4></div></div></div><p>To be able to use <a class="link" href="operating.system.html#os.windows.merge.kdiff3" title="1.1.19.1. KDiff3">KDiff3</a> as the <a class="link" href="http://www.kernel.org/pub/software/scm/git/docs/git-mergetool.html">merge
+</code></pre></section><section class="section" id="vcs.git.mergetool"><div class="titlepage"><div><div><h4 class="title"><a id="vcs.git.mergetool" class="anchor" href="#vcs.git.mergetool"><span class="octicon octicon-link"/></a>11.1.2.4. External merge tool</h4></div></div></div><p>To be able to use <a class="link" href="operating.system.html#os.windows.merge.kdiff3" title="1.1.20.1. KDiff3">KDiff3</a> as the <a class="link" href="http://www.kernel.org/pub/software/scm/git/docs/git-mergetool.html">merge
           tool</a> add the following:</p><pre xmlns="" class="language-provided"><code class="language-bash">git config --global merge.tool kdiff
 git config --global mergetool.kdiff.cmd \
   '3waymerge.sh "$PWD/$LOCAL" "$PWD/$BASE" "$PWD/$REMOTE" "$PWD/$MERGED"'
@@ -116,8 +116,8 @@ else
     -o "$resultOfMerge"
 fi
 </code></pre></section><section class="section" id="vcs.git.ignore.template"><div class="titlepage"><div><div><h4 class="title"><a id="vcs.git.ignore.template" class="anchor" href="#vcs.git.ignore.template"><span class="octicon octicon-link"/></a>11.1.2.5. Ignores template</h4></div></div></div><p>Create the following ignores template
-          <code class="filename">P:\dev\data\repo\.gitignore</code> based on
-          <code class="filename">Java.gitignore</code> and
+          <code class="filename">P:\dev\data\repo\<a class="link" href="https://gitlab.com/freedumbytes/setup/raw/master/.gitignore">.gitignore</a></code>
+          based on <code class="filename">Java.gitignore</code> and
           <code class="filename">Maven.gitignore</code> of <span class="inlinemediaobject"><img src="images/icons/github.png"/></span> <a class="link" href="https://github.com/github/gitignore">.gitignore
           templates</a>:</p><pre xmlns="" class="language-provided"><code class="language-ini">#general
 *.bak
@@ -141,8 +141,16 @@ fi
 .classpath
 .project
 .settings/
+.metadata/
+faces-config.pageflow
+
+#intellij
+.idea/
+*.iml
 
 #maven
+generated/
+generated-sources/
 target/
 pom.xml.tag
 pom.xml.releaseBackup
@@ -217,7 +225,9 @@ git status
         <code class="filename">C:\dev\projects\test-drive\hello.txt</code> as
         follows:</p><pre class="screen">Hello world! Hello indeed.
 Second line.
-Third line.</pre><p>Commit this change to the master branch and try to merge both
+Third line.</pre><p>Use WinMerge to view all/single diffs:</p><pre xmlns="" class="language-provided"><code class="language-bash">git difftool
+git difftool hello.txt
+</code></pre><p>Commit this change to the master branch and try to merge both
         branches:</p><pre xmlns="" class="language-provided"><code class="language-bash">git status
 git commit -a -m 'head commit.'
 git status
@@ -620,7 +630,7 @@ END
         <strong class="userinput"><code>%FISHEYE_HOME%\bin;</code></strong>. Also add a
         <span class="guibutton"><strong>Ne<span class="accel">w</span></strong></span> system variable
         <code class="envar">FISHEYE_HOME</code> pointing to <strong class="userinput"><code><code class="filename">P:\dev\apps\vcs\fecru-3.9.1</code></code></strong>.</p><p>Verify the installation with: .</p><pre xmlns="" class="language-provided"><code class="language-bash">cd /d %FISHEYE_HOME%
-set JAVA_HOME=P:\dev\apps\prg\java-x64\jdk1.8.0_121
+set JAVA_HOME=P:\dev\apps\prg\java-x64\jdk1.8.0_131
 fisheyectl.bat run
 </code></pre><p>Terminate the server with <span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>C</strong></span>.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="warning"><h2>Warning</h2><p>If you now notice that FishEye tries to start spontaneously in
           its own Windows <span class="application"><strong>Command Processor</strong></span>
@@ -754,7 +764,7 @@ xcopy /E /I P:\dev\apps\vcs\fecru-3.7.0\wrapper ^
         <code class="filename">P:\dev\apps\vcs\fecru-3.9.1\wrapper\conf\wrapper.conf</code>:</p><pre xmlns="" class="language-provided"><code class="language-ini"> …
 
 # Java Application
-wrapper.java.command=P:\dev\apps\prg\java-x64\jdk1.8.0_121\bin\java<span xmlns="http://www.w3.org/1999/xhtml" id="vcs.fisheye.java.command"/><a xmlns="http://www.w3.org/1999/xhtml" id="vcs.fisheye.java.command"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>
+wrapper.java.command=P:\dev\apps\prg\java-x64\jdk1.8.0_131\bin\java<span xmlns="http://www.w3.org/1999/xhtml" id="vcs.fisheye.java.command"/><a xmlns="http://www.w3.org/1999/xhtml" id="vcs.fisheye.java.command"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>
 
  …
 
@@ -812,13 +822,13 @@ wrapper.ntservice.displayname=freedumbytes.dev.net FishEye<span xmlns="http://ww
 # Description of the service
 wrapper.ntservice.description=FishEye gives Git, Subversion and CVS a Web interface.<span xmlns="http://www.w3.org/1999/xhtml" id="vcs.fisheye.description"/><a xmlns="http://www.w3.org/1999/xhtml" id="vcs.fisheye.description"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/12.png" alt="12" height="17px" width="17px" class="callout"/>
 </code></pre><p>Register the FishEye service from folder <code class="command">cd /d
-        %FISHEYE_HOME%</code> in <a class="link" href="operating.system.html#os.windows.cmd.elevated" title="1.1.13.1. Elevated Command Prompt">an
+        %FISHEYE_HOME%</code> in <a class="link" href="operating.system.html#os.windows.cmd.elevated" title="1.1.14.1. Elevated Command Prompt">an
         elevated command prompt</a>:
         <code class="command">wrapper\bin\Fisheye-Install-NTService.bat</code>. Start
         FishEye with <code class="command">net start fisheye</code>.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>In case of an upgrade <code class="command">sc delete fisheye</code>
           first (see also <a class="xref" href="operating.system.html#os.windows.process.explorer" title="1.1.5. Task Manager replacement">Section 1.1.5, “Task Manager replacement”</a> in
           case of <span class="quote">“<span class="quote">The specified service has been marked for
-          deletion.</span>”</span>).</p></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="important"><h2>Important</h2><p>In case of a new jdk installation use <a class="link" href="operating.system.html#os.windows.cmd.elevated" title="1.1.13.1. Elevated Command Prompt">an elevated command prompt</a>
+          deletion.</span>”</span>).</p></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="important"><h2>Important</h2><p>In case of a new jdk installation use <a class="link" href="operating.system.html#os.windows.cmd.elevated" title="1.1.14.1. Elevated Command Prompt">an elevated command prompt</a>
           just run <code class="command">net stop fisheye</code> and <code class="command">net start
           fisheye</code>. Verify the upgrade at <a class="link" href="http://freedumbytes.dev.net/fisheye/admin/sysinfo.do">http://freedumbytes.dev.net/fisheye/admin/sysinfo.do</a>.</p></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>Should the following error <span class="quote">“<span class="quote">Error: no `server' JVM at
             `P:\dev\apps\prg\java\jre…\bin\server\jvm.dll'</span>”</span> occur check

@@ -8,7 +8,7 @@
         TARGETDIR=<em class="replaceable"><code>folder</code></em></code>.</p></section><section class="section" id="tip.class.path"><div class="titlepage"><div><div><h3 class="title"><a id="tip.class.path" class="anchor" href="#tip.class.path"><span class="octicon octicon-link"/></a>A.1.2. How to determine absolute path of a loaded Class</h3></div></div></div><p>Of course, this is not always possible (if you think of
         dynamically created classes), but if the loaded Class is inside a jar
         <a class="link" href="http://stackoverflow.com/questions/4546632/how-to-determine-absolute-path-if-any-of-a-loaded-class">how
-        to get the absolute path for this jar</a>?</p><pre xmlns="" class="language-provided"><code class="language-java">package net.dev.freedumbytes.maven.qa.sandbox.classloader;
+        to get the absolute path for this jar</a>?</p><pre xmlns="" class="language-provided"><code class="language-java">package nl.demon.shadowland.freedumbytes.maven.qa.sandbox.classloader;
 
 
 import static org.assertj.core.api.Assertions.*;
@@ -73,20 +73,20 @@ public class ClassloaderTest
           dynamic, open source programming language with a focus on simplicity
           and productivity. It has an elegant syntax that is natural to read
           and easy to write.</p><p><a class="link" href="http://rubyinstaller.org/downloads/">Download</a> the
-          Ruby Installer <code class="filename">rubyinstaller-2.3.1-x64.exe</code> for
-          Windows [version <a class="link" href="http://rubyinstaller.org/">2.3.1</a>].</p><p>Run this <code class="filename">.exe</code> file to
-          install Ruby in <code class="filename">P:\dev\apps\prg\ruby-2.3.1</code>.</p><p id="prg.ruby.home"><a id="prg.ruby.home"><span style="display:none;">trick</span></a>Press <span class="keycap"><strong><span class="inlinemediaobject"><img src="images/os/windows/windows-key.gif"/></span></strong></span>+<span class="keycap"><strong>Break</strong></span> keys to open the Windows System Properties. Select
+          Ruby Installer <code class="filename">rubyinstaller-2.3.3-x64.exe</code> for
+          Windows [version <a class="link" href="http://rubyinstaller.org/">2.3.3</a>].</p><p>Run this <code class="filename">.exe</code> file to
+          install Ruby in <code class="filename">P:\dev\apps\prg\ruby-2.3.3</code>.</p><p id="prg.ruby.home"><a id="prg.ruby.home"><span style="display:none;">trick</span></a>Press <span class="keycap"><strong><span class="inlinemediaobject"><img src="images/os/windows/windows-key.gif"/></span></strong></span>+<span class="keycap"><strong>Break</strong></span> keys to open the Windows System Properties. Select
           <span class="guisubmenu"><strong>Advanced system settings</strong></span> → <span class="guibutton"><strong>Enviro<span class="accel">n</span>ment Variables</strong></span> and <span class="guibutton"><strong>Ed<span class="accel">i</span>t</strong></span> the
           <code class="envar">Path</code> to append
           <strong class="userinput"><code>%RUBY_HOME%\bin;</code></strong>. Also add a
           <span class="guibutton"><strong>Ne<span class="accel">w</span></strong></span> system variable
-          <code class="envar">RUBY_HOME</code> pointing to <strong class="userinput"><code><code class="filename">P:\dev\apps\prg\ruby-2.3.1</code></code></strong>.</p><p>Verify the installation with <code class="command">ruby
+          <code class="envar">RUBY_HOME</code> pointing to <strong class="userinput"><code><code class="filename">P:\dev\apps\prg\ruby-2.3.3</code></code></strong>.</p><p>Verify the installation with <code class="command">ruby
           --version</code>.</p></section><section class="section" id="prg.rubygems.install.guide"><div class="titlepage"><div><div><h4 class="title"><a id="prg.rubygems.install.guide" class="anchor" href="#prg.rubygems.install.guide"><span class="octicon octicon-link"/></a>A.2.1.3. RubyGems upgrade guide</h4></div></div></div><p><a class="link" href="https://rubygems.org/">RubyGems</a> is a
           package management framework for Ruby.</p><p><a class="link" href="https://rubygems.org/pages/download">Download</a> the
-          archive <code class="filename">rubygems-2.6.8.zip</code> for Windows [version
-          <a class="link" href="http://blog.rubygems.org/">2.6.8</a>].</p><p>Extract this <code class="filename">.zip</code> file
-          to <code class="filename">C:\tmp</code>. In <code class="filename">C:\tmp\rubygems-2.6.8</code> run <code class="command">ruby
-          setup.rb</code>.</p><p>Verify the installation with <code class="command">gem
+          archive <code class="filename">rubygems-2.6.12.zip</code> for Windows
+          [version <a class="link" href="http://blog.rubygems.org/">2.6.12</a>].</p><p>Extract this <code class="filename">.zip</code> file
+          to <code class="filename">C:\tmp</code>. In <code class="filename">C:\tmp\rubygems-2.6.12</code> run
+          <code class="command">ruby setup.rb</code>.</p><p>Verify the installation with <code class="command">gem
           --version</code>.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="important"><h2>Important</h2><p>This upgrade fixes the following issue when installing
             svn2git: <span class="quote">“<span class="quote">ERROR: Could not find a valid gem 'svn2git' (&gt;=
             0), here is why: Unable to download data from
@@ -118,11 +118,17 @@ svn2git --verbose https://svn.java.net/svn/jmodalwindow~svn/ ^
             <code class="computeroutput">Running command: git svn fetch
             '--ignore-paths=^(?:trunk[/]|tags[/][^/]+[/])(?:www)'</code>
             (see also the above mentioned resource about issue <a class="link" href="https://github.com/nirvdrum/svn2git/issues/121">#121</a>).</p><p>To avoid this error edit
-            <code class="filename">P:\dev\apps\prg\ruby-2.3.1\lib\ruby\gems\2.3.0\gems\svn2git-2.3.2\lib\svn2git\migration.rb</code>:</p><pre xmlns="" class="language-provided"><code class="language-ruby">         regex = '^(?:' + regex.join('|') + ')(?:' + exclude.join('|') + ')'
+            <code class="filename">P:\dev\apps\prg\ruby-2.3.3\lib\ruby\gems\2.3.0\gems\svn2git-2.3.2\lib\svn2git\migration.rb</code>:</p><pre xmlns="" class="language-provided"><code class="language-ruby">         regex = '^(?:' + regex.join('|') + ')(?:' + exclude.join('|') + ')'
 -        cmd += "'--ignore-paths=#{regex}'"
 +        cmd += "\"--ignore-paths=#{regex}\""
        end
-</code></pre><p>Run the fixed script again:</p><pre xmlns="" class="language-provided"><code class="language-bash">svn2git --verbose https://svn.java.net/svn/jmodalwindow~svn/ ^
+</code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>Or just run
+              <code class="command">p:\dev\apps\editor\winmerge\WinMergeU.exe
+              P:\dev\apps\prg\ruby-2.3.3\lib\ruby\gems\2.3.0\gems\svn2git-2.3.2\
+              P:\dev\apps\prg\ruby-2.3.1\lib\ruby\gems\2.3.0\gems\svn2git-2.3.2\</code>
+              to copy the changes in
+              <code class="filename">lib\svn2git\migration.rb</code> from a prior
+              installation of ruby.</p></div><p>Run the fixed script again:</p><pre xmlns="" class="language-provided"><code class="language-bash">svn2git --verbose https://svn.java.net/svn/jmodalwindow~svn/ ^
         --no-minimize-url --nobranches ^
         --exclude www ^
         --author c:\dev\projects\demo\users.txt
@@ -147,11 +153,10 @@ git log --pretty=oneline
           config --show-origin core.autocrlf</code> to see what this value
           is set to. On Windows, you simply pass true to the configuration
           with <code class="command">git config --global core.autocrlf
-          true</code>.</p><p>Alternatively define all of this in the
-          <code class="filename">.gitattributes</code> file that you keep with your
-          repository. This means that line endings can be encapsulated
-          entirely within a repository and don't depend on everyone having the
-          proper global settings. For example
+          true</code>.</p><p>Alternatively define all of this in the <code class="filename"><a class="link" href="https://gitlab.com/freedumbytes/setup/raw/master/.gitattributes">.gitattributes</a></code>
+          file that you keep with your repository. This means that line
+          endings can be encapsulated entirely within a repository and don't
+          depend on everyone having the proper global settings. For example
           <code class="filename">C:\dev\projects\jmodalwindow\.gitattributes</code>
           based on <code class="filename">Java.gitattributes</code> of
           <span class="inlinemediaobject"><img src="images/icons/github.png"/></span> <a class="link" href="https://github.com/alexkaratarakis/gitattributes">.gitattributes
@@ -166,40 +171,80 @@ git log --pretty=oneline
 .gitignore      text
 .gitconfig      text
 </code></pre><pre xmlns="" class="language-provided"><code class="language-ini">*.bat           text
-*.sh            text
+*.cmd           text
+*.sh            text eol=lf
 Makefile        text
 makefile        text
+Dockerfile      text
 </code></pre><pre xmlns="" class="language-provided"><code class="language-ini">*.java          text
 *.jsp           text
 *.jspf          text
 *.jspx          text
+*.tag           text
+*.tagx          text
 *.tld           text
+*.ldif          text
 *.sql           text
+*.feature       text
+Jenkinsfile     text
 *.yml           text
 *.yaml          text
 *.diff          text
 *.properties    text
+*.MF            text
+*.mapping       text
 *.ini           text
 *.cnf           text
 *.conf          text
 *.config        text
+*.pageflow      text
 </code></pre><pre xmlns="" class="language-provided"><code class="language-ini">*.txt           text
+*.apt           text
+*.vm            text
+*.log           text
+*.importorder   text
+*.xsl           text
+*.xslt          text
 *.xml           text
+*.dtd           text
+*.xsd           text
+*.wsdl          text
+*.wsdd          text
 *.md            text
 *.adoc          text
 *.csv           text
-*.doc           diff
-*.docx          diff
-*.dot           diff
-*.pdf           diff
-*.rtf           diff
-</code></pre><pre xmlns="" class="language-provided"><code class="language-ini">*.css           text
+*.ftl           text
+*.dwt           text
+*.pu            text
+*.archimate     text
+*.ucls          text
+*.uxf           text
+.editorconfig   text
+*.dia           binary
+*.doc           binary
+*.docx          binary
+*.dot           binary
+*.dotx          binary
+*.msg           binary
+*.ppt           binary
+*.pptx          binary
+*.pdf           binary
+*.odt           binary
+*.ai            binary
+*.rtf           binary
+*.vsd           binary
+*.xls           binary
+*.xlsm          binary
+*.xlsx          binary
+</code></pre><pre xmlns="" class="language-provided"><code class="language-ini">*.asp           text
+*.css           text
 *.less          text
 *.sass          text
 *.scss          text
 *.htm           text
 *.html          text
 *.xhtml         text
+*.mht           text
 *.js            text
 *.jsx           text
 *.json          text
@@ -207,6 +252,8 @@ makefile        text
 .htaccess       text
 </code></pre><pre xmlns="" class="language-provided"><code class="language-ini"># These files are binary and should be left untouched
 # (binary is a macro for -text -diff)
+#
+#image
 *.bmp           binary
 *.eps           binary
 *.gif           binary
@@ -227,13 +274,16 @@ makefile        text
 *.tiff          binary
 *.wbmp          binary
 *.webp          binary
-</code></pre><pre xmlns="" class="language-provided"><code class="language-ini">*.m4a           binary
+Thumbs.db       binary
+</code></pre><pre xmlns="" class="language-provided"><code class="language-ini">#audio
+*.m4a           binary
 *.mid           binary
 *.midi          binary
 *.mp3           binary
 *.ogg           binary
 *.ra            binary
-</code></pre><pre xmlns="" class="language-provided"><code class="language-ini">*.3gpp          binary
+</code></pre><pre xmlns="" class="language-provided"><code class="language-ini">#video
+*.3gpp          binary
 *.3gp           binary
 *.asf           binary
 *.fla           binary
@@ -246,12 +296,20 @@ makefile        text
 *.swc           binary
 *.swf           binary
 *.webm          binary
-</code></pre><pre xmlns="" class="language-provided"><code class="language-ini">*.eot           binary
+</code></pre><pre xmlns="" class="language-provided"><code class="language-ini">#font
+*.eot           binary
 *.otf           binary
 *.ttf           binary
 *.woff          binary
 *.woff2         binary
-</code></pre><pre xmlns="" class="language-provided"><code class="language-ini">*.class         binary
+</code></pre><pre xmlns="" class="language-provided"><code class="language-ini">#compiled
+*.com           binary
+*.class         binary
+*.dll           binary
+*.exe           binary
+*.o             binary
+*.so            binary
+</code></pre><pre xmlns="" class="language-provided"><code class="language-ini">#archive
 *.jar           binary
 *.ear           binary
 *.war           binary
@@ -261,6 +319,13 @@ makefile        text
 *.zip           binary
 *.gz            binary
 *.tgz           binary
+</code></pre><pre xmlns="" class="language-provided"><code class="language-ini">#certificate
+*.p12           binary
+*.pfx           binary
+*.jks           binary
+*.jceks         binary
+cacerts         binary
+jssecacerts     binary
 </code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>Seeing the <code class="filename">.class</code>
             binary mapping reminds me to add an
             <code class="filename">C:\dev\projects\jmodalwindow\.gitignore</code> based
@@ -271,7 +336,7 @@ makefile        text
             with line endings</a>):</p><pre xmlns="" class="language-provided"><code class="language-bash">git add .gitignore
 git add .gitattributes
 git commit -m "Config git ignore and attributes"
-</code></pre><p>Remove Git's index:</p><pre xmlns="" class="language-provided"><code class="language-bash">del .git\index
+</code></pre><p>Remove Git's index:</p><pre xmlns="" class="language-provided"><code class="language-bash">del .git\index or rm .git/index
 </code></pre><p>Rewrite the Git index to pick up all the new line
             endings:</p><pre xmlns="" class="language-provided"><code class="language-bash">git reset
 </code></pre><p>Add all your changed files back, and prepare them for a

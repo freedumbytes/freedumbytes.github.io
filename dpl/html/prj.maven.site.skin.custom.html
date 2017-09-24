@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE html>
 <!DOCTYPE html
   PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Appendix C. Custom skins</title><link rel="stylesheet" type="text/css" href="docbook.css"/><link rel="stylesheet" type="text/css" href="css/freedumbytes.css"/><meta name="generator" content="DocBook XSL Stylesheets V1.78.1"/><link rel="prev" href="prj.repo.svc.site.hosting.html" title="Appendix B. Hosting a group Website in the Cloud"/><link rel="next" href="prj.maven.qa.sandbox.html" title="Appendix D. Quality Assurance Sandbox"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><link rel="shortcut icon" href="./images/community/docbook/glider.ico"/></head><body><header><p id="title"/><ul class="navheader"><li class="previous"><a accesskey="p" href="prj.repo.svc.site.hosting.html"><strong>Previous</strong></a></li><li class="next"><a accesskey="n" href="prj.maven.qa.sandbox.html"><strong>Next</strong></a></li></ul></header><section class="appendix" id="prj.maven.site.skin.custom"><div class="titlepage"><div><div><h1 class="title"><a id="prj.maven.site.skin.custom" class="anchor" href="#prj.maven.site.skin.custom"><span class="octicon octicon-link"/></a>Appendix C. Custom skins</h1></div></div></div><div class="toc"><div class="toc-title">Table of Contents</div><ul class="toc"><li><span class="section"><a href="prj.maven.site.skin.custom.html#prj.maven.site.skin.paper">C.1. Custom Paper Skin</a></span><ul><li><span class="section"><a href="prj.maven.site.skin.custom.html#prj.maven.site.skin.paper.customization">C.1.1. Customization</a></span></li></ul></li><li><span class="section"><a href="prj.maven.site.skin.custom.html#prj.maven.site.skin.fluido">C.2. Custom Fluido Skin</a></span></li><li><span class="section"><a href="prj.maven.site.skin.custom.html#prj.maven.site.skin.reflow">C.3. Custom Reflow Skin</a></span></li></ul></div><p>Lets setup a base structure, for Maven skins to come, with the
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Appendix D. Custom skins</title><link rel="stylesheet" type="text/css" href="docbook.css"/><link rel="stylesheet" type="text/css" href="css/freedumbytes.css"/><meta name="generator" content="DocBook XSL Stylesheets V1.78.1"/><link rel="prev" href="prj.maven.versions.rules.html" title="Appendix C. Maven Versions Rules"/><link rel="next" href="prj.maven.qa.sandbox.html" title="Appendix E. Quality Assurance Sandbox"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><link rel="shortcut icon" href="./images/community/docbook/glider.ico"/></head><body><header><p id="title"/><ul class="navheader"><li class="previous"><a accesskey="p" href="prj.maven.versions.rules.html"><strong>Previous</strong></a></li><li class="next"><a accesskey="n" href="prj.maven.qa.sandbox.html"><strong>Next</strong></a></li></ul></header><section class="appendix" id="prj.maven.site.skin.custom"><div class="titlepage"><div><div><h1 class="title"><a id="prj.maven.site.skin.custom" class="anchor" href="#prj.maven.site.skin.custom"><span class="octicon octicon-link"/></a>Appendix D. Custom skins</h1></div></div></div><div class="toc"><div class="toc-title">Table of Contents</div><ul class="toc"><li><span class="section"><a href="prj.maven.site.skin.custom.html#prj.maven.site.skin.paper">D.1. Custom Paper Skin</a></span><ul><li><span class="section"><a href="prj.maven.site.skin.custom.html#prj.maven.site.skin.paper.customization">D.1.1. Customization</a></span></li></ul></li><li><span class="section"><a href="prj.maven.site.skin.custom.html#prj.maven.site.skin.fluido">D.2. Custom Fluido Skin</a></span></li><li><span class="section"><a href="prj.maven.site.skin.custom.html#prj.maven.site.skin.reflow">D.3. Custom Reflow Skin</a></span></li></ul></div><p>Lets setup a base structure, for Maven skins to come, with the
     following JIRA project:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><span class="guilabel"><strong>Maven Skins</strong></span> [MVNSKN]: Maven custom skins
         (see also repository <a class="link" href="https://java.net/projects/jmodalwindow/sources/svn/show/branches/maven-skins">branches/maven-skins</a>).</p><p>With the following components:</p><div class="orderedlist"><ol class="orderedlist compact" type="1"><li class="listitem"><p><span class="guilabel"><strong>paper</strong></span>: Paperlike skin.</p></li><li class="listitem"><p><span class="guilabel"><strong>fluido</strong></span>: Apache Maven Fluido skin
             enhancement.</p></li><li class="listitem"><p><span class="guilabel"><strong>reflow</strong></span>: Responsive Apache Maven Reflow
@@ -22,14 +22,14 @@
 +&lt;project xmlns="http://maven.apache.org/POM/4.0.0"
 +         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 +         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-+                             http://maven.apache.org/maven-v4_0_0.xsd"&gt;
++                             https://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;
 +  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
 </code></pre><pre xmlns="" class="language-provided"><code class="language-xml">+  &lt;parent&gt;
-+    &lt;groupId&gt;net.dev.freedumbytes.maven&lt;/groupId&gt;
++    &lt;groupId&gt;nl.demon.shadowland.freedumbytes.maven&lt;/groupId&gt;
 +    &lt;artifactId&gt;setup&lt;/artifactId&gt;
-+    &lt;version&gt;3.1-beta&lt;/version&gt;
++    &lt;version&gt;4.1-beta&lt;/version&gt;
 +  &lt;/parent&gt;
-</code></pre><pre xmlns="" class="language-provided"><code class="language-xml">+  &lt;groupId&gt;net.dev.freedumbytes.maven.skins&lt;/groupId&gt;
+</code></pre><pre xmlns="" class="language-provided"><code class="language-xml">+  &lt;groupId&gt;nl.demon.shadowland.freedumbytes.maven.skins&lt;/groupId&gt;
 +  &lt;artifactId&gt;maven-skins&lt;/artifactId&gt;
 +  &lt;version&gt;3.1-gamma&lt;/version&gt;
 +  &lt;packaging&gt;pom&lt;/packaging&gt;
@@ -63,8 +63,8 @@
 </code></pre><p>In Eclipse create a Working Set <strong class="userinput"><code>Maven Skins</code></strong>
     and import this Maven Skins project into it with <span class="guilabel"><strong><span class="accel">F</span>ile</strong></span> → <span class="guilabel"><strong><span class="accel">I</span>mport…</strong></span> → <span class="guilabel"><strong>Maven</strong></span> → <span class="guilabel"><strong>Existing Maven Projects</strong></span> from <span class="guilabel"><strong><span class="accel">R</span>oot directory</strong></span>
     <code class="filename">C:\dev\projects\maven-skins</code> and click
-    <span class="guibutton"><strong><span class="accel">F</span>inish</strong></span>.</p><section class="section" id="prj.maven.site.skin.paper"><div class="titlepage"><div><div><h2 class="title"><a id="prj.maven.site.skin.paper" class="anchor" href="#prj.maven.site.skin.paper"><span class="octicon octicon-link"/></a>C.1. Custom Paper Skin</h2></div></div></div><p>To create a paperlike <a class="link" href="http://maven.apache.org/skins/">skin</a> export a copy of
-      maven-default-skin-1.1:</p><pre xmlns="" class="language-provided"><code class="language-bash">cd /d C:\dev\projects
+    <span class="guibutton"><strong><span class="accel">F</span>inish</strong></span>.</p><section class="section" id="prj.maven.site.skin.paper"><div class="titlepage"><div><div><h2 class="title"><a id="prj.maven.site.skin.paper" class="anchor" href="#prj.maven.site.skin.paper"><span class="octicon octicon-link"/></a>D.1. Custom Paper Skin</h2></div></div></div><p>To create a paperlike <a class="link" href="https://maven.apache.org/skins/">skin</a> export a copy
+      of maven-default-skin-1.1:</p><pre xmlns="" class="language-provided"><code class="language-bash">cd /d C:\dev\projects
 svn export ^
     http://svn.apache.org/repos/asf/maven/skins/tags/maven-default-skin-1.1 ^
     maven-default-skin-1.1
@@ -85,11 +85,11 @@ xcopy /S /I src\*.png C:\dev\projects\maven-skins\maven-paper-skin\src
 +&lt;project xmlns="http://maven.apache.org/POM/4.0.0"
 +         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 +         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-+                             http://maven.apache.org/maven-v4_0_0.xsd"&gt;
++                             https://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;
 +  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
 +
 +  &lt;parent&gt;
-+    &lt;groupId&gt;net.dev.freedumbytes.maven.skins&lt;/groupId&gt;
++    &lt;groupId&gt;nl.demon.shadowland.freedumbytes.maven.skins&lt;/groupId&gt;
 +    &lt;artifactId&gt;maven-skins&lt;/artifactId&gt;
 +    &lt;version&gt;3.1-gamma&lt;/version&gt;
 +  &lt;/parent&gt;
@@ -115,10 +115,10 @@ xcopy /S /I src\*.png C:\dev\projects\maven-skins\maven-paper-skin\src
       a simple
       <code class="filename">C:\dev\projects\maven-skins\maven-paper-skin\src\site\site.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 +
-+&lt;project xmlns="http://maven.apache.org/DECORATION/1.6.0"
++&lt;project xmlns="http://maven.apache.org/DECORATION/1.7.0"
 +         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-+         xsi:schemaLocation="http://maven.apache.org/DECORATION/1.6.0
-+                             http://maven.apache.org/xsd/decoration-1.6.0.xsd"&gt;
++         xsi:schemaLocation="http://maven.apache.org/DECORATION/1.7.0
++                             https://maven.apache.org/xsd/decoration-1.7.0.xsd"&gt;
 </code></pre><pre xmlns="" class="language-provided"><code class="language-xml">+  &lt;bannerLeft&gt;
 +    &lt;name&gt;${project.name}&lt;/name&gt;
 +    &lt;href /&gt;
@@ -139,14 +139,14 @@ xcopy /S /I src\*.png C:\dev\projects\maven-skins\maven-paper-skin\src
 -    &lt;skinGroupId&gt;org.apache.maven.skins&lt;/skinGroupId&gt;
 -    &lt;skinArtifactId&gt;maven-fluido-skin&lt;/skinArtifactId&gt;
 -    &lt;skinVersion&gt;${mavenFluidoSkinVersion}&lt;/skinVersion&gt;
-+    &lt;skinGroupId&gt;net.dev.freedumbytes.maven.skins&lt;/skinGroupId&gt;
++    &lt;skinGroupId&gt;nl.demon.shadowland.freedumbytes.maven.skins&lt;/skinGroupId&gt;
 +    &lt;skinArtifactId&gt;maven-paper-skin&lt;/skinArtifactId&gt;
 +    &lt;skinVersion&gt;${customMavenPaperSkinVersion}&lt;/skinVersion&gt;
 
-     &lt;mavenFluidoSkinVersion&gt;1.4&lt;/mavenFluidoSkinVersion&gt;
+     &lt;mavenFluidoSkinVersion&gt;1.6&lt;/mavenFluidoSkinVersion&gt;
 +    &lt;customMavenPaperSkinVersion&gt;3.1-gamma&lt;/customMavenPaperSkinVersion&gt;
    &lt;/properties&gt;
-</code></pre><section class="section" id="prj.maven.site.skin.paper.customization"><div class="titlepage"><div><div><h3 class="title"><a id="prj.maven.site.skin.paper.customization" class="anchor" href="#prj.maven.site.skin.paper.customization"><span class="octicon octicon-link"/></a>C.1.1. Customization</h3></div></div></div><p>First customize the site banner and favicon with for example the
+</code></pre><section class="section" id="prj.maven.site.skin.paper.customization"><div class="titlepage"><div><div><h3 class="title"><a id="prj.maven.site.skin.paper.customization" class="anchor" href="#prj.maven.site.skin.paper.customization"><span class="octicon octicon-link"/></a>D.1.1. Customization</h3></div></div></div><p>First customize the site banner and favicon with for example the
         following images:</p><div class="orderedlist"><ol class="orderedlist compact" type="1"><li class="listitem"><p><code class="filename">maven-skins/maven-paper-skin/src/main/resources/images/logos/shadowrun.png</code></p></li><li class="listitem"><p><code class="filename">maven-skins/maven-paper-skin/src/main/resources/images/logos/shadowrun.jpg</code></p></li></ol></div><p>Now reference them in
         <code class="filename">C:\dev\projects\maven-skins\maven-paper-skin\src\site\site.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;bannerLeft&gt;
 -    &lt;name&gt;${project.name}&lt;/name&gt;
@@ -163,7 +163,7 @@ xcopy /S /I src\*.png C:\dev\projects\maven-skins\maven-paper-skin\src
 +    &lt;/head&gt;
 +  &lt;/body&gt;
  &lt;/project&gt;
-</code></pre><p>But before making the custom changes to the <a class="link" href="http://maven.apache.org/plugins/maven-site-plugin/examples/templatefile.html">site
+</code></pre><p>But before making the custom changes to the <a class="link" href="https://maven.apache.org/plugins/maven-site-plugin/examples/templatefile.html">site
         template</a> start out by extracting the doxia-sitetools
         siterenderer resources of version 1.2 with:</p><pre xmlns="" class="language-provided"><code class="language-bash">cd /d C:\dev\projects
 svn export ^
@@ -234,9 +234,9 @@ xcopy /S /I images ^
 +  z-index:999;
  }
 </code></pre><p>Activate the changes with <code class="command">mvn install</code> and
-        verify them with <code class="command">mvn site</code> in your browser at <a class="link" href="file:///C:/projects/maven-skins/maven-paper-skin/target/site/index.html">file:///C:/dev/projects/maven-skins/maven-paper-skin/target/site/index.html</a>.</p><div class="figure" id="prj.maven.site.skin.paper.screenshot"><a id="prj.maven.site.skin.paper.screenshot"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/paperlike-skin-sample.png" alt="Paperlike Skin Sample"/></div></div></div><div class="figure-title">Figure C.1. Paperlike Skin Sample</div></div><br class="figure-break"/><p>Release <code class="code">3.0-gamma-SNAPSHOT</code> with:</p><pre xmlns="" class="language-provided"><code class="language-bash">mvn -Dusername=jjasper -Dpassword=<em xmlns="http://www.w3.org/1999/xhtml" class="replaceable"><code>password</code></em> release:prepare
+        verify them with <code class="command">mvn site</code> in your browser at <a class="link" href="file:///C:/projects/maven-skins/maven-paper-skin/target/site/index.html">file:///C:/dev/projects/maven-skins/maven-paper-skin/target/site/index.html</a>.</p><div class="figure" id="prj.maven.site.skin.paper.screenshot"><a id="prj.maven.site.skin.paper.screenshot"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/paperlike-skin-sample.png" alt="Paperlike Skin Sample"/></div></div></div><div class="figure-title">Figure D.1. Paperlike Skin Sample</div></div><br class="figure-break"/><p>Release <code class="code">3.0-gamma-SNAPSHOT</code> with:</p><pre xmlns="" class="language-provided"><code class="language-bash">mvn -Dusername=jjasper -Dpassword=<em xmlns="http://www.w3.org/1999/xhtml" class="replaceable"><code>password</code></em> release:prepare
 mvn -Dusername=jjasper -Dpassword=<em xmlns="http://www.w3.org/1999/xhtml" class="replaceable"><code>password</code></em> release:perform -Dgoals=deploy
-</code></pre></section></section><section class="section" id="prj.maven.site.skin.fluido"><div class="titlepage"><div><div><h2 class="title"><a id="prj.maven.site.skin.fluido" class="anchor" href="#prj.maven.site.skin.fluido"><span class="octicon octicon-link"/></a>C.2. Custom Fluido Skin</h2></div></div></div><p>To add some custom imagery repackage the Apache Maven Fluido
+</code></pre></section></section><section class="section" id="prj.maven.site.skin.fluido"><div class="titlepage"><div><div><h2 class="title"><a id="prj.maven.site.skin.fluido" class="anchor" href="#prj.maven.site.skin.fluido"><span class="octicon octicon-link"/></a>D.2. Custom Fluido Skin</h2></div></div></div><p>To add some custom imagery repackage the Apache Maven Fluido
       Skin.</p><p>Define a new module <code class="code">maven-fluido-skin</code> in
       <code class="filename">C:\dev\projects\maven-skins\pom.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;/distributionManagement&gt;
  
@@ -251,11 +251,11 @@ mvn -Dusername=jjasper -Dpassword=<em xmlns="http://www.w3.org/1999/xhtml" class
 +&lt;project xmlns="http://maven.apache.org/POM/4.0.0"
 +         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 +         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-+                             http://maven.apache.org/maven-v4_0_0.xsd"&gt;
++                             https://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;
 +  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
 +
 +  &lt;parent&gt;
-+    &lt;groupId&gt;net.dev.freedumbytes.maven.skins&lt;/groupId&gt;
++    &lt;groupId&gt;nl.demon.shadowland.freedumbytes.maven.skins&lt;/groupId&gt;
 +    &lt;artifactId&gt;maven-skins&lt;/artifactId&gt;
 +    &lt;version&gt;3.1-gamma&lt;/version&gt;
 +  &lt;/parent&gt;
@@ -351,17 +351,17 @@ mvn -Dusername=jjasper -Dpassword=<em xmlns="http://www.w3.org/1999/xhtml" class
       <code class="filename">C:\dev\projects\maven-setup\pom.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;/distributionManagement&gt;
  
    &lt;properties&gt;
-     &lt;skinGroupId&gt;net.dev.freedumbytes.maven.skins&lt;/skinGroupId&gt;
+     &lt;skinGroupId&gt;nl.demon.shadowland.freedumbytes.maven.skins&lt;/skinGroupId&gt;
 -    &lt;skinArtifactId&gt;maven-paper-skin&lt;/skinArtifactId&gt;
 -    &lt;skinVersion&gt;${customMavenPaperSkinVersion}&lt;/skinVersion&gt;
 +    &lt;skinArtifactId&gt;maven-fluido-skin&lt;/skinArtifactId&gt;
 +    &lt;skinVersion&gt;${customMavenFluidoSkinVersion}&lt;/skinVersion&gt;
  
-     &lt;mavenFluidoSkinVersion&gt;1.4&lt;/mavenFluidoSkinVersion&gt;
+     &lt;mavenFluidoSkinVersion&gt;1.6&lt;/mavenFluidoSkinVersion&gt;
 +    &lt;customMavenFluidoSkinVersion&gt;3.1-gamma&lt;/customMavenFluidoSkinVersion&gt;
      &lt;customMavenPaperSkinVersion&gt;3.1-gamma&lt;/customMavenPaperSkinVersion&gt;
    &lt;/properties&gt;
-</code></pre><div class="figure" id="prj.maven.site.skin.fluido.screenshot"><a id="prj.maven.site.skin.fluido.screenshot"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/fluido-skin-sample.png" alt="Fluido Skin Sample"/></div></div></div><div class="figure-title">Figure C.2. Fluido Skin Sample</div></div><br class="figure-break"/></section><section class="section" id="prj.maven.site.skin.reflow"><div class="titlepage"><div><div><h2 class="title"><a id="prj.maven.site.skin.reflow" class="anchor" href="#prj.maven.site.skin.reflow"><span class="octicon octicon-link"/></a>C.3. Custom Reflow Skin</h2></div></div></div><p>Alternatively to add some custom style repackage the <a class="link" href="http://andriusvelykis.github.io/reflow-maven-skin/">Reflow
+</code></pre><div class="figure" id="prj.maven.site.skin.fluido.screenshot"><a id="prj.maven.site.skin.fluido.screenshot"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/fluido-skin-sample.png" alt="Fluido Skin Sample"/></div></div></div><div class="figure-title">Figure D.2. Fluido Skin Sample</div></div><br class="figure-break"/></section><section class="section" id="prj.maven.site.skin.reflow"><div class="titlepage"><div><div><h2 class="title"><a id="prj.maven.site.skin.reflow" class="anchor" href="#prj.maven.site.skin.reflow"><span class="octicon octicon-link"/></a>D.3. Custom Reflow Skin</h2></div></div></div><p>Alternatively to add some custom style repackage the <a class="link" href="http://andriusvelykis.github.io/reflow-maven-skin/">Reflow
       Maven Skin</a>, which is a Responsive Apache Maven skin to reflow the
       standard Maven site with a modern feel.</p><p>Define a new module <code class="code">maven-reflow-skin</code> in
       <code class="filename">C:\dev\projects\maven-skins\pom.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;/distributionManagement&gt;
@@ -378,11 +378,11 @@ mvn -Dusername=jjasper -Dpassword=<em xmlns="http://www.w3.org/1999/xhtml" class
 +&lt;project xmlns="http://maven.apache.org/POM/4.0.0"
 +         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 +         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-+                             http://maven.apache.org/maven-v4_0_0.xsd"&gt;
++                             https://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;
 +  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
 +
 +  &lt;parent&gt;
-+    &lt;groupId&gt;net.dev.freedumbytes.maven.skins&lt;/groupId&gt;
++    &lt;groupId&gt;nl.demon.shadowland.freedumbytes.maven.skins&lt;/groupId&gt;
 +    &lt;artifactId&gt;maven-skins&lt;/artifactId&gt;
 +    &lt;version&gt;3.1-gamma&lt;/version&gt;
 +  &lt;/parent&gt;
@@ -480,11 +480,12 @@ mvn -Dusername=jjasper -Dpassword=<em xmlns="http://www.w3.org/1999/xhtml" class
           saving the web from default Bootstrap. Switch to for example <a class="link" href="http://bootswatch.com/2/united/">United</a> and <a class="link" href="http://bootswatch.com/2/readable/">Readable</a>. Or
           customize <a class="link" href="http://bootswatch.com/2/united/">United</a> with a
           darker <code class="code">body</code> and a lighter <code class="code">well</code>. Support
-          responsiveness for desktops with width 1920 and bigger.</p></li><li class="listitem"><p><a class="link" href="???">jQuery</a> [version <a class="link" href="https://jquery.com/download/">1.11.3</a>] is a fast,
-          small, and feature-rich JavaScript library. It makes things like
-          HTML document traversal and manipulation, event handling, animation,
-          and Ajax much simpler with an easy-to-use API that works across a
-          multitude of browsers.</p></li><li class="listitem"><p><a class="link" href="https://highlightjs.org/">highlight.js</a> [version
+          responsiveness for desktops with width 1920 and bigger.</p></li><li class="listitem"><p><a class="link" href="https://jquery.com/">jQuery</a> [version
+          <a class="link" href="https://jquery.com/download/">1.11.3</a>] is a
+          fast, small, and feature-rich JavaScript library. It makes things
+          like HTML document traversal and manipulation, event handling,
+          animation, and Ajax much simpler with an easy-to-use API that works
+          across a multitude of browsers.</p></li><li class="listitem"><p><a class="link" href="https://highlightjs.org/">highlight.js</a> [version
           <a class="link" href="https://highlightjs.org/download/">8.9.1</a>]
           Syntax highlighting for the Web. Switch to <a class="link" href="https://highlightjs.org/static/demo/">Github Gist
           theme</a>. Also fix usage of <code class="code">highlightJs</code> flag for
@@ -494,14 +495,14 @@ mvn -Dusername=jjasper -Dpassword=<em xmlns="http://www.w3.org/1999/xhtml" class
           current page.</p></li><li class="listitem"><p>Fix 'Back to Top' link which isn't working because of smooth
           scrolling for anchor links.</p></li><li class="listitem"><p>Fix bottom-nav menu highlighting issues (multiple highlight
           for submenu and its last menuitem; and missing highlight for submenu
-          itself).</p></li></ol></div><div class="figure" id="prj.maven.site.skin.reflow.lightbox.screenshot"><a id="prj.maven.site.skin.reflow.lightbox.screenshot"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/reflow-lightbox-sample.png" alt="Lightbox Sample"/></div></div></div><div class="figure-title">Figure C.3. Lightbox Sample</div></div><br class="figure-break"/><p>Release <code class="code">3.1-gamma-SNAPSHOT</code> with:</p><pre xmlns="" class="language-provided"><code class="language-bash">mvn -Dusername=jjasper -Dpassword=<em xmlns="http://www.w3.org/1999/xhtml" class="replaceable"><code>password</code></em> release:prepare
+          itself).</p></li></ol></div><div class="figure" id="prj.maven.site.skin.reflow.lightbox.screenshot"><a id="prj.maven.site.skin.reflow.lightbox.screenshot"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/reflow-lightbox-sample.png" alt="Lightbox Sample"/></div></div></div><div class="figure-title">Figure D.3. Lightbox Sample</div></div><br class="figure-break"/><p>Release <code class="code">3.1-gamma-SNAPSHOT</code> with:</p><pre xmlns="" class="language-provided"><code class="language-bash">mvn -Dusername=jjasper -Dpassword=<em xmlns="http://www.w3.org/1999/xhtml" class="replaceable"><code>password</code></em> release:prepare
 mvn -Dusername=jjasper -Dpassword=<em xmlns="http://www.w3.org/1999/xhtml" class="replaceable"><code>password</code></em> release:perform -Dgoals=deploy</code></pre><p>Activate the repackaged skin for all other sites in
       <code class="filename">C:\dev\projects\maven-setup\pom.xml</code> (don't forget
       the extra velocity tools and its required velocity upgrade for the site
       plugin):</p><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;/distributionManagement&gt;
  
    &lt;properties&gt;
-     &lt;skinGroupId&gt;net.dev.freedumbytes.maven.skins&lt;/skinGroupId&gt;
+     &lt;skinGroupId&gt;nl.demon.shadowland.freedumbytes.maven.skins&lt;/skinGroupId&gt;
 -    &lt;skinArtifactId&gt;maven-fluido-skin&lt;/skinArtifactId&gt;
 -    &lt;skinVersion&gt;${customMavenFluidoSkinVersion}&lt;/skinVersion&gt;
 +    &lt;skinArtifactId&gt;maven-reflow-skin&lt;/skinArtifactId&gt;
@@ -510,7 +511,7 @@ mvn -Dusername=jjasper -Dpassword=<em xmlns="http://www.w3.org/1999/xhtml" class
 +    &lt;velocityVersion&gt;1.7&lt;/velocityVersion&gt; 
 +    &lt;mavenReflowSkinVersion&gt;1.1.1&lt;/mavenReflowSkinVersion&gt;
 +    &lt;customMavenReflowSkinVersion&gt;3.1-gamma&lt;/customMavenReflowSkinVersion&gt;
-     &lt;mavenFluidoSkinVersion&gt;1.4&lt;/mavenFluidoSkinVersion&gt;
+     &lt;mavenFluidoSkinVersion&gt;1.6&lt;/mavenFluidoSkinVersion&gt;
      &lt;customMavenFluidoSkinVersion&gt;3.1-gamma&lt;/customMavenFluidoSkinVersion&gt;
      &lt;customMavenPaperSkinVersion&gt;3.1-gamma&lt;/customMavenPaperSkinVersion&gt;
    &lt;/properties&gt;
@@ -653,7 +654,7 @@ mvn -Dusername=jjasper -Dpassword=<em xmlns="http://www.w3.org/1999/xhtml" class
 +    &lt;/menu&gt;
 </code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>Don't forget to edit a <code class="code">column</code> <a class="xref" href="prj.maven.site.skin.custom.html#prj.maven.site.skin.reflow.menu.item"><img style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/></a> in
         <code class="code">bottomNav</code> to make the additional menu
-        <span class="emphasis"><em>Example</em></span> visible.</p></div><div class="figure" id="prj.maven.site.skin.reflow.screenshot"><a id="prj.maven.site.skin.reflow.screenshot"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/reflow-skin-sample.png" alt="Reflow Skin Sample"/></div></div></div><div class="figure-title">Figure C.4. Reflow Skin Sample</div></div><br class="figure-break"/><p>After the activation of the custom reflow settings fix fluido skin
+        <span class="emphasis"><em>Example</em></span> visible.</p></div><div class="figure" id="prj.maven.site.skin.reflow.screenshot"><a id="prj.maven.site.skin.reflow.screenshot"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/reflow-skin-sample.png" alt="Reflow Skin Sample"/></div></div></div><div class="figure-title">Figure D.4. Reflow Skin Sample</div></div><br class="figure-break"/><p>After the activation of the custom reflow settings fix fluido skin
       error <span class="quote">“<span class="quote">ParseException: Encountered "source" at line 1162, column
       52. Was expecting one of: "," … ")" … &lt;WHITESPACE&gt; …</span>”</span> due
       to velocity upgrade in
@@ -681,4 +682,4 @@ mvn -Dusername=jjasper -Dpassword=<em xmlns="http://www.w3.org/1999/xhtml" class
 +      &lt;skinAttribution&gt;true&lt;/skinAttribution&gt;
      &lt;/reflowSkin&gt;
    &lt;/custom&gt;
-</code></pre></section></section><script xmlns="" type="text/javascript" src="js/highlight.min.js"> </script><script xmlns="" type="text/javascript">hljs.initHighlightingOnLoad();</script><footer><ul class="navfooter"><li class="previous"><a accesskey="p" href="prj.repo.svc.site.hosting.html"><strong>Previous</strong>Appendix B. Hosting a group Website in the Cloud</a></li><li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Front page</strong></a></li><li class="next"><a accesskey="n" href="prj.maven.qa.sandbox.html"><strong>Next</strong>Appendix D. Quality Assurance Sandbox</a></li></ul></footer></body></html>
+</code></pre></section></section><script xmlns="" type="text/javascript" src="js/highlight.min.js"> </script><script xmlns="" type="text/javascript">hljs.initHighlightingOnLoad();</script><footer><ul class="navfooter"><li class="previous"><a accesskey="p" href="prj.maven.versions.rules.html"><strong>Previous</strong>Appendix C. Maven Versions Rules</a></li><li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Front page</strong></a></li><li class="next"><a accesskey="n" href="prj.maven.qa.sandbox.html"><strong>Next</strong>Appendix E. Quality Assurance Sandbox</a></li></ul></footer></body></html>

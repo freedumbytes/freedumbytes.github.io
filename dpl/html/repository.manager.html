@@ -53,7 +53,7 @@ runtime=${bundleBasedir}/nexus/WEB-INF
         configuration file
         <code class="filename">P:\dev\apps\repo\nexus-2.11.4-01\bin\jsw\conf\wrapper.conf</code>:</p><pre xmlns="" class="language-provided"><code class="language-ini"># Set the JVM executable
 # (modify this to absolute path if you need a Java that is not on the OS path)
-wrapper.java.command=<span xmlns="http://www.w3.org/1999/xhtml" class="strikethrough">java</span>P:\dev\apps\prg\java\jdk1.8.0_121\bin\java<span xmlns="http://www.w3.org/1999/xhtml" id="repo.nexus.java.command"/><a xmlns="http://www.w3.org/1999/xhtml" id="repo.nexus.java.command"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>
+wrapper.java.command=<span xmlns="http://www.w3.org/1999/xhtml" class="strikethrough">java</span>P:\dev\apps\prg\java\jdk1.8.0_131\bin\java<span xmlns="http://www.w3.org/1999/xhtml" id="repo.nexus.java.command"/><a xmlns="http://www.w3.org/1999/xhtml" id="repo.nexus.java.command"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>
 
 
 # Additional JVM parameters (tune if needed, but match the sequence of numbers!)
@@ -91,7 +91,7 @@ wrapper.console.title=<span xmlns="http://www.w3.org/1999/xhtml" class="striketh
 wrapper.ntservice.name=<span xmlns="http://www.w3.org/1999/xhtml" class="strikethrough">nexus-webapp</span>nexus<span xmlns="http://www.w3.org/1999/xhtml" id="repo.nexus.service.name"/><a xmlns="http://www.w3.org/1999/xhtml" id="repo.nexus.service.name"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/8.png" alt="8" height="17px" width="17px" class="callout"/>
 wrapper.ntservice.displayname=freedumbytes.dev.net Nexus<span xmlns="http://www.w3.org/1999/xhtml" id="repo.nexus.display.name"/><a xmlns="http://www.w3.org/1999/xhtml" id="repo.nexus.display.name"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/9.png" alt="9" height="17px" width="17px" class="callout"/>
 wrapper.ntservice.description=Nexus is a Maven repository manager.<span xmlns="http://www.w3.org/1999/xhtml" id="repo.nexus.description"/><a xmlns="http://www.w3.org/1999/xhtml" id="repo.nexus.description"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/10.png" alt="10" height="17px" width="17px" class="callout"/>
-</code></pre><p>Register the Nexus service with the command in <a class="link" href="operating.system.html#os.windows.cmd.elevated" title="1.1.13.1. Elevated Command Prompt">an elevated command
+</code></pre><p>Register the Nexus service with the command in <a class="link" href="operating.system.html#os.windows.cmd.elevated" title="1.1.14.1. Elevated Command Prompt">an elevated command
         processor</a>: <code class="command">%NEXUS_HOME%\bin\nexus.bat
         install</code>. Start Nexus with <code class="command">net start
         nexus</code>. A <code class="filename">nexus.xml</code> file should now be
@@ -99,7 +99,7 @@ wrapper.ntservice.description=Nexus is a Maven repository manager.<span xmlns="h
         Verify that the server is running in your browser at <a class="link" href="http://localhost:8067/nexus">http://localhost:8067/nexus</a>.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>In case of an upgrade <code class="command">sc delete nexus</code> first
           (see also <a class="xref" href="operating.system.html#os.windows.process.explorer" title="1.1.5. Task Manager replacement">Section 1.1.5, “Task Manager replacement”</a> in case of
           <span class="quote">“<span class="quote">The specified service has been marked for
-          deletion.</span>”</span>).</p></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="important"><h2>Important</h2><p>In case of a new jdk installation use <a class="link" href="operating.system.html#os.windows.cmd.elevated" title="1.1.13.1. Elevated Command Prompt">an elevated command prompt</a>
+          deletion.</span>”</span>).</p></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="important"><h2>Important</h2><p>In case of a new jdk installation use <a class="link" href="operating.system.html#os.windows.cmd.elevated" title="1.1.14.1. Elevated Command Prompt">an elevated command prompt</a>
           just run <code class="command">net stop nexus</code> and <code class="command">net start
           nexus</code>. Verify the upgrade at <a class="link" href="http://localhost:8067/nexus/#supporttools">http://localhost:8067/nexus/#supporttools</a>.</p></div><section class="section" id="repo.nexus.windows.user"><div class="titlepage"><div><div><h4 class="title"><a id="repo.nexus.windows.user" class="anchor" href="#repo.nexus.windows.user"><span class="octicon octicon-link"/></a>13.1.3.1. Log On Windows user</h4></div></div></div><p>For the same reason as <a class="xref" href="web.server.html#web.tomcat.windows.user" title="8.1.3.1. Log On Windows user">Section 8.1.3.1, “Log On Windows user”</a> launch the <span class="application"><strong>Service
           Management Console</strong></span> with
@@ -478,50 +478,51 @@ wrapper.ntservice.description=Nexus is a Maven repository manager.<span xmlns="h
               hours) of that particular snapshot repository in Nexus.</p></div><p>For an existing <code class="filename">pom.xml</code> run from the
           command line <code class="command">mvn help:active-profiles</code> and
           <code class="command">mvn -P public-snapshots help:active-profiles</code> to
-          verify these settings.</p></section><section class="section" id="repo.nexus.maven.distribution.management"><div class="titlepage"><div><div><h4 class="title"><a id="repo.nexus.maven.distribution.management" class="anchor" href="#repo.nexus.maven.distribution.management"><span class="octicon octicon-link"/></a>13.1.6.2. Artifact deployment</h4></div></div></div><p>Configure Maven projects to use the Nexus Repository for
+          verify these settings.</p></section><section class="section" id="repo.nexus.maven.distribution.management"><div class="titlepage"><div><div><h4 class="title"><a id="repo.nexus.maven.distribution.management" class="anchor" href="#repo.nexus.maven.distribution.management"><span class="octicon octicon-link"/></a>13.1.6.2. Artifact deployment</h4></div></div></div><p>Configure Maven projects to use the LAN Nexus Repository for
           deployments with the following distributionManagement repository
-          settings <a class="xref" href="repository.manager.html#repo.nexus.server.id.releases"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a>-<a class="xref" href="repository.manager.html#repo.nexus.server.id.snapshots"><img src="images/community/docbook/callouts/2.png" alt="2" border="0" height="17px" width="17px" class="callout"/></a> in the Maven project
-          <code class="filename">pom.xml</code> to correspond with in the <span class="guimenuitem"><strong>Views/Repositories</strong></span> → <span class="guibutton"><strong>Repositories</strong></span> available <span class="guilabel"><strong>Repository Path</strong></span> of
+          settings <a class="xref" href="repository.manager.html#repo.nexus.server.id.lan"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a> in the Maven
+          project <code class="filename">pom.xml</code> to correspond with in the
+          <span class="guimenuitem"><strong>Views/Repositories</strong></span> → <span class="guibutton"><strong>Repositories</strong></span> available <span class="guilabel"><strong>Repository Path</strong></span> of
           the hosted <span class="guilabel"><strong>Releases</strong></span> and
-          <span class="guilabel"><strong>Snapshots</strong></span> repositories:</p><pre xmlns="" class="language-provided"><code class="language-xml">  &lt;distributionManagement&gt;
-    &lt;repository&gt;
-      &lt;id&gt;nexus-releases&lt;/id&gt; &lt;!-- (see <a xmlns="http://www.w3.org/1999/xhtml" class="xref" href="repository.manager.html#repo.nexus.server.id.releases"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a>) --&gt;
-      &lt;name&gt;Internal Releases&lt;/name&gt;
-      &lt;url&gt;http://freedumbytes.dev.net/nexus/content/repositories/releases&lt;/url&gt;
-    &lt;/repository&gt;
-    &lt;snapshotRepository&gt;
-      &lt;id&gt;nexus-snapshots&lt;/id&gt; &lt;!-- (see <a xmlns="http://www.w3.org/1999/xhtml" class="xref" href="repository.manager.html#repo.nexus.server.id.snapshots"><img src="images/community/docbook/callouts/2.png" alt="2" border="0" height="17px" width="17px" class="callout"/></a>) --&gt;
-      &lt;name&gt;Internal Snapshots&lt;/name&gt;
-      &lt;url&gt;http://freedumbytes.dev.net/nexus/content/repositories/snapshots&lt;/url&gt;
-    &lt;/snapshotRepository&gt;
-  &lt;/distributionManagement&gt;
+          <span class="guilabel"><strong>Snapshots</strong></span> repositories:</p><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;distributionManagement&gt;
++    &lt;repository&gt;
++      &lt;id&gt;nexus&lt;/id&gt; &lt;!-- (see <a xmlns="http://www.w3.org/1999/xhtml" class="xref" href="repository.manager.html#repo.nexus.server.id.lan"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a>) --&gt;
++      &lt;name&gt;Internal Releases&lt;/name&gt;
++      &lt;url&gt;${nexusHost}/content/repositories/releases&lt;/url&gt;
++    &lt;/repository&gt;
++    &lt;snapshotRepository&gt;
++      &lt;id&gt;nexus&lt;/id&gt; &lt;!-- (see <a xmlns="http://www.w3.org/1999/xhtml" class="xref" href="repository.manager.html#repo.nexus.server.id.lan"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a>) --&gt;
++      &lt;name&gt;Internal Snapshots&lt;/name&gt;
++      &lt;url&gt;${nexusHost}/content/repositories/snapshots&lt;/url&gt;
++    &lt;/snapshotRepository&gt;
+     &lt;site&gt;
+       &lt;id&gt;mvn-sites&lt;/id&gt;
+       &lt;name&gt;Maven Documentation Sites&lt;/name&gt;
+       &lt;url&gt;dav:${projectRoot}&lt;/url&gt;
+     &lt;/site&gt;
+   &lt;/distributionManagement&gt;
 </code></pre><p>Configure Maven to use the Nexus Repository deployment user
-          with the following server settings <a class="xref" href="repository.manager.html#repo.nexus.server.id.releases"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a>-<a class="xref" href="repository.manager.html#repo.nexus.server.id.thirdparty"><img src="images/community/docbook/callouts/3.png" alt="3" border="0" height="17px" width="17px" class="callout"/></a> in the Maven
+          with the following server settings LAN <a class="xref" href="repository.manager.html#repo.nexus.server.id.lan"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a> and Open Source <a class="xref" href="repository.manager.html#repo.nexus.server.id.open.source"><img src="images/community/docbook/callouts/2.png" alt="2" border="0" height="17px" width="17px" class="callout"/></a> in the Maven
           configuration file
-          <code class="filename">P:\dev\apps\build\apache-maven-3.3.9\conf\settings.xml</code>
-          to correspond with in the <span class="guimenuitem"><strong>Security</strong></span> → <span class="guibutton"><strong>Users</strong></span> available <span class="guilabel"><strong>User ID</strong></span> with
-          <span class="guilabel"><strong>Nexus Deployment Role</strong></span>:</p><pre xmlns="" class="language-provided"><code class="language-xml">  &lt;servers&gt;
-    &lt;server&gt;
-      &lt;id&gt;nexus-releases<span xmlns="http://www.w3.org/1999/xhtml" id="repo.nexus.server.id.releases"/><a xmlns="http://www.w3.org/1999/xhtml" id="repo.nexus.server.id.releases"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>&lt;/id&gt;
-      &lt;username&gt;deployment&lt;/username&gt;
-      &lt;password&gt;<em xmlns="http://www.w3.org/1999/xhtml" class="replaceable"><code>password</code></em>&lt;/password&gt;
-    &lt;/server&gt;
-    &lt;server&gt;
-      &lt;id&gt;nexus-snapshots<span xmlns="http://www.w3.org/1999/xhtml" id="repo.nexus.server.id.snapshots"/><a xmlns="http://www.w3.org/1999/xhtml" id="repo.nexus.server.id.snapshots"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/2.png" alt="2" height="17px" width="17px" class="callout"/>&lt;/id&gt;
-      &lt;username&gt;deployment&lt;/username&gt;
-      &lt;password&gt;<em xmlns="http://www.w3.org/1999/xhtml" class="replaceable"><code>password</code></em>&lt;/password&gt;
-    &lt;/server&gt;
-    &lt;server&gt;
-      &lt;id&gt;nexus-thirdparty<span xmlns="http://www.w3.org/1999/xhtml" id="repo.nexus.server.id.thirdparty"/><a xmlns="http://www.w3.org/1999/xhtml" id="repo.nexus.server.id.thirdparty"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/3.png" alt="3" height="17px" width="17px" class="callout"/>&lt;/id&gt;
-      &lt;username&gt;deployment&lt;/username&gt;
-      &lt;password&gt;<em xmlns="http://www.w3.org/1999/xhtml" class="replaceable"><code>password</code></em>&lt;/password&gt;
+          <code class="filename">P:\dev\apps\build\apache-maven-3.3.9\conf\settings.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">    &lt;servers&gt;
++    &lt;server&gt;
++      &lt;id&gt;nexus<span xmlns="http://www.w3.org/1999/xhtml" id="repo.nexus.server.id.lan"/><a xmlns="http://www.w3.org/1999/xhtml" id="repo.nexus.server.id.lan"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>&lt;/id&gt;
++      &lt;username&gt;deployment&lt;/username&gt;
++      &lt;password&gt;<em xmlns="http://www.w3.org/1999/xhtml" class="replaceable"><code>password</code></em>&lt;/password&gt;
++    &lt;/server&gt;
++
++    &lt;!-- Alternatively use <a xmlns="http://www.w3.org/1999/xhtml" class="link" href="project.html#prj.maven.deploy.artifact.open.source" title="16.1.6.3. Sonatype Open Source Software Repository Hosting (OSSRH)">Sonatype Open Source Software Repository Hosting</a> (OSSRH). --&gt;
++    &lt;server&gt;
++      &lt;id&gt;ossrh<span xmlns="http://www.w3.org/1999/xhtml" id="repo.nexus.server.id.open.source"/><a xmlns="http://www.w3.org/1999/xhtml" id="repo.nexus.server.id.open.source"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/2.png" alt="2" height="17px" width="17px" class="callout"/>&lt;/id&gt;
++      &lt;username&gt;username&lt;/username&gt;
++      &lt;password&gt;<em xmlns="http://www.w3.org/1999/xhtml" class="replaceable"><code>password</code></em>&lt;/password&gt;
     &lt;/server&gt;
   &lt;/servers&gt;
 </code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>It is possible to encrypt the password using <a class="xref" href="build.tool.html#build.maven.password.encryption" title="4.2.6. Password Encryption">Section 4.2.6, “Password Encryption”</a>.</p></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="important"><h2>Important</h2><p>In case of partial deployments, with the maven release
               plugin for instance, the retries will get HTTP 400 errors.
               Therefore select <span class="guimenuitem"><strong>Views/Repositories</strong></span> → <span class="guilabel"><strong>Repositories</strong></span> → <span class="guilabel"><strong>Releases</strong></span> → <span class="guilabel"><strong>Configuration</strong></span> and change the <span class="guilabel"><strong>Deployment
               Policy</strong></span> to <span class="guilabel"><strong>Allow Redeploy</strong></span>.</p></div></section><section class="section" id="repo.nexus.maven.third.party"><div class="titlepage"><div><div><h4 class="title"><a id="repo.nexus.maven.third.party" class="anchor" href="#repo.nexus.maven.third.party"><span class="octicon octicon-link"/></a>13.1.6.3. Third-party artifacts</h4></div></div></div><p>As an alternative to adding a missing third-party artifact
-          from the command line with:</p><pre xmlns="" class="language-provided"><code class="language-bash">mvn deploy:deploy-file -DrepositoryId=nexus-thirdparty (see <a xmlns="http://www.w3.org/1999/xhtml" class="xref" href="repository.manager.html#repo.nexus.server.id.thirdparty"><img src="images/community/docbook/callouts/3.png" alt="3" border="0" height="17px" width="17px" class="callout"/></a>) ^
+          from the command line with:</p><pre xmlns="" class="language-provided"><code class="language-bash">mvn deploy:deploy-file -DrepositoryId=nexus (see <a xmlns="http://www.w3.org/1999/xhtml" class="xref" href="repository.manager.html#repo.nexus.server.id.lan"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a>) ^
       -Durl=http://freedumbytes.dev.net/nexus/content/repositories/thirdparty ^
       -DgeneratePom=true ^
       -DgroupId=… -DartifactId=… -Dversion=… -Dpackaging=… ^

@@ -11,36 +11,75 @@
 .gitconfig      text
 
 *.bat           text
-*.sh            text
+*.cmd           text
+*.sh            text eol=lf
 Makefile        text
 makefile        text
+Dockerfile      text
 
 *.java          text
 *.jsp           text
 *.jspf          text
 *.jspx          text
+*.tag           text
+*.tagx          text
 *.tld           text
+*.ldif          text
 *.sql           text
+*.feature       text
+Jenkinsfile     text
 *.yml           text
 *.yaml          text
 *.diff          text
 *.properties    text
+*.MF            text
+*.mapping       text
 *.ini           text
 *.cnf           text
 *.conf          text
 *.config        text
+*.pageflow      text
 
 *.txt           text
+*.apt           text
+*.vm            text
+*.log           text
+*.importorder   text
+*.xsl           text
+*.xslt          text
 *.xml           text
+*.dtd           text
+*.xsd           text
+*.wsdl          text
+*.wsdd          text
 *.md            text
 *.adoc          text
 *.csv           text
-*.doc           diff
-*.docx          diff
-*.dot           diff
-*.pdf           diff
-*.rtf           diff
+*.ftl           text
+*.dwt           text
+*.pu            text
+*.archimate     text
+*.ucls          text
+*.uxf           text
+.editorconfig   text
+*.dia           binary
+*.doc           binary
+*.docx          binary
+*.dot           binary
+*.dotx          binary
+*.msg           binary
+*.ppt           binary
+*.pptx          binary
+*.pdf           binary
+*.odt           binary
+*.ai            binary
+*.rtf           binary
+*.vsd           binary
+*.xls           binary
+*.xlsm          binary
+*.xlsx          binary
 
+*.asp           text
 *.css           text
 *.less          text
 *.sass          text
@@ -48,6 +87,7 @@ makefile        text
 *.htm           text
 *.html          text
 *.xhtml         text
+*.mht           text
 *.js            text
 *.jsx           text
 *.json          text
@@ -56,6 +96,8 @@ makefile        text
 
 # These files are binary and should be left untouched
 # (binary is a macro for -text -diff)
+#
+#image
 *.bmp           binary
 *.eps           binary
 *.gif           binary
@@ -76,7 +118,9 @@ makefile        text
 *.tiff          binary
 *.wbmp          binary
 *.webp          binary
+Thumbs.db       binary
 
+#audio
 *.m4a           binary
 *.mid           binary
 *.midi          binary
@@ -84,6 +128,7 @@ makefile        text
 *.ogg           binary
 *.ra            binary
 
+#video
 *.3gpp          binary
 *.3gp           binary
 *.asf           binary
@@ -98,13 +143,22 @@ makefile        text
 *.swf           binary
 *.webm          binary
 
+#font
 *.eot           binary
 *.otf           binary
 *.ttf           binary
 *.woff          binary
 *.woff2         binary
 
+#compiled
+*.com           binary
 *.class         binary
+*.dll           binary
+*.exe           binary
+*.o             binary
+*.so            binary
+
+#archive
 *.jar           binary
 *.ear           binary
 *.war           binary
@@ -114,3 +168,11 @@ makefile        text
 *.zip           binary
 *.gz            binary
 *.tgz           binary
+
+#certificate
+*.p12           binary
+*.pfx           binary
+*.jks           binary
+*.jceks         binary
+cacerts         binary
+jssecacerts     binary

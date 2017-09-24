@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE html>
 <!DOCTYPE html
   PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Chapter 17. Quality Assurance</title><link rel="stylesheet" type="text/css" href="docbook.css"/><link rel="stylesheet" type="text/css" href="css/freedumbytes.css"/><meta name="generator" content="DocBook XSL Stylesheets V1.78.1"/><link rel="prev" href="project.html" title="Chapter 16. Project"/><link rel="next" href="tips.and.tricks.html" title="Appendix A. Tips &amp; Tricks"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><link rel="shortcut icon" href="./images/community/docbook/glider.ico"/></head><body><header><p id="title"/><ul class="navheader"><li class="previous"><a accesskey="p" href="project.html"><strong>Previous</strong></a></li><li class="next"><a accesskey="n" href="tips.and.tricks.html"><strong>Next</strong></a></li></ul></header><section class="chapter" id="quality.assurance"><div class="titlepage"><div><div><h1 class="title"><a id="quality.assurance" class="anchor" href="#quality.assurance"><span class="octicon octicon-link"/></a>Chapter 17. Quality Assurance</h1></div></div></div><div class="toc"><div class="toc-title">Table of Contents</div><ul class="toc"><li><span class="section"><a href="quality.assurance.html#qa.maven.reports">17.1. Maven reports</a></span></li><li><span class="section"><a href="quality.assurance.html#qa.sonar">17.2. SonarQube</a></span><ul><li><span class="section"><a href="quality.assurance.html#qa.sonar.resources">17.2.1. Resources</a></span></li><li><span class="section"><a href="quality.assurance.html#qa.sonar.install.guide">17.2.2. SonarQube installation guide</a></span></li><li><span class="section"><a href="quality.assurance.html#qa.sonar.upgrade">17.2.3. Upgrading</a></span></li><li><span class="section"><a href="quality.assurance.html#qa.sonar.config">17.2.4. SonarQube configuration</a></span></li><li><span class="section"><a href="quality.assurance.html#qa.sonar.apache.config">17.2.5. Apache configuration</a></span></li><li><span class="section"><a href="quality.assurance.html#qa.sonar.windows.service">17.2.6. Windows service</a></span></li><li><span class="section"><a href="quality.assurance.html#qa.sonar.maven.integration">17.2.7. Maven integration</a></span></li><li><span class="section"><a href="quality.assurance.html#qa.sonar.jenkins.integration">17.2.8. Jenkins integration</a></span></li><li><span class="section"><a href="quality.assurance.html#qa.screenshots.walkabout">17.2.9. Maven vs SonarQube Quality Assurance reports comparison</a></span></li></ul></li><li><span class="section"><a href="quality.assurance.html#qa.jdocbook">17.3. jDocBook</a></span><ul><li><span class="section"><a href="quality.assurance.html#qa.jdocbook.docbook">17.3.1. Docbook configuration</a></span></li><li><span class="section"><a href="quality.assurance.html#qa.jdocbook.docs">17.3.2. Documentation setup</a></span></li><li><span class="section"><a href="quality.assurance.html#qa.jdocbook.hyphenation">17.3.3. Hyphenation</a></span></li><li><span class="section"><a href="quality.assurance.html#qa.jdocbook.xsl">17.3.4. Upgrade DocBook XSL stylesheets</a></span></li><li><span class="section"><a href="quality.assurance.html#qa.jdocbook.fop">17.3.5. Upgrade FOP</a></span></li><li><span class="section"><a href="quality.assurance.html#qa.jdocbook.fonts">17.3.6. Fonts</a></span></li><li><span class="section"><a href="quality.assurance.html#qa.jdocbook.example">17.3.7. PressGang Example</a></span></li><li><span class="section"><a href="quality.assurance.html#qa.jdocbook.publication">17.3.8. Publication</a></span></li></ul></li></ul></div><p><a class="link" href="http://en.wikipedia.org/wiki/Quality_assurance">Quality
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Chapter 17. Quality Assurance</title><link rel="stylesheet" type="text/css" href="docbook.css"/><link rel="stylesheet" type="text/css" href="css/freedumbytes.css"/><meta name="generator" content="DocBook XSL Stylesheets V1.78.1"/><link rel="prev" href="project.html" title="Chapter 16. Project"/><link rel="next" href="tips.and.tricks.html" title="Appendix A. Tips &amp; Tricks"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><link rel="shortcut icon" href="./images/community/docbook/glider.ico"/></head><body><header><p id="title"/><ul class="navheader"><li class="previous"><a accesskey="p" href="project.html"><strong>Previous</strong></a></li><li class="next"><a accesskey="n" href="tips.and.tricks.html"><strong>Next</strong></a></li></ul></header><section class="chapter" id="quality.assurance"><div class="titlepage"><div><div><h1 class="title"><a id="quality.assurance" class="anchor" href="#quality.assurance"><span class="octicon octicon-link"/></a>Chapter 17. Quality Assurance</h1></div></div></div><div class="toc"><div class="toc-title">Table of Contents</div><ul class="toc"><li><span class="section"><a href="quality.assurance.html#qa.maven.reports">17.1. Maven reports</a></span></li><li><span class="section"><a href="quality.assurance.html#qa.sonar">17.2. SonarQube</a></span><ul><li><span class="section"><a href="quality.assurance.html#qa.sonar.resources">17.2.1. Resources</a></span></li><li><span class="section"><a href="quality.assurance.html#qa.sonar.install.guide">17.2.2. SonarQube installation guide</a></span></li><li><span class="section"><a href="quality.assurance.html#qa.sonar.upgrade">17.2.3. Upgrading</a></span></li><li><span class="section"><a href="quality.assurance.html#qa.sonar.config">17.2.4. SonarQube configuration</a></span></li><li><span class="section"><a href="quality.assurance.html#qa.sonar.apache.config">17.2.5. Apache configuration</a></span></li><li><span class="section"><a href="quality.assurance.html#qa.sonar.windows.service">17.2.6. Windows service</a></span></li><li><span class="section"><a href="quality.assurance.html#qa.sonar.maven.integration">17.2.7. Maven integration</a></span></li><li><span class="section"><a href="quality.assurance.html#qa.sonar.jenkins.integration">17.2.8. Jenkins integration TODO</a></span></li><li><span class="section"><a href="quality.assurance.html#qa.screenshots.walkabout">17.2.9. Maven vs SonarQube Quality Assurance reports comparison</a></span></li></ul></li><li><span class="section"><a href="quality.assurance.html#qa.jdocbook">17.3. jDocBook</a></span><ul><li><span class="section"><a href="quality.assurance.html#qa.jdocbook.docbook">17.3.1. Docbook configuration</a></span></li><li><span class="section"><a href="quality.assurance.html#qa.jdocbook.docs">17.3.2. Documentation setup</a></span></li><li><span class="section"><a href="quality.assurance.html#qa.jdocbook.hyphenation">17.3.3. Hyphenation</a></span></li><li><span class="section"><a href="quality.assurance.html#qa.jdocbook.xsl">17.3.4. Upgrade DocBook XSL stylesheets</a></span></li><li><span class="section"><a href="quality.assurance.html#qa.jdocbook.fop">17.3.5. Upgrade FOP</a></span></li><li><span class="section"><a href="quality.assurance.html#qa.jdocbook.fonts">17.3.6. Fonts</a></span></li><li><span class="section"><a href="quality.assurance.html#qa.jdocbook.example">17.3.7. PressGang Example</a></span></li><li><span class="section"><a href="quality.assurance.html#qa.jdocbook.publication">17.3.8. Publication</a></span></li></ul></li></ul></div><p><a class="link" href="http://en.wikipedia.org/wiki/Quality_assurance">Quality
     Assurance</a>, or QA for short, refers to planned and systematic
     production processes that provide confidence in a product's suitability
-    for its intended purpose.</p><section class="section" id="qa.maven.reports"><div class="titlepage"><div><div><h2 class="title"><a id="qa.maven.reports" class="anchor" href="#qa.maven.reports"><span class="octicon octicon-link"/></a>17.1. Maven reports</h2></div></div></div><p>Instead of configuring the <a class="link" href="prj.maven.qa.sandbox.html#prj.maven.java.pom.qa" title="D.3. Maven Quality Assurance reports">Maven Quality Assurance plugins</a>,
+    for its intended purpose.</p><section class="section" id="qa.maven.reports"><div class="titlepage"><div><div><h2 class="title"><a id="qa.maven.reports" class="anchor" href="#qa.maven.reports"><span class="octicon octicon-link"/></a>17.1. Maven reports</h2></div></div></div><p>Instead of configuring the <a class="link" href="prj.maven.qa.sandbox.html#prj.maven.java.pom.qa" title="E.3. Maven Quality Assurance reports">Maven Quality Assurance plugins</a>,
       of which the output requires a lot of click around between those reports
       (see also <a class="link" href="quality.assurance.html#qa.screenshots.walkabout" title="17.2.9. Maven vs SonarQube Quality Assurance reports comparison">screenshots</a>)
-      and the <a class="link" href="prj.maven.qa.sandbox.html#prj.maven.java.pom.jxr" title="D.2. Cross-reference">cross-reference</a>,
+      and the <a class="link" href="prj.maven.qa.sandbox.html#prj.maven.java.pom.jxr" title="E.2. Cross-reference">cross-reference</a>,
       combine that information using SonarQube for better evaluation.</p></section><section class="section" id="qa.sonar"><div class="titlepage"><div><div><h2 class="title"><a id="qa.sonar" class="anchor" href="#qa.sonar"><span class="octicon octicon-link"/></a>17.2. SonarQube</h2></div></div></div><p><span class="inlinemediaobject"><img src="images/icons/sonar.png"/></span> <a class="link" href="http://www.sonarqube.org/">SonarQube</a> is an open
       platform to manage code quality. As such, it covers the 7 axes of code
       quality.</p><section class="section" id="qa.sonar.resources"><div class="titlepage"><div><div><h3 class="title"><a id="qa.sonar.resources" class="anchor" href="#qa.sonar.resources"><span class="octicon octicon-link"/></a>17.2.1. Resources</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><a class="link" href="http://www.sonarqube.org/downloads/">Download</a>
@@ -109,7 +109,7 @@
                 if there are any known, publicly disclosed, vulnerabilities.
                 Currently Java, .NET, Ruby, Node.js, and Python projects are
                 supported; additionally, limited support for C/C++ projects
-                (see also <a class="xref" href="project.html#prj.maven.java.base.pom.owasp.dependency.check" title="16.1.7.8. OWASP Dependency Check">Section 16.1.7.8, “OWASP Dependency Check”</a> and
+                (see also <a class="xref" href="project.html#prj.maven.setup.java.owasp.dependency.check" title="16.1.7.9. OWASP Dependency Check">Section 16.1.7.9, “OWASP Dependency Check”</a> and
                 <a class="xref" href="quality.assurance.html#qa.sonar.config.update.center" title="17.2.4.1. Update Center">Section 17.2.4.1, “Update Center”</a>).</p></li><li class="listitem"><p>OWASP <a class="link" href="https://www.owasp.org/index.php/OWASP_Testing_Project">Testing
                 Project</a> and <a class="link" href="https://www.owasp.org/images/5/52/OWASP_Testing_Guide_v4.pdf">Testing
                 Guide v4</a>.</p></li><li class="listitem"><p>OWASP <a class="link" href="https://www.owasp.org/index.php/OWASP_Cheat_Sheet_Series">Cheat
@@ -368,7 +368,7 @@ sonar.jdbc.maxWait=5000<span xmlns="http://www.w3.org/1999/xhtml" id="qa.sonar.d
           external plugin (from for example <a class="link" href="http://www.excentia.es/en/content/sonarqube-products">excentia</a>)
           just in <code class="filename">P:\dev\apps\qa\sonarqube-5.5\extensions\plugins</code>:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><a class="link" href="https://github.com/stevespringett/dependency-check-sonar-plugin">OWASP
               Dependency Check Plugin</a> (<a class="link" href="https://github.com/stevespringett/dependency-check-sonar-plugin/releases">download</a>)
-              integrates <a class="link" href="project.html#prj.maven.java.base.pom.owasp.dependency.check" title="16.1.7.8. OWASP Dependency Check">OWASP
+              integrates <a class="link" href="project.html#prj.maven.setup.java.owasp.dependency.check" title="16.1.7.9. OWASP Dependency Check">OWASP
               Dependency Check reports</a> into SonarQube.</p></li><li class="listitem"><p><a class="link" href="http://www.excentia.es/en/plugins/city-model/download">3D
               Code Metrics</a> is a SonarQube extension which allows the
               visual representation of a software project in 3D in order to
@@ -481,7 +481,7 @@ sonar.jdbc.maxWait=5000<span xmlns="http://www.w3.org/1999/xhtml" id="qa.sonar.d
         <code class="filename">P:\dev\apps\qa\sonarqube-5.5\conf\wrapper.conf</code>:</p><pre xmlns="" class="language-provided"><code class="language-ini"># Path to JVM executable. By default it must be available in PATH.
 # Can be an absolute path, for example:
 #wrapper.java.command=/path/to/my/jdk/bin/java
-wrapper.java.command=P:\dev\apps\prg\java-x64\jdk1.8.0_121\bin\java<span xmlns="http://www.w3.org/1999/xhtml" id="qa.sonar.java.command"/><a xmlns="http://www.w3.org/1999/xhtml" id="qa.sonar.java.command"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>
+wrapper.java.command=P:\dev\apps\prg\java-x64\jdk1.8.0_131\bin\java<span xmlns="http://www.w3.org/1999/xhtml" id="qa.sonar.java.command"/><a xmlns="http://www.w3.org/1999/xhtml" id="qa.sonar.java.command"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>
 
  …
 
@@ -519,13 +519,13 @@ wrapper.ntservice.displayname=freedumbytes.dev.net SonarQube<span xmlns="http://
 
 # Description of the service
 wrapper.ntservice.description=SonarQube is an open source quality management platform.<span xmlns="http://www.w3.org/1999/xhtml" id="qa.sonar.description"/><a xmlns="http://www.w3.org/1999/xhtml" id="qa.sonar.description"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/5.png" alt="5" height="17px" width="17px" class="callout"/>
-</code></pre><p>Register the SonarQube service with the command in <a class="link" href="operating.system.html#os.windows.cmd.elevated" title="1.1.13.1. Elevated Command Prompt">an elevated command
+</code></pre><p>Register the SonarQube service with the command in <a class="link" href="operating.system.html#os.windows.cmd.elevated" title="1.1.14.1. Elevated Command Prompt">an elevated command
         processor</a>:
         <code class="command">%SONARQUBE_HOME%\bin\windows-x86-64\InstallNTService.bat</code>.
         Start SonarQube with <code class="command">net start sonarqube</code>.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>In case of an upgrade <code class="command">sc delete sonarqube</code>
           first (see also <a class="xref" href="operating.system.html#os.windows.process.explorer" title="1.1.5. Task Manager replacement">Section 1.1.5, “Task Manager replacement”</a> in
           case of <span class="quote">“<span class="quote">The specified service has been marked for
-          deletion.</span>”</span>).</p></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="important"><h2>Important</h2><p>In case of a new jdk installation use <a class="link" href="operating.system.html#os.windows.cmd.elevated" title="1.1.13.1. Elevated Command Prompt">an elevated command prompt</a>
+          deletion.</span>”</span>).</p></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="important"><h2>Important</h2><p>In case of a new jdk installation use <a class="link" href="operating.system.html#os.windows.cmd.elevated" title="1.1.14.1. Elevated Command Prompt">an elevated command prompt</a>
           just run <code class="command">net stop sonarqube</code> and <code class="command">net
           start sonarqube</code>. Verify the upgrade at <a class="link" href="http://freedumbytes.dev.net/sonarqube/system">http://freedumbytes.dev.net/sonarqube/system</a>.</p></div><section class="section" id="qa.sonar.windows.user"><div class="titlepage"><div><div><h4 class="title"><a id="qa.sonar.windows.user" class="anchor" href="#qa.sonar.windows.user"><span class="octicon octicon-link"/></a>17.2.6.1. Log On Windows user</h4></div></div></div><p>For the same reason as <a class="xref" href="web.server.html#web.tomcat.windows.user" title="8.1.3.1. Log On Windows user">Section 8.1.3.1, “Log On Windows user”</a> launch the <span class="application"><strong>Service
           Management Console</strong></span> with
@@ -544,38 +544,31 @@ wrapper.ntservice.description=SonarQube is an open source quality management pla
         redirects to the project dashboard in SonarQube (see also <a class="xref" href="quality.assurance.html#qa.sonar.apache.config" title="17.2.5. Apache configuration">Section 17.2.5, “Apache configuration”</a> about allowing anonymous access to
         SonarQube for the batch analysis to submit the process
         reports):</p><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;properties&gt;
-     &lt;devHost&gt;http://freedumbytes.dev.net&lt;/devHost&gt;
       …
-     &lt;nexusHost&gt;http://freedumbytes.dev.net/nexus&lt;/nexusHost&gt;
-+    &lt;sonarHost&gt;http://freedumbytes.dev.net/sonarqube&lt;/sonarHost&gt;
-+
-+    &lt;sonar.host.url&gt;${sonarHost}&lt;/sonar.host.url&gt;
-+    &lt;sonar.jacoco.reportPath&gt;
-+      ${coverageReportsPathUnit}
-+    &lt;/sonar.jacoco.reportPath&gt;
-+    &lt;sonar.jacoco.itReportPath&gt;
-+      ${coverageReportsPathIntegration}
-+    &lt;/sonar.jacoco.itReportPath&gt;
-+    &lt;sonar.dependencyCheck.reportPath&gt;
-+      ${project.build.directory}/dependency-check-report.xml
-+    &lt;/sonar.dependencyCheck.reportPath&gt;
-+    &lt;sonar.sourceEncoding&gt;UTF-8&lt;/sonar.sourceEncoding&gt;
-      …
-     &lt;mavenProjectInfoReportsPluginVersion&gt;
-       2.8.1
-     &lt;/mavenProjectInfoReportsPluginVersion&gt;
-+    &lt;sonarMavenPluginVersion&gt;3.0.2&lt;/sonarMavenPluginVersion&gt;
-+    &lt;mavenSonarReportPluginVersion&gt;0.1&lt;/mavenSonarReportPluginVersion&gt;
+     &lt;mavenSitePluginVersion&gt;3.6&lt;/mavenSitePluginVersion&gt;
+     &lt;mavenProjectInfoReportsPluginVersion&gt;2.9&lt;/mavenProjectInfoReportsPluginVersion&gt;
+     &lt;mavenDependencyCheckVersion&gt;2.1.1&lt;/mavenDependencyCheckVersion&gt;
++    &lt;sonarMavenPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://github.com/SonarSource/sonar-scanner-maven/releases">3.3.0.603</a>&lt;/sonarMavenPluginVersion&gt;
++    &lt;mavenSonarReportPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://github.com/SonarQubeCommunity/sonar-maven-report/releases">0.1</a>&lt;/mavenSonarReportPluginVersion&gt;
 
      &lt;wagonMavenPluginVersion&gt;1.0&lt;/wagonMavenPluginVersion&gt;
-     &lt;wagonFtpVersion&gt;2.10&lt;/wagonFtpVersion&gt;
-     &lt;wagonWebdavJackrabbitVersion&gt;2.10&lt;/wagonWebdavJackrabbitVersion&gt;
-   &lt;/properties&gt;
-</code></pre><pre xmlns="" class="language-provided"><code class="language-xml">         &lt;plugin&gt;
-           &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
-           &lt;artifactId&gt;maven-site-plugin&lt;/artifactId&gt;
-           &lt;version&gt;${mavenSitePluginVersion}&lt;/version&gt;
-            …
+     &lt;wagonProviderVersion&gt;2.12&lt;/wagonProviderVersion&gt;
+</code></pre><pre xmlns="" class="language-provided"><code class="language-xml">     &lt;owaspReportsPath&gt;${project.build.directory}/owasp-reports&lt;/owaspReportsPath&gt;
+     &lt;owaspReportFormat&gt;xml&lt;/owaspReportFormat&gt;
++
++    &lt;sonar.host.url&gt;${sonarHost}&lt;/sonar.host.url&gt;
++    &lt;sonar.jacoco.reportPath&gt;${coverageReportsPathUnit}&lt;/sonar.jacoco.reportPath&gt;
++    &lt;sonar.jacoco.itReportPath&gt;${coverageReportsPathIntegration}&lt;/sonar.jacoco.itReportPath&gt;
++    &lt;sonar.dependencyCheck.reportPath&gt;${owaspReportsPath}/dependency-check-report.xml&lt;/sonar.dependencyCheck.reportPath&gt;
++    &lt;sonar.sourceEncoding&gt;UTF-8&lt;/sonar.sourceEncoding&gt;
++    &lt;sonar.exclusions&gt;**/generated-sources/**,**/generated/**&lt;/sonar.exclusions&gt;
+
+     &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
+     &lt;project.reporting.outputEncoding&gt;UTF-8&lt;/project.reporting.outputEncoding&gt;
+      …
+   &lt;properties&gt;
+</code></pre><pre xmlns="" class="language-provided"><code class="language-xml">             &lt;format&gt;${owaspReportFormat}&lt;/format&gt;
+           &lt;/configuration&gt;
          &lt;/plugin&gt;
 +
 +        &lt;plugin&gt;
@@ -585,10 +578,15 @@ wrapper.ntservice.description=SonarQube is an open source quality management pla
 +        &lt;/plugin&gt;
        &lt;/plugins&gt;
      &lt;/pluginManagement&gt;
-</code></pre><pre xmlns="" class="language-provided"><code class="language-xml">+      &lt;plugin&gt;
+   &lt;/build&gt;
+</code></pre><pre xmlns="" class="language-provided"><code class="language-xml">           &lt;/reportSet&gt;
+         &lt;/reportSets&gt;
+       &lt;/plugin&gt;
++
++      &lt;plugin&gt;
 +        &lt;groupId&gt;org.codehaus.sonar-plugins&lt;/groupId&gt;
-+        &lt;artifactId&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="http://docs.sonarqube.org/display/PLUG/Maven+Report+Plugin">maven-report</a>&lt;/artifactId&gt;
-+        &lt;version&gt;${mavenReportSonarPluginVersion}&lt;/version&gt;
++        &lt;artifactId&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://github.com/SonarQubeCommunity/sonar-maven-report">maven-report</a>&lt;/artifactId&gt;
++        &lt;version&gt;${mavenSonarReportPluginVersion}&lt;/version&gt;
 +        &lt;configuration&gt;
 +          &lt;sonarHostURL&gt;${sonarHost}&lt;/sonarHostURL&gt;
 +        &lt;/configuration&gt;
@@ -596,13 +594,7 @@ wrapper.ntservice.description=SonarQube is an open source quality management pla
      &lt;/plugins&gt;
    &lt;/reporting&gt;
  &lt;/project&gt;
-</code></pre><p>Update the <a class="link" href="http://maven.apache.org/plugins/maven-site-plugin/examples/sitedescriptor.html">site
-        descriptor</a> in
-        <code class="filename">C:\dev\projects\maven-setup\src\site\site.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">     &lt;menu name="Free Dumb Bytes" inherit="top"&gt;
-        …
-       &lt;item name="Nexus" href="${nexusHost}" /&gt;
-+      &lt;item name="SonarQube" href="${sonarHost}" /&gt;
-</code></pre></section><section class="section" id="qa.sonar.jenkins.integration"><div class="titlepage"><div><div><h3 class="title"><a id="qa.sonar.jenkins.integration" class="anchor" href="#qa.sonar.jenkins.integration"><span class="octicon octicon-link"/></a>17.2.8. Jenkins integration</h3></div></div></div><p>It is no longer recommended to use <a class="link" href="http://docs.sonarqube.org/display/SONARNEXT/Analyzing+with+SonarQube+Scanner+for+Jenkins#AnalyzingwithSonarQubeScannerforJenkins-TriggeringanAnalysiswithMaven">SonarQube
+</code></pre></section><section class="section" id="qa.sonar.jenkins.integration"><div class="titlepage"><div><div><h3 class="title"><a id="qa.sonar.jenkins.integration" class="anchor" href="#qa.sonar.jenkins.integration"><span class="octicon octicon-link"/></a>17.2.8. Jenkins integration TODO</h3></div></div></div><p>It is no longer recommended to use <a class="link" href="http://docs.sonarqube.org/display/SONARNEXT/Analyzing+with+SonarQube+Scanner+for+Jenkins#AnalyzingwithSonarQubeScannerforJenkins-TriggeringanAnalysiswithMaven">SonarQube
         maven builder</a>. It is preferable to set up SonarQube in the
         build environment and use a standard Jenkins maven target:</p><p><span class="inlinemediaobject"><img src="images/ci/jenkins/maven-setup-6b-build.png"/></span></p></section><section class="section" id="qa.screenshots.walkabout"><div class="titlepage"><div><div><h3 class="title"><a id="qa.screenshots.walkabout" class="anchor" href="#qa.screenshots.walkabout"><span class="octicon octicon-link"/></a>17.2.9. Maven vs SonarQube Quality Assurance reports comparison</h3></div></div></div><p>To get an idea of the difference between the Quality Assurance
         reports of Maven and SonarQube take a look at the following
@@ -635,13 +627,13 @@ wrapper.ntservice.description=SonarQube is an open source quality management pla
 +&lt;project xmlns="http://maven.apache.org/POM/4.0.0"
 +         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 +         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-+                             http://maven.apache.org/maven-v4_0_0.xsd"&gt;
++                             https://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;
 +  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
 +
 +  &lt;parent&gt;
-+    &lt;groupId&gt;net.dev.freedumbytes.maven&lt;/groupId&gt;
++    &lt;groupId&gt;nl.demon.shadowland.freedumbytes.maven&lt;/groupId&gt;
 +    &lt;artifactId&gt;base-pom&lt;/artifactId&gt;
-+    &lt;version&gt;3.1-beta&lt;/version&gt;
++    &lt;version&gt;4.1-beta&lt;/version&gt;
 +  &lt;/parent&gt;
 +
 +  &lt;groupId&gt;net.dev.freedumbytes.documentation&lt;/groupId&gt;
@@ -877,13 +869,13 @@ wrapper.ntservice.description=SonarQube is an open source quality management pla
 +&lt;project xmlns="http://maven.apache.org/POM/4.0.0"
 +         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 +         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-+                             http://maven.apache.org/maven-v4_0_0.xsd"&gt;
++                             https://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;
 +  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
 +
 +  &lt;parent&gt;
-+    &lt;groupId&gt;net.dev.freedumbytes.maven&lt;/groupId&gt;
++    &lt;groupId&gt;nl.demon.shadowland.freedumbytes.maven&lt;/groupId&gt;
 +    &lt;artifactId&gt;base-pom&lt;/artifactId&gt;
-+    &lt;version&gt;3.1-beta&lt;/version&gt;
++    &lt;version&gt;4.1-beta&lt;/version&gt;
 +  &lt;/parent&gt;
 +
 +  &lt;groupId&gt;net.dev.freedumbytes.documentation&lt;/groupId&gt;
@@ -1022,9 +1014,9 @@ cd \projects\maven-docs
 mvn clean install
 </code></pre><p>Configure the maven-docbook POM in <code class="filename">C:\dev\projects\maven-docbook\pom.xml</code> to
         use the just installed custom modules:</p><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;parent&gt;
--    &lt;groupId&gt;net.dev.freedumbytes.maven&lt;/groupId&gt;
+-    &lt;groupId&gt;nl.demon.shadowland.freedumbytes.maven&lt;/groupId&gt;
 -    &lt;artifactId&gt;base-pom&lt;/artifactId&gt;
--    &lt;version&gt;3.1-beta&lt;/version&gt;
+-    &lt;version&gt;4.1-beta&lt;/version&gt;
 +    &lt;groupId&gt;net.dev.freedumbytes.documentation&lt;/groupId&gt;
 +    &lt;artifactId&gt;docs&lt;/artifactId&gt;
 +    &lt;version&gt;2.0-alpha&lt;/version&gt;
@@ -1377,7 +1369,7 @@ mvn clean install
 +&lt;project xmlns="http://maven.apache.org/POM/4.0.0"
 +         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 +         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-+                             http://maven.apache.org/maven-v4_0_0.xsd"&gt;
++                             https://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;
 +  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
 +
 +  &lt;parent&gt;
@@ -1399,7 +1391,7 @@ mvn clean install
 +  &lt;properties&gt;
 +    &lt;jdocbookCorePatchVersion&gt;${jdocbookCoreVersion}&lt;/jdocbookCorePatchVersion&gt;
 +    &lt;jdomVersion&gt;1.0&lt;/jdomVersion&gt;
-+    &lt;truezipMavenPluginVersion&gt;1.2&lt;/truezipMavenPluginVersion&gt;
++    &lt;truezipMavenPluginVersion&gt;1.2&lt;/truezipMavenPluginVersion&gt; [TODO]
 +  &lt;/properties&gt;
 +&lt;/project&gt;
 </code></pre><pre xmlns="" class="language-provided"><code class="language-xml">+  &lt;dependencies&gt;
@@ -1558,7 +1550,7 @@ mvn clean install
 +                ${project.build.directory}/repackage
 +                  /jdocbook-core-${jdocbookCorePatchVersion}.jar
 +              &lt;/file&gt;
-+              &lt;repositoryId&gt;nexus-releases&lt;/repositoryId&gt;
++              &lt;repositoryId&gt;nexus&lt;/repositoryId&gt;
 +              &lt;url&gt;${project.distributionManagement.repository.url}&lt;/url&gt;
 +              &lt;pomFile&gt;
 +                ${project.build.directory}/repackage
@@ -1661,8 +1653,8 @@ mvn clean install
         or <span class="emphasis"><em>outline</em></span> fonts</a> means that different
         sizes of a typeface can be dynamically generated from one design. Each
         style may still be in a separate <span class="emphasis"><em>font file</em></span>—for
-        instance, the typeface <a class="link" href="???">Bulmer</a> may
-        include the fonts <span class="emphasis"><em>Bulmer <a class="link" href="https://en.wikipedia.org/wiki/Roman_type">roman</a></em></span>,
+        instance, the typeface <a class="link" href="https://en.wikipedia.org/wiki/Bulmer_(typeface)">Bulmer</a>
+        may include the fonts <span class="emphasis"><em>Bulmer <a class="link" href="https://en.wikipedia.org/wiki/Roman_type">roman</a></em></span>,
         <span class="emphasis"><em>Bulmer <a class="link" href="https://en.wikipedia.org/wiki/Italic_type">italic</a></em></span>,
         <span class="emphasis"><em>Bulmer <a class="link" href="https://en.wikipedia.org/wiki/Emphasis_%28typography%29">bold</a></em></span>
         and <span class="emphasis"><em>Bulmer extended</em></span>—but the term
@@ -1994,7 +1986,7 @@ mvn clean install
 +&lt;project xmlns="http://maven.apache.org/POM/4.0.0"
 +         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 +         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-+                             http://maven.apache.org/maven-v4_0_0.xsd"&gt;
++                             https://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;
 +  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
 +
 +  &lt;parent&gt;
