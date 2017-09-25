@@ -840,7 +840,7 @@
    &lt;build&gt;
 </code></pre><p>This is for example a
         <code class="code">property-updates-report</code>:</p><div class="figure" id="prj.figure.maven.versions.property.updates.report"><a id="prj.figure.maven.versions.property.updates.report"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/build/maven/maven-versions-property-updates-report.png" alt="Maven Versions Property Updates Report"/></div></div></div><div class="figure-title">Figure 16.2. Maven Versions Property Updates Report</div></div><br class="figure-break"/><p>To suppress the unwanted version reference to
-        <code class="code">99.0-does-not-exist</code> take a look at <a class="xref" href="prj.maven.versions.rules.html" title="Appendix C. Maven Versions Rules">Appendix C, <em>Maven Versions Rules</em></a>.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="tip"><h2>Tip</h2><p><a class="link" href="https://www.versioneye.com/search?lang=Java&amp;q=&amp;g=nl.demon.shadowland">VersionEye</a>
+        <code class="code">99.0-does-not-exist</code> take a look at <a class="xref" href="prj.maven.versions.rules.html" title="Appendix D. Maven Versions Rules">Appendix D, <em>Maven Versions Rules</em></a>.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="tip"><h2>Tip</h2><p><a class="link" href="https://www.versioneye.com/search?lang=Java&amp;q=&amp;g=nl.demon.shadowland">VersionEye</a>
           is a cross-platform search engine for free/libre/open source
           software libraries, which also shows out of date dependencies of for
           example <a class="link" href="https://www.versioneye.com/java/javax:javaee-api">javaee-api</a>.</p></div><section class="section" id="prj.maven.encoding"><div class="titlepage"><div><div><h4 class="title"><a id="prj.maven.encoding" class="anchor" href="#prj.maven.encoding"><span class="octicon octicon-link"/></a>16.1.5.1. Encoding</h4></div></div></div><p>To suppress the following warning <span class="quote">“<span class="quote">[WARNING] Using
@@ -1356,7 +1356,8 @@ gpg --list-secret-keys
 +            &lt;/excludes&gt;
 +          &lt;/configuration&gt;
          &lt;/plugin&gt;
-</code></pre><p>The <a class="link" href="https://maven.apache.org/surefire/maven-failsafe-plugin/">Failsafe
+</code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p><code class="code">**/*Tests.java</code> is added for JUnit 5 tests (see
+            also <a class="link" href="https://issues.apache.org/jira/browse/SUREFIRE-1260">SUREFIRE-1260</a>).</p></div><p>The <a class="link" href="https://maven.apache.org/surefire/maven-failsafe-plugin/">Failsafe
           Plugin</a> is designed to run integration tests while the
           Surefire Plugin is designed to run unit tests. The name (failsafe)
           was chosen both because it is a synonym of surefire and because it
@@ -1385,7 +1386,7 @@ gpg --list-secret-keys
 +              &lt;include&gt;**/*IT.java&lt;/include&gt;
 +              &lt;include&gt;**/*ITCase.java&lt;/include&gt;
 +              &lt;include&gt;**/*IntegrationTest.java&lt;/include&gt;<span xmlns="http://www.w3.org/1999/xhtml" id="prj.maven.setup.java.failsafe.integration.test.suffix"/><a xmlns="http://www.w3.org/1999/xhtml" id="prj.maven.setup.java.failsafe.integration.test.suffix"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>
-+              &lt;include&gt;**/*IntegrationTests.java&lt;/include&gt;
++              &lt;include&gt;**/*IntegrationTests.java&lt;/include&gt;<span xmlns="http://www.w3.org/1999/xhtml" id="prj.maven.setup.java.failsafe.integration.tests.suffix"/><a xmlns="http://www.w3.org/1999/xhtml" id="prj.maven.setup.java.failsafe.integration.tests.suffix"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/2.png" alt="2" height="17px" width="17px" class="callout"/>
 +            &lt;/includes&gt;
            &lt;/configuration&gt;
 +          &lt;executions&gt;
@@ -1398,9 +1399,10 @@ gpg --list-secret-keys
 +          &lt;/executions&gt;
          &lt;/plugin&gt;
 </code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>Also added two extra wildcard patterns
-            **/*UnitTest.java<a class="xref" href="project.html#prj.maven.setup.java.surefire.unit.test.suffix"><img style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/></a> and
-            **/*IntegrationTest.java<a class="xref" href="project.html#prj.maven.setup.java.failsafe.integration.test.suffix"><img style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/></a>
-            to the defaults.</p></div><section class="section" id="prj.maven.setup.java.profile"><div class="titlepage"><div><div><h5 class="title"><a id="prj.maven.setup.java.profile" class="anchor" href="#prj.maven.setup.java.profile"><span class="octicon octicon-link"/></a>16.1.7.2.1. Java profile</h5></div></div></div><p>Option 1 to add both plugins to the build process with a
+            <code class="code">**/*UnitTest.java</code><a class="xref" href="project.html#prj.maven.setup.java.surefire.unit.test.suffix"><img style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/></a> and
+            <code class="code">**/*IntegrationTest.java</code><a class="xref" href="project.html#prj.maven.setup.java.failsafe.integration.test.suffix"><img style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/></a>
+            to the defaults. Also added like JUnit 5 support mentioned above
+            <code class="code">**/*IntegrationTests.java</code><a class="xref" href="project.html#prj.maven.setup.java.failsafe.integration.tests.suffix"><img style="border: 0; " src="images/community/docbook/callouts/2.png" alt="2" height="17px" width="17px" class="callout"/></a>.</p></div><section class="section" id="prj.maven.setup.java.profile"><div class="titlepage"><div><div><h5 class="title"><a id="prj.maven.setup.java.profile" class="anchor" href="#prj.maven.setup.java.profile"><span class="octicon octicon-link"/></a>16.1.7.2.1. Java profile</h5></div></div></div><p>Option 1 to add both plugins to the build process with a
             <code class="code">java</code> profile in
             <code class="filename">C:\dev\projects\maven-setup\pom.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">+    &lt;profile&gt;
 +      &lt;id&gt;java&lt;/id&gt;
@@ -1635,7 +1637,7 @@ mvn clean verify -DskipTests -DskipIntegrationTests=false
            &lt;artifactId&gt;maven-surefire-plugin&lt;/artifactId&gt;
 </code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="tip"><h2>Tip</h2><p>Since <a class="link" href="quality.assurance.html#qa.sonar.maven.integration" title="17.2.7. Maven integration">SonarQube</a> handles the
             recorded coverage, just skip the Maven reports themselves for now
-            (see also <a class="xref" href="prj.maven.qa.sandbox.html#qa.maven.reports.jacoco" title="E.3.6.1. JaCoCo">Section E.3.6.1, “JaCoCo”</a>).</p></div><p>Add the plugin to the build process.</p><p>Option 1 the <code class="code">java</code> profile in
+            (see also <a class="xref" href="prj.maven.qa.sandbox.html#qa.maven.reports.jacoco" title="F.3.6.1. JaCoCo">Section F.3.6.1, “JaCoCo”</a>).</p></div><p>Add the plugin to the build process.</p><p>Option 1 the <code class="code">java</code> profile in
           <code class="filename">C:\dev\projects\maven-setup\pom.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">     &lt;profile&gt;
        &lt;id&gt;java&lt;/id&gt;
 
@@ -1810,7 +1812,7 @@ mvn clean verify -DskipTests -DskipIntegrationTests=false
          &lt;/plugins&gt;
        &lt;/build&gt;
      &lt;/profile&gt;
-</code></pre><p>Optionally configure <a class="xref" href="prj.maven.qa.sandbox.html#prj.maven.java.pom.javadoc.report" title="E.1. Javadoc report">Section E.1, “Javadoc report”</a> for the project site
+</code></pre><p>Optionally configure <a class="xref" href="prj.maven.qa.sandbox.html#prj.maven.java.pom.javadoc.report" title="F.1. Javadoc report">Section F.1, “Javadoc report”</a> for the project site
           or enable Javadoc Site Report through a profile named
           <strong class="userinput"><code>enableJavadocReports</code></strong>:</p><pre xmlns="" class="language-provided"><code class="language-xml">+    &lt;profile&gt;
 +      &lt;id&gt;enableJavadocReports&lt;/id&gt;
@@ -2196,7 +2198,7 @@ mvn clean verify -DskipTests -DskipIntegrationTests=false
                     with add <span class="guilabel"><strong>Credentials</strong></span>, when the <a class="link" href="web.server.html#web.tomcat.windows.user.netrc" title="8.1.3.1.1. netrc"><code class="filename">_netrc</code></a>
                     solution isn't used.</p><p><span class="inlinemediaobject"><img src="images/ci/jenkins/maven-setup-3-source-code-management.png"/></span></p></li><li class="listitem"><p><span class="guibutton"><strong>Branches to build</strong></span> such as
                     <strong class="userinput"><code>master</code></strong>:</p><p><span class="inlinemediaobject"><img src="images/ci/jenkins/maven-setup-4a-branches-all.png"/></span></p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="tip"><h2>Tip</h2><p>If not all future branches should trigger build
-                      just specify the required ones, for example for <a class="link" href="prj.maven.qa.sandbox.html" title="Appendix E. Quality Assurance Sandbox">qa-sandbox</a>
+                      just specify the required ones, for example for <a class="link" href="prj.maven.qa.sandbox.html" title="Appendix F. Quality Assurance Sandbox">qa-sandbox</a>
                       project:</p><p><span class="inlinemediaobject"><img src="images/ci/jenkins/maven-setup-4a-branches-specific.png"/></span></p></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>In both cases a manual <span class="guilabel"><strong>Build
                       Now</strong></span> will only trigger a build of the branch
                       that was build during the prior build
@@ -2279,7 +2281,7 @@ git log --oneline --decorate
           anyway, save time by skipping site-deploy with:</p><pre class="language-provided"><code class="language-bash"><code class="command">mvn -Dusername=<em class="replaceable"><code>jjasper</code></em> -Dpassword=<em class="replaceable"><code>password</code></em> release:perform -Dgoals=deploy</code></code></pre></div><p>Again verify if all remote changes are <span class="quote">“<span class="quote">up to date</span>”</span>
         with command:</p><pre xmlns="" class="language-provided"><code class="language-bash">git status
 git push
-git remote show origin</code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>Now might be a good time to create a <a class="link" href="prj.maven.site.skin.custom.html" title="Appendix D. Custom skins">Custom skin</a>.</p></div></section><section class="section" id="prj.maven.versions"><div class="titlepage"><div><div><h3 class="title"><a id="prj.maven.versions" class="anchor" href="#prj.maven.versions"><span class="octicon octicon-link"/></a>16.1.10. Versions</h3></div></div></div><p>The Release Plugin is handy for updating SNAPSHOT versions of
+git remote show origin</code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>Now might be a good time to create a <a class="link" href="prj.maven.site.skin.custom.html" title="Appendix E. Custom skins">Custom skin</a>.</p></div></section><section class="section" id="prj.maven.versions"><div class="titlepage"><div><div><h3 class="title"><a id="prj.maven.versions" class="anchor" href="#prj.maven.versions"><span class="octicon octicon-link"/></a>16.1.10. Versions</h3></div></div></div><p>The Release Plugin is handy for updating SNAPSHOT versions of
         the modules in a project. But when used on SNAPSHOT dependencies the
         next project SNAPSHOT version will be pointing to the next SNAPSHOT of
         the dependencies also. Which is usually not what is required. In comes
@@ -2305,8 +2307,8 @@ git remote show origin</code></pre><div style="margin-left: 0.5in; margin-right:
         and revert with <code class="command">mvn versions:<a class="link" href="http://www.mojohaus.org/versions-maven-plugin/examples/unlock-snapshots.html">unlock-snapshots</a></code>.</p><p>To set the patch version for a branch version of for example 1.0
         to 1.0.1-SNAPSHOT use <code class="command">mvn versions:<a class="link" href="http://www.mojohaus.org/versions-maven-plugin/examples/set.html">set</a>
         -DnewVersion=1.0.1-SNAPSHOT</code>.</p><p>Remove the backup files with <code class="command">mvn versions:<a class="link" href="http://www.mojohaus.org/versions-maven-plugin/commit-mojo.html">commit</a></code>
-        or revert changes with <code class="command">mvn versions:<a class="link" href="http://www.mojohaus.org/versions-maven-plugin/revert-mojo.html">revert</a></code>.</p></section><section class="section" id="prj.maven.branch"><div class="titlepage"><div><div><h3 class="title"><a id="prj.maven.branch" class="anchor" href="#prj.maven.branch"><span class="octicon octicon-link"/></a>16.1.11. Branch</h3></div></div></div><p>To create a branch on for example the <a class="link" href="prj.maven.qa.sandbox.html" title="Appendix E. Quality Assurance Sandbox">qa-sandbox project</a> to use Clover
-        instead of JaCoCo <a class="link" href="prj.maven.qa.sandbox.html#qa.maven.reports.code.coverage" title="E.3.6. Code Coverage">code
+        or revert changes with <code class="command">mvn versions:<a class="link" href="http://www.mojohaus.org/versions-maven-plugin/revert-mojo.html">revert</a></code>.</p></section><section class="section" id="prj.maven.branch"><div class="titlepage"><div><div><h3 class="title"><a id="prj.maven.branch" class="anchor" href="#prj.maven.branch"><span class="octicon octicon-link"/></a>16.1.11. Branch</h3></div></div></div><p>To create a branch on for example the <a class="link" href="prj.maven.qa.sandbox.html" title="Appendix F. Quality Assurance Sandbox">qa-sandbox project</a> to use Clover
+        instead of JaCoCo <a class="link" href="prj.maven.qa.sandbox.html#qa.maven.reports.code.coverage" title="F.3.6. Code Coverage">code
         coverage</a>, the <a class="link" href="https://maven.apache.org/plugins/maven-release-plugin/">Release
         Plugin</a> should be able to handle the branch action from the
         command line with:</p><pre xmlns="" class="language-provided"><code class="language-bash">cd /d C:\dev\projects\qa-sandbox
@@ -2748,7 +2750,7 @@ git status
      &lt;/dependencies&gt;
    &lt;/dependencyManagement&gt;
  &lt;/project&gt;
-</code></pre></section><section class="section" id="prj.maven.grouping.dependencies.bom.usage"><div class="titlepage"><div><div><h5 class="title"><a id="prj.maven.grouping.dependencies.bom.usage" class="anchor" href="#prj.maven.grouping.dependencies.bom.usage"><span class="octicon octicon-link"/></a>16.1.12.1.7. Bill of Materials usage</h5></div></div></div><p>For example the <a class="link" href="prj.maven.site.skin.custom.html#prj.maven.site.skin.reflow" title="D.3. Custom Reflow Skin">Custom Reflow Skin</a>
+</code></pre></section><section class="section" id="prj.maven.grouping.dependencies.bom.usage"><div class="titlepage"><div><div><h5 class="title"><a id="prj.maven.grouping.dependencies.bom.usage" class="anchor" href="#prj.maven.grouping.dependencies.bom.usage"><span class="octicon octicon-link"/></a>16.1.12.1.7. Bill of Materials usage</h5></div></div></div><p>For example the <a class="link" href="prj.maven.site.skin.custom.html#prj.maven.site.skin.reflow" title="E.3. Custom Reflow Skin">Custom Reflow Skin</a>
             module uses the unittest
             <code class="filename">BootStrapResponsiveStyleTest</code> to log 1920 and
             bigger responsive css settings.</p><p>Change the project parent to import the Bill of Materials
@@ -3279,7 +3281,7 @@ git status
 +    &lt;/dependency&gt;
 +  &lt;/dependencies&gt;
 +&lt;/project&gt;
-</code></pre><div class="figure" id="prj.maven.mysql.site"><a id="prj.maven.mysql.site"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/maven-mysql-site.png" alt="Free Dumb Bytes MySQL Group"/></div></div></div><div class="figure-title">Figure 16.11. Free Dumb Bytes MySQL Group</div></div><br class="figure-break"/></section><section class="section" id="prj.maven.grouping.dependencies.groups.usage"><div class="titlepage"><div><div><h5 class="title"><a id="prj.maven.grouping.dependencies.groups.usage" class="anchor" href="#prj.maven.grouping.dependencies.groups.usage"><span class="octicon octicon-link"/></a>16.1.12.2.7. Groups usage</h5></div></div></div><p>For example the <a class="link" href="prj.maven.site.skin.custom.html#prj.maven.site.skin.reflow" title="D.3. Custom Reflow Skin">Custom Reflow Skin</a>
+</code></pre><div class="figure" id="prj.maven.mysql.site"><a id="prj.maven.mysql.site"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/maven-mysql-site.png" alt="Free Dumb Bytes MySQL Group"/></div></div></div><div class="figure-title">Figure 16.11. Free Dumb Bytes MySQL Group</div></div><br class="figure-break"/></section><section class="section" id="prj.maven.grouping.dependencies.groups.usage"><div class="titlepage"><div><div><h5 class="title"><a id="prj.maven.grouping.dependencies.groups.usage" class="anchor" href="#prj.maven.grouping.dependencies.groups.usage"><span class="octicon octicon-link"/></a>16.1.12.2.7. Groups usage</h5></div></div></div><p>For example the <a class="link" href="prj.maven.site.skin.custom.html#prj.maven.site.skin.reflow" title="E.3. Custom Reflow Skin">Custom Reflow Skin</a>
             module uses the unittest
             <code class="filename">BootStrapResponsiveStyleTest</code> to log 1920 and
             bigger responsive css settings and is already using a Bill of

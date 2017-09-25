@@ -1,0 +1,1098 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE html>
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Appendix C. Continuous Integration Pipeline</title><link rel="stylesheet" type="text/css" href="docbook.css"/><link rel="stylesheet" type="text/css" href="css/freedumbytes.css"/><meta name="generator" content="DocBook XSL Stylesheets V1.78.1"/><link rel="prev" href="prj.repo.svc.site.hosting.html" title="Appendix B. Hosting a group Website in the Cloud"/><link rel="next" href="prj.maven.versions.rules.html" title="Appendix D. Maven Versions Rules"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><link rel="shortcut icon" href="./images/community/docbook/glider.ico"/></head><body><header><p id="title"/><ul class="navheader"><li class="previous"><a accesskey="p" href="prj.repo.svc.site.hosting.html"><strong>Previous</strong></a></li><li class="next"><a accesskey="n" href="prj.maven.versions.rules.html"><strong>Next</strong></a></li></ul></header><section class="appendix" id="continuous.integration.pipeline"><div class="titlepage"><div><div><h1 class="title"><a id="continuous.integration.pipeline" class="anchor" href="#continuous.integration.pipeline"><span class="octicon octicon-link"/></a>Appendix C. Continuous Integration Pipeline</h1></div></div></div><div class="toc"><div class="toc-title">Table of Contents</div><ul class="toc"><li><span class="section"><a href="continuous.integration.pipeline.html#continuous.integration.pipeline.resources">C.1. Resources</a></span></li><li><span class="section"><a href="continuous.integration.pipeline.html#continuous.integration.pipeline.gitlab">C.2. GitLab CI Pipeline</a></span><ul><li><span class="section"><a href="continuous.integration.pipeline.html#continuous.integration.pipeline.gitlab.compile">C.2.1. Build Stage (test-)compile</a></span></li><li><span class="section"><a href="continuous.integration.pipeline.html#continuous.integration.pipeline.gitlab.deploy">C.2.2. Test Stage deploy</a></span></li><li><span class="section"><a href="continuous.integration.pipeline.html#continuous.integration.pipeline.gitlab.use.incremental.compilation">C.2.3. Test Stage no recompile - Changes detected</a></span></li><li><span class="section"><a href="continuous.integration.pipeline.html#continuous.integration.pipeline.gitlab.touch.class">C.2.4. Test Stage no recompile - Compiling xx source files</a></span></li><li><span class="section"><a href="continuous.integration.pipeline.html#continuous.integration.pipeline.gitlab.unit.integration.phase">C.2.5. Test Stage unit vs integration phase</a></span></li><li><span class="section"><a href="continuous.integration.pipeline.html#continuous.integration.pipeline.gitlab.unit.integration.job">C.2.6. Test Stage unit vs integration job</a></span></li><li><span class="section"><a href="continuous.integration.pipeline.html#continuous.integration.pipeline.gitlab.cache">C.2.7. GitLab CI Cache</a></span></li><li><span class="section"><a href="continuous.integration.pipeline.html#continuous.integration.pipeline.gitlab.show.time">C.2.8. Show Time</a></span></li><li><span class="section"><a href="continuous.integration.pipeline.html#continuous.integration.pipeline.gitlab.show.date.time">C.2.9. Show Date/Time</a></span></li><li><span class="section"><a href="continuous.integration.pipeline.html#continuous.integration.pipeline.gitlab.suppress.download.log">C.2.10. Suppress download messages</a></span></li><li><span class="section"><a href="continuous.integration.pipeline.html#continuous.integration.pipeline.gitlab.site">C.2.11. Deploy Stage site:stage</a></span></li><li><span class="section"><a href="continuous.integration.pipeline.html#continuous.integration.pipeline.gitlab.pages">C.2.12. GitLab CI Deploy Pages Stage</a></span></li><li><span class="section"><a href="continuous.integration.pipeline.html#continuous.integration.pipeline.gitlab.site.stage.workaround">C.2.13. Maven Site Staging issue workaround</a></span></li><li><span class="section"><a href="continuous.integration.pipeline.html#continuous.integration.pipeline.gitlab.pages.deploy">C.2.14. GitLab CI Deploy Pages Stage take 2</a></span></li><li><span class="section"><a href="continuous.integration.pipeline.html#continuous.integration.pipeline.gitlab.site.master.only">C.2.15. Site Generation revisited</a></span></li><li><span class="section"><a href="continuous.integration.pipeline.html#continuous.integration.pipeline.gitlab.effective.pom">C.2.16. Effective Pom</a></span></li><li><span class="section"><a href="continuous.integration.pipeline.html#continuous.integration.pipeline.gitlab.jdk.check">C.2.17. Optional JDK Check</a></span></li><li><span class="section"><a href="continuous.integration.pipeline.html#continuous.integration.pipeline.gitlab.owasp">C.2.18. Optional OWASP Test Stage</a></span></li><li><span class="section"><a href="continuous.integration.pipeline.html#continuous.integration.pipeline.gitlab.sonarqube">C.2.19. Optional SonarQube Docs stage</a></span></li><li><span class="section"><a href="continuous.integration.pipeline.html#continuous.integration.pipeline.gitlab.sonarqube.workaround">C.2.20. SonarQube Dashboard issue workaround</a></span></li><li><span class="section"><a href="continuous.integration.pipeline.html#continuous.integration.pipeline.gitlab.verify.deploy.phase">C.2.21. Artifacts verify vs deploy</a></span></li><li><span class="section"><a href="continuous.integration.pipeline.html#continuous.integration.pipeline.gitlab.javadoc.reports">C.2.22. Javadoc Reports</a></span></li></ul></li><li><span class="section"><a href="continuous.integration.pipeline.html#continuous.integration.pipeline.jenkins">C.3. Jenkins CI Pipeline</a></span><ul><li><span class="section"><a href="continuous.integration.pipeline.html#continuous.integration.pipeline.jenkins.compile">C.3.1. Build Stage (test-)compile</a></span></li><li><span class="section"><a href="continuous.integration.pipeline.html#continuous.integration.pipeline.jenkins.deploy">C.3.2. Test Stage deploy</a></span></li><li><span class="section"><a href="continuous.integration.pipeline.html#continuous.integration.pipeline.jenkins.unit.integration.phase">C.3.3. Test Stage unit vs integration phase</a></span></li><li><span class="section"><a href="continuous.integration.pipeline.html#continuous.integration.pipeline.jenkins.unit.integration.job">C.3.4. Test Stage unit vs integration job</a></span></li><li><span class="section"><a href="continuous.integration.pipeline.html#continuous.integration.pipeline.jenkins.use.incremental.compilation">C.3.5. Test Stage no recompile - Changes detected</a></span></li><li><span class="section"><a href="continuous.integration.pipeline.html#continuous.integration.pipeline.jenkins.show.time">C.3.6. Show Time</a></span></li><li><span class="section"><a href="continuous.integration.pipeline.html#continuous.integration.pipeline.jenkins.show.date.time">C.3.7. Show Date/Time</a></span></li><li><span class="section"><a href="continuous.integration.pipeline.html#continuous.integration.pipeline.jenkins.suppress.download.log">C.3.8. Suppress download messages</a></span></li><li><span class="section"><a href="continuous.integration.pipeline.html#continuous.integration.pipeline.jenkins.site">C.3.9. Deploy Stage site-deploy</a></span></li><li><span class="section"><a href="continuous.integration.pipeline.html#continuous.integration.pipeline.jenkins.test.report">C.3.10. Jenkins CI Test Report</a></span></li><li><span class="section"><a href="continuous.integration.pipeline.html#continuous.integration.pipeline.jenkins.effective.pom">C.3.11. Effective Pom</a></span></li><li><span class="section"><a href="continuous.integration.pipeline.html#continuous.integration.pipeline.jenkins.jdk.check">C.3.12. Optional JDK Check</a></span></li><li><span class="section"><a href="continuous.integration.pipeline.html#continuous.integration.pipeline.jenkins.owasp">C.3.13. Optional OWASP Test Stage</a></span></li><li><span class="section"><a href="continuous.integration.pipeline.html#continuous.integration.pipeline.jenkins.sonarqube">C.3.14. Optional SonarQube Deploy stage</a></span></li><li><span class="section"><a href="continuous.integration.pipeline.html#continuous.integration.pipeline.jenkins.sonarqube.workaround">C.3.15. SonarQube Dashboard issue workaround</a></span></li><li><span class="section"><a href="continuous.integration.pipeline.html#continuous.integration.pipeline.jenkins.checkout.scm">C.3.16. Jenkins CI (un)stash vs checkout scm</a></span></li><li><span class="section"><a href="continuous.integration.pipeline.html#continuous.integration.pipeline.jenkins.touch.class">C.3.17. Test Stage no recompile - Compiling xx source files</a></span></li><li><span class="section"><a href="continuous.integration.pipeline.html#continuous.integration.pipeline.jenkins.open.source">C.3.18. Extra Open Source Stage</a></span></li><li><span class="section"><a href="continuous.integration.pipeline.html#continuous.integration.pipeline.jenkins.verify.deploy.phase">C.3.19. Artifacts verify vs deploy</a></span></li><li><span class="section"><a href="continuous.integration.pipeline.html#continuous.integration.pipeline.jenkins.javadoc.reports">C.3.20. Javadoc Reports</a></span></li></ul></li></ul></div><p>Example setups for Jenkins and GitLab CI pipelines originally based
+    on <a class="link" href="https://gitlab.com/gitlab-org/gitlab-ci-yml/blob/master/Maven.gitlab-ci.yml">Maven.gitlab-ci.yml</a>.</p><section class="section" id="continuous.integration.pipeline.resources"><div class="titlepage"><div><div><h2 class="title"><a id="continuous.integration.pipeline.resources" class="anchor" href="#continuous.integration.pipeline.resources"><span class="octicon octicon-link"/></a>C.1. Resources</h2></div></div></div><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><span class="inlinemediaobject"><img src="images/icons/gitlab.png"/></span> Getting started with <a class="link" href="https://docs.gitlab.com/ce/ci/quick_start/README.html">GitLab
+          CI</a> and <a class="link" href="https://docs.gitlab.com/ee/ci/examples/README.html">Examples</a>.
+          <a class="link" href="https://about.gitlab.com/2016/12/14/continuous-delivery-of-a-spring-boot-application-with-gitlab-ci-and-kubernetes/">Continuous
+          Delivery of a Spring Boot application</a> with GitLab CI and
+          Kubernetes.</p></li><li class="listitem"><p><span class="inlinemediaobject"><img src="images/icons/jenkins.png"/></span> What is <a class="link" href="https://jenkins.io/doc/book/pipeline/">Jenkins
+          Pipeline</a>.</p></li></ul></div></section><section class="section" id="continuous.integration.pipeline.gitlab"><div class="titlepage"><div><div><h2 class="title"><a id="continuous.integration.pipeline.gitlab" class="anchor" href="#continuous.integration.pipeline.gitlab"><span class="octicon octicon-link"/></a>C.2. GitLab CI Pipeline</h2></div></div></div><p>Just add a <a class="link" href="https://en.wikipedia.org/wiki/YAML">YAML</a> file
+      <code class="filename">gitlab-ci.yml</code> to a project to tell the GitLab
+      runner what to do. The latest version can be found at <a class="link" href="https://gitlab.com/freedumbytes/setup/blob/master/.gitlab-ci.yml">https://gitlab.com/freedumbytes/setup/blob/master/.gitlab-ci.yml</a>.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="important"><h2>Important</h2><p>Some pipeline settings depend on setting from the <a class="link" href="project.html#prj.maven.setup" title="16.1. Setup base components">Maven POM base/parent setup</a>.</p></div><section class="section" id="continuous.integration.pipeline.gitlab.compile"><div class="titlepage"><div><div><h3 class="title"><a id="continuous.integration.pipeline.gitlab.compile" class="anchor" href="#continuous.integration.pipeline.gitlab.compile"><span class="octicon octicon-link"/></a>C.2.1. Build Stage (test-)compile</h3></div></div></div><p>The first stage is created to compile the <code class="code">main</code> en
+        <code class="code">test</code> sources and the resulting <code class="code">target</code> and
+        optional <code class="code">generated</code> content is collected as an artifact
+        for the next stage:</p><pre xmlns="" class="language-provided"><code class="language-diff">+variables:
++  MAVEN_OPTS: "-Djava.awt.headless=true"
++  MAVEN_CLI_OPTS: "--batch-mode --errors --fail-fast --show-version"
++
++
++
++
++
++.maven-compile: &amp;maven-compile
++  stage: build
++  script:
++    - 'mvn $MAVEN_CLI_OPTS test-compile -PopenSource'
++  artifacts:
++    paths:
++      - "target"
++      - "*/target"
++      - "*/*/target"
++      - "src/main/generated"
++      - "*/src/main/generated"
++      - "*/*/src/main/generated"
++    expire_in: 1h
++  tags:
++    - docker
++
++
++
++
++
++maven-compile:jdk8:
++  &lt;&lt;: *maven-compile
++  image: maven:3.3.9-jdk-8
+</code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>Alas the <code class="code">artifacts</code> cannot be collected
+          recursively. Thus initial setup is for a maven project with 2 levels
+          deep modules hierarchy.</p></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="important"><h2>Important</h2><p>The original template example used <code class="code">--fail-at-end</code>
+          instead of <code class="code">--fail-fast</code>, but this makes the build run
+          longer in case of failure and causing additional logging.</p></div></section><section class="section" id="continuous.integration.pipeline.gitlab.deploy"><div class="titlepage"><div><div><h3 class="title"><a id="continuous.integration.pipeline.gitlab.deploy" class="anchor" href="#continuous.integration.pipeline.gitlab.deploy"><span class="octicon octicon-link"/></a>C.2.2. Test Stage deploy</h3></div></div></div><p>The second stage is created to test and deploy into Nexus the
+        compiled/generated class <code class="code">dependencies</code> from the build
+        stage and saving the test results for the next stage:</p><pre xmlns="" class="language-provided"><code class="language-diff">+.maven-artifacts: &amp;maven-artifacts
++  stage: test
++  script:
++#    - 'mvn $MAVEN_CLI_OPTS deploy -PopenSource'
++    - 'mvn $MAVEN_CLI_OPTS verify'
++  artifacts:
++    paths:
++      - "target/surefire-reports/*.xml"
++      - "*/target/surefire-reports/*.xml"
++      - "*/*/target/surefire-reports/*.xml"
++      - "target/failsafe-reports/*.xml"
++      - "*/target/failsafe-reports/*.xml"
++      - "*/*/target/failsafe-reports/*.xml"
++      - "target/coverage-reports/*.exec"
++      - "*/target/coverage-reports/*.exec"
++      - "*/*/target/coverage-reports/*.exec"
++    expire_in: 1h
++  tags:
++    - docker
+
+
+ maven-compile:jdk8:
+   &lt;&lt;: *maven-compile
+   image: maven:3.3.9-jdk-8
++
++
++
++maven-artifacts:jdk8:
++  &lt;&lt;: *maven-artifacts
++  image: maven:3.3.9-jdk-8
++  dependencies:
++    - maven-compile:jdk8
+</code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>Used <code class="code">verify</code> instead of <code class="code">deploy</code> since
+          there isn't a secret variable for <code class="code">ossrh</code> configured
+          (yet). Also disabled <code class="code"><a class="link" href="project.html#prj.maven.env" title="16.1.3. Environment">openSource</a></code> profile since there
+          isn't a secret variable for <code class="code">gpg.keyname</code> configured
+          (yet).</p></div></section><section class="section" id="continuous.integration.pipeline.gitlab.use.incremental.compilation"><div class="titlepage"><div><div><h3 class="title"><a id="continuous.integration.pipeline.gitlab.use.incremental.compilation" class="anchor" href="#continuous.integration.pipeline.gitlab.use.incremental.compilation"><span class="octicon octicon-link"/></a>C.2.3. Test Stage no recompile - Changes detected</h3></div></div></div><p>Prevent unnecessary recompiling by
+        <code class="code">maven-compiler-plugin</code> when <span class="quote">“<span class="quote">Changes detected -
+        recompiling the module!</span>”</span> due to the absolute <code class="filename">.java</code> file path in
+        <code class="filename">target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst</code>:</p><pre xmlns="" class="language-provided"><code class="language-diff"> variables:
++  MAVEN_PREVENT_RECOMPILE: "-Dmaven.compiler.useIncrementalCompilation=false"
+   MAVEN_OPTS: "-Djava.awt.headless=true"
+-  MAVEN_CLI_OPTS: "--batch-mode --errors --fail-fast --show-version"
++  MAVEN_CLI_OPTS: "--batch-mode --errors --fail-fast --show-version $MAVEN_PREVENT_RECOMPILE"
+</code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>This happens for example when Jenkins CI runs parallel jobs in
+          different workspace locations (see also <a class="link" href="https://issues.apache.org/jira/browse/MCOMPILER-209">MCOMPILER-209</a>).</p></div></section><section class="section" id="continuous.integration.pipeline.gitlab.touch.class"><div class="titlepage"><div><div><h3 class="title"><a id="continuous.integration.pipeline.gitlab.touch.class" class="anchor" href="#continuous.integration.pipeline.gitlab.touch.class"><span class="octicon octicon-link"/></a>C.2.4. Test Stage no recompile - Compiling xx source files</h3></div></div></div><p>Prevent unnecessary recompiling by
+        <code class="code">maven-compiler-plugin</code> when <span class="quote">“<span class="quote">Compiling xx source
+        files</span>”</span> instead of <span class="quote">“<span class="quote">Nothing to compile - all classes are
+        up to date</span>”</span> due to <code class="code">git clone</code> action in the test
+        job causing the <code class="filename">.java</code> file
+        being more recent than the corresponding <code class="filename">.class</code> file:</p><pre xmlns="" class="language-provided"><code class="language-diff"> .maven-artifacts: &amp;maven-artifacts
+   stage: test
+   script:
++    - 'find . -name "*.class" -exec touch {} \+'
+ #    - 'mvn $MAVEN_CLI_OPTS deploy -PopenSource'
+     - 'mvn $MAVEN_CLI_OPTS verify'
+   artifacts:
+</code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>This happens for example after upgrading to GitLab CI
+          9.x.</p></div></section><section class="section" id="continuous.integration.pipeline.gitlab.unit.integration.phase"><div class="titlepage"><div><div><h3 class="title"><a id="continuous.integration.pipeline.gitlab.unit.integration.phase" class="anchor" href="#continuous.integration.pipeline.gitlab.unit.integration.phase"><span class="octicon octicon-link"/></a>C.2.5. Test Stage unit vs integration phase</h3></div></div></div><p>Separate mvn unit and integration tests:</p><pre xmlns="" class="language-provided"><code class="language-diff">   stage: test
+   script:
+     - 'find . -name "*.class" -exec touch {} \+'
+-#    - 'mvn $MAVEN_CLI_OPTS deploy -PopenSource'
+-    - 'mvn $MAVEN_CLI_OPTS verify'
++    - 'mvn $MAVEN_CLI_OPTS test -PopenSource'
++#    - 'mvn $MAVEN_CLI_OPTS deploy -PopenSource,integrationTestsOnly'
++    - 'mvn $MAVEN_CLI_OPTS verify -PintegrationTestsOnly'
+   artifacts:
+     paths:
+       - "target/surefire-reports/*.xml"
+</code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>Usage of custom profile <code class="code"><a class="link" href="project.html#prj.maven.setup.java.unit.vs.integration" title="16.1.7.2.4. Unit vs Integration tests">integrationTestsOnly</a></code>.</p></div></section><section class="section" id="continuous.integration.pipeline.gitlab.unit.integration.job"><div class="titlepage"><div><div><h3 class="title"><a id="continuous.integration.pipeline.gitlab.unit.integration.job" class="anchor" href="#continuous.integration.pipeline.gitlab.unit.integration.job"><span class="octicon octicon-link"/></a>C.2.6. Test Stage unit vs integration job</h3></div></div></div><p>Separate jobs for unit and integration tests:</p><pre xmlns="" class="language-provided"><code class="language-diff">-.maven-artifacts: &amp;maven-artifacts
++.maven-unit: &amp;maven-unit
+   stage: test
+   script:
+     - 'find . -name "*.class" -exec touch {} \+'
+     - 'mvn $MAVEN_CLI_OPTS test -PopenSource'
+-#    - 'mvn $MAVEN_CLI_OPTS deploy -PopenSource,integrationTestsOnly'
+-    - 'mvn $MAVEN_CLI_OPTS verify -PintegrationTestsOnly'
+   artifacts:
+     paths:
+       - "target/surefire-reports/*.xml"
+       - "*/target/surefire-reports/*.xml"
+       - "*/*/target/surefire-reports/*.xml"
++      - "target/coverage-reports/*.exec"
++      - "*/target/coverage-reports/*.exec"
++      - "*/*/target/coverage-reports/*.exec"
++    expire_in: 1h
++  tags:
++    - docker
++
++
++
++.maven-integration-artifacts: &amp;maven-integration-artifacts
++  stage: test
++  script:
++    - 'find . -name "*.class" -exec touch {} \+'
++#    - 'mvn $MAVEN_CLI_OPTS deploy -PopenSource,integrationTestsOnly'
++    - 'mvn $MAVEN_CLI_OPTS verify -PintegrationTestsOnly'
++  artifacts:
++    paths:
+       - "target/failsafe-reports/*.xml"
+       - "*/target/failsafe-reports/*.xml"
+       - "*/*/target/failsafe-reports/*.xml"
+</code></pre><pre xmlns="" class="language-provided"><code class="language-diff">-maven-artifacts:jdk8:
+-  &lt;&lt;: *maven-artifacts
++maven-unit:jdk8:
++  &lt;&lt;: *maven-unit
++  image: maven:3.3.9-jdk-8
++  dependencies:
++    - maven-compile:jdk8
++
++
++
++maven-integration-artifacts:jdk8:
++  &lt;&lt;: *maven-integration-artifacts
+   image: maven:3.3.9-jdk-8
+   dependencies:
+     - maven-compile:jdk8
+</code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>Usage of custom profile <code class="code"><a class="link" href="project.html#prj.maven.setup.java.unit.vs.integration" title="16.1.7.2.4. Unit vs Integration tests">integrationTestsOnly</a></code>.</p></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="important"><h2>Important</h2><p>One could debate that unit and integration tests shouldn't run
+          in the same stage. But the intended integration tests are those
+          between classes which do not required a deployed system. How to run
+          system integration tests will be added at a later date.</p></div></section><section class="section" id="continuous.integration.pipeline.gitlab.cache"><div class="titlepage"><div><div><h3 class="title"><a id="continuous.integration.pipeline.gitlab.cache" class="anchor" href="#continuous.integration.pipeline.gitlab.cache"><span class="octicon octicon-link"/></a>C.2.7. GitLab CI Cache</h3></div></div></div><p>Cache downloaded dependencies and plugins between jobs:</p><pre xmlns="" class="language-provided"><code class="language-diff"> variables:
+   MAVEN_PREVENT_RECOMPILE: "-Dmaven.compiler.useIncrementalCompilation=false"
+-  MAVEN_OPTS: "-Djava.awt.headless=true"
++  MAVEN_OPTS: "-Dmaven.repo.local=.m2/repository -Djava.awt.headless=true"
+   MAVEN_CLI_OPTS: "--batch-mode --errors --fail-fast --show-version $MAVEN_PREVENT_RECOMPILE"
+
+
+
++cache:
++  paths:
++    - .m2/repository
++  key: "$CI_BUILD_REF"
+</code></pre></section><section class="section" id="continuous.integration.pipeline.gitlab.show.time"><div class="titlepage"><div><div><h3 class="title"><a id="continuous.integration.pipeline.gitlab.show.time" class="anchor" href="#continuous.integration.pipeline.gitlab.show.time"><span class="octicon octicon-link"/></a>C.2.8. Show Time</h3></div></div></div><p>Display time in Maven logging:</p><pre xmlns="" class="language-provided"><code class="language-diff"> variables:
++  MAVEN_SHOW_TIME: "-Dorg.slf4j.simpleLogger.showDateTime=true"
++  MAVEN_FORMAT_TIME: "-Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss.SSS"
+   MAVEN_PREVENT_RECOMPILE: "-Dmaven.compiler.useIncrementalCompilation=false"
+-  MAVEN_OPTS: "-Dmaven.repo.local=.m2/repository -Djava.awt.headless=true"
++  MAVEN_OPTS: "-Dmaven.repo.local=.m2/repository -Djava.awt.headless=true $MAVEN_SHOW_TIME $MAVEN_FORMAT_TIME"
+   MAVEN_CLI_OPTS: "--batch-mode --errors --fail-fast --show-version $MAVEN_PREVENT_RECOMPILE"
+</code></pre></section><section class="section" id="continuous.integration.pipeline.gitlab.show.date.time"><div class="titlepage"><div><div><h3 class="title"><a id="continuous.integration.pipeline.gitlab.show.date.time" class="anchor" href="#continuous.integration.pipeline.gitlab.show.date.time"><span class="octicon octicon-link"/></a>C.2.9. Show Date/Time</h3></div></div></div><p>Display date and time in Maven logging:</p><pre xmlns="" class="language-provided"><code class="language-diff"> variables:
+   MAVEN_SHOW_TIME: "-Dorg.slf4j.simpleLogger.showDateTime=true"
+-  MAVEN_FORMAT_TIME: "-Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss.SSS"
++  MAVEN_FORMAT_TIME: "-Dorg.slf4j.simpleLogger.dateTimeFormat=EEE..yyyy-MM-dd...HH:mm:ss.SSS..z"
+   MAVEN_SUPPRESS_DOWNLOAD_LOGS: "-Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=WARN"
+   MAVEN_PREVENT_RECOMPILE: "-Dmaven.compiler.useIncrementalCompilation=false"
+   MAVEN_OPTS: "-Dmaven.repo.local=.m2/repository -Djava.awt.headless=true $MAVEN_SHOW_TIME $MAVEN_FORMAT_TIME $MAVEN_SUPPRESS_DOWNLOAD_LOGS"
+</code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="important"><h2>Important</h2><p>The dots between for example date and time are necessary
+          because spaces would cause the following error <span class="quote">“<span class="quote">Error: Could
+          not find or load main class ...</span>”</span> (see also <a class="link" href="https://issues.apache.org/jira/browse/MNG-4559">MNG-4559</a>).</p></div></section><section class="section" id="continuous.integration.pipeline.gitlab.suppress.download.log"><div class="titlepage"><div><div><h3 class="title"><a id="continuous.integration.pipeline.gitlab.suppress.download.log" class="anchor" href="#continuous.integration.pipeline.gitlab.suppress.download.log"><span class="octicon octicon-link"/></a>C.2.10. Suppress download messages</h3></div></div></div><p>Suppress download messages for dependencies and plugins:</p><pre xmlns="" class="language-provided"><code class="language-diff"> variables:
+   MAVEN_SHOW_TIME: "-Dorg.slf4j.simpleLogger.showDateTime=true"
+   MAVEN_FORMAT_TIME: "-Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss.SSS"
++  MAVEN_SUPPRESS_DOWNLOAD_LOGS: "-Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=WARN"
+   MAVEN_PREVENT_RECOMPILE: "-Dmaven.compiler.useIncrementalCompilation=false"
+-  MAVEN_OPTS: "-Dmaven.repo.local=.m2/repository -Djava.awt.headless=true $MAVEN_SHOW_TIME $MAVEN_FORMAT_TIME"
++  MAVEN_OPTS: "-Dmaven.repo.local=.m2/repository -Djava.awt.headless=true $MAVEN_SHOW_TIME $MAVEN_FORMAT_TIME $MAVEN_SUPPRESS_DOWNLOAD_LOGS"
+   MAVEN_CLI_OPTS: "--batch-mode --errors --fail-fast --show-version $MAVEN_PREVENT_RECOMPILE"
+</code></pre></section><section class="section" id="continuous.integration.pipeline.gitlab.site"><div class="titlepage"><div><div><h3 class="title"><a id="continuous.integration.pipeline.gitlab.site" class="anchor" href="#continuous.integration.pipeline.gitlab.site"><span class="octicon octicon-link"/></a>C.2.11. Deploy Stage site:stage</h3></div></div></div><p>Generate project site</p><pre xmlns="" class="language-provided"><code class="language-diff">+.maven-site: &amp;maven-site
++  stage: deploy
++  script:
++    - 'mvn $MAVEN_CLI_OPTS site -PopenSource,enableUpdatesReports'
++    - 'mvn $MAVEN_CLI_OPTS site:stage -PopenSource,enableUpdatesReports'
++  artifacts:
++    paths:
++      - "target/staging"
++    expire_in: 1h
++  tags:
++    - docker
++
++
+ maven-compile:jdk8:
+   &lt;&lt;: *maven-compile
+   image: maven:3.3.9-jdk-8
+</code></pre><pre xmlns="" class="language-provided"><code class="language-diff">   image: maven:3.3.9-jdk-8
+   dependencies:
+     - maven-compile:jdk8
++
++
++
++maven-site:jdk8:
++  &lt;&lt;: *maven-site
++  image: maven:3.3.9-jdk-8
++  dependencies:
++    - maven-compile:jdk8
++    - maven-unit:jdk8
++    - maven-integration-artifacts:jdk8
+</code></pre></section><section class="section" id="continuous.integration.pipeline.gitlab.pages"><div class="titlepage"><div><div><h3 class="title"><a id="continuous.integration.pipeline.gitlab.pages" class="anchor" href="#continuous.integration.pipeline.gitlab.pages"><span class="octicon octicon-link"/></a>C.2.12. GitLab CI Deploy Pages Stage</h3></div></div></div><p>With <a class="link" href="https://docs.gitlab.com/ee/user/project/pages/index.html">GitLab
+        Pages</a> you can create static websites for your GitLab projects,
+        groups, or user accounts:</p><pre xmlns="" class="language-provided"><code class="language-diff">+stages:
++  - build
++  - test
++  - deploy
++  - deploy-pages
++
++
++
+ variables:
+   MAVEN_SHOW_TIME: "-Dorg.slf4j.simpleLogger.showDateTime=true"
+   MAVEN_FORMAT_TIME: "-Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss.SSS"
+</code></pre><pre xmlns="" class="language-provided"><code class="language-diff"> maven-site:jdk8:
+   &lt;&lt;: *maven-site
+   image: maven:3.3.9-jdk-8
+   dependencies:
+     - maven-compile:jdk8
+     - maven-unit:jdk8
+     - maven-integration-artifacts:jdk8
++
++
++
++pages:
++  stage: deploy-pages
++  script:
++  - 'mkdir .public'
++  - 'cp -r target/staging/* .public'
++  - 'mv .public public'
++  dependencies:
++    - maven-site:jdk8
++  artifacts:
++    paths:
++    - public
++    expire_in: 1h
+</code></pre></section><section class="section" id="continuous.integration.pipeline.gitlab.site.stage.workaround"><div class="titlepage"><div><div><h3 class="title"><a id="continuous.integration.pipeline.gitlab.site.stage.workaround" class="anchor" href="#continuous.integration.pipeline.gitlab.site.stage.workaround"><span class="octicon octicon-link"/></a>C.2.13. Maven Site Staging issue workaround</h3></div></div></div><p>Sometimes the staged site isn't created in <code class="filename">target/staging</code> but next to it in
+        <code class="filename">target/&lt;artifactId&gt;</code>:</p><pre xmlns="" class="language-provided"><code class="language-diff">   script:
+     - 'mvn $MAVEN_CLI_OPTS site -PopenSource,enableUpdatesReports'
+     - 'mvn $MAVEN_CLI_OPTS site:stage -PopenSource,enableUpdatesReports'
++    - 'rm -r target/site'
++    - 'mv `find ./target -type f -name "team-list.html" | sed -r "s|/[^/]+$||" | sort -u | head -1` target/pages'
+   artifacts:
+     paths:
+-      - "target/staging"
++      - "target/pages"
+     expire_in: 1h
+   tags:
+     - docker
+</code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>As a workaround just move the first folder in <code class="filename">target</code> containing a
+          <code class="filename">team-list.html</code> report to <code class="filename">tarrget/pages</code>.</p></div><pre xmlns="" class="language-provided"><code class="language-diff"> pages:
+   stage: deploy-pages
+   script:
+   - 'mkdir .public'
+-  - 'cp -r target/staging/* .public'
++  - 'cp -r target/pages/* .public'
+   - 'mv .public public'
+   dependencies:
+     - maven-site:jdk8
+</code></pre></section><section class="section" id="continuous.integration.pipeline.gitlab.pages.deploy"><div class="titlepage"><div><div><h3 class="title"><a id="continuous.integration.pipeline.gitlab.pages.deploy" class="anchor" href="#continuous.integration.pipeline.gitlab.pages.deploy"><span class="octicon octicon-link"/></a>C.2.14. GitLab CI Deploy Pages Stage take 2</h3></div></div></div><p>Alas the <code class="code">pages</code> job should better be in the deploy
+        stage because the extra <code class="code">pages:deploy</code> job entry is placed
+        in that stage anyway:</p><pre xmlns="" class="language-provided"><code class="language-diff"> stages:
+   - build
+   - test
++  - docs
+   - deploy
+-  - deploy-pages
+</code></pre><pre xmlns="" class="language-provided"><code class="language-diff"> .maven-site: &amp;maven-site
+-  stage: deploy
++  stage: docs
+   script:
+     - 'mvn $MAVEN_CLI_OPTS site -PopenSource,enableUpdatesReports'
+     - 'mvn $MAVEN_CLI_OPTS site:stage -PopenSource,enableUpdatesReports'
+</code></pre><pre xmlns="" class="language-provided"><code class="language-diff"> pages:
+-  stage: deploy-pages
++  stage: deploy
+   script:
+   - 'mkdir .public'
+   - 'cp -r target/pages/* .public'
+</code></pre></section><section class="section" id="continuous.integration.pipeline.gitlab.site.master.only"><div class="titlepage"><div><div><h3 class="title"><a id="continuous.integration.pipeline.gitlab.site.master.only" class="anchor" href="#continuous.integration.pipeline.gitlab.site.master.only"><span class="octicon octicon-link"/></a>C.2.15. Site Generation revisited</h3></div></div></div><p>Only update the site when running on the master. Also generate
+        the site in case of a failure (requires test/verify artifacts set to
+        <code class="code">when: always</code>):</p><pre xmlns="" class="language-provided"><code class="language-diff">       - "*/target/coverage-reports/*.exec"
+       - "*/*/target/coverage-reports/*.exec"
+     expire_in: 1h
++    when:
++      always
+   tags:
+     - docker
+</code></pre><pre xmlns="" class="language-provided"><code class="language-diff"> maven-site:jdk8:
+   &lt;&lt;: *maven-site
+   image: maven:3.3.9-jdk-8
+   dependencies:
+     - maven-compile:jdk8
+     - maven-unit:jdk8
+     - maven-integration-artifacts:jdk8
++  only:
++    - master
++
++
++
++maven-site-failure:jdk8:
++  &lt;&lt;: *maven-site
++  image: maven:3.3.9-jdk-8
++  dependencies:
++    - maven-compile:jdk8
++    - maven-unit:jdk8
++    - maven-integration-artifacts:jdk8
++  artifacts:
++    paths:
++      - "target/pages"
++    expire_in: 1 day
++  when:
++    on_failure
+</code></pre><pre xmlns="" class="language-provided"><code class="language-diff"> pages:
+     paths:
+     - public
+     expire_in: 1h
++  only:
++    - master
+
+</code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>Alas due to the nature of the pages job it is not possible to
+          deploy the site on failure also (for now just download the generated
+          site artifacts, which will expire in 1 day, to browse the test
+          reports).</p></div></section><section class="section" id="continuous.integration.pipeline.gitlab.effective.pom"><div class="titlepage"><div><div><h3 class="title"><a id="continuous.integration.pipeline.gitlab.effective.pom" class="anchor" href="#continuous.integration.pipeline.gitlab.effective.pom"><span class="octicon octicon-link"/></a>C.2.16. Effective Pom</h3></div></div></div><p>Convenience job to dump the <code class="code">effective-pom</code> in case
+        of failure:</p><pre xmlns="" class="language-provided"><code class="language-diff">+.maven-effective-pom: &amp;maven-effective-pom
++  stage: docs
++  script:
++    - 'mvn $MAVEN_CLI_OPTS help:effective-pom -PopenSource'
++  tags:
++    - docker
++
++
++
++maven-effective-pom:jdk8:
++  &lt;&lt;: *maven-effective-pom
++  image: maven:3.3.9-jdk-8
++  when:
++    on_failure
+</code></pre></section><section class="section" id="continuous.integration.pipeline.gitlab.jdk.check"><div class="titlepage"><div><div><h3 class="title"><a id="continuous.integration.pipeline.gitlab.jdk.check" class="anchor" href="#continuous.integration.pipeline.gitlab.jdk.check"><span class="octicon octicon-link"/></a>C.2.17. Optional JDK Check</h3></div></div></div><p>Add <code class="code"><a class="link" href="project.html#prj.maven.setup.java.animal.sniffer" title="16.1.7.7. Animal Sniffer">animal-sniffer</a></code>
+        and <code class="code"><a class="link" href="project.html#prj.maven.setup.java.enforcer" title="16.1.7.8. Enforcer">enforcer</a></code> in case
+        the <code class="code"><a class="link" href="project.html#prj.maven.setup.java.compiler" title="16.1.7.1. Compiler">maven.compiler.target</a></code>
+        is not the same as the jdk used by the docker image:</p><pre xmlns="" class="language-provided"><code class="language-diff">     - 'find . -name "*.class" -exec touch {} \+'
+ #    - 'mvn $MAVEN_CLI_OPTS deploy -PopenSource,integrationTestsOnly'
+     - 'mvn $MAVEN_CLI_OPTS verify -PintegrationTestsOnly'
++    - 'mvn $MAVEN_CLI_OPTS animal-sniffer:check -PopenSource'
++    - 'mvn $MAVEN_CLI_OPTS enforcer:enforce -PopenSource'
+   artifacts:
+     paths:
+       - "target/failsafe-reports/*.xml"
+</code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>TODO see JModalWindow project.</p></div></section><section class="section" id="continuous.integration.pipeline.gitlab.owasp"><div class="titlepage"><div><div><h3 class="title"><a id="continuous.integration.pipeline.gitlab.owasp" class="anchor" href="#continuous.integration.pipeline.gitlab.owasp"><span class="octicon octicon-link"/></a>C.2.18. Optional OWASP Test Stage</h3></div></div></div><p>Add <code class="code"><a class="link" href="project.html#prj.maven.setup.java.owasp.dependency.check" title="16.1.7.9. OWASP Dependency Check">dependency-check</a></code>
+        to <code class="code">master</code> branch only:</p><pre xmlns="" class="language-provided"><code class="language-diff">+.maven-owasp: &amp;maven-owasp
++  stage: test
++  script:
++    - 'mvn $MAVEN_CLI_OPTS org.owasp:dependency-check-maven:aggregate -PopenSource'
++  artifacts:
++    paths:
++      - "target/owasp-reports/dependency-check-report.xml"
++    expire_in: 1h
++  tags:
++    - docker
++  only:
++    - master
++
++
++
++maven-owasp:jdk8:
++  &lt;&lt;: *maven-owasp
++  image: maven:3.3.9-jdk-8
++  dependencies:
++    - maven-compile:jdk8
+</code></pre></section><section class="section" id="continuous.integration.pipeline.gitlab.sonarqube"><div class="titlepage"><div><div><h3 class="title"><a id="continuous.integration.pipeline.gitlab.sonarqube" class="anchor" href="#continuous.integration.pipeline.gitlab.sonarqube"><span class="octicon octicon-link"/></a>C.2.19. Optional SonarQube Docs stage</h3></div></div></div><p>Add <code class="code"><a class="link" href="quality.assurance.html#qa.sonar.maven.integration" title="17.2.7. Maven integration">sonar</a></code> to
+        <code class="code">master</code> branch only:</p><pre xmlns="" class="language-provided"><code class="language-diff">+.maven-sonar: &amp;maven-sonar
++  stage: docs
++  script:
++    - 'mvn $MAVEN_CLI_OPTS sonar:sonar -PopenSource'
++  tags:
++    - docker
++  only:
++    - master
++
++
++
++#maven-sonar:jdk8:
++#  &lt;&lt;: *maven-sonar
++#  image: maven:3.3.9-jdk-8
++#  dependencies:
++#    - maven-unit:jdk8
++#    - maven-integration-artifacts:jdk8
++#    - maven-owasp:jdk8
+</code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>Currently disabled since there isn't a secret variable for
+          <code class="code">sonar.login</code> configured (yet).</p></div></section><section class="section" id="continuous.integration.pipeline.gitlab.sonarqube.workaround"><div class="titlepage"><div><div><h3 class="title"><a id="continuous.integration.pipeline.gitlab.sonarqube.workaround" class="anchor" href="#continuous.integration.pipeline.gitlab.sonarqube.workaround"><span class="octicon octicon-link"/></a>C.2.20. SonarQube Dashboard issue workaround</h3></div></div></div><p>Maven report link to SonarQube is no longer working (see also
+        <a class="link" href="https://github.com/SonarQubeCommunity/sonar-maven-report/issues/6">issue
+        6</a>):</p><pre xmlns="" class="language-provided"><code class="language-diff">   stage: docs
+   script:
+     - 'mvn $MAVEN_CLI_OPTS site -PopenSource,enableUpdatesReports'
++    - 'find . -type f -name "sonar.html" | xargs --no-run-if-empty sed -i "s/\/project\/index\//\/dashboard\/index\//g"'
+     - 'mvn $MAVEN_CLI_OPTS site:stage -PopenSource,enableUpdatesReports'
+     - 'rm -r target/site'
+     - 'mv `find ./target -type f -name "team-list.html" | sed -r "s|/[^/]+$||" | sort -u | head -1` target/pages'
+</code></pre></section><section class="section" id="continuous.integration.pipeline.gitlab.verify.deploy.phase"><div class="titlepage"><div><div><h3 class="title"><a id="continuous.integration.pipeline.gitlab.verify.deploy.phase" class="anchor" href="#continuous.integration.pipeline.gitlab.verify.deploy.phase"><span class="octicon octicon-link"/></a>C.2.21. Artifacts verify vs deploy</h3></div></div></div><p>On branches run verify only instead of deploy because it is
+        otherwise no longer clear which SNAPSHOT artifacts will be downloaded
+        from Nexus (the latest master or branch build):</p><pre xmlns="" class="language-provided"><code class="language-diff"> .maven-integration-artifacts: &amp;maven-integration-artifacts
+   stage: test
+   script:
+     - 'find . -name "*.class" -exec touch {} \+'
+-#    - 'mvn $MAVEN_CLI_OPTS deploy -PopenSource,integrationTestsOnly'
+-    - 'mvn $MAVEN_CLI_OPTS verify -PintegrationTestsOnly'
++#    - 'mvn $MAVEN_CLI_OPTS $MVN_PHASE -PopenSource,integrationTestsOnly'
++    - 'mvn $MAVEN_CLI_OPTS $MVN_PHASE -PintegrationTestsOnly'
+     - 'mvn $MAVEN_CLI_OPTS animal-sniffer:check -PopenSource'
+     - 'mvn $MAVEN_CLI_OPTS enforcer:enforce -PopenSource'
+   artifacts:
+</code></pre><pre xmlns="" class="language-provided"><code class="language-diff">-maven-integration-artifacts:jdk8:
++maven-integration-artifacts-verify:jdk8:
+   &lt;&lt;: *maven-integration-artifacts
+   image: maven:3.3.9-jdk-8
++  variables:
++    MVN_PHASE: "verify"
+   dependencies:
+     - maven-compile:jdk8
++  except:
++    - master
++    - tags
++
++
++
++maven-integration-artifacts-deploy:jdk8:
++  &lt;&lt;: *maven-integration-artifacts
++  image: maven:3.3.9-jdk-8
++  variables:
++#    MVN_PHASE: "deploy"
++    MVN_PHASE: "verify"
++  dependencies:
++    - maven-compile:jdk8
++  only:
++    - master
++    - tags
+</code></pre><pre xmlns="" class="language-provided"><code class="language-diff"> #maven-sonar:jdk8:
+ #  image: maven:3.3.9-jdk-8
+ #  dependencies:
+ #    - maven-unit:jdk8
+-#    - maven-integration-artifacts:jdk8
++#    - maven-integration-artifacts-deploy:jdk8
+ #    - maven-owasp:jdk8
+</code></pre><pre xmlns="" class="language-provided"><code class="language-diff"> maven-site:jdk8:
+   &lt;&lt;: *maven-site
+   image: maven:3.3.9-jdk-8
+   dependencies:
+     - maven-compile:jdk8
+     - maven-unit:jdk8
+-    - maven-integration-artifacts:jdk8
++    - maven-integration-artifacts-deploy:jdk8
+   only:
+     - master
+</code></pre><pre xmlns="" class="language-provided"><code class="language-diff"> maven-site-failure:jdk8:
+   &lt;&lt;: *maven-site
+   image: maven:3.3.9-jdk-8
+   dependencies:
+     - maven-compile:jdk8
+     - maven-unit:jdk8
+-    - maven-integration-artifacts:jdk8
++    - maven-integration-artifacts-verify:jdk8
++    - maven-integration-artifacts-deploy:jdk8
+   artifacts:
+     paths:
+       - "target/pages"
+</code></pre></section><section class="section" id="continuous.integration.pipeline.gitlab.javadoc.reports"><div class="titlepage"><div><div><h3 class="title"><a id="continuous.integration.pipeline.gitlab.javadoc.reports" class="anchor" href="#continuous.integration.pipeline.gitlab.javadoc.reports"><span class="octicon octicon-link"/></a>C.2.22. Javadoc Reports</h3></div></div></div><p>Enable the <a class="link" href="project.html#prj.maven.versions.reporting">Javadoc
+        Reports</a> for the generated project site:</p><pre xmlns="" class="language-provided"><code class="language-diff"> .maven-site: &amp;maven-site
+   stage: docs
+   script:
+-    - 'mvn $MAVEN_CLI_OPTS site -PopenSource,enableUpdatesReports'
++    - 'mvn $MAVEN_CLI_OPTS site -PopenSource,enableUpdatesReports,enableJavadocReports'
+     - 'find . -type f -name "sonar.html" | xargs --no-run-if-empty sed -i "s/\/project\/index\//\/dashboard\/index\//g"'
+-    - 'mvn $MAVEN_CLI_OPTS site:stage -PopenSource,enableUpdatesReports'
++    - 'mvn $MAVEN_CLI_OPTS site:stage -PopenSource,enableUpdatesReports,enableJavadocReports'
+     - 'rm -r target/site'
+     - 'mv `find ./target -type f -name "team-list.html" | sed -r "s|/[^/]+$||" | sort -u | head -1` target/pages'
+   artifacts:
+</code></pre></section></section><section class="section" id="continuous.integration.pipeline.jenkins"><div class="titlepage"><div><div><h2 class="title"><a id="continuous.integration.pipeline.jenkins" class="anchor" href="#continuous.integration.pipeline.jenkins"><span class="octicon octicon-link"/></a>C.3. Jenkins CI Pipeline</h2></div></div></div><p>Just add a file <code class="filename">Jenkinsfile</code> to a project to
+      tell the Jenkins pipeline what to do. The latest version can be found at
+      <a class="link" href="https://gitlab.com/freedumbytes/setup/blob/master/Jenkinsfile">https://gitlab.com/freedumbytes/setup/blob/master/Jenkinsfile</a>.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="important"><h2>Important</h2><p>Some pipeline settings depend on setting from the <a class="link" href="project.html#prj.maven.setup" title="16.1. Setup base components">Maven POM base/parent setup</a>.</p></div><section class="section" id="continuous.integration.pipeline.jenkins.compile"><div class="titlepage"><div><div><h3 class="title"><a id="continuous.integration.pipeline.jenkins.compile" class="anchor" href="#continuous.integration.pipeline.jenkins.compile"><span class="octicon octicon-link"/></a>C.3.1. Build Stage (test-)compile</h3></div></div></div><p>The first stage is created to compile the <code class="code">main</code> en
+        <code class="code">test</code> sources and the resulting <code class="code">target</code> and
+        optional <code class="code">generated</code> content is collected as an artifact
+        for the next stage:</p><pre xmlns="" class="language-provided"><code class="language-diff">+pipeline
++{
++  agent
++  {
++    label "windows"
++  }
++
++
++
++  environment
++  {
++    MAVEN_OPTS = "-Djava.awt.headless=true"
++    MAVEN_CLI_OPTS = "--batch-mode --errors --fail-fast --show-version"
++  }
++
++
++
++  stages
++  {
++    stage("build")
++    {
++      steps
++      {
++        mvnCompileNode nodeName: "windows", profile: "", branchName: ""
++      }
++    }
++  }
++}
++
++
++
++
++
++def mvnCompileNode(Map args)
++{
++  node("${args.nodeName}")
++  {
++    stage("compile")
++    {
++      echo "Clean Up..."
++      deleteDir()
++
++      echo "Check Out..."
++      checkout scm
++      stash name: "sourcecode", includes: "**", excludes: "**/target/**"
++
++      echo "Compile Source..."
++      sh "mvn $MAVEN_CLI_OPTS test-compile ${args.profile}"
++      stash name: "bytecode", includes: "**/target/**,**/generated/**", allowEmpty: true
++    }
++  }
++}
+</code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>Alas the <code class="code">artifacts</code> cannot be collected
+          recursively. Thus initial setup is for a maven project with 2 levels
+          deep modules hierarchy.</p></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="important"><h2>Important</h2><p>The original template example used <code class="code">--fail-at-end</code>
+          instead of <code class="code">--fail-fast</code>, but this makes the build run
+          longer in case of failure and causing additional logging.</p></div></section><section class="section" id="continuous.integration.pipeline.jenkins.deploy"><div class="titlepage"><div><div><h3 class="title"><a id="continuous.integration.pipeline.jenkins.deploy" class="anchor" href="#continuous.integration.pipeline.jenkins.deploy"><span class="octicon octicon-link"/></a>C.3.2. Test Stage deploy</h3></div></div></div><p>The second stage is created to test and deploy into Nexus the
+        compiled/generated class <code class="code">dependencies</code> from the build
+        stage and saving the test results for the next stage:</p><pre xmlns="" class="language-provided"><code class="language-diff">         mvnCompileNode nodeName: "windows", profile: "", branchName: ""
+       }
+     }
++
++    stage("test")
++    {
++      steps
++      {
++        mvnArtifactsNode nodeName: "windows", profile: "", branchName: ""
++      }
++    }
+   }
+ }
+</code></pre><pre xmlns="" class="language-provided"><code class="language-diff">+def mvnArtifactsNode(Map args)
++{
++  node("${args.nodeName}")
++  {
++    stage("artifacts")
++    {
++      echo "Clean Up..."
++      deleteDir()
++
++      echo "Source Code..."
++      unstash "sourcecode"
++
++      echo "Bytecode..."
++      unstash "bytecode"
++
++      try
++      {
++        echo "Artifacts..."
++        sh "mvn $MAVEN_CLI_OPTS deploy ${args.profile}"
++      }
++      finally
++      {
++        stash name: "testresults", includes: "**/target/surefire-reports/*.xml,**/target/failsafe-reports/*.xml,**/target/coverage-reports/jacoco-unit.exec,**/target/coverage-reports/jacoco-integration.exec", allowEmpty: true
++      }
++    }
++  }
++}
+</code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>Used <code class="code">verify</code> instead of <code class="code">deploy</code> since
+          there isn't a secret variable for <code class="code">ossrh</code> configured
+          (yet). Also disabled <code class="code"><a class="link" href="project.html#prj.maven.env" title="16.1.3. Environment">openSource</a></code> profile since there
+          isn't a secret variable for <code class="code">gpg.keyname</code> configured
+          (yet).</p></div></section><section class="section" id="continuous.integration.pipeline.jenkins.unit.integration.phase"><div class="titlepage"><div><div><h3 class="title"><a id="continuous.integration.pipeline.jenkins.unit.integration.phase" class="anchor" href="#continuous.integration.pipeline.jenkins.unit.integration.phase"><span class="octicon octicon-link"/></a>C.3.3. Test Stage unit vs integration phase</h3></div></div></div><p>Separate mvn unit and integration tests:</p><pre xmlns="" class="language-provided"><code class="language-diff">       try
+       {
+-        echo "Artifacts..."
+-        sh "mvn $MAVEN_CLI_OPTS deploy ${args.profile}"
++        echo "Unit Test..."
++        sh "mvn $MAVEN_CLI_OPTS test ${args.profile}"
++
++        echo "Integration Test..."
++        sh "mvn $MAVEN_CLI_OPTS deploy -PintegrationTestsOnly"
+       }
+       finally
+       {
+-        stash name: "testresults", includes: "**/target/surefire-reports/*.xml,**/target/failsafe-reports/*.xml,**/target/coverage-reports/jacoco-unit.exec,**/target/coverage-reports/jacoco-integration.exec", allowEmpty: true
++        stash name: "unittests", includes: "**/target/surefire-reports/*.xml,**/target/coverage-reports/jacoco-unit.exec", allowEmpty: true
++        stash name: "integrationtests", includes: "**/target/failsafe-reports/*.xml,**/target/coverage-reports/jacoco-integration.exec", allowEmpty: true
+       }
+     }
+   }
+</code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>Usage of custom profile <code class="code"><a class="link" href="project.html#prj.maven.setup.java.unit.vs.integration" title="16.1.7.2.4. Unit vs Integration tests">integrationTestsOnly</a></code>.</p></div></section><section class="section" id="continuous.integration.pipeline.jenkins.unit.integration.job"><div class="titlepage"><div><div><h3 class="title"><a id="continuous.integration.pipeline.jenkins.unit.integration.job" class="anchor" href="#continuous.integration.pipeline.jenkins.unit.integration.job"><span class="octicon octicon-link"/></a>C.3.4. Test Stage unit vs integration job</h3></div></div></div><p>Separate jobs for unit and integration tests:</p><pre xmlns="" class="language-provided"><code class="language-diff">     {
+       steps
+       {
+-        mvnArtifactsNode nodeName: "windows", profile: "", branchName: ""
++        parallel (
++          "unit":
++          {
++            mvnUnitTestNode nodeName: "windows", profile: "", branchName: ""
++          },
++
++          "integration-artifacts":
++          {
++            mvnIntegrationTestNode nodeName: "windows", profile: "-PintegrationTestsOnly", branchName: ""
++          }
++        )
+       }
+     }
+   }
+</code></pre><pre xmlns="" class="language-provided"><code class="language-diff">-def mvnArtifactsNode(Map args)
++def mvnUnitTestNode(Map args)
+ {
+   node("${args.nodeName}")
+   {
+-    stage("artifacts")
++    stage("unit")
+     {
+       echo "Clean Up..."
+       deleteDir()
+</code></pre><pre xmlns="" class="language-provided"><code class="language-diff">       {
+         echo "Unit Test..."
+         sh "mvn $MAVEN_CLI_OPTS test ${args.profile}"
++      }
++      finally
++      {
++        stash name: "unittests", includes: "**/target/surefire-reports/*.xml,**/target/coverage-reports/jacoco-unit.exec", allowEmpty: true
++      }
++    }
++  }
++}
++
++
++
++def mvnIntegrationTestNode(Map args)
++{
++  node("${args.nodeName}")
++  {
++    stage("integration-artifacts")
++    {
++      echo "Clean Up..."
++      deleteDir()
++
++      echo "Source Code..."
++      unstash "sourcecode"
+
++      echo "Bytecode..."
++      unstash "bytecode"
++
++      try
++      {
+         echo "Integration Test..."
+-        sh "mvn $MAVEN_CLI_OPTS deploy -PintegrationTestsOnly"
++        sh "mvn $MAVEN_CLI_OPTS deploy ${args.profile}"
+       }
+       finally
+       {
+-        stash name: "unittests", includes: "**/target/surefire-reports/*.xml,**/target/coverage-reports/jacoco-unit.exec", allowEmpty: true
+         stash name: "integrationtests", includes: "**/target/failsafe-reports/*.xml,**/target/coverage-reports/jacoco-integration.exec", allowEmpty: true
+       }
+     }
+</code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>Usage of custom profile <code class="code"><a class="link" href="project.html#prj.maven.setup.java.unit.vs.integration" title="16.1.7.2.4. Unit vs Integration tests">integrationTestsOnly</a></code>.</p></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="important"><h2>Important</h2><p>One could debate that unit and integration tests shouldn't run
+          in the same stage. But the intended integration tests are those
+          between classes which do not required a deployed system. How to run
+          system integration tests will be added at a later date.</p></div></section><section class="section" id="continuous.integration.pipeline.jenkins.use.incremental.compilation"><div class="titlepage"><div><div><h3 class="title"><a id="continuous.integration.pipeline.jenkins.use.incremental.compilation" class="anchor" href="#continuous.integration.pipeline.jenkins.use.incremental.compilation"><span class="octicon octicon-link"/></a>C.3.5. Test Stage no recompile - Changes detected</h3></div></div></div><p>Prevent unnecessary recompiling by
+        <code class="code">maven-compiler-plugin</code> when <span class="quote">“<span class="quote">Changes detected -
+        recompiling the module!</span>”</span> due to the absolute <code class="filename">.java</code> file path in
+        <code class="filename">target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst</code>:</p><pre xmlns="" class="language-provided"><code class="language-diff">   environment
+   {
++    MAVEN_PREVENT_RECOMPILE = "-Dmaven.compiler.useIncrementalCompilation=false"
+     MAVEN_OPTS = "-Djava.awt.headless=true"
+-    MAVEN_CLI_OPTS = "--batch-mode --errors --fail-fast --show-version"
++    MAVEN_CLI_OPTS = "--batch-mode --errors --fail-fast --show-version ${MAVEN_PREVENT_RECOMPILE}"
+   }
+</code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>This happens for example when Jenkins CI runs parallel jobs in
+          different workspace locations (see also <a class="link" href="https://issues.apache.org/jira/browse/MCOMPILER-209">MCOMPILER-209</a>).</p></div></section><section class="section" id="continuous.integration.pipeline.jenkins.show.time"><div class="titlepage"><div><div><h3 class="title"><a id="continuous.integration.pipeline.jenkins.show.time" class="anchor" href="#continuous.integration.pipeline.jenkins.show.time"><span class="octicon octicon-link"/></a>C.3.6. Show Time</h3></div></div></div><p>Display time in Maven logging:</p><pre xmlns="" class="language-provided"><code class="language-diff">   environment
+   {
++    MAVEN_SHOW_TIME = "-Dorg.slf4j.simpleLogger.showDateTime=true"
++    MAVEN_FORMAT_TIME = "-Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss.SSS"
+     MAVEN_PREVENT_RECOMPILE = "-Dmaven.compiler.useIncrementalCompilation=false"
+-    MAVEN_OPTS = "-Djava.awt.headless=true"
++    MAVEN_OPTS = "-Djava.awt.headless=true ${MAVEN_SHOW_TIME} ${MAVEN_FORMAT_TIME}"
+     MAVEN_CLI_OPTS = "--batch-mode --errors --fail-fast --show-version ${MAVEN_PREVENT_RECOMPILE}"
+   }
+</code></pre></section><section class="section" id="continuous.integration.pipeline.jenkins.show.date.time"><div class="titlepage"><div><div><h3 class="title"><a id="continuous.integration.pipeline.jenkins.show.date.time" class="anchor" href="#continuous.integration.pipeline.jenkins.show.date.time"><span class="octicon octicon-link"/></a>C.3.7. Show Date/Time</h3></div></div></div><p>Display date and time in Maven logging:</p><pre xmlns="" class="language-provided"><code class="language-diff">   environment
+   {
+     MAVEN_SHOW_TIME = "-Dorg.slf4j.simpleLogger.showDateTime=true"
+-    MAVEN_FORMAT_TIME = "-Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss.SSS"
++    MAVEN_FORMAT_TIME = "-Dorg.slf4j.simpleLogger.dateTimeFormat=EEE..yyyy-MM-dd...HH:mm:ss.SSS..z"
+     MAVEN_SUPPRESS_DOWNLOAD_LOGS = "-Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=WARN"
+     MAVEN_PREVENT_RECOMPILE = "-Dmaven.compiler.useIncrementalCompilation=false"
+     MAVEN_OPTS = "-Djava.awt.headless=true ${MAVEN_SHOW_TIME} ${MAVEN_FORMAT_TIME} ${MAVEN_SUPPRESS_DOWNLOAD_LOGS}"
+</code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="important"><h2>Important</h2><p>The dots between for example date and time are necessary
+          because spaces would cause the following error <span class="quote">“<span class="quote">Error: Could
+          not find or load main class ...</span>”</span> (see also <a class="link" href="https://issues.apache.org/jira/browse/MNG-4559">MNG-4559</a>).</p></div></section><section class="section" id="continuous.integration.pipeline.jenkins.suppress.download.log"><div class="titlepage"><div><div><h3 class="title"><a id="continuous.integration.pipeline.jenkins.suppress.download.log" class="anchor" href="#continuous.integration.pipeline.jenkins.suppress.download.log"><span class="octicon octicon-link"/></a>C.3.8. Suppress download messages</h3></div></div></div><p>Suppress download messages for dependencies and plugins:</p><pre xmlns="" class="language-provided"><code class="language-diff">   environment
+   {
+     MAVEN_SHOW_TIME = "-Dorg.slf4j.simpleLogger.showDateTime=true"
+     MAVEN_FORMAT_TIME = "-Dorg.slf4j.simpleLogger.dateTimeFormat=HH:mm:ss.SSS"
++    MAVEN_SUPPRESS_DOWNLOAD_LOGS = "-Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=WARN"
+     MAVEN_PREVENT_RECOMPILE = "-Dmaven.compiler.useIncrementalCompilation=false"
+-    MAVEN_OPTS = "-Djava.awt.headless=true ${MAVEN_SHOW_TIME} ${MAVEN_FORMAT_TIME}"
++    MAVEN_OPTS = "-Djava.awt.headless=true ${MAVEN_SHOW_TIME} ${MAVEN_FORMAT_TIME} ${MAVEN_SUPPRESS_DOWNLOAD_LOGS}"
+     MAVEN_CLI_OPTS = "--batch-mode --errors --fail-fast --show-version ${MAVEN_PREVENT_RECOMPILE}"
+   }
+</code></pre></section><section class="section" id="continuous.integration.pipeline.jenkins.site"><div class="titlepage"><div><div><h3 class="title"><a id="continuous.integration.pipeline.jenkins.site" class="anchor" href="#continuous.integration.pipeline.jenkins.site"><span class="octicon octicon-link"/></a>C.3.9. Deploy Stage site-deploy</h3></div></div></div><p>Generate project site</p><pre xmlns="" class="language-provided"><code class="language-diff">+    stage("deploy")
++    {
++      steps
++      {
++        mvnSiteNode nodeName: "windows", profile: "-PenableUpdatesReports", branchName: "master"
++      }
++    }
+</code></pre><pre xmlns="" class="language-provided"><code class="language-diff">+def mvnSiteNode(Map args)
++{
++  node("${args.nodeName}")
++  {
++    stage("site")
++    {
++      if (env.BRANCH_NAME == "${args.branchName}")
++      {
++        echo "Clean Up..."
++        deleteDir()
++
++        echo "Source Code..."
++        unstash "sourcecode"
++
++        echo "Bytecode..."
++        unstash "bytecode"
++
++        echo "Testresults..."
++        unstash "unittests"
++        unstash "integrationtests"
++
++        echo "Site Deployment..."
++        sh "mvn $MAVEN_CLI_OPTS site-deploy ${args.profile}"
++      }
++      else
++      {
++        echo "Skip Site Deployment for branch '${env.BRANCH_NAME}'."
++      }
++    }
++  }
++}
+</code></pre></section><section class="section" id="continuous.integration.pipeline.jenkins.test.report"><div class="titlepage"><div><div><h3 class="title"><a id="continuous.integration.pipeline.jenkins.test.report" class="anchor" href="#continuous.integration.pipeline.jenkins.test.report"><span class="octicon octicon-link"/></a>C.3.10. Jenkins CI Test Report</h3></div></div></div><p>Reduce the need to look through the console logging in case of
+        test failures:</p><pre xmlns="" class="language-provided"><code class="language-diff">+      post
++      {
++        always
++        {
++          jenkinsTestReportNode nodeName: "windows", profile: "", branchName: ""
++        }
++      }
+</code></pre><pre xmlns="" class="language-provided"><code class="language-diff">+def jenkinsTestReportNode(Map args)
++{
++  node("${args.nodeName}")
++  {
++    stage("test-report")
++    {
++      echo "Clean Up..."
++      deleteDir()
++
++      echo "Source Code..."
++      unstash "sourcecode"
++
++      echo "Bytecode..."
++      unstash "bytecode"
++
++      echo "Testresults..."
++      unstash "unittests"
++      unstash "integrationtests"
++
++      junit testResults: "**/target/*-reports/*.xml", allowEmptyResults: true
++    }
++  }
++}
+</code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>This is different from <a class="link" href="continuous.integration.pipeline.html#continuous.integration.pipeline.gitlab.site.master.only" title="C.2.15. Site Generation revisited">the
+          GitLab CI solution</a> where the Maven project site is generated
+          for user download to browse the test reports.</p></div></section><section class="section" id="continuous.integration.pipeline.jenkins.effective.pom"><div class="titlepage"><div><div><h3 class="title"><a id="continuous.integration.pipeline.jenkins.effective.pom" class="anchor" href="#continuous.integration.pipeline.jenkins.effective.pom"><span class="octicon octicon-link"/></a>C.3.11. Effective Pom</h3></div></div></div><p>Convenience job to dump the <code class="code">effective-pom</code> in case
+        of failure:</p><pre xmlns="" class="language-provided"><code class="language-diff">+  post
++  {
++    failure
++    {
++      mvnEffectivePom nodeName: "windows", profile: "", branchName: ""
++    }
++  }
+</code></pre><pre xmlns="" class="language-provided"><code class="language-diff">+def mvnEffectivePom(Map args)
++{
++  node("${args.nodeName}")
++  {
++    stage("pom")
++    {
++      echo "Clean Up..."
++      deleteDir()
++
++      echo "Source Code..."
++      unstash "sourcecode"
++
++      echo "Effective POM..."
++      sh "mvn $MAVEN_CLI_OPTS help:effective-pom ${args.profile}"
++    }
++  }
++}
+</code></pre></section><section class="section" id="continuous.integration.pipeline.jenkins.jdk.check"><div class="titlepage"><div><div><h3 class="title"><a id="continuous.integration.pipeline.jenkins.jdk.check" class="anchor" href="#continuous.integration.pipeline.jenkins.jdk.check"><span class="octicon octicon-link"/></a>C.3.12. Optional JDK Check</h3></div></div></div><p>Add <code class="code"><a class="link" href="project.html#prj.maven.setup.java.animal.sniffer" title="16.1.7.7. Animal Sniffer">animal-sniffer</a></code>
+        and <code class="code"><a class="link" href="project.html#prj.maven.setup.java.enforcer" title="16.1.7.8. Enforcer">enforcer</a></code> in case
+        the <code class="code"><a class="link" href="project.html#prj.maven.setup.java.compiler" title="16.1.7.1. Compiler">maven.compiler.target</a></code>
+        is not the same as the jdk used by the docker image:</p><pre xmlns="" class="language-provided"><code class="language-diff">       {
+         echo "Integration Test..."
+         sh "mvn $MAVEN_CLI_OPTS deploy ${args.profile}"
++        sh "mvn $MAVEN_CLI_OPTS animal-sniffer:check ${args.profile}"
++        sh "mvn $MAVEN_CLI_OPTS enforcer:enforce ${args.profile}"
+       }
+       finally
+       {
+</code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>TODO see JModalWindow project.</p></div></section><section class="section" id="continuous.integration.pipeline.jenkins.owasp"><div class="titlepage"><div><div><h3 class="title"><a id="continuous.integration.pipeline.jenkins.owasp" class="anchor" href="#continuous.integration.pipeline.jenkins.owasp"><span class="octicon octicon-link"/></a>C.3.13. Optional OWASP Test Stage</h3></div></div></div><p>Add <code class="code"><a class="link" href="project.html#prj.maven.setup.java.owasp.dependency.check" title="16.1.7.9. OWASP Dependency Check">dependency-check</a></code>
+        to <code class="code">master</code> branch only:</p><pre xmlns="" class="language-provided"><code class="language-diff">           "integration-artifacts":
+           {
+             mvnIntegrationTestNode nodeName: "windows", profile: "-PintegrationTestsOnly", branchName: ""
++          },
++
++          "dependency-check":
++          {
++            mvnOWASPNode nodeName: "windows", profile: "", branchName: "master"
+           }
+         )
+       }
+</code></pre><pre xmlns="" class="language-provided"><code class="language-diff">+def mvnOWASPNode(Map args)
++{
++  node("${args.nodeName}")
++  {
++    stage("owasp")
++    {
++      if (env.BRANCH_NAME == "${args.branchName}")
++      {
++        echo "Clean Up..."
++        deleteDir()
++
++        echo "Source Code..."
++        unstash "sourcecode"
++
++        echo "Dependency Check..."
++        sh "mvn $MAVEN_CLI_OPTS org.owasp:dependency-check-maven:aggregate ${args.profile}"
++        stash name: "owaspreport", includes: "**/target/owasp-reports/dependency-check-report.xml", allowEmpty: true
++      }
++      else
++      {
++        echo "Skip Dependency Check for branch '${env.BRANCH_NAME}'."
++      }
++    }
++  }
++}
+</code></pre></section><section class="section" id="continuous.integration.pipeline.jenkins.sonarqube"><div class="titlepage"><div><div><h3 class="title"><a id="continuous.integration.pipeline.jenkins.sonarqube" class="anchor" href="#continuous.integration.pipeline.jenkins.sonarqube"><span class="octicon octicon-link"/></a>C.3.14. Optional SonarQube Deploy stage</h3></div></div></div><p>Add <code class="code"><a class="link" href="quality.assurance.html#qa.sonar.maven.integration" title="17.2.7. Maven integration">sonar</a></code> to
+        <code class="code">master</code> branch only:</p><pre xmlns="" class="language-provided"><code class="language-diff">     {
+       steps
+       {
+-        mvnSiteNode nodeName: "windows", profile: "-PenableUpdatesReports", branchName: "master"
++        parallel (
++          "quality-assurance":
++          {
++            mvnSonarQubeNode nodeName: "windows", profile: "", branchName: "master"
++          },
++
++          "documentation":
++          {
++            mvnSiteNode nodeName: "windows", profile: "-PenableUpdatesReports", branchName: "master"
++          }
++        )
+       }
+     }
+   }
+</code></pre><pre xmlns="" class="language-provided"><code class="language-diff">+def mvnSonarQubeNode(Map args)
++{
++  node("${args.nodeName}")
++  {
++    stage("sonarqube")
++    {
++      if (env.BRANCH_NAME == "${args.branchName}")
++      {
++        echo "Clean Up..."
++        deleteDir()
++
++        echo "Source Code..."
++        unstash "sourcecode"
++
++        echo "Bytecode..."
++        unstash "bytecode"
++
++        echo "Testresults..."
++        unstash "unittests"
++        unstash "integrationtests"
++
++        echo "Dependency Check..."
++        unstash "owaspreport"
++
++        echo "Quality Assurance..."
++        sh "mvn $MAVEN_CLI_OPTS sonar:sonar ${args.profile}"
++      }
++      else
++      {
++        echo "Skip SonarQube for branch '${env.BRANCH_NAME}'."
++      }
++    }
++  }
++}
+</code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>Currently disabled since there isn't a secret variable for
+          <code class="code">sonar.login</code> configured (yet).</p></div></section><section class="section" id="continuous.integration.pipeline.jenkins.sonarqube.workaround"><div class="titlepage"><div><div><h3 class="title"><a id="continuous.integration.pipeline.jenkins.sonarqube.workaround" class="anchor" href="#continuous.integration.pipeline.jenkins.sonarqube.workaround"><span class="octicon octicon-link"/></a>C.3.15. SonarQube Dashboard issue workaround</h3></div></div></div><p>Maven report link to SonarQube is no longer working (see also
+        <a class="link" href="https://github.com/SonarQubeCommunity/sonar-maven-report/issues/6">issue
+        6</a>):</p><pre xmlns="" class="language-provided"><code class="language-diff">         unstash "integrationtests"
+
+         echo "Site Deployment..."
+-        sh "mvn $MAVEN_CLI_OPTS site-deploy ${args.profile}"
++        sh "mvn $MAVEN_CLI_OPTS site ${args.profile}"
++        sh "find . -type f -name \"sonar.html\" | xargs --no-run-if-empty sed -i \"s/\\/project\\/index\\//\\/dashboard\\/index\\//g\""
++        sh "mvn $MAVEN_CLI_OPTS site:deploy ${args.profile}"
+       }
+       else
+       {
+</code></pre></section><section class="section" id="continuous.integration.pipeline.jenkins.checkout.scm"><div class="titlepage"><div><div><h3 class="title"><a id="continuous.integration.pipeline.jenkins.checkout.scm" class="anchor" href="#continuous.integration.pipeline.jenkins.checkout.scm"><span class="octicon octicon-link"/></a>C.3.16. Jenkins CI (un)stash vs checkout scm</h3></div></div></div><p>Use <code class="code">checkout scm</code> instead of <code class="code">(un)stash
+        "sourcecode" to reduce storage usage</code>:</p><pre xmlns="" class="language-provided"><code class="language-diff">       echo "Check Out..."
+       checkout scm
+-      stash name: "sourcecode", includes: "**", excludes: "**/target/**"
+
+       echo "Compile Source..."
+       sh "mvn $MAVEN_CLI_OPTS test-compile ${args.profile}"
+</code></pre><pre xmlns="" class="language-provided"><code class="language-diff">       echo "Clean Up..."
+       deleteDir()
+
+-      echo "Source Code..."
+-      unstash "sourcecode"
++      echo "Check Out..."
++      checkout scm
+
+       echo "Bytecode..."
+       unstash "bytecode"
+</code></pre><pre xmlns="" class="language-provided"><code class="language-diff">       echo "Clean Up..."
+       deleteDir()
+
+-      echo "Source Code..."
+-      unstash "sourcecode"
++      echo "Check Out..."
++      checkout scm
+
+       echo "Bytecode..."
+       unstash "bytecode"
+</code></pre><pre xmlns="" class="language-provided"><code class="language-diff">       echo "Clean Up..."
+       deleteDir()
+
+-      echo "Source Code..."
+-      unstash "sourcecode"
+-
+-      echo "Bytecode..."
+-      unstash "bytecode"
+-
+       echo "Testresults..."
+       unstash "unittests"
+       unstash "integrationtests"
+</code></pre><pre xmlns="" class="language-provided"><code class="language-diff">         echo "Clean Up..."
+         deleteDir()
+
+-        echo "Source Code..."
+-        unstash "sourcecode"
++        echo "Check Out..."
++        checkout scm
+
+         echo "Dependency Check..."
+         sh "mvn $MAVEN_CLI_OPTS org.owasp:dependency-check-maven:aggregate ${args.profile}"
+</code></pre><pre xmlns="" class="language-provided"><code class="language-diff">         echo "Clean Up..."
+         deleteDir()
+
+-        echo "Source Code..."
+-        unstash "sourcecode"
++        echo "Check Out..."
++        checkout scm
+
+         echo "Bytecode..."
+         unstash "bytecode"
+</code></pre><pre xmlns="" class="language-provided"><code class="language-diff">         echo "Clean Up..."
+         deleteDir()
+
+-        echo "Source Code..."
+-        unstash "sourcecode"
++        echo "Check Out..."
++        checkout scm
+
+         echo "Bytecode..."
+         unstash "bytecode"
+</code></pre><pre xmlns="" class="language-provided"><code class="language-diff">       echo "Clean Up..."
+       deleteDir()
+
+-      echo "Source Code..."
+-      unstash "sourcecode"
++      echo "Check Out..."
++      checkout scm
+
+       echo "Effective POM..."
+       sh "mvn $MAVEN_CLI_OPTS help:effective-pom ${args.profile}"
+</code></pre></section><section class="section" id="continuous.integration.pipeline.jenkins.touch.class"><div class="titlepage"><div><div><h3 class="title"><a id="continuous.integration.pipeline.jenkins.touch.class" class="anchor" href="#continuous.integration.pipeline.jenkins.touch.class"><span class="octicon octicon-link"/></a>C.3.17. Test Stage no recompile - Compiling xx source files</h3></div></div></div><p>Prevent unnecessary recompiling by
+        <code class="code">maven-compiler-plugin</code> when <span class="quote">“<span class="quote">Compiling xx source
+        files</span>”</span> instead of <span class="quote">“<span class="quote">Nothing to compile - all classes are
+        up to date</span>”</span> due to <code class="code">git clone</code> action in the test
+        job causing the <code class="filename">.java</code> file
+        being more recent than the corresponding <code class="filename">.class</code> file:</p><pre xmlns="" class="language-provided"><code class="language-diff">       echo "Check Out..."
+       checkout scm
+
+       echo "Bytecode..."
+       unstash "bytecode"
++      sh "find . -name \"*.class\" -exec touch {} \\+"
+</code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>This happens after dropping <code class="code">unstash "sourcecode"</code>
+          in favor of <code class="code">checkout scm</code>.</p></div></section><section class="section" id="continuous.integration.pipeline.jenkins.open.source"><div class="titlepage"><div><div><h3 class="title"><a id="continuous.integration.pipeline.jenkins.open.source" class="anchor" href="#continuous.integration.pipeline.jenkins.open.source"><span class="octicon octicon-link"/></a>C.3.18. Extra Open Source Stage</h3></div></div></div><p>Because <a class="link" href="continuous.integration.pipeline.html#continuous.integration.pipeline.jenkins.deploy" title="C.3.2. Test Stage deploy">GitLab CI
+        isn't configured yet</a> to deploy the artifacts to <a class="link" href="https://oss.sonatype.org/index.html#nexus-search;quick%7Enl.demon.shadowland">Sonatype
+        Open Source Software Repository Hosting</a> and to <a class="link" href="https://sonarcloud.io/organizations/freedumbytes/projects">SonarSource
+        SonarCloud Continuous Code Quality</a> let the local hosted Jenkins
+        CI do this also with an extra stage:</p><pre xmlns="" class="language-provided"><code class="language-diff">+    stage("open-source")
++    {
++      steps
++      {
++        parallel (
++          "quality-assurance":
++          {
++            mvnSonarQubeNode nodeName: "windows", profile: "-PopenSource", branchName: "master"
++          },
++
++          "artifacts":
++          {
++            mvnIntegrationTestNode nodeName: "windows", profile: "-DskipTests -PopenSource", branchName: "master"
++          }
++        )
++      }
++    }
+</code></pre></section><section class="section" id="continuous.integration.pipeline.jenkins.verify.deploy.phase"><div class="titlepage"><div><div><h3 class="title"><a id="continuous.integration.pipeline.jenkins.verify.deploy.phase" class="anchor" href="#continuous.integration.pipeline.jenkins.verify.deploy.phase"><span class="octicon octicon-link"/></a>C.3.19. Artifacts verify vs deploy</h3></div></div></div><p>On branches run verify only instead of deploy because it is
+        otherwise no longer clear which SNAPSHOT artifacts will be downloaded
+        from Nexus (the latest master or branch build):</p><pre xmlns="" class="language-provided"><code class="language-diff">       try
+       {
+         echo "Integration Test..."
+-        sh "mvn $MAVEN_CLI_OPTS deploy ${args.profile}"
++
++        if (env.BRANCH_NAME == "master")
++        {
++          sh "mvn $MAVEN_CLI_OPTS deploy ${args.profile}"
++        }
++        else
++        {
++          sh "mvn $MAVEN_CLI_OPTS verify ${args.profile}"
++        }
++
+         sh "mvn $MAVEN_CLI_OPTS animal-sniffer:check ${args.profile}"
+         sh "mvn $MAVEN_CLI_OPTS enforcer:enforce ${args.profile}"
+       }
+</code></pre></section><section class="section" id="continuous.integration.pipeline.jenkins.javadoc.reports"><div class="titlepage"><div><div><h3 class="title"><a id="continuous.integration.pipeline.jenkins.javadoc.reports" class="anchor" href="#continuous.integration.pipeline.jenkins.javadoc.reports"><span class="octicon octicon-link"/></a>C.3.20. Javadoc Reports</h3></div></div></div><p>Enable the <a class="link" href="project.html#prj.maven.versions.reporting">Javadoc
+        Reports</a> for the generated project site:</p><pre xmlns="" class="language-provided"><code class="language-diff">           "documentation":
+           {
+-            mvnSiteNode nodeName: "windows", profile: "-PenableUpdatesReports", branchName: "master"
++            mvnSiteNode nodeName: "windows", profile: "-PenableUpdatesReports,enableJavadocReports", branchName: "master"
+           }
+</code></pre></section></section></section><script xmlns="" type="text/javascript" src="js/highlight.min.js"> </script><script xmlns="" type="text/javascript">hljs.initHighlightingOnLoad();</script><footer><ul class="navfooter"><li class="previous"><a accesskey="p" href="prj.repo.svc.site.hosting.html"><strong>Previous</strong>Appendix B. Hosting a group Website in the Cloud</a></li><li class="up"><a accesskey="u" href="#"><strong>Top of page</strong></a></li><li class="home"><a accesskey="h" href="index.html"><strong>Front page</strong></a></li><li class="next"><a accesskey="n" href="prj.maven.versions.rules.html"><strong>Next</strong>Appendix D. Maven Versions Rules</a></li></ul></footer></body></html>
