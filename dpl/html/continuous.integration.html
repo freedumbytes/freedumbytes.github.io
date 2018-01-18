@@ -13,7 +13,8 @@
             <a class="link" href="https://wiki.jenkins-ci.org/display/JENKINS/Plugins">Plugins</a>,
             <a class="link" href="https://jenkins.io/solutions/pipeline/">Pipeline</a>
             (<a class="link" href="https://jenkins.io/blog/2017/02/01/pipeline-scalability-best-practice/">Best
-            Practices</a>), <a class="link" href="https://jenkins.io/projects/blueocean/">Blue
+            Practices</a> / <a class="link" href="https://jenkins.io/doc/pipeline/examples/">Examples</a>),
+            <a class="link" href="https://jenkins.io/projects/blueocean/">Blue
             Ocean</a> (<a class="link" href="https://jenkins.io/node/tags/blueocean/">#blueocean</a>),
             <a class="link" href="https://jenkins.io/security/">Security</a>
             (<a class="link" href="https://jenkins.io/node/tags/security/">#security</a>),
@@ -104,7 +105,7 @@
                       Site Request Forgery</a> exploits</strong></span> with
                       <span class="guilabel"><strong>Crumb Algorithm</strong></span>: <span class="guilabel"><strong>Default
                       Crumb Issuer</strong></span> (see also <a class="xref" href="web.server.html#web.tomcat.remote.authentication" title="8.1.5.1. Remote authentication">Section 8.1.5.1, “Remote authentication”</a>) and click
-                      <span class="guibutton"><strong>Save</strong></span>.</p></li></ul></div></li></ul></div></section><section class="section" id="ci.jenkins.install.guide.maven.integration"><div class="titlepage"><div><div><h4 class="title"><a id="ci.jenkins.install.guide.maven.integration" class="anchor" href="#ci.jenkins.install.guide.maven.integration"><span class="octicon octicon-link"/></a>14.1.2.3. Maven integration TODO</h4></div></div></div><p>When using Maven with <a class="link" href="build.tool.html#build.maven.password.encryption" title="4.2.6. Password Encryption">password encryption</a>
+                      <span class="guibutton"><strong>Save</strong></span>.</p></li></ul></div></li></ul></div></section><section class="section" id="ci.jenkins.install.guide.maven.integration"><div class="titlepage"><div><div><h4 class="title"><a id="ci.jenkins.install.guide.maven.integration" class="anchor" href="#ci.jenkins.install.guide.maven.integration"><span class="octicon octicon-link"/></a>14.1.2.3. Maven integration TODO</h4></div></div></div><p>When using Maven with <a class="link" href="build.tool.html#build.maven.password.encryption" title="4.2.5. Password Encryption">password encryption</a>
           it will always look for the file
           <code class="filename">settings-security.xml</code> in the fixed location
           <code class="filename">%USERPROFILE%\.m2</code>. Therefore
@@ -179,7 +180,7 @@
                     <strong class="userinput"><code>P:\dev\apps\build\apache-ant-1.9.6</code></strong>.</p></li></ul></div></li><li class="listitem"><p>Add <span class="guilabel"><strong>Maven installation</strong></span>:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><span class="guilabel"><strong>Name</strong></span>:
                     <strong class="userinput"><code>M2_HOME</code></strong>.</p></li><li class="listitem"><p>Disable <span class="guilabel"><strong>Install
                     automatically</strong></span>.</p></li><li class="listitem"><p><span class="guilabel"><strong>MAVEN_HOME</strong></span>:
-                    <strong class="userinput"><code>P:\dev\apps\build\apache-maven-3.3.9</code></strong>.</p></li></ul></div></li><li class="listitem"><p><span class="guilabel"><strong>Maven Project Configuration</strong></span>:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p>Optionally disable <span class="guilabel"><strong>Help make Jenkins
+                    <strong class="userinput"><code>P:\dev\apps\build\apache-maven-3.5.2</code></strong>.</p></li></ul></div></li><li class="listitem"><p><span class="guilabel"><strong>Maven Project Configuration</strong></span>:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p>Optionally disable <span class="guilabel"><strong>Help make Jenkins
                     better by sending anonymous usage statistics and crash
                     reports to the Jenkins project</strong></span>.</p></li></ul></div></li><li class="listitem"><p><span class="guilabel"><strong>Jenkins Location</strong></span>:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><span class="guilabel"><strong>Jenkins URL</strong></span>:
                     <strong class="userinput"><code>http://freedumbytes.dev.net/jenkins/</code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong>System Admin e-mail address</strong></span>:
@@ -198,8 +199,7 @@
                 Trigger Badge</a> displays icon representing the cause of a
                 build directly in the build history. It lets you quickly know
                 which cause triggered a build.</p></li><li class="listitem"><p><a class="link" href="https://marvelution.atlassian.net/wiki/display/JJI/Documentation+Home">JIRA</a>
-                integration (see also <a class="xref" href="continuous.integration.html#ci.jenkins.jira.integration" title="14.1.5. JIRA integration">Section 14.1.5, “JIRA integration”</a>).</p></li><li class="listitem"><p>Obsolete <a class="link" href="http://docs.sonarqube.org/display/SONAR/Analyzing+with+SonarQube+Scanner+for+Jenkins">SonarQube
-                Scanner</a> integration (see also <a class="xref" href="quality.assurance.html#qa.sonar.jenkins.integration" title="17.2.8. Jenkins integration TODO">Section 17.2.8, “Jenkins integration TODO”</a>).</p></li></ul></div><p>After successful <span class="guibutton"><strong>Install</strong></span> of
+                integration (see also <a class="xref" href="continuous.integration.html#ci.jenkins.jira.integration" title="14.1.5. JIRA integration">Section 14.1.5, “JIRA integration”</a>).</p></li></ul></div><p>After successful <span class="guibutton"><strong>Install</strong></span> of
           all selected plugins reload Jenkins at <a class="link" href="http://freedumbytes.dev.net/tomcat/manager/html">http://freedumbytes.dev.net/tomcat/manager/html</a>
           for the latest version of the plugin to show up in the
           <span class="guilabel"><strong>Installed</strong></span> tab.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>To manual install the plugin when Jenkins is deployed on
@@ -292,7 +292,7 @@
         <span class="quote">“<span class="quote">WMI.WmiException:
         ServiceMarkedForDeletion</span>”</span>):</p><pre xmlns="" class="language-provided"><code class="language-bash">cd /d P:\dev\data\ci\jeeves
 jenkins-slave.exe stop
-jenkins-slave.exe uninstall TODO before changes...
+jenkins-slave.exe uninstall TODO before changes…
 del *.log
 jenkins-slave.exe install
 jenkins-slave.exe start

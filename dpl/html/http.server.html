@@ -135,6 +135,23 @@ DocumentRoot "P:/dev/apps/httpserver/apache-2.4.16/htdocs"
 <span xmlns="http://www.w3.org/1999/xhtml" id="http.apache.access.require.ip"/><a xmlns="http://www.w3.org/1999/xhtml" id="http.apache.access.require.ip"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/2.png" alt="2" height="17px" width="17px" class="callout"/>    Include ../apache-conf/httpd-lan-access.conf
 &lt;/Directory&gt;
 </code></pre><p>Create
+        <code class="filename">P:\dev\apps\httpserver\apache-conf\httpd-server-access.conf</code>
+        to allow access from the local area network Servers between themselves
+        <a class="xref" href="http.server.html#http.apache.access.allow.local.area.network.server"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a>
+        (see also JIRA Health Check in <a class="xref" href="issue.tracker.html#it.jira.apache.config" title="12.1.4. Apache configuration">Section 12.1.4, “Apache configuration”</a>):</p><pre xmlns="" class="language-provided"><code class="language-apache">&lt;RequireAny&gt;
+  # HTTP Server IP
+  # Git Server IP
+  # Fisheye Server IP
+  # JIRA Server IP
+  # Nexus Server IP
+  # Tomcat Server IP
+  # Jenkins Server IP
+  # GlassFish Server IP
+  # Payara Server IP
+  # SonarQube Server IP
+  Require ip 192.168.0.21<span xmlns="http://www.w3.org/1999/xhtml" id="http.apache.access.allow.local.area.network.server"/><a xmlns="http://www.w3.org/1999/xhtml" id="http.apache.access.allow.local.area.network.server"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>
+&lt;/RequireAny&gt;
+</code></pre><p>Create
         <code class="filename">P:\dev\apps\httpserver\apache-conf\httpd-lan-access.conf</code>
         to allow access from the local area network <a class="xref" href="http.server.html#http.apache.access.allow.local.area.network"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a> and localhost
         <a class="xref" href="http.server.html#http.apache.access.allow.localhost"><img src="images/community/docbook/callouts/2.png" alt="2" border="0" height="17px" width="17px" class="callout"/></a>:</p><pre xmlns="" class="language-provided"><code class="language-apache">&lt;RequireAny&gt;

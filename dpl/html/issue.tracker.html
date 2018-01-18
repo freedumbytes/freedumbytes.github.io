@@ -1,39 +1,37 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE html>
 <!DOCTYPE html
   PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Chapter 12. Issue Tracker</title><link rel="stylesheet" type="text/css" href="docbook.css"/><link rel="stylesheet" type="text/css" href="css/freedumbytes.css"/><meta name="generator" content="DocBook XSL Stylesheets V1.78.1"/><link rel="prev" href="version.control.system.html" title="Chapter 11. Version Control System"/><link rel="next" href="repository.manager.html" title="Chapter 13. Repository Manager"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><link rel="shortcut icon" href="./images/community/docbook/glider.ico"/></head><body><header><p id="title"/><ul class="navheader"><li class="previous"><a accesskey="p" href="version.control.system.html"><strong>Previous</strong></a></li><li class="next"><a accesskey="n" href="repository.manager.html"><strong>Next</strong></a></li></ul></header><section class="chapter" id="issue.tracker"><div class="titlepage"><div><div><h1 class="title"><a id="issue.tracker" class="anchor" href="#issue.tracker"><span class="octicon octicon-link"/></a>Chapter 12. Issue Tracker</h1></div></div></div><div class="toc"><div class="toc-title">Table of Contents</div><ul class="toc"><li><span class="section"><a href="issue.tracker.html#it.jira">12.1. JIRA</a></span><ul><li><span class="section"><a href="issue.tracker.html#it.jira.resources">12.1.1. Resources</a></span></li><li><span class="section"><a href="issue.tracker.html#it.jira.install.guide">12.1.2. JIRA installation guide</a></span></li><li><span class="section"><a href="issue.tracker.html#it.jira.config">12.1.3. JIRA configuration</a></span></li><li><span class="section"><a href="issue.tracker.html#it.jira.apache.config">12.1.4. Apache configuration</a></span></li><li><span class="section"><a href="issue.tracker.html#it.jira.windows.service">12.1.5. Windows service</a></span></li><li><span class="section"><a href="issue.tracker.html#it.jira.config.global.settings">12.1.6. Global settings</a></span></li><li><span class="section"><a href="issue.tracker.html#it.jira.config.project">12.1.7. Project</a></span></li><li><span class="section"><a href="issue.tracker.html#it.jira.fisheye.integration">12.1.8. FishEye integration</a></span></li><li><span class="section"><a href="issue.tracker.html#it.jira.config.user.settings">12.1.9. User profile</a></span></li></ul></li></ul></div><section class="section" id="it.jira"><div class="titlepage"><div><div><h2 class="title"><a id="it.jira" class="anchor" href="#it.jira"><span class="octicon octicon-link"/></a>12.1. JIRA</h2></div></div></div><p><span class="inlinemediaobject"><img src="images/icons/jira.png"/></span> <a class="link" href="http://www.atlassian.com/software/jira/">JIRA</a> is a
-      bug tracking, issue tracking, and project management application.</p><section class="section" id="it.jira.resources"><div class="titlepage"><div><div><h3 class="title"><a id="it.jira.resources" class="anchor" href="#it.jira.resources"><span class="octicon octicon-link"/></a>12.1.1. Resources</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><a class="link" href="https://www.atlassian.com/software/jira/download">Download</a>
-            JIRA and <a class="link" href="https://marketplace.atlassian.com/plugins/app/jira">plugins</a>.</p></li><li class="listitem"><p><a class="link" href="https://confluence.atlassian.com/display/JIRA/JIRA+6.3+Upgrade+Notes">Upgrade</a>
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Chapter 12. Issue Tracker</title><link rel="stylesheet" type="text/css" href="docbook.css"/><link rel="stylesheet" type="text/css" href="css/freedumbytes.css"/><meta name="generator" content="DocBook XSL Stylesheets V1.78.1"/><link rel="prev" href="version.control.system.html" title="Chapter 11. Version Control System"/><link rel="next" href="repository.manager.html" title="Chapter 13. Repository Manager"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><link rel="shortcut icon" href="./images/community/docbook/glider.ico"/></head><body><header><p id="title"/><ul class="navheader"><li class="previous"><a accesskey="p" href="version.control.system.html"><strong>Previous</strong></a></li><li class="next"><a accesskey="n" href="repository.manager.html"><strong>Next</strong></a></li></ul></header><section class="chapter" id="issue.tracker"><div class="titlepage"><div><div><h1 class="title"><a id="issue.tracker" class="anchor" href="#issue.tracker"><span class="octicon octicon-link"/></a>Chapter 12. Issue Tracker</h1></div></div></div><div class="toc"><div class="toc-title">Table of Contents</div><ul class="toc"><li><span class="section"><a href="issue.tracker.html#it.jira">12.1. JIRA</a></span><ul><li><span class="section"><a href="issue.tracker.html#it.jira.resources">12.1.1. Resources</a></span></li><li><span class="section"><a href="issue.tracker.html#it.jira.install.guide">12.1.2. JIRA installation guide</a></span></li><li><span class="section"><a href="issue.tracker.html#it.jira.config">12.1.3. JIRA configuration</a></span></li><li><span class="section"><a href="issue.tracker.html#it.jira.apache.config">12.1.4. Apache configuration</a></span></li><li><span class="section"><a href="issue.tracker.html#it.jira.windows.service">12.1.5. Windows service</a></span></li><li><span class="section"><a href="issue.tracker.html#it.jira.config.global.settings">12.1.6. Global settings</a></span></li><li><span class="section"><a href="issue.tracker.html#it.jira.config.project">12.1.7. Project</a></span></li><li><span class="section"><a href="issue.tracker.html#it.jira.fisheye.integration">12.1.8. FishEye integration [ToDo Disabled or OAuth only]</a></span></li><li><span class="section"><a href="issue.tracker.html#it.jira.config.user.settings">12.1.9. User profile</a></span></li></ul></li></ul></div><section class="section" id="it.jira"><div class="titlepage"><div><div><h2 class="title"><a id="it.jira" class="anchor" href="#it.jira"><span class="octicon octicon-link"/></a>12.1. JIRA</h2></div></div></div><p><span class="inlinemediaobject"><img src="images/icons/jira.png"/></span> <a class="link" href="https://www.atlassian.com/software/jira">JIRA</a> is a
+      bug tracking, issue tracking, and project management application.</p><section class="section" id="it.jira.resources"><div class="titlepage"><div><div><h3 class="title"><a id="it.jira.resources" class="anchor" href="#it.jira.resources"><span class="octicon octicon-link"/></a>12.1.1. Resources</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p>JIRA <a class="link" href="https://support.atlassian.com/jirasoftware/">Documentation</a>.</p></li><li class="listitem"><p><a class="link" href="https://www.atlassian.com/software/jira/download">Download</a>
+            JIRA and <a class="link" href="https://marketplace.atlassian.com/search?product=jira">Plugins
+            Marketplace</a> such as <a class="link" href="https://marketplace.atlassian.com/plugins/com.atlassian.jirafisheyeplugin/server/overview">FishEye
+            integration</a>, <a class="link" href="https://marketplace.atlassian.com/plugins/com.marvelution.jira.plugins.jenkins/server/overview">Jenkins
+            integration</a> and <a class="link" href="https://marketplace.atlassian.com/plugins/es.excentia.jira.plugins.jira-sonarqube-connector-plugin/server/overview">SonarQube
+            integration</a>.</p></li><li class="listitem"><p><a class="link" href="https://confluence.atlassian.com/display/JIRASOFTWARE/JIRA+Software+release+notes">Upgrade</a>
             checklist:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p>Related products: -.</p></li><li class="listitem"><p>References: -.</p></li><li class="listitem"><p>Integration configuration changes: <a class="link" href="issue.tracker.html#it.jira.http.binding" title="12.1.2.1. HTTP Binding">JIRA - HTTP Binding
                 <code class="code">address</code></a>, <a class="link" href="issue.tracker.html#it.jira.mysql" title="12.1.2.2. Database settings">JIRA - MySQL Connector/J
                 <code class="code">mysql-connector-java-x.y.z-bin.jar</code></a>, <a class="link" href="issue.tracker.html#it.jira.config" title="12.1.3. JIRA configuration">JIRA - Properties
                 <code class="code">jira.home</code></a>, <a class="link" href="issue.tracker.html#it.jira.apache.config" title="12.1.4. Apache configuration">JIRA - Apache Configuration
                 <code class="code">Context path</code> / <code class="code">Connector protocol
                 AJP</code></a>, <a class="link" href="issue.tracker.html#it.jira.windows.service" title="12.1.5. Windows service">JIRA - Windows service
-                <code class="code">tomcat7.exe.x64</code> / <code class="code">tcnative-1.dll.x64</code>
-                / <code class="code">tomcat7.exe //US//jira</code></a> and <a class="link" href="issue.tracker.html#it.jira.fisheye.plugin.upgrade" title="12.1.8.3. FishEye plugin upgrade">JIRA - FishEye
+                <code class="code">tomcat8.exe.x64</code> / <code class="code">tcnative-1.dll.x64</code>
+                / <code class="code">tomcat8.exe //US//jira</code></a> and <a class="link" href="issue.tracker.html#it.jira.fisheye.plugin.upgrade" title="12.1.8.3. FishEye plugin upgrade">JIRA - FishEye
                 <code class="code">plugin upgrade</code></a>.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>Or just run
                   <code class="command">p:\dev\apps\editor\winmerge\WinMergeU.exe
-                  P:\dev\apps\issue\atlassian-jira-6.3.14-standalone\conf
-                  P:\dev\apps\issue\atlassian-jira-6.4.11-standalone\conf</code>
+                  P:\dev\apps\issue\atlassian-jira-6.4.11-standalone\conf
+                  P:\dev\apps\issue\atlassian-jira-software-7.6.2-standalone\conf</code>
                   to copy the changes in for example
                   <code class="filename">server.xml</code>,</p></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>And run
                   <code class="command">p:\dev\apps\editor\winmerge\WinMergeU.exe
-                  P:\dev\apps\issue\atlassian-jira-6.3.14-standalone\atlassian-jira\WEB-INF\classes\jira-application.properties
-                  P:\dev\apps\issue\atlassian-jira-6.4.11-standalone\atlassian-jira\WEB-INF\classes</code>
-                  for <code class="filename">jira-application.properties</code>.</p></div></li></ul></div></li><li class="listitem"><p>JIRA <a class="link" href="https://confluence.atlassian.com/display/JIRA/JIRA+Documentation">Documentation</a>,
-            <a class="link" href="https://confluence.atlassian.com/display/JIRA/Important+Directories+and+Files">Important
-            Directories and Files</a> and <a class="link" href="https://confluence.atlassian.com/display/JIRA/JIRA+User%27s+Guide">User's
-            Guide</a>.</p></li><li class="listitem"><p><a class="link" href="https://confluence.atlassian.com/display/JIRA/Integrating+JIRA+with+FishEye">FishEye
-            integration</a> with the <a class="link" href="https://ecosystem.atlassian.net/wiki/display/FISH/JIRA+FishEye+Plugin">FishEye
-            plugin</a> to view <a class="link" href="https://confluence.atlassian.com/display/JIRA/Viewing+an+Issue%27s+FishEye+Changesets">Issue</a>
-            and <a class="link" href="https://confluence.atlassian.com/display/JIRA/Browsing+a+Project%27s+FishEye+Changesets">Project</a>
-            changesets.</p></li><li class="listitem"><p>Atlassian <a class="link" href="http://blogs.atlassian.com/blog-cat/jira/">Blogs</a>.</p></li></ul></div></section><section class="section" id="it.jira.install.guide"><div class="titlepage"><div><div><h3 class="title"><a id="it.jira.install.guide" class="anchor" href="#it.jira.install.guide"><span class="octicon octicon-link"/></a>12.1.2. JIRA installation guide</h3></div></div></div><p><a class="link" href="https://www.atlassian.com/software/jira/download">Download</a>
-        the archive from <span class="guibutton"><strong>All JIRA Download Options</strong></span>:
-        <code class="filename">atlassian-jira-6.4.11.zip</code> [version <a class="link" href="https://www.atlassian.com/software/jira/download">6.4.11</a>].</p><p>Extract this <code class="filename">.zip</code> file to
-        <code class="filename">P:\dev\apps\issue</code>.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="important"><h2>Important</h2><p>As of JIRA 4.3 'in-place database upgrades' is officially
-          supported.</p></div><section class="section" id="it.jira.http.binding"><div class="titlepage"><div><div><h4 class="title"><a id="it.jira.http.binding" class="anchor" href="#it.jira.http.binding"><span class="octicon octicon-link"/></a>12.1.2.1. HTTP Binding</h4></div></div></div><p>Change the listening ports <a class="xref" href="issue.tracker.html#it.jira.control.bind"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a> and <a class="xref" href="issue.tracker.html#it.jira.http.bind"><img src="images/community/docbook/callouts/2.png" alt="2" border="0" height="17px" width="17px" class="callout"/></a> and restricted to localhost <a class="xref" href="issue.tracker.html#it.jira.address"><img src="images/community/docbook/callouts/3.png" alt="3" border="0" height="17px" width="17px" class="callout"/></a> by editing the configuration file
-          <code class="filename">P:\dev\apps\issue\atlassian-jira-6.4.11-standalone\conf\server.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">&lt;Server port="<span xmlns="http://www.w3.org/1999/xhtml" class="strikethrough">8005</span>8062<span xmlns="http://www.w3.org/1999/xhtml" id="it.jira.control.bind"/><a xmlns="http://www.w3.org/1999/xhtml" id="it.jira.control.bind"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>" address="127.0.0.1"<span xmlns="http://www.w3.org/1999/xhtml" id="it.jira.address"/><a xmlns="http://www.w3.org/1999/xhtml" id="it.jira.address"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/3.png" alt="3" height="17px" width="17px" class="callout"/> shutdown="SHUTDOWN"&gt;
+                  P:\dev\apps\issue\atlassian-jira-6.4.11-standalone\atlassian-jira\WEB-INF\classes\jira-application.properties
+                  P:\dev\apps\issue\atlassian-jira-software-7.6.2-standalone\atlassian-jira\WEB-INF\classes</code>
+                  to copy the changes in for example
+                  <code class="filename">jira-application.properties</code>.</p></div></li></ul></div></li></ul></div></section><section class="section" id="it.jira.install.guide"><div class="titlepage"><div><div><h3 class="title"><a id="it.jira.install.guide" class="anchor" href="#it.jira.install.guide"><span class="octicon octicon-link"/></a>12.1.2. JIRA installation guide</h3></div></div></div><p><a class="link" href="https://www.atlassian.com/software/jira/download">Download</a>
+        the ZIP Archive <code class="filename">atlassian-jira-software-7.6.2.zip</code>
+        [version <a class="link" href="https://confluence.atlassian.com/display/JIRASOFTWARE/JIRA+Software+release+notes">7.6.2</a>].</p><p>Extract this <code class="filename">.zip</code> file to
+        <code class="filename">P:\dev\apps\issue</code>.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="important"><h2>Important</h2><p>As of JIRA 4.3 <span class="quote">“<span class="quote">in-place database upgrades</span>”</span> is
+          officially supported.</p></div><section class="section" id="it.jira.http.binding"><div class="titlepage"><div><div><h4 class="title"><a id="it.jira.http.binding" class="anchor" href="#it.jira.http.binding"><span class="octicon octicon-link"/></a>12.1.2.1. HTTP Binding</h4></div></div></div><p>Change the listening ports <a class="xref" href="issue.tracker.html#it.jira.control.bind"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a> and <a class="xref" href="issue.tracker.html#it.jira.http.bind"><img src="images/community/docbook/callouts/2.png" alt="2" border="0" height="17px" width="17px" class="callout"/></a> and restricted to localhost <a class="xref" href="issue.tracker.html#it.jira.address"><img src="images/community/docbook/callouts/3.png" alt="3" border="0" height="17px" width="17px" class="callout"/></a> by editing the configuration file
+          <code class="filename">P:\dev\apps\issue\atlassian-jira-software-7.6.2-standalone\conf\server.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">&lt;Server port="<span xmlns="http://www.w3.org/1999/xhtml" class="strikethrough">8005</span>8062<span xmlns="http://www.w3.org/1999/xhtml" id="it.jira.control.bind"/><a xmlns="http://www.w3.org/1999/xhtml" id="it.jira.control.bind"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>" address="127.0.0.1"<span xmlns="http://www.w3.org/1999/xhtml" id="it.jira.address"/><a xmlns="http://www.w3.org/1999/xhtml" id="it.jira.address"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/3.png" alt="3" height="17px" width="17px" class="callout"/> shutdown="SHUTDOWN"&gt;
    …
   &lt;Service name="Catalina"&gt;
     &lt;Connector port="<span xmlns="http://www.w3.org/1999/xhtml" class="strikethrough">8080</span>8063<span xmlns="http://www.w3.org/1999/xhtml" id="it.jira.http.bind"/><a xmlns="http://www.w3.org/1999/xhtml" id="it.jira.http.bind"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/2.png" alt="2" height="17px" width="17px" class="callout"/>" address="127.0.0.1"<span xmlns="http://www.w3.org/1999/xhtml" id="it.jira.address"/><a xmlns="http://www.w3.org/1999/xhtml" id="it.jira.address"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/3.png" alt="3" height="17px" width="17px" class="callout"/>
@@ -48,11 +46,11 @@ mysql&gt; select host,db,user from mysql.db;
 mysql&gt; quit
 </code></pre><p><a class="link" href="https://dev.mysql.com/downloads/connector/j/">Download</a>
           the <a class="link" href="database.html#db.mysql.jdbc.driver">Connector/J</a> [version
-          <a class="link" href="https://dev.mysql.com/downloads/connector/j/">5.1.36</a>]
+          <a class="link" href="https://dev.mysql.com/downloads/connector/j/">5.1.45</a>]
           and add the driver
-          <code class="filename">mysql-connector-java-5.1.36-bin.jar</code> from the
-          archive <code class="filename">mysql-connector-java-5.1.36.zip</code> to the
-          JIRA classpath placing it into <code class="filename">P:\dev\apps\issue\atlassian-jira-6.4.11-standalone\lib</code>.
+          <code class="filename">mysql-connector-java-5.1.45-bin.jar</code> from the
+          archive <code class="filename">mysql-connector-java-5.1.45.zip</code> to the
+          JIRA classpath placing it into <code class="filename">P:\dev\apps\issue\atlassian-jira-software-7.6.2-standalone\lib</code>.
           For older versions of JIRA remove the one that is already
           there.</p><p>Create the JIRA database connection information in
           <code class="filename">P:\dev\data\issue\jira\dbconfig.xml</code> (see also
@@ -65,7 +63,7 @@ mysql&gt; quit
   &lt;database-type&gt;mysql&lt;/database-type&gt;
   &lt;schema-name&gt;&lt;/schema-name&gt;
   &lt;jdbc-datasource&gt;
-    &lt;url&gt;jdbc:mysql://localhost/jira?useUnicode=true&amp;amp;characterEncoding=UTF8&amp;amp;connectionCollation=UTF8_bin&lt;/url&gt;
+    &lt;url&gt;jdbc:mysql://localhost/jira?useUnicode=true&amp;amp;characterEncoding=UTF8&amp;amp;connectionCollation=UTF8_bin&amp;amp;useSSL=false&lt;/url&gt;
     &lt;driver-class&gt;com.mysql.jdbc.Driver&lt;/driver-class&gt;
     &lt;username&gt;jira-user&lt;/username&gt;
     &lt;password&gt;<em xmlns="http://www.w3.org/1999/xhtml" class="replaceable"><code>password</code></em>&lt;/password&gt;
@@ -78,12 +76,13 @@ mysql&gt; quit
     &lt;validation-query&gt;select 1&lt;/validation-query&gt;
     &lt;min-evictable-idle-time-millis&gt;60000&lt;/min-evictable-idle-time-millis&gt;
     &lt;time-between-eviction-runs-millis&gt;300000&lt;/time-between-eviction-runs-millis&gt;
+    &lt;pool-test-on-borrow&gt;false&lt;/pool-test-on-borrow&gt;
     &lt;pool-test-while-idle&gt;true&lt;/pool-test-while-idle&gt;
     &lt;validation-query-timeout&gt;3&lt;/validation-query-timeout&gt;
   &lt;/jdbc-datasource&gt;
 &lt;/jira-database-config&gt;
 </code></pre></section></section><section class="section" id="it.jira.config"><div class="titlepage"><div><div><h3 class="title"><a id="it.jira.config" class="anchor" href="#it.jira.config"><span class="octicon octicon-link"/></a>12.1.3. JIRA configuration</h3></div></div></div><p>Edit the data directory by changing the following property <a class="xref" href="issue.tracker.html#it.jira.config.home"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a> in the
-        <code class="filename">P:\dev\apps\issue\atlassian-jira-6.4.11-standalone\atlassian-jira\WEB-INF\classes\jira-application.properties</code>
+        <code class="filename">P:\dev\apps\issue\atlassian-jira-software-7.6.2-standalone\atlassian-jira\WEB-INF\classes\jira-application.properties</code>
         file:</p><pre xmlns="" class="language-provided"><code class="language-ini"># The jira.home configuration must be set and specifies the directory
 # in which JIRA will store its data files.
 # This must be set to an absolute path. Relative paths are not allowed.
@@ -95,8 +94,8 @@ jira.home = P:/dev/data/issue/jira<span xmlns="http://www.w3.org/1999/xhtml" id=
         Administrator Sessions</a> by creating the following property <a class="xref" href="issue.tracker.html#it.jira.config.websudo"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a> in the
         <code class="filename">P:\dev\data\issue\jira\jira-config.properties</code>
         file:</p><pre xmlns="" class="language-provided"><code class="language-ini">jira.websudo.is.disabled=true<span xmlns="http://www.w3.org/1999/xhtml" id="it.jira.config.websudo"/><a xmlns="http://www.w3.org/1999/xhtml" id="it.jira.config.websudo"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/></code></pre><p>Verify the installation by changing to <code class="command">cd /d
-        P:\dev\apps\issue\atlassian-jira-6.4.11-standalone</code> and
-        running <code class="command">bin\startup.bat</code>.</p><p>Verify that the server is running in your browser at <a class="link" href="http://localhost:8063">http://localhost:8063</a>. The
+        P:\dev\apps\issue\atlassian-jira-software-7.6.2-standalone</code>
+        and running <code class="command">bin\startup.bat</code>.</p><p>Verify that the server is running in your browser at <a class="link" href="http://localhost:8063">http://localhost:8063</a>. The
         Server ID for this JIRA instance is required to retrieve a new license
         from <a class="link" href="https://my.atlassian.com/products">my.atlassian.com</a>.</p><section class="section" id="it.jira.config.required.settings"><div class="titlepage"><div><div><h4 class="title"><a id="it.jira.config.required.settings" class="anchor" href="#it.jira.config.required.settings"><span class="octicon octicon-link"/></a>12.1.3.1. Required settings</h4></div></div></div><p>You should see the JIRA setup wizard:</p><div class="orderedlist"><ol class="orderedlist" type="1"><li class="listitem"><p><span class="guilabel"><strong>Application Properties</strong></span>:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><span class="guilabel"><strong>Application Title:
                   </strong></span><strong class="userinput"><code>freedumbytes.dev.net
@@ -164,7 +163,7 @@ jira.home = P:/dev/data/issue/jira<span xmlns="http://www.w3.org/1999/xhtml" id=
         connection <a class="xref" href="issue.tracker.html#it.jira.connector.ajp"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a> on web context
         <code class="uri">/jira</code> <a class="xref" href="issue.tracker.html#it.jira.host.context"><img src="images/community/docbook/callouts/4.png" alt="4" border="0" height="17px" width="17px" class="callout"/></a> by editing the
         configuration file
-        <code class="filename">P:\dev\apps\issue\atlassian-jira-6.4.11-standalone\conf\server.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">&lt;Server port="8062"  address="127.0.0.1" shutdown="SHUTDOWN"&gt;
+        <code class="filename">P:\dev\apps\issue\atlassian-jira-software-7.6.2-standalone\conf\server.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">&lt;Server port="8062"  address="127.0.0.1" shutdown="SHUTDOWN"&gt;
 
   &lt;Service name="Catalina"&gt;
      …
@@ -222,39 +221,56 @@ jira.home = P:/dev/data/issue/jira<span xmlns="http://www.w3.org/1999/xhtml" id=
 </code></pre><p>When JIRA and the Apache HTTP Server are restarted you should be
         able to browse JIRA at <a class="link" href="http://freedumbytes.dev.net/jira">http://freedumbytes.dev.net/jira</a>.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="tip"><h2>Tip</h2><p>If the browser displays a 401 HTTP error then the Apache HTTP
           Server logged-in user doesn't exist in JIRA or the password doesn't
-          match.</p></div><section class="section" id="it.jira.privacy.policy"><div class="titlepage"><div><div><h4 class="title"><a id="it.jira.privacy.policy" class="anchor" href="#it.jira.privacy.policy"><span class="octicon octicon-link"/></a>12.1.4.1. Privacy Policy</h4></div></div></div><p>Next configure if <a class="link" href="http://freedumbytes.dev.net/jira/plugins/servlet/analytics/configuration">Analytics</a>
+          match.</p></div><p>In case of a pop-up with <span class="quote">“<span class="quote">The Gadget feed URL health check
+        has failed in your system.</span>”</span> or <span class="quote">“<span class="quote">JIRA is not able to
+        access itself through the Gadget feed URL. This is necessary so that
+        dashboard gadgets can be generated successfully. Please verify the
+        current Base URL and if necessary, review your network configurations
+        to resolve the problem.</span>”</span> on <span class="guimenuitem"><strong>JIRA ADMINISTRATION</strong></span> → <span class="guimenuitem"><strong>System</strong></span> → <span class="guibutton"><strong>Troubleshooting and support tools</strong></span> → <span class="guibutton"><strong>Instance health</strong></span> <a class="link" href="https://confluence.atlassian.com/x/WCA6Mw">resolve
+        this</a> with anonymous access for the JIRA Server IP
+        itself:</p><pre xmlns="" class="language-provided"><code class="language-apache">   &lt;Location /jira&gt;
+     Include ../apache-conf/httpd-freedumbytes-realm.conf
+   &lt;/Location&gt;
++
++  &lt;Location /jira/rest&gt;
++    &lt;RequireAll&gt;
++      Include ../apache-conf/<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="http.server.html#http.apache.access" title="7.1.4. Apache HTTP Server access">httpd-server-access.conf</a>
++      Include ../apache-conf/<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="http.server.html#http.apache.access.realm" title="7.1.4.2. Realm">httpd-freedumbytes-realm.conf</a>
++    &lt;/RequireAll&gt;
++  &lt;/Location&gt;
+</code></pre><section class="section" id="it.jira.privacy.policy"><div class="titlepage"><div><div><h4 class="title"><a id="it.jira.privacy.policy" class="anchor" href="#it.jira.privacy.policy"><span class="octicon octicon-link"/></a>12.1.4.1. Privacy Policy</h4></div></div></div><p>Next configure if <a class="link" href="http://freedumbytes.dev.net/jira/plugins/servlet/analytics/configuration">Analytics</a>
           collects data about the usage of JIRA and sends it to Atlassian (see
           the <a class="link" href="https://www.atlassian.com/legal/privacy-policy">privacy
           policy</a> for details).</p></section></section><section class="section" id="it.jira.windows.service"><div class="titlepage"><div><div><h3 class="title"><a id="it.jira.windows.service" class="anchor" href="#it.jira.windows.service"><span class="octicon octicon-link"/></a>12.1.5. Windows service</h3></div></div></div><p>To restart automatically on Microsoft Windows <a class="link" href="http://confluence.atlassian.com/display/JIRA/Running+JIRA+Standalone+as+a+Service">create
         a service</a> using <a class="link" href="operating.system.html#os.windows.cmd.elevated" title="1.1.14.1. Elevated Command Prompt">an
-        elevated command prompt</a> as follows:</p><pre xmlns="" class="language-provided"><code class="language-bash">cd /d P:\dev\apps\issue\atlassian-jira-6.4.11-standalone
+        elevated command prompt</a> as follows:</p><pre xmlns="" class="language-provided"><code class="language-bash">cd /d P:\dev\apps\issue\atlassian-jira-software-7.6.2-standalone
 
-rename bin\tomcat7.exe tomcat7.exe.x86
+rename bin\tomcat8.exe tomcat8.exe.x86
 rename bin\apr\tcnative-1.dll tcnative-1.dll.x86
-rename bin\tomcat7.exe.x64 tomcat7.exe
+rename bin\tomcat8.exe.x64 tomcat8.exe
 rename bin\apr\tcnative-1.dll.x64 tcnative-1.dll
 
 set JAVA_HOME=P:\dev\apps\prg\java-x64\jdk1.8.0_131
-set CATALINA_HOME=P:\dev\apps\issue\atlassian-jira-6.4.11-standalone
+set CATALINA_HOME=P:\dev\apps\issue\atlassian-jira-software-7.6.2-standalone
 bin\service.bat install jira
 
-bin\tomcat7.exe //US//jira --DisplayName="freedumbytes.dev.net JIRA" ^
+bin\tomcat8.exe //US//jira --DisplayName="freedumbytes.dev.net JIRA" ^
   --Description="JIRA - Issue tracking and project management." ^
   --Startup=auto
 
-bin\tomcat7.exe //US//jira --JvmMx=768 --JvmMs=256 ^
+bin\tomcat8.exe //US//jira --JvmMx=768 --JvmMs=256 ^
   ++JvmOptions=-Djava.awt.headless=true;-Datlassian.standalone=JIRA
 
-bin\tomcat7.exe //US//jira ++JvmOptions=-D<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://confluence.atlassian.com/display/JIRA/__setting_mail.mime.decodeparameters">mail.mime.decodeparameters</a>=true
+###<span xmlns="http://www.w3.org/1999/xhtml" class="emphasis"><em>JIRA6.4</em></span>###bin\tomcat7.exe //US//jira ++JvmOptions=-D<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://confluence.atlassian.com/display/JIRA/__setting_mail.mime.decodeparameters">mail.mime.decodeparameters</a>=true
 </code></pre><p>Start it with <code class="command">net start jira</code>.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>In case of an upgrade <code class="command">sc delete jira</code> first
           (see also <a class="xref" href="operating.system.html#os.windows.process.explorer" title="1.1.5. Task Manager replacement">Section 1.1.5, “Task Manager replacement”</a> in case of
           <span class="quote">“<span class="quote">The specified service has been marked for
           deletion.</span>”</span>).</p></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="tip"><h2>Tip</h2><p>As an alternative to change the additional settings of the
           JIRA service run:
-          <code class="command">P:\dev\apps\issue\atlassian-jira-6.4.11-standalone\bin\tomcat7w.exe
+          <code class="command">P:\dev\apps\issue\atlassian-jira-software-7.6.2-standalone\bin\tomcat8w.exe
           //ES//jira</code> such as <span class="guilabel"><strong>Java</strong></span> → <span class="guilabel"><strong>Java Virtual Machine</strong></span>
           <strong class="userinput"><code>P:\dev\apps\prg\java\jdk1.8.0_131\jre\bin\server\jvm.dll</code></strong>.</p></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="important"><h2>Important</h2><p>In case of a new jdk installation just run
-          <code class="command">P:\dev\apps\issue\atlassian-jira-6.4.11-standalone\bin\tomcat7.exe
+          <code class="command">P:\dev\apps\issue\atlassian-jira-software-7.6.2-standalone\bin\tomcat8.exe
           //US//jira --Jvm auto</code> (when <code class="envar">JAVA_HOME</code> is
           still pointing to the 64-bit version; see also <a class="xref" href="web.server.html#web.tomcat.manager" title="8.1.3.2. Tomcat Manager">Section 8.1.3.2, “Tomcat Manager”</a>).</p></div><p>Verify the installation and the JVM memory usage at <a class="link" href="http://freedumbytes.dev.net/jira/secure/admin/ViewSystemInfo.jspa">http://freedumbytes.dev.net/jira/secure/admin/ViewSystemInfo.jspa</a>.</p><section class="section" id="it.jira.windows.user"><div class="titlepage"><div><div><h4 class="title"><a id="it.jira.windows.user" class="anchor" href="#it.jira.windows.user"><span class="octicon octicon-link"/></a>12.1.5.1. Log On Windows user</h4></div></div></div><p>For the same reason as <a class="xref" href="web.server.html#web.tomcat.windows.user" title="8.1.3.1. Log On Windows user">Section 8.1.3.1, “Log On Windows user”</a> launch the <span class="application"><strong>Service
           Management Console</strong></span> with
@@ -286,7 +302,7 @@ jira.websudo.is.disabled=true
             <span class="guilabel"><strong><a class="link" href="http://confluence.atlassian.com/display/JIRA/Configuring+Time+Tracking">Time
             Tracking</a></strong></span>.</p></li><li class="listitem"><p>Under <span class="guimenuitem"><strong>Issue Features</strong></span> activate
             <span class="guilabel"><strong><a class="link" href="http://confluence.atlassian.com/display/JIRA/Configuring+Issue+Linking">Issue
-            Linking</a></strong></span>.</p></li><li class="listitem"><p>Under <span class="guimenuitem"><strong>User Interface</strong></span> select
+            Linking</a></strong></span> and define your own Types:</p><div class="figure" id="it.jira.issue.linking.types"><a id="it.jira.issue.linking.types"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/issuetracker/jira/jira-issue-linking.png" alt="JIRA Issue Linking Types"/></div></div></div><div class="figure-title">Figure 12.1. JIRA Issue Linking Types</div></div><p><br class="figure-break"/></p></li><li class="listitem"><p>Under <span class="guimenuitem"><strong>User Interface</strong></span> select
             <span class="guilabel"><strong>Look and Feel</strong></span> and click <span class="guibutton"><strong>Edit
             Settings</strong></span>:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><span class="guilabel"><strong>Time Format</strong></span>:
                 <strong class="userinput"><code>HH:mm</code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Day Format</strong></span>: <strong class="userinput"><code>EEEE
@@ -325,7 +341,7 @@ jira.websudo.is.disabled=true
                   <span class="guilabel"><strong>Description</strong></span>: <strong class="userinput"><code>The complete
                   picture.</code></strong> with expected <span class="guilabel"><strong>Release
                   Date</strong></span> <strong class="userinput"><code>2011-08-31</code></strong> and click
-                  <span class="guibutton"><strong>Add</strong></span>.</p></li></ul></div></li></ul></div></section><section class="section" id="it.jira.fisheye.integration"><div class="titlepage"><div><div><h3 class="title"><a id="it.jira.fisheye.integration" class="anchor" href="#it.jira.fisheye.integration"><span class="octicon octicon-link"/></a>12.1.8. FishEye integration</h3></div></div></div><section class="section" id="it.jira.fisheye.integration.users"><div class="titlepage"><div><div><h4 class="title"><a id="it.jira.fisheye.integration.users" class="anchor" href="#it.jira.fisheye.integration.users"><span class="octicon octicon-link"/></a>12.1.8.1. Integration users</h4></div></div></div><p>To auto-add the <strong class="userinput"><code>jira</code></strong> user (see also
+                  <span class="guibutton"><strong>Add</strong></span>.</p></li></ul></div></li></ul></div></section><section class="section" id="it.jira.fisheye.integration"><div class="titlepage"><div><div><h3 class="title"><a id="it.jira.fisheye.integration" class="anchor" href="#it.jira.fisheye.integration"><span class="octicon octicon-link"/></a>12.1.8. FishEye integration [ToDo Disabled or OAuth only]</h3></div></div></div><section class="section" id="it.jira.fisheye.integration.users"><div class="titlepage"><div><div><h4 class="title"><a id="it.jira.fisheye.integration.users" class="anchor" href="#it.jira.fisheye.integration.users"><span class="octicon octicon-link"/></a>12.1.8.1. Integration users</h4></div></div></div><p>To auto-add the <strong class="userinput"><code>jira</code></strong> user (see also
           <a class="xref" href="http.server.html#http.apache.access.config" title="7.1.4.1. Authentication, authorization and access control">Section 7.1.4.1, “Authentication, authorization and access control”</a>) in FishEye just login
           with that user at <a class="link" href="http://freedumbytes.dev.net/fisheye/">http://freedumbytes.dev.net/fisheye/</a>
           and logout again.</p><p>Optionally at the FishEye Admin GUI <a class="link" href="http://freedumbytes.dev.net/fisheye/admin/">http://freedumbytes.dev.net/fisheye/admin/</a>

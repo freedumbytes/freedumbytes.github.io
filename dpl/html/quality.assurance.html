@@ -1,28 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE html>
 <!DOCTYPE html
   PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Chapter 17. Quality Assurance</title><link rel="stylesheet" type="text/css" href="docbook.css"/><link rel="stylesheet" type="text/css" href="css/freedumbytes.css"/><meta name="generator" content="DocBook XSL Stylesheets V1.78.1"/><link rel="prev" href="project.html" title="Chapter 16. Project"/><link rel="next" href="tips.and.tricks.html" title="Appendix A. Tips &amp; Tricks"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><link rel="shortcut icon" href="./images/community/docbook/glider.ico"/></head><body><header><p id="title"/><ul class="navheader"><li class="previous"><a accesskey="p" href="project.html"><strong>Previous</strong></a></li><li class="next"><a accesskey="n" href="tips.and.tricks.html"><strong>Next</strong></a></li></ul></header><section class="chapter" id="quality.assurance"><div class="titlepage"><div><div><h1 class="title"><a id="quality.assurance" class="anchor" href="#quality.assurance"><span class="octicon octicon-link"/></a>Chapter 17. Quality Assurance</h1></div></div></div><div class="toc"><div class="toc-title">Table of Contents</div><ul class="toc"><li><span class="section"><a href="quality.assurance.html#qa.maven.reports">17.1. Maven reports</a></span></li><li><span class="section"><a href="quality.assurance.html#qa.sonar">17.2. SonarQube</a></span><ul><li><span class="section"><a href="quality.assurance.html#qa.sonar.resources">17.2.1. Resources</a></span></li><li><span class="section"><a href="quality.assurance.html#qa.sonar.install.guide">17.2.2. SonarQube installation guide</a></span></li><li><span class="section"><a href="quality.assurance.html#qa.sonar.upgrade">17.2.3. Upgrading</a></span></li><li><span class="section"><a href="quality.assurance.html#qa.sonar.config">17.2.4. SonarQube configuration</a></span></li><li><span class="section"><a href="quality.assurance.html#qa.sonar.apache.config">17.2.5. Apache configuration</a></span></li><li><span class="section"><a href="quality.assurance.html#qa.sonar.windows.service">17.2.6. Windows service</a></span></li><li><span class="section"><a href="quality.assurance.html#qa.sonar.maven.integration">17.2.7. Maven integration</a></span></li><li><span class="section"><a href="quality.assurance.html#qa.sonar.jenkins.integration">17.2.8. Jenkins integration TODO</a></span></li><li><span class="section"><a href="quality.assurance.html#qa.screenshots.walkabout">17.2.9. Maven vs SonarQube Quality Assurance reports comparison</a></span></li></ul></li><li><span class="section"><a href="quality.assurance.html#qa.jdocbook">17.3. jDocBook</a></span><ul><li><span class="section"><a href="quality.assurance.html#qa.jdocbook.docbook">17.3.1. Docbook configuration</a></span></li><li><span class="section"><a href="quality.assurance.html#qa.jdocbook.docs">17.3.2. Documentation setup</a></span></li><li><span class="section"><a href="quality.assurance.html#qa.jdocbook.hyphenation">17.3.3. Hyphenation</a></span></li><li><span class="section"><a href="quality.assurance.html#qa.jdocbook.xsl">17.3.4. Upgrade DocBook XSL stylesheets</a></span></li><li><span class="section"><a href="quality.assurance.html#qa.jdocbook.fop">17.3.5. Upgrade FOP</a></span></li><li><span class="section"><a href="quality.assurance.html#qa.jdocbook.fonts">17.3.6. Fonts</a></span></li><li><span class="section"><a href="quality.assurance.html#qa.jdocbook.example">17.3.7. PressGang Example</a></span></li><li><span class="section"><a href="quality.assurance.html#qa.jdocbook.publication">17.3.8. Publication</a></span></li></ul></li></ul></div><p><a class="link" href="http://en.wikipedia.org/wiki/Quality_assurance">Quality
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Chapter 17. Quality Assurance</title><link rel="stylesheet" type="text/css" href="docbook.css"/><link rel="stylesheet" type="text/css" href="css/freedumbytes.css"/><meta name="generator" content="DocBook XSL Stylesheets V1.78.1"/><link rel="prev" href="project.html" title="Chapter 16. Project"/><link rel="next" href="tips.and.tricks.html" title="Appendix A. Tips &amp; Tricks"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><link rel="shortcut icon" href="./images/community/docbook/glider.ico"/></head><body><header><p id="title"/><ul class="navheader"><li class="previous"><a accesskey="p" href="project.html"><strong>Previous</strong></a></li><li class="next"><a accesskey="n" href="tips.and.tricks.html"><strong>Next</strong></a></li></ul></header><section class="chapter" id="quality.assurance"><div class="titlepage"><div><div><h1 class="title"><a id="quality.assurance" class="anchor" href="#quality.assurance"><span class="octicon octicon-link"/></a>Chapter 17. Quality Assurance</h1></div></div></div><div class="toc"><div class="toc-title">Table of Contents</div><ul class="toc"><li><span class="section"><a href="quality.assurance.html#qa.maven.reports">17.1. Maven reports</a></span></li><li><span class="section"><a href="quality.assurance.html#qa.sonar">17.2. SonarQube</a></span><ul><li><span class="section"><a href="quality.assurance.html#qa.sonar.resources">17.2.1. Resources</a></span></li><li><span class="section"><a href="quality.assurance.html#qa.sonar.install.guide">17.2.2. SonarQube installation guide</a></span></li><li><span class="section"><a href="quality.assurance.html#qa.sonar.upgrade">17.2.3. Upgrading</a></span></li><li><span class="section"><a href="quality.assurance.html#qa.sonar.config">17.2.4. SonarQube configuration</a></span></li><li><span class="section"><a href="quality.assurance.html#qa.sonar.apache.config">17.2.5. Apache configuration</a></span></li><li><span class="section"><a href="quality.assurance.html#qa.sonar.windows.service">17.2.6. Windows service</a></span></li><li><span class="section"><a href="quality.assurance.html#qa.sonar.maven.integration">17.2.7. Maven integration</a></span></li><li><span class="section"><a href="quality.assurance.html#qa.screenshots.walkabout.owasp">17.2.8. SonarQube and OWASP</a></span></li><li><span class="section"><a href="quality.assurance.html#qa.screenshots.walkabout.comparison">17.2.9. Maven vs SonarQube Quality Assurance reports comparison</a></span></li></ul></li><li><span class="section"><a href="quality.assurance.html#qa.jdocbook">17.3. jDocBook</a></span><ul><li><span class="section"><a href="quality.assurance.html#qa.jdocbook.docbook">17.3.1. Docbook configuration</a></span></li><li><span class="section"><a href="quality.assurance.html#qa.jdocbook.docs">17.3.2. Documentation setup</a></span></li><li><span class="section"><a href="quality.assurance.html#qa.jdocbook.hyphenation">17.3.3. Hyphenation</a></span></li><li><span class="section"><a href="quality.assurance.html#qa.jdocbook.xsl">17.3.4. Upgrade DocBook XSL stylesheets</a></span></li><li><span class="section"><a href="quality.assurance.html#qa.jdocbook.fop">17.3.5. Upgrade FOP</a></span></li><li><span class="section"><a href="quality.assurance.html#qa.jdocbook.fonts">17.3.6. Fonts</a></span></li><li><span class="section"><a href="quality.assurance.html#qa.jdocbook.example">17.3.7. PressGang Example</a></span></li><li><span class="section"><a href="quality.assurance.html#qa.jdocbook.publication">17.3.8. Publication</a></span></li></ul></li></ul></div><p><a class="link" href="http://en.wikipedia.org/wiki/Quality_assurance">Quality
     Assurance</a>, or QA for short, refers to planned and systematic
     production processes that provide confidence in a product's suitability
     for its intended purpose.</p><section class="section" id="qa.maven.reports"><div class="titlepage"><div><div><h2 class="title"><a id="qa.maven.reports" class="anchor" href="#qa.maven.reports"><span class="octicon octicon-link"/></a>17.1. Maven reports</h2></div></div></div><p>Instead of configuring the <a class="link" href="prj.maven.qa.sandbox.html#prj.maven.java.pom.qa" title="F.3. Maven Quality Assurance reports">Maven Quality Assurance plugins</a>,
       of which the output requires a lot of click around between those reports
-      (see also <a class="link" href="quality.assurance.html#qa.screenshots.walkabout" title="17.2.9. Maven vs SonarQube Quality Assurance reports comparison">screenshots</a>)
-      and the <a class="link" href="prj.maven.qa.sandbox.html#prj.maven.java.pom.jxr" title="F.2. Cross-reference">cross-reference</a>,
-      combine that information using SonarQube for better evaluation.</p></section><section class="section" id="qa.sonar"><div class="titlepage"><div><div><h2 class="title"><a id="qa.sonar" class="anchor" href="#qa.sonar"><span class="octicon octicon-link"/></a>17.2. SonarQube</h2></div></div></div><p><span class="inlinemediaobject"><img src="images/icons/sonar.png"/></span> <a class="link" href="http://www.sonarqube.org/">SonarQube</a> is an open
+      (see also <a class="link" href="quality.assurance.html#qa.screenshots.walkabout.comparison" title="17.2.9. Maven vs SonarQube Quality Assurance reports comparison">screenshots</a>) and
+      the <a class="link" href="prj.maven.qa.sandbox.html#prj.maven.java.pom.jxr" title="F.2. Cross-reference">cross-reference</a>,
+      combine that information using SonarQube for better evaluation.</p></section><section class="section" id="qa.sonar"><div class="titlepage"><div><div><h2 class="title"><a id="qa.sonar" class="anchor" href="#qa.sonar"><span class="octicon octicon-link"/></a>17.2. SonarQube</h2></div></div></div><p><span class="inlinemediaobject"><img src="images/icons/sonar.png"/></span> <a class="link" href="https://www.sonarqube.org">SonarQube</a> is an open
       platform to manage code quality. As such, it covers the 7 axes of code
-      quality.</p><section class="section" id="qa.sonar.resources"><div class="titlepage"><div><div><h3 class="title"><a id="qa.sonar.resources" class="anchor" href="#qa.sonar.resources"><span class="octicon octicon-link"/></a>17.2.1. Resources</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><a class="link" href="http://www.sonarqube.org/downloads/">Download</a>
-            SonarQube.</p></li><li class="listitem"><p><a class="link" href="http://docs.sonarqube.org/display/SONAR/Setup+and+Upgrade">Setup</a>
-            and browsing <a class="link" href="http://docs.sonarqube.org/display/SONAR/Browsing+SonarQube">SonarQube</a>
-            and <a class="link" href="http://docs.sonarqube.org/display/SONAR/Project+Dashboards">Projects</a>
-            <a class="link" href="http://docs.sonarqube.org/display/SONAR/Project+Administration">Administration</a>
-            <a class="link" href="http://docs.sonarqube.org/display/SONAR/Hunting+Services">Drilling
-            Down</a>.Viewing <a class="link" href="http://docs.sonarqube.org/display/SONAR/Historical+Information">Historical
-            Information</a>, <a class="link" href="http://docs.sonarqube.org/display/SONAR/Differential+Views">Differential
-            Views</a>, <a class="link" href="http://docs.sonarqube.org/display/SONAR/Issues">Issues</a>,
-            <a class="link" href="http://docs.sonarqube.org/display/SONAR/Measures">Measures</a>
-            and <a class="link" href="http://docs.sonarqube.org/display/SONAR/Rules">Rules</a>
-            or <a class="link" href="http://docs.sonarqube.org/display/SONAR/Pre-commit+Check">Pre-commit
-            Check</a> with <a class="link" href="http://www.sonarlint.org/">SonarLint</a>.</p></li><li class="listitem"><p><a class="link" href="http://docs.sonarqube.org/display/SONAR/Upgrading">Upgrade</a>
+      quality.</p><section class="section" id="qa.sonar.resources"><div class="titlepage"><div><div><h3 class="title"><a id="qa.sonar.resources" class="anchor" href="#qa.sonar.resources"><span class="octicon octicon-link"/></a>17.2.1. Resources</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><a class="link" href="https://www.sonarqube.org/downloads/">Download</a>
+            SonarQube.</p></li><li class="listitem"><p><a class="link" href="https://docs.sonarqube.org/display/SONAR/Setup+and+Upgrade">Setup</a>,
+            <a class="link" href="https://docs.sonarqube.org/display/SONAR/Documentation">Documentation</a>,
+            <a class="link" href="https://docs.sonarqube.org/display/SONAR/User+Guide">User
+            Guide</a> and <a class="link" href="https://docs.sonarqube.org/display/SONAR/Administration+Guide">Administration
+            Guide</a>.</p></li><li class="listitem"><p><a class="link" href="https://www.sonarlint.org/">SonarLint</a>.</p></li><li class="listitem"><p><a class="link" href="https://docs.sonarqube.org/display/SONAR/Upgrading">Upgrade</a>
             checklist:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p>Related products: -.</p></li><li class="listitem"><p>References: -.</p></li><li class="listitem"><p>Integration configuration changes: <a class="link" href="quality.assurance.html#qa.sonar.install.guide" title="17.2.2. SonarQube installation guide">SonarQube - installation
                 guide <code class="code">SONARQUBE_HOME</code> /
                 <code class="code">sonar.properties</code></a>, <a class="link" href="quality.assurance.html#qa.sonar.tmp" title="17.2.2.1. Temp folder issue">SonarQube - Temp folder issue
@@ -33,46 +26,39 @@
                 <a class="link" href="quality.assurance.html#qa.sonar.upgrade" title="17.2.3. Upgrading">SonarQube -
                 upgrading</a>.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>Or just run
                   <code class="command">p:\dev\apps\editor\winmerge\WinMergeU.exe
-                  p:\dev\apps\qa\sonarqube-5.5\conf
-                  p:\dev\apps\qa\sonarqube-5.3\conf</code> to copy the
+                  p:\dev\apps\qa\sonarqube-6.7.1\conf
+                  p:\dev\apps\qa\sonarqube-6.7\conf</code> to copy the
                   changes in for example <code class="filename">sonar.properties</code>
                   and <code class="filename">wrapper.conf</code>.</p></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>And with
                   <code class="command">p:\dev\apps\editor\winmerge\WinMergeU.exe
-                  p:\dev\apps\qa\sonarqube-5.5\extensions\plugins
-                  p:\dev\apps\qa\sonarqube-5.3\extensions\plugins</code>
+                  p:\dev\apps\qa\sonarqube-6.7.1\extensions\plugins
+                  p:\dev\apps\qa\sonarqube-6.7\extensions\plugins</code>
                   copy installed plugins such as for example
                   <code class="filename">sonar-java-plugin-x.y.jar</code>,
                   <code class="filename">sonar-scm-git-plugin-x.y.jar</code>,
                   <code class="filename">sonar-scm-svn-plugin-x.y.jar</code>,
                   <code class="filename">sonar-widget-lab-plugin-x.y.jar</code> and
                   <code class="filename">sonar-dependency-check-plugin-x.y.z.jar</code>.
-                  Check the <a class="link" href="http://docs.sonarqube.org/display/PLUG/Plugin+Version+Matrix">Compatibility
+                  Check the <a class="link" href="https://docs.sonarqube.org/display/PLUG/Plugin+Version+Matrix">Compatibility
                   Matrix for plugins compatibility</a> and manually upgrade
-                  the plugins if necessary.</p></div></li></ul></div></li><li class="listitem"><p>SonarQube <a class="link" href="http://www.sonarsource.com/category/plugins-news/">Products
-            News</a>, <a class="link" href="http://www.sonarqube.org/roadmap/">Roadmap</a>,
-            <a class="link" href="http://www.sonarqube.org/get-support/">Documentation</a>,
-            <a class="link" href="http://www.sonarqube.org/features/">Features</a>,
-            <a class="link" href="http://docs.sonarqube.org/display/SONAR/Quality+Profiles">Quality
-            Profiles</a>, <a class="link" href="http://www.sonarqube.org/category/blog/">Blog</a>,
-            <a class="link" href="http://docs.sonarqube.org/display/PLUG/Plugin+Library">Plugin
-            Library</a> and <a class="link" href="http://docs.sonarqube.org/display/HOME/Frequently+Asked+Questions">Frequently
-            Asked Questions</a> (see also <a class="link" href="http://www.sonarqube.org/tag/screenshots/">screenshots</a>
-            for example <a class="link" href="http://www.sonarqube.org/sonarqube-5-4-in-screenshots/">5.4</a>).</p></li><li class="listitem"><p>SonarQube Java Analyzer : <a class="link" href="http://www.sonarqube.org/sonarqube-java-analyzer-the-only-rule-engine-you-need/">The
-            Only Rule Engine You Need</a>.</p></li><li class="listitem"><p><a class="link" href="http://docs.sonarqube.org/display/SONAR/Project+Space">Project
-            Space</a> which puts the focus on the Quality Gate and Leak
-            Period concepts.</p></li><li class="listitem"><p><a class="link" href="http://www.sonarqube.org/water-leak-changes-the-game-for-technical-debt-management/">Water
-            Leak</a> Changes the Game for Technical Debt Management.</p></li><li class="listitem"><p>Web Service API to make it possible to implement a <a class="link" href="http://docs.sonarqube.org/display/SONAR/Breaking+the+CI+Build">build-breaker
-            strategy</a> on any system.</p></li><li class="listitem"><p>SonarQube <a class="link" href="http://www.sonarqube.org/sonarqube-javascript-plugin-why-compete-with-jslint-and-jshint/">JavaScript
-            plugin</a>: why compete with JSLint and JSHint?</p></li></ul></div><section class="section" id="qa.sonar.resources.security"><div class="titlepage"><div><div><h4 class="title"><a id="qa.sonar.resources.security" class="anchor" href="#qa.sonar.resources.security"><span class="octicon octicon-link"/></a>17.2.1.1. Security resources</h4></div></div></div><p>The <a class="link" href="http://docs.sonarqube.org/display/PLUG/Java+Plugin">Java
-          Plugin</a> enables analysis of Java projects. It offers more than
-          <a class="link" href="http://dist.sonarsource.com/reports/coverage/rules_in_squid.html">300
+                  the plugins if necessary.</p></div></li></ul></div></li><li class="listitem"><p>SonarQube <a class="link" href="https://www.sonarsource.com/resources/product-news/">Products
+            News</a>, <a class="link" href="https://www.sonarqube.org/roadmap/">Roadmap</a>,
+            <a class="link" href="https://docs.sonarqube.org/display/SONAR/Quality+Profiles">Quality
+            Profiles</a>, <a class="link" href="https://blog.sonarsource.com/">Blog</a>, <a class="link" href="https://docs.sonarqube.org/display/PLUG/Plugin+Library">Plugin
+            Library</a> and <a class="link" href="https://docs.sonarqube.org/display/SONAR/Frequently+Asked+Questions">Frequently
+            Asked Questions</a>.</p></li><li class="listitem"><p>SonarQube Java Analyzer : <a class="link" href="https://blog.sonarsource.com/sonarqube-java-analyzer-the-only-rule-engine-you-need/">The
+            Only Rule Engine You Need</a>.</p></li><li class="listitem"><p><a class="link" href="https://blog.sonarsource.com/water-leak-changes-the-game-for-technical-debt-management/">Water
+            Leak</a> Changes the Game for Technical Debt Management.</p></li><li class="listitem"><p>SonarQube <a class="link" href="https://blog.sonarsource.com/sonarqube-javascript-plugin-why-compete-with-jslint-and-jshint/">JavaScript
+            plugin</a>: why compete with JSLint and JSHint?</p></li></ul></div><section class="section" id="qa.sonar.resources.security"><div class="titlepage"><div><div><h4 class="title"><a id="qa.sonar.resources.security" class="anchor" href="#qa.sonar.resources.security"><span class="octicon octicon-link"/></a>17.2.1.1. Security resources</h4></div></div></div><p>The <a class="link" href="https://www.sonarsource.com/products/codeanalyzers/sonarjava.html">SonarJava
+          plugin</a> enables analysis of Java projects. It offers more than
+          <a class="link" href="https://dist.sonarsource.com/reports/coverage/rules_in_squid.html">300
           rules</a> provided by SonarSource, which span coding conventions,
           bug detection, and security problems, including coverage of some
-          <a class="link" href="http://dist.sonarsource.com/reports/coverage/cert/squid_cert_coverage.html">CERT</a>
-          and <a class="link" href="http://dist.sonarsource.com/reports/coverage/cwe/squid_cwe_coverage.html">CWE</a>
-          rules, including several from the <a class="link" href="http://dist.sonarsource.com/reports/coverage/sans_top_25/squid_sans_top_25_coverage.html">SANS
-          TOP 25 Most Dangerous Software Errors</a>, as well as some <a class="link" href="http://dist.sonarsource.com/reports/coverage/owasp_top_ten/squid_owasp_top_ten_coverage.html">OWASP
-          Top Ten vulnerabilities</a>. This plugin is <a class="link" href="http://docs.sonarqube.org/display/SONAR/Security-related+rules#Security-relatedrules-CWE">CWE
+          <a class="link" href="https://dist.sonarsource.com/reports/coverage/cert/squid_cert_coverage.html">CERT</a>
+          and <a class="link" href="https://dist.sonarsource.com/reports/coverage/cwe/squid_cwe_coverage.html">CWE</a>
+          rules, including several from the <a class="link" href="https://dist.sonarsource.com/reports/coverage/sans_top_25/squid_sans_top_25_coverage.html">SANS
+          TOP 25 Most Dangerous Software Errors</a>, as well as some <a class="link" href="https://dist.sonarsource.com/reports/coverage/owasp_top_ten/squid_owasp_top_ten_coverage.html">OWASP
+          Top Ten vulnerabilities</a>. This plugin is <a class="link" href="https://docs.sonarqube.org/display/SONAR/Security-related+rules#Security-relatedrules-CWE">CWE
           Compatible</a>, which means that you can search for rules in the
           plugin that are related to CWE items.</p><p><span class="inlinemediaobject"><img src="images/icons/owasp.png"/></span> The Open Web Application Security Project
           (<a class="link" href="https://www.owasp.org/">OWASP</a>) is a <a class="link" href="https://www.irs.gov/Charities-&amp;-Non-Profits/Charitable-Organizations/Exemption-Requirements-Section-501%28c%29%283%29-Organizations">501(c)(3)</a>
@@ -109,16 +95,16 @@
                 if there are any known, publicly disclosed, vulnerabilities.
                 Currently Java, .NET, Ruby, Node.js, and Python projects are
                 supported; additionally, limited support for C/C++ projects
-                (see also <a class="xref" href="project.html#prj.maven.setup.java.owasp.dependency.check" title="16.1.7.9. OWASP Dependency Check">Section 16.1.7.9, “OWASP Dependency Check”</a> and
-                <a class="xref" href="quality.assurance.html#qa.sonar.config.update.center" title="17.2.4.1. Update Center">Section 17.2.4.1, “Update Center”</a>).</p></li><li class="listitem"><p>OWASP <a class="link" href="https://www.owasp.org/index.php/OWASP_Testing_Project">Testing
+                (see also <a class="xref" href="project.html#prj.maven.setup.java.owasp.dependency.check" title="16.1.7.8. OWASP Dependency Check">Section 16.1.7.8, “OWASP Dependency Check”</a> and
+                <a class="xref" href="quality.assurance.html#qa.sonar.config.marketplace" title="17.2.4.1. Marketplace">Section 17.2.4.1, “Marketplace”</a>).</p></li><li class="listitem"><p>OWASP <a class="link" href="https://www.owasp.org/index.php/OWASP_Testing_Project">Testing
                 Project</a> and <a class="link" href="https://www.owasp.org/images/5/52/OWASP_Testing_Guide_v4.pdf">Testing
                 Guide v4</a>.</p></li><li class="listitem"><p>OWASP <a class="link" href="https://www.owasp.org/index.php/OWASP_Cheat_Sheet_Series">Cheat
                 Sheet Series</a> was created to provide a concise
                 collection of high value information on specific web
                 application security topics. These cheat sheets were created
                 by various application security professionals who have
-                expertise in specific topics.</p></li></ul></div></section></section><section class="section" id="qa.sonar.install.guide"><div class="titlepage"><div><div><h3 class="title"><a id="qa.sonar.install.guide" class="anchor" href="#qa.sonar.install.guide"><span class="octicon octicon-link"/></a>17.2.2. SonarQube installation guide</h3></div></div></div><p><a class="link" href="http://www.sonarqube.org/downloads/">Download</a> the
-        archive: <code class="filename">sonarqube-5.5.zip</code> [version <a class="link" href="https://jira.sonarsource.com/secure/ConfigureReleaseNote.jspa?projectId=10930">5.5</a>].</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="important"><a id="qa.sonar.install.guide.sonar.web.context"><span style="display:none;">trick</span></a><h2>Important</h2><p>Better skip version 5.4 because of reverse proxy issue with
+                expertise in specific topics.</p></li></ul></div></section></section><section class="section" id="qa.sonar.install.guide"><div class="titlepage"><div><div><h3 class="title"><a id="qa.sonar.install.guide" class="anchor" href="#qa.sonar.install.guide"><span class="octicon octicon-link"/></a>17.2.2. SonarQube installation guide</h3></div></div></div><p><a class="link" href="https://www.sonarqube.org/downloads/">Download</a> the
+        archive: <code class="filename">sonarqube-6.7.1.zip</code> [version <a class="link" href="https://jira.sonarsource.com/secure/ConfigureReleaseNote.jspa?projectId=10930">6.7.1</a>].</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="important"><a id="qa.sonar.install.guide.sonar.web.context"><span style="display:none;">trick</span></a><h2>Important</h2><p>Better skip version 5.4 because of reverse proxy issue with
           <a class="link" href="https://jira.sonarsource.com/browse/SONAR-7122?page=com.atlassian.jira.plugin.system.issuetabpanels:comment-tabpanel&amp;showAll=true">SONAR-7122
           <span class="emphasis"><em>Drop the ability to customize the web app
           context</em></span></a> and wait for 5.5 (<a class="link" href="https://jira.sonarsource.com/browse/SONAR-7494">SONAR-7494
@@ -131,85 +117,43 @@
         <code class="filename">P:\dev\apps\qa</code>.</p><p id="qa.jira.home"><a id="qa.jira.home"><span style="display:none;">trick</span></a>Press <span class="keycap"><strong><span class="inlinemediaobject"><img src="images/os/windows/windows-key.gif"/></span></strong></span>+<span class="keycap"><strong>Break</strong></span> keys to open the Windows System Properties. Select
         <span class="guisubmenu"><strong>Advanced system settings</strong></span> → <span class="guibutton"><strong>Enviro<span class="accel">n</span>ment Variables</strong></span> and add a <span class="guibutton"><strong>Ne<span class="accel">w</span></strong></span>
         system variable <code class="envar">SONARQUBE_HOME</code> pointing to
-        <strong class="userinput"><code><code class="filename">P:\dev\apps\qa\sonarqube-5.5</code></code></strong>.</p><p>Change the context <a class="xref" href="quality.assurance.html#qa.sonar.context"><img src="images/community/docbook/callouts/3.png" alt="3" border="0" height="17px" width="17px" class="callout"/></a>, the
+        <strong class="userinput"><code><code class="filename">P:\dev\apps\qa\sonarqube-6.7.1</code></code></strong>.</p><p>Change the context <a class="xref" href="quality.assurance.html#qa.sonar.context"><img src="images/community/docbook/callouts/3.png" alt="3" border="0" height="17px" width="17px" class="callout"/></a>, the
         listening port <a class="xref" href="quality.assurance.html#qa.sonar.port"><img src="images/community/docbook/callouts/4.png" alt="4" border="0" height="17px" width="17px" class="callout"/></a> and restricted to
         localhost <a class="xref" href="quality.assurance.html#qa.sonar.address"><img src="images/community/docbook/callouts/2.png" alt="2" border="0" height="17px" width="17px" class="callout"/></a> by editing the
         configuration file
-        <code class="filename">P:\dev\apps\qa\sonarqube-5.5\conf\sonar.properties</code>:</p><pre xmlns="" class="language-provided"><code class="language-ini">#------------------------------------------------------------------------------
-# WEB SERVER
-
-# Web server is executed in a dedicated Java process. 
-# By default heap size is 768Mb.
-# Use the following property to customize JVM options.
-#    Recommendations:
-#
-#    The HotSpot Server VM is recommended. The property -server should be added
-#    if server mode is not enabled by default on your environment: 
-#    http://docs.oracle.com/javase/7/docs/technotes/guides/vm/server-class.html
-#
-#sonar.web.javaOpts=-Xmx512m -Xms128m -XX:MaxPermSize=160m ^
-#          -XX:+HeapDumpOnOutOfMemoryError -Djava.net.preferIPv4Stack=true
+        <code class="filename">P:\dev\apps\qa\sonarqube-6.7.1\conf\sonar.properties</code>:</p><pre xmlns="" class="language-provided"><code class="language-ini"># WEB SERVER
+#sonar.web.javaOpts=-Xmx512m -Xms128m -XX:+HeapDumpOnOutOfMemoryError
 sonar.web.javaOpts=-Xmx512m -XX:+HeapDumpOnOutOfMemoryError -server<span xmlns="http://www.w3.org/1999/xhtml" id="qa.sonar.server"/><a xmlns="http://www.w3.org/1999/xhtml" id="qa.sonar.server"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>
 
- …
-
-# Binding IP address. For servers with more than one IP address, this property 
-# specifies which address will be used for listening on the specified ports.
-# By default, ports will be used on all IP addresses associated with the server.
+# Binding IP address.
+#sonar.web.host=0.0.0.0
 sonar.web.host=127.0.0.1<span xmlns="http://www.w3.org/1999/xhtml" id="qa.sonar.address"/><a xmlns="http://www.w3.org/1999/xhtml" id="qa.sonar.address"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/2.png" alt="2" height="17px" width="17px" class="callout"/>
 
-# Web context. When set, it must start with forward slash 
-# (for example /sonarqube).
-# The default value is root context (empty value).
+# Web context.
+#sonar.web.context=
 sonar.web.context=/sonarqube<span xmlns="http://www.w3.org/1999/xhtml" id="qa.sonar.context"/><a xmlns="http://www.w3.org/1999/xhtml" id="qa.sonar.context"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/3.png" alt="3" height="17px" width="17px" class="callout"/>
 
-# TCP port for incoming HTTP connections. Disabled when value is -1.
+# TCP port for incoming HTTP connections.
+#sonar.web.port=9000
 sonar.web.port=8072<span xmlns="http://www.w3.org/1999/xhtml" id="qa.sonar.port"/><a xmlns="http://www.w3.org/1999/xhtml" id="qa.sonar.port"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/4.png" alt="4" height="17px" width="17px" class="callout"/>
 
- …
-
 # COMPUTE ENGINE
-# The Compute Engine is responsible for processing background tasks.
-#sonar.ce.javaOpts=-Xmx512m -Xms128m -XX:MaxPermSize=160m ^
-#         -XX:+HeapDumpOnOutOfMemoryError -Djava.net.preferIPv4Stack=true
-sonar.web.javaOpts=-Xmx512m -XX:+HeapDumpOnOutOfMemoryError -server<span xmlns="http://www.w3.org/1999/xhtml" id="qa.sonar.engine"/><a xmlns="http://www.w3.org/1999/xhtml" id="qa.sonar.engine"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/5.png" alt="5" height="17px" width="17px" class="callout"/>
+#sonar.ce.javaOpts=-Xmx512m -Xms128m -XX:+HeapDumpOnOutOfMemoryError
+sonar.ce.javaOpts=-Xmx512m -XX:+HeapDumpOnOutOfMemoryError -server<span xmlns="http://www.w3.org/1999/xhtml" id="qa.sonar.engine"/><a xmlns="http://www.w3.org/1999/xhtml" id="qa.sonar.engine"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/5.png" alt="5" height="17px" width="17px" class="callout"/>
 
-# Same as previous property, 
-# but allows to not repeat all other settings like -Xmx
-#sonar.ce.javaAdditionalOpts=
+# JVM options of Elasticsearch process
+#sonar.search.javaOpts=-Xms512m \
+# -Xmx512m \
+# -XX:+HeapDumpOnOutOfMemoryError
+sonar.search.javaOpts=-Xms512m -Xmx512m -XX:+HeapDumpOnOutOfMemoryError -server<span xmlns="http://www.w3.org/1999/xhtml" id="qa.sonar.search"/><a xmlns="http://www.w3.org/1999/xhtml" id="qa.sonar.search"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/6.png" alt="6" height="17px" width="17px" class="callout"/>
 
-# The number of workers in the Compute Engine. 
-# Value must be greater than zero.
-# By default the Compute Engine uses a single worker 
-# and therefore processes tasks one at a time.
-#sonar.ce.workerCount=1
-
- …
-
-# ELASTICSEARCH
-# Elasticsearch is used to facilitate fast and accurate information retrieval.
-#sonar.search.javaOpts=-Xmx1G -Xms256m -Xss256k -Djava.net.preferIPv4Stack=true \
-#  -XX:+UseParNewGC -XX:+UseConcMarkSweepGC -XX:CMSInitiatingOccupancyFraction=75 \
-#  -XX:+UseCMSInitiatingOccupancyOnly -XX:+HeapDumpOnOutOfMemoryError
-sonar.search.javaOpts=-Xmx1G -Xms256m -Xss256k \
-  -XX:+UseParNewGC -XX:+UseConcMarkSweepGC -XX:CMSInitiatingOccupancyFraction=75 \
-  -XX:+UseCMSInitiatingOccupancyOnly -XX:+HeapDumpOnOutOfMemoryError -server<span xmlns="http://www.w3.org/1999/xhtml" id="qa.sonar.search"/><a xmlns="http://www.w3.org/1999/xhtml" id="qa.sonar.search"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/6.png" alt="6" height="17px" width="17px" class="callout"/>
-
-# Same as previous property, but allows to not repeat all other settings like -Xmx
-#sonar.search.javaAdditionalOpts=
-
-# Elasticsearch port. Default is 9001. Use 0 to get a free port.
-# As a security precaution, should be blocked by a firewall 
-# and not exposed to the Internet.
+# Elasticsearch port.
 #sonar.search.port=9001
 sonar.search.port=8073<span xmlns="http://www.w3.org/1999/xhtml" id="qa.sonar.port.search"/><a xmlns="http://www.w3.org/1999/xhtml" id="qa.sonar.port.search"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/7.png" alt="7" height="17px" width="17px" class="callout"/>
 
-# Elasticsearch host. The search server will bind this address 
-# and the search client will connect to it.
-# Default is 127.0.0.1.
-# As a security precaution, 
-# should NOT be set to a publicly available address.
-#sonar.search.host=127.0.0.1
+# Elasticsearch host.
+# Default is loopback address.
+#sonar.search.host=
 </code></pre><section class="section" id="qa.sonar.tmp"><div class="titlepage"><div><div><h4 class="title"><a id="qa.sonar.tmp" class="anchor" href="#qa.sonar.tmp"><span class="octicon octicon-link"/></a>17.2.2.1. Temp folder issue</h4></div></div></div><p>When running the Java Service Wrapper as a
           <span class="guilabel"><strong><span class="accel">L</span>ocal System account</strong></span> the
           following error occurs <span class="quote">“<span class="quote">WrapperSimpleApp: Encountered an error
@@ -220,38 +164,22 @@ sonar.search.port=8073<span xmlns="http://www.w3.org/1999/xhtml" id="qa.sonar.po
           to <span class="guilabel"><strong>Log On</strong></span> (see also <a class="xref" href="quality.assurance.html#qa.sonar.windows.service" title="17.2.6. Windows service">Section 17.2.6, “Windows service”</a>) <span class="emphasis"><em>and</em></span> edit
           the following entry <a class="xref" href="quality.assurance.html#qa.sonarqube.wrapper.tmpdir"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a> in
           the service wrapper configuration file
-          <code class="filename">P:\dev\apps\qa\sonarqube-5.5\conf\wrapper.conf</code>:
-          </p><pre xmlns="" class="language-provided"><code class="language-ini">#********************************************************************
-# Wrapper Java
-#********************************************************************
+          <code class="filename">P:\dev\apps\qa\sonarqube-6.7.1\conf\wrapper.conf</code>:
+          </p><pre xmlns="" class="language-provided"><code class="language-ini"># Wrapper Java
+wrapper.java.additional.1=-Dsonar.wrapped=true
 wrapper.java.additional.1=-Djava.awt.headless=true
 wrapper.java.additional.2=-Djava.io.tmpdir=%SONARQUBE_HOME%\temp-wrapper<span xmlns="http://www.w3.org/1999/xhtml" id="qa.sonarqube.wrapper.tmpdir"/><a xmlns="http://www.w3.org/1999/xhtml" id="qa.sonarqube.wrapper.tmpdir"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>
 wrapper.java.mainclass=org.tanukisoftware.wrapper.WrapperSimpleApp
 </code></pre><p>Don't forget to create it: <code class="command">mkdir
           %SONARQUBE_HOME%\temp-wrapper</code>.</p></section><section class="section" id="qa.sonar.logging"><div class="titlepage"><div><div><h4 class="title"><a id="qa.sonar.logging" class="anchor" href="#qa.sonar.logging"><span class="octicon octicon-link"/></a>17.2.2.2. Rolling policy of log files</h4></div></div></div><p>Enable the rolling policy <a class="xref" href="quality.assurance.html#qa.sonar.rolling.policy"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a> and max number of files <a class="xref" href="quality.assurance.html#qa.sonar.rolling.files"><img src="images/community/docbook/callouts/2.png" alt="2" border="0" height="17px" width="17px" class="callout"/></a> by editing the configuration file
-          <code class="filename">P:\dev\apps\qa\sonarqube-5.5\conf\sonar.properties</code>:</p><pre xmlns="" class="language-provided"><code class="language-ini">#--------------------------------------------------------------------------------
-# LOGGING
-
-# Level of logs. Supported values are INFO(default), DEBUG and TRACE 
-# (DEBUG + SQL + ES requests)
-#sonar.log.level=INFO
-
-# Path to log files. Can be absolute or relative to installation directory.
-# Default is &lt;installation home&gt;/logs
-#sonar.path.logs=logs
+          <code class="filename">P:\dev\apps\qa\sonarqube-6.7.1\conf\sonar.properties</code>:</p><pre xmlns="" class="language-provided"><code class="language-ini"># LOGGING
 
 # Rolling policy of log files
-#    - based on time if value starts with "time:", 
-#      for example by day ("time:yyyy-MM-dd")
-#      or by month ("time:yyyy-MM")
-#    - based on size if value starts with "size:", for example "size:10MB"
-#    - disabled if value is "none".  
-#      That needs logs to be managed by an external system like logrotate.
+#sonar.log.rollingPolicy=time:yyyy-MM-dd
 sonar.log.rollingPolicy=time:yyyy-MM-dd<span xmlns="http://www.w3.org/1999/xhtml" id="qa.sonar.rolling.policy"/><a xmlns="http://www.w3.org/1999/xhtml" id="qa.sonar.rolling.policy"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>
 
 # Maximum number of files to keep if a rolling policy is enabled.
-#    - maximum value is 20 on size rolling policy
-#    - unlimited on time rolling policy. Set to zero to disable old file purging.
+#sonar.log.maxFiles=7
 sonar.log.maxFiles=7<span xmlns="http://www.w3.org/1999/xhtml" id="qa.sonar.rolling.files"/><a xmlns="http://www.w3.org/1999/xhtml" id="qa.sonar.rolling.files"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/2.png" alt="2" height="17px" width="17px" class="callout"/>
 </code></pre></section><section class="section" id="qa.sonar.mysql"><div class="titlepage"><div><div><h4 class="title"><a id="qa.sonar.mysql" class="anchor" href="#qa.sonar.mysql"><span class="octicon octicon-link"/></a>17.2.2.3. Database settings</h4></div></div></div><p>Create a MySQL user called sonarqube-user and database called
           sonarqube with the following commands:</p><pre xmlns="" class="language-provided"><code class="language-sql">mysql -u root -p
@@ -265,58 +193,32 @@ mysql&gt; select * from information_schema.schemata where schema_name = 'sonarqu
 mysql&gt; quit
 </code></pre><p>Configure the SonarQube application server to connect to MySQL
           (instead of using the H2 embedded database) <a class="xref" href="quality.assurance.html#qa.sonar.ds.username"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a>-<a class="xref" href="quality.assurance.html#qa.sonar.ds.url"><img src="images/community/docbook/callouts/4.png" alt="4" border="0" height="17px" width="17px" class="callout"/></a>
-          with url <code class="uri">jdbc:mysql://localhost:3306/sonarqube? useUnicode=true
-          &amp;characterEncoding=utf8 &amp;rewriteBatchedStatements=true
-          &amp;useConfigs=maxPerformance</code> by editing the configuration
-          file
-          <code class="filename">P:\dev\apps\qa\sonarqube-5.5\conf\sonar.properties</code>:</p><pre xmlns="" class="language-provided"><code class="language-ini">#---------------------------------------------------------------------------
-# DATABASE
-
- …
+          with url
+          <code class="uri">jdbc:mysql://localhost:3306/sonarqube?useUnicode=true&amp;characterEncoding=utf8&amp;rewriteBatchedStatements=true&amp;useConfigs=maxPerformance</code>&amp;useSSL=false
+          by editing the configuration file
+          <code class="filename">P:\dev\apps\qa\sonarqube-6.7.1\conf\sonar.properties</code>:</p><pre xmlns="" class="language-provided"><code class="language-ini"># DATABASE
 
 # User credentials.
-# Permissions to create tables, indices and triggers must be granted 
-# to JDBC user.
-# The schema must be created first.
 sonar.jdbc.username=sonarqube-user<span xmlns="http://www.w3.org/1999/xhtml" id="qa.sonar.ds.username"/><a xmlns="http://www.w3.org/1999/xhtml" id="qa.sonar.ds.username"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>
 sonar.jdbc.password=<em xmlns="http://www.w3.org/1999/xhtml" class="replaceable"><code>password</code></em><span xmlns="http://www.w3.org/1999/xhtml" id="qa.sonar.ds.password"/><a xmlns="http://www.w3.org/1999/xhtml" id="qa.sonar.ds.password"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/2.png" alt="2" height="17px" width="17px" class="callout"/>
-
- …
 
 #----- Embedded Database (default)
 # H2 embedded database server listening port, defaults to 9092
 #sonar.embeddedDatabase.port=9092<span xmlns="http://www.w3.org/1999/xhtml" id="qa.sonar.ds.derby.url"/><a xmlns="http://www.w3.org/1999/xhtml" id="qa.sonar.ds.derby.url"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/3.png" alt="3" height="17px" width="17px" class="callout"/>
 
- …
-
-#----- MySQL 5.x
+#----- MySQL 5.6 or greater
 # Only InnoDB storage engine is supported (not myISAM).
 # Only the bundled driver is supported. It can not be changed.
+#sonar.jdbc.url=jdbc:mysql://localhost:3306/sonar?…
 sonar.jdbc.url=jdbc:mysql://localhost:3306/sonarqube?…<span xmlns="http://www.w3.org/1999/xhtml" id="qa.sonar.ds.url"/><a xmlns="http://www.w3.org/1999/xhtml" id="qa.sonar.ds.url"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/4.png" alt="4" height="17px" width="17px" class="callout"/> (see jdbc url above)
 
- …
-
 #----- Connection pool settings
-# The maximum number of active connections that can be allocated
-# at the same time, or negative for no limit.
-# The recommended value is 1.2 * max sizes of HTTP pools.
-# For example if HTTP ports are enabled with default sizes 
-# (50, see property sonar.web.http.maxThreads)
-# and sonar.web.https.maxThreads) then sonar.jdbc.maxActive 
-# should be 1.2 * (50) = 60.
 sonar.jdbc.maxActive=60<span xmlns="http://www.w3.org/1999/xhtml" id="qa.sonar.ds.pool"/><a xmlns="http://www.w3.org/1999/xhtml" id="qa.sonar.ds.pool"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/5.png" alt="5" height="17px" width="17px" class="callout"/>
 
-# The maximum number of connections that can remain idle in the
-# pool, without extra ones being released, or negative for no limit.
 sonar.jdbc.maxIdle=5<span xmlns="http://www.w3.org/1999/xhtml" id="qa.sonar.ds.pool"/><a xmlns="http://www.w3.org/1999/xhtml" id="qa.sonar.ds.pool"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/5.png" alt="5" height="17px" width="17px" class="callout"/>
 
-# The minimum number of connections that can remain idle in the pool,
-# without extra ones being created, or zero to create none.
 sonar.jdbc.minIdle=2<span xmlns="http://www.w3.org/1999/xhtml" id="qa.sonar.ds.pool"/><a xmlns="http://www.w3.org/1999/xhtml" id="qa.sonar.ds.pool"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/5.png" alt="5" height="17px" width="17px" class="callout"/>
 
-# The maximum number of milliseconds that the pool will wait (when there
-# are no available connections) for a connection to be returned before
-# throwing an exception, or &lt;= 0 to wait indefinitely.
 sonar.jdbc.maxWait=5000<span xmlns="http://www.w3.org/1999/xhtml" id="qa.sonar.ds.pool"/><a xmlns="http://www.w3.org/1999/xhtml" id="qa.sonar.ds.pool"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/5.png" alt="5" height="17px" width="17px" class="callout"/>
 
 #sonar.jdbc.minEvictableIdleTimeMillis=600000<span xmlns="http://www.w3.org/1999/xhtml" id="qa.sonar.ds.hsqldb.specific"/><a xmlns="http://www.w3.org/1999/xhtml" id="qa.sonar.ds.hsqldb.specific"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/6.png" alt="6" height="17px" width="17px" class="callout"/>
@@ -324,14 +226,14 @@ sonar.jdbc.maxWait=5000<span xmlns="http://www.w3.org/1999/xhtml" id="qa.sonar.d
 </code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="important"><h2>Important</h2><p>Don't forget to comment the lines <a class="xref" href="quality.assurance.html#qa.sonar.ds.derby.url"><img style="border: 0; " src="images/community/docbook/callouts/3.png" alt="3" height="17px" width="17px" class="callout"/></a> and <a class="xref" href="quality.assurance.html#qa.sonar.ds.hsqldb.specific"><img style="border: 0; " src="images/community/docbook/callouts/6.png" alt="6" height="17px" width="17px" class="callout"/></a> to deactivate the
               default embedded database settings. Drivers for the supported
               databases (except Oracle) are already provided (see also
-              <code class="filename">P:\dev\apps\qa\sonarqube-5.5\lib\jdbc\mysql</code>).
+              <code class="filename">P:\dev\apps\qa\sonarqube-6.7.1\lib\jdbc\mysql</code>).
               Do not replace the provided drivers; because they are the only
               ones supported.</p></div></section></section><section class="section" id="qa.sonar.upgrade"><div class="titlepage"><div><div><h3 class="title"><a id="qa.sonar.upgrade" class="anchor" href="#qa.sonar.upgrade"><span class="octicon octicon-link"/></a>17.2.3. Upgrading</h3></div></div></div><p>After starting SonarQube with
         <code class="command">%SONARQUBE_HOME%\bin\windows-x86-64\StartSonar.bat</code>
         or as Windows service browse to <a class="link" href="http://localhost:8072/sonarqube/setup">http://localhost:8072/sonarqube/setup</a>
         or <a class="link" href="http://freedumbytes.dev.net/sonarqube/setup">http://freedumbytes.dev.net/sonarqube/setup</a>
-        to upgrade the database (see also <a class="link" href="http://docs.sonarqube.org/display/SONAR/Upgrading">Upgrade
-        guide</a>).</p><p>Also browse to the <a class="link" href="quality.assurance.html#qa.sonar.config.update.center" title="17.2.4.1. Update Center">Update Center</a> at <a class="link" href="http://freedumbytes.dev.net/sonarqube/updatecenter/installed">http://freedumbytes.dev.net/sonarqube/updatecenter/installed</a>
+        to upgrade the database (see also <a class="link" href="https://docs.sonarqube.org/display/SONAR/Upgrading">Upgrade
+        guide</a>).</p><p>Also browse to the <a class="link" href="quality.assurance.html#qa.sonar.config.marketplace" title="17.2.4.1. Marketplace">Marketplace</a> at <a class="link" href="http://freedumbytes.dev.net/sonarqube/admin/marketplace">http://freedumbytes.dev.net/sonarqube/admin/marketplace</a>
         because of the following errors that might occur after
         upgrading:</p><div class="orderedlist"><ol class="orderedlist compact" type="1"><li class="listitem"><p><span class="quote">“<span class="quote">[ERROR] Failed to execute goal
             org.sonarsource.scanner.maven:sonar-maven-plugin:3.0:sonar …: No
@@ -347,32 +249,24 @@ sonar.jdbc.maxWait=5000<span xmlns="http://www.w3.org/1999/xhtml" id="qa.sonar.d
         <code class="command">%SONARQUBE_HOME%\bin\windows-x86-64\StartSonar.bat</code>.</p><p>Verify that the server is running in your browser at <a class="link" href="http://localhost:8072/sonarqube">http://localhost:8072/sonarqube</a>
         <span class="bold"><strong>or</strong></span> in case of subdomain usage <a class="link" href="http://localhost:8072">http://localhost:8072</a>. Click
         <span class="guimenuitem"><strong>Log in</strong></span> as <strong class="userinput"><code>admin</code></strong> with
-        password <strong class="userinput"><code>admin</code></strong>. Click <span class="guimenuitem"><strong>Administrator</strong></span> → <span class="guimenuitem"><strong>My profile</strong></span> to <span class="guibutton"><strong>Change password</strong></span>.</p><section class="section" id="qa.sonar.config.update.center"><div class="titlepage"><div><div><h4 class="title"><a id="qa.sonar.config.update.center" class="anchor" href="#qa.sonar.config.update.center"><span class="octicon octicon-link"/></a>17.2.4.1. Update Center</h4></div></div></div><p>After logging in as admin select <span class="guimenuitem"><strong>Administration</strong></span> → <span class="guimenuitem"><strong>System</strong></span> → <span class="guimenuitem"><strong><a class="link" href="http://docs.sonarqube.org/display/SONAR/Update+Center">Update
-              Center</a></strong></span> → <span class="guimenuitem"><strong>Available</strong></span> and for example select the following plugins from
-          the <a class="link" href="http://docs.sonarqube.org/display/PLUG/Plugin+Library">SonarQube
-          Plugin Library</a>:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p>By default the <a class="link" href="http://docs.sonarqube.org/display/PLUG/Java+Plugin">Java
+        password <strong class="userinput"><code>admin</code></strong>. Click <span class="guimenuitem"><strong>Administrator</strong></span> → <span class="guimenuitem"><strong>My profile</strong></span> to <span class="guibutton"><strong>Change password</strong></span>.</p><section class="section" id="qa.sonar.config.marketplace"><div class="titlepage"><div><div><h4 class="title"><a id="qa.sonar.config.marketplace" class="anchor" href="#qa.sonar.config.marketplace"><span class="octicon octicon-link"/></a>17.2.4.1. Marketplace</h4></div></div></div><p>After logging in as admin select <span class="guimenuitem"><strong>Administration</strong></span> → <span class="guimenuitem"><strong><a class="link" href="https://docs.sonarqube.org/display/SONAR/Marketplace">Marketplace</a></strong></span> and for example select the following plugins from
+          the <a class="link" href="https://docs.sonarqube.org/display/PLUG/Plugin+Library">SonarQube
+          Plugin Library</a>:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p>By default the <a class="link" href="https://www.sonarsource.com/products/codeanalyzers/sonarjava.html">SonarJava
               plugin</a> is provided with SonarQube. You can upgrade it
-              from the Update Center or download the latest release from <a class="link" href="http://docs.sonarqube.org/display/PLUG/Java+Plugin">this
-              page</a>.</p></li><li class="listitem"><p>The same holds true for <a class="link" href="http://docs.sonarqube.org/display/PLUG/SVN+Plugin">SVN
-              Plugin</a> and <a class="link" href="http://docs.sonarqube.org/display/PLUG/Git+Plugin">Git
-              Plugin</a>.</p></li><li class="listitem"><p><a class="link" href="http://docs.sonarqube.org/display/PLUG/Widget+Lab+Plugin">Widget
-              Lab Plugin</a> adds a Measure history bar chart and improves
-              number formatting in security tag widgets.</p></li><li class="listitem"><p><a class="link" href="http://docs.sonarqube.org/display/PLUG/Timeline+Plugin">Timeline
-              Plugin</a> displays metric history in a widget that uses the
-              Google Visualization Annotated TimeLine component (requires
-              internet access).</p></li><li class="listitem"><p><a class="link" href="http://docs.sonarqube.org/display/PLUG/Motion+Chart+Plugin">Motion
-              Chart Plugin</a> offers two widgets that display the
-              evolution over time of four predefined metrics (two axes +
-              bubble color + bubble size) (requires internet access).</p></li></ul></div><p>Or drop <a class="link" href="http://docs.sonarqube.org/display/PLUG/Other+Plugins">other
-          plugins</a> (that are not available in the Update Center) or an
-          external plugin (from for example <a class="link" href="http://www.excentia.es/en/content/sonarqube-products">excentia</a>)
-          just in <code class="filename">P:\dev\apps\qa\sonarqube-5.5\extensions\plugins</code>:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><a class="link" href="https://github.com/stevespringett/dependency-check-sonar-plugin">OWASP
-              Dependency Check Plugin</a> (<a class="link" href="https://github.com/stevespringett/dependency-check-sonar-plugin/releases">download</a>)
-              integrates <a class="link" href="project.html#prj.maven.setup.java.owasp.dependency.check" title="16.1.7.9. OWASP Dependency Check">OWASP
-              Dependency Check reports</a> into SonarQube.</p></li><li class="listitem"><p><a class="link" href="http://www.excentia.es/en/plugins/city-model/download">3D
-              Code Metrics</a> is a SonarQube extension which allows the
-              visual representation of a software project in 3D in order to
-              detect anomalies.</p></li></ul></div><p>Restart SonarQube.</p></section><section class="section" id="qa.sonar.config.settings"><div class="titlepage"><div><div><h4 class="title"><a id="qa.sonar.config.settings" class="anchor" href="#qa.sonar.config.settings"><span class="octicon octicon-link"/></a>17.2.4.2. Settings</h4></div></div></div><p>Select <span class="guimenuitem"><strong>Administration</strong></span> → <span class="guimenuitem"><strong>Configuration</strong></span> → <span class="guimenuitem"><strong>General Settings</strong></span> and configure:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><span class="guilabel"><strong>General</strong></span>:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><span class="guilabel"><strong>Server base URL</strong></span>:
+              from the Marketplace or download the latest release from <a class="link" href="https://docs.sonarqube.org/display/PLUG/SonarJava">this
+              page</a>.</p></li><li class="listitem"><p>The same holds true for <a class="link" href="https://docs.sonarqube.org/display/PLUG/SVN+Plugin">SVN
+              Plugin</a> and <a class="link" href="https://docs.sonarqube.org/display/PLUG/Git+Plugin">Git
+              Plugin</a>.</p></li></ul></div><p>Or drop <a class="link" href="https://docs.sonarqube.org/display/PLUG/Other+Plugins">other
+          plugins</a> (that are not available in the Marketplace) or an
+          external plugin (from for example <a class="link" href="http://www.excentia.es/en/#sonarqube-plugins">excentia</a>)
+          just in <code class="filename">P:\dev\apps\qa\sonarqube-6.7.1\extensions\plugins</code>
+          or <code class="filename">P:\dev\apps\qa\sonarqube-6.7.1\extensions\downloads</code>:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><a class="link" href="https://github.com/stevespringett/dependency-check-sonar-plugin">OWASP
+              Dependency Check Plugin</a> (<a class="link" href="https://github.com/stevespringett/dependency-check-sonar-plugin/releases">download
+              1.1.0</a>) integrates <a class="link" href="project.html#prj.maven.setup.java.owasp.dependency.check" title="16.1.7.8. OWASP Dependency Check">OWASP
+              Dependency Check reports</a> into SonarQube.</p></li><li class="listitem"><p><a class="link" href="http://www.excentia.es/3d-code-metrics">3D Code
+              Metrics</a> is a SonarQube extension which allows the visual
+              representation of a software project in 3D in order to detect
+              anomalies.</p></li></ul></div><p>Restart SonarQube.</p></section><section class="section" id="qa.sonar.config.settings"><div class="titlepage"><div><div><h4 class="title"><a id="qa.sonar.config.settings" class="anchor" href="#qa.sonar.config.settings"><span class="octicon octicon-link"/></a>17.2.4.2. Settings</h4></div></div></div><p>Select <span class="guimenuitem"><strong>Administration</strong></span> → <span class="guimenuitem"><strong>Configuration</strong></span> → <span class="guimenuitem"><strong>General Settings</strong></span> and configure:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><span class="guilabel"><strong>General</strong></span>:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><span class="guilabel"><strong>Server base URL</strong></span>:
                   <strong class="userinput"><code>http://freedumbytes.dev.net/sonarqube</code></strong>
                   and <span class="guibutton"><strong>Save General Settings</strong></span>.</p></li></ul></div></li><li class="listitem"><p><span class="guilabel"><strong>Email</strong></span>:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><span class="guilabel"><strong>SMTP host</strong></span>:
                   <strong class="userinput"><code>mail.freedumbytes.dev.net</code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong>SMTP port</strong></span>:
@@ -380,7 +274,7 @@ sonar.jdbc.maxWait=5000<span xmlns="http://www.w3.org/1999/xhtml" id="qa.sonar.d
                   <span class="guilabel"><strong>No</strong></span>.</p></li><li class="listitem"><p><span class="guilabel"><strong>From address</strong></span>:
                   <strong class="userinput"><code>sonarqube.noreply@<em class="replaceable"><code>company.org</code></em></code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Email prefix</strong></span>:
                   <strong class="userinput"><code>[SONARQUBE]</code></strong> and <span class="guibutton"><strong>Save Email
-                  Settings</strong></span>.</p></li></ul></div></li><li class="listitem"><p><span class="guilabel"><strong><a class="link" href="http://docs.sonarqube.org/display/SONAR/Look+and+Feel">Look
+                  Settings</strong></span>.</p></li></ul></div></li><li class="listitem"><p><span class="guilabel"><strong><a class="link" href="https://docs.sonarqube.org/display/SONAR/Look+and+Feel">Look
               &amp; Feel</a></strong></span>:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><span class="guilabel"><strong>Enable support of gravatars</strong></span>:
                   <span class="guilabel"><strong>False</strong></span>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Logo URL</strong></span>:
                   <strong class="userinput"><code>http://freedumbytes.dev.net/mvn-sites/maven-setup/images/logos/shadowrun.png</code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Width of image in pixels</strong></span>:
@@ -391,7 +285,7 @@ sonar.jdbc.maxWait=5000<span xmlns="http://www.w3.org/1999/xhtml" id="qa.sonar.d
               Jasper</code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Email</strong></span>:
               <strong class="userinput"><code><em class="replaceable"><code>jjasper@company.org</code></em></code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Password</strong></span>:
               <strong class="userinput"><code><em class="replaceable"><code>password</code></em></code></strong> and
-              click <span class="guibutton"><strong>Create</strong></span>.</p></li></ul></div></section><section class="section" id="qa.sonar.config.quality.gates"><div class="titlepage"><div><div><h4 class="title"><a id="qa.sonar.config.quality.gates" class="anchor" href="#qa.sonar.config.quality.gates"><span class="octicon octicon-link"/></a>17.2.4.4. Quality Gates</h4></div></div></div><p>The <a class="link" href="http://docs.sonarqube.org/display/SONAR/Quality+Gates">Quality
+              click <span class="guibutton"><strong>Create</strong></span>.</p></li></ul></div></section><section class="section" id="qa.sonar.config.quality.gates"><div class="titlepage"><div><div><h4 class="title"><a id="qa.sonar.config.quality.gates" class="anchor" href="#qa.sonar.config.quality.gates"><span class="octicon octicon-link"/></a>17.2.4.4. Quality Gates</h4></div></div></div><p>The <a class="link" href="https://docs.sonarqube.org/display/SONAR/Quality+Gates">Quality
           Gates</a> page is the place to define your requirements on
           projects. Select <span class="guimenuitem"><strong>Quality Gates</strong></span> → <span class="guimenuitem"><strong>SonarQube way</strong></span> and configure:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p>When upgrading there might be no default set. In that case
               click <span class="guibutton"><strong>Set as Default</strong></span> when for example
@@ -471,14 +365,31 @@ sonar.jdbc.maxWait=5000<span xmlns="http://www.w3.org/1999/xhtml" id="qa.sonar.d
     &lt;/RequireAll&gt;
   &lt;/Location&gt;
 </code></pre><p>To monitor the queue of pending reports to process and the
-        history of past analysis select <span class="guimenuitem"><strong>Administration</strong></span> → <span class="guimenuitem"><strong>Projects</strong></span> → <span class="guimenuitem"><strong><a class="link" href="http://docs.sonarqube.org/display/SONAR/Background+Tasks">Background
+        history of past analysis select <span class="guimenuitem"><strong>Administration</strong></span> → <span class="guimenuitem"><strong>Projects</strong></span> → <span class="guimenuitem"><strong><a class="link" href="https://docs.sonarqube.org/display/SONAR/Background+Tasks">Background
             Tasks</a></strong></span>.</p><p>When the Apache HTTP Server is restarted you should be able to
-        browse SonarQube at <a class="link" href="http://freedumbytes.dev.net/sonarqube">http://freedumbytes.dev.net/sonarqube</a>.</p></section><section class="section" id="qa.sonar.windows.service"><div class="titlepage"><div><div><h3 class="title"><a id="qa.sonar.windows.service" class="anchor" href="#qa.sonar.windows.service"><span class="octicon octicon-link"/></a>17.2.6. Windows service</h3></div></div></div><p>To restart automatically on Microsoft Windows, create a Windows
+        browse SonarQube at <a class="link" href="http://freedumbytes.dev.net/sonarqube">http://freedumbytes.dev.net/sonarqube</a>.</p><p>To test the anonymous access browse to:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><a class="link" href="http://freedumbytes.dev.net/sonarqube/api/plugins/installed">http://freedumbytes.dev.net/sonarqube/api/plugins/installed</a>.</p></li><li class="listitem"><p><a class="link" href="http://freedumbytes.dev.net/sonarqube/deploy/plugins/index.txt">http://freedumbytes.dev.net/sonarqube/deploy/plugins/index.txt</a>.</p></li><li class="listitem"><p><a class="link" href="http://freedumbytes.dev.net/sonarqube/batch_bootstrap/index">http://freedumbytes.dev.net/sonarqube/batch_bootstrap/index</a>
+            which should redirect to <a class="link" href="http://freedumbytes.dev.net/sonarqube/batch/index">http://freedumbytes.dev.net/sonarqube/batch/index</a>.</p></li><li class="listitem"><p><a class="link" href="http://freedumbytes.dev.net/sonarqube/batch/project.protobuf?key=groupId:artifactId">http://freedumbytes.dev.net/sonarqube/batch/project.protobuf?key=groupId:artifactId</a>.</p></li></ul></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>The last URI in case of <a class="link" href="https://sonarcloud.io/batch/project.protobuf?key=org.codehaus.sonar-plugins:maven-report">https://sonarcloud.io/batch/project.protobuf?key=org.codehaus.sonar-plugins:maven-report</a>
+          will still return the following message <span class="quote">“<span class="quote">You're only
+          authorized to execute a local (preview) SonarQube analysis without
+          pushing the results to the SonarQube server. Please contact your
+          SonarQube administrator.</span>”</span> because a <a class="link" href="quality.assurance.html#qa.sonar.login.token" title="17.2.5.1. Login Token">login token</a> is
+          required.</p></div><section class="section" id="qa.sonar.login.token"><div class="titlepage"><div><div><h4 class="title"><a id="qa.sonar.login.token" class="anchor" href="#qa.sonar.login.token"><span class="octicon octicon-link"/></a>17.2.5.1. Login Token</h4></div></div></div><p>Configure Maven with the <code class="code">sonarcloud.io</code> token
+          profile in the Maven configuration file
+          <code class="filename">P:\dev\apps\build\apache-maven-3.5.2\conf\settings.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">  &lt;profiles&gt;
+    &lt;profile&gt;
+      &lt;id&gt;sonarCloud&lt;/id&gt;
+      &lt;properties&gt;
+        &lt;sonar.login&gt;<span xmlns="http://www.w3.org/1999/xhtml" class="emphasis"><em>Replace with the value of your own token</em></span>&lt;/sonar.login&gt;
+        &lt;sonar.organization&gt;<span xmlns="http://www.w3.org/1999/xhtml" class="emphasis"><em>Replace with the value of your own organization key</em></span>&lt;/sonar.organization&gt;
+      &lt;/properties&gt;
+    &lt;/profile&gt;
+  &lt;/profiles&gt;
+</code></pre></section></section><section class="section" id="qa.sonar.windows.service"><div class="titlepage"><div><div><h3 class="title"><a id="qa.sonar.windows.service" class="anchor" href="#qa.sonar.windows.service"><span class="octicon octicon-link"/></a>17.2.6. Windows service</h3></div></div></div><p>To restart automatically on Microsoft Windows, create a Windows
         service. Use the <span class="application"><strong><a class="link" href="http://wrapper.tanukisoftware.org/doc/english/introduction.html">Tanuki
         Java Service Wrapper</a> </strong></span>shipped with
         SonarQube.</p><p>Optionally edit the following entries <a class="xref" href="quality.assurance.html#qa.sonar.java.command"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a>-<a class="xref" href="quality.assurance.html#qa.sonar.description"><img src="images/community/docbook/callouts/5.png" alt="5" border="0" height="17px" width="17px" class="callout"/></a> in the service wrapper configuration
         file
-        <code class="filename">P:\dev\apps\qa\sonarqube-5.5\conf\wrapper.conf</code>:</p><pre xmlns="" class="language-provided"><code class="language-ini"># Path to JVM executable. By default it must be available in PATH.
+        <code class="filename">P:\dev\apps\qa\sonarqube-6.7.1\conf\wrapper.conf</code>:</p><pre xmlns="" class="language-provided"><code class="language-ini"># Path to JVM executable. By default it must be available in PATH.
 # Can be an absolute path, for example:
 #wrapper.java.command=/path/to/my/jdk/bin/java
 wrapper.java.command=P:\dev\apps\prg\java-x64\jdk1.8.0_131\bin\java<span xmlns="http://www.w3.org/1999/xhtml" id="qa.sonar.java.command"/><a xmlns="http://www.w3.org/1999/xhtml" id="qa.sonar.java.command"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>
@@ -488,8 +399,9 @@ wrapper.java.command=P:\dev\apps\prg\java-x64\jdk1.8.0_131\bin\java<span xmlns="
 #********************************************************************
 # Wrapper Java
 #********************************************************************
-wrapper.java.additional.1=-Djava.awt.headless=true
-wrapper.java.additional.2=-Djava.io.tmpdir=%SONARQUBE_HOME%\temp-wrapper
+wrapper.java.additional.1=-Dsonar.wrapped=true
+wrapper.java.additional.2=-Djava.awt.headless=true
+wrapper.java.additional.3=-Djava.io.tmpdir=%SONARQUBE_HOME%\temp-wrapper
                                     (see above <a xmlns="http://www.w3.org/1999/xhtml" class="xref" href="quality.assurance.html#qa.sonar.tmp" title="17.2.2.1. Temp folder issue">Section 17.2.2.1, “Temp folder issue”</a>)
 wrapper.java.mainclass=org.tanukisoftware.wrapper.WrapperSimpleApp
 
@@ -536,38 +448,46 @@ wrapper.ntservice.description=SonarQube is an open source quality management pla
           conformation click <span class="guibutton"><strong><span class="accel">A</span>pply</strong></span> and
           restart the service.</p></section></section><section class="section" id="qa.sonar.maven.integration"><div class="titlepage"><div><div><h3 class="title"><a id="qa.sonar.maven.integration" class="anchor" href="#qa.sonar.maven.integration"><span class="octicon octicon-link"/></a>17.2.7. Maven integration</h3></div></div></div><p>Configure Maven Setup project in
         <code class="filename">C:\dev\projects\maven-setup\pom.xml</code> to enable
-        command line action <code class="command">mvn sonar:sonar</code> (see also <a class="link" href="http://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner+for+Maven">Analyzing
+        command line action <code class="command">mvn sonar:sonar</code> (see also <a class="link" href="https://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner+for+Maven">Analyzing
         with SonarQube Scanner for Maven</a>). The <a class="link" href="https://github.com/SonarSource/sonar-scanner-maven">SonarQube
-        Maven Plugin</a> triggers the code analyzers using <a class="link" href="http://docs.sonarqube.org/display/SONAR/Analysis+Parameters">Analysis
-        Parameters</a> and the <a class="link" href="http://docs.sonarqube.org/display/PLUG/Maven+Report+Plugin">SonarQube
+        Maven Plugin</a> triggers the code analyzers using <a class="link" href="https://docs.sonarqube.org/display/SONAR/Analysis+Parameters">Analysis
+        Parameters</a> and the <a class="link" href="https://github.com/SonarQubeCommunity/sonar-maven-report/">SonarQube
         Maven Report Plugin</a> adds a report link to the Maven site, that
         redirects to the project dashboard in SonarQube (see also <a class="xref" href="quality.assurance.html#qa.sonar.apache.config" title="17.2.5. Apache configuration">Section 17.2.5, “Apache configuration”</a> about allowing anonymous access to
         SonarQube for the batch analysis to submit the process
         reports):</p><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;properties&gt;
       …
-     &lt;mavenSitePluginVersion&gt;3.6&lt;/mavenSitePluginVersion&gt;
+     &lt;mavenSitePluginVersion&gt;3.7&lt;/mavenSitePluginVersion&gt;
      &lt;mavenProjectInfoReportsPluginVersion&gt;2.9&lt;/mavenProjectInfoReportsPluginVersion&gt;
-     &lt;mavenDependencyCheckVersion&gt;2.1.1&lt;/mavenDependencyCheckVersion&gt;
-+    &lt;sonarMavenPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://github.com/SonarSource/sonar-scanner-maven/releases">3.3.0.603</a>&lt;/sonarMavenPluginVersion&gt;
+     &lt;mavenDependencyCheckVersion&gt;3.1.0&lt;/mavenDependencyCheckVersion&gt;
++    &lt;sonarMavenPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://github.com/SonarSource/sonar-scanner-maven/releases">3.4.0.905</a>&lt;/sonarMavenPluginVersion&gt;
 +    &lt;mavenSonarReportPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://github.com/SonarQubeCommunity/sonar-maven-report/releases">0.1</a>&lt;/mavenSonarReportPluginVersion&gt;
 
      &lt;wagonMavenPluginVersion&gt;1.0&lt;/wagonMavenPluginVersion&gt;
      &lt;wagonProviderVersion&gt;2.12&lt;/wagonProviderVersion&gt;
 </code></pre><pre xmlns="" class="language-provided"><code class="language-xml">     &lt;owaspReportsPath&gt;${project.build.directory}/owasp-reports&lt;/owaspReportsPath&gt;
-     &lt;owaspReportFormat&gt;xml&lt;/owaspReportFormat&gt;
+     &lt;owaspReportFormat&gt;all&lt;/owaspReportFormat&gt;
+     &lt;cveValidForHours&gt;24&lt;/cveValidForHours&gt;
 +
-+    &lt;sonar.host.url&gt;${sonarHost}&lt;/sonar.host.url&gt;
-+    &lt;sonar.jacoco.reportPath&gt;${coverageReportsPathUnit}&lt;/sonar.jacoco.reportPath&gt;
-+    &lt;sonar.jacoco.itReportPath&gt;${coverageReportsPathIntegration}&lt;/sonar.jacoco.itReportPath&gt;
-+    &lt;sonar.dependencyCheck.reportPath&gt;${owaspReportsPath}/dependency-check-report.xml&lt;/sonar.dependencyCheck.reportPath&gt;
++    &lt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://docs.sonarqube.org/display/SONAR/Analysis+Parameters">sonar.host.url</a>&gt;${sonarHost}&lt;/sonar.host.url&gt;
++    &lt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://docs.sonarqube.org/display/PLUG/Code+Coverage+by+Unit+Tests+for+Java+Project">sonar.junit.reportPaths</a>&gt;target/surefire-reports,target/failsafe-reports&lt;/sonar.junit.reportPaths&gt;
++    &lt;sonar.jacoco.reportPaths&gt;${coverageReportsPathUnit},${coverageReportsPathIntegration}&lt;/sonar.jacoco.reportPaths&gt;
++    &lt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://github.com/stevespringett/dependency-check-sonar-plugin#plugin-configuration">sonar.dependencyCheck.reportPath</a>&gt;${owaspReportsPath}/dependency-check-report.xml&lt;/sonar.dependencyCheck.reportPath&gt;
++    &lt;sonar.dependencyCheck.htmlReportPath&gt;${owaspReportsPath}/dependency-check-report.html&lt;/sonar.dependencyCheck.htmlReportPath&gt;
 +    &lt;sonar.sourceEncoding&gt;UTF-8&lt;/sonar.sourceEncoding&gt;
++    &lt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://docs.sonarqube.org/display/PLUG/Java+Plugin+and+Bytecode">sonar.java.binaries</a>&gt;target/classes&lt;/sonar.java.binaries&gt;
++    &lt;sonar.java.libraries&gt;target/**/*.jar&lt;/sonar.java.libraries&gt;
 +    &lt;sonar.exclusions&gt;**/generated-sources/**,**/generated/**&lt;/sonar.exclusions&gt;
++    &lt;sonar.coverage.exclusions&gt;**/generated/**&lt;/sonar.coverage.exclusions&gt;
++    &lt;sonar.cpd.exclusions&gt;**/generated/**&lt;/sonar.cpd.exclusions&gt;
 
      &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
      &lt;project.reporting.outputEncoding&gt;UTF-8&lt;/project.reporting.outputEncoding&gt;
       …
    &lt;properties&gt;
-</code></pre><pre xmlns="" class="language-provided"><code class="language-xml">             &lt;format&gt;${owaspReportFormat}&lt;/format&gt;
+</code></pre><pre xmlns="" class="language-provided"><code class="language-xml">             &lt;outputDirectory&gt;${owaspReportsPath}&lt;/outputDirectory&gt;
+             &lt;format&gt;${owaspReportFormat}&lt;/format&gt;
+             &lt;cveValidForHours&gt;${cveValidForHours}&lt;/cveValidForHours&gt;
            &lt;/configuration&gt;
          &lt;/plugin&gt;
 +
@@ -594,15 +514,15 @@ wrapper.ntservice.description=SonarQube is an open source quality management pla
      &lt;/plugins&gt;
    &lt;/reporting&gt;
  &lt;/project&gt;
-</code></pre></section><section class="section" id="qa.sonar.jenkins.integration"><div class="titlepage"><div><div><h3 class="title"><a id="qa.sonar.jenkins.integration" class="anchor" href="#qa.sonar.jenkins.integration"><span class="octicon octicon-link"/></a>17.2.8. Jenkins integration TODO</h3></div></div></div><p>It is no longer recommended to use <a class="link" href="http://docs.sonarqube.org/display/SONARNEXT/Analyzing+with+SonarQube+Scanner+for+Jenkins#AnalyzingwithSonarQubeScannerforJenkins-TriggeringanAnalysiswithMaven">SonarQube
-        maven builder</a>. It is preferable to set up SonarQube in the
-        build environment and use a standard Jenkins maven target:</p><p><span class="inlinemediaobject"><img src="images/ci/jenkins/maven-setup-6b-build.png"/></span></p></section><section class="section" id="qa.screenshots.walkabout"><div class="titlepage"><div><div><h3 class="title"><a id="qa.screenshots.walkabout" class="anchor" href="#qa.screenshots.walkabout"><span class="octicon octicon-link"/></a>17.2.9. Maven vs SonarQube Quality Assurance reports comparison</h3></div></div></div><p>To get an idea of the difference between the Quality Assurance
+</code></pre></section><section class="section" id="qa.screenshots.walkabout.owasp"><div class="titlepage"><div><div><h3 class="title"><a id="qa.screenshots.walkabout.owasp" class="anchor" href="#qa.screenshots.walkabout.owasp"><span class="octicon octicon-link"/></a>17.2.8. SonarQube and OWASP</h3></div></div></div><p>SonarQube with the information of the OWASP Dependency Check
+        incorporated:</p><div class="figure" id="qa.sandbox.sonar.projects"><a id="qa.sandbox.sonar.projects"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/dependency-check-projects.png" alt="Quality Assurance Sandbox SonarQube Projects"/></div></div></div><div class="figure-title">Figure 17.4. Quality Assurance Sandbox SonarQube Projects</div></div><br class="figure-break"/><div class="figure" id="qa.sandbox.sonar.overview"><a id="qa.sandbox.sonar.overview"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/dependency-check-quality-gate.png" alt="Quality Assurance Sandbox SonarQube Project Overview"/></div></div></div><div class="figure-title">Figure 17.5. Quality Assurance Sandbox SonarQube Project Overview</div></div><br class="figure-break"/><div class="figure" id="qa.sandbox.sonar.measures"><a id="qa.sandbox.sonar.measures"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/dependency-check-measures.png" alt="Quality Assurance Sandbox SonarQube Project Measures"/></div></div></div><div class="figure-title">Figure 17.6. Quality Assurance Sandbox SonarQube Project Measures</div></div><br class="figure-break"/><div class="figure" id="qa.sandbox.sonar.vulnerability"><a id="qa.sandbox.sonar.vulnerability"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/dependency-check-vulnerability.png" alt="Quality Assurance Sandbox SonarQube Project Vulnerability"/></div></div></div><div class="figure-title">Figure 17.7. Quality Assurance Sandbox SonarQube Project
+          Vulnerability</div></div><br class="figure-break"/><div class="figure" id="qa.sandbox.sonar.owasp"><a id="qa.sandbox.sonar.owasp"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/dependency-check-more.png" alt="Quality Assurance Sandbox SonarQube Project More OWASP Dependency Check Report"/></div></div></div><div class="figure-title">Figure 17.8. Quality Assurance Sandbox SonarQube Project More OWASP
+          Dependency Check Report</div></div><br class="figure-break"/></section><section class="section" id="qa.screenshots.walkabout.comparison"><div class="titlepage"><div><div><h3 class="title"><a id="qa.screenshots.walkabout.comparison" class="anchor" href="#qa.screenshots.walkabout.comparison"><span class="octicon octicon-link"/></a>17.2.9. Maven vs SonarQube Quality Assurance reports comparison</h3></div></div></div><p>To get an idea of the difference between the Quality Assurance
         reports of Maven and SonarQube take a look at the following
-        screenshots:</p><div class="figure" id="qa.sandbox.findbugs.report"><a id="qa.sandbox.findbugs.report"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/A-Free-Dumb-Bytes-QA-Sandbox-FindBugs.png" alt="Maven Quality Assurance Sandbox FindBugs Report"/></div></div></div><div class="figure-title">Figure 17.4. Maven Quality Assurance Sandbox FindBugs Report</div></div><br class="figure-break"/><div class="figure" id="qa.sandbox.pmd.report"><a id="qa.sandbox.pmd.report"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/B-Free-Dumb-Bytes-QA-Sandbox-PMD.png" alt="Maven Quality Assurance Sandbox PMD Report"/></div></div></div><div class="figure-title">Figure 17.5. Maven Quality Assurance Sandbox PMD Report</div></div><br class="figure-break"/><div class="figure" id="qa.sandbox.checkstyle.report"><a id="qa.sandbox.checkstyle.report"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/C-Free-Dumb-Bytes-QA-Sandbox-Checkstyle.png" alt="Maven Quality Assurance Sandbox Checkstyle Report"/></div></div></div><div class="figure-title">Figure 17.6. Maven Quality Assurance Sandbox Checkstyle Report</div></div><br class="figure-break"/><div class="figure" id="qa.sandbox.jxr.report"><a id="qa.sandbox.jxr.report"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/D-Free-Dumb-Bytes-QA-Sandbox-JXR.png" alt="Maven Quality Assurance Sandbox JXR Source XRef (still remembered what violation at which line?)"/></div></div></div><div class="figure-title">Figure 17.7. Maven Quality Assurance Sandbox JXR Source XRef (still
-          remembered what violation at which line?)</div></div><br class="figure-break"/><div class="figure" id="qa.sandbox.sonar"><a id="qa.sandbox.sonar"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/Free-Dumb-Bytes-QA-Sandbox-Sonar-projects.png" alt="Maven Quality Assurance Sandbox SonarQube"/></div></div></div><div class="figure-title">Figure 17.8. Maven Quality Assurance Sandbox SonarQube</div></div><br class="figure-break"/><div class="figure" id="qa.sandbox.sonar.violations"><a id="qa.sandbox.sonar.violations"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/E-Free-Dumb-Bytes-QA-Sandbox-Sonar-violations.png" alt="Maven Quality Assurance Sandbox SonarQube Code Violations"/></div></div></div><div class="figure-title">Figure 17.9. Maven Quality Assurance Sandbox SonarQube Code
-          Violations</div></div><br class="figure-break"/><div class="figure" id="qa.sandbox.sonar.violations.drilldown"><a id="qa.sandbox.sonar.violations.drilldown"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/E-Free-Dumb-Bytes-QA-Sandbox-Sonar-violations-drilldown.png" alt="Maven Quality Assurance Sandbox SonarQube Code Violations Drilldown (all violations at one glance)"/></div></div></div><div class="figure-title">Figure 17.10. Maven Quality Assurance Sandbox SonarQube Code Violations
-          Drilldown (all violations at one glance)</div></div><br class="figure-break"/><div class="figure" id="qa.sandbox.sonar.dashboard"><a id="qa.sandbox.sonar.dashboard"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/F-Free-Dumb-Bytes-QA-Sandbox-Sonar-dashboard.png" alt="Maven Quality Assurance Sandbox SonarQube Dashboard"/></div></div></div><div class="figure-title">Figure 17.11. Maven Quality Assurance Sandbox SonarQube Dashboard</div></div><br class="figure-break"/><div class="figure" id="qa.sandbox.sonar.hotspots"><a id="qa.sandbox.sonar.hotspots"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/G-Free-Dumb-Bytes-QA-Sandbox-Sonar-OWASP-dependency-check.png" alt="Maven Quality Assurance Sandbox SonarQube OWASP Dependency Check"/></div></div></div><div class="figure-title">Figure 17.12. Maven Quality Assurance Sandbox SonarQube OWASP Dependency
-          Check</div></div><br class="figure-break"/><div class="figure" id="qa.sandbox.sonar.timemachine"><a id="qa.sandbox.sonar.timemachine"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/H-Free-Dumb-Bytes-QA-Sandbox-Sonar-timemachine.png" alt="Maven Quality Assurance Sandbox SonarQube Timemachine"/></div></div></div><div class="figure-title">Figure 17.13. Maven Quality Assurance Sandbox SonarQube Timemachine</div></div><br class="figure-break"/><div class="figure" id="qa.sandbox.sonar.measures"><a id="qa.sandbox.sonar.measures"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/I-Free-Dumb-Bytes-QA-Sandbox-Sonar-measures.png" alt="Maven Quality Assurance Sandbox SonarQube Measures"/></div></div></div><div class="figure-title">Figure 17.14. Maven Quality Assurance Sandbox SonarQube Measures</div></div><br class="figure-break"/></section></section><section class="section" id="qa.jdocbook"><div class="titlepage"><div><div><h2 class="title"><a id="qa.jdocbook" class="anchor" href="#qa.jdocbook"><span class="octicon octicon-link"/></a>17.3. jDocBook</h2></div></div></div><p><span class="inlinemediaobject"><img src="images/icons/jboss.png"/></span> The purpose of the <a class="link" href="http://www.jboss.org/maven-jdocbook-plugin/">jDocBook
+        screenshots:</p><div class="figure" id="qa.sandbox.findbugs.report"><a id="qa.sandbox.findbugs.report"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/A-Free-Dumb-Bytes-QA-Sandbox-FindBugs.png" alt="Maven Quality Assurance Sandbox FindBugs Report"/></div></div></div><div class="figure-title">Figure 17.9. Maven Quality Assurance Sandbox FindBugs Report</div></div><br class="figure-break"/><div class="figure" id="qa.sandbox.pmd.report"><a id="qa.sandbox.pmd.report"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/B-Free-Dumb-Bytes-QA-Sandbox-PMD.png" alt="Maven Quality Assurance Sandbox PMD Report"/></div></div></div><div class="figure-title">Figure 17.10. Maven Quality Assurance Sandbox PMD Report</div></div><br class="figure-break"/><div class="figure" id="qa.sandbox.checkstyle.report"><a id="qa.sandbox.checkstyle.report"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/C-Free-Dumb-Bytes-QA-Sandbox-Checkstyle.png" alt="Maven Quality Assurance Sandbox Checkstyle Report"/></div></div></div><div class="figure-title">Figure 17.11. Maven Quality Assurance Sandbox Checkstyle Report</div></div><br class="figure-break"/><div class="figure" id="qa.sandbox.jxr.report"><a id="qa.sandbox.jxr.report"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/D-Free-Dumb-Bytes-QA-Sandbox-JXR.png" alt="Maven Quality Assurance Sandbox JXR Source XRef (still remembered what violation at which line?)"/></div></div></div><div class="figure-title">Figure 17.12. Maven Quality Assurance Sandbox JXR Source XRef (still
+          remembered what violation at which line?)</div></div><br class="figure-break"/><div class="figure" id="qa.sandbox.sonar.violations"><a id="qa.sandbox.sonar.violations"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/E-Free-Dumb-Bytes-QA-Sandbox-Sonar-violations.png" alt="Maven Quality Assurance Sandbox SonarQube Code Violations"/></div></div></div><div class="figure-title">Figure 17.13. Maven Quality Assurance Sandbox SonarQube Code
+          Violations</div></div><br class="figure-break"/><div class="figure" id="qa.sandbox.sonar.violations.drilldown"><a id="qa.sandbox.sonar.violations.drilldown"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/E-Free-Dumb-Bytes-QA-Sandbox-Sonar-violations-drilldown.png" alt="Maven Quality Assurance Sandbox SonarQube Code Violations Drilldown (all violations at one glance)"/></div></div></div><div class="figure-title">Figure 17.14. Maven Quality Assurance Sandbox SonarQube Code Violations
+          Drilldown (all violations at one glance)</div></div><br class="figure-break"/></section></section><section class="section" id="qa.jdocbook"><div class="titlepage"><div><div><h2 class="title"><a id="qa.jdocbook" class="anchor" href="#qa.jdocbook"><span class="octicon octicon-link"/></a>17.3. jDocBook</h2></div></div></div><p><span class="inlinemediaobject"><img src="images/icons/jboss.png"/></span> The purpose of the <a class="link" href="http://www.jboss.org/maven-jdocbook-plugin/">jDocBook
       Plugin</a> is to allow the <a class="link" href="documentation.html#doc.docbook" title="5.1. DocBook">DocBook</a>
       transformations to occur as a natural part of the users Maven build. It
       is used to create this documentation from the

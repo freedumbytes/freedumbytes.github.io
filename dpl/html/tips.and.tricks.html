@@ -66,7 +66,8 @@ public class ClassloaderTest
               - Get and set repository or global options.</p></li><li class="listitem"><p><a class="link" href="http://adaptivepatchwork.com/2012/03/01/mind-the-end-of-your-line/">Mind
               the End of Your Line</a>.</p></li><li class="listitem"><p><a class="link" href="http://stackoverflow.com/questions/1510798/trying-to-fix-line-endings-with-git-filter-branch-but-having-no-luck/4683783#4683783">Trying
               to fix line-endings with git filter-branch</a>, but having no
-              luck.</p></li><li class="listitem"><p><span class="inlinemediaobject"><img src="images/icons/github.png"/></span> <a class="link" href="https://github.com/alexkaratarakis/gitattributes">A
+              luck.</p></li><li class="listitem"><p><a class="link" href="http://fieldlevel.github.io/2015/10/21/fixing-lineending-conflicts-with-git/">Git
+              lineendings and better diffs</a></p></li><li class="listitem"><p><span class="inlinemediaobject"><img src="images/icons/github.png"/></span> <a class="link" href="https://github.com/alexkaratarakis/gitattributes">A
               Collection of Useful <code class="filename">.gitattributes</code>
               Templates</a>.</p></li><li class="listitem"><p><span class="inlinemediaobject"><img src="images/icons/github.png"/></span> <a class="link" href="https://github.com/github/gitignore">A Collection of
               <code class="filename">.gitignore</code> templates</a>.</p></li></ul></div></section><section class="section" id="prg.ruby.install.guide"><div class="titlepage"><div><div><h4 class="title"><a id="prg.ruby.install.guide" class="anchor" href="#prg.ruby.install.guide"><span class="octicon octicon-link"/></a>A.2.1.2. Ruby installation guide</h4></div></div></div><p><a class="link" href="https://www.ruby-lang.org/">Ruby</a> is a
@@ -169,6 +170,7 @@ git log --pretty=oneline
 # These files are text and should be normalized (Convert crlf =&gt; lf)
 .gitattributes  text
 .gitignore      text
+.gitkeep        text
 .gitconfig      text
 </code></pre><pre xmlns="" class="language-provided"><code class="language-ini">*.bat           text
 *.cmd           text
@@ -184,12 +186,17 @@ Dockerfile      text
 *.tagx          text
 *.tld           text
 *.ldif          text
+*.ctl           text
 *.sql           text
 *.feature       text
+*.plantuml      text
+*.graphml       text
 Jenkinsfile     text
 *.yml           text
 *.yaml          text
-*.diff          text
+*.raml          text
+*.diff          text diff -merge
+*.patch         text diff -merge
 *.properties    text
 *.MF            text
 *.mapping       text
@@ -198,6 +205,7 @@ Jenkinsfile     text
 *.conf          text
 *.config        text
 *.pageflow      text
+*.launch        text
 </code></pre><pre xmlns="" class="language-provided"><code class="language-ini">*.txt           text
 *.apt           text
 *.vm            text
@@ -210,10 +218,13 @@ Jenkinsfile     text
 *.xsd           text
 *.wsdl          text
 *.wsdd          text
+*.xjb           text
+*.php           text
 *.md            text
 *.adoc          text
 *.csv           text
 *.ftl           text
+*.jrxml         text
 *.dwt           text
 *.pu            text
 *.archimate     text
@@ -222,11 +233,13 @@ Jenkinsfile     text
 .editorconfig   text
 *.dia           binary
 *.doc           binary
+*.docm          binary
 *.docx          binary
 *.dot           binary
 *.dotx          binary
 *.msg           binary
 *.ppt           binary
+*.pptm          binary
 *.pptx          binary
 *.pdf           binary
 *.odt           binary
@@ -237,6 +250,7 @@ Jenkinsfile     text
 *.xlsm          binary
 *.xlsx          binary
 </code></pre><pre xmlns="" class="language-provided"><code class="language-ini">*.asp           text
+*.h             text
 *.css           text
 *.less          text
 *.sass          text
@@ -244,7 +258,9 @@ Jenkinsfile     text
 *.htm           text
 *.html          text
 *.xhtml         text
+*.faces         text
 *.mht           text
+*.ts            text
 *.js            text
 *.jsx           text
 *.json          text
@@ -268,7 +284,7 @@ Jenkinsfile     text
 *.png           binary
 *.psb           binary
 *.psd           binary
-*.svg           binary
+*.svg           -text diff -merge
 *.svgz          binary
 *.tif           binary
 *.tiff          binary
@@ -320,6 +336,7 @@ Thumbs.db       binary
 *.gz            binary
 *.tgz           binary
 </code></pre><pre xmlns="" class="language-provided"><code class="language-ini">#certificate
+*.pem           text
 *.p12           binary
 *.pfx           binary
 *.jks           binary
@@ -330,7 +347,20 @@ jssecacerts     binary
             binary mapping reminds me to add an
             <code class="filename">C:\dev\projects\jmodalwindow\.gitignore</code> based
             on the <a class="link" href="version.control.system.html#vcs.git.ignore.template" title="11.1.2.5. Ignores template">ignores
-            template</a>.</p></div><section class="section" id="tip.vcs.svn2git.eol.refresh"><div class="titlepage"><div><div><h5 class="title"><a id="tip.vcs.svn2git.eol.refresh" class="anchor" href="#tip.vcs.svn2git.eol.refresh"><span class="octicon octicon-link"/></a>A.2.1.6.1. Refreshing the repository after changing line
+            template</a>.</p></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="tip"><h2>Tip</h2><p>Use <code class="command">git ls-files --eol | grep auto</code> to
+            identify files that aren't covered by
+            <code class="filename">.gitattributes</code> and thus are marked for
+            automatic end-of-line conversion.</p></div><section class="section" id="tip.vcs.svn2git.eol.pattern.overrides"><div class="titlepage"><div><div><h5 class="title"><a id="tip.vcs.svn2git.eol.pattern.overrides" class="anchor" href="#tip.vcs.svn2git.eol.pattern.overrides"><span class="octicon octicon-link"/></a>A.2.1.6.1. Pattern matches and overrides</h5></div></div></div><p><a class="link" href="https://git-scm.com/docs/gitattributes">.gitattributes
+            defining attributes</a> per path. When more than one pattern
+            matches the path, a later line overrides an earlier line. The
+            rules how the pattern matches paths are the same as in <a class="link" href="https://git-scm.com/docs/gitignore">.gitignore
+            files</a>. Unlike <code class="filename">.gitignore</code>, negative
+            patterns are forbidden.</p><p>For example define project specific override settings for
+            <code class="filename">.xml</code> files at the end of
+            the <code class="filename">.gitattributes</code> file:</p><pre xmlns="" class="language-provided"><code class="language-ini"># Project Specific ###
+**/tst/windows/*.xml  text eol=crlf
+**/tst/linux/*.xml    text eol=lf
+</code></pre></section><section class="section" id="tip.vcs.svn2git.eol.refresh"><div class="titlepage"><div><div><h5 class="title"><a id="tip.vcs.svn2git.eol.refresh" class="anchor" href="#tip.vcs.svn2git.eol.refresh"><span class="octicon octicon-link"/></a>A.2.1.6.2. Refreshing the repository after changing line
             endings</h5></div></div></div><p>Save your current files in Git, so that none of your work is
             lost (see also <a class="link" href="https://help.github.com/articles/dealing-with-line-endings/#platform-all">Dealing
             with line endings</a>):</p><pre xmlns="" class="language-provided"><code class="language-bash">git add .gitignore
@@ -346,7 +376,43 @@ git commit -m "Config git ignore and attributes"
 git diff --ignore-space-at-eol
 git add . -u
 </code></pre><p>Commit the changes to your repository:</p><pre xmlns="" class="language-provided"><code class="language-bash">git commit -m "Normalize all the line endings"
-</code></pre></section></section><section class="section" id="tip.vcs.svn2git.cloudy"><div class="titlepage"><div><div><h4 class="title"><a id="tip.vcs.svn2git.cloudy" class="anchor" href="#tip.vcs.svn2git.cloudy"><span class="octicon octicon-link"/></a>A.2.1.7. Bitbucket Cloud</h4></div></div></div><p>Push the migrated repository to the cloud:</p><pre xmlns="" class="language-provided"><code class="language-bash">git remote -v
+</code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p><code class="command">git reset</code> after removing
+              <code class="filename">.git/index</code> is enough to mark files with the
+              wrong line endings in the repo and commit those.</p></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="important"><h2>Important</h2><p>When changing file types from text to binary on a Windows
+              machine and the workspace wasn't a result from a svn2git
+              migration but a git clone then you might end up changing the
+              original LF with CRLF because of the initial conversion on
+              checkout.</p><p>For example add the following entry <strong class="userinput"><code>*.svg -text
+              diff -merge</code></strong> to <code class="filename">.gitattributes</code>
+              (see also <a class="link" href="https://github.com/alexkaratarakis/gitattributes/issues/45">SVG
+              debate</a>) and the above described procedure might display
+              the following results:</p><pre class="language-provided"><code class="language-bash">git status | grep badge-rounded-template.svg
+modified: src/main/resources/com/qualinsight/plugins/sonarqube/badges/ws/badge-rounded-template.svg
+
+git ls-files --eol | grep badge-rounded-template.svg
+i/lf w/crlf attr/-text src/main/resources/com/qualinsight/plugins/sonarqube/badges/ws/badge-rounded-template.svg
+</code></pre><p>In this case a renewed file checkout might be required or
+              when all remaining changes are a result of .gitattrubutes
+              changes:</p><pre class="language-provided"><code class="language-bash">git reset --hard
+
+git ls-files --eol | grep badge-rounded-template.svg
+i/lf w/lf attr/-text src/main/resources/com/qualinsight/plugins/sonarqube/badges/ws/badge-rounded-template.svg
+
+git status
+nothing to commit, working tree clean
+</code></pre><p>By the way <code class="code">binary</code> is short for <code class="code">-diff
+              -merge -text</code>.</p></div></section><section class="section" id="tip.vcs.svn2git.eol.refresh.hard"><div class="titlepage"><div><div><h5 class="title"><a id="tip.vcs.svn2git.eol.refresh.hard" class="anchor" href="#tip.vcs.svn2git.eol.refresh.hard"><span class="octicon octicon-link"/></a>A.2.1.6.3. Refreshing the workspace after changing line
+            endings</h5></div></div></div><p>But what if the files in the workspace have the wrong line
+            endings. You will see messages like <span class="quote">“<span class="quote">warning: LF will be
+            replaced by CRLF in …</span>”</span> and <span class="quote">“<span class="quote">warning: CRLF will be
+            replaced by LF in …</span>”</span> .</p><p>After again removing Git's index:</p><pre xmlns="" class="language-provided"><code class="language-bash">del .git\index or rm .git/index
+</code></pre><p>Rewrite the Git index to pick up all the new line endings by
+            reconverting from HEAD:</p><pre xmlns="" class="language-provided"><code class="language-bash">git reset --hard
+</code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="warning"><h2>Warning</h2><p><code class="command">git reset --hard</code> will revert all
+              uncommitted/unadded modified files also and thus will be gone
+              (see also <a class="link" href="https://www.freshleafmedia.co.uk/blog/undo-git-reset-hard">Undo-ing
+              ‘git reset hard’</a> about <a class="link" href="https://git-scm.com/docs/git-fsck">git fsck
+              [--lost-found]</a>).</p></div></section></section><section class="section" id="tip.vcs.svn2git.cloudy"><div class="titlepage"><div><div><h4 class="title"><a id="tip.vcs.svn2git.cloudy" class="anchor" href="#tip.vcs.svn2git.cloudy"><span class="octicon octicon-link"/></a>A.2.1.7. Bitbucket Cloud</h4></div></div></div><p>Push the migrated repository to the cloud:</p><pre xmlns="" class="language-provided"><code class="language-bash">git remote -v
 git remote add origin https://bitbucket.org/freedumbytes/jmodalwindow.git
 git remote -v
 git push --all

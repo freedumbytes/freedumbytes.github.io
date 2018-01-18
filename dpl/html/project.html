@@ -24,9 +24,9 @@
 +                             https://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;
 +  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
 +
-+  &lt;groupId&gt;nl.demon.shadowland.freedumbytes.maven&lt;/groupId&gt;
++  &lt;groupId&gt;nl.demon.shadowland.freedumbytes.maven.config&lt;/groupId&gt;
 +  &lt;artifactId&gt;setup&lt;/artifactId&gt;
-+  &lt;version&gt;4.0&lt;/version&gt;
++  &lt;version&gt;4.3&lt;/version&gt;
 +  &lt;packaging&gt;pom&lt;/packaging&gt;
 +&lt;/project&gt;
 </code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="important"><h2>Important</h2><p>For the release procedure the version should end with
@@ -50,7 +50,7 @@
         <span class="guibutton"><strong><span class="accel">F</span>inish</strong></span>.</p><p>Other available options are <span class="guilabel"><strong><span class="inlinemediaobject"><img src="images/ide/eclipse/pull.gif"/></span> Pull</strong></span> and
         <span class="guilabel"><strong><span class="inlinemediaobject"><img src="images/ide/eclipse/push.gif"/></span> Push</strong></span>.</p></section><section class="section" id="prj.maven.info"><div class="titlepage"><div><div><h3 class="title"><a id="prj.maven.info" class="anchor" href="#prj.maven.info"><span class="octicon octicon-link"/></a>16.1.2. Project information</h3></div></div></div><p>Supply the project information in
         <code class="filename">C:\dev\projects\maven-setup\pom.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;artifactId&gt;setup&lt;/artifactId&gt;
-   &lt;version&gt;4.0&lt;/version&gt;
+   &lt;version&gt;4.3&lt;/version&gt;
    &lt;packaging&gt;pom&lt;/packaging&gt;
 +
 +  &lt;name&gt;${organizationName} Maven Setup&lt;/name&gt;
@@ -207,7 +207,7 @@
 </code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="tip"><h2>Tip</h2><p>Should any of the hosts change and a project could not
             upgrade to the latest Maven Setup parent it now is possible to
             overwrite it in the Maven configuration file
-            <code class="filename">P:\dev\apps\build\apache-maven-3.3.9\conf\settings.xml</code>:</p></div><pre xmlns="" class="language-provided"><code class="language-xml">  &lt;profiles&gt;
+            <code class="filename">P:\dev\apps\build\apache-maven-3.5.2\conf\settings.xml</code>:</p></div><pre xmlns="" class="language-provided"><code class="language-xml">  &lt;profiles&gt;
      …
 
 +   &lt;profile&gt;
@@ -395,7 +395,7 @@
 +    &lt;skinVersion&gt;${mavenFluidoSkinVersion}&lt;/skinVersion&gt;
 +
 +    &lt;mavenFluidoSkinVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/browse/MSKINS/component/12326474?selectedTab=com.atlassian.jira.jira-projects-plugin:component-changelog-panel&amp;allVersions=true">1.6</a>&lt;/mavenFluidoSkinVersion&gt;
-+    &lt;mavenSitePluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/browse/MSITE?selectedTab=com.atlassian.jira.jira-projects-plugin:changelog-panel&amp;allVersions=true">3.6</a>&lt;/mavenSitePluginVersion&gt;
++    &lt;mavenSitePluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/browse/MSITE?selectedTab=com.atlassian.jira.jira-projects-plugin:changelog-panel&amp;allVersions=true">3.7</a>&lt;/mavenSitePluginVersion&gt;
      &lt;mavenProjectInfoReportsPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/browse/MPIR?selectedTab=com.atlassian.jira.jira-projects-plugin:changelog-panel&amp;allVersions=true">2.9</a>&lt;/mavenProjectInfoReportsPluginVersion&gt;
 
 +    &lt;generateSitemap&gt;true&lt;/generateSitemap&gt;
@@ -531,7 +531,7 @@
 +    &lt;mavenEarPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/browse/MEAR?selectedTab=com.atlassian.jira.jira-projects-plugin:changelog-panel&amp;allVersions=true">2.10.1</a>&lt;/mavenEarPluginVersion&gt;
 +    &lt;mavenShadePluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/browse/MSHADE?selectedTab=com.atlassian.jira.jira-projects-plugin:changelog-panel&amp;allVersions=true">3.1.0</a>&lt;/mavenShadePluginVersion&gt;
 +    &lt;mavenSourcePluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/browse/MSOURCES?selectedTab=com.atlassian.jira.jira-projects-plugin:changelog-panel&amp;allVersions=true">3.0.1</a>&lt;/mavenSourcePluginVersion&gt;
-+    &lt;mavenJavadocPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/browse/MJAVADOC?selectedTab=com.atlassian.jira.jira-projects-plugin:changelog-panel&amp;allVersions=true">2.10.4</a>&lt;/mavenJavadocPluginVersion&gt;
++    &lt;mavenJavadocPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/browse/MJAVADOC?selectedTab=com.atlassian.jira.jira-projects-plugin:changelog-panel&amp;allVersions=true">3.0.0</a>&lt;/mavenJavadocPluginVersion&gt;
 +    &lt;mavenAssemblyPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/browse/MASSEMBLY?selectedTab=com.atlassian.jira.jira-projects-plugin:changelog-panel&amp;allVersions=true">3.1.0</a>&lt;/mavenAssemblyPluginVersion&gt;
 +    &lt;buildHelperMavenPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://github.com/mojohaus/build-helper-maven-plugin/releases">3.0.0</a>&lt;/buildHelperMavenPluginVersion&gt;
 +    &lt;mavenInstallPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/browse/MINSTALL?selectedTab=com.atlassian.jira.jira-projects-plugin:changelog-panel&amp;allVersions=true">2.5.2</a>&lt;/mavenInstallPluginVersion&gt;
@@ -540,7 +540,7 @@
 +    &lt;mavenDeployPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/browse/MDEPLOY?selectedTab=com.atlassian.jira.jira-projects-plugin:changelog-panel&amp;allVersions=true">2.8.2</a>&lt;/mavenDeployPluginVersion&gt;
 +    &lt;mavenReleasePluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/browse/MRELEASE?selectedTab=com.atlassian.jira.jira-projects-plugin:changelog-panel&amp;allVersions=true">2.5.3</a>&lt;/mavenReleasePluginVersion&gt;
 +    &lt;mavenScmPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/browse/SCM?selectedTab=com.atlassian.jira.jira-projects-plugin:changelog-panel&amp;allVersions=true">1.9.5</a>&lt;/mavenScmPluginVersion&gt;
-     &lt;mavenSitePluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/browse/MSITE?selectedTab=com.atlassian.jira.jira-projects-plugin:changelog-panel&amp;allVersions=true">3.6</a>&lt;/mavenSitePluginVersion&gt;
+     &lt;mavenSitePluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/browse/MSITE?selectedTab=com.atlassian.jira.jira-projects-plugin:changelog-panel&amp;allVersions=true">3.7</a>&lt;/mavenSitePluginVersion&gt;
      &lt;mavenProjectInfoReportsPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/browse/MPIR?selectedTab=com.atlassian.jira.jira-projects-plugin:changelog-panel&amp;allVersions=true">2.9</a>&lt;/mavenProjectInfoReportsPluginVersion&gt;
 </code></pre><pre xmlns="" class="language-provided"><code class="language-xml">+
 +    &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
@@ -563,10 +563,13 @@
      &lt;dependency.locations.enabled&gt;false&lt;/dependency.locations.enabled&gt;
      &lt;licenseLinkOnly&gt;true&lt;/licenseLinkOnly&gt;
    &lt;/properties&gt;
-</code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="caution"><h2>Caution</h2><p>Not upgrading site plugin to 3.5.x yet because of the
+</code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>Use <code class="sgmltag-element">pushChanges</code> settings <code class="option">false</code> to
+          be able to not use the commits created with <code class="command">mvn
+          release:prepare</code> and also drop the need to supply username
+          and password on the commandline.</p></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="caution"><h2>Caution</h2><p>Not upgrading site plugin to 3.5.x yet because of the
           following 3 issues:</p><div class="orderedlist"><ol class="orderedlist compact" type="1"><li class="listitem"><p><span class="quote">“<span class="quote">Error parsing site descriptor: TEXT must be
               immediately followed by END_TAG and not START_TAG (position:
-              START_TAG seen ...</span>”</span></p></li><li class="listitem"><p><span class="quote">“<span class="quote">Execution default-site of goal
+              START_TAG seen …</span>”</span></p></li><li class="listitem"><p><span class="quote">“<span class="quote">Execution default-site of goal
               org.apache.maven.plugins:maven-site-plugin:3.5.1:site failed:
               Illegal character in path at index 1:
               ${mavenHost}</span>”</span></p></li><li class="listitem"><p><a class="link" href="https://github.com/andriusvelykis/reflow-maven-skin/issues/49">Reflow
@@ -840,10 +843,7 @@
    &lt;build&gt;
 </code></pre><p>This is for example a
         <code class="code">property-updates-report</code>:</p><div class="figure" id="prj.figure.maven.versions.property.updates.report"><a id="prj.figure.maven.versions.property.updates.report"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/build/maven/maven-versions-property-updates-report.png" alt="Maven Versions Property Updates Report"/></div></div></div><div class="figure-title">Figure 16.2. Maven Versions Property Updates Report</div></div><br class="figure-break"/><p>To suppress the unwanted version reference to
-        <code class="code">99.0-does-not-exist</code> take a look at <a class="xref" href="prj.maven.versions.rules.html" title="Appendix D. Maven Versions Rules">Appendix D, <em>Maven Versions Rules</em></a>.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="tip"><h2>Tip</h2><p><a class="link" href="https://www.versioneye.com/search?lang=Java&amp;q=&amp;g=nl.demon.shadowland">VersionEye</a>
-          is a cross-platform search engine for free/libre/open source
-          software libraries, which also shows out of date dependencies of for
-          example <a class="link" href="https://www.versioneye.com/java/javax:javaee-api">javaee-api</a>.</p></div><section class="section" id="prj.maven.encoding"><div class="titlepage"><div><div><h4 class="title"><a id="prj.maven.encoding" class="anchor" href="#prj.maven.encoding"><span class="octicon octicon-link"/></a>16.1.5.1. Encoding</h4></div></div></div><p>To suppress the following warning <span class="quote">“<span class="quote">[WARNING] Using
+        <code class="code">99.0-does-not-exist</code> take a look at <a class="xref" href="prj.maven.versions.rules.html" title="Appendix D. Maven Versions Rules">Appendix D, <em>Maven Versions Rules</em></a>.</p><section class="section" id="prj.maven.encoding"><div class="titlepage"><div><div><h4 class="title"><a id="prj.maven.encoding" class="anchor" href="#prj.maven.encoding"><span class="octicon octicon-link"/></a>16.1.5.1. Encoding</h4></div></div></div><p>To suppress the following warning <span class="quote">“<span class="quote">[WARNING] Using
           platform encoding (Cp1252 actually) to copy filtered resources, i.e.
           build is platform dependent!</span>”</span> set the encoding parameters of
           the plugins that support it to <a class="link" href="http://en.wikipedia.org/wiki/UTF-8">UTF-8</a>, that
@@ -871,7 +871,7 @@
 +  &lt;/distributionManagement&gt;
 
    &lt;properties&gt;
-</code></pre><pre xmlns="" class="language-provided"><code class="language-xml">     &lt;mavenSitePluginVersion&gt;3.6&lt;/mavenSitePluginVersion&gt;
+</code></pre><pre xmlns="" class="language-provided"><code class="language-xml">     &lt;mavenSitePluginVersion&gt;3.7&lt;/mavenSitePluginVersion&gt;
      &lt;mavenProjectInfoReportsPluginVersion&gt;2.9&lt;/mavenProjectInfoReportsPluginVersion&gt;
 +
 +    &lt;wagonMavenPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/browse/WAGON?selectedTab=com.atlassian.jira.jira-projects-plugin:changelog-panel&amp;allVersions=true">1.0</a>&lt;/wagonMavenPluginVersion&gt;
@@ -943,13 +943,13 @@
           user</a> password <a class="xref" href="project.html#build.maven.server.jenkins.password"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a> with <code class="command">mvn
           --encrypt-password <em class="replaceable"><code>password</code></em></code> and
           place it in the Maven configuration file
-          <code class="filename">P:\dev\apps\build\apache-maven-3.3.9\conf\settings.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;servers&gt;
+          <code class="filename">P:\dev\apps\build\apache-maven-3.5.2\conf\settings.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;servers&gt;
       …
 +
 +    &lt;server&gt;
 +      &lt;id&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="project.html#http.server.id.mvn.sites">mvn-sites</a>&lt;/id&gt;
 +      &lt;username&gt;jenkins&lt;/username&gt;
-+      &lt;password&gt;{<em xmlns="http://www.w3.org/1999/xhtml" class="replaceable"><code><a class="link" href="build.tool.html#build.maven.password.encryption" title="4.2.6. Password Encryption">encrypted password</a></code></em>}<span xmlns="http://www.w3.org/1999/xhtml" id="build.maven.server.jenkins.password"/><a xmlns="http://www.w3.org/1999/xhtml" id="build.maven.server.jenkins.password"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>&lt;/password&gt;
++      &lt;password&gt;{<em xmlns="http://www.w3.org/1999/xhtml" class="replaceable"><code><a class="link" href="build.tool.html#build.maven.password.encryption" title="4.2.5. Password Encryption">encrypted password</a></code></em>}<span xmlns="http://www.w3.org/1999/xhtml" id="build.maven.server.jenkins.password"/><a xmlns="http://www.w3.org/1999/xhtml" id="build.maven.server.jenkins.password"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>&lt;/password&gt;
 +    &lt;/server&gt;
    &lt;/servers&gt;</code></pre><p>Verify those settings with <code class="command">mvn site-deploy</code>
           in your browser at <a class="link" href="http://freedumbytes.dev.net/mvn-sites/maven-setup/index.html">http://freedumbytes.dev.net/mvn-sites/maven-setup/index.html</a>.</p></section><section class="section" id="prj.maven.deploy.artifact"><div class="titlepage"><div><div><h4 class="title"><a id="prj.maven.deploy.artifact" class="anchor" href="#prj.maven.deploy.artifact"><span class="octicon octicon-link"/></a>16.1.6.2. Artifact</h4></div></div></div><p>Configure Nexus as the default <a class="link" href="repository.manager.html#repo.nexus.maven.mirrors" title="13.1.6.1. Artifact repository">artifact repository</a> for
@@ -1177,7 +1177,7 @@ gpg --list-secret-keys
           hkp://pool.sks-keyservers.net --recv-keys
           D8692123C4065DEA5E0F3AB5249B39D24F25E3B6</code>.</p><p>Configure the GPG credentials using a <code class="code">gnupg</code>
           profile in the Maven configuration file
-          <code class="filename">P:\dev\apps\build\apache-maven-3.3.9\conf\settings.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;servers&gt;
+          <code class="filename">P:\dev\apps\build\apache-maven-3.5.2\conf\settings.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;servers&gt;
     …
 
 +    &lt;server&gt;
@@ -1189,7 +1189,7 @@ gpg --list-secret-keys
        &lt;username&gt;jenejasper&lt;/username&gt;
        &lt;password&gt;<em xmlns="http://www.w3.org/1999/xhtml" class="replaceable"><code>password</code></em>&lt;/password&gt;
      &lt;/server&gt;
-</code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>It is possible to encrypt the passphrase using <a class="xref" href="build.tool.html#build.maven.password.encryption" title="4.2.6. Password Encryption">Section 4.2.6, “Password Encryption”</a>.</p></div><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;profiles&gt;
+</code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>It is possible to encrypt the passphrase using <a class="xref" href="build.tool.html#build.maven.password.encryption" title="4.2.5. Password Encryption">Section 4.2.5, “Password Encryption”</a>.</p></div><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;profiles&gt;
     …
 
 +    &lt;profile&gt;
@@ -1250,9 +1250,7 @@ gpg --list-secret-keys
             passphrase.</p></div></section></section><section class="section" id="prj.maven.setup.java"><div class="titlepage"><div><div><h3 class="title"><a id="prj.maven.setup.java" class="anchor" href="#prj.maven.setup.java"><span class="octicon octicon-link"/></a>16.1.7. Java setup</h3></div></div></div><p>Configure the default Java projects settings.</p><section class="section" id="prj.maven.setup.java.compiler"><div class="titlepage"><div><div><h4 class="title"><a id="prj.maven.setup.java.compiler" class="anchor" href="#prj.maven.setup.java.compiler"><span class="octicon octicon-link"/></a>16.1.7.1. Compiler</h4></div></div></div><p>The <a class="link" href="https://maven.apache.org/plugins/maven-compiler-plugin/">Compiler
           Plugin</a> is used to compile the sources of your project. The
           default compiler is javac and is used to compile Java sources. To
-          compile the sources using the latest JDK of all <a class="link" href="build.tool.html#build.maven.compiler.profile" title="4.2.3. Compiler profile">available java
-          compilers</a> in the Maven settings reference
-          <code class="code">${jdk.1.8.javac}</code>.</p><p>Configure default settings for JDK 1.8 and assume it is
+          compile the sources using the latest available JDK assume it is
           located at <code class="envar">JAVA_HOME</code> in
           <code class="filename">C:\dev\projects\maven-setup\pom.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">     &lt;wagonMavenPluginVersion&gt;1.0&lt;/wagonMavenPluginVersion&gt;
      &lt;wagonProviderVersion&gt;2.12&lt;/wagonProviderVersion&gt;
@@ -1261,7 +1259,7 @@ gpg --list-secret-keys
 +    &lt;maven.compiler.executable&gt;${jdkHome}/bin/javac&lt;/maven.compiler.executable&gt;
 +    &lt;maven.compiler.fork&gt;true&lt;/maven.compiler.fork&gt;
 +    &lt;maven.compiler.compilerVersion&gt;1.8&lt;/maven.compiler.compilerVersion&gt;
-+    &lt;maven.compiler.source&gt;${maven.compiler.compilerVersion}&lt;/maven.compiler.source&gt;
++    &lt;maven.compiler.source&gt;${maven.compiler.target}&lt;/maven.compiler.source&gt;
 +    &lt;maven.compiler.target&gt;${maven.compiler.compilerVersion}&lt;/maven.compiler.target&gt;
 +    &lt;maven.compiler.showDeprecation&gt;true&lt;/maven.compiler.showDeprecation&gt;
 +    &lt;maven.compiler.showWarnings&gt;true&lt;/maven.compiler.showWarnings&gt;
@@ -1272,8 +1270,7 @@ gpg --list-secret-keys
      &lt;project.reporting.outputEncoding&gt;UTF-8&lt;/project.reporting.outputEncoding&gt;
      …
    &lt;/properties&gt;
-</code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>Those executables are defined in the <a class="link" href="build.tool.html#build.maven.compiler.profile" title="4.2.3. Compiler profile">compiler</a> profile
-            settings.TODO</p></div><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;build&gt;
+</code></pre><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;build&gt;
      &lt;pluginManagement&gt;
        &lt;plugins&gt;
          …
@@ -1297,7 +1294,15 @@ gpg --list-secret-keys
          &lt;/plugin&gt;
 </code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="important"><h2>Important</h2><p>The <code class="sgmltag-element">fork</code> option needs to be set to
             <strong class="userinput"><code>true</code></strong> for the
-            <strong class="userinput"><code>${base…}</code></strong> settings to take effect.</p></div><p>Verify the compiler settings with <code class="command">mvn
+            <strong class="userinput"><code>${base…}</code></strong> settings to take effect. TODO
+            remnant</p></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="warning"><h2>Warning</h2><p>Compilation with lower jdk <code class="option">-source</code> and
+            <code class="option">-target</code> options could casue
+            <span class="quote">“<span class="quote">java.lang.NoClassDefFoundError:
+            java/lang/reflect/Executable</span>”</span> and
+            <span class="quote">“<span class="quote">java.lang.ClassNotFoundException:
+            java.lang.reflect.Executable</span>”</span> errors when Java 1.8-only
+            classes sneak into the bytecode (see also <a class="link" href="http://www.draconianoverlord.com/2014/04/01/jdk-compatibility.html">JDK
+            1.8/1.7 Compatibility Gotcha</a>).</p></div><p>Verify the compiler settings with <code class="command">mvn
           help:effective-pom</code>.</p></section><section class="section" id="prj.maven.setup.java.surefire"><div class="titlepage"><div><div><h4 class="title"><a id="prj.maven.setup.java.surefire" class="anchor" href="#prj.maven.setup.java.surefire"><span class="octicon octicon-link"/></a>16.1.7.2. Surefire</h4></div></div></div><p>Split unit and integration tests by delegating integration
           tests to the Maven Failsafe plugin (see also <a class="link" href="http://zeroturnaround.com/rebellabs/the-correct-way-to-use-integration-tests-in-your-build-process/">The
           correct way to use integration tests in your build
@@ -1444,9 +1449,9 @@ gpg --list-secret-keys
 +  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
 +
 +  &lt;parent&gt;
-+    &lt;groupId&gt;nl.demon.shadowland.freedumbytes.maven&lt;/groupId&gt;
++    &lt;groupId&gt;nl.demon.shadowland.freedumbytes.maven.config&lt;/groupId&gt;
 +    &lt;artifactId&gt;setup&lt;/artifactId&gt;
-+    &lt;version&gt;4.0-SNAPSHOT&lt;/version&gt;
++    &lt;version&gt;4.3&lt;/version&gt;
 +  &lt;/parent&gt;
 +
 +  &lt;artifactId&gt;java&lt;/artifactId&gt;
@@ -1701,10 +1706,7 @@ mvn clean verify -DskipTests -DskipIntegrationTests=false
 +          &lt;/executions&gt;
          &lt;/plugin&gt;
 </code></pre><p>Enable conditional activation of the source archive creation
-          through a profile named <strong class="userinput"><code>documents</code></strong>:</p><pre xmlns="" class="language-provided"><code class="language-xml">         &lt;skipIntegrationTests&gt;false&lt;/skipIntegrationTests&gt;
-       &lt;/properties&gt;
-     &lt;/profile&gt;
-+
+          through a profile named <strong class="userinput"><code>documents</code></strong>:</p><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;profiles&gt;
 +    &lt;profile&gt;
 +      &lt;id&gt;documents&lt;/id&gt;
 +
@@ -1717,6 +1719,10 @@ mvn clean verify -DskipTests -DskipIntegrationTests=false
 +        &lt;/plugins&gt;
 +      &lt;/build&gt;
 +    &lt;/profile&gt;
++
+     &lt;profile&gt;
+       &lt;id&gt;openSource&lt;/id&gt;
+     …
    &lt;/profiles&gt;
 </code></pre><p>It is possible to force some profiles to get enabled during
           release (for example to enable time-consuming tasks that are only
@@ -1748,8 +1754,10 @@ mvn clean verify -DskipTests -DskipIntegrationTests=false
      &lt;maven.source.excludeResources&gt;false&lt;/maven.source.excludeResources&gt;
 +
 +    &lt;javadocExecutable&gt;${jdkHome}/bin/javadoc&lt;/javadocExecutable&gt;
-+    &lt;javadocVersion&gt;1.8&lt;/javadocVersion&gt;
++    &lt;javadocVersion&gt;${maven.compiler.target}&lt;/javadocVersion&gt;
++    &lt;javadocDoclint&gt;none&lt;/javadocDoclint&gt;
 +    &lt;javadocQuiet&gt;true&lt;/javadocQuiet&gt;
++    &lt;javadocAdditionalOptions /&gt;
 +    &lt;javadocDetectJavaApiLink&gt;false&lt;/javadocDetectJavaApiLink&gt;
 +    &lt;javadocDetectOfflineLinks&gt;false&lt;/javadocDetectOfflineLinks&gt;
 +    &lt;javadocBreakiterator&gt;true&lt;/javadocBreakiterator&gt;
@@ -1766,7 +1774,9 @@ mvn clean verify -DskipTests -DskipIntegrationTests=false
 +            &lt;javadocExecutable&gt;${javadocExecutable}&lt;/javadocExecutable&gt;
 +            &lt;javadocVersion&gt;${javadocVersion}&lt;/javadocVersion&gt;
 +            &lt;source&gt;${maven.compiler.source}&lt;/source&gt;
++            &lt;doclint&gt;${javadocDoclint}&lt;/doclint&gt;
 +            &lt;quiet&gt;${javadocQuiet}&lt;/quiet&gt;
++            &lt;additionalOptions&gt;${javadocAdditionalOptions}&lt;/additionalOptions&gt;
 +            &lt;detectJavaApiLink&gt;${javadocDetectJavaApiLink}&lt;/detectJavaApiLink&gt;
 +            &lt;detectOfflineLinks&gt;${javadocDetectOfflineLinks}&lt;/detectOfflineLinks&gt;
 +            &lt;breakiterator&gt;${javadocBreakiterator}&lt;/breakiterator&gt;
@@ -1789,12 +1799,21 @@ mvn clean verify -DskipTests -DskipIntegrationTests=false
             as external links during site generation anyway and (see also
             issue <a class="link" href="http://jira.codehaus.org/browse/MJAVADOC-275">MJAVADOC-275</a>)
             to prevent build errors when using the javadoc goal before all
-            project artifacts are installed in the verify phase).</p></div><p>Also enable conditional activation of the javadoc archive
+            project artifacts are installed in the verify phase).</p></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>Anyone running <a class="link" href="https://docs.oracle.com/javase/9/tools/javadoc.htm">javadoc</a>
+            is advised to be aware of the problems that may arise when
+            generating non-conformant output or output containing executable
+            content, such as JavaScript. The standard doclet does provide the
+            doclint feature to help developers detect common problems in
+            documentation comments; but, it is also recommended to check the
+            generated output with any appropriate conformance and other
+            checking tools. Possible settings
+            <strong class="userinput"><code>-Xdoclint:(all|none|[-]group)</code></strong> where group
+            is comma separated set of <code class="code">accessibility</code>,
+            <code class="code">html</code>, <code class="code">missing</code>, <code class="code">reference</code>
+            and <code class="code">syntax</code> (see also <a class="link" href="http://blog.joda.org/2014/02/turning-off-doclint-in-jdk-8-javadoc.html">Turning
+            off doclint in JDK 8 Javadoc</a>).</p></div><p>Also enable conditional activation of the javadoc archive
           creation through the profile named
-          <strong class="userinput"><code>documents</code></strong>:</p><pre xmlns="" class="language-provided"><code class="language-xml">         &lt;skipIntegrationTests&gt;false&lt;/skipIntegrationTests&gt;
-       &lt;/properties&gt;
-     &lt;/profile&gt;
-
+          <strong class="userinput"><code>documents</code></strong>:</p><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;profiles&gt;
      &lt;profile&gt;
        &lt;id&gt;documents&lt;/id&gt;
 
@@ -1812,7 +1831,45 @@ mvn clean verify -DskipTests -DskipIntegrationTests=false
          &lt;/plugins&gt;
        &lt;/build&gt;
      &lt;/profile&gt;
-</code></pre><p>Optionally configure <a class="xref" href="prj.maven.qa.sandbox.html#prj.maven.java.pom.javadoc.report" title="F.1. Javadoc report">Section F.1, “Javadoc report”</a> for the project site
+</code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="tip"><h2>Tip</h2><p>It is possible to <code class="code">aggregate-jar</code> Javadoc into
+            the parent project of a multi-module project, but because
+            <code class="code">inherited</code> should be <code class="code">false</code> it can't be
+            preconfigured in an ancestor project. Therefore add the following
+            to the parent project of a multi-module project:</p><pre class="language-provided"><code class="language-xml"> &lt;project …&gt;
+   &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+
+   &lt;parent&gt;
+     &lt;groupId&gt;nl.demon.shadowland.freedumbytes.maven.config&lt;/groupId&gt;
+     &lt;artifactId&gt;java&lt;/artifactId&gt;
+     &lt;version&gt;4.3.5&lt;/version&gt;
+   &lt;/parent&gt;
+
+   &lt;groupId&gt;nl.demon.shadowland.freedumbytes.swingx&lt;/groupId&gt;
+   &lt;artifactId&gt;jmodalwindow&lt;/artifactId&gt;
+   &lt;version&gt;2.4.1&lt;/version&gt;
+   &lt;packaging&gt;pom&lt;/packaging&gt;
+   …
++
++  &lt;build&gt;
++    &lt;plugins&gt;
++        &lt;plugin&gt;
++          &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
++          &lt;artifactId&gt;maven-javadoc-plugin&lt;/artifactId&gt;
++          &lt;executions&gt;
++            &lt;execution&gt;
++              &lt;id&gt;attach-aggregated-javadoc&lt;/id&gt;
++              &lt;phase&gt;verify&lt;/phase&gt;
++              &lt;inherited&gt;false&lt;/inherited&gt;
++              &lt;goals&gt;
++                &lt;goal&gt;aggregate-jar&lt;/goal&gt;
++              &lt;/goals&gt;
++            &lt;/execution&gt;
++          &lt;/executions&gt;
++        &lt;/plugin&gt;
++    &lt;/plugins&gt;
++  &lt;/build&gt;
+ &lt;/project&gt;
+</code></pre></div><p>Optionally configure <a class="xref" href="prj.maven.qa.sandbox.html#prj.maven.java.pom.javadoc.report" title="F.1. Javadoc report">Section F.1, “Javadoc report”</a> for the project site
           or enable Javadoc Site Report through a profile named
           <strong class="userinput"><code>enableJavadocReports</code></strong>:</p><pre xmlns="" class="language-provided"><code class="language-xml">+    &lt;profile&gt;
 +      &lt;id&gt;enableJavadocReports&lt;/id&gt;
@@ -1829,7 +1886,9 @@ mvn clean verify -DskipTests -DskipIntegrationTests=false
 +              &lt;javadocExecutable&gt;${javadocExecutable}&lt;/javadocExecutable&gt;
 +              &lt;javadocVersion&gt;${javadocVersion}&lt;/javadocVersion&gt;
 +              &lt;source&gt;${maven.compiler.source}&lt;/source&gt;
++              &lt;doclint&gt;${javadocDoclint}&lt;/doclint&gt;
 +              &lt;quiet&gt;${javadocQuiet}&lt;/quiet&gt;
++              &lt;additionalOptions&gt;${javadocAdditionalOptions}&lt;/additionalOptions&gt;
 +              &lt;detectJavaApiLink&gt;${javadocDetectJavaApiLink}&lt;/detectJavaApiLink&gt;
 +              &lt;detectOfflineLinks&gt;${javadocDetectOfflineLinks}&lt;/detectOfflineLinks&gt;
 +              &lt;breakiterator&gt;${javadocBreakiterator}&lt;/breakiterator&gt;
@@ -1841,13 +1900,7 @@ mvn clean verify -DskipTests -DskipIntegrationTests=false
 +              &lt;reportSet&gt;
 +                &lt;id&gt;javadocs-report&lt;/id&gt;
 +                &lt;reports&gt;
-+                  &lt;report&gt;javadoc&lt;/report&gt;
-+                &lt;/reports&gt;
-+              &lt;/reportSet&gt;
-+              &lt;reportSet&gt;
-+                &lt;id&gt;aggregate-javadocs-report&lt;/id&gt;
-+                &lt;reports&gt;
-+                  &lt;report&gt;aggregate&lt;/report&gt;
++                  &lt;report&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://maven.apache.org/plugins/maven-javadoc-plugin/examples/javadoc-nofork.html">javadoc-no-fork</a>&lt;/report&gt;
 +                &lt;/reports&gt;
 +              &lt;/reportSet&gt;
 +            &lt;/reportSets&gt;
@@ -1855,66 +1908,9 @@ mvn clean verify -DskipTests -DskipIntegrationTests=false
 +        &lt;/plugins&gt;
 +      &lt;/reporting&gt;
 +    &lt;/profile&gt;
-</code></pre></section><section class="section" id="prj.maven.setup.java.toolchains"><div class="titlepage"><div><div><h4 class="title"><a id="prj.maven.setup.java.toolchains" class="anchor" href="#prj.maven.setup.java.toolchains"><span class="octicon octicon-link"/></a>16.1.7.6. Toolchains TODO obsolete</h4></div></div></div><p>The <a class="link" href="https://maven.apache.org/plugins/maven-toolchains-plugin/">Toolchains
-          Plugin</a> allows to share configuration across plugins. For
-          <a class="link" href="https://maven.apache.org/guides/mini/guide-using-toolchains.html">example</a>
-          to make sure the plugins like compiler, surefire, javadoc, webstart
-          etc. all use the same JDK for execution:</p><pre xmlns="" class="language-provided"><code class="language-xml">     &lt;pluginManagement&gt;
-       &lt;plugins&gt;
-+        &lt;plugin&gt;
-+          &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
-+          &lt;artifactId&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="http://maven.apache.org/plugins/maven-toolchains-plugin/">maven-toolchains-plugin</a>&lt;/artifactId&gt;
-+          &lt;version&gt;${mavenToolchainsPluginVersion}&lt;/version&gt;
-+          &lt;executions&gt;
-+            &lt;execution&gt;
-+              &lt;goals&gt;
-+                &lt;goal&gt;toolchain&lt;/goal&gt;
-+              &lt;/goals&gt;
-+            &lt;/execution&gt;
-+          &lt;/executions&gt;
-+          &lt;configuration&gt;
-+            &lt;toolchains&gt;
-+              &lt;jdk&gt;
-+                &lt;version&gt;${maven.compiler.compilerVersion}&lt;/version&gt;
-+                &lt;vendor&gt;oracle&lt;/vendor&gt;
-+              &lt;/jdk&gt;
-+            &lt;/toolchains&gt;
-+          &lt;/configuration&gt;
-+        &lt;/plugin&gt;
-+
-         &lt;plugin&gt;
-           &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
-           &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
-</code></pre><pre xmlns="" class="language-provided"><code class="language-xml">     &lt;/pluginManagement&gt;
- 
-     &lt;plugins&gt;
-+&lt;!-- 
-+      Alas https://issues.jenkins-ci.org/browse/<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.jenkins-ci.org/browse/JENKINS-28629">JENKINS-28629</a>
-+
-+      &lt;plugin&gt;
-+        &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
-+        &lt;artifactId&gt;maven-toolchains-plugin&lt;/artifactId&gt;
-+      &lt;/plugin&gt;
-+--&gt;
-+
-       &lt;plugin&gt;
-         &lt;groupId&gt;org.jacoco&lt;/groupId&gt;
-         &lt;artifactId&gt;jacoco-maven-plugin&lt;/artifactId&gt;
-       &lt;/plugin&gt;
-</code></pre><p>Specific settings of for example maven-source-plugin and
-          maven-javadoc-plugin will overrule the one of
-          maven-toolchains-plugin:</p><pre xmlns="" class="language-provided"><code class="language-bash">[INFO] --- maven-toolchains-plugin:1.1:toolchain (default) @ qa-sandbox ---
-[INFO] Required toolchain: jdk [ vendor='oracle' version='1.8' ]
-[INFO] Found matching toolchain for type jdk: JDK[P:\dev\apps\prg\java-x64\jdk1.8.0_131]
-
-[INFO] --- maven-compiler-plugin:3.3:compile (default-compile) @ qa-sandbox ---
-[INFO] Toolchain in maven-compiler-plugin: JDK[P:\dev\apps\prg\java-x64\jdk1.8.0_131]
-[WARNING] Toolchains are ignored, 'executable' parameter is set to P:\dev\apps\prg\java-x64\jdk1.8.0_131\bin\javac.exe
-
-[INFO] --- maven-javadoc-plugin:2.10.3:jar (attach-javadoc) @ qa-sandbox ---
-[INFO] Toolchain in maven-javadoc-plugin: JDK[P:\dev\apps\prg\java-x64\jdk1.8.0_131]
-[WARNING] Toolchains are ignored, 'javadocExecutable' parameter is set to P:\dev\apps\prg\java-x64\jdk1.8.0_131\bin\javadoc.exe
-</code></pre></section><section class="section" id="prj.maven.setup.java.animal.sniffer"><div class="titlepage"><div><div><h4 class="title"><a id="prj.maven.setup.java.animal.sniffer" class="anchor" href="#prj.maven.setup.java.animal.sniffer"><span class="octicon octicon-link"/></a>16.1.7.7. Animal Sniffer</h4></div></div></div><p>The <a class="link" href="http://www.mojohaus.org/animal-sniffer/animal-sniffer-maven-plugin/">Animal
+</code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>Javadoc Reports <code class="code">aggregate</code> should have
+            <code class="code">inherited</code> false, but in that case an ancestor profile
+            isn't applied anyway.</p></div></section><section class="section" id="prj.maven.setup.java.animal.sniffer"><div class="titlepage"><div><div><h4 class="title"><a id="prj.maven.setup.java.animal.sniffer" class="anchor" href="#prj.maven.setup.java.animal.sniffer"><span class="octicon octicon-link"/></a>16.1.7.6. Animal Sniffer</h4></div></div></div><p>The <a class="link" href="http://www.mojohaus.org/animal-sniffer/animal-sniffer-maven-plugin/">Animal
           Sniffer Plugin</a> is used to build signatures of APIs and to
           check your classes against previously generated signatures. This
           plugin is called animal sniffer because the principal signatures
@@ -1962,7 +1958,7 @@ mvn clean verify -DskipTests -DskipIntegrationTests=false
             <code class="code">baseJavacExecutable</code> an <code class="code">apiCheck</code> might be
             in order (see also <a class="link" href="https://spring.io/blog/2015/04/03/how-spring-achieves-compatibility-with-java-6-7-and-8">How
             Spring achieves compatibility with Java 6, 7 and 8</a>). TODO
-            mvn ...</p></div></section><section class="section" id="prj.maven.setup.java.enforcer"><div class="titlepage"><div><div><h4 class="title"><a id="prj.maven.setup.java.enforcer" class="anchor" href="#prj.maven.setup.java.enforcer"><span class="octicon octicon-link"/></a>16.1.7.8. Enforcer</h4></div></div></div><p>The <a class="link" href="https://maven.apache.org/enforcer/maven-enforcer-plugin/">Enforcer
+            mvn …</p></div></section><section class="section" id="prj.maven.setup.java.enforcer"><div class="titlepage"><div><div><h4 class="title"><a id="prj.maven.setup.java.enforcer" class="anchor" href="#prj.maven.setup.java.enforcer"><span class="octicon octicon-link"/></a>16.1.7.7. Enforcer</h4></div></div></div><p>The <a class="link" href="https://maven.apache.org/enforcer/maven-enforcer-plugin/">Enforcer
           Plugin</a> provides goals to control certain environmental
           constraints such as Maven version, JDK version and OS family along
           with many more built-in rules and user created rules.</p><p><a class="link" href="http://www.mojohaus.org/extra-enforcer-rules/">Extra
@@ -2025,20 +2021,22 @@ mvn clean verify -DskipTests -DskipIntegrationTests=false
 +            &lt;/dependency&gt;
 +          &lt;/dependencies&gt;
 +        &lt;/plugin&gt;
-</code></pre></section><section class="section" id="prj.maven.setup.java.owasp.dependency.check"><div class="titlepage"><div><div><h4 class="title"><a id="prj.maven.setup.java.owasp.dependency.check" class="anchor" href="#prj.maven.setup.java.owasp.dependency.check"><span class="octicon octicon-link"/></a>16.1.7.9. OWASP Dependency Check</h4></div></div></div><p><a class="link" href="https://www.owasp.org/index.php/OWASP_Dependency_Check">OWASP
+</code></pre></section><section class="section" id="prj.maven.setup.java.owasp.dependency.check"><div class="titlepage"><div><div><h4 class="title"><a id="prj.maven.setup.java.owasp.dependency.check" class="anchor" href="#prj.maven.setup.java.owasp.dependency.check"><span class="octicon octicon-link"/></a>16.1.7.8. OWASP Dependency Check</h4></div></div></div><p><a class="link" href="https://www.owasp.org/index.php/OWASP_Dependency_Check">OWASP
           Dependency Check</a> is a utility that identifies project
           dependencies and checks if there are any known, publicly disclosed,
-          vulnerabilities.</p><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;properties&gt;
+          vulnerabilities. Just add the <a class="link" href="https://jeremylong.github.io/DependencyCheck/">Maven
+          Plugin</a> configuration:</p><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;properties&gt;
      …
      &lt;mavenProjectInfoReportsPluginVersion&gt;2.9&lt;/mavenProjectInfoReportsPluginVersion&gt;
-+    &lt;mavenDependencyCheckVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://github.com/jeremylong/DependencyCheck/releases">2.1.1</a>&lt;/mavenDependencyCheckVersion&gt; TODO
++    &lt;mavenDependencyCheckVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://github.com/jeremylong/DependencyCheck/releases">3.1.0</a>&lt;/mavenDependencyCheckVersion&gt;
 
      …
      &lt;surefire.printSummary&gt;true&lt;/surefire.printSummary&gt;
      &lt;failsafe.printSummary&gt;true&lt;/failsafe.printSummary&gt;
 +
 +    &lt;owaspReportsPath&gt;${project.build.directory}/owasp-reports&lt;/owaspReportsPath&gt;
-+    &lt;owaspReportFormat&gt;xml&lt;/owaspReportFormat&gt;
++    &lt;owaspReportFormat&gt;all&lt;/owaspReportFormat&gt;
++    &lt;cveValidForHours&gt;24&lt;/cveValidForHours&gt;
 
      &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
      &lt;project.reporting.outputEncoding&gt;UTF-8&lt;/project.reporting.outputEncoding&gt;
@@ -2052,35 +2050,234 @@ mvn clean verify -DskipTests -DskipIntegrationTests=false
 +          &lt;groupId&gt;org.owasp&lt;/groupId&gt;
 +          &lt;artifactId&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://jeremylong.github.io/DependencyCheck/dependency-check-maven/index.html">dependency-check-maven</a>&lt;/artifactId&gt;
 +          &lt;version&gt;${mavenDependencyCheckVersion}&lt;/version&gt;
-+          &lt;configuration&gt;
++          &lt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://github.com/jeremylong/DependencyCheck/blob/master/dependency-check-maven/src/site/markdown/configuration.md">configuration</a>&gt;
 +            &lt;outputDirectory&gt;${owaspReportsPath}&lt;/outputDirectory&gt;
 +            &lt;format&gt;${owaspReportFormat}&lt;/format&gt;
++            &lt;cveValidForHours&gt;${cveValidForHours}&lt;/cveValidForHours&gt;
 +          &lt;/configuration&gt;
 +        &lt;/plugin&gt;
        &lt;/plugins&gt;
      &lt;/pluginManagement&gt;
    &lt;/build&gt;
-</code></pre><p>Also enable conditional activation of the dependency check
-          through the profile named <strong class="userinput"><code>owaspSingle</code></strong> TODO
-          mvn ...:</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>Profile <code class="option">owaspMultiple</code> is available for
-            multi module projects to prevent repeated Issue entries of the
-            same Vulnerable Components in <a class="link" href="quality.assurance.html#qa.sonar.config.update.center" title="17.2.4.1. Update Center">SonarQube</a> due to
-            module dependency hierarchy with help of
-            <code class="code">sonar.dependencyCheck.reportPath</code> setting and the fact
-            that the aggregate file isn't saved in the
-            <code class="code">outputDirectory</code> folder
-            <code class="code">${owaspReportsPath}</code> (see also <a class="xref" href="quality.assurance.html#qa.sonar.maven.integration" title="17.2.7. Maven integration">Section 17.2.7, “Maven integration”</a>).</p></div><p>Because of the way dependency-check works both false positives
-          and false negatives may exist. Please read <a class="link" href="https://jeremylong.github.io/DependencyCheck/general/thereport.html">How
-          to read the report</a> to get a better understanding of sorting
-          through the false positives and <a class="link" href="http://jeremylong.github.io/DependencyCheck/general/hints.html">false
-          negatives</a>. See the <a class="link" href="https://jeremylong.github.io/DependencyCheck/general/suppression.html">Suppressing
-          False Positives</a> page for more information on how to generate
-          and use the suppression file.</p><p>It is important to understand that the first time this task is
-          executed it may take minutes as it downloads and processes the data
-          from the National Vulnerability Database (<a class="link" href="https://nvd.nist.gov">NVD</a>) hosted by NIST. After
-          the first batch download, as long as the plugin is executed at least
-          once every seven days the update will only take a few
-          seconds.</p></section><section class="section" id="prj.maven.setup.java.jdeps"><div class="titlepage"><div><div><h4 class="title"><a id="prj.maven.setup.java.jdeps" class="anchor" href="#prj.maven.setup.java.jdeps"><span class="octicon octicon-link"/></a>16.1.7.10. JDeps</h4></div></div></div><p>The <a class="link" href="https://maven.apache.org/plugins/maven-jdeps-plugin/index.html">JDeps
+</code></pre><p>From the command line now run <code class="command">mvn
+          org.owasp:dependency-check-maven:<a class="link" href="https://jeremylong.github.io/DependencyCheck/dependency-check-maven/aggregate-mojo.html">aggregate</a></code>
+          (see also <a class="xref" href="quality.assurance.html#qa.sonar.maven.integration" title="17.2.7. Maven integration">Section 17.2.7, “Maven integration”</a>).</p><p>Optionally add a Dependency Check Report to the Maven site
+          with the following profile
+          <code class="option">enableDependencyCheckReport</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">+     &lt;profile&gt;
++      &lt;id&gt;enableDependencyCheckReport&lt;/id&gt;
++
++      &lt;reporting&gt;
++        &lt;plugins&gt;
++          &lt;plugin&gt;
++            &lt;groupId&gt;org.owasp&lt;/groupId&gt;
++            &lt;artifactId&gt;dependency-check-maven&lt;/artifactId&gt;
++            &lt;version&gt;${mavenDependencyCheckVersion}&lt;/version&gt;
++            &lt;reportSets&gt;
++              &lt;reportSet&gt;
++                &lt;reports&gt;
++                  &lt;report&gt;aggregate&lt;/report&gt;
++                &lt;/reports&gt;
++              &lt;/reportSet&gt;
++            &lt;/reportSets&gt;
++          &lt;/plugin&gt;
++        &lt;/plugins&gt;
++      &lt;/reporting&gt;
++    &lt;/profile&gt;
+</code></pre><pre xmlns="" class="language-provided"><code class="language-xml">           &lt;artifactId&gt;dependency-check-maven&lt;/artifactId&gt;
+           &lt;version&gt;${mavenDependencyCheckVersion}&lt;/version&gt;
+           &lt;configuration&gt;
++            &lt;name&gt;Dependency Check Report&lt;/name&gt;
+             &lt;outputDirectory&gt;${owaspReportsPath}&lt;/outputDirectory&gt;
+             &lt;format&gt;${owaspReportFormat}&lt;/format&gt;
+             &lt;cveValidForHours&gt;${cveValidForHours}&lt;/cveValidForHours&gt;
+</code></pre><section class="section" id="prj.maven.dependency.check.custom.suppression.hints"><div class="titlepage"><div><div><h5 class="title"><a id="prj.maven.dependency.check.custom.suppression.hints" class="anchor" href="#prj.maven.dependency.check.custom.suppression.hints"><span class="octicon octicon-link"/></a>16.1.7.8.1. Suppressing False Positives and Resolving False
+            Negatives</h5></div></div></div><p>Because of the way dependency-check works both false
+            positives and false negatives may exist. Please read <a class="link" href="https://jeremylong.github.io/DependencyCheck/general/thereport.html">How
+            to read the report</a> to get a better understanding of sorting
+            through the false positives and <a class="link" href="https://jeremylong.github.io/DependencyCheck/general/hints.html">false
+            negatives</a>. See the <a class="link" href="https://jeremylong.github.io/DependencyCheck/general/suppression.html">Suppressing
+            False Positives</a> page for more information on how to
+            generate and use the suppression file.</p><p>With the reusable custom suppression and hints files from
+            <a class="link" href="https://gitlab.com/freedumbytes/dependency-check">Custom
+            Dependency Check</a> change plugin setup to:</p><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;properties&gt;
+     …
+     &lt;owaspReportFormat&gt;all&lt;/owaspReportFormat&gt;
+     &lt;cveValidForHours&gt;24&lt;/cveValidForHours&gt;
++
++    &lt;customSuppressionHintsVersion&gt;1.0.0&lt;/customSuppressionHintsVersion&gt;
++    &lt;customSuppressionHintsFolderVersion&gt;${customSuppressionHintsVersion}&lt;/customSuppressionHintsFolderVersion&gt;
++    &lt;customSuppressionHintsPath&gt;${nexusHost}/content/groups/public/nl/demon/shadowland/freedumbytes/maven/owasp/dependency-check/${customSuppressionHintsFolderVersion}&lt;/customSuppressionHintsPath&gt;
++    &lt;customSuppressionFile&gt;${customSuppressionHintsPath}/dependency-check-${customSuppressionHintsVersion}-suppression.xml&lt;/customSuppressionFile&gt;
++    &lt;customHintsFile&gt;${customSuppressionHintsPath}/dependency-check-${customSuppressionHintsVersion}-hints.xml&lt;/customHintsFile&gt;
+</code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>In case of pre-release testing use for example the latest
+              deployed SNAPSHOT:</p><pre class="language-provided"><code class="language-xml">-    &lt;customSuppressionHintsVersion&gt;1.0.0&lt;/customSuppressionHintsVersion&gt;
++    &lt;customSuppressionHintsVersion&gt;1.0.0-SNAPSHOT&lt;/customSuppressionHintsVersion&gt;
+-    &lt;customSuppressionHintsFolderVersion&gt;${customSuppressionHintsVersion}&lt;/customSuppressionHintsFolderVersion&gt;
++    &lt;customSuppressionHintsFolderVersion&gt;1.0.0-20180101.000700-7&lt;/customSuppressionHintsFolderVersion&gt;
+</code></pre></div><pre xmlns="" class="language-provided"><code class="language-xml">         &lt;plugin&gt;
+           &lt;groupId&gt;org.owasp&lt;/groupId&gt;
+           &lt;artifactId&gt;dependency-check-maven&lt;/artifactId&gt;
+           &lt;version&gt;${mavenDependencyCheckVersion}&lt;/version&gt;
+           &lt;configuration&gt;
+             &lt;outputDirectory&gt;${owaspReportsPath}&lt;/outputDirectory&gt;
+             &lt;format&gt;${owaspReportFormat}&lt;/format&gt;
+             &lt;cveValidForHours&gt;${cveValidForHours}&lt;/cveValidForHours&gt;
++            &lt;suppressionFile&gt;${customSuppressionFile}&lt;/suppressionFile&gt;
++            &lt;hintsFile&gt;${customHintsFile}&lt;/hintsFile&gt;
+           &lt;/configuration&gt;
+         &lt;/plugin&gt;
+       &lt;/plugins&gt;
+     &lt;/pluginManagement&gt;
+   &lt;/build&gt;
+</code></pre><p>The custom files were created because dependency
+            <code class="code">mysql-connector-java</code> caused all MySQL database
+            vulnerabilities to be included in the list. More information can
+            be found at:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><a class="link" href="https://github.com/jeremylong/DependencyCheck/issues/952">Issue
+                952</a> False positive: MySQL JDBC driver reported as
+                <code class="code">cpe:/a:mysql:mysql</code>.</p></li><li class="listitem"><p><a class="link" href="https://github.com/jeremylong/DependencyCheck/issues/434">Issue
+                434</a> MySQL Connector/J Misidentified as MySQL
+                Server.</p></li><li class="listitem"><p><a class="link" href="https://groups.google.com/forum/#!topic/dependency-check/GcOFleJz-nk">Google
+                Groups Forum Topic</a>: mysql-connector-java shows wrong
+                vulnerabilities?</p></li><li class="listitem"><p>xmlns, xmlns:xsi, <a class="link" href="https://stackoverflow.com/questions/34202967/xmlns-xmlnsxsi-xsischemalocation-and-targetnamespace">xsi:schemaLocation</a>,
+                and targetNamespace?</p></li></ul></div><p>Based on that information the following suppression and
+            hints xmls where created:</p><pre xmlns="" class="language-provided"><code class="language-xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+
+&lt;suppressions xmlns="https://jeremylong.github.io/DependencyCheck/dependency-suppression.1.1.xsd"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="https://jeremylong.github.io/DependencyCheck/dependency-suppression.1.1.xsd
+                                  https://jeremylong.github.io/DependencyCheck/dependency-suppression.1.1.xsd"&gt;
+  &lt;suppress&gt;
+    &lt;notes&gt;We're not interested in vulnerabilities in MySQL server, only the Connector/J.&lt;/notes&gt;
+    &lt;gav regex="true"&gt;^mysql:mysql-connector-java:.*$&lt;/gav&gt;
+    &lt;cpe regex="true"&gt;cpe:/a:mysql:mysql:.*&lt;/cpe&gt;
+  &lt;/suppress&gt;
+
+  &lt;suppress&gt;
+    &lt;notes&gt;We're not interested in vulnerabilities in MySQL server, only the Connector/J.&lt;/notes&gt;
+    &lt;gav regex="true"&gt;^mysql:mysql-connector-java:.*$&lt;/gav&gt;
+    &lt;cpe regex="true"&gt;cpe:/a:oracle:mysql:.*&lt;/cpe&gt;
+  &lt;/suppress&gt;
+
+  &lt;suppress&gt;
+    &lt;notes&gt;We're not interested in vulnerabilities in MySQL Connector/C.&lt;/notes&gt;
+    &lt;gav regex="true"&gt;^mysql:mysql-connector-java:.*$&lt;/gav&gt;
+    &lt;cve&gt;CVE-2017-3635&lt;/cve&gt;
+  &lt;/suppress&gt;
+&lt;/suppressions&gt;
+</code></pre><pre xmlns="" class="language-provided"><code class="language-xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+
+&lt;hints xmlns="https://jeremylong.github.io/DependencyCheck/dependency-hint.1.3.xsd"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="https://jeremylong.github.io/DependencyCheck/dependency-hint.1.3.xsd
+                           https://jeremylong.github.io/DependencyCheck/dependency-hint.1.3.xsd"&gt;
+  &lt;hint&gt;
+    &lt;given&gt;
+      &lt;fileName contains="mysql-connector-java.*" regex="true" /&gt;
+    &lt;/given&gt;
+    &lt;add&gt;
+      &lt;evidence type="product" source="hint analyzer" name="product" value="mysql_connector_j" confidence="HIGHEST" /&gt;
+      &lt;evidence type="product" source="hint analyzer" name="product" value="mysql_connector/j" confidence="HIGHEST" /&gt;
+
+      &lt;evidence type="vendor" source="hint analyzer" name="vendor" value="oracle" confidence="HIGHEST" /&gt;
+    &lt;/add&gt;
+  &lt;/hint&gt;
+&lt;/hints&gt;
+</code></pre><p>When tested with the following dependency:</p><pre xmlns="" class="language-provided"><code class="language-xml">  &lt;dependencies&gt;
+      &lt;dependency&gt;
+        &lt;groupId&gt;mysql&lt;/groupId&gt;
+        &lt;artifactId&gt;mysql-connector-java&lt;/artifactId&gt;
+        &lt;version&gt;5.1.34&lt;/version&gt;
+      &lt;/dependency&gt;
+  &lt;/dependencies&gt;
+</code></pre><p>The number of <code class="computeroutput">Vulnerabilities
+            Found</code> drop from 449 to 3, leaving only:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><a class="link" href="https://nvd.nist.gov/vuln/detail/CVE-2017-3523">CVE-2017-3523</a>.</p></li><li class="listitem"><p><a class="link" href="https://nvd.nist.gov/vuln/detail/CVE-2017-3586">CVE-2017-3586</a>.</p></li><li class="listitem"><p><a class="link" href="https://nvd.nist.gov/vuln/detail/CVE-2017-3589">CVE-2017-3589</a>.</p></li></ul></div><p>I don't think <a class="link" href="https://nvd.nist.gov/vuln/detail/CVE-2015-2575">CVE-2015-2575</a>
+            , which was mentioned in the above listed <a class="link" href="https://github.com/jeremylong/DependencyCheck/issues/434">Issue
+            434</a>, is a Connector/J issue, but you can check it yourself
+            under the collapsed <a class="link" href="https://freedumbytes.gitlab.io/dependency-check/dependency-check-report.html">Suppressed
+            Vulnerabilities</a> at the end of the report.</p></section><section class="section" id="prj.maven.setup.java.owasp.dependency.check.data"><div class="titlepage"><div><div><h5 class="title"><a id="prj.maven.setup.java.owasp.dependency.check.data" class="anchor" href="#prj.maven.setup.java.owasp.dependency.check.data"><span class="octicon octicon-link"/></a>16.1.7.8.2. NVD CVE/CPE data</h5></div></div></div><p>It is important to understand that the first time this task
+            is executed it may take minutes as it downloads and processes the
+            data from the National Vulnerability Database (<a class="link" href="https://nvd.nist.gov">NVD</a>) hosted by NIST.
+            After the first batch download, as long as the plugin is executed
+            at least once every seven days the update will only take a few
+            seconds.</p><p>Known issues:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p>Scan crashes with error -14 reading a corrupt
+                MANIFEST.MF (see also <a class="link" href="https://github.com/jeremylong/DependencyCheck/issues/1024">issue
+                1024</a>).</p></li><li class="listitem"><p>As stated in the <a class="link" href="https://github.com/jeremylong/DependencyCheck/blob/master/dependency-check-maven/src/site/markdown/configuration.md">configuration</a>
+                the default data directory to hold SQL CVEs contents is the
+                Maven <code class="filename"><em class="replaceable"><code>localRepository</code></em>\org\owasp\dependency-check-data</code>
+                with a subfolder per version. Although this should generally
+                not be changed it could be useful when the CI tools do not
+                reuse the local Maven repository. Because the time for a
+                complete database creation is rather long and thus a central
+                location could save minutes.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>When the database is accessed, there will be a
+                  <code class="filename">dc.lock.db</code> file visible. If updates are
+                  installed, then an additional
+                  <code class="filename">dc.update.lock</code> file is visible. Thus
+                  concurrent <code class="command">dependency-check-maven</code> runs
+                  might cause delays during separate CI jobs. Those extra
+                  delays are still a lot smaller than downloading the whole
+                  database every run.</p></div><p>A sample initial run:</p><pre xmlns=""><code class="no-highlight">$ mvn org.owasp:dependency-check-maven:aggregate -DdataDirectory=/c/dev/data/owasp-dependency-check-data
+Tue 2017-12-26  00:06:13.501 CET [INFO] Scanning for projects...
+Tue 2017-12-26  00:06:15.688 CET [INFO] --- dependency-check-maven:3.0.2:aggregate
+Tue 2017-12-26  00:06:16.643 CET [INFO] Checking for updates
+Tue 2017-12-26  00:06:16.646 CET [INFO] starting getUpdatesNeeded() ...
+Tue 2017-12-26  00:06:17.758 CET [INFO] NVD CVE requires several updates; this could take a couple of minutes.
+Tue 2017-12-26  00:06:17.765 CET [INFO] Download Started for NVD CVE - 2004
+                                        …
+Tue 2017-12-26  00:06:17.778 CET [INFO] Download Started for NVD CVE - 2017
+Tue 2017-12-26  00:06:17.778 CET [INFO] Download Started for NVD CVE - Modified
+                                        …
+Tue 2017-12-26  00:06:25.778 CET [INFO] Download Complete for NVD CVE - 2017  (8000 ms)
+                                        …
+Tue 2017-12-26  00:06:51.500 CET [INFO] Processing Started for NVD CVE - 2017
+                                        …
+Tue 2017-12-26  00:08:03.185 CET [INFO] Processing Complete for NVD CVE - 2017  (71685 ms)
+Tue 2017-12-26  00:08:03.186 CET [INFO] Begin database maintenance.
+Tue 2017-12-26  00:08:03.985 CET [INFO] End database maintenance.
+Tue 2017-12-26  00:08:04.376 CET [INFO] Check for updates complete (107733 ms)
+Tue 2017-12-26  00:08:04.724 CET [INFO] Analysis Started
+                                        …
+Tue 2017-12-26  00:08:06.734 CET [INFO] Analysis Complete (2 seconds)
+Tue 2017-12-26  00:08:07.000 CET [INFO] ------------------------------------------------------------------------
+Tue 2017-12-26  00:08:07.000 CET [INFO] Total time: 01:53 min
+Tue 2017-12-26  00:08:07.110 CET [INFO] ------------------------------------------------------------------------
+</code></pre><p>A sample run with above configured 24 hours to wait
+                before checking for new updates from the NVD:</p><pre xmlns=""><code class="no-highlight">$ mvn org.owasp:dependency-check-maven:aggregate -DdataDirectory=/c/dev/data/owasp-dependency-check-data
+Tue 2017-12-26  00:09:13.898 CET [INFO] Scanning for projects...
+Tue 2017-12-26  00:09:15.144 CET [INFO] --- dependency-check-maven:3.0.2:aggregate
+Tue 2017-12-26  00:09:16.085 CET [INFO] Checking for updates
+Tue 2017-12-26  00:09:16.088 CET [INFO] Skipping NVD check since last check was within 24 hours.
+Tue 2017-12-26  00:09:16.122 CET [INFO] Check for updates complete (37 ms)
+Tue 2017-12-26  00:09:16.502 CET [INFO] Analysis Started
+                                        …
+Tue 2017-12-26  00:09:18.578 CET [INFO] Analysis Complete (2 seconds)
+Tue 2017-12-26  00:09:18.861 CET [INFO] ------------------------------------------------------------------------
+Tue 2017-12-26  00:09:18.861 CET [INFO] Total time: 5.216 s
+Tue 2017-12-26  00:09:19.023 CET [INFO] ------------------------------------------------------------------------
+</code></pre><p>A sample run with forced update, for the original Maven
+                repo location, by supplying a smaller number for
+                cveValidForHours:</p><pre xmlns=""><code class="no-highlight">$ mvn org.owasp:dependency-check-maven:aggregate -DcveValidForHours=0
+Tue 2017-12-26  00:10:17.884 CET [INFO] Scanning for projects...
+Tue 2017-12-26  00:10:19.164 CET [INFO] --- dependency-check-maven:3.0.2:aggregate
+Tue 2017-12-26  00:10:20.127 CET [INFO] Checking for updates
+Tue 2017-12-26  00:10:20.130 CET [INFO] starting getUpdatesNeeded() ...
+Tue 2017-12-26  00:10:20.813 CET [INFO] Download Started for NVD CVE - Modified
+Tue 2017-12-26  00:10:23.452 CET [INFO] Download Complete for NVD CVE - Modified  (2639 ms)
+Tue 2017-12-26  00:10:23.454 CET [INFO] Processing Started for NVD CVE - Modified
+Tue 2017-12-26  00:10:25.817 CET [INFO] Processing Complete for NVD CVE - Modified  (2363 ms)
+Tue 2017-12-26  00:10:25.818 CET [INFO] Begin database maintenance.
+Tue 2017-12-26  00:10:26.752 CET [INFO] End database maintenance.
+Tue 2017-12-26  00:10:26.877 CET [INFO] Check for updates complete (6750 ms)
+Tue 2017-12-26  00:10:27.326 CET [INFO] Analysis Started
+                                        …
+Tue 2017-12-26  00:10:29.809 CET [INFO] Analysis Complete (2 seconds)
+Tue 2017-12-26  00:10:30.170 CET [INFO] ------------------------------------------------------------------------
+Tue 2017-12-26  00:10:30.171 CET [INFO] Total time: 12.548 s
+Tue 2017-12-26  00:10:30.357 CET [INFO] ------------------------------------------------------------------------
+</code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>Alternatively force update only with <code class="command">mvn
+                  org.owasp:dependency-check-maven:update-only
+                  -DcveValidForHours=0</code> or use <code class="command">mvn
+                  org.owasp:dependency-check-maven:purge</code> to delete
+                  the local copy of the NVD.</p></div></li></ul></div></section></section><section class="section" id="prj.maven.setup.java.jdeps"><div class="titlepage"><div><div><h4 class="title"><a id="prj.maven.setup.java.jdeps" class="anchor" href="#prj.maven.setup.java.jdeps"><span class="octicon octicon-link"/></a>16.1.7.9. JDeps</h4></div></div></div><p>The <a class="link" href="https://maven.apache.org/plugins/maven-jdeps-plugin/index.html">JDeps
           Plugin</a> uses the jdeps tool to analyze classes for internal
           API calls. For more information about the standard jdeps tool,
           please refer to <a class="link" href="https://wiki.openjdk.java.net/display/JDK8/Java+Dependency+Analysis+Tool">Java
@@ -2093,84 +2290,11 @@ mvn clean verify -DskipTests -DskipIntegrationTests=false
           Developers Should Not Write Programs That Call <code class="code">sun</code>
           Packages</a>).</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="tip"><h2>Tip</h2><p><a class="link" href="quality.assurance.html#qa.sonar" title="17.2. SonarQube">SonarQube</a> has a
             <code class="code">lock-in, pitfall</code> rule: <span class="quote">“<span class="quote">Classes from
-            <code class="code">sun</code> packages should not be used</span>”</span>.</p></div></section><section class="section" id="prj.maven.setup.java.shade"><div class="titlepage"><div><div><h4 class="title"><a id="prj.maven.setup.java.shade" class="anchor" href="#prj.maven.setup.java.shade"><span class="octicon octicon-link"/></a>16.1.7.11. Shade</h4></div></div></div><p>The <a class="link" href="https://maven.apache.org/plugins/maven-shade-plugin/">Shade
+            <code class="code">sun</code> packages should not be used</span>”</span>.</p></div></section><section class="section" id="prj.maven.setup.java.shade"><div class="titlepage"><div><div><h4 class="title"><a id="prj.maven.setup.java.shade" class="anchor" href="#prj.maven.setup.java.shade"><span class="octicon octicon-link"/></a>16.1.7.10. Shade</h4></div></div></div><p>The <a class="link" href="https://maven.apache.org/plugins/maven-shade-plugin/">Shade
           Plugin</a> provides the capability to package the artifact in an
           <span class="emphasis"><em>uber-jar</em></span>, including its dependencies and to
           <span class="emphasis"><em>shade</em></span>, i.e. rename, the packages of some of the
-          dependencies.</p></section><section class="section" id="prj.maven.setup.java.platform"><div class="titlepage"><div><div><h4 class="title"><a id="prj.maven.setup.java.platform" class="anchor" href="#prj.maven.setup.java.platform"><span class="octicon octicon-link"/></a>16.1.7.12. Java software platform TODO obsolete</h4></div></div></div><p>Create modules for the JDKs 1.3 a.k.a. Kestrel, 1.4 a.k.a.
-          Merlin, 1.5 a.k.a. Tiger, 1.6 a.k.a. Mustang, 1.7 a.k.a. Dolphin and
-          1.8 in
-          <code class="filename">C:\dev\projects\maven-setup\base-pom\pom.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;contributors /&gt;
-+
-+  &lt;modules&gt;
-+    &lt;module&gt;java-se-3-base-pom&lt;/module&gt;
-+    &lt;module&gt;java-se-4-base-pom&lt;/module&gt;
-+    &lt;module&gt;java-se-5-base-pom&lt;/module&gt;
-+    &lt;module&gt;java-se-6-base-pom&lt;/module&gt;
-+    &lt;module&gt;java-se-7-base-pom&lt;/module&gt;
-+    &lt;module&gt;java-se-8-base-pom&lt;/module&gt;
-+  &lt;/modules&gt;
-</code></pre><p>In those modules configure the jvm specific properties of the
-          currently configured plugins (for example for the Merlin 1.4 module)
-          <code class="filename">C:\dev\projects\maven-setup\base-pom\java-se-4-base-pom\pom.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-+
-+&lt;project xmlns="http://maven.apache.org/POM/4.0.0"
-+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-+                             https://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;
-+  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
-+
-+  &lt;parent&gt;
-+    &lt;groupId&gt;nl.demon.shadowland.freedumbytes.maven&lt;/groupId&gt;
-+    &lt;artifactId&gt;base-pom&lt;/artifactId&gt;
-+    &lt;version&gt;4.1-beta&lt;/version&gt;
-+  &lt;/parent&gt;
-</code></pre><pre xmlns="" class="language-provided"><code class="language-xml">+  &lt;artifactId&gt;java-se-4-base-pom&lt;/artifactId&gt;
-+  &lt;packaging&gt;pom&lt;/packaging&gt;
-+
-+  &lt;name&gt;Free Dumb Bytes Java SE 4 POM [Merlin]&lt;/name&gt;
-+  &lt;description&gt;Java SE 4 Project Object Model.&lt;/description&gt;
-+  &lt;inceptionYear&gt;2010&lt;/inceptionYear&gt;
-</code></pre><p>And force the version of the surefire plugins that is
-          compatible with jdk1.4.</p><pre xmlns="" class="language-provided"><code class="language-xml">+  &lt;properties&gt;
-+    &lt;baseJdkVersion&gt;1.4&lt;/baseJdkVersion&gt;
-+    &lt;baseJdkSignature&gt;java14&lt;/baseJdkSignature&gt;
-+    &lt;baseJdkSignatureVersion&gt;1.0&lt;/baseJdkSignatureVersion&gt;
-+    &lt;baseJavadocVersion&gt;1.42&lt;/baseJavadocVersion&gt;
-+    &lt;baseJavacExecutable&gt;${jdk.1.4.javac}&lt;/baseJavacExecutable&gt;
-+    &lt;baseJavaExecutable&gt;${jdk.1.4.jvm}&lt;/baseJavaExecutable&gt;
-+    &lt;baseJavadocExecutable&gt;${jdk.1.4.javadoc}&lt;/baseJavadocExecutable&gt;
-+
-+    &lt;mavenSurefirePluginJDK4Version&gt;2.5&lt;/mavenSurefirePluginJDK4Version&gt;
-+    &lt;mavenFailsafePluginJDK4Version&gt;
-+      ${mavenSurefirePluginJDK4Version}
-+    &lt;/mavenFailsafePluginJDK4Version&gt;
-+  &lt;/properties&gt;
-</code></pre><pre xmlns="" class="language-provided"><code class="language-xml">+  &lt;build&gt;
-+    &lt;pluginManagement&gt;
-+      &lt;plugins&gt;
-+        &lt;plugin&gt;
-+          &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
-+          &lt;artifactId&gt;maven-surefire-plugin&lt;/artifactId&gt;
-+          &lt;version&gt;${mavenSurefirePluginJDK4Version}&lt;/version&gt;
-+        &lt;/plugin&gt;
-+
-+        &lt;plugin&gt;
-+          &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
-+          &lt;artifactId&gt;maven-failsafe-plugin&lt;/artifactId&gt;
-+          &lt;version&gt;${mavenFailsafePluginJDK4Version}&lt;/version&gt;
-+        &lt;/plugin&gt;
-+      &lt;/plugins&gt;
-+    &lt;/pluginManagement&gt;
-+  &lt;/build&gt;
-</code></pre><p>Verify with <code class="command">mvn help:effective-pom</code> in
-          <code class="filename">C:\dev\projects\maven-setup\base-pom</code>
-          and <code class="filename">C:\dev\projects\maven-setup\base-pom\java-se-4-base-pom</code>
-          to see for example the difference between maven-javadoc-plugin
-          settings.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>All the modules java-se-.-base-pom are added as samples and
-            especially java-se-4-base-pom shows only a subset of the required
-            version changes for surefire and failsafe plugins, but aren't
-            currently kept up-to-date.</p></div></section></section><section class="section" id="prj.maven.ci"><div class="titlepage"><div><div><h3 class="title"><a id="prj.maven.ci" class="anchor" href="#prj.maven.ci"><span class="octicon octicon-link"/></a>16.1.8. Continuous integration Jenkins vs GitLaB CI (see gitlab-ci.png)
+          dependencies.</p></section></section><section class="section" id="prj.maven.ci"><div class="titlepage"><div><div><h3 class="title"><a id="prj.maven.ci" class="anchor" href="#prj.maven.ci"><span class="octicon octicon-link"/></a>16.1.8. Continuous integration Jenkins vs GitLaB CI (see gitlab-ci.png)
         TODO</h3></div></div></div><p>Browse to <a class="link" href="http://freedumbytes.dev.net/jenkins/newView">http://freedumbytes.dev.net/jenkins/newView</a>
         to create the following <span class="guilabel"><strong>List View</strong></span>s:
         <strong class="userinput"><code>Application</code></strong>, <strong class="userinput"><code>Component</code></strong>,
@@ -2223,18 +2347,16 @@ mvn clean verify -DskipTests -DskipIntegrationTests=false
                   come in handy if you are a Maven developer, or if you need
                   to diagnose an error in a Maven plugin.</p></li><li class="listitem"><p><code class="option">-P</code>,
                   <code class="option">--activate-profiles</code>: Comma-delimited list
-                  of profiles to activate. Currently available
-                  profiles:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><code class="option">integrationTestsOnly</code>: activate
+                  of profiles to activate. Currently available profiles (TODO
+                  update list):</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><code class="option">integrationTestsOnly</code>: activate
                       the integration tests only; thus skipping unit tests
                       (see also <a class="xref" href="project.html#prj.maven.setup.java.unit.vs.integration" title="16.1.7.2.4. Unit vs Integration tests">Section 16.1.7.2.4, “Unit vs Integration tests”</a>).</p></li><li class="listitem"><p><code class="option">documents</code>: activation of the
                       source and javadoc archive creation (see also <a class="xref" href="project.html#prj.maven.setup.java.source" title="16.1.7.4. Source">Section 16.1.7.4, “Source”</a> and <a class="xref" href="project.html#prj.maven.setup.java.javadoc" title="16.1.7.5. Javadoc">Section 16.1.7.5, “Javadoc”</a>).</p></li><li class="listitem"><p><code class="option">enableUpdatesReports</code>: activation
                       of the reports of those project dependencies, plugins
                       and properties, which have newer versions available (see
-                      also <a class="xref" href="project.html#prj.maven.enforcer" title="16.1.5. Plugin Versions">Section 16.1.5, “Plugin Versions”</a>).</p></li><li class="listitem"><p><code class="option">owaspSingle</code> or
-                      <code class="option">owaspMultiple</code>: activation of the OWASP
-                      Dependency Check reports (see also <a class="xref" href="project.html#prj.maven.setup.java.owasp.dependency.check" title="16.1.7.9. OWASP Dependency Check">Section 16.1.7.9, “OWASP Dependency Check”</a>).</p></li></ul></div></li><li class="listitem"><p>Disable automatic artifact archiving.</p></li><li class="listitem"><p>Disable automatic site documentation artifact
+                      also <a class="xref" href="project.html#prj.maven.enforcer" title="16.1.5. Plugin Versions">Section 16.1.5, “Plugin Versions”</a>).</p></li></ul></div></li><li class="listitem"><p>Disable automatic artifact archiving.</p></li><li class="listitem"><p>Disable automatic site documentation artifact
                   archiving.</p></li><li class="listitem"><p>Disable automatic fingerprinting of consumed and
-                  produced artifacts.</p></li></ul></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>See also <a class="xref" href="repository.manager.html#repo.nexus.maven.distribution.management" title="13.1.6.2. Artifact deployment">Section 13.1.6.2, “Artifact deployment”</a> and <a class="xref" href="build.tool.html#build.maven.password.encryption" title="4.2.6. Password Encryption">Section 4.2.6, “Password Encryption”</a> to make sure the
+                  produced artifacts.</p></li></ul></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>See also <a class="xref" href="repository.manager.html#repo.nexus.maven.distribution.management" title="13.1.6.2. Artifact deployment">Section 13.1.6.2, “Artifact deployment”</a> and <a class="xref" href="build.tool.html#build.maven.password.encryption" title="4.2.5. Password Encryption">Section 4.2.5, “Password Encryption”</a> to make sure the
                 <span class="quote">“<span class="quote">Uploading:
                 http://freedumbytes.dev.net/nexus/content/repositories/snapshots/net/dev/freedumbytes/maven/setup/…-SNAPSHOT/setup-x.y-20131013.201411-1.pom</span>”</span>
                 succeeds.</p></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="tip"><h2>Tip</h2><p>When the project invokes plugins with
@@ -2259,11 +2381,20 @@ git log --oneline --decorate
         with command:</p><pre xmlns="" class="language-provided"><code class="language-bash">git remote show origin</code></pre><p>To change the <code class="code">3.0-SNAPSHOT</code> version to a release
         <code class="code">3.0</code> version, which also will be tagged in the SCM as
         <code class="code">maven-setup-3.0</code>, and to create the next
-        <code class="code">3.1-SNAPSHOT</code> version use the command:</p><pre xmlns="" class="language-provided"><code class="language-bash"><code xmlns="http://www.w3.org/1999/xhtml" class="command">mvn -Dusername=<em class="replaceable"><code>jjasper</code></em> -Dpassword=<em class="replaceable"><code>password</code></em> </code><a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://maven.apache.org/plugins/maven-release-plugin/examples/prepare-release.html"><code class="command">release:prepare</code></a></code></pre><p>(or
+        <code class="code">3.1-SNAPSHOT</code> version use the command:</p><pre xmlns="" class="language-provided"><code class="language-bash"><code xmlns="http://www.w3.org/1999/xhtml" class="command">mvn [-Dusername=<em class="replaceable"><code>jjasper</code></em>] [-Dpassword=<em class="replaceable"><code>password</code></em>] </code><a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://maven.apache.org/plugins/maven-release-plugin/examples/prepare-release.html"><code class="command">release:prepare</code></a></code></pre><p>(or
         try a <a class="link" href="https://maven.apache.org/plugins/maven-release-plugin/usage.html">Dry
         Run</a> with the option <code class="command">-DdryRun=true</code> followed
         by <code class="command">mvn release:clean</code> or <code class="command">mvn
-        release:rollback</code> to remove all of the created files).</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>When using release plugin version 2.5.1 or earlier with Maven
+        release:rollback</code> to remove all of the created files).</p><p>When the POM is configured to not <code class="sgmltag-element">pushChanges</code> the
+        options <code class="option">username</code> and <code class="option">password</code> are
+        superfluous.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="important"><h2>Important</h2><p>In that case we need to <code class="command">git push --follow-tags origin
+          &lt;release-branch-name&gt;</code> to push the prepared commits
+          for the release, inclusive its tag, and the one for the next
+          development iteration.</p><p>With <code class="command">git config --global push.followTags
+          true</code> the option <code class="option">follow-tags</code> is no longer
+          necessary.</p><p>TODO 2 builds GitLab and no tag build on merge vs 1 Jenkins
+          and opensource helper script.</p><p>TODO now SNAPSHOTS in ossrh (see link).</p><p>TODO when <code class="option">-DpreparationGoals="clean
+          install"</code>.</p></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>When using release plugin version 2.5.1 or earlier with Maven
           3.3.3 and later the following error occurs <span class="quote">“<span class="quote">Failed to invoke
           Maven build. Error configuring command-line. Reason: Maven
           executable not found at: …\apache-maven-3.3.3\bin\mvn.bat</span>”</span>
@@ -2278,10 +2409,13 @@ git log --oneline --decorate
         from which the artifacts and sites will be deployed. Afterwards delete
         this directory otherwise it might show up in the Eclipse
         <span class="guilabel"><strong>Team Synchronizing</strong></span> perspective.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="tip"><h2>Tip</h2><p>Because Jenkins will overwrite the site with the next snapshot
-          anyway, save time by skipping site-deploy with:</p><pre class="language-provided"><code class="language-bash"><code class="command">mvn -Dusername=<em class="replaceable"><code>jjasper</code></em> -Dpassword=<em class="replaceable"><code>password</code></em> release:perform -Dgoals=deploy</code></code></pre></div><p>Again verify if all remote changes are <span class="quote">“<span class="quote">up to date</span>”</span>
+          anyway, save time by skipping site-deploy with:</p><pre class="language-provided"><code class="language-bash"><code class="command">mvn -Dusername=<em class="replaceable"><code>jjasper</code></em> -Dpassword=<em class="replaceable"><code>password</code></em> release:perform -Dgoals=deploy</code></code></pre></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>Instead of using <code class="command">release:perform</code> use <a class="link" href="continuous.integration.pipeline.html#continuous.integration.pipeline.jenkins.release.tags" title="C.3.22. Release Tags">Jenkins
+          CI to release the tag</a> or use script <a class="link" href="continuous.integration.pipeline.html#continuous.integration.pipeline.jenkins.release.tags.sh" title="C.3.22.1. Alternative release sh script">git-mvn-deploy.sh</a>.</p></div><p>Again verify if all remote changes are <span class="quote">“<span class="quote">up to date</span>”</span>
         with command:</p><pre xmlns="" class="language-provided"><code class="language-bash">git status
 git push
-git remote show origin</code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>Now might be a good time to create a <a class="link" href="prj.maven.site.skin.custom.html" title="Appendix E. Custom skins">Custom skin</a>.</p></div></section><section class="section" id="prj.maven.versions"><div class="titlepage"><div><div><h3 class="title"><a id="prj.maven.versions" class="anchor" href="#prj.maven.versions"><span class="octicon octicon-link"/></a>16.1.10. Versions</h3></div></div></div><p>The Release Plugin is handy for updating SNAPSHOT versions of
+git remote show origin
+git log -1
+</code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>Now might be a good time to create a <a class="link" href="prj.maven.site.skin.custom.html" title="Appendix E. Custom skins">Custom skin</a>.</p></div></section><section class="section" id="prj.maven.versions"><div class="titlepage"><div><div><h3 class="title"><a id="prj.maven.versions" class="anchor" href="#prj.maven.versions"><span class="octicon octicon-link"/></a>16.1.10. Versions</h3></div></div></div><p>The Release Plugin is handy for updating SNAPSHOT versions of
         the modules in a project. But when used on SNAPSHOT dependencies the
         next project SNAPSHOT version will be pointing to the next SNAPSHOT of
         the dependencies also. Which is usually not what is required. In comes
@@ -2349,9 +2483,7 @@ git status
           come, with the following JIRA project:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><span class="guilabel"><strong>Bill of Materials</strong></span> [BOMGRP]: of the
               most popular Maven dependencies (see also repository <a class="link" href="https://java.net/projects/jmodalwindow/sources/svn/show/branches/bill-of-materials">branches/bill-of-materials</a>).</p><p>With the following components:</p><div class="orderedlist"><ol class="orderedlist compact" type="1"><li class="listitem"><p><span class="guilabel"><strong>bom</strong></span>: Setup the required versions
                   of the most popular Maven dependencies.</p></li><li class="listitem"><p><span class="guilabel"><strong>grouping</strong></span>: Set of dependencies
-                  which are logically grouped together.</p></li></ol></div><p>and versions:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><span class="guilabel"><strong>3.0-epsilon</strong></span> - Dependency
-                  Management.</p></li><li class="listitem"><p><span class="guilabel"><strong>3.1-epsilon</strong></span> - Common, Spring,
-                  Hibernate, Test, Log and MySQL groupings.</p></li></ul></div></li></ul></div><p>Start a new bare Git repository <code class="code">bill-of-materials</code>
+                  which are logically grouped together.</p></li></ol></div></li></ul></div><p>Start a new bare Git repository <code class="code">bill-of-materials</code>
           by calling <code class="command">/p/dev/apps/windows/batch/<a class="link" href="version.control.system.html#vcs.git.bare.project" title="11.1.5. Defining a project">git-create-repo.sh</a>
           /p/dev/data/repo/git bill-of-materials.git "Maven Bill of Materials"
           -jenkinsHook</code> in <span class="inlinemediaobject"><img src="images/icons/git.png"/></span> <a class="link" href="version.control.system.html#vcs.git.bash.home" title="11.1.2.1. Git bash home directory">Git
@@ -2367,13 +2499,14 @@ git status
 +  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
 +
 +  &lt;parent&gt;
-+    &lt;groupId&gt;nl.demon.shadowland.freedumbytes.maven&lt;/groupId&gt;
++    &lt;groupId&gt;nl.demon.shadowland.freedumbytes.maven.config&lt;/groupId&gt;
 +    &lt;artifactId&gt;setup&lt;/artifactId&gt;
-+    &lt;version&gt;4.1-beta&lt;/version&gt;
++    &lt;version&gt;4.3&lt;/version&gt;
 +  &lt;/parent&gt;
 +
++  &lt;groupId&gt;nl.demon.shadowland.freedumbytes.maven.dependencies&lt;/groupId&gt;
 +  &lt;artifactId&gt;bom&lt;/artifactId&gt;
-+  &lt;version&gt;3.1-epsilon&lt;/version&gt;
++  &lt;version&gt;3.1&lt;/version&gt;
 +  &lt;packaging&gt;pom&lt;/packaging&gt;
 +&lt;/project&gt;
 </code></pre><pre xmlns="" class="language-provided"><code class="language-xml">+  &lt;name&gt;Free Dumb Bytes Maven Bill of Materials&lt;/name&gt;
@@ -2412,10 +2545,10 @@ git status
 +  &lt;properties&gt;
 +    &lt;lombokVersion&gt;1.16.8&lt;/lombokVersion&gt;
 +    &lt;commonsLangVersion&gt;2.6&lt;/commonsLangVersion&gt;
-+    &lt;commonsLang3Version&gt;3.4&lt;/commonsLang3Version&gt;
-+    &lt;commonsCodecVersion&gt;1.10&lt;/commonsCodecVersion&gt;
-+    &lt;commonsIOVersion&gt;2.4&lt;/commonsIOVersion&gt;
-+    &lt;guavaVersion&gt;18.0&lt;/guavaVersion&gt;
++    &lt;commonsLang3Version&gt;3.7&lt;/commonsLang3Version&gt;
++    &lt;commonsCodecVersion&gt;1.11&lt;/commonsCodecVersion&gt;
++    &lt;commonsIOVersion&gt;2.6&lt;/commonsIOVersion&gt;
++    &lt;guavaVersion&gt;23.6-jre&lt;/guavaVersion&gt;
 +  &lt;/properties&gt;
 +
 +  &lt;dependencyManagement&gt;
@@ -2462,9 +2595,9 @@ git status
               projects that don't yet want to use the repackaged
               <span class="guilabel"><strong>commons-lang3</strong></span> from the upcoming
               <span class="guilabel"><strong>Grouping Common Dependencies</strong></span>.</p></div></section><section class="section" id="prj.maven.grouping.dependencies.spring"><div class="titlepage"><div><div><h5 class="title"><a id="prj.maven.grouping.dependencies.spring" class="anchor" href="#prj.maven.grouping.dependencies.spring"><span class="octicon octicon-link"/></a>16.1.12.1.2. Spring dependencies</h5></div></div></div><p>Define the Spring dependencies versions in
-            <code class="filename">C:\dev\projects\bill-of-materials\pom.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">     &lt;guavaVersion&gt;18.0&lt;/guavaVersion&gt;
+            <code class="filename">C:\dev\projects\bill-of-materials\pom.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">     &lt;guavaVersion&gt;23.6-jre&lt;/guavaVersion&gt;
 +
-+    &lt;springVersion&gt;3.2.15.RELEASE&lt;/springVersion&gt;
++    &lt;springVersion&gt;5.0.2.RELEASE&lt;/springVersion&gt;
    &lt;/properties&gt;
 </code></pre><pre xmlns="" class="language-provided"><code class="language-xml">         &lt;version&gt;${guavaVersion}&lt;/version&gt;
        &lt;/dependency&gt;
@@ -2516,10 +2649,10 @@ git status
    &lt;/dependencyManagement&gt;
  &lt;/project&gt;
 </code></pre></section><section class="section" id="prj.maven.grouping.dependencies.hibernate"><div class="titlepage"><div><div><h5 class="title"><a id="prj.maven.grouping.dependencies.hibernate" class="anchor" href="#prj.maven.grouping.dependencies.hibernate"><span class="octicon octicon-link"/></a>16.1.12.1.3. Hibernate dependencies</h5></div></div></div><p>Define the Hibernate dependencies versions in
-            <code class="filename">C:\dev\projects\bill-of-materials\pom.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">     &lt;springVersion&gt;3.2.15.RELEASE&lt;/springVersion&gt;
+            <code class="filename">C:\dev\projects\bill-of-materials\pom.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">     &lt;springVersion&gt;5.0.2.RELEASE&lt;/springVersion&gt;
 +
-+    &lt;hibernateVersion&gt;3.6.10.Final&lt;/hibernateVersion&gt;
-+    &lt;ehcacheVersion&gt;2.6.11&lt;/ehcacheVersion&gt;
++    &lt;hibernateVersion&gt;5.2.12.Final&lt;/hibernateVersion&gt;
++    &lt;ehcacheVersion&gt;3.4.0&lt;/ehcacheVersion&gt;
 +    &lt;javassistVersion&gt;3.20.0-GA&lt;/javassistVersion&gt;
    &lt;/properties&gt;
 </code></pre><pre xmlns="" class="language-provided"><code class="language-xml">         &lt;version&gt;${springVersion}&lt;/version&gt;
@@ -2564,7 +2697,7 @@ git status
 +      &lt;/dependency&gt;
 +
 +      &lt;dependency&gt;
-+        &lt;groupId&gt;net.sf.ehcache&lt;/groupId&gt;
++        &lt;groupId&gt;org.ehcache&lt;/groupId&gt;
 +        &lt;artifactId&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="http://www.ehcache.org/">ehcache-core</a>&lt;/artifactId&gt;
 +        &lt;version&gt;${ehcacheVersion}&lt;/version&gt;
 +        &lt;exclusions&gt;
@@ -2591,16 +2724,17 @@ git status
  &lt;/project&gt;
 </code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>For JPA, use <code class="code">hibernate-entitymanager</code> instead
               of <code class="code">hibernate-core</code>.</p></div></section><section class="section" id="prj.maven.grouping.dependencies.test"><div class="titlepage"><div><div><h5 class="title"><a id="prj.maven.grouping.dependencies.test" class="anchor" href="#prj.maven.grouping.dependencies.test"><span class="octicon octicon-link"/></a>16.1.12.1.4. Test dependencies</h5></div></div></div><p>Define the Test dependencies versions in
-            <code class="filename">C:\dev\projects\bill-of-materials\pom.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">     &lt;hibernateVersion&gt;3.6.10.Final&lt;/hibernateVersion&gt;
+            <code class="filename">C:\dev\projects\bill-of-materials\pom.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">     &lt;hibernateVersion&gt;5.2.12.Final&lt;/hibernateVersion&gt;
      …
 
 +
 +    &lt;junitVersion&gt;4.12&lt;/junitVersion&gt;
-+    &lt;assertjVersion&gt;3.2.0&lt;/assertjVersion&gt;
-+    &lt;mockitoVersion&gt;1.10.19&lt;/mockitoVersion&gt;
++    &lt;assertjVersion&gt;3.9.0&lt;/assertjVersion&gt;
++    &lt;mockitoVersion&gt;2.13.0&lt;/mockitoVersion&gt;
 +    &lt;powerMockVersion&gt;1.6.4&lt;/powerMockVersion&gt;
 +    &lt;cglibVersion&gt;3.1&lt;/cglibVersion&gt;
 +    &lt;commonsDbcpVersion&gt;1.4&lt;/commonsDbcpVersion&gt;
++    &lt;commonsDbcp2Version&gt;2.2.0&lt;/commonsDbcp2Version&gt;
 +    &lt;h2Version&gt;1.4.190&lt;/h2Version&gt;
 +    &lt;hsqldbVersion&gt;2.3.3&lt;/hsqldbVersion&gt;
    &lt;/properties&gt;
@@ -2656,6 +2790,12 @@ git status
 +        &lt;groupId&gt;commons-dbcp&lt;/groupId&gt;
 +        &lt;artifactId&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://commons.apache.org/proper/commons-dbcp/">commons-dbcp</a>&lt;/artifactId&gt;
 +        &lt;version&gt;${commonsDbcpVersion}&lt;/version&gt;
++      &lt;/dependency&gt;
++
++      &lt;dependency&gt;
++        &lt;groupId&gt;org.apache.commons&lt;/groupId&gt;
++        &lt;artifactId&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://commons.apache.org/proper/commons-dbcp/">commons-dbcp2</a>&lt;/artifactId&gt;
++        &lt;version&gt;${commonsDbcp2Version}&lt;/version&gt;
 +      &lt;/dependency&gt;
 +
 +      &lt;dependency&gt;
@@ -2722,8 +2862,8 @@ git status
      &lt;commonsLoggingVersion&gt;1.2&lt;/commonsLoggingVersion&gt;
      &lt;slf4jVersion&gt;1.7.13&lt;/slf4jVersion&gt;
 +
-+    &lt;mysqlConnectorJVersion&gt;5.1.37&lt;/mysqlConnectorJVersion&gt;
-+    &lt;hikariCPVersion&gt;2.4.2&lt;/hikariCPVersion&gt;
++    &lt;mysqlConnectorJVersion&gt;5.1.45&lt;/mysqlConnectorJVersion&gt;
++    &lt;hikariCPVersion&gt;2.7.4&lt;/hikariCPVersion&gt;
    &lt;/properties&gt;
 </code></pre><pre xmlns="" class="language-provided"><code class="language-xml">         &lt;version&gt;${slf4jVersion}&lt;/version&gt;
        &lt;/dependency&gt;
@@ -2755,10 +2895,10 @@ git status
             <code class="filename">BootStrapResponsiveStyleTest</code> to log 1920 and
             bigger responsive css settings.</p><p>Change the project parent to import the Bill of Materials
             dependency version settings in
-            <code class="filename">C:\dev\projects\maven-skins\pom.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;/modules&gt;
+            <code class="filename">C:\dev\projects\skins\pom.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;/modules&gt;
  
    &lt;properties&gt;
-+    &lt;bomVersion&gt;3.1-epsilon&lt;/bomVersion&gt;
++    &lt;bomVersion&gt;3.1&lt;/bomVersion&gt;
 +
      &lt;mavenDefaultSkinVersion&gt;1.1&lt;/mavenDefaultSkinVersion&gt;
      …
@@ -2767,7 +2907,7 @@ git status
 +  &lt;dependencyManagement&gt;
 +    &lt;dependencies&gt;
 +      &lt;dependency&gt;
-+        &lt;groupId&gt;nl.demon.shadowland.freedumbytes.maven&lt;/groupId&gt;
++        &lt;groupId&gt;nl.demon.shadowland.freedumbytes.maven.dependencies&lt;/groupId&gt;
 +        &lt;artifactId&gt;bom&lt;/artifactId&gt;
 +        &lt;version&gt;${bomVersion}&lt;/version&gt;
 +        &lt;type&gt;pom&lt;/type&gt;
@@ -2777,7 +2917,7 @@ git status
 +  &lt;/dependencyManagement&gt;
  &lt;/project&gt;
 </code></pre><p>Remove the now obsolete version settings in
-            <code class="filename">C:\dev\projects\maven-skins\maven-reflow-skin\pom.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">     &lt;dependency&gt;
+            <code class="filename">C:\dev\projects\skins\maven-reflow-skin\pom.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">     &lt;dependency&gt;
        &lt;groupId&gt;log4j&lt;/groupId&gt;
        &lt;artifactId&gt;log4j&lt;/artifactId&gt;
 -      &lt;version&gt;1.2.17&lt;/version&gt;
@@ -2829,12 +2969,11 @@ git status
 +  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
 +
 +  &lt;parent&gt;
-+    &lt;groupId&gt;nl.demon.shadowland.freedumbytes.maven&lt;/groupId&gt;
++    &lt;groupId&gt;nl.demon.shadowland.freedumbytes.maven.dependencies&lt;/groupId&gt;
 +    &lt;artifactId&gt;bom&lt;/artifactId&gt;
-+    &lt;version&gt;3.1-epsilon&lt;/version&gt;
++    &lt;version&gt;3.1&lt;/version&gt;
 +  &lt;/parent&gt;
 +
-+  &lt;groupId&gt;nl.demon.shadowland.freedumbytes.maven.dependencies&lt;/groupId&gt;
 +  &lt;artifactId&gt;grouping&lt;/artifactId&gt;
 +  &lt;packaging&gt;pom&lt;/packaging&gt;
 +
@@ -2865,7 +3004,7 @@ git status
 +  &lt;parent&gt;
 +    &lt;groupId&gt;nl.demon.shadowland.freedumbytes.maven.dependencies&lt;/groupId&gt;
 +    &lt;artifactId&gt;grouping&lt;/artifactId&gt;
-+    &lt;version&gt;3.1-epsilon&lt;/version&gt;
++    &lt;version&gt;3.1&lt;/version&gt;
 +  &lt;/parent&gt;
 +
 +  &lt;artifactId&gt;common&lt;/artifactId&gt;
@@ -2920,7 +3059,7 @@ git status
 +  &lt;parent&gt;
 +    &lt;groupId&gt;nl.demon.shadowland.freedumbytes.maven.dependencies&lt;/groupId&gt;
 +    &lt;artifactId&gt;grouping&lt;/artifactId&gt;
-+    &lt;version&gt;3.1-epsilon&lt;/version&gt;
++    &lt;version&gt;3.1&lt;/version&gt;
 +  &lt;/parent&gt;
 +
 +  &lt;artifactId&gt;spring&lt;/artifactId&gt;
@@ -2986,7 +3125,7 @@ git status
 +  &lt;parent&gt;
 +    &lt;groupId&gt;nl.demon.shadowland.freedumbytes.maven.dependencies&lt;/groupId&gt;
 +    &lt;artifactId&gt;grouping&lt;/artifactId&gt;
-+    &lt;version&gt;3.1-epsilon&lt;/version&gt;
++    &lt;version&gt;3.1&lt;/version&gt;
 +  &lt;/parent&gt;
 +
 +  &lt;artifactId&gt;hibernate&lt;/artifactId&gt;
@@ -3008,7 +3147,7 @@ git status
 +    &lt;/dependency&gt;
 +
 +    &lt;dependency&gt;
-+      &lt;groupId&gt;net.sf.ehcache&lt;/groupId&gt;
++      &lt;groupId&gt;org.ehcache&lt;/groupId&gt;
 +      &lt;artifactId&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="http://ehcache.org/">ehcache-core</a>&lt;/artifactId&gt;
 +    &lt;/dependency&gt;
 +
@@ -3020,7 +3159,7 @@ git status
 +    &lt;dependency&gt;
 +      &lt;groupId&gt;nl.demon.shadowland.freedumbytes.maven.dependencies&lt;/groupId&gt;
 +      &lt;artifactId&gt;spring&lt;/artifactId&gt;
-+      &lt;version&gt;3.1-epsilon&lt;/version&gt;
++      &lt;version&gt;${project.version}&lt;/version&gt;
 +      &lt;type&gt;pom&lt;/type&gt;
 +    &lt;/dependency&gt;
 +
@@ -3049,7 +3188,7 @@ git status
 +  &lt;parent&gt;
 +    &lt;groupId&gt;nl.demon.shadowland.freedumbytes.maven.dependencies&lt;/groupId&gt;
 +    &lt;artifactId&gt;grouping&lt;/artifactId&gt;
-+    &lt;version&gt;3.1-epsilon&lt;/version&gt;
++    &lt;version&gt;3.1&lt;/version&gt;
 +  &lt;/parent&gt;
 +
 +  &lt;artifactId&gt;test&lt;/artifactId&gt;
@@ -3088,7 +3227,7 @@ git status
 +    &lt;dependency&gt;
 +      &lt;groupId&gt;nl.demon.shadowland.freedumbytes.maven.dependencies&lt;/groupId&gt;
 +      &lt;artifactId&gt;spring&lt;/artifactId&gt;
-+      &lt;version&gt;3.1-epsilon&lt;/version&gt;
++      &lt;version&gt;${project.version}&lt;/version&gt;
 +      &lt;type&gt;pom&lt;/type&gt;
 +    &lt;/dependency&gt;
 +
@@ -3105,6 +3244,11 @@ git status
 +    &lt;dependency&gt;
 +      &lt;groupId&gt;commons-dbcp&lt;/groupId&gt;
 +      &lt;artifactId&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="http://commons.apache.org/proper/commons-dbcp/index.html">commons-dbcp</a>&lt;/artifactId&gt;
++    &lt;/dependency&gt;
++
++    &lt;dependency&gt;
++      &lt;groupId&gt;org.apache.commons&lt;/groupId&gt;
++      &lt;artifactId&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="http://commons.apache.org/proper/commons-dbcp/index.html">commons-dbcp2</a>&lt;/artifactId&gt;
 +    &lt;/dependency&gt;
 +
 +    &lt;dependency&gt;
@@ -3156,7 +3300,7 @@ git status
 +  &lt;parent&gt;
 +    &lt;groupId&gt;nl.demon.shadowland.freedumbytes.maven.dependencies&lt;/groupId&gt;
 +    &lt;artifactId&gt;grouping&lt;/artifactId&gt;
-+    &lt;version&gt;3.1-epsilon&lt;/version&gt;
++    &lt;version&gt;3.1&lt;/version&gt;
 +  &lt;/parent&gt;
 +
 +  &lt;artifactId&gt;log&lt;/artifactId&gt;
@@ -3254,7 +3398,7 @@ git status
 +  &lt;parent&gt;
 +    &lt;groupId&gt;nl.demon.shadowland.freedumbytes.maven.dependencies&lt;/groupId&gt;
 +    &lt;artifactId&gt;grouping&lt;/artifactId&gt;
-+    &lt;version&gt;3.1-epsilon&lt;/version&gt;
++    &lt;version&gt;3.1&lt;/version&gt;
 +  &lt;/parent&gt;
 +
 +  &lt;artifactId&gt;mysql&lt;/artifactId&gt;
@@ -3288,8 +3432,8 @@ git status
             Materials (see also <a class="xref" href="project.html#prj.maven.grouping.dependencies.bom.usage" title="16.1.12.1.7. Bill of Materials usage">Section 16.1.12.1.7, “Bill of Materials usage”</a>).</p><p>Change the project to use dependencies grouping and to allow
             to separately upgrade the Bill of Materials introduce a
             <code class="code">groupVersion</code> property in
-            <code class="filename">C:\dev\projects\maven-skins\pom.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;properties&gt;
-     &lt;bomVersion&gt;3.1-epsilon&lt;/bomVersion&gt;
+            <code class="filename">C:\dev\projects\skins\pom.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;properties&gt;
+     &lt;bomVersion&gt;3.1&lt;/bomVersion&gt;
 +    &lt;groupVersion&gt;${bomVersion}&lt;/groupVersion&gt;
  
      &lt;mavenDefaultSkinVersion&gt;1.1&lt;/mavenDefaultSkinVersion&gt;
@@ -3297,7 +3441,7 @@ git status
    &lt;/properties&gt;
 </code></pre><p>Replace the specific dependencies with a dependencies
             grouping in
-            <code class="filename">C:\dev\projects\maven-skins\maven-reflow-skin\pom.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;dependencies&gt;
+            <code class="filename">C:\dev\projects\skins\maven-reflow-skin\pom.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;dependencies&gt;
      &lt;dependency&gt;
 -      &lt;groupId&gt;log4j&lt;/groupId&gt;
 -      &lt;artifactId&gt;log4j&lt;/artifactId&gt;
@@ -3667,7 +3811,7 @@ git status
         <code class="code">latestLifecycelMappingVersion</code> to current Maven <code class="filename">config</code> folder with <code class="command">mvn
         process-resources -PdownloadLifecycleMapping</code>. Configure
         Eclipse <span class="guimenu"><strong><span class="accel">W</span>indow</strong></span> → <span class="guimenu"><strong><span class="accel">P</span>references</strong></span> → <span class="guilabel"><strong>Maven</strong></span> → <span class="guilabel"><strong>Lifecycle Mappings</strong></span> and point <span class="guilabel"><strong>file location</strong></span> to
-        <code class="filename">P:\dev\apps\build\apache-maven-3.3.9\conf\lifecycle-mapping-metadata.xml</code>:</p><div class="figure" id="prj.figure.eclipse.m2e.lifecycle.mapping"><a id="prj.figure.eclipse.m2e.lifecycle.mapping"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/ide/eclipse/eclipse-m2e-lifecycle-mapping.png" alt="Eclipse Maven Lifecycle Mappings"/></div></div></div><div class="figure-title">Figure 16.12. Eclipse Maven Lifecycle Mappings</div></div><br class="figure-break"/><p>Don't forget to <span class="guibutton"><strong>Reload</strong></span> the configuration
+        <code class="filename">P:\dev\apps\build\apache-maven-3.5.2\conf\lifecycle-mapping-metadata.xml</code>:</p><div class="figure" id="prj.figure.eclipse.m2e.lifecycle.mapping"><a id="prj.figure.eclipse.m2e.lifecycle.mapping"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/ide/eclipse/eclipse-m2e-lifecycle-mapping.png" alt="Eclipse Maven Lifecycle Mappings"/></div></div></div><div class="figure-title">Figure 16.12. Eclipse Maven Lifecycle Mappings</div></div><br class="figure-break"/><p>Don't forget to <span class="guibutton"><strong>Reload</strong></span> the configuration
         every time this file is edited or the latest release is downloaded.
         And select <span class="guimenuitem"><strong><span class="accel">M</span>aven</strong></span> → <span class="guimenuitem"><strong>Update Project <span class="accel">C</span>onfiguration…
             Alt+F5</strong></span> for projects that were having errors with any newly

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?><!DOCTYPE html>
 <!DOCTYPE html
   PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Chapter 11. Version Control System</title><link rel="stylesheet" type="text/css" href="docbook.css"/><link rel="stylesheet" type="text/css" href="css/freedumbytes.css"/><meta name="generator" content="DocBook XSL Stylesheets V1.78.1"/><link rel="prev" href="database.html" title="Chapter 10. Database"/><link rel="next" href="issue.tracker.html" title="Chapter 12. Issue Tracker"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><link rel="shortcut icon" href="./images/community/docbook/glider.ico"/></head><body><header><p id="title"/><ul class="navheader"><li class="previous"><a accesskey="p" href="database.html"><strong>Previous</strong></a></li><li class="next"><a accesskey="n" href="issue.tracker.html"><strong>Next</strong></a></li></ul></header><section class="chapter" id="version.control.system"><div class="titlepage"><div><div><h1 class="title"><a id="version.control.system" class="anchor" href="#version.control.system"><span class="octicon octicon-link"/></a>Chapter 11. Version Control System</h1></div></div></div><div class="toc"><div class="toc-title">Table of Contents</div><ul class="toc"><li><span class="section"><a href="version.control.system.html#vcs.git">11.1. Git</a></span><ul><li><span class="section"><a href="version.control.system.html#vcs.git.resources">11.1.1. Resources</a></span></li><li><span class="section"><a href="version.control.system.html#vcs.git.install.guide">11.1.2. Git installation guide</a></span></li><li><span class="section"><a href="version.control.system.html#vcs.git.test.drive">11.1.3. Test drive</a></span></li><li><span class="section"><a href="version.control.system.html#vcs.git.apache.config">11.1.4. Apache configuration</a></span></li><li><span class="section"><a href="version.control.system.html#vcs.git.bare.project">11.1.5. Defining a project</a></span></li><li><span class="section"><a href="version.control.system.html#vcs.git.clone.project">11.1.6. Working on a project</a></span></li></ul></li><li><span class="section"><a href="version.control.system.html#vcs.svn.client">11.2. Subversion (SVN) client only</a></span><ul><li><span class="section"><a href="version.control.system.html#vcs.svn.client.resources">11.2.1. Resources</a></span></li><li><span class="section"><a href="version.control.system.html#vcs.svn.client.install.guide">11.2.2. Subversion installation guide</a></span></li><li><span class="section"><a href="version.control.system.html#vcs.svn.client.ignore">11.2.3. Global ignores</a></span></li><li><span class="section"><a href="version.control.system.html#vcs.svn.client.delete.directories">11.2.4. Delete directories</a></span></li><li><span class="section"><a href="version.control.system.html#vcs.svn.client.credentials">11.2.5. Credentials</a></span></li></ul></li><li><span class="section"><a href="version.control.system.html#vcs.fisheye">11.3. FishEye</a></span><ul><li><span class="section"><a href="version.control.system.html#vcs.fisheye.resources">11.3.1. Resources</a></span></li><li><span class="section"><a href="version.control.system.html#vcs.fisheye.install.guide">11.3.2. FishEye installation guide</a></span></li><li><span class="section"><a href="version.control.system.html#vcs.fisheye.config">11.3.3. FishEye configuration</a></span></li><li><span class="section"><a href="version.control.system.html#vcs.fisheye.apache.config">11.3.4. Apache configuration</a></span></li><li><span class="section"><a href="version.control.system.html#vcs.fisheye.windows.service">11.3.5. Windows service</a></span></li><li><span class="section"><a href="version.control.system.html#vcs.fisheye.mysql">11.3.6. Database migration</a></span></li><li><span class="section"><a href="version.control.system.html#vcs.fisheye.config.repository.settings">11.3.7. Repository Settings</a></span></li><li><span class="section"><a href="version.control.system.html#vcs.fisheye.config.user.settings">11.3.8. User profile</a></span></li></ul></li></ul></div><section class="section" id="vcs.git"><div class="titlepage"><div><div><h2 class="title"><a id="vcs.git" class="anchor" href="#vcs.git"><span class="octicon octicon-link"/></a>11.1. Git</h2></div></div></div><p><span class="inlinemediaobject"><img src="images/icons/git.png"/></span> <a class="link" href="https://git-scm.com/">Git</a> is a free &amp; open
+<html xmlns="http://www.w3.org/1999/xhtml"><head><title>Chapter 11. Version Control System</title><link rel="stylesheet" type="text/css" href="docbook.css"/><link rel="stylesheet" type="text/css" href="css/freedumbytes.css"/><meta name="generator" content="DocBook XSL Stylesheets V1.78.1"/><link rel="prev" href="database.html" title="Chapter 10. Database"/><link rel="next" href="issue.tracker.html" title="Chapter 12. Issue Tracker"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><link rel="shortcut icon" href="./images/community/docbook/glider.ico"/></head><body><header><p id="title"/><ul class="navheader"><li class="previous"><a accesskey="p" href="database.html"><strong>Previous</strong></a></li><li class="next"><a accesskey="n" href="issue.tracker.html"><strong>Next</strong></a></li></ul></header><section class="chapter" id="version.control.system"><div class="titlepage"><div><div><h1 class="title"><a id="version.control.system" class="anchor" href="#version.control.system"><span class="octicon octicon-link"/></a>Chapter 11. Version Control System</h1></div></div></div><div class="toc"><div class="toc-title">Table of Contents</div><ul class="toc"><li><span class="section"><a href="version.control.system.html#vcs.git">11.1. Git</a></span><ul><li><span class="section"><a href="version.control.system.html#vcs.git.resources">11.1.1. Resources</a></span></li><li><span class="section"><a href="version.control.system.html#vcs.git.install.guide">11.1.2. Git installation guide</a></span></li><li><span class="section"><a href="version.control.system.html#vcs.git.test.drive">11.1.3. Test drive</a></span></li><li><span class="section"><a href="version.control.system.html#vcs.git.apache.config">11.1.4. Apache configuration</a></span></li><li><span class="section"><a href="version.control.system.html#vcs.git.bare.project">11.1.5. Defining a project</a></span></li><li><span class="section"><a href="version.control.system.html#vcs.git.clone.project">11.1.6. Working on a project</a></span></li><li><span class="section"><a href="version.control.system.html#vcs.git.commands">11.1.7. Git commands</a></span></li></ul></li><li><span class="section"><a href="version.control.system.html#vcs.svn.client">11.2. Subversion (SVN) client only</a></span><ul><li><span class="section"><a href="version.control.system.html#vcs.svn.client.resources">11.2.1. Resources</a></span></li><li><span class="section"><a href="version.control.system.html#vcs.svn.client.install.guide">11.2.2. Subversion installation guide</a></span></li><li><span class="section"><a href="version.control.system.html#vcs.svn.client.ignore">11.2.3. Global ignores</a></span></li><li><span class="section"><a href="version.control.system.html#vcs.svn.client.delete.directories">11.2.4. Delete directories</a></span></li><li><span class="section"><a href="version.control.system.html#vcs.svn.client.credentials">11.2.5. Credentials</a></span></li></ul></li><li><span class="section"><a href="version.control.system.html#vcs.fisheye">11.3. FishEye</a></span><ul><li><span class="section"><a href="version.control.system.html#vcs.fisheye.resources">11.3.1. Resources</a></span></li><li><span class="section"><a href="version.control.system.html#vcs.fisheye.install.guide">11.3.2. FishEye installation guide</a></span></li><li><span class="section"><a href="version.control.system.html#vcs.fisheye.config">11.3.3. FishEye configuration</a></span></li><li><span class="section"><a href="version.control.system.html#vcs.fisheye.apache.config">11.3.4. Apache configuration</a></span></li><li><span class="section"><a href="version.control.system.html#vcs.fisheye.windows.service">11.3.5. Windows service</a></span></li><li><span class="section"><a href="version.control.system.html#vcs.fisheye.mysql">11.3.6. Database migration</a></span></li><li><span class="section"><a href="version.control.system.html#vcs.fisheye.config.repository.settings">11.3.7. Repository Settings</a></span></li><li><span class="section"><a href="version.control.system.html#vcs.fisheye.config.user.settings">11.3.8. User profile</a></span></li></ul></li></ul></div><section class="section" id="vcs.git"><div class="titlepage"><div><div><h2 class="title"><a id="vcs.git" class="anchor" href="#vcs.git"><span class="octicon octicon-link"/></a>11.1. Git</h2></div></div></div><p><span class="inlinemediaobject"><img src="images/icons/git.png"/></span> <a class="link" href="https://git-scm.com/">Git</a> is a free &amp; open
       source, distributed version control system designed to handle everything
       from small to very large projects with speed and efficiency. Every Git
       clone is a full-fledged repository with complete history and full
@@ -21,7 +21,8 @@
             to Move Tags</a>, <a class="link" href="https://help.github.com/articles/changing-a-commit-message/">Changing
             a commit message</a>, <a class="link" href="http://stackoverflow.com/questions/457379/how-do-i-edit-an-incorrect-commit-message-in-git-ive-pushed">How
             do I edit an incorrect commit message in git (I've
-            pushed)?</a>.</p></li><li class="listitem"><p><a class="link" href="https://github.com/Microsoft/Git-Credential-Manager-for-Windows">Git
+            pushed)?</a>.</p></li><li class="listitem"><p><a class="link" href="http://gitready.com/">Git
+            ready</a>.</p></li><li class="listitem"><p><a class="link" href="https://github.com/Microsoft/Git-Credential-Manager-for-Windows">Git
             Credential Manager</a> for Windows.</p></li></ul></div></section><section class="section" id="vcs.git.install.guide"><div class="titlepage"><div><div><h3 class="title"><a id="vcs.git.install.guide" class="anchor" href="#vcs.git.install.guide"><span class="octicon octicon-link"/></a>11.1.2. Git installation guide</h3></div></div></div><p><a class="link" href="https://git-for-windows.github.io/">Download</a> the
         binary: <code class="filename">Git-2.13.0-64-bit.exe</code> [version <a class="link" href="https://git-scm.com/">2.13.0</a>].</p><p>Run this <code class="filename">.exe</code> file to
         install Git in <code class="filename">P:\dev\apps\vcs\git</code> with the default
@@ -56,6 +57,7 @@ git config --global core.editor \
 git config --global branch.<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="http://mislav.uniqpath.com/2010/07/git-tips/">autosetuprebase</a> always
 
 git config --global push.default simple
+git config --global push.followTags true
 
 git config --list
 </code></pre></section><section class="section" id="vcs.git.difftool"><div class="titlepage"><div><div><h4 class="title"><a id="vcs.git.difftool" class="anchor" href="#vcs.git.difftool"><span class="octicon octicon-link"/></a>11.1.2.3. External diff tool</h4></div></div></div><p>To be able to use <a class="link" href="operating.system.html#os.windows.merge.winmerge" title="1.1.20.2. WinMerge">WinMerge</a> as the <a class="link" href="http://www.kernel.org/pub/software/scm/git/docs/git-difftool.html">diff
@@ -157,6 +159,8 @@ pom.xml.releaseBackup
 pom.xml.versionsBackup
 pom.xml.next
 release.properties
+dependency-reduced-pom.xml
+flattened-pom.xml
 
 #cvs
 CVS/
@@ -527,32 +531,164 @@ git config core.autocrlf false            (see also <a xmlns="http://www.w3.org/
         <em class="replaceable"><code>dpl-manual</code></em></code>.</p><p>Now you have a personal copy of the remote repository in a new
         directory named <code class="filename">C:\dev\projects\<em class="replaceable"><code>dpl-manual</code></em></code>.
         You can edit the files in your working copy and then commit and push
-        those changes back into the remote repository.</p><p>Other useful Git command options are:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><code class="command">git help &lt;command&gt;</code> for more
+        those changes back into the remote repository.</p></section><section class="section" id="vcs.git.commands"><div class="titlepage"><div><div><h3 class="title"><a id="vcs.git.commands" class="anchor" href="#vcs.git.commands"><span class="octicon octicon-link"/></a>11.1.7. Git commands</h3></div></div></div><p>Other useful Git command options are:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p><code class="command">git help &lt;command&gt;</code> for more
               information on a specific command.</p></li><li class="listitem"><p><code class="command">git branch</code> to list, create, or delete
-              branches.</p></li><li class="listitem"><p><code class="command">git status</code> to list files changed in
+              branches:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><code class="command">git branch [--all]</code> to list [all]
+                  branches.</p></li><li class="listitem"><p><code class="command">git branch -[d|D]
+                  &lt;branch-name&gt;</code> to (force) delete a local
+                  branch.</p></li><li class="listitem"><p><code class="command">git push origin
+                  :&lt;branch-name&gt;</code> to remove a remote
+                  branch.</p></li><li class="listitem"><p><code class="command">git branch -f master
+                  &lt;branch-name&gt;</code> to replace local master branch
+                  and <code class="command">git push remote
+                  +&lt;branch-name&gt;:master</code> for the remote
+                  branch.</p></li><li class="listitem"><p><code class="command">git branch -M &lt;branch-name&gt;
+                  master</code> to rename the branch to master.</p></li><li class="listitem"><p><code class="command">git checkout -B &lt;branch-name&gt;
+                  origin/&lt;branch-name&gt;</code> to reset a local branch
+                  (or <code class="command">git reset --hard
+                  origin/&lt;branch-name&gt;</code>; see also <a class="link" href="https://www.freshleafmedia.co.uk/blog/undo-git-reset-hard">Undo-ing
+                  ‘git reset hard’</a> about <a class="link" href="https://git-scm.com/docs/git-fsck">git fsck
+                  [--lost-found]</a>. The dangling objects are written into
+                  <code class="filename">.git/lost-found/commit/</code> or
+                  <code class="filename">.git/lost-found/other/</code>,
+                  depending on type. If the object is a blob, the contents are
+                  written into the file, rather than its object name.
+                  <span class="emphasis"><em>But all uncommitted/unadded modified files will be
+                  gone.</em></span> See also <a class="link" href="https://gist.github.com/jbgo/1944238">How to
+                  recover a git branch you accidentally deleted</a> with
+                  <code class="command">git reflog</code>).</p></li><li class="listitem"><p><code class="command">git fetch -p</code> to prune local
+                  references to remote deleted branches.</p></li></ul></div></li><li class="listitem"><p><code class="command">git tag</code> to list, create, or delete
+              tags:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><code class="command">git tag [-l]</code> to list tags.</p></li><li class="listitem"><p><code class="command">git tag -a &lt;tag-name&gt;</code> and
+                  <code class="command">git push --tags</code> to create an unsigned,
+                  annotated tag object.</p></li><li class="listitem"><p><code class="command">git tag -d &lt;tag-name&gt;</code> to
+                  delete a tag and also on remote <code class="command">push origin
+                  :refs/tags/&lt;tag-name&gt;</code>.</p></li><li class="listitem"><p><code class="command">git fetch --tags</code> to get all the
+                  tags and not just ones referencing commits reachable from
+                  the branch heads.</p></li><li class="listitem"><p><code class="command">git tag -l | xargs git tag -d</code>
+                  followed by the above mentioned command <code class="command">git fetch
+                  -t</code> to prune local git tags that don't exist on
+                  remote and thus keeping others from pushing them
+                  back.</p></li></ul></div></li><li class="listitem"><p><code class="command">git status</code> to list files changed in
               <a class="link" href="https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository">working
               directory</a>.</p></li><li class="listitem"><p><code class="command">git add</code> file contents to the index aka
               <a class="link" href="https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository">staging
-              area</a>.</p></li><li class="listitem"><p><code class="command">git checkout</code> a branch or paths to the
-              working directory.</p></li><li class="listitem"><p><code class="command">git commit</code> record (or
-              <code class="option">--amend</code>) changes to the local repository (for
-              example <code class="command">git commit -am "use -a to skip add of modified
-              file to staging area first."</code>).</p></li><li class="listitem"><p><code class="command">git fetch</code> latest changes from origin to
+              area</a>:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><code class="command">git add .</code> to stage new and
+                  modified, without deleted.</p></li><li class="listitem"><p><code class="command">git add . -u</code> to stage modified and
+                  deleted, without new.</p></li><li class="listitem"><p><code class="command">git add (-A|--all)</code> to stage
+                  all.</p></li></ul></div></li><li class="listitem"><p><code class="command">git checkout</code> a branch or paths to the
+              working directory:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><code class="command">git checkout [-b]
+                  &lt;branch-name&gt;</code> to checkout [and create new]
+                  branch.</p></li><li class="listitem"><p><code class="command">git ls-files -d | xargs git checkout
+                  --</code> to recover all unstaged deletions at once,
+                  automatically, without specifying each single path.</p></li><li class="listitem"><p><code class="command">git status | grep 'deleted:' | awk '{print
+                  $2}' | xargs git checkout --</code> to recover all staged
+                  deletions at once, automatically, without specifying each
+                  single path.</p></li></ul></div></li><li class="listitem"><p><code class="command">git commit</code> to record changes to the
+              local repository:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><code class="command">git commit -[a]m "use -a to skip add of
+                  modified file to staging area first."</code>.</p></li><li class="listitem"><p><code class="command">git commit --amend</code> is a convenient
+                  way to modify the most recent commit. It lets you combine
+                  staged changes with the previous commit instead of creating
+                  an entirely new commit. It can also be used to simply edit
+                  the previous commit message without changing its snapshot.
+                  But, amending does not just alter the most recent commit, it
+                  replaces it entirely, meaning the amended commit will be a
+                  new entity with its own ref (see also <a class="link" href="https://www.atlassian.com/git/tutorials/rewriting-history">Rewriting
+                  history</a>).</p></li><li class="listitem"><p><code class="command">git ls-files --eol | grep auto</code> to
+                  identify files that aren't covered by
+                  <code class="filename">.gitattributes</code> and thus is marked for
+                  automatic <a class="link" href="tips.and.tricks.html#tip.vcs.svn2git.eol" title="A.2.1.6. End Of Line">end-of-line
+                  conversion</a>.</p></li></ul></div></li><li class="listitem"><p><code class="command">git fetch</code> latest changes from origin to
               local repository.</p></li><li class="listitem"><p><code class="command">git pull</code> latest changes from origin and
-              then merge into your current branch.</p></li><li class="listitem"><p><code class="command">git push</code> your work back up to the
+              then merge into the current branch.</p></li><li class="listitem"><p><code class="command">git push</code> your work back up to the
               origin.</p></li><li class="listitem"><p><code class="command">git diff</code> displays changes between
-              commits, commit and working directory, etc.</p></li><li class="listitem"><p><code class="command">git mv</code> is a convenience function for
-              renaming files.</p></li><li class="listitem"><p><code class="command">git revert</code> some existing
-              commits.</p></li><li class="listitem"><p><code class="command">git merge</code> joins two or more development
-              histories together.</p></li><li class="listitem"><p><code class="command">git rebase</code> takes all the changes that
-              were committed on one branch and replays them on another one.
-              <span class="emphasis"><em>Do not</em></span> <a class="link" href="https://git-scm.com/book/en/v2/Git-Branching-Rebasing">rebase</a>
-              commits that you have pushed to a public repository.</p></li></ul></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="tip"><h2>Tip</h2><p>Currently the design of the Git staging area only permits
-          files to be listed. If you really need a directory to exist in
-          checkouts you should create a file in it. A
-          <code class="filename">.gitignore</code> file works well for this purpose,
-          you can leave it empty or fill in the names of files you expect to
-          show up in the directory and don't want to check-in (see also <a class="link" href="https://git.wiki.kernel.org/index.php/MarkEmptyDirs">MarkEmptyDirs</a>).</p></div></section></section><section class="section" id="vcs.svn.client"><div class="titlepage"><div><div><h2 class="title"><a id="vcs.svn.client" class="anchor" href="#vcs.svn.client"><span class="octicon octicon-link"/></a>11.2. Subversion (SVN) client only</h2></div></div></div><p><span class="inlinemediaobject"><img src="images/icons/subversion.png"/></span> <a class="link" href="http://subversion.apache.org/">Subversion</a> is a
+              commits, commit and working directory, etc:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><code class="command">git diff</code> shows what has changed but
+                  hasn't been added to the index yet via <code class="command">git
+                  add</code>.</p></li><li class="listitem"><p><code class="command">git diff (--cached|--staged)</code>shows
+                  what has been added to the index via <code class="command">git
+                  add</code> but not yet committed. Useful to see trailing
+                  spaces in new files, that weren't listed in <code class="command">git
+                  diff</code>, when those files were untracked before
+                  <code class="command">git add .</code>.</p></li><li class="listitem"><p><code class="command">git diff (HEAD</code> shows what has
+                  changed since the last commit. It is the combination of
+                  <code class="command">git diff</code> and <code class="command">git diff
+                  (--cached|--staged)</code>.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="tip"><h2>Tip</h2><p>As of Git 1.8.5, <code class="code">@</code> is an alias for
+                    <code class="code">HEAD</code>.</p></div></li><li class="listitem"><p><code class="command">git diff (HEAD^|HEAD~)</code>shows what
+                  has changed since the commit before the latest commit.
+                  Useful to check diff before usage of <code class="command">git commit
+                  --amend</code>.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="tip"><h2>Tip</h2><p><code class="command">git difftool HEAD~1
+                    HEAD~0</code>.</p></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>Ancestry References by placing a <code class="code">^</code>
+                    (caret) or <code class="code">~</code> (tilde) at the end of a
+                    reference (see also examples for <code class="command">git
+                    show</code>).</p></div></li></ul></div></li><li class="listitem"><p><code class="command">git mv</code> is a convenience function for
+              renaming files.</p></li><li class="listitem"><p><code class="command">git remote</code> to manage the remote
+              repositories:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><code class="command">git remote -v</code> to list them
+                  all.</p></li><li class="listitem"><p><code class="command">git clone &lt;url&gt;</code> creates the
+                  origin.</p></li><li class="listitem"><p><code class="command">git remote add &lt;shortname&gt;
+                  &lt;url&gt;</code> to add a new remote repository as a
+                  shortname (see also TODO push url xref).</p></li><li class="listitem"><p><code class="command">git remote show [&lt;shortname&gt;]</code>
+                  to inspecting a remote repository.</p></li></ul></div></li><li class="listitem"><p><code class="command">git revert</code> some existing
+              commits.</p></li><li class="listitem"><p><code class="command">git reset</code> undo changes (see also note
+              for <code class="command">git rebase</code>):</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><code class="command">git reset [(HEAD~&lt;n&gt;|&lt;sha&gt;)
+                  --hard]</code> and optionally <code class="command">git push origin
+                  (HEAD|&lt;branch-name&gt;) -f</code> to remove a commit(,
+                  that is already pushed).</p></li><li class="listitem"><p><code class="command">git push origin
+                  +&lt;sha&gt;:&lt;branch-name&gt;</code> to remove a
+                  commit that is already pushed.</p></li><li class="listitem"><p><code class="command">git reset --soft HEAD~1</code> to undo the
+                  last commit, but the file changes will stay in your working
+                  tree.</p></li><li class="listitem"><p><code class="command">git reset HEAD~1</code> to undo the last
+                  commit, but the file changes will stay in your working tree,
+                  but not on the index.</p></li><li class="listitem"><p><code class="command">git clean [-f]</code> to remove untracked
+                  files from the working tree.</p></li><li class="listitem"><p><code class="command">git clean -[f]d</code> to remove all
+                  untracked files and directories from the working
+                  tree.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="tip"><h2>Tip</h2><p>Add <code class="option">-n</code> to <code class="command">clean</code>
+                    to see what files/directories will be removed without
+                    actually removing them.</p></div></li></ul></div></li><li class="listitem"><p><code class="command">git show</code> one or more objects such as
+              blobs, trees, tags and commits (see also <a class="link" href="https://git-scm.com/book/en/v2/Git-Tools-Revision-Selection">Revision
+              Selection</a>):</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><code class="command">git show [(HEAD~&lt;n&gt;|&lt;sha&gt;)]
+                  [--name-only]</code> to show commit diff and/or
+                  files.</p></li><li class="listitem"><p><code class="command">git show [(HEAD|HEAD~0|HEAD^0)]</code>
+                  shows the latest commit.</p></li><li class="listitem"><p><code class="command">git show
+                  (HEAD~|HEAD~1|HEAD^|HEAD^1)</code> shows the commit
+                  before the last commit or <span class="emphasis"><em>the parent
+                  commit</em></span>.</p></li><li class="listitem"><p><code class="command">git show (HEAD~~|HEAD~2|HEAD^^)</code>
+                  shows <span class="emphasis"><em>the grandparent commit</em></span>.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p><code class="command">git show HEAD^2</code> syntax is only
+                    useful for merge commits, which have more than one parent.
+                    The first parent is the branch you were on when you
+                    merged, and the second is the commit on the branch that
+                    you merged in.</p></div></li><li class="listitem"><p><code class="command">git show HEAD@{2017-10-20}</code> means
+                  <span class="quote">“<span class="quote">where HEAD was on 2017-10-20</span>”</span> in this
+                  repository (using <a class="link" href="https://git-scm.com/docs/git-reflog">the
+                  reflog</a>).</p></li><li class="listitem"><p><code class="command">git reflog show [--all]</code> to get a
+                  complete reflog of all refs.</p></li></ul></div></li><li class="listitem"><p><code class="command">git merge</code> joins two or more development
+              histories together:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><code class="command">git checkout master</code> to switch back
+                  to <code class="code">master</code> for an update from remote
+                  <code class="command">git pull origin master</code> and after return
+                  to <code class="command">git checkout &lt;current-branch&gt;</code> to
+                  <code class="command">git merge master</code> (see also <a class="link" href="https://www.atlassian.com/git/tutorials/merging-vs-rebasing">Merging
+                  vs. Rebasing</a>).</p></li><li class="listitem"><p><code class="command">git merge &lt;from-branch&gt;
+                  &lt;to-branch&gt;</code> and use <code class="command">git
+                  mergetool</code> and <code class="command">git rebase
+                  --continue</code> to fix merge conflicts (see also <a class="xref" href="version.control.system.html#vcs.git.mergetool" title="11.1.2.4. External merge tool">Section 11.1.2.4, “External merge tool”</a>).</p></li></ul></div></li><li class="listitem"><p><code class="command">git rebase</code> takes all the changes that
+              were committed on one branch and replays them on another one
+              (see also <a class="link" href="https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase">What
+              is git rebase?</a> and <a class="link" href="https://nathanleclaire.com/blog/2014/09/14/dont-be-scared-of-git-rebase/">Don't
+              Be Scared of git rebase</a>):</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><code class="command">git rebase [(HEAD~&lt;n&gt;|&lt;sha&gt;)]
+                  -i</code> to pick, reword,edit, squash, fixup, exec, drop
+                  commits.</p></li><li class="listitem"><p><code class="command">git rebase -i --root</code> to rebase to
+                  the root commit of the branch.</p></li></ul></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p><span class="emphasis"><em>Do not</em></span> <a class="link" href="https://git-scm.com/book/en/v2/Git-Branching-Rebasing">rebase</a>
+                commits that you have pushed to a public repository.</p></div></li><li class="listitem"><p><code class="command">git reflog</code> keeps track of updates to
+              the tip of branches using a mechanism called <span class="emphasis"><em>reference
+              logs</em></span>, or <span class="emphasis"><em><a class="link" href="https://www.atlassian.com/git/tutorials/rewriting-history/git-reflog">reflogs</a></em></span>.
+              Many Git commands accept a parameter for specifying a reference
+              or <span class="emphasis"><em>ref</em></span>, which is a pointer to a
+              commit.</p></li></ul></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="tip"><h2>Tip</h2><p>Git does not track an empty directory. In order to track a
+          directory, a file must exist within it. A trick that many people use
+          is to create a hidden file usually called
+          <code class="filename">.gitkeep</code>. The name of the file doesn't
+          matter.</p><p>A way to place an empty copy of the
+          <code class="filename">.gitkeep</code> file in every empty folder would be to
+          use the following command:</p><p><code class="command">find . -type d -empty -not -path "./.git/*" -exec
+          touch {}/.gitkeep \;</code></p></div></section></section><section class="section" id="vcs.svn.client"><div class="titlepage"><div><div><h2 class="title"><a id="vcs.svn.client" class="anchor" href="#vcs.svn.client"><span class="octicon octicon-link"/></a>11.2. Subversion (SVN) client only</h2></div></div></div><p><span class="inlinemediaobject"><img src="images/icons/subversion.png"/></span> <a class="link" href="http://subversion.apache.org/">Subversion</a> is a
       version control system that is a compelling replacement for CVS in the
       open source community.</p><section class="section" id="vcs.svn.client.resources"><div class="titlepage"><div><div><h3 class="title"><a id="vcs.svn.client.resources" class="anchor" href="#vcs.svn.client.resources"><span class="octicon octicon-link"/></a>11.2.1. Resources</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><a class="link" href="http://subversion.apache.org/packages.html">Download</a>
             prepackaged binaries.</p></li><li class="listitem"><p>Upgrade checklist:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p>Related products: -.</p></li><li class="listitem"><p>References: -.</p></li><li class="listitem"><p>Integration configuration changes: -.</p></li></ul></div></li><li class="listitem"><p>The Subversion Book: <a class="link" href="http://svnbook.red-bean.com/">Version Control with
@@ -606,30 +742,26 @@ END
       of useful information that is not easy to extract, comprehend or keep up
       to date. <a class="link" href="http://www.atlassian.com/software/fisheye/">FishEye</a>
       painlessly opens up your repository to help you better understand your
-      changing source.</p><section class="section" id="vcs.fisheye.resources"><div class="titlepage"><div><div><h3 class="title"><a id="vcs.fisheye.resources" class="anchor" href="#vcs.fisheye.resources"><span class="octicon octicon-link"/></a>11.3.1. Resources</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><a class="link" href="https://www.atlassian.com/software/fisheye/download">Download</a>
-            FishEye Standalone and <a class="link" href="https://marketplace.atlassian.com/plugins/app/fisheye">plugins</a>.</p></li><li class="listitem"><p><a class="link" href="https://confluence.atlassian.com/display/FISHEYE/FishEye+Upgrade+Guide">Upgrade</a>
+      changing source.</p><section class="section" id="vcs.fisheye.resources"><div class="titlepage"><div><div><h3 class="title"><a id="vcs.fisheye.resources" class="anchor" href="#vcs.fisheye.resources"><span class="octicon octicon-link"/></a>11.3.1. Resources</h3></div></div></div><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p>FishEye <a class="link" href="https://support.atlassian.com/fisheye/">Documentation</a>.</p></li><li class="listitem"><p><a class="link" href="https://www.atlassian.com/software/fisheye/download">Download</a>
+            FishEye and <a class="link" href="https://marketplace.atlassian.com/search?product=fisheye-crucible">Plugins
+            Marketplace</a> such as <a class="link" href="https://marketplace.atlassian.com/plugins/com.atlassian.fecru.plugins.fecru-revset-report-plugin/server/overview">Fisheye
+            Release Report</a>.</p></li><li class="listitem"><p><a class="link" href="https://confluence.atlassian.com/display/CRUCIBLE/Migrating+to+MySQL">Migrating
+            to MySQL</a>.</p></li><li class="listitem"><p><a class="link" href="https://confluence.atlassian.com/display/FISHEYE/FishEye+Upgrade+Guide">Upgrade</a>
             checklist:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p>Related products: -.</p></li><li class="listitem"><p>References: -.</p></li><li class="listitem"><p>Integration configuration changes: <a class="link" href="version.control.system.html#vcs.fisheye.apache.config" title="11.3.4. Apache configuration">FishEye - Apache
                 configuration <code class="code">Alias /fisheye/static</code></a>, <a class="link" href="version.control.system.html#vcs.fisheye.mysql" title="11.3.6. Database migration">FishEye - MySQL Connector/J
                 <code class="code">mysql-connector-java-x.y.z-bin.jar</code></a> and
                 <a class="link" href="version.control.system.html#vcs.fisheye.windows.service" title="11.3.5. Windows service">FishEye - Windows
                 service <code class="code">Fisheye-Control.bat</code> / <code class="code">wrapper
                 folder</code> /
-                <code class="code">Fisheye-Install-NTService.bat</code></a>.</p></li></ul></div></li><li class="listitem"><p>FishEye <a class="link" href="https://confluence.atlassian.com/display/FISHEYE/FishEye+Documentation+Home">Documentation
-            Home</a>, <a class="link" href="https://confluence.atlassian.com/display/FISHEYE/Getting+started">Getting
-            started</a>, <a class="link" href="https://confluence.atlassian.com/display/FISHEYE/Backing+up+and+restoring+FishEye+data">Backing
-            up and restoring FishEye data</a>, <a class="link" href="https://confluence.atlassian.com/display/FISHEYE/Running+FishEye+as+a+Windows+service">Running
-            FishEye as a Windows service</a>, <a class="link" href="https://confluence.atlassian.com/display/FISHEYE/JVM+system+properties">JVM
-            system properties</a> and <a class="link" href="https://confluence.atlassian.com/display/FISHEYE/Git+manifest">Git
-            manifest</a>..</p></li><li class="listitem"><p><a class="link" href="https://confluence.atlassian.com/display/CRUCIBLE/Migrating+to+MySQL">Migrating
-            to MySQL</a>.</p></li><li class="listitem"><p>Atlassian <a class="link" href="http://blogs.atlassian.com/blog-cat/fisheye/">Blogs</a>.</p></li></ul></div></section><section class="section" id="vcs.fisheye.install.guide"><div class="titlepage"><div><div><h3 class="title"><a id="vcs.fisheye.install.guide" class="anchor" href="#vcs.fisheye.install.guide"><span class="octicon octicon-link"/></a>11.3.2. FishEye installation guide</h3></div></div></div><p><a class="link" href="https://www.atlassian.com/software/fisheye/download">Download</a>
-        the archive: <code class="filename">fisheye-3.9.1.zip</code> [version <a class="link" href="https://www.atlassian.com/software/fisheye/download">3.9.1</a>].</p><p>Extract this <code class="filename">.zip</code> file to
+                <code class="code">Fisheye-Install-NTService.bat</code></a>.</p></li></ul></div></li></ul></div></section><section class="section" id="vcs.fisheye.install.guide"><div class="titlepage"><div><div><h3 class="title"><a id="vcs.fisheye.install.guide" class="anchor" href="#vcs.fisheye.install.guide"><span class="octicon octicon-link"/></a>11.3.2. FishEye installation guide</h3></div></div></div><p><a class="link" href="https://www.atlassian.com/software/fisheye/download">Download</a>
+        the archive: <code class="filename">fisheye-4.5.1.zip</code> [version <a class="link" href="https://confluence.atlassian.com/display/FISHEYE/FishEye+releases">4.5.1</a>].</p><p>Extract this <code class="filename">.zip</code> file to
         <code class="filename">P:\dev\apps\vcs</code>.</p><p id="vcs.fisheye.home"><a id="vcs.fisheye.home"><span style="display:none;">trick</span></a>Press
         <span class="keycap"><strong><span class="inlinemediaobject"><img src="images/os/windows/windows-key.gif"/></span></strong></span>+<span class="keycap"><strong>Break</strong></span> keys to open the Windows System Properties. Select
         <span class="guisubmenu"><strong>Advanced system settings</strong></span> → <span class="guibutton"><strong>Enviro<span class="accel">n</span>ment Variables</strong></span> and <span class="guibutton"><strong>Ed<span class="accel">i</span>t</strong></span> the
         <code class="envar">Path</code> to append
         <strong class="userinput"><code>%FISHEYE_HOME%\bin;</code></strong>. Also add a
         <span class="guibutton"><strong>Ne<span class="accel">w</span></strong></span> system variable
-        <code class="envar">FISHEYE_HOME</code> pointing to <strong class="userinput"><code><code class="filename">P:\dev\apps\vcs\fecru-3.9.1</code></code></strong>.</p><p>Verify the installation with: .</p><pre xmlns="" class="language-provided"><code class="language-bash">cd /d %FISHEYE_HOME%
+        <code class="envar">FISHEYE_HOME</code> pointing to <strong class="userinput"><code><code class="filename">P:\dev\apps\vcs\fecru-4.5.1</code></code></strong>.</p><p>Verify the installation with: .</p><pre xmlns="" class="language-provided"><code class="language-bash">cd /d %FISHEYE_HOME%
 set JAVA_HOME=P:\dev\apps\prg\java-x64\jdk1.8.0_131
 fisheyectl.bat run
 </code></pre><p>Terminate the server with <span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>C</strong></span>.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="warning"><h2>Warning</h2><p>If you now notice that FishEye tries to start spontaneously in
@@ -646,10 +778,10 @@ fisheyectl.bat run
         <span class="guisubmenu"><strong>Advanced system settings</strong></span> → <span class="guibutton"><strong>Enviro<span class="accel">n</span>ment Variables</strong></span> and add a <span class="guibutton"><strong>Ne<span class="accel">w</span></strong></span>
         system variable <code class="envar">FISHEYE_INST</code> pointing to
         <strong class="userinput"><code><code class="filename">P:\dev\data\vcs\fisheye</code></code></strong>. And
-        perform the following steps:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><code class="command">mkdir %FISHEYE_INST%</code></p></li><li class="listitem"><p><code class="command">move P:\dev\apps\vcs\fecru-3.9.1\config.xml
-            P:\dev\data\vcs\fisheye</code></p></li><li class="listitem"><p><code class="command">mkdir %FISHEYE_INST%\lib</code></p></li><li class="listitem"><p><code class="command">move P:\dev\apps\vcs\fecru-3.9.1\var
+        perform the following steps:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><code class="command">mkdir %FISHEYE_INST%</code></p></li><li class="listitem"><p><code class="command">move P:\dev\apps\vcs\fecru-4.5.1\config.xml
+            P:\dev\data\vcs\fisheye</code></p></li><li class="listitem"><p><code class="command">mkdir %FISHEYE_INST%\lib</code></p></li><li class="listitem"><p><code class="command">move P:\dev\apps\vcs\fecru-4.5.1\var
             P:\dev\data\vcs\fisheye</code></p></li></ul></div></section><section class="section" id="vcs.fisheye.config"><div class="titlepage"><div><div><h3 class="title"><a id="vcs.fisheye.config" class="anchor" href="#vcs.fisheye.config"><span class="octicon octicon-link"/></a>11.3.3. FishEye configuration</h3></div></div></div><p>Restart FishEye again with <code class="command">fisheyectl start</code>.
-        Verify that the server is running in your browser at <a class="link" href="http://freedumbytes.dev.net:8060">http://freedumbytes.dev.net:8060</a>.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>In case of <span class="quote">“<span class="quote">java.lang.OutOfMemoryError: PermGen
+        Verify that the server is running in your browser at <a class="link" href="http://localhost:8060/">http://localhost:8060/</a>.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>In case of <span class="quote">“<span class="quote">java.lang.OutOfMemoryError: PermGen
           space</span>”</span> just <code class="command">set FISHEYE_OPTS=-Xmx512m
           -Xms128m</code> before running <code class="command">fisheyectl
           start</code> (see also <a class="xref" href="version.control.system.html#vcs.fisheye.windows.service" title="11.3.5. Windows service">Section 11.3.5, “Windows service”</a>).</p></div><p>When you access FishEye for the first time you will be asked
@@ -659,7 +791,7 @@ fisheyectl.bat run
             evaluation</strong></span>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Skip</strong></span> for now <span class="guilabel"><strong>Connect to
             JIRA</strong></span>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Create password</strong></span> and <span class="guilabel"><strong>Confirm
             password</strong></span>.</p></li></ol></div><p>If you need to reset the administrator password, delete the <code class="sgmltag-attribute">admin-hash</code> in the <code class="sgmltag-element">config</code> element of your
-        <code class="filename">config.xml</code>.</p><p>Connect to the FishEye Admin GUI <a class="link" href="http://freedumbytes.dev.net:8060/admin/">http://freedumbytes.dev.net:8060/admin/</a>
+        <code class="filename">config.xml</code>.</p><p>Connect to the FishEye Admin GUI <a class="link" href="http://localhost:8060/admin/">http://localhost:8060//admin/</a>
         and configure FishEye.</p><section class="section" id="vcs.fisheye.config.global.settings"><div class="titlepage"><div><div><h4 class="title"><a id="vcs.fisheye.config.global.settings" class="anchor" href="#vcs.fisheye.config.global.settings"><span class="octicon octicon-link"/></a>11.3.3.1. Global Settings</h4></div></div></div><p>Select <span class="guimenuitem"><strong>Global Settings</strong></span> → <span class="guilabel"><strong>Server</strong></span> → <span class="guilabel"><strong>Web Server</strong></span> → <span class="guibutton"><strong>Edit settings</strong></span>:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><span class="guilabel"><strong>Web context</strong></span>:
                 <strong class="userinput"><code>fisheye</code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong>HTTP Bind Address</strong></span>:
                 <strong class="userinput"><code>127.0.0.1:8060</code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Ajp13 Bind Address</strong></span>:
@@ -706,7 +838,7 @@ fisheyectl.bat run
 #    JkMount /fisheye/* fisheye
 #  &lt;/IfModule&gt;
 
-  Alias /fisheye/static       "P:\dev\apps\vcs\fecru-3.9.1\content\static"
+  Alias /fisheye/static       "P:\dev\apps\vcs\fecru-4.5.1\content\static"
 
   ProxyPass /fisheye/static/  !
 
@@ -755,13 +887,13 @@ fisheyectl.bat run
         the <span class="application"><strong><a class="link" href="http://wrapper.tanukisoftware.org/doc/english/introduction.html">Tanuki
         Java Service Wrapper</a></strong></span> archive:
         <code class="filename">wrapper.zip</code>.</p><p>Extract this <code class="filename">.zip</code> file to
-        <code class="filename">P:\dev\apps\vcs\fecru-3.9.1</code>.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>In case of an upgrade just copy the one extracted in the prior
-          FishEye version:</p><pre class="language-provided"><code class="language-bash">copy P:\dev\apps\vcs\fecru-3.7.0\Fisheye-Control.* ^
-     P:\dev\apps\vcs\fecru-3.9.1
-xcopy /E /I P:\dev\apps\vcs\fecru-3.7.0\wrapper ^
-      P:\dev\apps\vcs\fecru-3.9.1\wrapper</code></pre></div><p>Optionally comment out the jmx entries <a class="xref" href="version.control.system.html#vcs.fisheye.jmx"><img src="images/community/docbook/callouts/2.png" alt="2" border="0" height="17px" width="17px" class="callout"/></a> and edit the following entries <a class="xref" href="version.control.system.html#vcs.fisheye.java.command"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a>-<a class="xref" href="version.control.system.html#vcs.fisheye.description"><img src="images/community/docbook/callouts/12.png" alt="12" border="0" height="17px" width="17px" class="callout"/></a> in the service wrapper
+        <code class="filename">P:\dev\apps\vcs\fecru-4.5.1</code>.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>In case of an upgrade just copy the one extracted in the prior
+          FishEye version:</p><pre class="language-provided"><code class="language-bash">copy P:\dev\apps\vcs\fecru-3.9.1\Fisheye-Control.* ^
+     P:\dev\apps\vcs\fecru-4.5.1
+xcopy /E /I P:\dev\apps\vcs\fecru-3.9.1\wrapper ^
+      P:\dev\apps\vcs\fecru-4.5.1\wrapper</code></pre></div><p>Optionally comment out the jmx entries <a class="xref" href="version.control.system.html#vcs.fisheye.jmx"><img src="images/community/docbook/callouts/2.png" alt="2" border="0" height="17px" width="17px" class="callout"/></a> and edit the following entries <a class="xref" href="version.control.system.html#vcs.fisheye.java.command"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a>-<a class="xref" href="version.control.system.html#vcs.fisheye.description"><img src="images/community/docbook/callouts/12.png" alt="12" border="0" height="17px" width="17px" class="callout"/></a> in the service wrapper
         configuration file
-        <code class="filename">P:\dev\apps\vcs\fecru-3.9.1\wrapper\conf\wrapper.conf</code>:</p><pre xmlns="" class="language-provided"><code class="language-ini"> …
+        <code class="filename">P:\dev\apps\vcs\fecru-4.5.1\wrapper\conf\wrapper.conf</code>:</p><pre xmlns="" class="language-provided"><code class="language-ini"> …
 
 # Java Application
 wrapper.java.command=P:\dev\apps\prg\java-x64\jdk1.8.0_131\bin\java<span xmlns="http://www.w3.org/1999/xhtml" id="vcs.fisheye.java.command"/><a xmlns="http://www.w3.org/1999/xhtml" id="vcs.fisheye.java.command"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>
@@ -851,12 +983,12 @@ mysql&gt; select host,db,user from mysql.db;
 mysql&gt; quit
 </code></pre><p><a class="link" href="https://dev.mysql.com/downloads/connector/j/">Download</a>
         the <a class="link" href="database.html#db.mysql.jdbc.driver">Connector/J</a> [version
-        <a class="link" href="https://dev.mysql.com/downloads/connector/j/">5.1.36</a>]
+        <a class="link" href="https://dev.mysql.com/downloads/connector/j/">5.1.45</a>]
         and add the driver
-        <code class="filename">mysql-connector-java-5.1.36-bin.jar</code> from the
-        archive <code class="filename">mysql-connector-java-5.1.36.zip</code> to the
+        <code class="filename">mysql-connector-java-5.1.45-bin.jar</code> from the
+        archive <code class="filename">mysql-connector-java-5.1.45.zip</code> to the
         FishEye classpath placing it into <code class="filename">P:\dev\data\vcs\fisheye\lib</code>. For older
-        versions of FishEye remove the one that is already in <code class="filename">P:\dev\apps\vcs\fecru-3.9.1\lib\dbdrivers\mysql</code>.
+        versions of FishEye remove the one that is already in <code class="filename">P:\dev\apps\vcs\fecru-4.5.1\lib\dbdrivers\mysql</code>.
         Requires a restart of FishEye to locate this new jar.</p><p>Connect to the FishEye Admin GUI <a class="link" href="http://freedumbytes.dev.net/fisheye/admin/">http://freedumbytes.dev.net/fisheye/admin/</a>
         and configure MySQL database.</p><p>Select <span class="guimenuitem"><strong>Systems Settings</strong></span> → <span class="guilabel"><strong>Database</strong></span> → <span class="guibutton"><strong>Edit</strong></span>:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><span class="guilabel"><strong>Test Connection</strong></span> of
               <span class="guilabel"><strong>Built-In</strong></span> hsqldb.</p></li><li class="listitem"><p><span class="guilabel"><strong>Type</strong></span>:
@@ -866,7 +998,7 @@ mysql&gt; quit
               <strong class="userinput"><code>fisheye-user</code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Password</strong></span>:
               <strong class="userinput"><code><em class="replaceable"><code>password</code></em></code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Minimum Pool Connections</strong></span>:
               <strong class="userinput"><code>5</code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Maximum Pool Connections</strong></span>:
-              <strong class="userinput"><code>20</code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Parameters</strong></span>:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><strong class="userinput"><code>useUnicode=true</code></strong></p></li><li class="listitem"><p><strong class="userinput"><code>characterEncoding=UTF8</code></strong></p></li><li class="listitem"><p><strong class="userinput"><code>connectionCollation=UTF8_bin</code></strong></p></li></ul></div></li><li class="listitem"><p><span class="guilabel"><strong>Test Connection</strong></span> and click
+              <strong class="userinput"><code>20</code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Parameters</strong></span>:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><strong class="userinput"><code>useUnicode=true</code></strong></p></li><li class="listitem"><p><strong class="userinput"><code>characterEncoding=UTF8</code></strong></p></li><li class="listitem"><p><strong class="userinput"><code>connectionCollation=UTF8_bin</code></strong></p></li><li class="listitem"><p><strong class="userinput"><code>useSSL=false</code></strong></p></li></ul></div></li><li class="listitem"><p><span class="guilabel"><strong>Test Connection</strong></span> and click
               <span class="guibutton"><strong>Save &amp; Migrate</strong></span>.</p></li></ul></div></section><section class="section" id="vcs.fisheye.config.repository.settings"><div class="titlepage"><div><div><h3 class="title"><a id="vcs.fisheye.config.repository.settings" class="anchor" href="#vcs.fisheye.config.repository.settings"><span class="octicon octicon-link"/></a>11.3.7. Repository Settings</h3></div></div></div><p>Connect to the FishEye Admin GUI <a class="link" href="http://freedumbytes.dev.net/fisheye/admin/">http://freedumbytes.dev.net/fisheye/admin/</a>
         and configure <span class="guilabel"><strong>Repository Settings</strong></span>.</p><p>Select <span class="guimenuitem"><strong>Repositories</strong></span> → <span class="guimenuitem"><strong>Native Repository Access</strong></span> → <span class="guibutton"><strong>Add Existing…</strong></span> with: </p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><span class="guilabel"><strong>Repository type</strong></span>:
               <span class="guilabel"><strong>Git</strong></span>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Name</strong></span>:

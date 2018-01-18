@@ -360,7 +360,7 @@ wrapper.ntservice.description=Nexus is a Maven repository manager.<span xmlns="h
                   <span class="guibutton"><strong>Save</strong></span>.</p></li></ul></div></section></section></section><section class="section" id="repo.nexus.maven.integration"><div class="titlepage"><div><div><h3 class="title"><a id="repo.nexus.maven.integration" class="anchor" href="#repo.nexus.maven.integration"><span class="octicon octicon-link"/></a>13.1.6. Maven integration</h3></div></div></div><section class="section" id="repo.nexus.maven.mirrors"><div class="titlepage"><div><div><h4 class="title"><a id="repo.nexus.maven.mirrors" class="anchor" href="#repo.nexus.maven.mirrors"><span class="octicon octicon-link"/></a>13.1.6.1. Artifact repository</h4></div></div></div><p>Configure Maven to use the Nexus Repository with the following
           mirror settings <a class="xref" href="repository.manager.html#repo.nexus.mirror.of.public.snapshots"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a>-<a class="xref" href="repository.manager.html#repo.nexus.mirror.of.central"><img src="images/community/docbook/callouts/2.png" alt="2" border="0" height="17px" width="17px" class="callout"/></a> in the Maven configuration
           file
-          <code class="filename">P:\dev\apps\build\apache-maven-3.3.9\conf\settings.xml</code>
+          <code class="filename">P:\dev\apps\build\apache-maven-3.5.2\conf\settings.xml</code>
           to correspond with in the <span class="guimenuitem"><strong>Views/Repositories</strong></span> → <span class="guibutton"><strong>Repositories</strong></span> available <span class="guilabel"><strong>Repository Path</strong></span> of
           the <span class="guilabel"><strong><a class="link" href="repository.manager.html#repo.nexus.config.repos.public.snapshots" title="13.1.5.4.1. Reinstate Public Snapshot Repositories">Public Snapshot
           Repositories</a></strong></span> and the <span class="guilabel"><strong>Public
@@ -381,7 +381,7 @@ wrapper.ntservice.description=Nexus is a Maven repository manager.<span xmlns="h
           Repositories</strong></span> by default (see also * mirrorOf <a class="xref" href="repository.manager.html#repo.nexus.mirror.of.central"><img src="images/community/docbook/callouts/2.png" alt="2" border="0" height="17px" width="17px" class="callout"/></a>) with the following profile
           <a class="xref" href="repository.manager.html#repo.nexus.maven.profile.development"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a> and
           activateProfile settings in the Maven configuration file
-          <code class="filename">P:\dev\apps\build\apache-maven-3.3.9\conf\settings.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">  &lt;profiles&gt;
+          <code class="filename">P:\dev\apps\build\apache-maven-3.5.2\conf\settings.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">  &lt;profiles&gt;
     &lt;profile&gt;
       &lt;id&gt;development<span xmlns="http://www.w3.org/1999/xhtml" id="repo.nexus.maven.profile.development"/><a xmlns="http://www.w3.org/1999/xhtml" id="repo.nexus.maven.profile.development"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>&lt;/id&gt;
       &lt;repositories&gt;
@@ -432,7 +432,7 @@ wrapper.ntservice.description=Nexus is a Maven repository manager.<span xmlns="h
           Repositories</a></strong></span> by request (see also
           public-snapshots.dev.net mirrorOf <a class="xref" href="repository.manager.html#repo.nexus.mirror.of.public.snapshots"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a>) with the
           following profile settings in the Maven configuration file
-          <code class="filename">P:\dev\apps\build\apache-maven-3.3.9\conf\settings.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">  &lt;profiles&gt;
+          <code class="filename">P:\dev\apps\build\apache-maven-3.5.2\conf\settings.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">  &lt;profiles&gt;
      …
 
     &lt;profile&gt;
@@ -504,7 +504,7 @@ wrapper.ntservice.description=Nexus is a Maven repository manager.<span xmlns="h
 </code></pre><p>Configure Maven to use the Nexus Repository deployment user
           with the following server settings LAN <a class="xref" href="repository.manager.html#repo.nexus.server.id.lan"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a> and Open Source <a class="xref" href="repository.manager.html#repo.nexus.server.id.open.source"><img src="images/community/docbook/callouts/2.png" alt="2" border="0" height="17px" width="17px" class="callout"/></a> in the Maven
           configuration file
-          <code class="filename">P:\dev\apps\build\apache-maven-3.3.9\conf\settings.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">    &lt;servers&gt;
+          <code class="filename">P:\dev\apps\build\apache-maven-3.5.2\conf\settings.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">    &lt;servers&gt;
 +    &lt;server&gt;
 +      &lt;id&gt;nexus<span xmlns="http://www.w3.org/1999/xhtml" id="repo.nexus.server.id.lan"/><a xmlns="http://www.w3.org/1999/xhtml" id="repo.nexus.server.id.lan"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>&lt;/id&gt;
 +      &lt;username&gt;deployment&lt;/username&gt;
@@ -518,7 +518,7 @@ wrapper.ntservice.description=Nexus is a Maven repository manager.<span xmlns="h
 +      &lt;password&gt;<em xmlns="http://www.w3.org/1999/xhtml" class="replaceable"><code>password</code></em>&lt;/password&gt;
     &lt;/server&gt;
   &lt;/servers&gt;
-</code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>It is possible to encrypt the password using <a class="xref" href="build.tool.html#build.maven.password.encryption" title="4.2.6. Password Encryption">Section 4.2.6, “Password Encryption”</a>.</p></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="important"><h2>Important</h2><p>In case of partial deployments, with the maven release
+</code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>It is possible to encrypt the password using <a class="xref" href="build.tool.html#build.maven.password.encryption" title="4.2.5. Password Encryption">Section 4.2.5, “Password Encryption”</a>.</p></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="important"><h2>Important</h2><p>In case of partial deployments, with the maven release
               plugin for instance, the retries will get HTTP 400 errors.
               Therefore select <span class="guimenuitem"><strong>Views/Repositories</strong></span> → <span class="guilabel"><strong>Repositories</strong></span> → <span class="guilabel"><strong>Releases</strong></span> → <span class="guilabel"><strong>Configuration</strong></span> and change the <span class="guilabel"><strong>Deployment
               Policy</strong></span> to <span class="guilabel"><strong>Allow Redeploy</strong></span>.</p></div></section><section class="section" id="repo.nexus.maven.third.party"><div class="titlepage"><div><div><h4 class="title"><a id="repo.nexus.maven.third.party" class="anchor" href="#repo.nexus.maven.third.party"><span class="octicon octicon-link"/></a>13.1.6.3. Third-party artifacts</h4></div></div></div><p>As an alternative to adding a missing third-party artifact

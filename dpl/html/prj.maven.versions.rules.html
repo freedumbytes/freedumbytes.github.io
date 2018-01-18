@@ -10,12 +10,12 @@
 +         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 +         xsi:schemaLocation="http://mojo.codehaus.org/versions-maven-plugin/rule/2.0.0 http://www.mojohaus.org/versions-maven-plugin/xsd/rule-2.0.0.xsd"&gt;
 +  &lt;ignoreVersions&gt;
-+    &lt;ignoreVersion type="regex"&gt;(?i).*(-|\.)Alpha(?:-?\d+)?&lt;/ignoreVersion&gt;
-+    &lt;ignoreVersion type="regex"&gt;(?i).*(-|\.)Beta(?:-?\d+)?&lt;/ignoreVersion&gt;
-+    &lt;ignoreVersion type="regex"&gt;(?i).*(-|\.)B(?:-?\d+)?&lt;/ignoreVersion&gt;
-+    &lt;ignoreVersion type="regex"&gt;(?i).*(-|\.)RC(?:-?\d+)?&lt;/ignoreVersion&gt;
-+    &lt;ignoreVersion type="regex"&gt;(?i).*(-|\.)CR(?:-?\d+)?&lt;/ignoreVersion&gt;
-+    &lt;ignoreVersion type="regex"&gt;(?i).*(-|\.)M(?:-?\d+)?&lt;/ignoreVersion&gt;
++    &lt;ignoreVersion type="regex"&gt;(?i).*(-|\.)Alpha(?:(-|\.)?\d+)?&lt;/ignoreVersion&gt;
++    &lt;ignoreVersion type="regex"&gt;(?i).*(-|\.)Beta(?:(-|\.)?\d+)?&lt;/ignoreVersion&gt;
++    &lt;ignoreVersion type="regex"&gt;(?i).*(-|\.)B(?:(-|\.)?\d+)?&lt;/ignoreVersion&gt;
++    &lt;ignoreVersion type="regex"&gt;(?i).*(-|\.)RC(?:(-|\.)?\d+)?&lt;/ignoreVersion&gt;
++    &lt;ignoreVersion type="regex"&gt;(?i).*(-|\.)CR(?:(-|\.)?\d+)?&lt;/ignoreVersion&gt;
++    &lt;ignoreVersion type="regex"&gt;(?i).*(-|\.)M(?:(-|\.)?\d+)?&lt;/ignoreVersion&gt;
 +
 +    &lt;ignoreVersion type="regex"&gt;(?i).*(-|\.)incubating.*&lt;/ignoreVersion&gt;
 +    &lt;ignoreVersion type="regex"&gt;(?i).*(-|\.)dev.*&lt;/ignoreVersion&gt;
@@ -69,9 +69,9 @@
      &lt;wagonMavenPluginVersion&gt;1.0&lt;/wagonMavenPluginVersion&gt;
      &lt;wagonProviderVersion&gt;3.0.0&lt;/wagonProviderVersion&gt;
 +
-+    &lt;versionsRulesVersion&gt;1.1&lt;/versionsRulesVersion&gt;
++    &lt;versionsRulesVersion&gt;1.3&lt;/versionsRulesVersion&gt;
 +    &lt;versionsRulesFolderVersion&gt;${versionsRulesVersion}&lt;/versionsRulesFolderVersion&gt;
-+    &lt;versionsRulesPath&gt;${nexusHost}/content/groups/public/nl/demon/shadowland/freedumbytes/maven/versions-rules/${versionsRulesFolderVersion}&lt;/versionsRulesPath&gt;
++    &lt;versionsRulesPath&gt;${nexusHost}/content/groups/public/nl/demon/shadowland/freedumbytes/maven/versioning/versions-rules/${versionsRulesFolderVersion}&lt;/versionsRulesPath&gt;
 
      &lt;jdkHome&gt;${env.JAVA_HOME}&lt;/jdkHome&gt;
      &lt;jvm&gt;${jdkHome}/bin/java&lt;/jvm&gt;

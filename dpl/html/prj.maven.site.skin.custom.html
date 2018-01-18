@@ -3,21 +3,17 @@
   PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"><head><title>Appendix E. Custom skins</title><link rel="stylesheet" type="text/css" href="docbook.css"/><link rel="stylesheet" type="text/css" href="css/freedumbytes.css"/><meta name="generator" content="DocBook XSL Stylesheets V1.78.1"/><link rel="prev" href="prj.maven.versions.rules.html" title="Appendix D. Maven Versions Rules"/><link rel="next" href="prj.maven.qa.sandbox.html" title="Appendix F. Quality Assurance Sandbox"/><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/><link rel="shortcut icon" href="./images/community/docbook/glider.ico"/></head><body><header><p id="title"/><ul class="navheader"><li class="previous"><a accesskey="p" href="prj.maven.versions.rules.html"><strong>Previous</strong></a></li><li class="next"><a accesskey="n" href="prj.maven.qa.sandbox.html"><strong>Next</strong></a></li></ul></header><section class="appendix" id="prj.maven.site.skin.custom"><div class="titlepage"><div><div><h1 class="title"><a id="prj.maven.site.skin.custom" class="anchor" href="#prj.maven.site.skin.custom"><span class="octicon octicon-link"/></a>Appendix E. Custom skins</h1></div></div></div><div class="toc"><div class="toc-title">Table of Contents</div><ul class="toc"><li><span class="section"><a href="prj.maven.site.skin.custom.html#prj.maven.site.skin.paper">E.1. Custom Paper Skin</a></span><ul><li><span class="section"><a href="prj.maven.site.skin.custom.html#prj.maven.site.skin.paper.customization">E.1.1. Customization</a></span></li></ul></li><li><span class="section"><a href="prj.maven.site.skin.custom.html#prj.maven.site.skin.fluido">E.2. Custom Fluido Skin</a></span></li><li><span class="section"><a href="prj.maven.site.skin.custom.html#prj.maven.site.skin.reflow">E.3. Custom Reflow Skin</a></span></li></ul></div><p>Lets setup a base structure, for Maven skins to come, with the
     following JIRA project:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><span class="guilabel"><strong>Maven Skins</strong></span> [MVNSKN]: Maven custom skins
-        (see also repository <a class="link" href="https://java.net/projects/jmodalwindow/sources/svn/show/branches/maven-skins">branches/maven-skins</a>).</p><p>With the following components:</p><div class="orderedlist"><ol class="orderedlist compact" type="1"><li class="listitem"><p><span class="guilabel"><strong>paper</strong></span>: Paperlike skin.</p></li><li class="listitem"><p><span class="guilabel"><strong>fluido</strong></span>: Apache Maven Fluido skin
+        (see also repository <a class="link" href="https://java.net/projects/jmodalwindow/sources/svn/show/branches/maven-skins">branches/skins</a>).</p><p>With the following components:</p><div class="orderedlist"><ol class="orderedlist compact" type="1"><li class="listitem"><p><span class="guilabel"><strong>paper</strong></span>: Paperlike skin.</p></li><li class="listitem"><p><span class="guilabel"><strong>fluido</strong></span>: Apache Maven Fluido skin
             enhancement.</p></li><li class="listitem"><p><span class="guilabel"><strong>reflow</strong></span>: Responsive Apache Maven Reflow
             skin enhancement.</p></li><li class="listitem"><p><span class="guilabel"><strong>sample</strong></span>: Samples of Maven skins:
-            Default, Classic, Application, Stylus and Fluido.</p></li></ol></div><p>and versions:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><span class="guilabel"><strong>3.0-gamma</strong></span> - Custom Paper skin with also
-            <a class="link" href="https://maven.apache.org/skins/">Maven
-            skins</a> samples: Default, Classic, Application, Stylus and
-            Fluido.</p></li><li class="listitem"><p><span class="guilabel"><strong>3.1-gamma</strong></span> - Custom Fluido and Reflow
-            skins.</p></li></ul></div></li></ul></div><p>Start a new bare Git repository <code class="code">maven-skins</code> by calling
+            Default, Classic, Application, Stylus and Fluido.</p></li></ol></div></li></ul></div><p>Start a new bare Git repository <code class="code">skins</code> by calling
     <code class="command">/p/dev/apps/windows/batch/<a class="link" href="version.control.system.html#vcs.git.bare.project" title="11.1.5. Defining a project">git-create-repo.sh</a>
-    /p/dev/data/repo/git maven-skins.git "Maven custom skins"
-    -jenkinsHook</code> in <span class="inlinemediaobject"><img src="images/icons/git.png"/></span> <a class="link" href="version.control.system.html#vcs.git.bash.home" title="11.1.2.1. Git bash home directory">Git
+    /p/dev/data/repo/git skins.git "Maven custom skins" -jenkinsHook</code>
+    in <span class="inlinemediaobject"><img src="images/icons/git.png"/></span> <a class="link" href="version.control.system.html#vcs.git.bash.home" title="11.1.2.1. Git bash home directory">Git
     Bash</a>.</p><p>Clone this remote repository with the following command
     <code class="command"><a class="link" href="version.control.system.html#vcs.git.clone.project" title="11.1.6. Working on a project">git-clone</a> jjasper
-    maven-skins</code>.</p><p>Create the minimal base POM in
-    <code class="filename">C:\dev\projects\maven-skins\pom.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+    skins</code>.</p><p>Create the minimal base POM in
+    <code class="filename">C:\dev\projects\skins\pom.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 +
 +&lt;project xmlns="http://maven.apache.org/POM/4.0.0"
 +         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -25,28 +21,28 @@
 +                             https://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;
 +  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
 </code></pre><pre xmlns="" class="language-provided"><code class="language-xml">+  &lt;parent&gt;
-+    &lt;groupId&gt;nl.demon.shadowland.freedumbytes.maven&lt;/groupId&gt;
++    &lt;groupId&gt;nl.demon.shadowland.freedumbytes.maven.config&lt;/groupId&gt;
 +    &lt;artifactId&gt;setup&lt;/artifactId&gt;
-+    &lt;version&gt;4.1-beta&lt;/version&gt;
++    &lt;version&gt;4.3&lt;/version&gt;
 +  &lt;/parent&gt;
-</code></pre><pre xmlns="" class="language-provided"><code class="language-xml">+  &lt;groupId&gt;nl.demon.shadowland.freedumbytes.maven.skins&lt;/groupId&gt;
-+  &lt;artifactId&gt;maven-skins&lt;/artifactId&gt;
-+  &lt;version&gt;3.1-gamma&lt;/version&gt;
+</code></pre><pre xmlns="" class="language-provided"><code class="language-xml">+  &lt;groupId&gt;nl.demon.shadowland.freedumbytes.maven.custom.skins&lt;/groupId&gt;
++  &lt;artifactId&gt;foundation&lt;/artifactId&gt;
++  &lt;version&gt;1.3.1&lt;/version&gt;
 +  &lt;packaging&gt;pom&lt;/packaging&gt;
 </code></pre><pre xmlns="" class="language-provided"><code class="language-xml">+  &lt;name&gt;Free Dumb Bytes Maven Skins&lt;/name&gt;
 +  &lt;description&gt;Setup the site skins.&lt;/description&gt;
-+  &lt;url&gt;${mavenHost}/maven-skins&lt;/url&gt;
++  &lt;url&gt;${mavenHost}/skins&lt;/url&gt;
 +  &lt;inceptionYear&gt;2010&lt;/inceptionYear&gt;
 </code></pre><pre xmlns="" class="language-provided"><code class="language-xml">+  &lt;scm&gt;
 +    &lt;developerConnection&gt;
-+      scm:git:${gitHost}/maven-skins.git
++      scm:git:${gitHost}/skins.git
 +    &lt;/developerConnection&gt;
-+    &lt;url&gt;${fisheyeHost}/browse/maven-skins&lt;/url&gt;
++    &lt;url&gt;${fisheyeHost}/browse/skins&lt;/url&gt;
 +    &lt;tag&gt;HEAD&lt;/tag&gt;
 +  &lt;/scm&gt;
 </code></pre><pre xmlns="" class="language-provided"><code class="language-xml">+  &lt;ciManagement&gt;
 +    &lt;system&gt;Jenkins&lt;/system&gt;
-+    &lt;url&gt;${jenkinsHost}/job/maven-skins&lt;/url&gt;
++    &lt;url&gt;${jenkinsHost}/job/skins&lt;/url&gt;
 +  &lt;/ciManagement&gt;
 </code></pre><pre xmlns="" class="language-provided"><code class="language-xml">+  &lt;issueManagement&gt;
 +    &lt;system&gt;JIRA&lt;/system&gt;
@@ -56,31 +52,31 @@
 +    &lt;site&gt;
 +      &lt;id&gt;mvn-sites&lt;/id&gt;
 +      &lt;name&gt;Maven Documentation Sites&lt;/name&gt;
-+      &lt;url&gt;dav:${mavenHost}/maven-skins&lt;/url&gt;
++      &lt;url&gt;dav:${mavenHost}/skins&lt;/url&gt;
 +    &lt;/site&gt;
 +  &lt;/distributionManagement&gt;
 +&lt;/project&gt;
 </code></pre><p>In Eclipse create a Working Set <strong class="userinput"><code>Maven Skins</code></strong>
     and import this Maven Skins project into it with <span class="guilabel"><strong><span class="accel">F</span>ile</strong></span> → <span class="guilabel"><strong><span class="accel">I</span>mport…</strong></span> → <span class="guilabel"><strong>Maven</strong></span> → <span class="guilabel"><strong>Existing Maven Projects</strong></span> from <span class="guilabel"><strong><span class="accel">R</span>oot directory</strong></span>
-    <code class="filename">C:\dev\projects\maven-skins</code> and click
+    <code class="filename">C:\dev\projects\skins</code> and click
     <span class="guibutton"><strong><span class="accel">F</span>inish</strong></span>.</p><section class="section" id="prj.maven.site.skin.paper"><div class="titlepage"><div><div><h2 class="title"><a id="prj.maven.site.skin.paper" class="anchor" href="#prj.maven.site.skin.paper"><span class="octicon octicon-link"/></a>E.1. Custom Paper Skin</h2></div></div></div><p>To create a paperlike <a class="link" href="https://maven.apache.org/skins/">skin</a> export a copy
       of maven-default-skin-1.1:</p><pre xmlns="" class="language-provided"><code class="language-bash">cd /d C:\dev\projects
 svn export ^
     http://svn.apache.org/repos/asf/maven/skins/tags/maven-default-skin-1.1 ^
     maven-default-skin-1.1
-</code></pre><p>Copy the theme into project maven-skins:</p><pre xmlns="" class="language-provided"><code class="language-bash">cd maven-default-skin-1.1
-xcopy /S /I src\*.css C:\dev\projects\maven-skins\maven-paper-skin\src
-xcopy /S /I src\*.gif C:\dev\projects\maven-skins\maven-paper-skin\src
-xcopy /S /I src\*.png C:\dev\projects\maven-skins\maven-paper-skin\src
-</code></pre><p>Commit those files:</p><div class="orderedlist"><ol class="orderedlist compact" type="1"><li class="listitem"><p><code class="filename">maven-skins/maven-paper-skin/src/main/resources/css/maven-theme.css</code></p></li><li class="listitem"><p><code class="filename">maven-skins/maven-paper-skin/src/main/resources/images/icon_error_sml.gif</code></p></li><li class="listitem"><p><code class="filename">maven-skins/maven-paper-skin/src/main/resources/images/icon_info_sml.gif</code></p></li><li class="listitem"><p><code class="filename">maven-skins/maven-paper-skin/src/main/resources/images/icon_success_sml.gif</code></p></li><li class="listitem"><p><code class="filename">maven-skins/maven-paper-skin/src/main/resources/images/icon_warning_sml.gif</code></p></li><li class="listitem"><p><code class="filename">maven-skins/maven-paper-skin/src/main/resources/images/external.png</code></p></li><li class="listitem"><p><code class="filename">maven-skins/maven-paper-skin/src/main/resources/images/newwindow.png</code></p></li></ol></div><p>Define a new module <code class="code">maven-paper-skin</code> in
-      <code class="filename">C:\dev\projects\maven-skins\pom.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;/distributionManagement&gt;
+</code></pre><p>Copy the theme into project skins:</p><pre xmlns="" class="language-provided"><code class="language-bash">cd maven-default-skin-1.1
+xcopy /S /I src\*.css C:\dev\projects\skins\maven-paper-skin\src
+xcopy /S /I src\*.gif C:\dev\projects\skins\maven-paper-skin\src
+xcopy /S /I src\*.png C:\dev\projects\skins\maven-paper-skin\src
+</code></pre><p>Commit those files:</p><div class="orderedlist"><ol class="orderedlist compact" type="1"><li class="listitem"><p><code class="filename">skins/maven-paper-skin/src/main/resources/css/maven-theme.css</code></p></li><li class="listitem"><p><code class="filename">skins/maven-paper-skin/src/main/resources/images/icon_error_sml.gif</code></p></li><li class="listitem"><p><code class="filename">skins/maven-paper-skin/src/main/resources/images/icon_info_sml.gif</code></p></li><li class="listitem"><p><code class="filename">skins/maven-paper-skin/src/main/resources/images/icon_success_sml.gif</code></p></li><li class="listitem"><p><code class="filename">skins/maven-paper-skin/src/main/resources/images/icon_warning_sml.gif</code></p></li><li class="listitem"><p><code class="filename">skins/maven-paper-skin/src/main/resources/images/external.png</code></p></li><li class="listitem"><p><code class="filename">skins/maven-paper-skin/src/main/resources/images/newwindow.png</code></p></li></ol></div><p>Define a new module <code class="code">maven-paper-skin</code> in
+      <code class="filename">C:\dev\projects\skins\pom.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;/distributionManagement&gt;
 +
 +  &lt;modules&gt;
 +    &lt;module&gt;maven-paper-skin&lt;/module&gt;
 +  &lt;/modules&gt;
  &lt;/project&gt;
 </code></pre><p>Supply the new module
-      <code class="filename">C:\dev\projects\maven-skins\maven-paper-skin\pom.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+      <code class="filename">C:\dev\projects\skins\maven-paper-skin\pom.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 +
 +&lt;project xmlns="http://maven.apache.org/POM/4.0.0"
 +         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -89,9 +85,9 @@ xcopy /S /I src\*.png C:\dev\projects\maven-skins\maven-paper-skin\src
 +  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
 +
 +  &lt;parent&gt;
-+    &lt;groupId&gt;nl.demon.shadowland.freedumbytes.maven.skins&lt;/groupId&gt;
-+    &lt;artifactId&gt;maven-skins&lt;/artifactId&gt;
-+    &lt;version&gt;3.1-gamma&lt;/version&gt;
++    &lt;groupId&gt;nl.demon.shadowland.freedumbytes.maven.custom.skins&lt;/groupId&gt;
++    &lt;artifactId&gt;foundation&lt;/artifactId&gt;
++    &lt;version&gt;1.3.1&lt;/version&gt;
 +  &lt;/parent&gt;
 </code></pre><pre xmlns="" class="language-provided"><code class="language-xml">+  &lt;artifactId&gt;maven-paper-skin&lt;/artifactId&gt;
 +  &lt;packaging&gt;jar&lt;/packaging&gt;
@@ -101,7 +97,7 @@ xcopy /S /I src\*.png C:\dev\projects\maven-skins\maven-paper-skin\src
 +  &lt;inceptionYear&gt;2010&lt;/inceptionYear&gt;
 +&lt;/project&gt;
 </code></pre><p>Eat your own dog food by overriding the ancestor skin settings in
-      <code class="filename">C:\dev\projects\maven-skins\maven-paper-skin\pom.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;inceptionYear&gt;2010&lt;/inceptionYear&gt;
+      <code class="filename">C:\dev\projects\skins\maven-paper-skin\pom.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;inceptionYear&gt;2010&lt;/inceptionYear&gt;
 +
 +  &lt;properties&gt;
 +    &lt;skinGroupId&gt;${project.groupId}&lt;/skinGroupId&gt;
@@ -113,7 +109,7 @@ xcopy /S /I src\*.png C:\dev\projects\maven-skins\maven-paper-skin\src
       ancestor
       <code class="filename">C:\dev\projects\maven-setup\src\site\site.xml</code> with
       a simple
-      <code class="filename">C:\dev\projects\maven-skins\maven-paper-skin\src\site\site.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+      <code class="filename">C:\dev\projects\skins\maven-paper-skin\src\site\site.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 +
 +&lt;project xmlns="http://maven.apache.org/DECORATION/1.7.0"
 +         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -139,16 +135,17 @@ xcopy /S /I src\*.png C:\dev\projects\maven-skins\maven-paper-skin\src
 -    &lt;skinGroupId&gt;org.apache.maven.skins&lt;/skinGroupId&gt;
 -    &lt;skinArtifactId&gt;maven-fluido-skin&lt;/skinArtifactId&gt;
 -    &lt;skinVersion&gt;${mavenFluidoSkinVersion}&lt;/skinVersion&gt;
-+    &lt;skinGroupId&gt;nl.demon.shadowland.freedumbytes.maven.skins&lt;/skinGroupId&gt;
++    &lt;skinGroupId&gt;nl.demon.shadowland.freedumbytes.maven.custom.skins&lt;/skinGroupId&gt;
 +    &lt;skinArtifactId&gt;maven-paper-skin&lt;/skinArtifactId&gt;
 +    &lt;skinVersion&gt;${customMavenPaperSkinVersion}&lt;/skinVersion&gt;
 
      &lt;mavenFluidoSkinVersion&gt;1.6&lt;/mavenFluidoSkinVersion&gt;
-+    &lt;customMavenPaperSkinVersion&gt;3.1-gamma&lt;/customMavenPaperSkinVersion&gt;
++    &lt;customSkinVersion&gt;1.3.1&lt;/customSkinVersion&gt;
++    &lt;customMavenPaperSkinVersion&gt;${customSkinVersion}&lt;/customMavenPaperSkinVersion&gt;
    &lt;/properties&gt;
 </code></pre><section class="section" id="prj.maven.site.skin.paper.customization"><div class="titlepage"><div><div><h3 class="title"><a id="prj.maven.site.skin.paper.customization" class="anchor" href="#prj.maven.site.skin.paper.customization"><span class="octicon octicon-link"/></a>E.1.1. Customization</h3></div></div></div><p>First customize the site banner and favicon with for example the
-        following images:</p><div class="orderedlist"><ol class="orderedlist compact" type="1"><li class="listitem"><p><code class="filename">maven-skins/maven-paper-skin/src/main/resources/images/logos/shadowrun.png</code></p></li><li class="listitem"><p><code class="filename">maven-skins/maven-paper-skin/src/main/resources/images/logos/shadowrun.jpg</code></p></li></ol></div><p>Now reference them in
-        <code class="filename">C:\dev\projects\maven-skins\maven-paper-skin\src\site\site.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;bannerLeft&gt;
+        following images:</p><div class="orderedlist"><ol class="orderedlist compact" type="1"><li class="listitem"><p><code class="filename">skins/maven-paper-skin/src/main/resources/images/logos/shadowrun.png</code></p></li><li class="listitem"><p><code class="filename">skins/maven-paper-skin/src/main/resources/images/logos/shadowrun.jpg</code></p></li></ol></div><p>Now reference them in
+        <code class="filename">C:\dev\projects\skins\maven-paper-skin\src\site\site.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;bannerLeft&gt;
 -    &lt;name&gt;${project.name}&lt;/name&gt;
 -    &lt;href /&gt;
 +    &lt;src&gt;images/logos/shadowrun.png&lt;/src&gt;
@@ -171,20 +168,20 @@ svn export ^
     doxia-sitetools-1.2
 </code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>The sample version in the subversion repository is update to
             <code class="filename">doxia-sitetools-1.6</code>.</p></div><p>Copy the resources into project
-        <code class="code">maven-skins</code>:</p><pre xmlns="" class="language-provided"><code class="language-bash">cd doxia-sitetools-1.2\doxia-site-renderer\src\main\resources
+        <code class="code">skins</code>:</p><pre xmlns="" class="language-provided"><code class="language-bash">cd doxia-sitetools-1.2\doxia-site-renderer\src\main\resources
 cd org\apache\maven\doxia\siterenderer\resources
-mkdir C:\dev\projects\maven-skins\maven-paper-skin\src\main\resources\META-INF\maven
+mkdir C:\dev\projects\skins\maven-paper-skin\src\main\resources\META-INF\maven
 copy default-site.vm ^
-     C:\dev\projects\maven-skins\maven-paper-skin\src\main\resources\META-INF\maven\site.vm
+     C:\dev\projects\skins\maven-paper-skin\src\main\resources\META-INF\maven\site.vm
 xcopy /S /I css ^
-     C:\dev\projects\maven-skins\maven-paper-skin\src\main\resources\css
+     C:\dev\projects\skins\maven-paper-skin\src\main\resources\css
 xcopy /S /I images ^
-     C:\dev\projects\maven-skins\maven-paper-skin\src\main\resources\images
-</code></pre><p>Commit those resource files:</p><div class="orderedlist"><ol class="orderedlist compact" type="1"><li class="listitem"><p><code class="filename">maven-skins/maven-paper-skin/src/main/resources/META-INF/maven/site.vm</code></p></li><li class="listitem"><p><code class="filename">maven-skins/maven-paper-skin/src/main/resources/css/maven-base.css</code></p></li><li class="listitem"><p><code class="filename">maven-skins/maven-paper-skin/src/main/resources/css/print.css</code></p></li><li class="listitem"><p><code class="filename">maven-skins/maven-paper-skin/src/main/resources/images/collapsed.gif</code></p></li><li class="listitem"><p><code class="filename">maven-skins/maven-paper-skin/src/main/resources/images/expanded.gif</code></p></li><li class="listitem"><p><code class="filename">maven-skins/maven-paper-skin/src/main/resources/images/logos/build-by-maven-black.png</code></p></li><li class="listitem"><p><code class="filename">maven-skins/maven-paper-skin/src/main/resources/images/logos/build-by-maven-white.png</code></p></li><li class="listitem"><p><code class="filename">maven-skins/maven-paper-skin/src/main/resources/images/logos/maven-feather.png</code></p></li></ol></div><p><span class="inlinemediaobject"><img src="images/icons/noobcube.png"/></span> Create a <a class="link" href="http://www.noobcube.com/?p=418">Fixed Header &amp; Footer
-        Layout</a>:</p><div class="orderedlist"><ol class="orderedlist compact" type="1"><li class="listitem"><p><code class="filename">maven-skins/maven-paper-skin/src/main/resources/css/maven-base.css</code></p></li><li class="listitem"><p><code class="filename">maven-skins/maven-paper-skin/src/main/resources/css/maven-theme.css</code></p></li><li class="listitem"><p><code class="filename">maven-skins/maven-paper-skin/src/main/resources/css/print.css</code></p></li><li class="listitem"><p><code class="filename">maven-skins/maven-paper-skin/src/main/resources/images/gradient-header.png</code></p></li><li class="listitem"><p><code class="filename">maven-skins/maven-paper-skin/src/main/resources/images/gradient-footer.png</code></p></li><li class="listitem"><p><code class="filename">maven-skins/maven-paper-skin/src/main/resources/images/paper.jpg</code></p></li><li class="listitem"><p><code class="filename">maven-skins/maven-paper-skin/src/main/resources/images/logos/hacker.png</code></p></li><li class="listitem"><p><code class="filename">maven-skins/maven-paper-skin/src/main/resources/js/css-browser-selector.js</code></p></li><li class="listitem"><p><code class="filename">maven-skins/maven-paper-skin/src/main/resources/META-INF/maven/site.vm</code></p></li></ol></div><p>Since the banner logo and the favicon are now set in
+     C:\dev\projects\skins\maven-paper-skin\src\main\resources\images
+</code></pre><p>Commit those resource files:</p><div class="orderedlist"><ol class="orderedlist compact" type="1"><li class="listitem"><p><code class="filename">skins/maven-paper-skin/src/main/resources/META-INF/maven/site.vm</code></p></li><li class="listitem"><p><code class="filename">skins/maven-paper-skin/src/main/resources/css/maven-base.css</code></p></li><li class="listitem"><p><code class="filename">skins/maven-paper-skin/src/main/resources/css/print.css</code></p></li><li class="listitem"><p><code class="filename">skins/maven-paper-skin/src/main/resources/images/collapsed.gif</code></p></li><li class="listitem"><p><code class="filename">skins/maven-paper-skin/src/main/resources/images/expanded.gif</code></p></li><li class="listitem"><p><code class="filename">skins/maven-paper-skin/src/main/resources/images/logos/build-by-maven-black.png</code></p></li><li class="listitem"><p><code class="filename">skins/maven-paper-skin/src/main/resources/images/logos/build-by-maven-white.png</code></p></li><li class="listitem"><p><code class="filename">skins/maven-paper-skin/src/main/resources/images/logos/maven-feather.png</code></p></li></ol></div><p><span class="inlinemediaobject"><img src="images/icons/noobcube.png"/></span> Create a <a class="link" href="http://www.noobcube.com/?p=418">Fixed Header &amp; Footer
+        Layout</a>:</p><div class="orderedlist"><ol class="orderedlist compact" type="1"><li class="listitem"><p><code class="filename">skins/maven-paper-skin/src/main/resources/css/maven-base.css</code></p></li><li class="listitem"><p><code class="filename">skins/maven-paper-skin/src/main/resources/css/maven-theme.css</code></p></li><li class="listitem"><p><code class="filename">skins/maven-paper-skin/src/main/resources/css/print.css</code></p></li><li class="listitem"><p><code class="filename">skins/maven-paper-skin/src/main/resources/images/gradient-header.png</code></p></li><li class="listitem"><p><code class="filename">skins/maven-paper-skin/src/main/resources/images/gradient-footer.png</code></p></li><li class="listitem"><p><code class="filename">skins/maven-paper-skin/src/main/resources/images/paper.jpg</code></p></li><li class="listitem"><p><code class="filename">skins/maven-paper-skin/src/main/resources/images/logos/hacker.png</code></p></li><li class="listitem"><p><code class="filename">skins/maven-paper-skin/src/main/resources/js/css-browser-selector.js</code></p></li><li class="listitem"><p><code class="filename">skins/maven-paper-skin/src/main/resources/META-INF/maven/site.vm</code></p></li></ol></div><p>Since the banner logo and the favicon are now set in
         <code class="filename">maven-theme.css</code> and <code class="filename">site.vm</code>
         remove the references in
-        <code class="filename">C:\dev\projects\maven-skins\maven-paper-skin\src\site\site.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">-  &lt;bannerLeft&gt;
+        <code class="filename">C:\dev\projects\skins\maven-paper-skin\src\site\site.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">-  &lt;bannerLeft&gt;
 -    &lt;src&gt;images/logos/shadowrun.png&lt;/src&gt;
 -    &lt;alt&gt;Free Dumb Bytes&lt;/alt&gt;
 -    &lt;href&gt;http://shadowrun.wikia.com&lt;/href&gt;
@@ -201,7 +198,7 @@ xcopy /S /I images ^
  &lt;/project&gt;
 </code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>Favicons are no longer shown in <a class="link" href="https://msujaws.wordpress.com/2012/04/23/an-update-to-site-identity-in-desktop-firefox/">Firefox
           URL Bar</a>.</p></div><p><span class="inlinemediaobject"><img src="images/icons/fdc.png"/></span> Create a parchment like menu with <a class="link" href="http://web.archive.org/web/20141001171702/http://home.tiscali.nl/developerscorner/liquidcorners/liquidcorners.htm">Liquid
-        Round Corners</a>:</p><div class="orderedlist"><ol class="orderedlist compact" type="1"><li class="listitem"><p><code class="filename">maven-skins/maven-paper-skin/src/main/resources/css/maven-base.css</code></p></li><li class="listitem"><p><code class="filename">maven-skins/maven-paper-skin/src/main/resources/css/maven-theme.css</code></p></li><li class="listitem"><p><code class="filename">maven-skins/maven-paper-skin/src/main/resources/images/parchment.gif</code></p></li><li class="listitem"><p><code class="filename">maven-skins/maven-paper-skin/src/main/resources/images/parchment-left-right-tearoff.gif</code></p></li><li class="listitem"><p><code class="filename">maven-skins/maven-paper-skin/src/main/resources/images/parchment-top-bottom-tearoff.gif</code></p></li><li class="listitem"><p><code class="filename">maven-skins/maven-paper-skin/src/main/resources/META-INF/maven/site.vm</code></p></li></ol></div><p>Reclaim the empty space below the menu:</p><pre xmlns="" class="language-provided"><code class="language-css">Index: maven-skins/maven-paper-skin/src/main/resources/css/maven-base.css
+        Round Corners</a>:</p><div class="orderedlist"><ol class="orderedlist compact" type="1"><li class="listitem"><p><code class="filename">skins/maven-paper-skin/src/main/resources/css/maven-base.css</code></p></li><li class="listitem"><p><code class="filename">skins/maven-paper-skin/src/main/resources/css/maven-theme.css</code></p></li><li class="listitem"><p><code class="filename">skins/maven-paper-skin/src/main/resources/images/parchment.gif</code></p></li><li class="listitem"><p><code class="filename">skins/maven-paper-skin/src/main/resources/images/parchment-left-right-tearoff.gif</code></p></li><li class="listitem"><p><code class="filename">skins/maven-paper-skin/src/main/resources/images/parchment-top-bottom-tearoff.gif</code></p></li><li class="listitem"><p><code class="filename">skins/maven-paper-skin/src/main/resources/META-INF/maven/site.vm</code></p></li></ol></div><p>Reclaim the empty space below the menu:</p><pre xmlns="" class="language-provided"><code class="language-css">Index: skins/maven-paper-skin/src/main/resources/css/maven-base.css
 =========================================================================
  table {
    padding:0px;
@@ -223,7 +220,7 @@ xcopy /S /I images ^
 +  margin: 0px;
 +  padding: 5px;
  }
-</code></pre><pre xmlns="" class="language-provided"><code class="language-css">Index: maven-skins/maven-paper-skin/src/main/resources/css/maven-theme.css
+</code></pre><pre xmlns="" class="language-provided"><code class="language-css">Index: skins/maven-paper-skin/src/main/resources/css/maven-theme.css
 ==========================================================================
  #leftColumn {
 -  margin: 10px 0 0 5px;
@@ -234,11 +231,9 @@ xcopy /S /I images ^
 +  z-index:999;
  }
 </code></pre><p>Activate the changes with <code class="command">mvn install</code> and
-        verify them with <code class="command">mvn site</code> in your browser at <a class="link" href="file:///C:/projects/maven-skins/maven-paper-skin/target/site/index.html">file:///C:/dev/projects/maven-skins/maven-paper-skin/target/site/index.html</a>.</p><div class="figure" id="prj.maven.site.skin.paper.screenshot"><a id="prj.maven.site.skin.paper.screenshot"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/paperlike-skin-sample.png" alt="Paperlike Skin Sample"/></div></div></div><div class="figure-title">Figure E.1. Paperlike Skin Sample</div></div><br class="figure-break"/><p>Release <code class="code">3.0-gamma-SNAPSHOT</code> with:</p><pre xmlns="" class="language-provided"><code class="language-bash">mvn -Dusername=jjasper -Dpassword=<em xmlns="http://www.w3.org/1999/xhtml" class="replaceable"><code>password</code></em> release:prepare
-mvn -Dusername=jjasper -Dpassword=<em xmlns="http://www.w3.org/1999/xhtml" class="replaceable"><code>password</code></em> release:perform -Dgoals=deploy
-</code></pre></section></section><section class="section" id="prj.maven.site.skin.fluido"><div class="titlepage"><div><div><h2 class="title"><a id="prj.maven.site.skin.fluido" class="anchor" href="#prj.maven.site.skin.fluido"><span class="octicon octicon-link"/></a>E.2. Custom Fluido Skin</h2></div></div></div><p>To add some custom imagery repackage the Apache Maven Fluido
+        verify them with <code class="command">mvn site</code> in your browser at <a class="link" href="file:///C:/projects/maven-skins/maven-paper-skin/target/site/index.html">file:///C:/dev/projects/skins/maven-paper-skin/target/site/index.html</a>.</p><div class="figure" id="prj.maven.site.skin.paper.screenshot"><a id="prj.maven.site.skin.paper.screenshot"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/paperlike-skin-sample.png" alt="Paperlike Skin Sample"/></div></div></div><div class="figure-title">Figure E.1. Paperlike Skin Sample</div></div><br class="figure-break"/></section></section><section class="section" id="prj.maven.site.skin.fluido"><div class="titlepage"><div><div><h2 class="title"><a id="prj.maven.site.skin.fluido" class="anchor" href="#prj.maven.site.skin.fluido"><span class="octicon octicon-link"/></a>E.2. Custom Fluido Skin</h2></div></div></div><p>To add some custom imagery repackage the Apache Maven Fluido
       Skin.</p><p>Define a new module <code class="code">maven-fluido-skin</code> in
-      <code class="filename">C:\dev\projects\maven-skins\pom.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;/distributionManagement&gt;
+      <code class="filename">C:\dev\projects\skins\pom.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;/distributionManagement&gt;
  
    &lt;modules&gt;
      &lt;module&gt;maven-paper-skin&lt;/module&gt;
@@ -246,7 +241,7 @@ mvn -Dusername=jjasper -Dpassword=<em xmlns="http://www.w3.org/1999/xhtml" class
    &lt;/modules&gt;
  &lt;/project&gt;
 </code></pre><p>Supply the new module
-      <code class="filename">C:\dev\projects\maven-skins\maven-fluido-skin\pom.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+      <code class="filename">C:\dev\projects\skins\maven-fluido-skin\pom.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 +
 +&lt;project xmlns="http://maven.apache.org/POM/4.0.0"
 +         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -255,9 +250,9 @@ mvn -Dusername=jjasper -Dpassword=<em xmlns="http://www.w3.org/1999/xhtml" class
 +  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
 +
 +  &lt;parent&gt;
-+    &lt;groupId&gt;nl.demon.shadowland.freedumbytes.maven.skins&lt;/groupId&gt;
-+    &lt;artifactId&gt;maven-skins&lt;/artifactId&gt;
-+    &lt;version&gt;3.1-gamma&lt;/version&gt;
++    &lt;groupId&gt;nl.demon.shadowland.freedumbytes.maven.custom.skins&lt;/groupId&gt;
++    &lt;artifactId&gt;foundation&lt;/artifactId&gt;
++    &lt;version&gt;1.3.1&lt;/version&gt;
 +  &lt;/parent&gt;
 </code></pre><pre xmlns="" class="language-provided"><code class="language-xml">+  &lt;artifactId&gt;maven-fluido-skin&lt;/artifactId&gt;
 +  &lt;packaging&gt;jar&lt;/packaging&gt;
@@ -308,7 +303,7 @@ mvn -Dusername=jjasper -Dpassword=<em xmlns="http://www.w3.org/1999/xhtml" class
 +  &lt;/build&gt;
 +&lt;/project&gt;
 </code></pre><p>Supply the site banners, powered by and favicon with for example
-      the following images:</p><div class="orderedlist"><ol class="orderedlist compact" type="1"><li class="listitem"><p><code class="filename">maven-skins/maven-fluido-skin/src/main/resources/images/logos/Bocca-della-Verita.png</code></p></li><li class="listitem"><p><code class="filename">maven-skins/maven-fluido-skin/src/main/resources/images/logos/hacker.png</code></p></li><li class="listitem"><p><code class="filename">maven-skins/maven-fluido-skin/src/main/resources/images/logos/Janus.png</code></p></li><li class="listitem"><p><code class="filename">maven-skins/maven-fluido-skin/src/main/resources/images/logos/shadowrun.jpg</code></p></li></ol></div><p>Now reference them in
+      the following images:</p><div class="orderedlist"><ol class="orderedlist compact" type="1"><li class="listitem"><p><code class="filename">skins/maven-fluido-skin/src/main/resources/images/logos/Bocca-della-Verita.png</code></p></li><li class="listitem"><p><code class="filename">skins/maven-fluido-skin/src/main/resources/images/logos/hacker.png</code></p></li><li class="listitem"><p><code class="filename">skins/maven-fluido-skin/src/main/resources/images/logos/Janus.png</code></p></li><li class="listitem"><p><code class="filename">skins/maven-fluido-skin/src/main/resources/images/logos/shadowrun.jpg</code></p></li></ol></div><p>Now reference them in
       <code class="filename">C:\dev\projects\maven-setup\src\site\site.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;bannerLeft&gt;
 -    &lt;name&gt;Free Dumb Bytes&lt;/name&gt;
 -    &lt;href&gt;${devHost}&lt;/href&gt;
@@ -343,28 +338,28 @@ mvn -Dusername=jjasper -Dpassword=<em xmlns="http://www.w3.org/1999/xhtml" class
 +
      &lt;menu name="Free Dumb Bytes" inherit="top"&gt;
 </code></pre><p>To customize the site layout get a copy of
-      <code class="filename">C:\dev\projects\maven-skins\maven-fluido-skin\target\classes\META-INF\maven\site.vm</code>
-      in <code class="filename">C:\dev\projects\maven-skins\maven-fluido-skin\src\main\resources\META-INF\maven</code>.
+      <code class="filename">C:\dev\projects\skins\maven-fluido-skin\target\classes\META-INF\maven\site.vm</code>
+      in <code class="filename">C:\dev\projects\skins\maven-fluido-skin\src\main\resources\META-INF\maven</code>.
       And tweak for example the banner to always display the project
-      name.</p><p>Release <code class="code">3.1-gamma-SNAPSHOT</code> with:</p><pre xmlns="" class="language-provided"><code class="language-bash">mvn -Dusername=jjasper -Dpassword=<em xmlns="http://www.w3.org/1999/xhtml" class="replaceable"><code>password</code></em> release:prepare
-mvn -Dusername=jjasper -Dpassword=<em xmlns="http://www.w3.org/1999/xhtml" class="replaceable"><code>password</code></em> release:perform -Dgoals=deploy</code></pre><p>Activate the repackaged skin for all other sites in
+      name.</p><p>Activate the repackaged skin for all other sites in
       <code class="filename">C:\dev\projects\maven-setup\pom.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;/distributionManagement&gt;
  
    &lt;properties&gt;
-     &lt;skinGroupId&gt;nl.demon.shadowland.freedumbytes.maven.skins&lt;/skinGroupId&gt;
+     &lt;skinGroupId&gt;nl.demon.shadowland.freedumbytes.maven.custom.skins&lt;/skinGroupId&gt;
 -    &lt;skinArtifactId&gt;maven-paper-skin&lt;/skinArtifactId&gt;
 -    &lt;skinVersion&gt;${customMavenPaperSkinVersion}&lt;/skinVersion&gt;
 +    &lt;skinArtifactId&gt;maven-fluido-skin&lt;/skinArtifactId&gt;
 +    &lt;skinVersion&gt;${customMavenFluidoSkinVersion}&lt;/skinVersion&gt;
  
      &lt;mavenFluidoSkinVersion&gt;1.6&lt;/mavenFluidoSkinVersion&gt;
-+    &lt;customMavenFluidoSkinVersion&gt;3.1-gamma&lt;/customMavenFluidoSkinVersion&gt;
-     &lt;customMavenPaperSkinVersion&gt;3.1-gamma&lt;/customMavenPaperSkinVersion&gt;
+     &lt;customSkinVersion&gt;1.3.1&lt;/customSkinVersion&gt;
+     &lt;customMavenPaperSkinVersion&gt;${customSkinVersion}&lt;/customMavenPaperSkinVersion&gt;
++    &lt;customMavenFluidoSkinVersion&gt;${customSkinVersion}&lt;/customMavenFluidoSkinVersion&gt;
    &lt;/properties&gt;
 </code></pre><div class="figure" id="prj.maven.site.skin.fluido.screenshot"><a id="prj.maven.site.skin.fluido.screenshot"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/fluido-skin-sample.png" alt="Fluido Skin Sample"/></div></div></div><div class="figure-title">Figure E.2. Fluido Skin Sample</div></div><br class="figure-break"/></section><section class="section" id="prj.maven.site.skin.reflow"><div class="titlepage"><div><div><h2 class="title"><a id="prj.maven.site.skin.reflow" class="anchor" href="#prj.maven.site.skin.reflow"><span class="octicon octicon-link"/></a>E.3. Custom Reflow Skin</h2></div></div></div><p>Alternatively to add some custom style repackage the <a class="link" href="http://andriusvelykis.github.io/reflow-maven-skin/">Reflow
       Maven Skin</a>, which is a Responsive Apache Maven skin to reflow the
       standard Maven site with a modern feel.</p><p>Define a new module <code class="code">maven-reflow-skin</code> in
-      <code class="filename">C:\dev\projects\maven-skins\pom.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;/distributionManagement&gt;
+      <code class="filename">C:\dev\projects\skins\pom.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;/distributionManagement&gt;
  
    &lt;modules&gt;
      &lt;module&gt;maven-paper-skin&lt;/module&gt;
@@ -373,7 +368,7 @@ mvn -Dusername=jjasper -Dpassword=<em xmlns="http://www.w3.org/1999/xhtml" class
    &lt;/modules&gt;
  &lt;/project&gt;
 </code></pre><p>Supply the new module
-      <code class="filename">C:\dev\projects\maven-skins\maven-reflow-skin\pom.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+      <code class="filename">C:\dev\projects\skins\maven-reflow-skin\pom.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 +
 +&lt;project xmlns="http://maven.apache.org/POM/4.0.0"
 +         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -382,9 +377,9 @@ mvn -Dusername=jjasper -Dpassword=<em xmlns="http://www.w3.org/1999/xhtml" class
 +  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
 +
 +  &lt;parent&gt;
-+    &lt;groupId&gt;nl.demon.shadowland.freedumbytes.maven.skins&lt;/groupId&gt;
-+    &lt;artifactId&gt;maven-skins&lt;/artifactId&gt;
-+    &lt;version&gt;3.1-gamma&lt;/version&gt;
++    &lt;groupId&gt;nl.demon.shadowland.freedumbytes.maven.custom.skins&lt;/groupId&gt;
++    &lt;artifactId&gt;foundation&lt;/artifactId&gt;
++    &lt;version&gt;1.3.1&lt;/version&gt;
 +  &lt;/parent&gt;
 </code></pre><pre xmlns="" class="language-provided"><code class="language-xml">+  &lt;artifactId&gt;maven-reflow-skin&lt;/artifactId&gt;
 +  &lt;packaging&gt;jar&lt;/packaging&gt;
@@ -457,9 +452,9 @@ mvn -Dusername=jjasper -Dpassword=<em xmlns="http://www.w3.org/1999/xhtml" class
 +  &lt;/build&gt;
 +&lt;/project&gt;
 </code></pre><p>Again supply the site banner, footer and favicon stuff with for
-      example the following images:</p><div class="orderedlist"><ol class="orderedlist compact" type="1"><li class="listitem"><p><code class="filename">maven-skins/maven-reflow-skin/src/main/resources/images/logos/Bocca-della-Verita.png</code></p></li><li class="listitem"><p><code class="filename">maven-skins/maven-reflow-skin/src/main/resources/images/logos/hacker.png</code></p></li><li class="listitem"><p><code class="filename">maven-skins/maven-reflow-skin/src/main/resources/images/logos/Janus.png</code></p></li><li class="listitem"><p><code class="filename">maven-skins/maven-reflow-skin/src/main/resources/images/logos/shadowrun.jpg</code></p></li></ol></div><p>To customize the site layout get a copy of
-      <code class="filename">C:\dev\projects\maven-skins\maven-reflow-skin\target\classes\META-INF\maven\site.vm</code>
-      in <code class="filename">C:\dev\projects\maven-skins\maven-reflow-skin\src\main\resources\META-INF\maven</code>.
+      example the following images:</p><div class="orderedlist"><ol class="orderedlist compact" type="1"><li class="listitem"><p><code class="filename">skins/maven-reflow-skin/src/main/resources/images/logos/Bocca-della-Verita.png</code></p></li><li class="listitem"><p><code class="filename">skins/maven-reflow-skin/src/main/resources/images/logos/hacker.png</code></p></li><li class="listitem"><p><code class="filename">skins/maven-reflow-skin/src/main/resources/images/logos/Janus.png</code></p></li><li class="listitem"><p><code class="filename">skins/maven-reflow-skin/src/main/resources/images/logos/shadowrun.jpg</code></p></li></ol></div><p>To customize the site layout get a copy of
+      <code class="filename">C:\dev\projects\skins\maven-reflow-skin\target\classes\META-INF\maven\site.vm</code>
+      in <code class="filename">C:\dev\projects\skins\maven-reflow-skin\src\main\resources\META-INF\maven</code>.
       And upgrade and/or tweak using <a class="link" href="http://andriusvelykis.github.io/reflow-maven-skin/skin/resources.html">localResouces</a>
       for example:</p><div class="orderedlist"><ol class="orderedlist compact" type="1"><li class="listitem"><p>The <a class="link" href="https://github.com/aFarkas/html5shiv">HTML5 Shiv</a>
           [version <a class="link" href="https://github.com/aFarkas/html5shiv/tree/master/dist">3.7.3</a>]
@@ -495,25 +490,25 @@ mvn -Dusername=jjasper -Dpassword=<em xmlns="http://www.w3.org/1999/xhtml" class
           current page.</p></li><li class="listitem"><p>Fix 'Back to Top' link which isn't working because of smooth
           scrolling for anchor links.</p></li><li class="listitem"><p>Fix bottom-nav menu highlighting issues (multiple highlight
           for submenu and its last menuitem; and missing highlight for submenu
-          itself).</p></li></ol></div><div class="figure" id="prj.maven.site.skin.reflow.lightbox.screenshot"><a id="prj.maven.site.skin.reflow.lightbox.screenshot"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/reflow-lightbox-sample.png" alt="Lightbox Sample"/></div></div></div><div class="figure-title">Figure E.3. Lightbox Sample</div></div><br class="figure-break"/><p>Release <code class="code">3.1-gamma-SNAPSHOT</code> with:</p><pre xmlns="" class="language-provided"><code class="language-bash">mvn -Dusername=jjasper -Dpassword=<em xmlns="http://www.w3.org/1999/xhtml" class="replaceable"><code>password</code></em> release:prepare
-mvn -Dusername=jjasper -Dpassword=<em xmlns="http://www.w3.org/1999/xhtml" class="replaceable"><code>password</code></em> release:perform -Dgoals=deploy</code></pre><p>Activate the repackaged skin for all other sites in
+          itself).</p></li></ol></div><div class="figure" id="prj.maven.site.skin.reflow.lightbox.screenshot"><a id="prj.maven.site.skin.reflow.lightbox.screenshot"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/reflow-lightbox-sample.png" alt="Lightbox Sample"/></div></div></div><div class="figure-title">Figure E.3. Lightbox Sample</div></div><br class="figure-break"/><p>Activate the repackaged skin for all other sites in
       <code class="filename">C:\dev\projects\maven-setup\pom.xml</code> (don't forget
       the extra velocity tools and its required velocity upgrade for the site
       plugin):</p><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;/distributionManagement&gt;
  
    &lt;properties&gt;
-     &lt;skinGroupId&gt;nl.demon.shadowland.freedumbytes.maven.skins&lt;/skinGroupId&gt;
+     &lt;skinGroupId&gt;nl.demon.shadowland.freedumbytes.maven.custom.skins&lt;/skinGroupId&gt;
 -    &lt;skinArtifactId&gt;maven-fluido-skin&lt;/skinArtifactId&gt;
 -    &lt;skinVersion&gt;${customMavenFluidoSkinVersion}&lt;/skinVersion&gt;
 +    &lt;skinArtifactId&gt;maven-reflow-skin&lt;/skinArtifactId&gt;
 +    &lt;skinVersion&gt;${customMavenReflowSkinVersion}&lt;/skinVersion&gt;
 
 +    &lt;velocityVersion&gt;1.7&lt;/velocityVersion&gt; 
-+    &lt;mavenReflowSkinVersion&gt;1.1.1&lt;/mavenReflowSkinVersion&gt;
-+    &lt;customMavenReflowSkinVersion&gt;3.1-gamma&lt;/customMavenReflowSkinVersion&gt;
      &lt;mavenFluidoSkinVersion&gt;1.6&lt;/mavenFluidoSkinVersion&gt;
-     &lt;customMavenFluidoSkinVersion&gt;3.1-gamma&lt;/customMavenFluidoSkinVersion&gt;
-     &lt;customMavenPaperSkinVersion&gt;3.1-gamma&lt;/customMavenPaperSkinVersion&gt;
++    &lt;mavenReflowSkinVersion&gt;1.1.1&lt;/mavenReflowSkinVersion&gt;
+     &lt;customSkinVersion&gt;1.3.1&lt;/customSkinVersion&gt;
+     &lt;customMavenPaperSkinVersion&gt;${customSkinVersion}&lt;/customMavenPaperSkinVersion&gt;
+     &lt;customMavenFluidoSkinVersion&gt;${customSkinVersion}&lt;/customMavenFluidoSkinVersion&gt;
++    &lt;customMavenReflowSkinVersion&gt;${customSkinVersion}&lt;/customMavenReflowSkinVersion&gt;
    &lt;/properties&gt;
 </code></pre><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;build&gt;
      …
@@ -658,14 +653,14 @@ mvn -Dusername=jjasper -Dpassword=<em xmlns="http://www.w3.org/1999/xhtml" class
       error <span class="quote">“<span class="quote">ParseException: Encountered "source" at line 1162, column
       52. Was expecting one of: "," … ")" … &lt;WHITESPACE&gt; …</span>”</span> due
       to velocity upgrade in
-      <code class="filename">C:\dev\projects\maven-skins\maven-fluido-skin\pom.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">     &lt;skinGroupId&gt;${project.groupId}&lt;/skinGroupId&gt;
+      <code class="filename">C:\dev\projects\skins\maven-fluido-skin\pom.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">     &lt;skinGroupId&gt;${project.groupId}&lt;/skinGroupId&gt;
      &lt;skinArtifactId&gt;${project.artifactId}&lt;/skinArtifactId&gt;
      &lt;skinVersion&gt;${project.version}&lt;/skinVersion&gt;
 +
 +    &lt;velocityVersion&gt;1.6.4&lt;/velocityVersion&gt;
    &lt;/properties&gt;
 </code></pre><p>and override the unsupported <code class="code">position</code> attribute in
-      <code class="filename">C:\dev\projects\maven-skins\maven-fluido-skin\src\site\site.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;/bannerRight&gt;
+      <code class="filename">C:\dev\projects\skins\maven-fluido-skin\src\site\site.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;/bannerRight&gt;
  
 +  &lt;publishDate position="left" format="yyyy-MM-dd HH:mm:ss z" /&gt;
 +
@@ -674,7 +669,7 @@ mvn -Dusername=jjasper -Dpassword=<em xmlns="http://www.w3.org/1999/xhtml" class
    &lt;poweredBy&gt;
 </code></pre><p>Also after the activation of the custom reflow settings fix reflow
       skin sample now overridden default settings in
-      <code class="filename">C:\dev\projects\maven-skins\maven-reflow-skin-sample\src\site\site.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;custom&gt;
+      <code class="filename">C:\dev\projects\skins\maven-reflow-skin-sample\src\site\site.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;custom&gt;
      &lt;reflowSkin&gt;
 +      &lt;localResources&gt;false&lt;/localResources&gt;
        &lt;theme&gt;bootswatch-united&lt;/theme&gt;
