@@ -276,7 +276,7 @@
   &lt;description&gt;
    This service runs an agent for Jenkins automation server.
   &lt;/description&gt;
-  &lt;executable&gt;P:\dev\apps\prg\java-x64\jre1.8.0_131\bin\java.exe&lt;/executable&gt;
+  &lt;executable&gt;P:\dev\apps\prg\java-x64\jdk1.8.0_162\bin\java.exe&lt;/executable&gt;
   &lt;arguments&gt;
     &lt;!-- -Xrs see also <a xmlns="http://www.w3.org/1999/xhtml" class="xref" href="programming.languages.html#prg.java.platform.reference" title="3.1.3.1. Standard Edition Tools Reference">Section 3.1.3.1, “Standard Edition Tools Reference”</a> --&gt;
     -jar "%BASE%\slave.jar" -jnlpUrl 
@@ -299,9 +299,9 @@ jenkins-slave.exe start
 services.msc
 </code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="important"><h2>Important</h2><p>In case of a new jdk installation use <a class="link" href="operating.system.html#os.windows.cmd.elevated" title="1.1.14.1. Elevated Command Prompt">an elevated command prompt</a>
           just run <code class="command">net stop jeeves</code> and <code class="command">net start
-          jeeves</code>. Verify the upgrade at <a class="link" href="http://freedumbytes.dev.net/jenkins/computer/jeeves/systemInfo">http://freedumbytes.dev.net/jenkins/computer/jeeves/systemInfo</a>.</p></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>The jdk upgrade for Jenkins master is handled when the upgrade
-          is done for <a class="link" href="web.server.html#web.tomcat.windows.service" title="8.1.3. Windows service">Tomcat</a>
-          and can be verified at <a class="link" href="http://freedumbytes.dev.net/jenkins/systemInfo">http://freedumbytes.dev.net/jenkins/systemInfo</a>.</p></div><p>Next fix the following error in
+          jeeves</code>.</p></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>The jdk upgrade for Jenkins master is handled when the upgrade
+          is done for <a class="link" href="web.server.html#web.tomcat.windows.service" title="8.1.3. Windows service">Tomcat</a>.</p></div><p>Verify the installation and the JVM memory usage at <a class="link" href="http://freedumbytes.dev.net/jenkins/systemInfo">http://freedumbytes.dev.net/jenkins/systemInfo</a>
+        and <a class="link" href="http://freedumbytes.dev.net/jenkins/computer/jeeves/systemInfo">http://freedumbytes.dev.net/jenkins/computer/jeeves/systemInfo</a>.</p><p>Next fix the following error in
         <code class="filename">P:\dev\data\ci\jeeves\jenkins-slave.err.log</code>:</p><pre class="screen">Failing to obtain http://freedumbytes.dev.net/jenkins/computer/jeeves/slave-agent.jnlp?encrypt=true
   java.io.IOException: Failed to load …: 401 Unauthorized
     at hudson.remoting.Launcher.parseJnlpArguments(Launcher.java:275)
@@ -311,7 +311,7 @@ Waiting 10 seconds before retry
 </pre><p>Which is also displayed in
         http://freedumbytes.dev.net/jenkins/computer/jeeves/ node page as
         <span class="quote">“<span class="quote">Connection was broken</span>”</span> and
-        <code class="filename">P:/dev/logs/httpserver/freedumbytes.dev.net-access.log:</code></p><pre class="screen">[201605 01:11:16] "GET /jenkins/computer/jeeves/slave-agent.jnlp?encrypt=true HTTP/1.1" 401 381 "-" "Java/1.8.0_131"
+        <code class="filename">P:/dev/logs/httpserver/freedumbytes.dev.net-access.log:</code></p><pre class="screen">[201605 01:11:16] "GET /jenkins/computer/jeeves/slave-agent.jnlp?encrypt=true HTTP/1.1" 401 381 "-" "Java/1.8.0_162"
 </pre><p>Just allow anonymous access for the local area network by
         editing
         <code class="filename">P:\dev\apps\httpserver\apache-conf\httpd-jenkins.conf</code>:</p><pre xmlns="" class="language-provided"><code class="language-apache">&lt;IfModule proxy_module&gt;
@@ -347,8 +347,8 @@ SEVERE: http://freedumbytes.dev.net/jenkins/tcpSlaveAgentListener/ is invalid: 4
   java.lang.Exception: …/tcpSlaveAgentListener/ is invalid: 401 Unauthorized
     at hudson.remoting.Engine.run(Engine.java:215)
 </pre><p>See also
-        <code class="filename">P:/dev/logs/httpserver/freedumbytes.dev.net-access.log:</code></p><pre class="screen">[20160507 01:25:27] "GET …/computer/jeeves/slave-agent.jnlp?encrypt=true HTTP/1.1" 200 736 "-" "Java/1.8.0_131"
-[20160507 01:25:28] "GET …/tcpSlaveAgentListener/ HTTP/1.1" 401 381 "-" "Java/1.8.0_131"
+        <code class="filename">P:/dev/logs/httpserver/freedumbytes.dev.net-access.log:</code></p><pre class="screen">[20160507 01:25:27] "GET …/computer/jeeves/slave-agent.jnlp?encrypt=true HTTP/1.1" 200 736 "-" "Java/1.8.0_162"
+[20160507 01:25:28] "GET …/tcpSlaveAgentListener/ HTTP/1.1" 401 381 "-" "Java/1.8.0_162"
 </pre><p>Again allow anonymous access for the local area network by editing
         <code class="filename">P:\dev\apps\httpserver\apache-conf\httpd-jenkins.conf</code>:</p><pre xmlns="" class="language-provided"><code class="language-apache">&lt;IfModule proxy_module&gt;
 &lt;IfModule proxy_ajp_module&gt;
@@ -383,8 +383,8 @@ INFO: Trying protocol: JNLP2-connect
 May 07, 2016 1:38:02 AM hudson.remoting.jnlp.Main$CuiListener status
 INFO: Connected
 </pre><p>See also
-        <code class="filename">P:/dev/logs/httpserver/freedumbytes.dev.net-access.log:</code></p><pre class="screen">[20160507 01:38:01] "GET …/computer/jeeves/slave-agent.jnlp?encrypt=true HTTP/1.1" 200 736 "-" "Java/1.8.0_131"
-[20160507 01:38:02] "GET …/tcpSlaveAgentListener/ HTTP/1.1" 200 12 "-" "Java/1.8.0_131"
+        <code class="filename">P:/dev/logs/httpserver/freedumbytes.dev.net-access.log:</code></p><pre class="screen">[20160507 01:38:01] "GET …/computer/jeeves/slave-agent.jnlp?encrypt=true HTTP/1.1" 200 736 "-" "Java/1.8.0_162"
+[20160507 01:38:02] "GET …/tcpSlaveAgentListener/ HTTP/1.1" 200 12 "-" "Java/1.8.0_162"
 </pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>And access to slave-agnet-jnlp is still not possible without
             the secret code:</p><div class="figure" id="prj.figure.jenkins.slave.agent.jnlp"><a id="prj.figure.jenkins.slave.agent.jnlp"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/ci/jenkins/jnlp-secret-oops.png" alt="Jenkins Slave Agent"/></div></div></div><div class="figure-title">Figure 14.1. Jenkins Slave Agent</div></div><br class="figure-break"/></div><p>Optionally select <span class="guilabel"><strong>Jenkins</strong></span> → <span class="guilabel"><strong>Manage Jenkins</strong></span> → <span class="guilabel"><strong>Manage Nodes</strong></span> to change:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><span class="guilabel"><strong>master</strong></span> → <span class="guilabel"><strong>Configure</strong></span> with:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><span class="guilabel"><strong># of executors</strong></span>:
                     <strong class="userinput"><code>2</code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Labels</strong></span>:

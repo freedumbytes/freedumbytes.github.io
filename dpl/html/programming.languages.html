@@ -15,7 +15,9 @@
             Releases</a>. The <a class="link" href="http://www.oracle.com/technetwork/java/archive-139210.html">Archive</a>
             is providing the products available as a courtesy to developers
             for problem resolution. The products available here have completed
-            the Sun EOL process.</p></li><li class="listitem"><p>Upgrade checklist:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p>Related products: -.</p></li><li class="listitem"><p>References: <a class="link" href="mail.server.html#mail.james.windows.service" title="6.2.4. Windows service">Apache James - Windows
+            the Sun EOL process.</p></li><li class="listitem"><p><a class="link" href="https://www.oracle.com/technetwork/topics/security/whatsnew/index.html">Security</a>:
+            <a class="link" href="https://www.oracle.com/technetwork/topics/security/alerts-086861.html">Critical
+            Patch Updates, Security Alerts and Bulletins</a>.</p></li><li class="listitem"><p>Upgrade checklist:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p>Related products: -.</p></li><li class="listitem"><p>References: <a class="link" href="mail.server.html#mail.james.windows.service" title="6.2.4. Windows service">Apache James - Windows
                 Service <code class="code">wrapper.java.command</code></a>, <a class="link" href="web.server.html#web.tomcat.windows.service" title="8.1.3. Windows service">Tomcat - Windows Service
                 <code class="code">tomcat8.exe</code> or <code class="code">tomcat8w.exe</code></a>,
                 <a class="link" href="application.server.html#app.payara.jdk" title="9.1.3. Changing JDK version">Payara - asenv.bat
@@ -81,24 +83,23 @@
                     - Machine Learning for Video Games.</p></li><li class="listitem"><p>Destination NASA - <a class="link" href="https://www.youtube.com/watch?v=B7KdN4PRgj4">Evolutionary
                     Antenna Synthesis</a>.</p></li></ul></div></li><li class="listitem"><p><a class="link" href="http://www.crealysm.com/">Crealysm</a> (<a class="link" href="http://www.crealysm.com/page/booh.html">BooH</a>)
                 by Cris Kop.</p></li></ul></div></li></ul></div></section><section class="section" id="prg.java.platform.install.guide"><div class="titlepage"><div><div><h3 class="title"><a id="prg.java.platform.install.guide" class="anchor" href="#prg.java.platform.install.guide"><span class="octicon octicon-link"/></a>3.1.2. JDK installation guide</h3></div></div></div><p><a class="link" href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">Download</a>
-        the Win32 binary: <code class="filename">jdk-8u131-windows-i586.exe</code>
-        [version <a class="link" href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">1.8.0_131</a>]
-        for the use with for example Firefox and the Win64 binary:
-        <code class="filename">jdk-8u131-windows-x64.exe</code> for development
-        purposes.</p><p>Run the 32-bit <code class="filename">.exe</code> file
+        the Win64 binary: <code class="filename">jdk-8u162-windows-x64.exe</code>
+        [version <a class="link" href="http://www.oracle.com/technetwork/java/javase/downloads/index.html">1.8.0_162</a>].</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p><a class="link" href="https://stackoverflow.com/questions/46928088/java-8-update-151-or-152">What's
+          the difference</a> between odd (a Critical Patch Update [CPU])
+          and even (a corresponding Patch Set Update [PSU]) <a class="link" href="http://www.oracle.com/technetwork/java/javase/cpu-psu-explained-2331472.html">Java
+          updates</a>? See for example bug <span class="quote">“<span class="quote">Decode error with Tomcat
+          version 7.x</span>”</span> noted as Known Issue in release notes of
+          8u151/152 <a class="link" href="https://bugs.java.com/view_bug.do?bug_id=JDK-8191040">JDK-8191040</a>,
+          which was fixed in Oracle 8u162 <a class="link" href="https://bugs.java.com/view_bug.do?bug_id=JDK-8189789">JDK-8189789</a>
+          and OpenJDK 8u171 <a class="link" href="https://bugs.openjdk.java.net/browse/JDK-8189789">JDK-8189789</a>.</p></div><p>Run the 64-bit <code class="filename">.exe</code> file
         to install the JDK <span class="guilabel"><strong>Development Tools</strong></span> with
-        <span class="guibutton"><strong>Change…</strong></span> into <code class="filename">P:\dev\apps\prg\java\jdk1.8.0_131</code>. After
-        the JDK is installed <span class="guibutton"><strong>Change…</strong></span> the JRE
-        <span class="guilabel"><strong>Destination Folder</strong></span> into <code class="filename">P:\dev\apps\prg\java\jre1.8.0_131</code>.</p><p>Run the 64-bit <code class="filename">.exe</code> file
-        to install the JDK <span class="guilabel"><strong>Development Tools</strong></span> with
-        <span class="guibutton"><strong>Change…</strong></span> into <code class="filename">P:\dev\apps\prg\java-x64\jdk1.8.0_131</code>.
+        <span class="guibutton"><strong>Change…</strong></span> into <code class="filename">P:\dev\apps\prg\java-x64\jdk1.8.0_162</code>.
         After the JDK is installed <span class="guibutton"><strong>Change…</strong></span> the JRE
-        <span class="guilabel"><strong>Destination Folder</strong></span> into <code class="filename">P:\dev\apps\prg\java-x64\jre1.8.0_131</code>.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>It seems Java SE 8 Update 60 doesn't have Public JRE
-          installation included.</p></div><p id="prg.java.home"><a id="prg.java.home"><span style="display:none;">trick</span></a>Press <span class="keycap"><strong><span class="inlinemediaobject"><img src="images/os/windows/windows-key.gif"/></span></strong></span>+<span class="keycap"><strong>Break</strong></span> keys to open the Windows System Properties. Select
+        <span class="guilabel"><strong>Destination Folder</strong></span> into <code class="filename">P:\dev\apps\prg\java-x64\jre1.8.0_162</code>.</p><p id="prg.java.home"><a id="prg.java.home"><span style="display:none;">trick</span></a>Press <span class="keycap"><strong><span class="inlinemediaobject"><img src="images/os/windows/windows-key.gif"/></span></strong></span>+<span class="keycap"><strong>Break</strong></span> keys to open the Windows System Properties. Select
         <span class="guisubmenu"><strong>Advanced system settings</strong></span> → <span class="guibutton"><strong>Enviro<span class="accel">n</span>ment Variables</strong></span> and <span class="guibutton"><strong>Ed<span class="accel">i</span>t</strong></span> the
         <code class="envar">Path</code> to append <strong class="userinput"><code>%JAVA_HOME%\bin;</code></strong>.
         Also add a <span class="guibutton"><strong>Ne<span class="accel">w</span></strong></span> system variable
-        <code class="envar">JAVA_HOME</code> pointing to <strong class="userinput"><code><code class="filename">P:\dev\apps\prg\java-x64\jdk1.8.0_131</code></code></strong>.</p><p>Verify the installation with <code class="command">java
+        <code class="envar">JAVA_HOME</code> pointing to <strong class="userinput"><code><code class="filename">P:\dev\apps\prg\java-x64\jdk1.8.0_162</code></code></strong>.</p><p>Verify the installation with <code class="command">java
         -version</code>.</p></section><section class="section" id="prg.java.platform.jce"><div class="titlepage"><div><div><h3 class="title"><a id="prg.java.platform.jce" class="anchor" href="#prg.java.platform.jce"><span class="octicon octicon-link"/></a>3.1.3. Thoughts on Java SE, Java Security and Usability</h3></div></div></div><p>When building inter-connected applications, developers
         frequently interact with TLS-enabled protocols like HTTPS:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><a class="link" href="https://blogs.oracle.com/java-platform-group/entry/diagnosing_tls_ssl_and_https">Diagnosing
             TLS, SSL, and HTTPS</a>.</p></li><li class="listitem"><p>JDK 8 will use <a class="link" href="https://blogs.oracle.com/java-platform-group/entry/java_8_will_use_tls">TLS
@@ -111,7 +112,12 @@
         handshake_failure</span>”</span> in Java but work in the browser, you might
         want to install the files, from the above mentioned JCE,
         <code class="filename">local_policy.jar</code> and
-        <code class="filename">US_export_policy.jar</code> in:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><code class="filename">%JRE_HOME%\lib\security</code> and/or</p></li><li class="listitem"><p><code class="filename">%JAVA_HOME%\jre\lib\security</code>.</p></li></ul></div><section class="section" id="prg.java.platform.reference"><div class="titlepage"><div><div><h4 class="title"><a id="prg.java.platform.reference" class="anchor" href="#prg.java.platform.reference"><span class="octicon octicon-link"/></a>3.1.3.1. Standard Edition Tools Reference</h4></div></div></div><p>Java Platform, <a class="link" href="http://docs.oracle.com/javase/8/docs/technotes/tools/windows/java.html">Standard
+        <code class="filename">US_export_policy.jar</code> in:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><code class="filename">%JRE_HOME%\lib\security</code> and/or</p></li><li class="listitem"><p><code class="filename">%JAVA_HOME%\jre\lib\security</code>.</p></li></ul></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="important"><h2>Important</h2><p><a class="link" href="https://golb.hplar.ch/p/JCE-policy-changes-in-Java-SE-8u151-and-8u152">JCE
+          policy changes</a> in Java SE 8u151, 8u152 and 8u162. It is now
+          enabled by default,but can be set specifically in
+          <code class="filename">%JAVA_HOME%\jre\lib\security</code>\java.security:</p><pre class="language-provided"><code class="language-ini">#crypto.policy=limited | unlimited
+</code></pre><p>To test it, just run: <code class="command">jrunscript -e "print
+          (javax.crypto.Cipher.getMaxAllowedKeyLength('AES'))"</code>.</p></div><section class="section" id="prg.java.platform.reference"><div class="titlepage"><div><div><h4 class="title"><a id="prg.java.platform.reference" class="anchor" href="#prg.java.platform.reference"><span class="octicon octicon-link"/></a>3.1.3.1. Standard Edition Tools Reference</h4></div></div></div><p>Java Platform, <a class="link" href="http://docs.oracle.com/javase/8/docs/technotes/tools/windows/java.html">Standard
           Edition Tools Reference</a> describes for example the general
           purpose options that are specific to the Java HotSpot Virtual
           Machine such as <code class="option">-Xrs</code>, which reduces the use of

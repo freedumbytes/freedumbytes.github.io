@@ -50,9 +50,7 @@
           <code class="filename">C:\Users\<em class="replaceable"><code>&lt;username&gt;</code></em>\.<a class="link" href="https://git-scm.com/docs/git-config.html">gitconfig</a></code>):</p><pre xmlns="" class="language-provided"><code class="language-bash">git config --global user.name "<em xmlns="http://www.w3.org/1999/xhtml" class="replaceable"><code>Jene Jasper</code></em>"
 git config --global user.email <em xmlns="http://www.w3.org/1999/xhtml" class="replaceable"><code>jene.jasper@company.org</code></em>
 
-git config --global core.editor \
-    "'P:/dev/apps/editor/notepad++/notepad++.exe' \
-     -multiInst -noPlugins -nosession -notabbar"
+git config --global core.editor "/p/dev/apps/editor/notepad++/notepad++ -multiInst -noPlugins -nosession -notabbar"
 
 git config --global branch.<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="http://mislav.uniqpath.com/2010/07/git-tips/">autosetuprebase</a> always
 
@@ -60,63 +58,19 @@ git config --global push.default simple
 git config --global push.followTags true
 
 git config --list
-</code></pre></section><section class="section" id="vcs.git.difftool"><div class="titlepage"><div><div><h4 class="title"><a id="vcs.git.difftool" class="anchor" href="#vcs.git.difftool"><span class="octicon octicon-link"/></a>11.1.2.3. External diff tool</h4></div></div></div><p>To be able to use <a class="link" href="operating.system.html#os.windows.merge.winmerge" title="1.1.20.2. WinMerge">WinMerge</a> as the <a class="link" href="http://www.kernel.org/pub/software/scm/git/docs/git-difftool.html">diff
-          tool</a> add the following:</p><pre xmlns="" class="language-provided"><code class="language-bash">git config --global diff.tool winmerge
-git config --global difftool.winmerge.cmd \
-    "winmerge.sh \"\$LOCAL\" \"\$BASE\" \"\$REMOTE\""
+</code></pre></section><section class="section" id="vcs.git.difftool"><div class="titlepage"><div><div><h4 class="title"><a id="vcs.git.difftool" class="anchor" href="#vcs.git.difftool"><span class="octicon octicon-link"/></a>11.1.2.3. External diff tool</h4></div></div></div><p>To be able to use <a class="link" href="operating.system.html#os.windows.merge.winmerge" title="1.1.20.2. WinMerge">WinMerge</a> as the <a class="link" href="https://git-scm.com/docs/git-difftool">diff tool</a>
+          add the following settings:</p><pre xmlns="" class="language-provided"><code class="language-bash">git config --global diff.tool winmerge
+git config --global difftool.winmerge.path /p/dev/apps/editor/winmerge/WinMergeU
+git config --global difftool.winmerge.trustExitCode false
 git config --global difftool.prompt false
-</code></pre><p>Create the following wrapper
-          <code class="filename">P:\dev\apps\windows\batch\winmerge.sh</code>:</p><pre xmlns="" class="language-provided"><code class="language-bash">#!/bin/sh
-
-# Passing the following parameters to difftool:
-#  LOCAL BASE REMOTE
-
-diffPreImage=$1
-diffFileName=$2
-diffPostImage=$3
-
-NULL="/dev/null"
-
-if [ "$diffPostImage" = "$NULL" ] ; then
-    echo "removed: $diffFileName"
-elif [ "$diffPreImage" = "$NULL" ] ; then
-    echo "added: $diffFileName"
-else
-    echo "changed: $diffFileName"
-    "P:/dev/apps/editor/winmerge/WinMergeU.exe" -e -u \
-     -dl "Working copy $diffFileName" \
-     -dr "Original $diffFileName" "$diffPostImage" "$diffPreImage" 
-fi
-</code></pre></section><section class="section" id="vcs.git.mergetool"><div class="titlepage"><div><div><h4 class="title"><a id="vcs.git.mergetool" class="anchor" href="#vcs.git.mergetool"><span class="octicon octicon-link"/></a>11.1.2.4. External merge tool</h4></div></div></div><p>To be able to use <a class="link" href="operating.system.html#os.windows.merge.kdiff3" title="1.1.20.1. KDiff3">KDiff3</a> as the <a class="link" href="http://www.kernel.org/pub/software/scm/git/docs/git-mergetool.html">merge
-          tool</a> add the following:</p><pre xmlns="" class="language-provided"><code class="language-bash">git config --global merge.tool kdiff
-git config --global mergetool.kdiff.cmd \
-  '3waymerge.sh "$PWD/$LOCAL" "$PWD/$BASE" "$PWD/$REMOTE" "$PWD/$MERGED"'
-git config --global mergetool.kdiff.trustExitCode false
-git config --global mergetool.kdiff.keepBackup false
+</code></pre></section><section class="section" id="vcs.git.mergetool"><div class="titlepage"><div><div><h4 class="title"><a id="vcs.git.mergetool" class="anchor" href="#vcs.git.mergetool"><span class="octicon octicon-link"/></a>11.1.2.4. External merge tool</h4></div></div></div><p>To be able to use <a class="link" href="operating.system.html#os.windows.merge.kdiff3" title="1.1.20.1. KDiff3">KDiff3</a> as the <a class="link" href="https://git-scm.com/docs/git-mergetool">merge
+          tool</a> add the following settings:</p><pre xmlns="" class="language-provided"><code class="language-bash">git config --global merge.tool kdiff3
+git config --global mergetool.kdiff3.path /p/dev/apps/editor/kdiff3/kdiff3
+git config --global mergetool.kdiff3.trustExitCode false
+git config --global mergetool.kdiff3.keepBackup false
 git config --global mergetool.prompt false
-</code></pre><p>Create the following wrapper
-          <code class="filename">P:\dev\apps\windows\batch\3waymerge.sh</code>:</p><pre xmlns="" class="language-provided"><code class="language-bash">#!/bin/sh
-
-# Passing the following parameters to mergetool:
-#  LOCAL BASE REMOTE MERGED
-
-currentBranch=$1
-commonBaseMerge=$2
-toBeMerged=$3
-resultOfMerge=$4
-
-if [ -f $commonBaseMerge ]
-then
-    # KDiff3 will display eol choices (if Windows: CRLF, if Unix LF)
-    "P:/dev/apps/editor/kdiff3/kdiff3.exe" \
-    -m "$commonBaseMerge" "$currentBranch" "$toBeMerged" \
-    -o "$resultOfMerge"
-else
-    # KDiff3 however does know how to merge based on 2 files (not just 3)
-    "P:/dev/apps/editor/kdiff3/kdiff3.exe" \
-    -m "$commonBaseMerge" "$toBeMerged" \
-    -o "$resultOfMerge"
-fi
+</code></pre><p>Alternatively use <a class="link" href="operating.system.html#os.windows.merge.kdiff3" title="1.1.20.1. KDiff3">KDiff3</a> instead of <a class="link" href="operating.system.html#os.windows.merge.winmerge" title="1.1.20.2. WinMerge">WinMerge</a> as the <a class="link" href="https://git-scm.com/docs/git-difftool">diff tool</a>
+          overwrite the following settings:</p><pre xmlns="" class="language-provided"><code class="language-bash">git config --global diff.tool kdiff3
 </code></pre></section><section class="section" id="vcs.git.ignore.template"><div class="titlepage"><div><div><h4 class="title"><a id="vcs.git.ignore.template" class="anchor" href="#vcs.git.ignore.template"><span class="octicon octicon-link"/></a>11.1.2.5. Ignores template</h4></div></div></div><p>Create the following ignores template
           <code class="filename">P:\dev\data\repo\<a class="link" href="https://gitlab.com/freedumbytes/setup/raw/master/.gitignore">.gitignore</a></code>
           based on <code class="filename">Java.gitignore</code> and
@@ -762,7 +716,7 @@ END
         <strong class="userinput"><code>%FISHEYE_HOME%\bin;</code></strong>. Also add a
         <span class="guibutton"><strong>Ne<span class="accel">w</span></strong></span> system variable
         <code class="envar">FISHEYE_HOME</code> pointing to <strong class="userinput"><code><code class="filename">P:\dev\apps\vcs\fecru-4.5.1</code></code></strong>.</p><p>Verify the installation with: .</p><pre xmlns="" class="language-provided"><code class="language-bash">cd /d %FISHEYE_HOME%
-set JAVA_HOME=P:\dev\apps\prg\java-x64\jdk1.8.0_131
+set JAVA_HOME=P:\dev\apps\prg\java-x64\jdk1.8.0_162
 fisheyectl.bat run
 </code></pre><p>Terminate the server with <span class="keycap"><strong>Ctrl</strong></span>+<span class="keycap"><strong>C</strong></span>.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="warning"><h2>Warning</h2><p>If you now notice that FishEye tries to start spontaneously in
           its own Windows <span class="application"><strong>Command Processor</strong></span>
@@ -896,7 +850,7 @@ xcopy /E /I P:\dev\apps\vcs\fecru-3.9.1\wrapper ^
         <code class="filename">P:\dev\apps\vcs\fecru-4.5.1\wrapper\conf\wrapper.conf</code>:</p><pre xmlns="" class="language-provided"><code class="language-ini"> …
 
 # Java Application
-wrapper.java.command=P:\dev\apps\prg\java-x64\jdk1.8.0_131\bin\java<span xmlns="http://www.w3.org/1999/xhtml" id="vcs.fisheye.java.command"/><a xmlns="http://www.w3.org/1999/xhtml" id="vcs.fisheye.java.command"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>
+wrapper.java.command=P:\dev\apps\prg\java-x64\jdk1.8.0_162\bin\java<span xmlns="http://www.w3.org/1999/xhtml" id="vcs.fisheye.java.command"/><a xmlns="http://www.w3.org/1999/xhtml" id="vcs.fisheye.java.command"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>
 
  …
 
@@ -962,9 +916,9 @@ wrapper.ntservice.description=FishEye gives Git, Subversion and CVS a Web interf
           case of <span class="quote">“<span class="quote">The specified service has been marked for
           deletion.</span>”</span>).</p></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="important"><h2>Important</h2><p>In case of a new jdk installation use <a class="link" href="operating.system.html#os.windows.cmd.elevated" title="1.1.14.1. Elevated Command Prompt">an elevated command prompt</a>
           just run <code class="command">net stop fisheye</code> and <code class="command">net start
-          fisheye</code>. Verify the upgrade at <a class="link" href="http://freedumbytes.dev.net/fisheye/admin/sysinfo.do">http://freedumbytes.dev.net/fisheye/admin/sysinfo.do</a>.</p></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>Should the following error <span class="quote">“<span class="quote">Error: no `server' JVM at
-            `P:\dev\apps\prg\java\jre…\bin\server\jvm.dll'</span>”</span> occur check
-            for stray java.exe files (see tip and warning in <a class="xref" href="programming.languages.html#prg.java.platform.install.guide" title="3.1.2. JDK installation guide">Section 3.1.2, “JDK installation guide”</a>)</p></div><section class="section" id="vcs.fisheye.windows.user"><div class="titlepage"><div><div><h4 class="title"><a id="vcs.fisheye.windows.user" class="anchor" href="#vcs.fisheye.windows.user"><span class="octicon octicon-link"/></a>11.3.5.1. Log On Windows user</h4></div></div></div><p>For the same reason as <a class="xref" href="web.server.html#web.tomcat.windows.user" title="8.1.3.1. Log On Windows user">Section 8.1.3.1, “Log On Windows user”</a> launch the <span class="application"><strong>Service
+          fisheye</code>.</p></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>Should the following error <span class="quote">“<span class="quote">Error: no `server' JVM at
+            `P:\dev\apps\prg\java-x64\jre…\bin\server\jvm.dll'</span>”</span> occur
+            check for stray java.exe files (see tip and warning in <a class="xref" href="programming.languages.html#prg.java.platform.install.guide" title="3.1.2. JDK installation guide">Section 3.1.2, “JDK installation guide”</a>)</p></div><p>Verify the installation and the JVM memory usage at <a class="link" href="http://freedumbytes.dev.net/fisheye/admin/sysinfo.do">http://freedumbytes.dev.net/fisheye/admin/sysinfo.do</a>.</p><section class="section" id="vcs.fisheye.windows.user"><div class="titlepage"><div><div><h4 class="title"><a id="vcs.fisheye.windows.user" class="anchor" href="#vcs.fisheye.windows.user"><span class="octicon octicon-link"/></a>11.3.5.1. Log On Windows user</h4></div></div></div><p>For the same reason as <a class="xref" href="web.server.html#web.tomcat.windows.user" title="8.1.3.1. Log On Windows user">Section 8.1.3.1, “Log On Windows user”</a> launch the <span class="application"><strong>Service
           Management Console</strong></span> with
           <code class="command">services.msc</code>. Right click on
           <span class="guilabel"><strong>freedumbytes.dev.net FishEye</strong></span> and select

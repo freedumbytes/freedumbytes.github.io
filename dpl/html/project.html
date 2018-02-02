@@ -229,10 +229,10 @@
           descriptor</a> in
           <code class="filename">C:\dev\projects\maven-setup\src\site\site.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 +
-+&lt;project xmlns="http://maven.apache.org/DECORATION/1.7.0"
++&lt;project xmlns="http://maven.apache.org/DECORATION/1.8.0"
 +         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-+         xsi:schemaLocation="http://maven.apache.org/DECORATION/1.7.0
-+                             https://maven.apache.org/xsd/decoration-1.7.0.xsd"
++         xsi:schemaLocation="http://maven.apache.org/DECORATION/1.8.0
++                             https://maven.apache.org/xsd/decoration-1.8.0.xsd"
 +         combine.self="override"&gt;
 +  &lt;bannerLeft&gt;
 +    &lt;name&gt;${this.organizationName}&lt;/name&gt;
@@ -301,7 +301,7 @@
           <code class="filename">C:\dev\projects\maven-setup\pom.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;properties&gt;
       …
 +
-+    &lt;mavenProjectInfoReportsPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/browse/MPIR?selectedTab=com.atlassian.jira.jira-projects-plugin:changelog-panel&amp;allVersions=true">2.9</a>&lt;/mavenProjectInfoReportsPluginVersion&gt;
++    &lt;mavenProjectInfoReportsPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317821">2.9</a>&lt;/mavenProjectInfoReportsPluginVersion&gt;
 +
 +    &lt;dependency.details.enabled&gt;false&lt;/dependency.details.enabled&gt;
 +    &lt;dependency.locations.enabled&gt;false&lt;/dependency.locations.enabled&gt;
@@ -394,9 +394,9 @@
 +    &lt;skinArtifactId&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://maven.apache.org/skins/maven-fluido-skin/">maven-fluido-skin</a>&lt;/skinArtifactId&gt;
 +    &lt;skinVersion&gt;${mavenFluidoSkinVersion}&lt;/skinVersion&gt;
 +
-+    &lt;mavenFluidoSkinVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/browse/MSKINS/component/12326474?selectedTab=com.atlassian.jira.jira-projects-plugin:component-changelog-panel&amp;allVersions=true">1.6</a>&lt;/mavenFluidoSkinVersion&gt;
-+    &lt;mavenSitePluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/browse/MSITE?selectedTab=com.atlassian.jira.jira-projects-plugin:changelog-panel&amp;allVersions=true">3.7</a>&lt;/mavenSitePluginVersion&gt;
-     &lt;mavenProjectInfoReportsPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/browse/MPIR?selectedTab=com.atlassian.jira.jira-projects-plugin:changelog-panel&amp;allVersions=true">2.9</a>&lt;/mavenProjectInfoReportsPluginVersion&gt;
++    &lt;mavenFluidoSkinVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317926">1.7</a>&lt;/mavenFluidoSkinVersion&gt;
++    &lt;mavenSitePluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317923">3.7</a>&lt;/mavenSitePluginVersion&gt;
+     &lt;mavenProjectInfoReportsPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317821">2.9</a>&lt;/mavenProjectInfoReportsPluginVersion&gt;
 
 +    &lt;generateSitemap&gt;true&lt;/generateSitemap&gt;
      &lt;dependency.details.enabled&gt;false&lt;/dependency.details.enabled&gt;
@@ -504,44 +504,44 @@
         first batch of plugins that will require a version are configured in
         <code class="filename">C:\dev\projects\maven-setup\pom.xml</code> (see also
         <a class="link" href="http://blog.soebes.de/blog/categories/maven-plugin-releases/">SoftwareEntwicklung
-        Beratung Schulung</a> for latest release notes):</p><pre xmlns="" class="language-provided"><code class="language-xml">     &lt;mavenFluidoSkinVersion&gt;1.6&lt;/mavenFluidoSkinVersion&gt;
+        Beratung Schulung</a> for latest release notes):</p><pre xmlns="" class="language-provided"><code class="language-xml">     &lt;mavenFluidoSkinVersion&gt;1.7&lt;/mavenFluidoSkinVersion&gt;
 +
-+    &lt;mavenHelpPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/browse/MPH?selectedTab=com.atlassian.jira.jira-projects-plugin:changelog-panel&amp;allVersions=true">2.2</a>&lt;/mavenHelpPluginVersion&gt;
-+    &lt;mavenCleanPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/browse/MCLEAN?selectedTab=com.atlassian.jira.jira-projects-plugin:changelog-panel&amp;allVersions=true">3.0.0</a>&lt;/mavenCleanPluginVersion&gt;
-+    &lt;mavenToolchainsPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/browse/MTOOLCHAINS?selectedTab=com.atlassian.jira.jira-projects-plugin:changelog-panel&amp;allVersions=true">1.1</a>&lt;/mavenToolchainsPluginVersion&gt;
-+    &lt;versionsMavenPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://github.com/mojohaus/versions-maven-plugin/releases">2.4</a>&lt;/versionsMavenPluginVersion&gt;
-+    &lt;mavenPluginPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/browse/MPLUGIN?selectedTab=com.atlassian.jira.jira-projects-plugin:changelog-panel&amp;allVersions=true">3.5</a>&lt;/mavenPluginPluginVersion&gt;
-+    &lt;mavenArchetypePluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/browse/ARCHETYPE?selectedTab=com.atlassian.jira.jira-projects-plugin:changelog-panel&amp;allVersions=true">3.0.1</a>&lt;/mavenArchetypePluginVersion&gt;
-+    &lt;mavenInvokerPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/browse/MINVOKER?selectedTab=com.atlassian.jira.jira-projects-plugin:changelog-panel&amp;allVersions=true">3.0.1</a>&lt;/mavenInvokerPluginVersion&gt;
-+    &lt;mavenJDepsPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/projects/MJDEPS?selectedItem=com.atlassian.jira.jira-projects-plugin:release-page&amp;status=all">3.1.0</a>&lt;/mavenJDepsPluginVersion&gt;
-+    &lt;mavenDependencyPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/browse/MDEP?selectedTab=com.atlassian.jira.jira-projects-plugin:changelog-panel&amp;allVersions=true">3.0.2</a>&lt;/mavenDependencyPluginVersion&gt;
++    &lt;mavenHelpPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317522">2.2</a>&lt;/mavenHelpPluginVersion&gt;
++    &lt;mavenCleanPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317224">3.0.0</a>&lt;/mavenCleanPluginVersion&gt;
++    &lt;mavenToolchainsPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12318020">1.1</a>&lt;/mavenToolchainsPluginVersion&gt;
++    &lt;versionsMavenPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://github.com/mojohaus/versions-maven-plugin/releases">2.5</a>&lt;/versionsMavenPluginVersion&gt;
++    &lt;mavenPluginPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317820">3.5.1</a>&lt;/mavenPluginPluginVersion&gt;
++    &lt;mavenArchetypePluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317122">3.0.1</a>&lt;/mavenArchetypePluginVersion&gt;
++    &lt;mavenInvokerPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317525">3.0.1</a>&lt;/mavenInvokerPluginVersion&gt;
++    &lt;mavenJDepsPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12319223">3.1.0</a>&lt;/mavenJDepsPluginVersion&gt;
++    &lt;mavenDependencyPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317227">3.0.2</a>&lt;/mavenDependencyPluginVersion&gt;
 +    &lt;truezipMavenPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://github.com/mojohaus/truezip/releases">1.2</a>&lt;/truezipMavenPluginVersion&gt;
-+    &lt;mavenPatchPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/browse/MPATCH?selectedTab=com.atlassian.jira.jira-projects-plugin:changelog-panel&amp;allVersions=true">1.2</a>&lt;/mavenPatchPluginVersion&gt;
-+    &lt;mavenResourcesPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/browse/MRESOURCES?selectedTab=com.atlassian.jira.jira-projects-plugin:changelog-panel&amp;allVersions=true">3.0.2</a>&lt;/mavenResourcesPluginVersion&gt;
-+    &lt;mavenAntrunPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/browse/MANTRUN?selectedTab=com.atlassian.jira.jira-projects-plugin:changelog-panel&amp;allVersions=true">1.8</a>&lt;/mavenAntrunPluginVersion&gt;
-+    &lt;mavenCompilerPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/browse/MCOMPILER?selectedTab=com.atlassian.jira.jira-projects-plugin:changelog-panel&amp;allVersions=true">3.7.0</a>&lt;/mavenCompilerPluginVersion&gt;
-+    &lt;jacocoMavenPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="http://www.eclemma.org/jacoco/trunk/doc/changes.html">0.7.9</a>&lt;/jacocoMavenPluginVersion&gt;
-+    &lt;mavenSurefirePluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/browse/SUREFIRE?selectedTab=com.atlassian.jira.jira-projects-plugin:changelog-panel&amp;allVersions=true">2.20.1</a>&lt;/mavenSurefirePluginVersion&gt;
++    &lt;mavenPatchPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317622">1.2</a>&lt;/mavenPatchPluginVersion&gt;
++    &lt;mavenResourcesPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317827">3.0.2</a>&lt;/mavenResourcesPluginVersion&gt;
++    &lt;mavenAntrunPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317121">1.8</a>&lt;/mavenAntrunPluginVersion&gt;
++    &lt;mavenCompilerPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317225">3.7.0</a>&lt;/mavenCompilerPluginVersion&gt;
++    &lt;jacocoMavenPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="http://www.eclemma.org/jacoco/trunk/doc/changes.html">0.8.0</a>&lt;/jacocoMavenPluginVersion&gt;
++    &lt;mavenSurefirePluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317927">2.20.1</a>&lt;/mavenSurefirePluginVersion&gt;
 +    &lt;mavenFailsafePluginVersion&gt;${mavenSurefirePluginVersion}&lt;/mavenFailsafePluginVersion&gt;
 +    &lt;mavenSurefireReportPluginVersion&gt;${mavenSurefirePluginVersion}&lt;/mavenSurefireReportPluginVersion&gt;
-+    &lt;mavenJarPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/browse/MJAR?selectedTab=com.atlassian.jira.jira-projects-plugin:changelog-panel&amp;allVersions=true">3.0.2</a>&lt;/mavenJarPluginVersion&gt;
-+    &lt;mavenEjbPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/browse/MEJB?selectedTab=com.atlassian.jira.jira-projects-plugin:changelog-panel&amp;allVersions=true">3.0.0</a>&lt;/mavenEjbPluginVersion&gt;
-+    &lt;mavenWarPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/browse/MWAR?selectedTab=com.atlassian.jira.jira-projects-plugin:changelog-panel&amp;allVersions=true">3.1.0</a>&lt;/mavenWarPluginVersion&gt;
-+    &lt;mavenRarPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/browse/MRAR?selectedTab=com.atlassian.jira.jira-projects-plugin:changelog-panel&amp;allVersions=true">2.4</a>&lt;/mavenRarPluginVersion&gt;
-+    &lt;mavenEarPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/browse/MEAR?selectedTab=com.atlassian.jira.jira-projects-plugin:changelog-panel&amp;allVersions=true">2.10.1</a>&lt;/mavenEarPluginVersion&gt;
-+    &lt;mavenShadePluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/browse/MSHADE?selectedTab=com.atlassian.jira.jira-projects-plugin:changelog-panel&amp;allVersions=true">3.1.0</a>&lt;/mavenShadePluginVersion&gt;
-+    &lt;mavenSourcePluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/browse/MSOURCES?selectedTab=com.atlassian.jira.jira-projects-plugin:changelog-panel&amp;allVersions=true">3.0.1</a>&lt;/mavenSourcePluginVersion&gt;
-+    &lt;mavenJavadocPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/browse/MJAVADOC?selectedTab=com.atlassian.jira.jira-projects-plugin:changelog-panel&amp;allVersions=true">3.0.0</a>&lt;/mavenJavadocPluginVersion&gt;
-+    &lt;mavenAssemblyPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/browse/MASSEMBLY?selectedTab=com.atlassian.jira.jira-projects-plugin:changelog-panel&amp;allVersions=true">3.1.0</a>&lt;/mavenAssemblyPluginVersion&gt;
++    &lt;mavenJarPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317526">3.0.2</a>&lt;/mavenJarPluginVersion&gt;
++    &lt;mavenEjbPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317421">3.0.0</a>&lt;/mavenEjbPluginVersion&gt;
++    &lt;mavenWarPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12318121">3.2.0</a>&lt;/mavenWarPluginVersion&gt;
++    &lt;mavenRarPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317823">2.4</a>&lt;/mavenRarPluginVersion&gt;
++    &lt;mavenEarPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317422">2.10.1</a>&lt;/mavenEarPluginVersion&gt;
++    &lt;mavenShadePluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317921">3.1.0</a>&lt;/mavenShadePluginVersion&gt;
++    &lt;mavenSourcePluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317924">3.0.1</a>&lt;/mavenSourcePluginVersion&gt;
++    &lt;mavenJavadocPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317529">3.0.0</a>&lt;/mavenJavadocPluginVersion&gt;
++    &lt;mavenAssemblyPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317220">3.1.0</a>&lt;/mavenAssemblyPluginVersion&gt;
 +    &lt;buildHelperMavenPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://github.com/mojohaus/build-helper-maven-plugin/releases">3.0.0</a>&lt;/buildHelperMavenPluginVersion&gt;
-+    &lt;mavenInstallPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/browse/MINSTALL?selectedTab=com.atlassian.jira.jira-projects-plugin:changelog-panel&amp;allVersions=true">2.5.2</a>&lt;/mavenInstallPluginVersion&gt;
-+    &lt;mavenJarsignerPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/browse/MJARSIGNER?selectedTab=com.atlassian.jira.jira-projects-plugin:changelog-panel&amp;allVersions=true">1.4</a>&lt;/mavenJarsignerPluginVersion&gt;
-+    &lt;mavenGPGPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/browse/MGPG?selectedTab=com.atlassian.jira.jira-projects-plugin:changelog-panel&amp;allVersions=true">1.6</a>&lt;/mavenGPGPluginVersion&gt;
-+    &lt;mavenDeployPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/browse/MDEPLOY?selectedTab=com.atlassian.jira.jira-projects-plugin:changelog-panel&amp;allVersions=true">2.8.2</a>&lt;/mavenDeployPluginVersion&gt;
-+    &lt;mavenReleasePluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/browse/MRELEASE?selectedTab=com.atlassian.jira.jira-projects-plugin:changelog-panel&amp;allVersions=true">2.5.3</a>&lt;/mavenReleasePluginVersion&gt;
-+    &lt;mavenScmPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/browse/SCM?selectedTab=com.atlassian.jira.jira-projects-plugin:changelog-panel&amp;allVersions=true">1.9.5</a>&lt;/mavenScmPluginVersion&gt;
-     &lt;mavenSitePluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/browse/MSITE?selectedTab=com.atlassian.jira.jira-projects-plugin:changelog-panel&amp;allVersions=true">3.7</a>&lt;/mavenSitePluginVersion&gt;
-     &lt;mavenProjectInfoReportsPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/browse/MPIR?selectedTab=com.atlassian.jira.jira-projects-plugin:changelog-panel&amp;allVersions=true">2.9</a>&lt;/mavenProjectInfoReportsPluginVersion&gt;
++    &lt;mavenInstallPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317524">2.5.2</a>&lt;/mavenInstallPluginVersion&gt;
++    &lt;mavenJarsignerPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317528">1.4</a>&lt;/mavenJarsignerPluginVersion&gt;
++    &lt;mavenGPGPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317521">1.6</a>&lt;/mavenGPGPluginVersion&gt;
++    &lt;mavenDeployPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317228">2.8.2</a>&lt;/mavenDeployPluginVersion&gt;
++    &lt;mavenReleasePluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317824">2.5.3</a>&lt;/mavenReleasePluginVersion&gt;
++    &lt;mavenScmPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317828">1.9.5</a>&lt;/mavenScmPluginVersion&gt;
+     &lt;mavenSitePluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317923">3.7</a>&lt;/mavenSitePluginVersion&gt;
+     &lt;mavenProjectInfoReportsPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317821">2.9</a>&lt;/mavenProjectInfoReportsPluginVersion&gt;
 </code></pre><pre xmlns="" class="language-provided"><code class="language-xml">+
 +    &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
 +    &lt;project.reporting.outputEncoding&gt;UTF-8&lt;/project.reporting.outputEncoding&gt;
@@ -874,8 +874,8 @@
 </code></pre><pre xmlns="" class="language-provided"><code class="language-xml">     &lt;mavenSitePluginVersion&gt;3.7&lt;/mavenSitePluginVersion&gt;
      &lt;mavenProjectInfoReportsPluginVersion&gt;2.9&lt;/mavenProjectInfoReportsPluginVersion&gt;
 +
-+    &lt;wagonMavenPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/browse/WAGON?selectedTab=com.atlassian.jira.jira-projects-plugin:changelog-panel&amp;allVersions=true">1.0</a>&lt;/wagonMavenPluginVersion&gt;
-+    &lt;wagonProviderVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/browse/WAGON?selectedTab=com.atlassian.jira.jira-projects-plugin:changelog-panel&amp;allVersions=true">3.0.0</a>&lt;/wagonProviderVersion&gt;
++    &lt;wagonMavenPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12318122">1.0</a>&lt;/wagonMavenPluginVersion&gt;
++    &lt;wagonProviderVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12318122">3.0.0</a>&lt;/wagonProviderVersion&gt;
    &lt;/properties&gt;
 </code></pre><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;build&gt;
 +    &lt;extensions&gt;
@@ -1490,7 +1490,10 @@ gpg --list-secret-keys
      &lt;disableXmlReport&gt;false&lt;/disableXmlReport&gt;
      …
    &lt;/properties&gt;
-</code></pre><p>Option 1 the <code class="code">java</code> profile in
+</code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="important"><h2>Important</h2><p>Single module projects should use
+              <code class="code">&lt;aggregateSurefireReports&gt;false&lt;/aggregateSurefireReports&gt;</code>,
+              otherwise the surefire report will show number of tests is 0 and
+              the failsafe report will be missing altogether.</p></div><p>Option 1 the <code class="code">java</code> profile in
             <code class="filename">C:\dev\projects\maven-setup\pom.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">           &lt;/plugin&gt;
          &lt;/plugins&gt;
        &lt;/build&gt;
@@ -1922,7 +1925,7 @@ mvn clean verify -DskipTests -DskipIntegrationTests=false
      &lt;mavenAntrunPluginVersion&gt;1.8&lt;/mavenAntrunPluginVersion&gt;
      &lt;mavenCompilerPluginVersion&gt;3.7.0&lt;/mavenCompilerPluginVersion&gt;
 +    &lt;mavenAnimalSnifferPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://github.com/mojohaus/animal-sniffer/releases">1.16</a>&lt;/mavenAnimalSnifferPluginVersion&gt;
-     &lt;jacocoMavenPluginVersion&gt;0.7.9&lt;/jacocoMavenPluginVersion&gt;
+     &lt;jacocoMavenPluginVersion&gt;0.8.0&lt;/jacocoMavenPluginVersion&gt;
      &lt;mavenSurefirePluginVersion&gt;2.20.1&lt;/mavenSurefirePluginVersion&gt;
      &lt;mavenFailsafePluginVersion&gt;${mavenSurefirePluginVersion}&lt;/mavenFailsafePluginVersion&gt;
      …
@@ -1969,7 +1972,7 @@ mvn clean verify -DskipTests -DskipIntegrationTests=false
      &lt;mavenAnimalSnifferPluginVersion&gt;1.16&lt;/mavenAnimalSnifferPluginVersion&gt;
 +    &lt;mavenEnforcerPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/projects/MENFORCER?selectedItem=com.atlassian.jira.jira-projects-plugin:release-page&amp;status=all">1.4.1</a>&lt;/mavenEnforcerPluginVersion&gt;
 +    &lt;extraEnforcerRulesVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://github.com/mojohaus/extra-enforcer-rules/releases">1.0-beta-6</a>&lt;/extraEnforcerRulesVersion&gt;
-     &lt;jacocoMavenPluginVersion&gt;0.7.9&lt;/jacocoMavenPluginVersion&gt;
+     &lt;jacocoMavenPluginVersion&gt;0.8.0&lt;/jacocoMavenPluginVersion&gt;
      &lt;mavenSurefirePluginVersion&gt;2.20.1&lt;/mavenSurefirePluginVersion&gt;
      &lt;mavenFailsafePluginVersion&gt;${mavenSurefirePluginVersion}&lt;/mavenFailsafePluginVersion&gt;
      …
@@ -2028,7 +2031,7 @@ mvn clean verify -DskipTests -DskipIntegrationTests=false
           Plugin</a> configuration:</p><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;properties&gt;
      …
      &lt;mavenProjectInfoReportsPluginVersion&gt;2.9&lt;/mavenProjectInfoReportsPluginVersion&gt;
-+    &lt;mavenDependencyCheckVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://github.com/jeremylong/DependencyCheck/releases">3.1.0</a>&lt;/mavenDependencyCheckVersion&gt;
++    &lt;mavenDependencyCheckVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://github.com/jeremylong/DependencyCheck/releases">3.1.1</a>&lt;/mavenDependencyCheckVersion&gt;
 
      …
      &lt;surefire.printSummary&gt;true&lt;/surefire.printSummary&gt;
@@ -2409,8 +2412,8 @@ git log --oneline --decorate
         from which the artifacts and sites will be deployed. Afterwards delete
         this directory otherwise it might show up in the Eclipse
         <span class="guilabel"><strong>Team Synchronizing</strong></span> perspective.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="tip"><h2>Tip</h2><p>Because Jenkins will overwrite the site with the next snapshot
-          anyway, save time by skipping site-deploy with:</p><pre class="language-provided"><code class="language-bash"><code class="command">mvn -Dusername=<em class="replaceable"><code>jjasper</code></em> -Dpassword=<em class="replaceable"><code>password</code></em> release:perform -Dgoals=deploy</code></code></pre></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>Instead of using <code class="command">release:perform</code> use <a class="link" href="continuous.integration.pipeline.html#continuous.integration.pipeline.jenkins.release.tags" title="C.3.22. Release Tags">Jenkins
-          CI to release the tag</a> or use script <a class="link" href="continuous.integration.pipeline.html#continuous.integration.pipeline.jenkins.release.tags.sh" title="C.3.22.1. Alternative release sh script">git-mvn-deploy.sh</a>.</p></div><p>Again verify if all remote changes are <span class="quote">“<span class="quote">up to date</span>”</span>
+          anyway, save time by skipping site-deploy with:</p><pre class="language-provided"><code class="language-bash"><code class="command">mvn -Dusername=<em class="replaceable"><code>jjasper</code></em> -Dpassword=<em class="replaceable"><code>password</code></em> release:perform -Dgoals=deploy</code></code></pre></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>Instead of using <code class="command">release:perform</code> use <a class="link" href="continuous.integration.pipeline.html#continuous.integration.pipeline.jenkins.release.tags" title="C.3.21. Release Tags">Jenkins
+          CI to release the tag</a> or use script <a class="link" href="continuous.integration.pipeline.html#continuous.integration.pipeline.jenkins.release.tags.sh" title="C.3.21.1. Alternative release sh script">git-mvn-deploy.sh</a>.</p></div><p>Again verify if all remote changes are <span class="quote">“<span class="quote">up to date</span>”</span>
         with command:</p><pre xmlns="" class="language-provided"><code class="language-bash">git status
 git push
 git remote show origin
@@ -2543,7 +2546,7 @@ git status
    &lt;/distributionManagement&gt;
 +
 +  &lt;properties&gt;
-+    &lt;lombokVersion&gt;1.16.8&lt;/lombokVersion&gt;
++    &lt;lombokVersion&gt;1.16.20&lt;/lombokVersion&gt;
 +    &lt;commonsLangVersion&gt;2.6&lt;/commonsLangVersion&gt;
 +    &lt;commonsLang3Version&gt;3.7&lt;/commonsLang3Version&gt;
 +    &lt;commonsCodecVersion&gt;1.11&lt;/commonsCodecVersion&gt;
@@ -2597,7 +2600,7 @@ git status
               <span class="guilabel"><strong>Grouping Common Dependencies</strong></span>.</p></div></section><section class="section" id="prj.maven.grouping.dependencies.spring"><div class="titlepage"><div><div><h5 class="title"><a id="prj.maven.grouping.dependencies.spring" class="anchor" href="#prj.maven.grouping.dependencies.spring"><span class="octicon octicon-link"/></a>16.1.12.1.2. Spring dependencies</h5></div></div></div><p>Define the Spring dependencies versions in
             <code class="filename">C:\dev\projects\bill-of-materials\pom.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">     &lt;guavaVersion&gt;23.6-jre&lt;/guavaVersion&gt;
 +
-+    &lt;springVersion&gt;5.0.2.RELEASE&lt;/springVersion&gt;
++    &lt;springVersion&gt;5.0.3.RELEASE&lt;/springVersion&gt;
    &lt;/properties&gt;
 </code></pre><pre xmlns="" class="language-provided"><code class="language-xml">         &lt;version&gt;${guavaVersion}&lt;/version&gt;
        &lt;/dependency&gt;
@@ -2649,7 +2652,7 @@ git status
    &lt;/dependencyManagement&gt;
  &lt;/project&gt;
 </code></pre></section><section class="section" id="prj.maven.grouping.dependencies.hibernate"><div class="titlepage"><div><div><h5 class="title"><a id="prj.maven.grouping.dependencies.hibernate" class="anchor" href="#prj.maven.grouping.dependencies.hibernate"><span class="octicon octicon-link"/></a>16.1.12.1.3. Hibernate dependencies</h5></div></div></div><p>Define the Hibernate dependencies versions in
-            <code class="filename">C:\dev\projects\bill-of-materials\pom.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">     &lt;springVersion&gt;5.0.2.RELEASE&lt;/springVersion&gt;
+            <code class="filename">C:\dev\projects\bill-of-materials\pom.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">     &lt;springVersion&gt;5.0.3.RELEASE&lt;/springVersion&gt;
 +
 +    &lt;hibernateVersion&gt;5.2.12.Final&lt;/hibernateVersion&gt;
 +    &lt;ehcacheVersion&gt;3.4.0&lt;/ehcacheVersion&gt;
@@ -2732,7 +2735,7 @@ git status
 +    &lt;assertjVersion&gt;3.9.0&lt;/assertjVersion&gt;
 +    &lt;mockitoVersion&gt;2.13.0&lt;/mockitoVersion&gt;
 +    &lt;powerMockVersion&gt;1.6.4&lt;/powerMockVersion&gt;
-+    &lt;cglibVersion&gt;3.1&lt;/cglibVersion&gt;
++    &lt;cglibVersion&gt;3.2.6&lt;/cglibVersion&gt;
 +    &lt;commonsDbcpVersion&gt;1.4&lt;/commonsDbcpVersion&gt;
 +    &lt;commonsDbcp2Version&gt;2.2.0&lt;/commonsDbcp2Version&gt;
 +    &lt;h2Version&gt;1.4.190&lt;/h2Version&gt;
@@ -2863,7 +2866,7 @@ git status
      &lt;slf4jVersion&gt;1.7.13&lt;/slf4jVersion&gt;
 +
 +    &lt;mysqlConnectorJVersion&gt;5.1.45&lt;/mysqlConnectorJVersion&gt;
-+    &lt;hikariCPVersion&gt;2.7.4&lt;/hikariCPVersion&gt;
++    &lt;hikariCPVersion&gt;2.7.6&lt;/hikariCPVersion&gt;
    &lt;/properties&gt;
 </code></pre><pre xmlns="" class="language-provided"><code class="language-xml">         &lt;version&gt;${slf4jVersion}&lt;/version&gt;
        &lt;/dependency&gt;
@@ -2900,7 +2903,7 @@ git status
    &lt;properties&gt;
 +    &lt;bomVersion&gt;3.1&lt;/bomVersion&gt;
 +
-     &lt;mavenDefaultSkinVersion&gt;1.1&lt;/mavenDefaultSkinVersion&gt;
+     &lt;mavenDefaultSkinVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317926">1.2</a>&lt;/mavenDefaultSkinVersion&gt;
      …
    &lt;/properties&gt;
 +
@@ -3436,7 +3439,7 @@ git status
      &lt;bomVersion&gt;3.1&lt;/bomVersion&gt;
 +    &lt;groupVersion&gt;${bomVersion}&lt;/groupVersion&gt;
  
-     &lt;mavenDefaultSkinVersion&gt;1.1&lt;/mavenDefaultSkinVersion&gt;
+     &lt;mavenDefaultSkinVersion&gt;1.2&lt;/mavenDefaultSkinVersion&gt;
      …
    &lt;/properties&gt;
 </code></pre><p>Replace the specific dependencies with a dependencies

@@ -111,10 +111,10 @@ xcopy /S /I src\*.png C:\dev\projects\skins\maven-paper-skin\src
       a simple
       <code class="filename">C:\dev\projects\skins\maven-paper-skin\src\site\site.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 +
-+&lt;project xmlns="http://maven.apache.org/DECORATION/1.7.0"
++&lt;project xmlns="http://maven.apache.org/DECORATION/1.8.0"
 +         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-+         xsi:schemaLocation="http://maven.apache.org/DECORATION/1.7.0
-+                             https://maven.apache.org/xsd/decoration-1.7.0.xsd"&gt;
++         xsi:schemaLocation="http://maven.apache.org/DECORATION/1.8.0
++                             https://maven.apache.org/xsd/decoration-1.8.0.xsd"&gt;
 </code></pre><pre xmlns="" class="language-provided"><code class="language-xml">+  &lt;bannerLeft&gt;
 +    &lt;name&gt;${project.name}&lt;/name&gt;
 +    &lt;href /&gt;
@@ -139,7 +139,7 @@ xcopy /S /I src\*.png C:\dev\projects\skins\maven-paper-skin\src
 +    &lt;skinArtifactId&gt;maven-paper-skin&lt;/skinArtifactId&gt;
 +    &lt;skinVersion&gt;${customMavenPaperSkinVersion}&lt;/skinVersion&gt;
 
-     &lt;mavenFluidoSkinVersion&gt;1.6&lt;/mavenFluidoSkinVersion&gt;
+     &lt;mavenFluidoSkinVersion&gt;1.7&lt;/mavenFluidoSkinVersion&gt;
 +    &lt;customSkinVersion&gt;1.3.1&lt;/customSkinVersion&gt;
 +    &lt;customMavenPaperSkinVersion&gt;${customSkinVersion}&lt;/customMavenPaperSkinVersion&gt;
    &lt;/properties&gt;
@@ -167,7 +167,7 @@ svn export ^
     http://svn.apache.org/repos/asf/maven/doxia/doxia-sitetools/tags/doxia-sitetools-1.2 ^
     doxia-sitetools-1.2
 </code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>The sample version in the subversion repository is update to
-            <code class="filename">doxia-sitetools-1.6</code>.</p></div><p>Copy the resources into project
+            <code class="filename"><a class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317320">doxia-sitetools-1.8</a></code>.</p></div><p>Copy the resources into project
         <code class="code">skins</code>:</p><pre xmlns="" class="language-provided"><code class="language-bash">cd doxia-sitetools-1.2\doxia-site-renderer\src\main\resources
 cd org\apache\maven\doxia\siterenderer\resources
 mkdir C:\dev\projects\skins\maven-paper-skin\src\main\resources\META-INF\maven
@@ -351,7 +351,7 @@ xcopy /S /I images ^
 +    &lt;skinArtifactId&gt;maven-fluido-skin&lt;/skinArtifactId&gt;
 +    &lt;skinVersion&gt;${customMavenFluidoSkinVersion}&lt;/skinVersion&gt;
  
-     &lt;mavenFluidoSkinVersion&gt;1.6&lt;/mavenFluidoSkinVersion&gt;
+     &lt;mavenFluidoSkinVersion&gt;1.7&lt;/mavenFluidoSkinVersion&gt;
      &lt;customSkinVersion&gt;1.3.1&lt;/customSkinVersion&gt;
      &lt;customMavenPaperSkinVersion&gt;${customSkinVersion}&lt;/customMavenPaperSkinVersion&gt;
 +    &lt;customMavenFluidoSkinVersion&gt;${customSkinVersion}&lt;/customMavenFluidoSkinVersion&gt;
@@ -502,9 +502,9 @@ xcopy /S /I images ^
 +    &lt;skinArtifactId&gt;maven-reflow-skin&lt;/skinArtifactId&gt;
 +    &lt;skinVersion&gt;${customMavenReflowSkinVersion}&lt;/skinVersion&gt;
 
-+    &lt;velocityVersion&gt;1.7&lt;/velocityVersion&gt; 
++    &lt;velocityVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310104">1.7</a>&lt;/velocityVersion&gt; 
      &lt;mavenFluidoSkinVersion&gt;1.6&lt;/mavenFluidoSkinVersion&gt;
-+    &lt;mavenReflowSkinVersion&gt;1.1.1&lt;/mavenReflowSkinVersion&gt;
++    &lt;mavenReflowSkinVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://github.com/andriusvelykis/reflow-maven-skin/releases">1.1.1</a>&lt;/mavenReflowSkinVersion&gt;
      &lt;customSkinVersion&gt;1.3.1&lt;/customSkinVersion&gt;
      &lt;customMavenPaperSkinVersion&gt;${customSkinVersion}&lt;/customMavenPaperSkinVersion&gt;
      &lt;customMavenFluidoSkinVersion&gt;${customSkinVersion}&lt;/customMavenFluidoSkinVersion&gt;
