@@ -38,7 +38,7 @@
 +      scm:git:${gitHost}/skins.git
 +    &lt;/developerConnection&gt;
 +    &lt;url&gt;${fisheyeHost}/browse/skins&lt;/url&gt;
-+    &lt;tag&gt;HEAD&lt;/tag&gt;
++    &lt;tag /&gt;
 +  &lt;/scm&gt;
 </code></pre><pre xmlns="" class="language-provided"><code class="language-xml">+  &lt;ciManagement&gt;
 +    &lt;system&gt;Jenkins&lt;/system&gt;
@@ -140,7 +140,7 @@ xcopy /S /I src\*.png C:\dev\projects\skins\maven-paper-skin\src
 +    &lt;skinVersion&gt;${customMavenPaperSkinVersion}&lt;/skinVersion&gt;
 
      &lt;mavenFluidoSkinVersion&gt;1.7&lt;/mavenFluidoSkinVersion&gt;
-+    &lt;customSkinVersion&gt;1.3.1&lt;/customSkinVersion&gt;
++    &lt;customSkinVersion&gt;1.3.3&lt;/customSkinVersion&gt;
 +    &lt;customMavenPaperSkinVersion&gt;${customSkinVersion}&lt;/customMavenPaperSkinVersion&gt;
    &lt;/properties&gt;
 </code></pre><section class="section" id="prj.maven.site.skin.paper.customization"><div class="titlepage"><div><div><h3 class="title"><a id="prj.maven.site.skin.paper.customization" class="anchor" href="#prj.maven.site.skin.paper.customization"><span class="octicon octicon-link"/></a>E.1.1. Customization</h3></div></div></div><p>First customize the site banner and favicon with for example the
@@ -352,7 +352,7 @@ xcopy /S /I images ^
 +    &lt;skinVersion&gt;${customMavenFluidoSkinVersion}&lt;/skinVersion&gt;
  
      &lt;mavenFluidoSkinVersion&gt;1.7&lt;/mavenFluidoSkinVersion&gt;
-     &lt;customSkinVersion&gt;1.3.1&lt;/customSkinVersion&gt;
+     &lt;customSkinVersion&gt;1.3.3&lt;/customSkinVersion&gt;
      &lt;customMavenPaperSkinVersion&gt;${customSkinVersion}&lt;/customMavenPaperSkinVersion&gt;
 +    &lt;customMavenFluidoSkinVersion&gt;${customSkinVersion}&lt;/customMavenFluidoSkinVersion&gt;
    &lt;/properties&gt;
@@ -505,7 +505,7 @@ xcopy /S /I images ^
 +    &lt;velocityVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12310104">1.7</a>&lt;/velocityVersion&gt; 
      &lt;mavenFluidoSkinVersion&gt;1.6&lt;/mavenFluidoSkinVersion&gt;
 +    &lt;mavenReflowSkinVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://github.com/andriusvelykis/reflow-maven-skin/releases">1.1.1</a>&lt;/mavenReflowSkinVersion&gt;
-     &lt;customSkinVersion&gt;1.3.1&lt;/customSkinVersion&gt;
+     &lt;customSkinVersion&gt;1.3.3&lt;/customSkinVersion&gt;
      &lt;customMavenPaperSkinVersion&gt;${customSkinVersion}&lt;/customMavenPaperSkinVersion&gt;
      &lt;customMavenFluidoSkinVersion&gt;${customSkinVersion}&lt;/customMavenFluidoSkinVersion&gt;
 +    &lt;customMavenReflowSkinVersion&gt;${customSkinVersion}&lt;/customMavenReflowSkinVersion&gt;

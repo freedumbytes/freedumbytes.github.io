@@ -42,7 +42,7 @@
 +
 +maven-compile:jdk8:
 +  &lt;&lt;: *maven-compile
-+  image: maven:3.5.2-jdk-8
++  image: maven:3.5.4-jdk-8
 </code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>Alas the <code class="code">artifacts</code> cannot be collected
           recursively. Thus initial setup is for a maven project with 2 levels
           deep modules hierarchy.</p></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="important"><h2>Important</h2><p>The original template example used <code class="code">--fail-at-end</code>
@@ -72,13 +72,13 @@
 
  maven-compile:jdk8:
    &lt;&lt;: *maven-compile
-   image: maven:3.5.2-jdk-8
+   image: maven:3.5.4-jdk-8
 +
 +
 +
 +maven-artifacts:jdk8:
 +  &lt;&lt;: *maven-artifacts
-+  image: maven:3.5.2-jdk-8
++  image: maven:3.5.4-jdk-8
 +  dependencies:
 +    - maven-compile:jdk8
 </code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>Used <code class="code">verify</code> instead of <code class="code">deploy</code> since
@@ -162,7 +162,7 @@
 -  &lt;&lt;: *maven-artifacts
 +maven-unit:jdk8:
 +  &lt;&lt;: *maven-unit
-+  image: maven:3.5.2-jdk-8
++  image: maven:3.5.4-jdk-8
 +  dependencies:
 +    - maven-compile:jdk8
 +
@@ -170,7 +170,7 @@
 +
 +maven-integration-artifacts:jdk8:
 +  &lt;&lt;: *maven-integration-artifacts
-   image: maven:3.5.2-jdk-8
+   image: maven:3.5.4-jdk-8
    dependencies:
      - maven-compile:jdk8
 </code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>Usage of custom profile <code class="code"><a class="link" href="project.html#prj.maven.setup.java.unit.vs.integration" title="16.1.7.2.4. Unit vs Integration tests">integrationTestsOnly</a></code>.</p></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="important"><h2>Important</h2><p>One could debate that unit and integration tests shouldn't run
@@ -248,8 +248,8 @@
 +
  maven-compile:jdk8:
    &lt;&lt;: *maven-compile
-   image: maven:3.5.2-jdk-8
-</code></pre><pre xmlns="" class="language-provided"><code class="language-diff">   image: maven:3.5.2-jdk-8
+   image: maven:3.5.4-jdk-8
+</code></pre><pre xmlns="" class="language-provided"><code class="language-diff">   image: maven:3.5.4-jdk-8
    dependencies:
      - maven-compile:jdk8
 +
@@ -257,7 +257,7 @@
 +
 +maven-site:jdk8:
 +  &lt;&lt;: *maven-site
-+  image: maven:3.5.2-jdk-8
++  image: maven:3.5.4-jdk-8
 +  dependencies:
 +    - maven-compile:jdk8
 +    - maven-unit:jdk8
@@ -277,7 +277,7 @@
    MAVEN_FORMAT_TIME: "-Dorg.slf4j.simpleLogger.dateTimeFormat=EEE..yyyy-MM-dd...HH:mm:ss.SSS..z"
 </code></pre><pre xmlns="" class="language-provided"><code class="language-diff"> maven-site:jdk8:
    &lt;&lt;: *maven-site
-   image: maven:3.5.2-jdk-8
+   image: maven:3.5.4-jdk-8
    dependencies:
      - maven-compile:jdk8
      - maven-unit:jdk8
@@ -302,7 +302,7 @@
      - 'mvn $MAVEN_CLI_OPTS site -PopenSource,enableUpdatesReports'
      - 'mvn $MAVEN_CLI_OPTS site:stage -PopenSource,enableUpdatesReports'
 +    - 'rm -r target/site'
-+    - 'mv `find ./target -type f -name "team-list.html" | sed -r "s|/[^/]+$||" | sort -u | head -1` target/pages'
++    - 'mv `find ./target -type f -name "team.html" | sed -r "s|/[^/]+$||" | sort -u | head -1` target/pages'
    artifacts:
      paths:
 -      - "target/staging"
@@ -311,7 +311,7 @@
    tags:
      - docker
 </code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>As a workaround just move the first folder in <code class="filename">target</code> containing a
-          <code class="filename">team-list.html</code> report to <code class="filename">tarrget/pages</code>.</p></div><pre xmlns="" class="language-provided"><code class="language-diff"> pages:
+          <code class="filename">team.html</code> report to <code class="filename">tarrget/pages</code>.</p></div><pre xmlns="" class="language-provided"><code class="language-diff"> pages:
    stage: deploy-pages
    script:
    - 'mkdir .public'
@@ -351,7 +351,7 @@
      - docker
 </code></pre><pre xmlns="" class="language-provided"><code class="language-diff"> maven-site:jdk8:
    &lt;&lt;: *maven-site
-   image: maven:3.5.2-jdk-8
+   image: maven:3.5.4-jdk-8
    dependencies:
      - maven-compile:jdk8
      - maven-unit:jdk8
@@ -363,7 +363,7 @@
 +
 +maven-site-failure:jdk8:
 +  &lt;&lt;: *maven-site
-+  image: maven:3.5.2-jdk-8
++  image: maven:3.5.4-jdk-8
 +  dependencies:
 +    - maven-compile:jdk8
 +    - maven-unit:jdk8
@@ -396,7 +396,7 @@
 +
 +maven-effective-pom:jdk8:
 +  &lt;&lt;: *maven-effective-pom
-+  image: maven:3.5.2-jdk-8
++  image: maven:3.5.4-jdk-8
 +  when:
 +    on_failure
 </code></pre></section><section class="section" id="continuous.integration.pipeline.gitlab.jdk.check"><div class="titlepage"><div><div><h3 class="title"><a id="continuous.integration.pipeline.gitlab.jdk.check" class="anchor" href="#continuous.integration.pipeline.gitlab.jdk.check"><span class="octicon octicon-link"/></a>C.2.17. Optional JDK Check</h3></div></div></div><p>Add <code class="code"><a class="link" href="project.html#prj.maven.setup.java.animal.sniffer" title="16.1.7.6. Animal Sniffer">animal-sniffer</a></code>
@@ -428,7 +428,7 @@
 +
 +maven-owasp:jdk8:
 +  &lt;&lt;: *maven-owasp
-+  image: maven:3.5.2-jdk-8
++  image: maven:3.5.4-jdk-8
 +  dependencies:
 +    - maven-compile:jdk8
 </code></pre></section><section class="section" id="continuous.integration.pipeline.gitlab.sonarqube"><div class="titlepage"><div><div><h3 class="title"><a id="continuous.integration.pipeline.gitlab.sonarqube" class="anchor" href="#continuous.integration.pipeline.gitlab.sonarqube"><span class="octicon octicon-link"/></a>C.2.19. Optional SonarQube Docs stage</h3></div></div></div><p>Add <code class="code"><a class="link" href="quality.assurance.html#qa.sonar.maven.integration" title="17.2.7. Maven integration">sonar</a></code> to
@@ -445,7 +445,7 @@
 +
 +#maven-sonar:jdk8:
 +#  &lt;&lt;: *maven-sonar
-+#  image: maven:3.5.2-jdk-8
++#  image: maven:3.5.4-jdk-8
 +#  dependencies:
 +#    - maven-unit:jdk8
 +#    - maven-integration-artifacts:jdk8
@@ -460,7 +460,7 @@
 +    - 'find . -type f -name "sonar.html" | xargs --no-run-if-empty sed -i "s/\/project\/index\//\/dashboard\/index\//g"'
      - 'mvn $MAVEN_CLI_OPTS site:stage -PopenSource,enableUpdatesReports'
      - 'rm -r target/site'
-     - 'mv `find ./target -type f -name "team-list.html" | sed -r "s|/[^/]+$||" | sort -u | head -1` target/pages'
+     - 'mv `find ./target -type f -name "team.html" | sed -r "s|/[^/]+$||" | sort -u | head -1` target/pages'
 </code></pre></section><section class="section" id="continuous.integration.pipeline.gitlab.owasp.multi.module"><div class="titlepage"><div><div><h3 class="title"><a id="continuous.integration.pipeline.gitlab.owasp.multi.module" class="anchor" href="#continuous.integration.pipeline.gitlab.owasp.multi.module"><span class="octicon octicon-link"/></a>C.2.21. Optional OWASP Docs Stage</h3></div></div></div><p>When running the Dependency Check Aggregate on a completely new
         version of a multi-module project, it fails (TODO reword) when a
         referenced submodule isn't available in the local or remote repository
@@ -491,7 +491,7 @@
      - docker
 </code></pre><pre xmlns="" class="language-provided"><code class="language-diff">-maven-owasp:jdk8:
 -  &lt;&lt;: *maven-owasp
--  image: maven:3.5.2-jdk-8
+-  image: maven:3.5.4-jdk-8
 -  dependencies:
 -    - maven-compile:jdk8
 -
@@ -499,7 +499,7 @@
 -
  #maven-sonar:jdk8:
  #  &lt;&lt;: *maven-sonar
- #  image: maven:3.5.2-jdk-8
+ #  image: maven:3.5.4-jdk-8
  #  dependencies:
  #    - maven-unit:jdk8
  #    - maven-integration-artifacts-deploy:jdk8
@@ -520,7 +520,7 @@
 </code></pre><pre xmlns="" class="language-provided"><code class="language-diff">-maven-integration-artifacts:jdk8:
 +maven-integration-artifacts-verify:jdk8:
    &lt;&lt;: *maven-integration-artifacts
-   image: maven:3.5.2-jdk-8
+   image: maven:3.5.4-jdk-8
 +  variables:
 +    MVN_PHASE: "verify"
    dependencies:
@@ -533,7 +533,7 @@
 +
 +maven-integration-artifacts-deploy:jdk8:
 +  &lt;&lt;: *maven-integration-artifacts
-+  image: maven:3.5.2-jdk-8
++  image: maven:3.5.4-jdk-8
 +  variables:
 +#    MVN_PHASE: "deploy"
 +    MVN_PHASE: "verify"
@@ -543,7 +543,7 @@
 +    - master
 +    - tags
 </code></pre><pre xmlns="" class="language-provided"><code class="language-diff"> #maven-sonar:jdk8:
- #  image: maven:3.5.2-jdk-8
+ #  image: maven:3.5.4-jdk-8
  #  dependencies:
  #    - maven-unit:jdk8
 -#    - maven-integration-artifacts:jdk8
@@ -551,7 +551,7 @@
  #    - maven-owasp:jdk8
 </code></pre><pre xmlns="" class="language-provided"><code class="language-diff"> maven-site:jdk8:
    &lt;&lt;: *maven-site
-   image: maven:3.5.2-jdk-8
+   image: maven:3.5.4-jdk-8
    dependencies:
      - maven-compile:jdk8
      - maven-unit:jdk8
@@ -561,7 +561,7 @@
      - master
 </code></pre><pre xmlns="" class="language-provided"><code class="language-diff"> maven-site-failure:jdk8:
    &lt;&lt;: *maven-site
-   image: maven:3.5.2-jdk-8
+   image: maven:3.5.4-jdk-8
    dependencies:
      - maven-compile:jdk8
      - maven-unit:jdk8
@@ -598,7 +598,7 @@
 -    - 'mvn $MAVEN_CLI_OPTS site:stage -PopenSource,enableUpdatesReports'
 +    - 'mvn $MAVEN_CLI_OPTS site:stage -PopenSource,enableUpdatesReports,enableJavadocReports'
      - 'rm -r target/site'
-     - 'mv `find ./target -type f -name "team-list.html" | sed -r "s|/[^/]+$||" | sort -u | head -1` target/pages'
+     - 'mv `find ./target -type f -name "team.html" | sed -r "s|/[^/]+$||" | sort -u | head -1` target/pages'
    artifacts:
 </code></pre></section><section class="section" id="continuous.integration.pipeline.gitlab.dependency.check.report"><div class="titlepage"><div><div><h3 class="title"><a id="continuous.integration.pipeline.gitlab.dependency.check.report" class="anchor" href="#continuous.integration.pipeline.gitlab.dependency.check.report"><span class="octicon octicon-link"/></a>C.2.25. Dependency Check Report</h3></div></div></div><p>Enable the <a class="link" href="project.html#prj.maven.setup.java.owasp.dependency.check" title="16.1.7.8. OWASP Dependency Check">Dependency Check
         Reports</a> for the generated project site, because SonarCloud
@@ -611,7 +611,7 @@
 -    - 'mvn $MAVEN_CLI_OPTS site:stage -PopenSource,enableUpdatesReports,enableJavadocReports'
 +    - 'mvn $MAVEN_CLI_OPTS site:stage -PopenSource,enableUpdatesReports,enableJavadocReports,enableDependencyCheckReport'
      - 'rm -r target/site'
-     - 'mv `find ./target -type f -name "team-list.html" | sed -r "s|/[^/]+$||" | sort -u | head -1` target/pages'
+     - 'mv `find ./target -type f -name "team.html" | sed -r "s|/[^/]+$||" | sort -u | head -1` target/pages'
    artifacts:
 </code></pre></section><section class="section" id="continuous.integration.pipeline.gitlab.site.master.only.on.release"><div class="titlepage"><div><div><h3 class="title"><a id="continuous.integration.pipeline.gitlab.site.master.only.on.release" class="anchor" href="#continuous.integration.pipeline.gitlab.site.master.only.on.release"><span class="octicon octicon-link"/></a>C.2.26. Site Generation on release only</h3></div></div></div><p>Optionally switch to updating the generated project site on
         release only:</p><pre xmlns="" class="language-provided"><code class="language-diff"> maven-site:job:
@@ -647,11 +647,11 @@
 
 
  variables:
-+  DOCKER_IMAGE: "maven:3.5.2-jdk-8"
++  DOCKER_IMAGE: "maven:3.5.4-jdk-8"
 </code></pre><pre xmlns="" class="language-provided"><code class="language-diff">-maven-integration-artifacts-deploy:jdk8:
 +maven-integration-artifacts-deploy:job:
    &lt;&lt;: *maven-integration-artifacts
--  image: maven:3.5.2-jdk-8
+-  image: maven:3.5.4-jdk-8
 +  image: $DOCKER_IMAGE
    variables:
  #    MVN_PHASE: "deploy"
@@ -670,6 +670,12 @@
     &lt;maven.compiler.compilerVersion&gt;1.8&lt;/maven.compiler.compilerVersion&gt;
     &lt;maven.compiler.source&gt;${maven.compiler.target}&lt;/maven.compiler.source&gt;
     &lt;maven.compiler.target&gt;1.7&lt;/maven.compiler.target&gt;
+    &lt;maven.compiler.testSource&gt;${maven.compiler.target}&lt;/maven.compiler.testSource&gt;
+    &lt;maven.compiler.testTarget&gt;${maven.compiler.target}&lt;/maven.compiler.testTarget&gt;
+    &lt;!--
+      Requires Java9+, otherwise: 'mvn compile' results in "javac: invalid flag: --release".
+      &lt;maven.compiler.release&gt;7&lt;/maven.compiler.release&gt;
+    --&gt;
 
     &lt;mojoSignatureArtifactId&gt;java17&lt;/mojoSignatureArtifactId&gt;
     &lt;ignoreDependencies&gt;true&lt;/ignoreDependencies&gt;
@@ -677,16 +683,16 @@
     &lt;extraEnforcerRulesMaxJdkVersion&gt;${maven.compiler.target}&lt;/extraEnforcerRulesMaxJdkVersion&gt;
     &lt;extraEnforcerRulesFail&gt;true&lt;/extraEnforcerRulesFail&gt;
 
-    &lt;javadocVersion&gt;1.7&lt;/javadocVersion&gt;
+    &lt;javadocVersion&gt;1.7.0&lt;/javadocVersion&gt;
   &lt;/properties&gt;
 </code></pre><p>It is now possible to switch to a lower version of the jdk in
         the above configured <code class="code">DOCKER_IMAGE</code>:</p><pre xmlns="" class="language-provided"><code class="language-diff">stages:
 
 
  variables:
--  DOCKER_IMAGE: "maven:3.5.2-jdk-8"
-+  DOCKER_IMAGE: "maven:3.5.2-jdk-7"
-+  DOCKER_IMAGE_SONAR: "maven:3.5.2-jdk-8"
+-  DOCKER_IMAGE: "maven:3.5.4-jdk-8"
++  DOCKER_IMAGE: "maven:3.5.4-jdk-7"
++  DOCKER_IMAGE_SONAR: "maven:3.5.4-jdk-8"
 </code></pre><p>This way we don't run the risk of the animal-sniffer and
         enforcer missing the issue of TODO.</p></section></section><section class="section" id="continuous.integration.pipeline.jenkins"><div class="titlepage"><div><div><h2 class="title"><a id="continuous.integration.pipeline.jenkins" class="anchor" href="#continuous.integration.pipeline.jenkins"><span class="octicon octicon-link"/></a>C.3. Jenkins CI Pipeline</h2></div></div></div><p>Just add a file <code class="filename">Jenkinsfile</code> to a project to
       tell the Jenkins pipeline what to do. The latest version can be found at

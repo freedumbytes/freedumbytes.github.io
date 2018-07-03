@@ -188,23 +188,7 @@ wrapper.ntservice.description=Nexus is a Maven repository manager.<span xmlns="h
           is possible to view the information in <span class="guimenuitem"><strong>Views/Repositories</strong></span> → <span class="guibutton"><strong>System Feeds</strong></span> → <span class="guibutton"><strong>System changes in Nexus</strong></span>.</p><p>When the repository indexing is finished it is possible to use
           <span class="guilabel"><strong>Artifact Search</strong></span> and actually find
           something.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="important"><h2>Important</h2><p>All <a class="link" href="https://www.codehaus.org/termination/">Codehaus
-            services have been terminated</a>.</p></div><section class="section" id="repo.nexus.config.repos.public.snapshots"><div class="titlepage"><div><div><h5 class="title"><a id="repo.nexus.config.repos.public.snapshots" class="anchor" href="#repo.nexus.config.repos.public.snapshots"><span class="octicon octicon-link"/></a>13.1.5.4.1. Reinstate Public Snapshot Repositories</h5></div></div></div><p>Recreate the separate Public Snapshot Repositories (see also
-            <a class="link" href="https://issues.sonatype.org/browse/NEXUS-3374">NEXUS-3374</a>)
-            by selecting <span class="guimenuitem"><strong>Views/Repositories</strong></span> → <span class="guibutton"><strong>Repositories</strong></span> → <span class="guimenu"><strong>Add…</strong></span> → <span class="guimenuitem"><strong>Repository Group</strong></span> with:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><span class="guilabel"><strong>Group ID</strong></span>:
-                <strong class="userinput"><code>public-snapshots</code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Group Name</strong></span>: <strong class="userinput"><code>Public
-                Snapshot Repositories</code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Provider</strong></span>:
-                <span class="guilabel"><strong>Maven2</strong></span>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Format</strong></span>:
-                <span class="guilabel"><strong>maven2</strong></span>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Publish URL</strong></span>:
-                <span class="guilabel"><strong>true</strong></span> and click
-                <span class="guibutton"><strong>Save</strong></span>.</p></li></ul></div><p>Select <span class="guimenuitem"><strong>Views/Repositories</strong></span> → <span class="guibutton"><strong>Repositories</strong></span> → <span class="guibutton"><strong>Refresh</strong></span> → <span class="guilabel"><strong>Public Snapshot Repositories</strong></span> and on the <span class="guilabel"><strong>Configuration</strong></span> tab
-            drag <span class="guilabel"><strong>Apache Snapshots</strong></span> from the
-            <span class="guilabel"><strong>Available Repositories</strong></span> in <span class="guilabel"><strong>Ordered
-            Group Repositories</strong></span> and click
-            <span class="guibutton"><strong>Save</strong></span>.</p><p>For the <span class="guilabel"><strong>Public Repositories</strong></span> on the
-            <span class="guilabel"><strong>Configuration</strong></span> tab remove <span class="guilabel"><strong>Apache
-            Snapshots</strong></span> from the <span class="guilabel"><strong>Ordered Group
-            Repositories</strong></span> and click
-            <span class="guibutton"><strong>Save</strong></span>.</p></section><section class="section" id="repo.nexus.config.repos.jboss"><div class="titlepage"><div><div><h5 class="title"><a id="repo.nexus.config.repos.jboss" class="anchor" href="#repo.nexus.config.repos.jboss"><span class="octicon octicon-link"/></a>13.1.5.4.2. JBoss</h5></div></div></div><p>Optionally configure the JBoss repository (see also <a class="link" href="https://issues.jboss.org/browse/JBBUILD-688">JBBUILD-688</a>)
+            services have been terminated</a>.</p></div><section class="section" id="repo.nexus.config.repos.jboss"><div class="titlepage"><div><div><h5 class="title"><a id="repo.nexus.config.repos.jboss" class="anchor" href="#repo.nexus.config.repos.jboss"><span class="octicon octicon-link"/></a>13.1.5.4.1. JBoss</h5></div></div></div><p>Optionally configure the JBoss repository (see also <a class="link" href="https://issues.jboss.org/browse/JBBUILD-688">JBBUILD-688</a>)
             by selecting <span class="guimenuitem"><strong>Views/Repositories</strong></span> → <span class="guibutton"><strong>Repositories</strong></span> → <span class="guimenu"><strong>Add…</strong></span> → <span class="guimenuitem"><strong>Proxy Repository</strong></span> with:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><span class="guilabel"><strong>Repository ID</strong></span>:
                   <strong class="userinput"><code>jboss</code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Repository Name</strong></span>:
                   <strong class="userinput"><code>JBoss</code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Provider</strong></span>:
@@ -230,7 +214,7 @@ wrapper.ntservice.description=Nexus is a Maven repository manager.<span xmlns="h
             <span class="guilabel"><strong>Available Repositories</strong></span> just below
             <span class="guilabel"><strong>JBoss</strong></span> in <span class="guilabel"><strong>Ordered Group
             Repositories</strong></span> and click
-            <span class="guibutton"><strong>Save</strong></span>.</p></section><section class="section" id="repo.nexus.config.repos.spring"><div class="titlepage"><div><div><h5 class="title"><a id="repo.nexus.config.repos.spring" class="anchor" href="#repo.nexus.config.repos.spring"><span class="octicon octicon-link"/></a>13.1.5.4.3. Spring</h5></div></div></div><p>Optionally configure the SpringSource Enterprise
+            <span class="guibutton"><strong>Save</strong></span>.</p></section><section class="section" id="repo.nexus.config.repos.spring"><div class="titlepage"><div><div><h5 class="title"><a id="repo.nexus.config.repos.spring" class="anchor" href="#repo.nexus.config.repos.spring"><span class="octicon octicon-link"/></a>13.1.5.4.2. Spring</h5></div></div></div><p>Optionally configure the SpringSource Enterprise
             Repositories by selecting <span class="guimenuitem"><strong>Views/Repositories</strong></span> → <span class="guibutton"><strong>Repositories</strong></span> → <span class="guimenu"><strong>Add…</strong></span> → <span class="guimenuitem"><strong>Proxy Repository</strong></span> with:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><span class="guilabel"><strong>Repository ID</strong></span>:
                   <strong class="userinput"><code>spring-release</code></strong>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Repository Name</strong></span>:
                   <strong class="userinput"><code>SpringSource EBR - SpringSource Bundle
@@ -358,30 +342,21 @@ wrapper.ntservice.description=Nexus is a Maven repository manager.<span xmlns="h
                   <span class="guibutton"><strong>Today</strong></span>.</p></li><li class="listitem"><p><span class="guilabel"><strong>Recurring Time</strong></span>:
                   <strong class="userinput"><code>22:30</code></strong> and click
                   <span class="guibutton"><strong>Save</strong></span>.</p></li></ul></div></section></section></section><section class="section" id="repo.nexus.maven.integration"><div class="titlepage"><div><div><h3 class="title"><a id="repo.nexus.maven.integration" class="anchor" href="#repo.nexus.maven.integration"><span class="octicon octicon-link"/></a>13.1.6. Maven integration</h3></div></div></div><section class="section" id="repo.nexus.maven.mirrors"><div class="titlepage"><div><div><h4 class="title"><a id="repo.nexus.maven.mirrors" class="anchor" href="#repo.nexus.maven.mirrors"><span class="octicon octicon-link"/></a>13.1.6.1. Artifact repository</h4></div></div></div><p>Configure Maven to use the Nexus Repository with the following
-          mirror settings <a class="xref" href="repository.manager.html#repo.nexus.mirror.of.public.snapshots"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a>-<a class="xref" href="repository.manager.html#repo.nexus.mirror.of.central"><img src="images/community/docbook/callouts/2.png" alt="2" border="0" height="17px" width="17px" class="callout"/></a> in the Maven configuration
-          file
-          <code class="filename">P:\dev\apps\build\apache-maven-3.5.2\conf\settings.xml</code>
+          mirror setting <a class="xref" href="repository.manager.html#repo.nexus.mirror.of.central"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a> in the
+          Maven configuration file
+          <code class="filename">P:\dev\apps\build\apache-maven-3.5.4\conf\settings.xml</code>
           to correspond with in the <span class="guimenuitem"><strong>Views/Repositories</strong></span> → <span class="guibutton"><strong>Repositories</strong></span> available <span class="guilabel"><strong>Repository Path</strong></span> of
-          the <span class="guilabel"><strong><a class="link" href="repository.manager.html#repo.nexus.config.repos.public.snapshots" title="13.1.5.4.1. Reinstate Public Snapshot Repositories">Public Snapshot
-          Repositories</a></strong></span> and the <span class="guilabel"><strong>Public
-          Repositories</strong></span>:</p><pre xmlns="" class="language-provided"><code class="language-xml">  &lt;mirrors&gt;
-    &lt;mirror&gt;
-      &lt;id&gt;nexus-public-snapshots&lt;/id&gt;
-      &lt;mirrorOf&gt;public-snapshots.dev.net<span xmlns="http://www.w3.org/1999/xhtml" id="repo.nexus.mirror.of.public.snapshots"/><a xmlns="http://www.w3.org/1999/xhtml" id="repo.nexus.mirror.of.public.snapshots"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>&lt;/mirrorOf&gt;
-      &lt;url&gt;
-        http://freedumbytes.dev.net/nexus/content/groups/public-snapshots
-      &lt;/url&gt;
-    &lt;/mirror&gt;
+          the <span class="guilabel"><strong>Public Repositories</strong></span>:</p><pre xmlns="" class="language-provided"><code class="language-xml">  &lt;mirrors&gt;
     &lt;mirror&gt;
       &lt;id&gt;nexus-central&lt;/id&gt;
-      &lt;mirrorOf&gt;*<span xmlns="http://www.w3.org/1999/xhtml" id="repo.nexus.mirror.of.central"/><a xmlns="http://www.w3.org/1999/xhtml" id="repo.nexus.mirror.of.central"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/2.png" alt="2" height="17px" width="17px" class="callout"/>&lt;/mirrorOf&gt;
+      &lt;mirrorOf&gt;*<span xmlns="http://www.w3.org/1999/xhtml" id="repo.nexus.mirror.of.central"/><a xmlns="http://www.w3.org/1999/xhtml" id="repo.nexus.mirror.of.central"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>&lt;/mirrorOf&gt;
       &lt;url&gt;http://freedumbytes.dev.net/nexus/content/groups/public&lt;/url&gt;
     &lt;/mirror&gt;
   &lt;/mirrors&gt;</code></pre><p>Configure Maven to use the Nexus <span class="guilabel"><strong>Public
-          Repositories</strong></span> by default (see also * mirrorOf <a class="xref" href="repository.manager.html#repo.nexus.mirror.of.central"><img src="images/community/docbook/callouts/2.png" alt="2" border="0" height="17px" width="17px" class="callout"/></a>) with the following profile
+          Repositories</strong></span> by default (see also * mirrorOf <a class="xref" href="repository.manager.html#repo.nexus.mirror.of.central"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a>) with the following profile
           <a class="xref" href="repository.manager.html#repo.nexus.maven.profile.development"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a> and
           activateProfile settings in the Maven configuration file
-          <code class="filename">P:\dev\apps\build\apache-maven-3.5.2\conf\settings.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">  &lt;profiles&gt;
+          <code class="filename">P:\dev\apps\build\apache-maven-3.5.4\conf\settings.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">  &lt;profiles&gt;
     &lt;profile&gt;
       &lt;id&gt;development<span xmlns="http://www.w3.org/1999/xhtml" id="repo.nexus.maven.profile.development"/><a xmlns="http://www.w3.org/1999/xhtml" id="repo.nexus.maven.profile.development"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>&lt;/id&gt;
       &lt;repositories&gt;
@@ -389,7 +364,7 @@ wrapper.ntservice.description=Nexus is a Maven repository manager.<span xmlns="h
           &lt;id&gt;central.dev.net&lt;/id&gt;
           &lt;url&gt;
             http://freedumbytes.dev.net/nexus/content/groups/public
-          &lt;/url&gt; &lt;!-- (see <a xmlns="http://www.w3.org/1999/xhtml" class="xref" href="repository.manager.html#repo.nexus.mirror.of.central"><img src="images/community/docbook/callouts/2.png" alt="2" border="0" height="17px" width="17px" class="callout"/></a>) --&gt;
+          &lt;/url&gt; &lt;!-- (see <a xmlns="http://www.w3.org/1999/xhtml" class="xref" href="repository.manager.html#repo.nexus.mirror.of.central"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a>) --&gt;
           &lt;releases&gt;
             &lt;enabled&gt;true&lt;/enabled&gt;
           &lt;/releases&gt;
@@ -404,7 +379,7 @@ wrapper.ntservice.description=Nexus is a Maven repository manager.<span xmlns="h
           &lt;id&gt;central.dev.net&lt;/id&gt;
           &lt;url&gt;
             http://freedumbytes.dev.net/nexus/content/groups/public
-          &lt;/url&gt; &lt;!-- (see <a xmlns="http://www.w3.org/1999/xhtml" class="xref" href="repository.manager.html#repo.nexus.mirror.of.central"><img src="images/community/docbook/callouts/2.png" alt="2" border="0" height="17px" width="17px" class="callout"/></a>) --&gt;
+          &lt;/url&gt; &lt;!-- (see <a xmlns="http://www.w3.org/1999/xhtml" class="xref" href="repository.manager.html#repo.nexus.mirror.of.central"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a>) --&gt;
           &lt;releases&gt;
             &lt;enabled&gt;true&lt;/enabled&gt;
           &lt;/releases&gt;
@@ -428,57 +403,9 @@ wrapper.ntservice.description=Nexus is a Maven repository manager.<span xmlns="h
               </strong></span>as well as the hosted <span class="guilabel"><strong>Snapshots</strong></span>
               (internal snapshots). The <code class="sgmltag-element">updatePolicy</code> is set to <code class="code">always</code>
               to make sure that from the hosted internal snapshot repository
-              the latest version is used.</p></div><p>Configure Maven to use the Nexus <span class="guilabel"><strong><a class="link" href="repository.manager.html#repo.nexus.config.repos.public.snapshots" title="13.1.5.4.1. Reinstate Public Snapshot Repositories">Public Snapshot
-          Repositories</a></strong></span> by request (see also
-          public-snapshots.dev.net mirrorOf <a class="xref" href="repository.manager.html#repo.nexus.mirror.of.public.snapshots"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a>) with the
-          following profile settings in the Maven configuration file
-          <code class="filename">P:\dev\apps\build\apache-maven-3.5.2\conf\settings.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">  &lt;profiles&gt;
-     …
-
-    &lt;profile&gt;
-      &lt;id&gt;public-snapshots&lt;/id&gt;
-      &lt;repositories&gt;
-        &lt;repository&gt;
-          &lt;id&gt;public-snapshots.dev.net&lt;/id&gt;
-          &lt;url&gt;
-            http://freedumbytes.dev.net/nexus/content/groups/public-snapshots
-          &lt;/url&gt; &lt;!-- (see <a xmlns="http://www.w3.org/1999/xhtml" class="xref" href="repository.manager.html#repo.nexus.mirror.of.public.snapshots"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a>) --&gt;
-          &lt;releases&gt;
-            &lt;enabled&gt;false&lt;/enabled&gt;
-          &lt;/releases&gt;
-          &lt;snapshots&gt;
-            &lt;enabled&gt;true&lt;/enabled&gt;
-            &lt;updatePolicy&gt;always&lt;/updatePolicy&gt;
-          &lt;/snapshots&gt;
-        &lt;/repository&gt;
-      &lt;/repositories&gt;
-      &lt;pluginRepositories&gt;
-        &lt;pluginRepository&gt;
-          &lt;id&gt;public-snapshots.dev.net&lt;/id&gt;
-          &lt;url&gt;
-            http://freedumbytes.dev.net/nexus/content/groups/public-snapshots
-          &lt;/url&gt; &lt;!-- (see <a xmlns="http://www.w3.org/1999/xhtml" class="xref" href="repository.manager.html#repo.nexus.mirror.of.public.snapshots"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a>) --&gt;
-          &lt;releases&gt;
-            &lt;enabled&gt;false&lt;/enabled&gt;
-          &lt;/releases&gt;
-          &lt;snapshots&gt;
-            &lt;enabled&gt;true&lt;/enabled&gt;
-            &lt;updatePolicy&gt;always&lt;/updatePolicy&gt;
-          &lt;/snapshots&gt;
-        &lt;/pluginRepository&gt;
-      &lt;/pluginRepositories&gt;
-    &lt;/profile&gt;
-  &lt;/profiles&gt;
-</code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="important"><h2>Important</h2><p>The <code class="sgmltag-element">url</code> entry host must match the
-              <code class="sgmltag-element">mirrorof</code> entry otherwise Maven will look in the Nexus
-              public area because of its * <code class="sgmltag-element">mirrorOf</code> setting.</p></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>The <code class="sgmltag-element">updatePolicy</code> is set to
-              <code class="code">always</code> but for proxied snapshot repositories the
-              actual version is determined by <span class="guilabel"><strong>Artifact Max
-              Age</strong></span> setting (default value of 1440 minutes = 24
-              hours) of that particular snapshot repository in Nexus.</p></div><p>For an existing <code class="filename">pom.xml</code> run from the
-          command line <code class="command">mvn help:active-profiles</code> and
-          <code class="command">mvn -P public-snapshots help:active-profiles</code> to
-          verify these settings.</p></section><section class="section" id="repo.nexus.maven.distribution.management"><div class="titlepage"><div><div><h4 class="title"><a id="repo.nexus.maven.distribution.management" class="anchor" href="#repo.nexus.maven.distribution.management"><span class="octicon octicon-link"/></a>13.1.6.2. Artifact deployment</h4></div></div></div><p>Configure Maven projects to use the LAN Nexus Repository for
+              the latest version is used.</p></div><p>For an existing <code class="filename">pom.xml</code> run from the
+          command line <code class="command">mvn help:active-profiles</code> to verify
+          these settings.</p></section><section class="section" id="repo.nexus.maven.distribution.management"><div class="titlepage"><div><div><h4 class="title"><a id="repo.nexus.maven.distribution.management" class="anchor" href="#repo.nexus.maven.distribution.management"><span class="octicon octicon-link"/></a>13.1.6.2. Artifact deployment</h4></div></div></div><p>Configure Maven projects to use the LAN Nexus Repository for
           deployments with the following distributionManagement repository
           settings <a class="xref" href="repository.manager.html#repo.nexus.server.id.lan"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a> in the Maven
           project <code class="filename">pom.xml</code> to correspond with in the
@@ -504,7 +431,7 @@ wrapper.ntservice.description=Nexus is a Maven repository manager.<span xmlns="h
 </code></pre><p>Configure Maven to use the Nexus Repository deployment user
           with the following server settings LAN <a class="xref" href="repository.manager.html#repo.nexus.server.id.lan"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a> and Open Source <a class="xref" href="repository.manager.html#repo.nexus.server.id.open.source"><img src="images/community/docbook/callouts/2.png" alt="2" border="0" height="17px" width="17px" class="callout"/></a> in the Maven
           configuration file
-          <code class="filename">P:\dev\apps\build\apache-maven-3.5.2\conf\settings.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">    &lt;servers&gt;
+          <code class="filename">P:\dev\apps\build\apache-maven-3.5.4\conf\settings.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">    &lt;servers&gt;
 +    &lt;server&gt;
 +      &lt;id&gt;nexus<span xmlns="http://www.w3.org/1999/xhtml" id="repo.nexus.server.id.lan"/><a xmlns="http://www.w3.org/1999/xhtml" id="repo.nexus.server.id.lan"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>&lt;/id&gt;
 +      &lt;username&gt;deployment&lt;/username&gt;

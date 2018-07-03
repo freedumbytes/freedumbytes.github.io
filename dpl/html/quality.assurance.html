@@ -381,7 +381,7 @@ sonar.jdbc.maxWait=5000<span xmlns="http://www.w3.org/1999/xhtml" id="qa.sonar.d
           SonarQube administrator.</span>”</span> because a <a class="link" href="quality.assurance.html#qa.sonar.login.token" title="17.2.5.1. Login Token">login token</a> is
           required.</p></div><section class="section" id="qa.sonar.login.token"><div class="titlepage"><div><div><h4 class="title"><a id="qa.sonar.login.token" class="anchor" href="#qa.sonar.login.token"><span class="octicon octicon-link"/></a>17.2.5.1. Login Token</h4></div></div></div><p>Configure Maven with the <code class="code">sonarcloud.io</code> token
           profile in the Maven configuration file
-          <code class="filename">P:\dev\apps\build\apache-maven-3.5.2\conf\settings.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">  &lt;profiles&gt;
+          <code class="filename">P:\dev\apps\build\apache-maven-3.5.4\conf\settings.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">  &lt;profiles&gt;
     &lt;profile&gt;
       &lt;id&gt;sonarCloud&lt;/id&gt;
       &lt;properties&gt;
@@ -457,20 +457,20 @@ wrapper.ntservice.description=SonarQube is an open source quality management pla
         command line action <code class="command">mvn sonar:sonar</code> (see also <a class="link" href="https://docs.sonarqube.org/display/SCAN/Analyzing+with+SonarQube+Scanner+for+Maven">Analyzing
         with SonarQube Scanner for Maven</a>). The <a class="link" href="https://github.com/SonarSource/sonar-scanner-maven">SonarQube
         Maven Plugin</a> triggers the code analyzers using <a class="link" href="https://docs.sonarqube.org/display/SONAR/Analysis+Parameters">Analysis
-        Parameters</a> and the <a class="link" href="https://github.com/SonarQubeCommunity/sonar-maven-report/">SonarQube
+        Parameters</a> and the <a class="link" href="https://github.com/SonarQubeCommunity/sonar-maven-report/">SonarQube/SonarCloud
         Maven Report Plugin</a> adds a report link to the Maven site, that
         redirects to the project dashboard in SonarQube (see also <a class="xref" href="quality.assurance.html#qa.sonar.apache.config" title="17.2.5. Apache configuration">Section 17.2.5, “Apache configuration”</a> about allowing anonymous access to
         SonarQube for the batch analysis to submit the process
         reports):</p><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;properties&gt;
       …
-     &lt;mavenSitePluginVersion&gt;3.7&lt;/mavenSitePluginVersion&gt;
-     &lt;mavenProjectInfoReportsPluginVersion&gt;2.9&lt;/mavenProjectInfoReportsPluginVersion&gt;
-     &lt;mavenDependencyCheckVersion&gt;3.1.1&lt;/mavenDependencyCheckVersion&gt;
-+    &lt;sonarMavenPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://github.com/SonarSource/sonar-scanner-maven/releases">3.4.0.905</a>&lt;/sonarMavenPluginVersion&gt;
+     &lt;mavenSitePluginVersion&gt;3.7.1&lt;/mavenSitePluginVersion&gt;
+     &lt;mavenProjectInfoReportsPluginVersion&gt;3.0.0&lt;/mavenProjectInfoReportsPluginVersion&gt;
+     &lt;mavenDependencyCheckVersion&gt;3.2.1&lt;/mavenDependencyCheckVersion&gt;
++    &lt;sonarMavenPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://jira.sonarsource.com/secure/ConfigureReleaseNote.jspa?projectId=10977">3.4.1.1168</a>&lt;/sonarMavenPluginVersion&gt;
 +    &lt;mavenSonarReportPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://github.com/SonarQubeCommunity/sonar-maven-report/releases">0.2.2</a>&lt;/mavenSonarReportPluginVersion&gt;
 
-     &lt;wagonMavenPluginVersion&gt;1.0&lt;/wagonMavenPluginVersion&gt;
-     &lt;wagonProviderVersion&gt;2.12&lt;/wagonProviderVersion&gt;
+     &lt;wagonMavenPluginVersion&gt;2.0.0&lt;/wagonMavenPluginVersion&gt;
+     &lt;wagonProviderVersion&gt;3.1.0&lt;/wagonProviderVersion&gt;
 </code></pre><pre xmlns="" class="language-provided"><code class="language-xml">     &lt;owaspReportsPath&gt;${project.build.directory}/owasp-reports&lt;/owaspReportsPath&gt;
      &lt;owaspReportFormat&gt;all&lt;/owaspReportFormat&gt;
      &lt;cveValidForHours&gt;24&lt;/cveValidForHours&gt;
@@ -481,17 +481,85 @@ wrapper.ntservice.description=SonarQube is an open source quality management pla
 +    &lt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://github.com/stevespringett/dependency-check-sonar-plugin#plugin-configuration">sonar.dependencyCheck.reportPath</a>&gt;${owaspReportsPath}/dependency-check-report.xml&lt;/sonar.dependencyCheck.reportPath&gt;
 +    &lt;sonar.dependencyCheck.htmlReportPath&gt;${owaspReportsPath}/dependency-check-report.html&lt;/sonar.dependencyCheck.htmlReportPath&gt;
 +    &lt;sonar.sourceEncoding&gt;UTF-8&lt;/sonar.sourceEncoding&gt;
-+    &lt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://docs.sonarqube.org/display/PLUG/Java+Plugin+and+Bytecode">sonar.java.binaries</a>&gt;target/classes&lt;/sonar.java.binaries&gt;
-+    &lt;sonar.java.libraries&gt;target/**/*.jar&lt;/sonar.java.libraries&gt;
 +    &lt;sonar.exclusions&gt;**/generated-sources/**,**/generated/**&lt;/sonar.exclusions&gt;
 +    &lt;sonar.coverage.exclusions&gt;**/generated/**&lt;/sonar.coverage.exclusions&gt;
 +    &lt;sonar.cpd.exclusions&gt;**/generated/**&lt;/sonar.cpd.exclusions&gt;
++    &lt;sonar.scm.disabled&gt;true&lt;/sonar.scm.disabled&gt;
 
      &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
      &lt;project.reporting.outputEncoding&gt;UTF-8&lt;/project.reporting.outputEncoding&gt;
       …
    &lt;properties&gt;
-</code></pre><pre xmlns="" class="language-provided"><code class="language-xml">             &lt;outputDirectory&gt;${owaspReportsPath}&lt;/outputDirectory&gt;
+</code></pre><p>An overview of possible warnings and errors:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p>[WARNING] Missing blame information for the following
+            files:pom.xml. This may lead to missing/broken features in
+            SonarQube.</p><p>Even when the SCM provider for a project is: git and thus
+            all information should be available this message is sometimes
+            listed. And apparently it is used because it is displayed in the
+            program listing of for example <a class="link" href="https://sonarcloud.io/code?id=com.github.sonarqube.maven.plugins%3Asonarqube-maven-report&amp;selected=com.github.sonarqube.maven.plugins%3Asonarqube-maven-report%3Asrc%2Fmain%2Fjava%2Forg%2Fsonar%2Fplugins%2Fmavenreport%2FSonarReportMojo.java">SonarReportMojo</a>.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="tip"><h2>Tip</h2><p>For single user projects just disable this information
+              clutter with <code class="code">sonar.scm.disabled</code>.</p></div></li><li class="listitem"><p>[ERROR] Reports path not found or is not a directory:
+            <code class="filename">target\surefire-reports</code>.</p><p>[WARNING] Reports path contains no files matching
+            <code class="filename">TEST-.*.xml</code> :
+            <code class="filename">target\failsafe-reports</code>.</p><p>Due to the fact that Surefire doesn't create the
+            <code class="filename">surefire-reports</code> folder when there aren't any
+            unit tests. When there aren't any integration tests Failsafe does
+            create the <code class="filename">failsafe-reports</code> folder, but only
+            with the <code class="filename">failsafe-summary.xml</code> in it.</p></li><li class="listitem"><p>[ERROR] Reports path not found or is not a directory:
+            <code class="filename">target\surefire-reports</code>.</p><p>[ERROR] Reports path not found or is not a directory:
+            <code class="filename">target\failsafe-reports</code>.</p><p>Similar to the error mentioned just above, but due to for
+            example <code class="command">mvn clean</code> or a separate <a class="link" href="continuous.integration.pipeline.html#continuous.integration.pipeline.gitlab.sonarqube" title="C.2.19. Optional SonarQube Docs stage">GitLab</a>/<a class="link" href="continuous.integration.pipeline.html#continuous.integration.pipeline.jenkins.sonarqube" title="C.3.14. Optional SonarQube Deploy stage">Jenkins</a>
+            CI build job for <code class="command">mvn sonar:sonar</code> for which test
+            result dependencies weren't restored/unstashed.</p></li><li class="listitem"><p>[WARNING] Property 'sonar.jacoco.reportPath' is deprecated.
+            Please use '<code class="code">sonar.jacoco.reportPaths</code>' instead.</p><p>[WARNING] Property 'sonar.jacoco.itReportPath' is
+            deprecated. Please use '<code class="code">sonar.jacoco.reportPaths</code>'
+            instead.</p><p>Since version 6.2 there is no longer a differentiation
+            between unit tests, integration tests, et cetera.</p></li><li class="listitem"><p>[WARNING] Property 'sonar.jacoco.reportMissing.force.zero'
+            is deprecated and its value will be ignored.</p></li><li class="listitem"><p>[WARNING] Dependency-Check report does not exist. SKIPPING.
+            Please check property
+            <code class="code">sonar.dependencyCheck.reportPath</code>:
+            <code class="filename">target/owasp-reports/dependency-check-report.xml</code>.</p><p>[WARNING] Dependency-Check report does not exist. SKIPPING.
+            Please check property
+            <code class="code">sonar.dependencyCheck.reportPath</code>:
+            <code class="filename">target/owasp-reports/dependency-check-report.html</code>.</p><p>Due to
+            <code class="command">org.owasp:dependency-check-maven:aggregate</code>
+            usage these warnings are displayed for modules.</p></li><li class="listitem"><p>[ERROR] Failed to execute goal
+            org.sonarsource.scanner.maven:sonar-maven-plugin:3.4.0.905:sonar
+            (default-cli) on project : Please provide compiled classes of your
+            project with <code class="code">sonar.java.binaries property</code>.</p><p>Due to the fact that the <code class="filename">target</code> folder
+            doesn't contain a <code class="filename">classes</code> folder after for
+            example <code class="command">mvn clean</code> or a separate <a class="link" href="continuous.integration.pipeline.html#continuous.integration.pipeline.gitlab.sonarqube" title="C.2.19. Optional SonarQube Docs stage">GitLab</a>/<a class="link" href="continuous.integration.pipeline.html#continuous.integration.pipeline.jenkins.sonarqube" title="C.3.14. Optional SonarQube Deploy stage">Jenkins</a>
+            CI build job for <code class="command">mvn sonar:sonar</code> for which
+            compiled class dependencies weren't restored/unstashed. See also
+            properties mentioned below, which should <span class="emphasis"><em>not</em></span>
+            be configured for Maven.</p></li><li class="listitem"><p><code class="filename">[WARNING] Classes not found during the
+            analysis</code> : [org.apache.commons.logging.Log].</p><p>Due to using
+            <code class="code">&lt;sonar.java.libraries&gt;target/**/*.jar&lt;/sonar.java.libraries&gt;</code>
+            with Sonar Maven Plugin. See also properties mentioned below,
+            which should <span class="emphasis"><em>not</em></span> be configured for
+            Maven.</p></li><li class="listitem"><p>[ERROR] Invalid value for
+            <code class="code">sonar.java.libraries</code>.</p><p>[ERROR] Failed to execute goal
+            org.sonarsource.scanner.maven:sonar-maven-plugin:3.4.0.905:sonar
+            (default-cli) on project : No files nor directories matching
+            '<code class="filename">target/**/*.jar</code>'.</p><p>Due to using
+            <code class="code">&lt;sonar.java.libraries&gt;target/**/*.jar&lt;/sonar.java.libraries&gt;</code>
+            with Sonar Maven Plugin and the fact that the
+            <code class="filename">target</code> folder doesn't contain even the module
+            jar after for example <code class="command">mvn clean</code> or a separate
+            <a class="link" href="continuous.integration.pipeline.html#continuous.integration.pipeline.gitlab.sonarqube" title="C.2.19. Optional SonarQube Docs stage">GitLab</a>/<a class="link" href="continuous.integration.pipeline.html#continuous.integration.pipeline.jenkins.sonarqube" title="C.3.14. Optional SonarQube Deploy stage">Jenkins</a>
+            CI build job for <code class="command">mvn sonar:sonar</code>. See also
+            properties mentioned below, which should <span class="emphasis"><em>not</em></span>
+            be configured for Maven.</p></li><li class="listitem"><p>[WARNING] Bytecode of dependencies was not provided for
+            analysis of source files, you might end up with less precise
+            results. Bytecode can be provided using
+            <code class="code">sonar.java.libraries</code> property.</p><p>Due to using <code class="code">&lt;sonar.java.libraries /&gt;</code>
+            with Sonar Maven Plugin. See also properties mentioned below,
+            which should <span class="emphasis"><em>not</em></span> be configured for
+            Maven.</p></li><li class="listitem"><p>[WARNING] Property 'sonar.php.file.suffixes' is not declared
+            as multi-values/property set but was read using 'getStringArray'
+            method. The SonarQube plugin declaring this property should be
+            updated.</p><p>Some code change needed for one of the <a class="link" href="https://www.sonarsource.com/products/codeanalyzers/">Code
+            Analyzers</a>: <a class="link" href="https://www.sonarsource.com/products/codeanalyzers/sonarphp.html">SonarPHP</a>.</p></li></ul></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="important"><h2>Important</h2><p>The following <a class="link" href="https://docs.sonarqube.org/display/PLUG/Java+Plugin+and+Bytecode">Sonar
+          Java Plugin</a> properties should <span class="emphasis"><em>not</em></span> be
+          configured for Maven usage:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p>sonar.java.binaries.</p></li><li class="listitem"><p>sonar.java.libraries.</p></li><li class="listitem"><p>sonar.java.test.binaries.</p></li><li class="listitem"><p>sonar.java.test.libraries.</p></li></ul></div></div><pre xmlns="" class="language-provided"><code class="language-xml">             &lt;outputDirectory&gt;${owaspReportsPath}&lt;/outputDirectory&gt;
              &lt;format&gt;${owaspReportFormat}&lt;/format&gt;
              &lt;cveValidForHours&gt;${cveValidForHours}&lt;/cveValidForHours&gt;
            &lt;/configuration&gt;
@@ -520,14 +588,27 @@ wrapper.ntservice.description=SonarQube is an open source quality management pla
      &lt;/plugins&gt;
    &lt;/reporting&gt;
  &lt;/project&gt;
-</code></pre></section><section class="section" id="qa.screenshots.walkabout.owasp"><div class="titlepage"><div><div><h3 class="title"><a id="qa.screenshots.walkabout.owasp" class="anchor" href="#qa.screenshots.walkabout.owasp"><span class="octicon octicon-link"/></a>17.2.8. SonarQube and OWASP</h3></div></div></div><p>SonarQube with the information of the OWASP Dependency Check
-        incorporated:</p><div class="figure" id="qa.sandbox.sonar.projects"><a id="qa.sandbox.sonar.projects"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/dependency-check-projects.png" alt="Quality Assurance Sandbox SonarQube Projects"/></div></div></div><div class="figure-title">Figure 17.4. Quality Assurance Sandbox SonarQube Projects</div></div><br class="figure-break"/><div class="figure" id="qa.sandbox.sonar.overview"><a id="qa.sandbox.sonar.overview"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/dependency-check-quality-gate.png" alt="Quality Assurance Sandbox SonarQube Project Overview"/></div></div></div><div class="figure-title">Figure 17.5. Quality Assurance Sandbox SonarQube Project Overview</div></div><br class="figure-break"/><div class="figure" id="qa.sandbox.sonar.measures"><a id="qa.sandbox.sonar.measures"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/dependency-check-measures.png" alt="Quality Assurance Sandbox SonarQube Project Measures"/></div></div></div><div class="figure-title">Figure 17.6. Quality Assurance Sandbox SonarQube Project Measures</div></div><br class="figure-break"/><div class="figure" id="qa.sandbox.sonar.vulnerability"><a id="qa.sandbox.sonar.vulnerability"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/dependency-check-vulnerability.png" alt="Quality Assurance Sandbox SonarQube Project Vulnerability"/></div></div></div><div class="figure-title">Figure 17.7. Quality Assurance Sandbox SonarQube Project
-          Vulnerability</div></div><br class="figure-break"/><div class="figure" id="qa.sandbox.sonar.owasp"><a id="qa.sandbox.sonar.owasp"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/dependency-check-more.png" alt="Quality Assurance Sandbox SonarQube Project More OWASP Dependency Check Report"/></div></div></div><div class="figure-title">Figure 17.8. Quality Assurance Sandbox SonarQube Project More OWASP
-          Dependency Check Report</div></div><br class="figure-break"/></section><section class="section" id="qa.screenshots.walkabout.comparison"><div class="titlepage"><div><div><h3 class="title"><a id="qa.screenshots.walkabout.comparison" class="anchor" href="#qa.screenshots.walkabout.comparison"><span class="octicon octicon-link"/></a>17.2.9. Maven vs SonarQube Quality Assurance reports comparison</h3></div></div></div><p>To get an idea of the difference between the Quality Assurance
+</code></pre></section><section class="section" id="qa.screenshots.walkabout.owasp"><div class="titlepage"><div><div><h3 class="title"><a id="qa.screenshots.walkabout.owasp" class="anchor" href="#qa.screenshots.walkabout.owasp"><span class="octicon octicon-link"/></a>17.2.8. SonarQube and OWASP</h3></div></div></div><p>SonarQube screenshots with the information of the OWASP
+        Dependency Check incorporated for project <span class="inlinemediaobject"><img src="images/icons/gitlab.png"/></span> <a class="link" href="https://gitlab.com/freedumbytes/dependency-check">Custom
+        Dependency Check</a> with <a class="link" href="project.html#prj.maven.dependency.check.custom.suppression.hints" title="16.1.7.8.1. Suppressing False Positives and Resolving False Negatives">suppressionFile
+        and hintsFile</a> containing the rules that control how to suppress
+        false positives and resolve false negatives, which happens to have a
+        sample module and test vulnerabilities included:</p><div class="figure" id="qa.screenshots.walkabout.owasp.sonarqube.projects"><a id="qa.screenshots.walkabout.owasp.sonarqube.projects"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/dependency-check-projects.png" alt="SonarQube Projects - Custom Dependency Check"/></div></div></div><div class="figure-title">Figure 17.4. SonarQube Projects - Custom Dependency Check</div></div><br class="figure-break"/><div class="figure" id="qa.screenshots.walkabout.owasp.sonarqube.project.overview"><a id="qa.screenshots.walkabout.owasp.sonarqube.project.overview"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/dependency-check-quality-gate.png" alt="SonarQube Project Overview - Custom Dependency Check"/></div></div></div><div class="figure-title">Figure 17.5. SonarQube Project Overview - Custom Dependency Check</div></div><br class="figure-break"/><div class="figure" id="qa.screenshots.walkabout.owasp.sonarqube.project.issues"><a id="qa.screenshots.walkabout.owasp.sonarqube.project.issues"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/dependency-check-vulnerability.png" alt="SonarQube Project Issues - Custom Dependency Check"/></div></div></div><div class="figure-title">Figure 17.6. SonarQube Project Issues - Custom Dependency Check</div></div><br class="figure-break"/><div class="figure" id="qa.screenshots.walkabout.owasp.sonarqube.project.measures"><a id="qa.screenshots.walkabout.owasp.sonarqube.project.measures"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/dependency-check-measures.png" alt="SonarQube Project Measures - Custom Dependency Check"/></div></div></div><div class="figure-title">Figure 17.7. SonarQube Project Measures - Custom Dependency Check</div></div><br class="figure-break"/><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>The Dependency Check measures are there, but they are not
+          fully integrated.</p></div><div class="figure" id="qa.screenshots.walkabout.owasp.sonarqube.project.more"><a id="qa.screenshots.walkabout.owasp.sonarqube.project.more"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/dependency-check-more.png" alt="SonarQube Project More - Custom Dependency Check"/></div></div></div><div class="figure-title">Figure 17.8. SonarQube Project More - Custom Dependency Check</div></div><br class="figure-break"/><div style="margin-left: 0.5in; margin-right: 0.5in;" class="important"><h2>Important</h2><p>Only the project parent has a submenu
+          <span class="guisubmenu"><strong>More</strong></span> with the <span class="guilabel"><strong>OWASP
+          Dependency-Check</strong></span> Report. Thus for a complete list of all
+          vulnerabilities in a project run the Maven Plugin
+          <code class="code">org.owasp:dependency-check-maven</code> with the goal
+          <code class="code">aggregate</code> instead of <code class="code">check</code>. Alas, this way
+          the project module will not show its Dependency Check
+          vulnerabilities. But otherwise the ones in the project parent would
+          be counted double (or more depending on the number of modules) in
+          the SonarQube Project Overview anyway.</p></div><div class="figure" id="qa.screenshots.walkabout.owasp.sonarqube.project.code"><a id="qa.screenshots.walkabout.owasp.sonarqube.project.code"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/dependency-check-code.png" alt="SonarQube Project Code - Custom Dependency Check"/></div></div></div><div class="figure-title">Figure 17.9. SonarQube Project Code - Custom Dependency Check</div></div><br class="figure-break"/><div class="figure" id="qa.screenshots.walkabout.owasp.sonarqube.project.module"><a id="qa.screenshots.walkabout.owasp.sonarqube.project.module"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/dependency-check-module.png" alt="SonarQube Project Module Overview - Custom Dependency Check Sample Multi Module"/></div></div></div><div class="figure-title">Figure 17.10. SonarQube Project Module Overview - Custom Dependency Check
+          Sample Multi Module</div></div><br class="figure-break"/></section><section class="section" id="qa.screenshots.walkabout.comparison"><div class="titlepage"><div><div><h3 class="title"><a id="qa.screenshots.walkabout.comparison" class="anchor" href="#qa.screenshots.walkabout.comparison"><span class="octicon octicon-link"/></a>17.2.9. Maven vs SonarQube Quality Assurance reports comparison</h3></div></div></div><p>To get an idea of the difference between the Quality Assurance
         reports of Maven and SonarQube take a look at the following
-        screenshots:</p><div class="figure" id="qa.sandbox.findbugs.report"><a id="qa.sandbox.findbugs.report"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/A-Free-Dumb-Bytes-QA-Sandbox-FindBugs.png" alt="Maven Quality Assurance Sandbox FindBugs Report"/></div></div></div><div class="figure-title">Figure 17.9. Maven Quality Assurance Sandbox FindBugs Report</div></div><br class="figure-break"/><div class="figure" id="qa.sandbox.pmd.report"><a id="qa.sandbox.pmd.report"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/B-Free-Dumb-Bytes-QA-Sandbox-PMD.png" alt="Maven Quality Assurance Sandbox PMD Report"/></div></div></div><div class="figure-title">Figure 17.10. Maven Quality Assurance Sandbox PMD Report</div></div><br class="figure-break"/><div class="figure" id="qa.sandbox.checkstyle.report"><a id="qa.sandbox.checkstyle.report"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/C-Free-Dumb-Bytes-QA-Sandbox-Checkstyle.png" alt="Maven Quality Assurance Sandbox Checkstyle Report"/></div></div></div><div class="figure-title">Figure 17.11. Maven Quality Assurance Sandbox Checkstyle Report</div></div><br class="figure-break"/><div class="figure" id="qa.sandbox.jxr.report"><a id="qa.sandbox.jxr.report"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/D-Free-Dumb-Bytes-QA-Sandbox-JXR.png" alt="Maven Quality Assurance Sandbox JXR Source XRef (still remembered what violation at which line?)"/></div></div></div><div class="figure-title">Figure 17.12. Maven Quality Assurance Sandbox JXR Source XRef (still
-          remembered what violation at which line?)</div></div><br class="figure-break"/><div class="figure" id="qa.sandbox.sonar.violations"><a id="qa.sandbox.sonar.violations"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/E-Free-Dumb-Bytes-QA-Sandbox-Sonar-violations.png" alt="Maven Quality Assurance Sandbox SonarQube Code Violations"/></div></div></div><div class="figure-title">Figure 17.13. Maven Quality Assurance Sandbox SonarQube Code
-          Violations</div></div><br class="figure-break"/><div class="figure" id="qa.sandbox.sonar.violations.drilldown"><a id="qa.sandbox.sonar.violations.drilldown"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/E-Free-Dumb-Bytes-QA-Sandbox-Sonar-violations-drilldown.png" alt="Maven Quality Assurance Sandbox SonarQube Code Violations Drilldown (all violations at one glance)"/></div></div></div><div class="figure-title">Figure 17.14. Maven Quality Assurance Sandbox SonarQube Code Violations
+        screenshots:</p><div class="figure" id="qa.sandbox.findbugs.report"><a id="qa.sandbox.findbugs.report"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/A-Free-Dumb-Bytes-QA-Sandbox-FindBugs.png" alt="Maven Quality Assurance Sandbox FindBugs Report"/></div></div></div><div class="figure-title">Figure 17.11. Maven Quality Assurance Sandbox FindBugs Report</div></div><br class="figure-break"/><div class="figure" id="qa.sandbox.pmd.report"><a id="qa.sandbox.pmd.report"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/B-Free-Dumb-Bytes-QA-Sandbox-PMD.png" alt="Maven Quality Assurance Sandbox PMD Report"/></div></div></div><div class="figure-title">Figure 17.12. Maven Quality Assurance Sandbox PMD Report</div></div><br class="figure-break"/><div class="figure" id="qa.sandbox.checkstyle.report"><a id="qa.sandbox.checkstyle.report"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/C-Free-Dumb-Bytes-QA-Sandbox-Checkstyle.png" alt="Maven Quality Assurance Sandbox Checkstyle Report"/></div></div></div><div class="figure-title">Figure 17.13. Maven Quality Assurance Sandbox Checkstyle Report</div></div><br class="figure-break"/><div class="figure" id="qa.sandbox.jxr.report"><a id="qa.sandbox.jxr.report"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/D-Free-Dumb-Bytes-QA-Sandbox-JXR.png" alt="Maven Quality Assurance Sandbox JXR Source XRef (still remembered what violation at which line?)"/></div></div></div><div class="figure-title">Figure 17.14. Maven Quality Assurance Sandbox JXR Source XRef (still
+          remembered what violation at which line?)</div></div><br class="figure-break"/><div class="figure" id="qa.sandbox.sonar.violations"><a id="qa.sandbox.sonar.violations"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/E-Free-Dumb-Bytes-QA-Sandbox-Sonar-violations.png" alt="Maven Quality Assurance Sandbox SonarQube Code Violations"/></div></div></div><div class="figure-title">Figure 17.15. Maven Quality Assurance Sandbox SonarQube Code
+          Violations</div></div><br class="figure-break"/><div class="figure" id="qa.sandbox.sonar.violations.drilldown"><a id="qa.sandbox.sonar.violations.drilldown"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/E-Free-Dumb-Bytes-QA-Sandbox-Sonar-violations-drilldown.png" alt="Maven Quality Assurance Sandbox SonarQube Code Violations Drilldown (all violations at one glance)"/></div></div></div><div class="figure-title">Figure 17.16. Maven Quality Assurance Sandbox SonarQube Code Violations
           Drilldown (all violations at one glance)</div></div><br class="figure-break"/></section></section><section class="section" id="qa.jdocbook"><div class="titlepage"><div><div><h2 class="title"><a id="qa.jdocbook" class="anchor" href="#qa.jdocbook"><span class="octicon octicon-link"/></a>17.3. jDocBook</h2></div></div></div><p><span class="inlinemediaobject"><img src="images/icons/jboss.png"/></span> The purpose of the <a class="link" href="http://www.jboss.org/maven-jdocbook-plugin/">jDocBook
       Plugin</a> is to allow the <a class="link" href="documentation.html#doc.docbook" title="5.1. DocBook">DocBook</a>
       transformations to occur as a natural part of the users Maven build. It
@@ -578,7 +659,7 @@ wrapper.ntservice.description=SonarQube is an open source quality management pla
 +      scm:git:${gitHost}/maven-docbook.git
 +    &lt;/developerConnection&gt;
 +    &lt;url&gt;${fisheyeHost}/browse/maven-docbook&lt;/url&gt;
-+    &lt;tag&gt;HEAD&lt;/tag&gt;
++    &lt;tag /&gt;
 +  &lt;/scm&gt;
 </code></pre><pre xmlns="" class="language-provided"><code class="language-xml">+  &lt;ciManagement&gt;
 +    &lt;system&gt;Jenkins&lt;/system&gt;
@@ -670,7 +751,7 @@ wrapper.ntservice.description=SonarQube is an open source quality management pla
         directory</strong></span>
         <code class="filename">C:\dev\projects\maven-docbook</code> and click
         <span class="guibutton"><strong><span class="accel">F</span>inish</strong></span>.</p><p>With this setup the Development Production Line manual would
-        look something like this:</p><div class="figure" id="qa.jdocbook.pressgang.laf"><a id="qa.jdocbook.pressgang.laf"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/Development-Production-Line-PressGang.png" alt="Development Production Line - PressGang Look and Feel"/></div></div></div><div class="figure-title">Figure 17.15. Development Production Line - PressGang Look and
+        look something like this:</p><div class="figure" id="qa.jdocbook.pressgang.laf"><a id="qa.jdocbook.pressgang.laf"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/Development-Production-Line-PressGang.png" alt="Development Production Line - PressGang Look and Feel"/></div></div></div><div class="figure-title">Figure 17.17. Development Production Line - PressGang Look and
             Feel</div></div><p><br class="figure-break"/></p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="important"><h2>Important</h2><p>When building a jDocBook using maven in combination with
             java.home pointing to a jdk1.7 the following error occured:
             <span class="quote">“<span class="quote">Failure reading
@@ -790,7 +871,7 @@ wrapper.ntservice.description=SonarQube is an open source quality management pla
   for FOP are made available through the OFFO 
   ({{{http://offo.sourceforge.net/hyphenation/index.html} 
   <a xmlns="http://www.w3.org/1999/xhtml" class="link" href="http://offo.sourceforge.net/hyphenation/index.html">Objects For Formatting Objects</a>}}) project.
-</code></pre><div class="figure" id="qa.jdocbook.docs.site"><a id="qa.jdocbook.docs.site"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/maven-docs-site.png" alt="Free Dumb Bytes Documentation Setup"/></div></div></div><div class="figure-title">Figure 17.16. Free Dumb Bytes Documentation Setup</div></div><br class="figure-break"/><p>Create the maven-docs minimal project base POM in <code class="filename">C:\dev\projects\maven-docs\pom.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+</code></pre><div class="figure" id="qa.jdocbook.docs.site"><a id="qa.jdocbook.docs.site"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/maven-docs-site.png" alt="Free Dumb Bytes Documentation Setup"/></div></div></div><div class="figure-title">Figure 17.18. Free Dumb Bytes Documentation Setup</div></div><br class="figure-break"/><p>Create the maven-docs minimal project base POM in <code class="filename">C:\dev\projects\maven-docs\pom.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 +
 +&lt;project xmlns="http://maven.apache.org/POM/4.0.0"
 +         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -816,7 +897,7 @@ wrapper.ntservice.description=SonarQube is an open source quality management pla
 </code></pre><pre xmlns="" class="language-provided"><code class="language-xml">+  &lt;scm&gt;
 +    &lt;developerConnection&gt;scm:git:${gitHost}/maven-docs.git&lt;/developerConnection&gt;
 +    &lt;url&gt;${fisheyeHost}/browse/maven-docs&lt;/url&gt;
-+    &lt;tag&gt;HEAD&lt;/tag&gt;
++    &lt;tag /&gt;
 +  &lt;/scm&gt;
 </code></pre><pre xmlns="" class="language-provided"><code class="language-xml">+  &lt;ciManagement&gt;
 +    &lt;system&gt;Jenkins&lt;/system&gt;
@@ -1041,7 +1122,7 @@ mvn clean install
         <em class="parameter"><code>status</code></em>="draft" version="5.0"
         xml:id="development.production.line" xml:lang="en-US"
         xmlns="http://docbook.org/ns/docbook"</code> the Development
-        Production Line manual looks something like this:</p><div class="figure" id="qa.jdocbook.custom.laf"><a id="qa.jdocbook.custom.laf"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/Development-Production-Line-manual.png" alt="Development Production Line - Custom Look and Feel"/></div></div></div><div class="figure-title">Figure 17.17. Development Production Line - Custom Look and Feel</div></div><p><br class="figure-break"/></p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="important"><h2>Important</h2><p>When building a jDocBook using maven in combination with
+        Production Line manual looks something like this:</p><div class="figure" id="qa.jdocbook.custom.laf"><a id="qa.jdocbook.custom.laf"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/Development-Production-Line-manual.png" alt="Development Production Line - Custom Look and Feel"/></div></div></div><div class="figure-title">Figure 17.19. Development Production Line - Custom Look and Feel</div></div><p><br class="figure-break"/></p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="important"><h2>Important</h2><p>When building a jDocBook using maven in combination with
             java.home pointing to a jdk1.7 the following error occured:
             <span class="quote">“<span class="quote">Failure reading
             http://docbook.sourceforge.net/release/xsl/1.76.1/xhtml/chunk.xsl:
@@ -1890,7 +1971,7 @@ mvn clean install
    &lt;/xsl:template&gt;
  &lt;/xsl:stylesheet&gt;
 </code></pre><p>For the fonts to be auto detected by FOP and thus displayed in
-          the DocBook generated PDF (see also <a class="xref" href="quality.assurance.html#qa.jdocbook.fonts.without.auto.detect" title="Figure 17.18. PDF without auto detect fonts">Figure 17.18, “PDF without auto detect fonts”</a>), edit the
+          the DocBook generated PDF (see also <a class="xref" href="quality.assurance.html#qa.jdocbook.fonts.without.auto.detect" title="Figure 17.20. PDF without auto detect fonts">Figure 17.20, “PDF without auto detect fonts”</a>), edit the
           maven-docbook project as follows in <code class="filename">C:\dev\projects\maven-docbook\pom.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;build&gt;
      &lt;plugins&gt;
        &lt;plugin&gt;
@@ -1907,7 +1988,7 @@ mvn clean install
              &lt;xincludeSupported&gt;true&lt;/xincludeSupported&gt;
              &lt;useRelativeImageUris&gt;true&lt;/useRelativeImageUris&gt;
 </code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>For now PDF selects the Microsoft fonts prior to those of
-            Noto because of a baseline shift (see also <a class="xref" href="quality.assurance.html#qa.jdocbook.fonts.noto.sans" title="Figure 17.19. PDF with Sans Noto fonts">Figure 17.19, “PDF with Sans Noto fonts”</a> and <a class="xref" href="quality.assurance.html#qa.jdocbook.fonts.microsoft" title="Figure 17.20. PDF with Microsoft fonts">Figure 17.20, “PDF with Microsoft fonts”</a>).</p></div><div class="figure" id="qa.jdocbook.fonts.without.auto.detect"><a id="qa.jdocbook.fonts.without.auto.detect"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/pdf-no-auto-detect-fonts.png" alt="PDF without auto detect fonts"/></div></div></div><div class="figure-title">Figure 17.18. PDF without auto detect fonts</div></div><br class="figure-break"/><div class="figure" id="qa.jdocbook.fonts.noto.sans"><a id="qa.jdocbook.fonts.noto.sans"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/pdf-noto-sans-fonts.png" alt="PDF with Sans Noto fonts"/></div></div></div><div class="figure-title">Figure 17.19. PDF with Sans Noto fonts</div></div><br class="figure-break"/><div class="figure" id="qa.jdocbook.fonts.microsoft"><a id="qa.jdocbook.fonts.microsoft"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/pdf-microsoft-fonts.png" alt="PDF with Microsoft fonts"/></div></div></div><div class="figure-title">Figure 17.20. PDF with Microsoft fonts</div></div><br class="figure-break"/></section></section><section class="section" id="qa.jdocbook.example"><div class="titlepage"><div><div><h3 class="title"><a id="qa.jdocbook.example" class="anchor" href="#qa.jdocbook.example"><span class="octicon octicon-link"/></a>17.3.7. PressGang Example</h3></div></div></div><p>Create the pressgang-tools-example module in <code class="filename">C:\dev\projects\maven-docbook\pressgang-tools-example\pom.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+            Noto because of a baseline shift (see also <a class="xref" href="quality.assurance.html#qa.jdocbook.fonts.noto.sans" title="Figure 17.21. PDF with Sans Noto fonts">Figure 17.21, “PDF with Sans Noto fonts”</a> and <a class="xref" href="quality.assurance.html#qa.jdocbook.fonts.microsoft" title="Figure 17.22. PDF with Microsoft fonts">Figure 17.22, “PDF with Microsoft fonts”</a>).</p></div><div class="figure" id="qa.jdocbook.fonts.without.auto.detect"><a id="qa.jdocbook.fonts.without.auto.detect"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/pdf-no-auto-detect-fonts.png" alt="PDF without auto detect fonts"/></div></div></div><div class="figure-title">Figure 17.20. PDF without auto detect fonts</div></div><br class="figure-break"/><div class="figure" id="qa.jdocbook.fonts.noto.sans"><a id="qa.jdocbook.fonts.noto.sans"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/pdf-noto-sans-fonts.png" alt="PDF with Sans Noto fonts"/></div></div></div><div class="figure-title">Figure 17.21. PDF with Sans Noto fonts</div></div><br class="figure-break"/><div class="figure" id="qa.jdocbook.fonts.microsoft"><a id="qa.jdocbook.fonts.microsoft"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/screenshots/pdf-microsoft-fonts.png" alt="PDF with Microsoft fonts"/></div></div></div><div class="figure-title">Figure 17.22. PDF with Microsoft fonts</div></div><br class="figure-break"/></section></section><section class="section" id="qa.jdocbook.example"><div class="titlepage"><div><div><h3 class="title"><a id="qa.jdocbook.example" class="anchor" href="#qa.jdocbook.example"><span class="octicon octicon-link"/></a>17.3.7. PressGang Example</h3></div></div></div><p>Create the pressgang-tools-example module in <code class="filename">C:\dev\projects\maven-docbook\pressgang-tools-example\pom.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 +
 +&lt;project xmlns="http://maven.apache.org/POM/4.0.0"
 +         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"

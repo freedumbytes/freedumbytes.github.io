@@ -22,7 +22,8 @@
             a commit message</a>, <a class="link" href="http://stackoverflow.com/questions/457379/how-do-i-edit-an-incorrect-commit-message-in-git-ive-pushed">How
             do I edit an incorrect commit message in git (I've
             pushed)?</a>.</p></li><li class="listitem"><p><a class="link" href="http://gitready.com/">Git
-            ready</a>.</p></li><li class="listitem"><p><a class="link" href="https://github.com/Microsoft/Git-Credential-Manager-for-Windows">Git
+            ready</a>.</p></li><li class="listitem"><p><a class="link" href="https://gist.github.com/colinta/ff23c68907356c68f2aaedfb44a9bfa6">My
+            quick and dirty dive into git theory and tricks</a>.</p></li><li class="listitem"><p><a class="link" href="https://github.com/Microsoft/Git-Credential-Manager-for-Windows">Git
             Credential Manager</a> for Windows.</p></li></ul></div></section><section class="section" id="vcs.git.install.guide"><div class="titlepage"><div><div><h3 class="title"><a id="vcs.git.install.guide" class="anchor" href="#vcs.git.install.guide"><span class="octicon octicon-link"/></a>11.1.2. Git installation guide</h3></div></div></div><p><a class="link" href="https://git-for-windows.github.io/">Download</a> the
         binary: <code class="filename">Git-2.13.0-64-bit.exe</code> [version <a class="link" href="https://git-scm.com/">2.13.0</a>].</p><p>Run this <code class="filename">.exe</code> file to
         install Git in <code class="filename">P:\dev\apps\vcs\git</code> with the default
@@ -60,18 +61,32 @@ git config --global push.followTags true
 git config --list
 </code></pre></section><section class="section" id="vcs.git.difftool"><div class="titlepage"><div><div><h4 class="title"><a id="vcs.git.difftool" class="anchor" href="#vcs.git.difftool"><span class="octicon octicon-link"/></a>11.1.2.3. External diff tool</h4></div></div></div><p>To be able to use <a class="link" href="operating.system.html#os.windows.merge.winmerge" title="1.1.20.2. WinMerge">WinMerge</a> as the <a class="link" href="https://git-scm.com/docs/git-difftool">diff tool</a>
           add the following settings:</p><pre xmlns="" class="language-provided"><code class="language-bash">git config --global diff.tool winmerge
+git config --global --unset difftool.winmerge.cmd
 git config --global difftool.winmerge.path /p/dev/apps/editor/winmerge/WinMergeU
 git config --global difftool.winmerge.trustExitCode false
 git config --global difftool.prompt false
 </code></pre></section><section class="section" id="vcs.git.mergetool"><div class="titlepage"><div><div><h4 class="title"><a id="vcs.git.mergetool" class="anchor" href="#vcs.git.mergetool"><span class="octicon octicon-link"/></a>11.1.2.4. External merge tool</h4></div></div></div><p>To be able to use <a class="link" href="operating.system.html#os.windows.merge.kdiff3" title="1.1.20.1. KDiff3">KDiff3</a> as the <a class="link" href="https://git-scm.com/docs/git-mergetool">merge
           tool</a> add the following settings:</p><pre xmlns="" class="language-provided"><code class="language-bash">git config --global merge.tool kdiff3
+git config --global --unset mergetool.kdiff3.cmd
 git config --global mergetool.kdiff3.path /p/dev/apps/editor/kdiff3/kdiff3
 git config --global mergetool.kdiff3.trustExitCode false
 git config --global mergetool.kdiff3.keepBackup false
 git config --global mergetool.prompt false
 </code></pre><p>Alternatively use <a class="link" href="operating.system.html#os.windows.merge.kdiff3" title="1.1.20.1. KDiff3">KDiff3</a> instead of <a class="link" href="operating.system.html#os.windows.merge.winmerge" title="1.1.20.2. WinMerge">WinMerge</a> as the <a class="link" href="https://git-scm.com/docs/git-difftool">diff tool</a>
           overwrite the following settings:</p><pre xmlns="" class="language-provided"><code class="language-bash">git config --global diff.tool kdiff3
-</code></pre></section><section class="section" id="vcs.git.ignore.template"><div class="titlepage"><div><div><h4 class="title"><a id="vcs.git.ignore.template" class="anchor" href="#vcs.git.ignore.template"><span class="octicon octicon-link"/></a>11.1.2.5. Ignores template</h4></div></div></div><p>Create the following ignores template
+</code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="warning"><h2>Warning</h2><p>When say you are working on a branch, that started just as
+            the master with parent version 4.2, but now is it updated to
+            4.3.0. While the master got patched to parent version 4.3.4. You
+            will notice a difference in <code class="command">kdiff3</code> between the
+            content of the <code class="filename">Local</code> and
+            <code class="filename">Remote</code> <code class="filename">pom.xml</code> when
+            rebasing vs merging of the master onto the branch. The
+            <code class="filename">Local</code> commit will always be the commit before
+            the <code class="filename">Remote</code> commit in the newly created
+            <code class="command">git log</code>. Thus the current state of
+            <code class="filename">pom.xml</code> in the branch could show up as
+            <code class="filename">Remote</code> or as <code class="filename">Local</code>
+            respectively (see also the screenshots below).</p></div><div class="figure" id="vcs.git.mergetool.kdiff3.rebase"><a id="vcs.git.mergetool.kdiff3.rebase"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/vcs/git/kdiff3-rebase-master.png" alt="Git Rebase Master"/></div></div></div><div class="figure-title">Figure 11.1. Git Rebase Master</div></div><br class="figure-break"/><div class="figure" id="vcs.git.mergetool.kdiff3.merge"><a id="vcs.git.mergetool.kdiff3.merge"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/vcs/git/kdiff3-merge-master.png" alt="Git Merge Master"/></div></div></div><div class="figure-title">Figure 11.2. Git Merge Master</div></div><br class="figure-break"/></section><section class="section" id="vcs.git.ignore.template"><div class="titlepage"><div><div><h4 class="title"><a id="vcs.git.ignore.template" class="anchor" href="#vcs.git.ignore.template"><span class="octicon octicon-link"/></a>11.1.2.5. Ignores template</h4></div></div></div><p>Create the following ignores template
           <code class="filename">P:\dev\data\repo\<a class="link" href="https://gitlab.com/freedumbytes/setup/raw/master/.gitignore">.gitignore</a></code>
           based on <code class="filename">Java.gitignore</code> and
           <code class="filename">Maven.gitignore</code> of <span class="inlinemediaobject"><img src="images/icons/github.png"/></span> <a class="link" href="https://github.com/github/gitignore">.gitignore
@@ -403,7 +418,8 @@ then
     else
       echo "DONT setup Jenkins git hook"
     fi
-</code></pre><pre xmlns="" class="language-provided"><code class="language-bash">    tmp=${TMPDIR-/tmp}
+</code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p><a class="link" href="https://www.tygertec.com/git-hooks-practical-uses-windows/">Git
+            hooks, practical uses (yes, even on Windows)</a>.</p></div><pre xmlns="" class="language-provided"><code class="language-bash">    tmp=${TMPDIR-/tmp}
     tmp=$tmp/git-clone.$RANDOM.$RANDOM.$RANDOM.$$
     echo "Create temporary clone of project $project_name in $tmp"
     mkdir $tmp || exit 3
@@ -439,7 +455,7 @@ fi
           <span class="inlinemediaobject"><img src="images/icons/github.png"/></span> <a class="link" href="https://github.com/freedumbytes/">GitHub</a>,
           <span class="inlinemediaobject"><img src="images/icons/gitlab.png"/></span> <a class="link" href="https://gitlab.com/freedumbytes/">GitLab</a> and
           <span class="inlinemediaobject"><img src="images/icons/bitbucket.png"/></span> <a class="link" href="https://bitbucket.org/freedumbytes/">Bitbucket</a>,
-          ensure that Git is properly configured to <a class="link" href="tips.and.tricks.html#tip.vcs.svn2git.eol" title="A.2.1.6. End Of Line">handle line endings</a>. Speaking
+          ensure that Git is properly configured to <a class="link" href="tips.and.tricks.html#tip.vcs.svn2git.eol" title="A.2.2.6. End Of Line">handle line endings</a>. Speaking
           about those repository management services take a look at <a class="xref" href="prj.repo.svc.site.hosting.html" title="Appendix B. Hosting a group Website in the Cloud">Appendix B, <em>Hosting a group Website in the Cloud</em></a> and <a class="xref" href="prj.repo.svc.site.hosting.html#prj.repo.svc.site.hosting.git.origin.multiple" title="B.5. Multiple remote git locations">Section B.5, “Multiple remote git locations”</a>.</p></div><p>Create a new <a class="link" href="http://progit.org/book/ch4-2.html">bare repository</a>
         with the following command <code class="command">git-create-repo.sh
         P:/dev/data/repo/git <em class="replaceable"><code>dpl-manual.git</code></em>
@@ -487,8 +503,9 @@ git config core.autocrlf false            (see also <a xmlns="http://www.w3.org/
         You can edit the files in your working copy and then commit and push
         those changes back into the remote repository.</p></section><section class="section" id="vcs.git.commands"><div class="titlepage"><div><div><h3 class="title"><a id="vcs.git.commands" class="anchor" href="#vcs.git.commands"><span class="octicon octicon-link"/></a>11.1.7. Git commands</h3></div></div></div><p>Other useful Git command options are:</p><div class="itemizedlist"><ul class="itemizedlist"><li class="listitem"><p><code class="command">git help &lt;command&gt;</code> for more
               information on a specific command.</p></li><li class="listitem"><p><code class="command">git branch</code> to list, create, or delete
-              branches:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><code class="command">git branch [--all]</code> to list [all]
-                  branches.</p></li><li class="listitem"><p><code class="command">git branch -[d|D]
+              branches (see also <a class="link" href="https://www.atlassian.com/git/tutorials/using-branches">Using
+              branch</a>):</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><code class="command">git branch [-r] [--all]</code> to list
+                  ([remote-tracking] or [all]) branches.</p></li><li class="listitem"><p><code class="command">git branch -[d|D]
                   &lt;branch-name&gt;</code> to (force) delete a local
                   branch.</p></li><li class="listitem"><p><code class="command">git push origin
                   :&lt;branch-name&gt;</code> to remove a remote
@@ -511,14 +528,27 @@ git config core.autocrlf false            (see also <a xmlns="http://www.w3.org/
                   gone.</em></span> See also <a class="link" href="https://gist.github.com/jbgo/1944238">How to
                   recover a git branch you accidentally deleted</a> with
                   <code class="command">git reflog</code>).</p></li><li class="listitem"><p><code class="command">git fetch -p</code> to prune local
-                  references to remote deleted branches.</p></li></ul></div></li><li class="listitem"><p><code class="command">git tag</code> to list, create, or delete
+                  references to remote deleted branches.</p></li><li class="listitem"><p><code class="command">git checkout --orphan
+                  &lt;empty-branch&gt;</code> if you want a branch that is
+                  empty and has no history, <a class="link" href="https://stackoverflow.com/questions/34100048/github-create-empty-branch">this
+                  is the way to go</a>.</p><p><code class="command">git rm -rf .</code> to remove all the
+                  files you'll have in the staging area (so that they don't
+                  get committed).</p><p><code class="command">git commit --allow-empty -m "root
+                  commit"</code> before you can push to GitHub (or any
+                  other Git repository), you will need at least one commit,
+                  even if it does not have any content on it (i.e. empty
+                  commit), as you cannot push an empty branch.</p><p><code class="command">git push origin
+                  &lt;empty-branch&gt;</code> to finally, push it to the
+                  remote, and crack open a beer or SPA Intense for that
+                  matter.</p></li></ul></div></li><li class="listitem"><p><code class="command">git tag</code> to list, create, or delete
               tags:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><code class="command">git tag [-l]</code> to list tags.</p></li><li class="listitem"><p><code class="command">git tag -a &lt;tag-name&gt;</code> and
                   <code class="command">git push --tags</code> to create an unsigned,
                   annotated tag object.</p></li><li class="listitem"><p><code class="command">git tag -d &lt;tag-name&gt;</code> to
                   delete a tag and also on remote <code class="command">push origin
                   :refs/tags/&lt;tag-name&gt;</code>.</p></li><li class="listitem"><p><code class="command">git fetch --tags</code> to get all the
                   tags and not just ones referencing commits reachable from
-                  the branch heads.</p></li><li class="listitem"><p><code class="command">git tag -l | xargs git tag -d</code>
+                  the branch heads. <a class="link" href="https://stackoverflow.com/questions/1204190/does-git-fetch-tags-include-git-fetch">Does
+                  git fetch --tags include git fetch</a>?</p></li><li class="listitem"><p><code class="command">git tag -l | xargs git tag -d</code>
                   followed by the above mentioned command <code class="command">git fetch
                   -t</code> to prune local git tags that don't exist on
                   remote and thus keeping others from pushing them
@@ -529,8 +559,12 @@ git config core.autocrlf false            (see also <a xmlns="http://www.w3.org/
               area</a>:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><code class="command">git add .</code> to stage new and
                   modified, without deleted.</p></li><li class="listitem"><p><code class="command">git add . -u</code> to stage modified and
                   deleted, without new.</p></li><li class="listitem"><p><code class="command">git add (-A|--all)</code> to stage
-                  all.</p></li></ul></div></li><li class="listitem"><p><code class="command">git checkout</code> a branch or paths to the
-              working directory:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><code class="command">git checkout [-b]
+                  all.</p></li></ul></div></li><li class="listitem"><p><code class="command">git stash [pop]</code> <a class="link" href="https://www.atlassian.com/git/tutorials/saving-changes/git-stash">temporarily
+              shelves (or stashes) changes</a> you've made to your working
+              copy so you can work on something else, and then come back and
+              re-apply them later on.</p></li><li class="listitem"><p><code class="command">git checkout</code> a branch or paths to the
+              working directory (see also <a class="link" href="https://www.atlassian.com/git/tutorials/using-branches/git-checkout">Using
+              checkout</a>):</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><code class="command">git checkout [-b]
                   &lt;branch-name&gt;</code> to checkout [and create new]
                   branch.</p></li><li class="listitem"><p><code class="command">git ls-files -d | xargs git checkout
                   --</code> to recover all unstaged deletions at once,
@@ -550,9 +584,28 @@ git config core.autocrlf false            (see also <a xmlns="http://www.w3.org/
                   history</a>).</p></li><li class="listitem"><p><code class="command">git ls-files --eol | grep auto</code> to
                   identify files that aren't covered by
                   <code class="filename">.gitattributes</code> and thus is marked for
-                  automatic <a class="link" href="tips.and.tricks.html#tip.vcs.svn2git.eol" title="A.2.1.6. End Of Line">end-of-line
+                  automatic <a class="link" href="tips.and.tricks.html#tip.vcs.svn2git.eol" title="A.2.2.6. End Of Line">end-of-line
                   conversion</a>.</p></li></ul></div></li><li class="listitem"><p><code class="command">git fetch</code> latest changes from origin to
-              local repository.</p></li><li class="listitem"><p><code class="command">git pull</code> latest changes from origin and
+              local repository:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><code class="command">git diff master origin/master</code> to
+                  see what the differences are between your branch and the
+                  remote one.</p><p><code class="command">git fetch origin master:master</code> to
+                  <a class="link" href="https://longair.net/blog/2009/04/16/git-fetch-and-merge/">Git:
+                  Fetch and Merge, Don't Pull</a>.</p><p><code class="command">git rebase [--preserve-merges]
+                  master</code></p><p>The arguments after the remote origin in fetch are
+                  refspecs. Using master:master will overwrite your master
+                  branch:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><a class="link" href="https://stackoverflow.com/questions/21537244/differences-between-git-fetch-and-git-fetch-origin-master/21544585#21544585">Differences
+                      between git fetch and git fetch origin
+                      master</a>.</p></li><li class="listitem"><p><a class="link" href="https://stackoverflow.com/questions/26350876/what-is-the-difference-between-these-git-fetch-syntaxes/26355802#26355802">What
+                      is the difference between these `git fetch`
+                      syntaxes</a>?</p></li></ul></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="important"><h2>Important</h2><p><code class="command">--preserve-merges</code> or
+                    <code class="command">-p</code> recreate merge commits instead of
+                    flattening the history by replaying commits a merge commit
+                    introduces. Merge conflict resolutions or manual
+                    amendments to merge commits are not preserved.</p><p>This uses the <code class="command">--interactive</code> or
+                    <code class="command">-i</code> machinery internally, but combining
+                    it with the <code class="command">--interactive</code> option
+                    explicitly is generally not a good idea unless you know
+                    what you are doing (see <a class="link" href="https://git-scm.com/docs/git-rebase#_bugs">BUGS</a>).</p></div></li></ul></div></li><li class="listitem"><p><code class="command">git pull</code> latest changes from origin and
               then merge into the current branch.</p></li><li class="listitem"><p><code class="command">git push</code> your work back up to the
               origin.</p></li><li class="listitem"><p><code class="command">git diff</code> displays changes between
               commits, commit and working directory, etc:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><code class="command">git diff</code> shows what has changed but
@@ -573,14 +626,26 @@ git config core.autocrlf false            (see also <a xmlns="http://www.w3.org/
                     HEAD~0</code>.</p></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>Ancestry References by placing a <code class="code">^</code>
                     (caret) or <code class="code">~</code> (tilde) at the end of a
                     reference (see also examples for <code class="command">git
-                    show</code>).</p></div></li></ul></div></li><li class="listitem"><p><code class="command">git mv</code> is a convenience function for
+                    show</code>).</p></div></li><li class="listitem"><p><code class="command">git diff &lt;branch/tag-1&gt;
+                  &lt;branch/tag-2&gt; -- module/pom.xml</code> compares a
+                  single file between two branches/tags.</p></li></ul></div></li><li class="listitem"><p><code class="command">git mv</code> is a convenience function for
               renaming files.</p></li><li class="listitem"><p><code class="command">git remote</code> to manage the remote
-              repositories:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><code class="command">git remote -v</code> to list them
+              repositories (see also <a class="link" href="https://help.github.com/articles/changing-a-remote-s-url/">Changing
+              a remote's URL</a>):</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><code class="command">git remote -v</code> to list them
                   all.</p></li><li class="listitem"><p><code class="command">git clone &lt;url&gt;</code> creates the
                   origin.</p></li><li class="listitem"><p><code class="command">git remote add &lt;shortname&gt;
                   &lt;url&gt;</code> to add a new remote repository as a
                   shortname (see also TODO push url xref).</p></li><li class="listitem"><p><code class="command">git remote show [&lt;shortname&gt;]</code>
-                  to inspecting a remote repository.</p></li></ul></div></li><li class="listitem"><p><code class="command">git revert</code> some existing
+                  to inspecting a remote repository.</p></li></ul></div></li><li class="listitem"><p><code class="command">git submodules</code> allow you to keep a Git
+              repository as a subdirectory of another Git repository (see also
+              <a class="link" href="https://git-scm.com/book/en/v2/Git-Tools-Submodules">Git
+              Tools - Submodules</a>):</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><code class="command">git clone --recurse-submodules …</code>
+                  will automatically initialize and update each submodule in
+                  the repository.</p></li><li class="listitem"><p><code class="command">git submodule update --recursive
+                  --init</code> initialize each submodule for already
+                  cloned repositories.</p></li><li class="listitem"><p><code class="command">git submodule update --recursive
+                  --remote</code> update each submodule for already cloned
+                  repositories.</p></li></ul></div></li><li class="listitem"><p><code class="command">git revert</code> some existing
               commits.</p></li><li class="listitem"><p><code class="command">git reset</code> undo changes (see also note
               for <code class="command">git rebase</code>):</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><code class="command">git reset [(HEAD~&lt;n&gt;|&lt;sha&gt;)
                   --hard]</code> and optionally <code class="command">git push origin
@@ -613,8 +678,15 @@ git config core.autocrlf false            (see also <a xmlns="http://www.w3.org/
                   <span class="quote">“<span class="quote">where HEAD was on 2017-10-20</span>”</span> in this
                   repository (using <a class="link" href="https://git-scm.com/docs/git-reflog">the
                   reflog</a>).</p></li><li class="listitem"><p><code class="command">git reflog show [--all]</code> to get a
-                  complete reflog of all refs.</p></li></ul></div></li><li class="listitem"><p><code class="command">git merge</code> joins two or more development
-              histories together:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><code class="command">git checkout master</code> to switch back
+                  complete list of reference logs. Reference logs, or
+                  <span class="emphasis"><em>reflogs</em></span>, record when the tips of
+                  branches and other references were updated in the local
+                  repository.</p></li><li class="listitem"><p><code class="command">git rev-list --all [--remotes]
+                  --pretty=oneline [-- &lt;(file)path&gt;]</code> to list
+                  commit objects in reverse chronological order and query git
+                  reflog for all commits to a specific file.</p></li></ul></div></li><li class="listitem"><p><code class="command">git merge</code> joins two or more development
+              histories together (see also <a class="link" href="https://www.atlassian.com/git/tutorials/using-branches/git-merge">Using
+              merge</a>):</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><code class="command">git checkout master</code> to switch back
                   to <code class="code">master</code> for an update from remote
                   <code class="command">git pull origin master</code> and after return
                   to <code class="command">git checkout &lt;current-branch&gt;</code> to
@@ -625,17 +697,118 @@ git config core.autocrlf false            (see also <a xmlns="http://www.w3.org/
                   --continue</code> to fix merge conflicts (see also <a class="xref" href="version.control.system.html#vcs.git.mergetool" title="11.1.2.4. External merge tool">Section 11.1.2.4, “External merge tool”</a>).</p></li></ul></div></li><li class="listitem"><p><code class="command">git rebase</code> takes all the changes that
               were committed on one branch and replays them on another one
               (see also <a class="link" href="https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase">What
-              is git rebase?</a> and <a class="link" href="https://nathanleclaire.com/blog/2014/09/14/dont-be-scared-of-git-rebase/">Don't
-              Be Scared of git rebase</a>):</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><code class="command">git rebase [(HEAD~&lt;n&gt;|&lt;sha&gt;)]
+              is git rebase?</a>, <a class="link" href="https://nathanleclaire.com/blog/2014/09/14/dont-be-scared-of-git-rebase/">Don't
+              Be Scared of git rebase</a> and <a class="link" href="https://toni.uebernickel.info/2012/02/18/git-rebase-is-not-a-lion-it-is-a-cat-part-one.html">Git
+              rebase is not a lion, it's a cat - Part One</a> and <a class="link" href="https://toni.uebernickel.info/2012/02/20/git-rebase-is-not-a-lion-it-is-a-cat-part-two.html">Two</a>):</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><code class="command">git rebase [(HEAD~&lt;n&gt;|&lt;sha&gt;)]
                   -i</code> to pick, reword,edit, squash, fixup, exec, drop
                   commits.</p></li><li class="listitem"><p><code class="command">git rebase -i --root</code> to rebase to
                   the root commit of the branch.</p></li></ul></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p><span class="emphasis"><em>Do not</em></span> <a class="link" href="https://git-scm.com/book/en/v2/Git-Branching-Rebasing">rebase</a>
-                commits that you have pushed to a public repository.</p></div></li><li class="listitem"><p><code class="command">git reflog</code> keeps track of updates to
+                commits that you have pushed to a public repository. Also take
+                a look at <a class="link" href="https://medium.com/@fredrikmorken/why-you-should-stop-using-git-rebase-5552bee4fed1">Why
+                you should stop using Git rebase</a>.</p></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="tip"><h2>Tip</h2><p><a class="link" href="https://emmanuelbernard.com/blog/2014/04/14/split-a-commit-in-two-with-git/">Split
+                a commit in two with Git</a>:</p><pre class="language-provided"><code class="language-bash"># git rebase/reset starting with hash of commit just before combined commit, that was actually made of two.
+git rebase -i &lt;oldsha1&gt;
+# mark the combined commit as 'edit'
+git reset HEAD^
+git add …
+git commit -m "First commit."
+git add …
+git commit -m "Second commit."
+git rebase --continue
+</code></pre></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="important"><h2>Important</h2><p><code class="command">git add -p …</code> is <a class="link" href="https://johnkary.net/blog/git-add-p-the-most-powerful-git-feature-youre-not-using-yet/">the
+                most powerful git feature you're not using yet</a>. Patch
+                mode allows you to stage parts of a changed file, instead of
+                the entire file. <code class="command">git add -i …</code> is the big
+                brother of -p. --patch only lets you decide about the
+                individual hunks in files. --interactive enters the
+                interactive mode, and is <a class="link" href="https://nuclearsquid.com/writings/git-add/">a bit
+                more powerfu</a>l.</p></div></li><li class="listitem"><p><code class="command">git reflog</code> keeps track of updates to
               the tip of branches using a mechanism called <span class="emphasis"><em>reference
               logs</em></span>, or <span class="emphasis"><em><a class="link" href="https://www.atlassian.com/git/tutorials/rewriting-history/git-reflog">reflogs</a></em></span>.
               Many Git commands accept a parameter for specifying a reference
               or <span class="emphasis"><em>ref</em></span>, which is a pointer to a
-              commit.</p></li></ul></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="tip"><h2>Tip</h2><p>Git does not track an empty directory. In order to track a
+              commit.</p></li><li class="listitem"><p>Git manages file permissions for each file in the
+              repository. It may be appropriate to have the executable bit set
+              for shell/bash files to make them easier to execute in Linux
+              systems.</p><p>For example branch <code class="code">executable-bit</code> has the
+              following committed, added and new untracked executable files
+              when compared with the <code class="code">master</code>
+              branch:</p><pre xmlns="" class="language-provided"><code class="language-bash">$ git log --summary -1
+commit 256b037ced646797764a024749fce4ca141d0107 (HEAD -&gt; executable-bit)
+Date:   Mon Jun 18 22:38:56 2018 +0200
+
+    example
+
+ create mode 100644 committed.sh
+</code></pre><pre xmlns="" class="language-provided"><code class="language-bash">$ git status
+On branch executable-bit
+Changes to be committed:
+  (use "git reset HEAD &lt;file&gt;..." to unstage)
+
+        new file:   added.sh
+
+Untracked files:
+  (use "git add &lt;file&gt;..." to include in what will be committed)
+
+        untracked.sh
+        new.sh
+</code></pre><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p><a class="link" href="https://stackoverflow.com/questions/6476513/git-file-permissions-on-windows">Git
+                  file permissions on Windows</a>:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p>Show what has been added to the index via
+                      <code class="command">git add</code> but not yet
+                      committed:</p><pre xmlns="" class="language-provided"><code class="language-bash">$ git diff --cached --summary
+ create mode 100644 added.sh
+</code></pre></li><li class="listitem"><p>Show what has been committed to the
+                      <code class="code">executable-bit</code> branch via <code class="command">git
+                      add</code> and <code class="command">git commit</code> since
+                      branching from the <code class="code">master</code>:</p><pre xmlns="" class="language-provided"><code class="language-bash">$ git diff --summary master executable-bit
+ create mode 100644 committed.sh
+</code></pre></li><li class="listitem"><p>Show what has been added/committed to the current
+                      branch since branching from <code class="code">master</code>:</p><pre xmlns="" class="language-provided"><code class="language-bash">$ git diff --summary master
+ create mode 100644 added.sh
+ create mode 100644 committed.sh
+</code></pre></li></ul></div></li><li class="listitem"><p>Alternative ways to <a class="link" href="https://stackoverflow.com/questions/3821263/show-the-permission-of-a-indexed-file-in-git">show
+                  the permission of an indexed file in git</a>:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p>List the contents of a tree object:</p><pre xmlns="" class="language-provided"><code class="language-bash">$ git ls-tree HEAD *.sh
+100644 blob a8de73284cdd6fb499316a39232fb0f38c2c54ab    committed.sh
+
+$ find . -name '*.sh' | xargs git ls-tree HEAD
+100644 blob a8de73284cdd6fb499316a39232fb0f38c2c54ab    committed.sh
+</code></pre></li><li class="listitem"><p>Show information about files in the index and the
+                      working tree:</p><pre xmlns="" class="language-provided"><code class="language-bash">$ git ls-files --stage '*.sh'
+100644 a8de73284cdd6fb499316a39232fb0f38c2c54ab 0       added.sh
+100644 a8de73284cdd6fb499316a39232fb0f38c2c54ab 0       committed.sh
+
+$ find . -name '*.sh' | xargs git ls-files --stage
+100644 a8de73284cdd6fb499316a39232fb0f38c2c54ab 0       added.sh
+100644 a8de73284cdd6fb499316a39232fb0f38c2c54ab 0       committed.sh
+</code></pre></li></ul></div></li><li class="listitem"><p><a class="link" href="http://blog.lesc.se/2011/11/how-to-change-file-premissions-in-git.html">How
+                  to change file permissions in Git on Windows</a>:</p><pre xmlns="" class="language-provided"><code class="language-bash">$ git update-index --chmod=+x committed.sh
+
+$ git diff --cached --summary
+ create mode 100644 added.sh
+ mode change 100644 =&gt; 100755 committed.sh
+
+$ git update-index --chmod=+x added.sh
+
+$ git diff --cached --summary
+ create mode 100755 added.sh
+ mode change 100644 =&gt; 100755 committed.sh
+</code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>The executable bit of untracked files can only be
+                    set on Windows after the file is staged. See copied
+                    <code class="filename">untracked.sh</code> and empty
+                    <code class="filename">new.sh</code>:</p><pre class="language-provided"><code class="language-bash">$ ls -l *.sh
+-rwxr-xr-x 1 jjasper 197121 336 Jun 18 22:39 added.sh*
+-rwxr-xr-x 1 jjasper 197121 336 Jun 18 23:09 committed.sh*
+-rwxr-xr-x 1 jjasper 197121 336 Jun 18 22:39 untracked.sh*
+-rw-r--r-- 1 jjasper 197121   0 Jun 19 00:46 new.sh
+
+$ git add *.sh
+
+$ git diff --cached --summary
+ create mode 100755 added.sh
+ mode change 100644 =&gt; 100755 committed.sh
+ create mode 100644 untracked.sh
+ create mode 100644 new.sh
+</code></pre></div></li></ul></div></li></ul></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="tip"><h2>Tip</h2><p>Git does not track an empty directory. In order to track a
           directory, a file must exist within it. A trick that many people use
           is to create a hidden file usually called
           <code class="filename">.gitkeep</code>. The name of the file doesn't

@@ -14,7 +14,7 @@
       Bash</a>.</p><p>Clone this remote repository with the following command
       <code class="command"><a class="link" href="version.control.system.html#vcs.git.clone.project" title="11.1.6. Working on a project">git-clone</a> jjasper
       maven-setup</code>.</p><p>Start by adding the configuration of the <a class="link" href="version.control.system.html#vcs.git.ignore.template" title="11.1.2.5. Ignores template">Ignores template</a>
-      <code class="filename">.gitignore</code> and the <a class="link" href="tips.and.tricks.html#tip.vcs.svn2git.eol" title="A.2.1.6. End Of Line">Attributes template</a>
+      <code class="filename">.gitignore</code> and the <a class="link" href="tips.and.tricks.html#tip.vcs.svn2git.eol" title="A.2.2.6. End Of Line">Attributes template</a>
       <code class="filename">.gitattributes</code>.</p><p>Create the minimal POM in
       <code class="filename">C:\dev\projects\maven-setup\pom.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">+&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 +
@@ -114,7 +114,7 @@
 +    &lt;connection&gt;${sourceConnection}&lt;/connection&gt;
 +    &lt;developerConnection&gt;${sourceDevConnection}&lt;/developerConnection&gt;
 +    &lt;url&gt;${sourceWebRoot}&lt;/url&gt;
-+    &lt;tag&gt;HEAD&lt;/tag&gt;
++    &lt;tag /&gt;
 +  &lt;/scm&gt;
 </code></pre><pre xmlns="" class="language-provided"><code class="language-xml">+  &lt;ciManagement&gt;
 +    &lt;system&gt;${ciSystem}&lt;/system&gt;
@@ -207,7 +207,7 @@
 </code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="tip"><h2>Tip</h2><p>Should any of the hosts change and a project could not
             upgrade to the latest Maven Setup parent it now is possible to
             overwrite it in the Maven configuration file
-            <code class="filename">P:\dev\apps\build\apache-maven-3.5.2\conf\settings.xml</code>:</p></div><pre xmlns="" class="language-provided"><code class="language-xml">  &lt;profiles&gt;
+            <code class="filename">P:\dev\apps\build\apache-maven-3.5.4\conf\settings.xml</code>:</p></div><pre xmlns="" class="language-provided"><code class="language-xml">  &lt;profiles&gt;
      …
 
 +   &lt;profile&gt;
@@ -301,7 +301,7 @@
           <code class="filename">C:\dev\projects\maven-setup\pom.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;properties&gt;
       …
 +
-+    &lt;mavenProjectInfoReportsPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317821">2.9</a>&lt;/mavenProjectInfoReportsPluginVersion&gt;
++    &lt;mavenProjectInfoReportsPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317821">3.0.0</a>&lt;/mavenProjectInfoReportsPluginVersion&gt;
 +
 +    &lt;dependency.details.enabled&gt;false&lt;/dependency.details.enabled&gt;
 +    &lt;dependency.locations.enabled&gt;false&lt;/dependency.locations.enabled&gt;
@@ -328,12 +328,12 @@
 +            &lt;reports&gt;
 +              &lt;report&gt;index&lt;/report&gt;
 +              &lt;report&gt;summary&lt;/report&gt;
-+              &lt;report&gt;license&lt;/report&gt;
-+              &lt;report&gt;project-team&lt;/report&gt;
++              &lt;report&gt;licenses&lt;/report&gt;
++              &lt;report&gt;team&lt;/report&gt;
 +              &lt;report&gt;modules&lt;/report&gt;
 +              &lt;report&gt;scm&lt;/report&gt;
-+              &lt;report&gt;issue-tracking&lt;/report&gt;
-+              &lt;report&gt;cim&lt;/report&gt;
++              &lt;report&gt;issue-management&lt;/report&gt;
++              &lt;report&gt;ci-management&lt;/report&gt;
 +              &lt;report&gt;distribution-management&lt;/report&gt;
 +              &lt;report&gt;dependency-info&lt;/report&gt;
 +              &lt;report&gt;dependencies&lt;/report&gt;
@@ -341,7 +341,7 @@
 +              &lt;report&gt;dependency-convergence&lt;/report&gt;
 +              &lt;report&gt;plugins&lt;/report&gt;
 +              &lt;report&gt;plugin-management&lt;/report&gt;
-+              &lt;report&gt;mailing-list&lt;/report&gt;
++              &lt;report&gt;mailing-lists&lt;/report&gt;
 +            &lt;/reports&gt;
 +          &lt;/reportSet&gt;
 +        &lt;/reportSets&gt;
@@ -395,8 +395,8 @@
 +    &lt;skinVersion&gt;${mavenFluidoSkinVersion}&lt;/skinVersion&gt;
 +
 +    &lt;mavenFluidoSkinVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317926">1.7</a>&lt;/mavenFluidoSkinVersion&gt;
-+    &lt;mavenSitePluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317923">3.7</a>&lt;/mavenSitePluginVersion&gt;
-     &lt;mavenProjectInfoReportsPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317821">2.9</a>&lt;/mavenProjectInfoReportsPluginVersion&gt;
++    &lt;mavenSitePluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317923">3.7.1</a>&lt;/mavenSitePluginVersion&gt;
+     &lt;mavenProjectInfoReportsPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317821">3.0.0</a>&lt;/mavenProjectInfoReportsPluginVersion&gt;
 
 +    &lt;generateSitemap&gt;true&lt;/generateSitemap&gt;
      &lt;dependency.details.enabled&gt;false&lt;/dependency.details.enabled&gt;
@@ -506,32 +506,32 @@
         <a class="link" href="http://blog.soebes.de/blog/categories/maven-plugin-releases/">SoftwareEntwicklung
         Beratung Schulung</a> for latest release notes):</p><pre xmlns="" class="language-provided"><code class="language-xml">     &lt;mavenFluidoSkinVersion&gt;1.7&lt;/mavenFluidoSkinVersion&gt;
 +
-+    &lt;mavenHelpPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317522">2.2</a>&lt;/mavenHelpPluginVersion&gt;
-+    &lt;mavenCleanPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317224">3.0.0</a>&lt;/mavenCleanPluginVersion&gt;
++    &lt;mavenHelpPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317522">3.1.0</a>&lt;/mavenHelpPluginVersion&gt;
++    &lt;mavenCleanPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317224">3.1.0</a>&lt;/mavenCleanPluginVersion&gt;
 +    &lt;mavenToolchainsPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12318020">1.1</a>&lt;/mavenToolchainsPluginVersion&gt;
 +    &lt;versionsMavenPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://github.com/mojohaus/versions-maven-plugin/releases">2.5</a>&lt;/versionsMavenPluginVersion&gt;
-+    &lt;mavenPluginPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317820">3.5.1</a>&lt;/mavenPluginPluginVersion&gt;
++    &lt;mavenPluginPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317820">3.5.2</a>&lt;/mavenPluginPluginVersion&gt;
 +    &lt;mavenArchetypePluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317122">3.0.1</a>&lt;/mavenArchetypePluginVersion&gt;
-+    &lt;mavenInvokerPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317525">3.0.1</a>&lt;/mavenInvokerPluginVersion&gt;
-+    &lt;mavenJDepsPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12319223">3.1.0</a>&lt;/mavenJDepsPluginVersion&gt;
-+    &lt;mavenDependencyPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317227">3.0.2</a>&lt;/mavenDependencyPluginVersion&gt;
++    &lt;mavenInvokerPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317525">3.1.0</a>&lt;/mavenInvokerPluginVersion&gt;
++    &lt;mavenJDepsPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12319223">3.1.1</a>&lt;/mavenJDepsPluginVersion&gt;
++    &lt;mavenDependencyPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317227">3.1.1</a>&lt;/mavenDependencyPluginVersion&gt;
 +    &lt;truezipMavenPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://github.com/mojohaus/truezip/releases">1.2</a>&lt;/truezipMavenPluginVersion&gt;
 +    &lt;mavenPatchPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317622">1.2</a>&lt;/mavenPatchPluginVersion&gt;
-+    &lt;mavenResourcesPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317827">3.0.2</a>&lt;/mavenResourcesPluginVersion&gt;
++    &lt;mavenResourcesPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317827">3.1.0</a>&lt;/mavenResourcesPluginVersion&gt;
 +    &lt;mavenAntrunPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317121">1.8</a>&lt;/mavenAntrunPluginVersion&gt;
 +    &lt;mavenCompilerPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317225">3.7.0</a>&lt;/mavenCompilerPluginVersion&gt;
-+    &lt;jacocoMavenPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="http://www.eclemma.org/jacoco/trunk/doc/changes.html">0.8.0</a>&lt;/jacocoMavenPluginVersion&gt;
-+    &lt;mavenSurefirePluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317927">2.20.1</a>&lt;/mavenSurefirePluginVersion&gt;
++    &lt;jacocoMavenPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="http://www.eclemma.org/jacoco/trunk/doc/changes.html">0.8.1</a>&lt;/jacocoMavenPluginVersion&gt;
++    &lt;mavenSurefirePluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317927">2.22.0</a>&lt;/mavenSurefirePluginVersion&gt;
 +    &lt;mavenFailsafePluginVersion&gt;${mavenSurefirePluginVersion}&lt;/mavenFailsafePluginVersion&gt;
 +    &lt;mavenSurefireReportPluginVersion&gt;${mavenSurefirePluginVersion}&lt;/mavenSurefireReportPluginVersion&gt;
-+    &lt;mavenJarPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317526">3.0.2</a>&lt;/mavenJarPluginVersion&gt;
-+    &lt;mavenEjbPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317421">3.0.0</a>&lt;/mavenEjbPluginVersion&gt;
-+    &lt;mavenWarPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12318121">3.2.0</a>&lt;/mavenWarPluginVersion&gt;
++    &lt;mavenJarPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317526">3.1.0</a>&lt;/mavenJarPluginVersion&gt;
++    &lt;mavenEjbPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317421">3.0.1</a>&lt;/mavenEjbPluginVersion&gt;
++    &lt;mavenWarPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12318121">3.2.2</a>&lt;/mavenWarPluginVersion&gt;
 +    &lt;mavenRarPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317823">2.4</a>&lt;/mavenRarPluginVersion&gt;
-+    &lt;mavenEarPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317422">2.10.1</a>&lt;/mavenEarPluginVersion&gt;
-+    &lt;mavenShadePluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317921">3.1.0</a>&lt;/mavenShadePluginVersion&gt;
++    &lt;mavenEarPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317422">3.0.1</a>&lt;/mavenEarPluginVersion&gt;
++    &lt;mavenShadePluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317921">3.1.1</a>&lt;/mavenShadePluginVersion&gt;
 +    &lt;mavenSourcePluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317924">3.0.1</a>&lt;/mavenSourcePluginVersion&gt;
-+    &lt;mavenJavadocPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317529">3.0.0</a>&lt;/mavenJavadocPluginVersion&gt;
++    &lt;mavenJavadocPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317529">3.0.1</a>&lt;/mavenJavadocPluginVersion&gt;
 +    &lt;mavenAssemblyPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317220">3.1.0</a>&lt;/mavenAssemblyPluginVersion&gt;
 +    &lt;buildHelperMavenPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://github.com/mojohaus/build-helper-maven-plugin/releases">3.0.0</a>&lt;/buildHelperMavenPluginVersion&gt;
 +    &lt;mavenInstallPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317524">2.5.2</a>&lt;/mavenInstallPluginVersion&gt;
@@ -539,16 +539,15 @@
 +    &lt;mavenGPGPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317521">1.6</a>&lt;/mavenGPGPluginVersion&gt;
 +    &lt;mavenDeployPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317228">2.8.2</a>&lt;/mavenDeployPluginVersion&gt;
 +    &lt;mavenReleasePluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317824">2.5.3</a>&lt;/mavenReleasePluginVersion&gt;
-+    &lt;mavenScmPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317828">1.9.5</a>&lt;/mavenScmPluginVersion&gt;
-     &lt;mavenSitePluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317923">3.7</a>&lt;/mavenSitePluginVersion&gt;
-     &lt;mavenProjectInfoReportsPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317821">2.9</a>&lt;/mavenProjectInfoReportsPluginVersion&gt;
++    &lt;mavenScmPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317828">1.10.0</a>&lt;/mavenScmPluginVersion&gt;
+     &lt;mavenSitePluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317923">3.7.1</a>&lt;/mavenSitePluginVersion&gt;
+     &lt;mavenProjectInfoReportsPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12317821">3.0.0</a>&lt;/mavenProjectInfoReportsPluginVersion&gt;
 </code></pre><pre xmlns="" class="language-provided"><code class="language-xml">+
 +    &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
 +    &lt;project.reporting.outputEncoding&gt;UTF-8&lt;/project.reporting.outputEncoding&gt;
 +
 +    &lt;mavenWarFailOnMissingWebXml&gt;false&lt;/mavenWarFailOnMissingWebXml&gt;
 +    &lt;mavenEarEncoding&gt;UTF-8&lt;/mavenEarEncoding&gt;
-+    &lt;maven.ear.duplicateArtifactsBreakTheBuild&gt;true&lt;/maven.ear.duplicateArtifactsBreakTheBuild&gt;
 +
 +    &lt;createChecksum&gt;true&lt;/createChecksum&gt;
 +    &lt;installAtEnd&gt;true&lt;/installAtEnd&gt;
@@ -681,13 +680,15 @@
 +          &lt;artifactId&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://maven.apache.org/plugins/maven-surefire-plugin/">maven-surefire-plugin</a>&lt;/artifactId&gt;
 +          &lt;version&gt;${mavenSurefirePluginVersion}&lt;/version&gt;
 +        &lt;/plugin&gt;
-</code></pre><pre xmlns="" class="language-provided"><code class="language-xml">+        &lt;plugin&gt;
+</code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>Since release 2.20 Surefire shows random tests failing with
+          fork issue when one of the tests hangs (see also <a class="link" href="https://issues.apache.org/jira/browse/SUREFIRE-1408">SUREFIRE-1408</a>).
+          Try downgrading with
+          &lt;mavenSurefirePluginVersion&gt;2.19.1&lt;/mavenSurefirePluginVersion&gt;
+          or check <a class="link" href="http://maven.apache.org/surefire/maven-failsafe-plugin/examples/shutdown.html">Shutdown
+          of Forked JVM</a>.</p></div><pre xmlns="" class="language-provided"><code class="language-xml">+        &lt;plugin&gt;
 +          &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
 +          &lt;artifactId&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://maven.apache.org/surefire/maven-failsafe-plugin/">maven-failsafe-plugin</a>&lt;/artifactId&gt;
 +          &lt;version&gt;${mavenFailsafePluginVersion}&lt;/version&gt;
-+          &lt;configuration&gt;
-+            &lt;encoding&gt;${project.reporting.outputEncoding}&lt;/encoding&gt;
-+          &lt;/configuration&gt;
 +        &lt;/plugin&gt;
 </code></pre><pre xmlns="" class="language-provided"><code class="language-xml">+        &lt;plugin&gt;
 +          &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
@@ -718,7 +719,10 @@
 +          &lt;version&gt;${mavenEarPluginVersion}&lt;/version&gt;
 +          &lt;configuration&gt;
 +            &lt;encoding&gt;${mavenEarEncoding}&lt;/encoding&gt;
-+            &lt;duplicateArtifactsBreakTheBuild&gt;${maven.ear.duplicateArtifactsBreakTheBuild}&lt;/duplicateArtifactsBreakTheBuild&gt;
+&lt;!--
+-            &lt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/browse/MEAR-185">defaultJavaBundleDir</a>&gt;APP-INF/lib/&lt;/defaultJavaBundleDir&gt;
++            &lt;defaultLibBundleDir&gt;APP-INF/lib&lt;/defaultLibBundleDir&gt;
+--&gt;
 +          &lt;/configuration&gt;
 +        &lt;/plugin&gt;
 </code></pre><pre xmlns="" class="language-provided"><code class="language-xml">+        &lt;plugin&gt;
@@ -871,11 +875,11 @@
 +  &lt;/distributionManagement&gt;
 
    &lt;properties&gt;
-</code></pre><pre xmlns="" class="language-provided"><code class="language-xml">     &lt;mavenSitePluginVersion&gt;3.7&lt;/mavenSitePluginVersion&gt;
-     &lt;mavenProjectInfoReportsPluginVersion&gt;2.9&lt;/mavenProjectInfoReportsPluginVersion&gt;
+</code></pre><pre xmlns="" class="language-provided"><code class="language-xml">     &lt;mavenSitePluginVersion&gt;3.7.1&lt;/mavenSitePluginVersion&gt;
+     &lt;mavenProjectInfoReportsPluginVersion&gt;3.0.0&lt;/mavenProjectInfoReportsPluginVersion&gt;
 +
-+    &lt;wagonMavenPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12318122">1.0</a>&lt;/wagonMavenPluginVersion&gt;
-+    &lt;wagonProviderVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12318122">3.0.0</a>&lt;/wagonProviderVersion&gt;
++    &lt;wagonMavenPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://github.com/mojohaus/wagon-maven-plugin/milestones?state=closed">2.0.0</a>&lt;/wagonMavenPluginVersion&gt;
++    &lt;wagonProviderVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/secure/ReleaseNote.jspa?projectId=12318122">3.1.0</a>&lt;/wagonProviderVersion&gt;
    &lt;/properties&gt;
 </code></pre><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;build&gt;
 +    &lt;extensions&gt;
@@ -943,7 +947,7 @@
           user</a> password <a class="xref" href="project.html#build.maven.server.jenkins.password"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a> with <code class="command">mvn
           --encrypt-password <em class="replaceable"><code>password</code></em></code> and
           place it in the Maven configuration file
-          <code class="filename">P:\dev\apps\build\apache-maven-3.5.2\conf\settings.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;servers&gt;
+          <code class="filename">P:\dev\apps\build\apache-maven-3.5.4\conf\settings.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;servers&gt;
       …
 +
 +    &lt;server&gt;
@@ -1000,7 +1004,7 @@
 +    &lt;nexusStagingMavenPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://github.com/sonatype/nexus-maven-plugins/releases">1.6.8</a>&lt;/nexusStagingMavenPluginVersion&gt;
      &lt;mavenDeployPluginVersion&gt;2.8.2&lt;/mavenDeployPluginVersion&gt;
      &lt;mavenReleasePluginVersion&gt;2.5.3&lt;/mavenReleasePluginVersion&gt;
-     &lt;mavenScmPluginVersion&gt;1.9.5&lt;/mavenScmPluginVersion&gt;
+     &lt;mavenScmPluginVersion&gt;1.10.0&lt;/mavenScmPluginVersion&gt;
 </code></pre><pre xmlns="" class="language-provided"><code class="language-xml">     &lt;profile&gt;
        &lt;id&gt;openSource&lt;/id&gt;
 +
@@ -1177,7 +1181,7 @@ gpg --list-secret-keys
           hkp://pool.sks-keyservers.net --recv-keys
           D8692123C4065DEA5E0F3AB5249B39D24F25E3B6</code>.</p><p>Configure the GPG credentials using a <code class="code">gnupg</code>
           profile in the Maven configuration file
-          <code class="filename">P:\dev\apps\build\apache-maven-3.5.2\conf\settings.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;servers&gt;
+          <code class="filename">P:\dev\apps\build\apache-maven-3.5.4\conf\settings.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;servers&gt;
     …
 
 +    &lt;server&gt;
@@ -1252,8 +1256,8 @@ gpg --list-secret-keys
           default compiler is javac and is used to compile Java sources. To
           compile the sources using the latest available JDK assume it is
           located at <code class="envar">JAVA_HOME</code> in
-          <code class="filename">C:\dev\projects\maven-setup\pom.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">     &lt;wagonMavenPluginVersion&gt;1.0&lt;/wagonMavenPluginVersion&gt;
-     &lt;wagonProviderVersion&gt;2.12&lt;/wagonProviderVersion&gt;
+          <code class="filename">C:\dev\projects\maven-setup\pom.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">     &lt;wagonMavenPluginVersion&gt;2.0.0&lt;/wagonMavenPluginVersion&gt;
+     &lt;wagonProviderVersion&gt;3.1.0&lt;/wagonProviderVersion&gt;
 +
 +    &lt;jdkHome&gt;${env.JAVA_HOME}&lt;/jdkHome&gt;
 +    &lt;maven.compiler.executable&gt;${jdkHome}/bin/javac&lt;/maven.compiler.executable&gt;
@@ -1261,6 +1265,8 @@ gpg --list-secret-keys
 +    &lt;maven.compiler.compilerVersion&gt;1.8&lt;/maven.compiler.compilerVersion&gt;
 +    &lt;maven.compiler.source&gt;${maven.compiler.target}&lt;/maven.compiler.source&gt;
 +    &lt;maven.compiler.target&gt;${maven.compiler.compilerVersion}&lt;/maven.compiler.target&gt;
++    &lt;maven.compiler.testSource&gt;${maven.compiler.target}&lt;/maven.compiler.testSource&gt;
++    &lt;maven.compiler.testTarget&gt;${maven.compiler.target}&lt;/maven.compiler.testTarget&gt;
 +    &lt;maven.compiler.showDeprecation&gt;true&lt;/maven.compiler.showDeprecation&gt;
 +    &lt;maven.compiler.showWarnings&gt;true&lt;/maven.compiler.showWarnings&gt;
 +    &lt;maven.compiler.meminitial&gt;128m&lt;/maven.compiler.meminitial&gt;
@@ -1286,6 +1292,9 @@ gpg --list-secret-keys
 +            &lt;compilerVersion&gt;${maven.compiler.compilerVersion}&lt;/compilerVersion&gt;
 +            &lt;source&gt;${maven.compiler.source}&lt;/source&gt;
 +            &lt;target&gt;${maven.compiler.target}&lt;/target&gt;
++            &lt;testSource&gt;${maven.compiler.testSource}&lt;/testSource&gt;
++            &lt;testTarget&gt;${maven.compiler.testTarget}&lt;/testTarget&gt;
++            &lt;release&gt;${maven.compiler.release}&lt;/release&gt;
 +            &lt;showDeprecation&gt;${maven.compiler.showDeprecation}&lt;/showDeprecation&gt;
 +            &lt;showWarnings&gt;${maven.compiler.showWarnings}&lt;/showWarnings&gt;
 +            &lt;meminitial&gt;${maven.compiler.meminitial}&lt;/meminitial&gt;
@@ -1376,8 +1385,7 @@ gpg --list-secret-keys
            &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
            &lt;artifactId&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://maven.apache.org/surefire/maven-failsafe-plugin/">maven-failsafe-plugin</a>&lt;/artifactId&gt;
            &lt;version&gt;${mavenFailsafePluginVersion}&lt;/version&gt;
-           &lt;configuration&gt;
-             &lt;encoding&gt;${project.reporting.outputEncoding}&lt;/encoding&gt;
++          &lt;configuration&gt;
 +            &lt;!--  (see also <a xmlns="http://www.w3.org/1999/xhtml" class="xref" href="project.html#prj.maven.setup.java.unit.vs.integration" title="16.1.7.2.4. Unit vs Integration tests">Section 16.1.7.2.4, “Unit vs Integration tests”</a>) --&gt;
 +            &lt;skipTests&gt;${skipIntegrationTests}&lt;/skipTests&gt;
 +            &lt;runOrder&gt;${failsafe.runOrder}&lt;/runOrder&gt;
@@ -1393,7 +1401,7 @@ gpg --list-secret-keys
 +              &lt;include&gt;**/*IntegrationTest.java&lt;/include&gt;<span xmlns="http://www.w3.org/1999/xhtml" id="prj.maven.setup.java.failsafe.integration.test.suffix"/><a xmlns="http://www.w3.org/1999/xhtml" id="prj.maven.setup.java.failsafe.integration.test.suffix"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/1.png" alt="1" height="17px" width="17px" class="callout"/>
 +              &lt;include&gt;**/*IntegrationTests.java&lt;/include&gt;<span xmlns="http://www.w3.org/1999/xhtml" id="prj.maven.setup.java.failsafe.integration.tests.suffix"/><a xmlns="http://www.w3.org/1999/xhtml" id="prj.maven.setup.java.failsafe.integration.tests.suffix"><span style="display:none;">trick</span></a><img xmlns="http://www.w3.org/1999/xhtml" style="border: 0; " src="images/community/docbook/callouts/2.png" alt="2" height="17px" width="17px" class="callout"/>
 +            &lt;/includes&gt;
-           &lt;/configuration&gt;
++          &lt;/configuration&gt;
 +          &lt;executions&gt;
 +            &lt;execution&gt;
 +              &lt;goals&gt;
@@ -1593,6 +1601,7 @@ mvn clean verify -Dmaven.test.skip=true (see also issue <a xmlns="http://www.w3.
 mvn clean test
 mvn clean verify -DskipIntegrationTests
 mvn clean verify -DskipIntegrationTests=true
+mvn surefire:test [-Dtest=…Test [-DfailIfNoTests=false]]
 
 @rem integrationtests only
 mvn clean verify -DskipUnitTests
@@ -1600,7 +1609,11 @@ mvn clean verify -DskipUnitTests=true
 mvn clean verify -PintegrationTestsOnly
 mvn clean verify -DskipUnitTests=true -DskipIntegrationTests=false
 mvn clean verify -DskipTests -DskipIntegrationTests=false
-</code></pre></section></section><section class="section" id="prj.maven.setup.java.jacoco"><div class="titlepage"><div><div><h4 class="title"><a id="prj.maven.setup.java.jacoco" class="anchor" href="#prj.maven.setup.java.jacoco"><span class="octicon octicon-link"/></a>16.1.7.3. JaCoCo</h4></div></div></div><p>The <a class="link" href="http://www.eclemma.org/jacoco/trunk/doc/maven.html">JaCoCo
+mvn failsafe:integration-test [-Dit.test=…IT [-DfailIfNoTests=false]]
+</code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="warning"><h2>Warning</h2><p>Both commands <code class="command">mvn surefire:test</code> and
+              <code class="command">mvn failsafe:integration-test</code> will result in
+              <span class="quote">“<span class="quote">No tests to run</span>”</span> after running <code class="command">mvn
+              clean</code>.</p></div></section></section><section class="section" id="prj.maven.setup.java.jacoco"><div class="titlepage"><div><div><h4 class="title"><a id="prj.maven.setup.java.jacoco" class="anchor" href="#prj.maven.setup.java.jacoco"><span class="octicon octicon-link"/></a>16.1.7.3. JaCoCo</h4></div></div></div><p>The <a class="link" href="http://www.eclemma.org/jacoco/trunk/doc/maven.html">JaCoCo
           Plugin</a> provides the <a class="link" href="http://www.eclemma.org/jacoco/trunk/index.html">JaCoCo</a>
           (Java Code Coverage Library) runtime agent to your tests and allows
           basic report creation. Configure it in
@@ -1757,7 +1770,7 @@ mvn clean verify -DskipTests -DskipIntegrationTests=false
      &lt;maven.source.excludeResources&gt;false&lt;/maven.source.excludeResources&gt;
 +
 +    &lt;javadocExecutable&gt;${jdkHome}/bin/javadoc&lt;/javadocExecutable&gt;
-+    &lt;javadocVersion&gt;${maven.compiler.target}&lt;/javadocVersion&gt;
++    &lt;javadocVersion&gt;1.8.0&lt;/javadocVersion&gt;
 +    &lt;javadocDoclint&gt;none&lt;/javadocDoclint&gt;
 +    &lt;javadocQuiet&gt;true&lt;/javadocQuiet&gt;
 +    &lt;javadocAdditionalOptions /&gt;
@@ -1921,12 +1934,12 @@ mvn clean verify -DskipTests -DskipIntegrationTests=false
           traditionally names the different versions of its Java Runtimes
           after different animals, the plugin that detects what Java Runtime
           your code requires was called <span class="emphasis"><em>Animal
-          Sniffer</em></span>:</p><pre xmlns="" class="language-provided"><code class="language-xml">     &lt;mavenResourcesPluginVersion&gt;3.0.2&lt;/mavenResourcesPluginVersion&gt;
+          Sniffer</em></span>:</p><pre xmlns="" class="language-provided"><code class="language-xml">     &lt;mavenResourcesPluginVersion&gt;3.1.0&lt;/mavenResourcesPluginVersion&gt;
      &lt;mavenAntrunPluginVersion&gt;1.8&lt;/mavenAntrunPluginVersion&gt;
      &lt;mavenCompilerPluginVersion&gt;3.7.0&lt;/mavenCompilerPluginVersion&gt;
-+    &lt;mavenAnimalSnifferPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://github.com/mojohaus/animal-sniffer/releases">1.16</a>&lt;/mavenAnimalSnifferPluginVersion&gt;
-     &lt;jacocoMavenPluginVersion&gt;0.8.0&lt;/jacocoMavenPluginVersion&gt;
-     &lt;mavenSurefirePluginVersion&gt;2.20.1&lt;/mavenSurefirePluginVersion&gt;
++    &lt;mavenAnimalSnifferPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://github.com/mojohaus/animal-sniffer/milestones?state=closed">1.17</a>&lt;/mavenAnimalSnifferPluginVersion&gt;
+     &lt;jacocoMavenPluginVersion&gt;0.8.1&lt;/jacocoMavenPluginVersion&gt;
+     &lt;mavenSurefirePluginVersion&gt;2.22.0&lt;/mavenSurefirePluginVersion&gt;
      &lt;mavenFailsafePluginVersion&gt;${mavenSurefirePluginVersion}&lt;/mavenFailsafePluginVersion&gt;
      …
      &lt;maven.compiler.meminitial&gt;128m&lt;/maven.compiler.meminitial&gt;
@@ -1969,11 +1982,11 @@ mvn clean verify -DskipTests -DskipIntegrationTests=false
           Plugin such as <code class="code">enforceBytecodeVersion</code> in addition to
           above mentioned Animal Sniffer:</p><pre xmlns="" class="language-provided"><code class="language-xml">     &lt;mavenAntrunPluginVersion&gt;1.8&lt;/mavenAntrunPluginVersion&gt;
      &lt;mavenCompilerPluginVersion&gt;3.7.0&lt;/mavenCompilerPluginVersion&gt;
-     &lt;mavenAnimalSnifferPluginVersion&gt;1.16&lt;/mavenAnimalSnifferPluginVersion&gt;
+     &lt;mavenAnimalSnifferPluginVersion&gt;1.17&lt;/mavenAnimalSnifferPluginVersion&gt;
 +    &lt;mavenEnforcerPluginVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://issues.apache.org/jira/projects/MENFORCER?selectedItem=com.atlassian.jira.jira-projects-plugin:release-page&amp;status=all">1.4.1</a>&lt;/mavenEnforcerPluginVersion&gt;
 +    &lt;extraEnforcerRulesVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://github.com/mojohaus/extra-enforcer-rules/releases">1.0-beta-6</a>&lt;/extraEnforcerRulesVersion&gt;
-     &lt;jacocoMavenPluginVersion&gt;0.8.0&lt;/jacocoMavenPluginVersion&gt;
-     &lt;mavenSurefirePluginVersion&gt;2.20.1&lt;/mavenSurefirePluginVersion&gt;
+     &lt;jacocoMavenPluginVersion&gt;0.8.1&lt;/jacocoMavenPluginVersion&gt;
+     &lt;mavenSurefirePluginVersion&gt;2.22.0&lt;/mavenSurefirePluginVersion&gt;
      &lt;mavenFailsafePluginVersion&gt;${mavenSurefirePluginVersion}&lt;/mavenFailsafePluginVersion&gt;
      …
      &lt;mojoSignatureVersion&gt;1.0&lt;/mojoSignatureVersion&gt;
@@ -2030,8 +2043,8 @@ mvn clean verify -DskipTests -DskipIntegrationTests=false
           vulnerabilities. Just add the <a class="link" href="https://jeremylong.github.io/DependencyCheck/">Maven
           Plugin</a> configuration:</p><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;properties&gt;
      …
-     &lt;mavenProjectInfoReportsPluginVersion&gt;2.9&lt;/mavenProjectInfoReportsPluginVersion&gt;
-+    &lt;mavenDependencyCheckVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://github.com/jeremylong/DependencyCheck/releases">3.1.1</a>&lt;/mavenDependencyCheckVersion&gt;
+     &lt;mavenProjectInfoReportsPluginVersion&gt;3.0.0&lt;/mavenProjectInfoReportsPluginVersion&gt;
++    &lt;mavenDependencyCheckVersion&gt;<a xmlns="http://www.w3.org/1999/xhtml" class="link" href="https://github.com/jeremylong/DependencyCheck/blob/master/RELEASE_NOTES.md">3.2.1</a>&lt;/mavenDependencyCheckVersion&gt;
 
      …
      &lt;surefire.printSummary&gt;true&lt;/surefire.printSummary&gt;
@@ -2062,7 +2075,17 @@ mvn clean verify -DskipTests -DskipIntegrationTests=false
        &lt;/plugins&gt;
      &lt;/pluginManagement&gt;
    &lt;/build&gt;
-</code></pre><p>From the command line now run <code class="command">mvn
+</code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>Should the default location of the <a class="link" href="https://nvd.nist.gov/vuln/data-feeds">NVD Data
+            Feeds</a> be moved again to a version subfolder only, just
+            override the following properties (see also <a class="link" href="https://github.com/jeremylong/DependencyCheck/blob/master/RELEASE_NOTES.md#version-312-2018-04-02">release
+            notes 3.1.2</a>):</p><pre class="language-provided"><code class="language-xml">   &lt;properties&gt;
+     …
+     &lt;owaspReportsPath&gt;${project.build.directory}/owasp-reports&lt;/owaspReportsPath&gt;
+     &lt;owaspReportFormat&gt;all&lt;/owaspReportFormat&gt;
+     &lt;cveValidForHours&gt;24&lt;/cveValidForHours&gt;
++    &lt;cveUrl20Modified&gt;https://nvd.nist.gov/feeds/xml/cve/2.0/nvdcve-2.0-Modified.xml.gz&lt;/cveUrl20Modified&gt;
++    &lt;cveUrl20Base&gt;https://nvd.nist.gov/feeds/xml/cve/2.0/nvdcve-2.0-%d.xml.gz&lt;/cveUrl20Base&gt;
+</code></pre></div><p>From the command line now run <code class="command">mvn
           org.owasp:dependency-check-maven:<a class="link" href="https://jeremylong.github.io/DependencyCheck/dependency-check-maven/aggregate-mojo.html">aggregate</a></code>
           (see also <a class="xref" href="quality.assurance.html#qa.sonar.maven.integration" title="17.2.7. Maven integration">Section 17.2.7, “Maven integration”</a>).</p><p>Optionally add a Dependency Check Report to the Maven site
           with the following profile
@@ -2107,16 +2130,18 @@ mvn clean verify -DskipTests -DskipIntegrationTests=false
      &lt;owaspReportFormat&gt;all&lt;/owaspReportFormat&gt;
      &lt;cveValidForHours&gt;24&lt;/cveValidForHours&gt;
 +
-+    &lt;customSuppressionHintsVersion&gt;1.0.0&lt;/customSuppressionHintsVersion&gt;
+&lt;!--
++    &lt;customSuppressionHintsVersion&gt;1.0.2&lt;/customSuppressionHintsVersion&gt;
 +    &lt;customSuppressionHintsFolderVersion&gt;${customSuppressionHintsVersion}&lt;/customSuppressionHintsFolderVersion&gt;
 +    &lt;customSuppressionHintsPath&gt;${nexusHost}/content/groups/public/nl/demon/shadowland/freedumbytes/maven/owasp/dependency-check/${customSuppressionHintsFolderVersion}&lt;/customSuppressionHintsPath&gt;
 +    &lt;customSuppressionFile&gt;${customSuppressionHintsPath}/dependency-check-${customSuppressionHintsVersion}-suppression.xml&lt;/customSuppressionFile&gt;
 +    &lt;customHintsFile&gt;${customSuppressionHintsPath}/dependency-check-${customSuppressionHintsVersion}-hints.xml&lt;/customHintsFile&gt;
+--&gt;
 </code></pre><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>In case of pre-release testing use for example the latest
-              deployed SNAPSHOT:</p><pre class="language-provided"><code class="language-xml">-    &lt;customSuppressionHintsVersion&gt;1.0.0&lt;/customSuppressionHintsVersion&gt;
-+    &lt;customSuppressionHintsVersion&gt;1.0.0-SNAPSHOT&lt;/customSuppressionHintsVersion&gt;
+              deployed SNAPSHOT:</p><pre class="language-provided"><code class="language-xml">-    &lt;customSuppressionHintsVersion&gt;1.0.2&lt;/customSuppressionHintsVersion&gt;
++    &lt;customSuppressionHintsVersion&gt;1.0.3-SNAPSHOT&lt;/customSuppressionHintsVersion&gt;
 -    &lt;customSuppressionHintsFolderVersion&gt;${customSuppressionHintsVersion}&lt;/customSuppressionHintsFolderVersion&gt;
-+    &lt;customSuppressionHintsFolderVersion&gt;1.0.0-20180101.000700-7&lt;/customSuppressionHintsFolderVersion&gt;
++    &lt;customSuppressionHintsFolderVersion&gt;1.0.3-20180101.000700-7&lt;/customSuppressionHintsFolderVersion&gt;
 </code></pre></div><pre xmlns="" class="language-provided"><code class="language-xml">         &lt;plugin&gt;
            &lt;groupId&gt;org.owasp&lt;/groupId&gt;
            &lt;artifactId&gt;dependency-check-maven&lt;/artifactId&gt;
@@ -2125,8 +2150,10 @@ mvn clean verify -DskipTests -DskipIntegrationTests=false
              &lt;outputDirectory&gt;${owaspReportsPath}&lt;/outputDirectory&gt;
              &lt;format&gt;${owaspReportFormat}&lt;/format&gt;
              &lt;cveValidForHours&gt;${cveValidForHours}&lt;/cveValidForHours&gt;
+&lt;!--
 +            &lt;suppressionFile&gt;${customSuppressionFile}&lt;/suppressionFile&gt;
 +            &lt;hintsFile&gt;${customHintsFile}&lt;/hintsFile&gt;
+--&gt;
            &lt;/configuration&gt;
          &lt;/plugin&gt;
        &lt;/plugins&gt;
@@ -2142,7 +2169,11 @@ mvn clean verify -DskipTests -DskipIntegrationTests=false
                 Server.</p></li><li class="listitem"><p><a class="link" href="https://groups.google.com/forum/#!topic/dependency-check/GcOFleJz-nk">Google
                 Groups Forum Topic</a>: mysql-connector-java shows wrong
                 vulnerabilities?</p></li><li class="listitem"><p>xmlns, xmlns:xsi, <a class="link" href="https://stackoverflow.com/questions/34202967/xmlns-xmlnsxsi-xsischemalocation-and-targetnamespace">xsi:schemaLocation</a>,
-                and targetNamespace?</p></li></ul></div><p>Based on that information the following suppression and
+                and targetNamespace?</p></li></ul></div><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>Since OWASP Dependency Check Plugin release 3.1.0 (see
+              also <a class="link" href="https://github.com/jeremylong/DependencyCheck/pull/1028">pull
+              request 1028</a> False Positive Reduction) these custom
+              suppression and hints files are obsolete unless the
+              Vulnerabilities should show up as Suppressed.</p></div><p>Based on that information the following suppression and
             hints xmls where created:</p><pre xmlns="" class="language-provided"><code class="language-xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 
 &lt;suppressions xmlns="https://jeremylong.github.io/DependencyCheck/dependency-suppression.1.1.xsd"
@@ -2523,7 +2554,7 @@ git status
 +      scm:git:${gitHost}/bill-of-materials.git
 +    &lt;/developerConnection&gt;
 +    &lt;url&gt;${fisheyeHost}/browse/bill-of-materials&lt;/url&gt;
-+    &lt;tag&gt;HEAD&lt;/tag&gt;
++    &lt;tag /&gt;
 +  &lt;/scm&gt;
 </code></pre><pre xmlns="" class="language-provided"><code class="language-xml">+  &lt;ciManagement&gt;
 +    &lt;system&gt;Jenkins&lt;/system&gt;
@@ -3814,7 +3845,7 @@ git status
         <code class="code">latestLifecycelMappingVersion</code> to current Maven <code class="filename">config</code> folder with <code class="command">mvn
         process-resources -PdownloadLifecycleMapping</code>. Configure
         Eclipse <span class="guimenu"><strong><span class="accel">W</span>indow</strong></span> → <span class="guimenu"><strong><span class="accel">P</span>references</strong></span> → <span class="guilabel"><strong>Maven</strong></span> → <span class="guilabel"><strong>Lifecycle Mappings</strong></span> and point <span class="guilabel"><strong>file location</strong></span> to
-        <code class="filename">P:\dev\apps\build\apache-maven-3.5.2\conf\lifecycle-mapping-metadata.xml</code>:</p><div class="figure" id="prj.figure.eclipse.m2e.lifecycle.mapping"><a id="prj.figure.eclipse.m2e.lifecycle.mapping"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/ide/eclipse/eclipse-m2e-lifecycle-mapping.png" alt="Eclipse Maven Lifecycle Mappings"/></div></div></div><div class="figure-title">Figure 16.12. Eclipse Maven Lifecycle Mappings</div></div><br class="figure-break"/><p>Don't forget to <span class="guibutton"><strong>Reload</strong></span> the configuration
+        <code class="filename">P:\dev\apps\build\apache-maven-3.5.4\conf\lifecycle-mapping-metadata.xml</code>:</p><div class="figure" id="prj.figure.eclipse.m2e.lifecycle.mapping"><a id="prj.figure.eclipse.m2e.lifecycle.mapping"><span style="display:none;">trick</span></a><div class="figure-contents"><div class="screenshot"><div class="mediaobject"><img src="images/ide/eclipse/eclipse-m2e-lifecycle-mapping.png" alt="Eclipse Maven Lifecycle Mappings"/></div></div></div><div class="figure-title">Figure 16.12. Eclipse Maven Lifecycle Mappings</div></div><br class="figure-break"/><p>Don't forget to <span class="guibutton"><strong>Reload</strong></span> the configuration
         every time this file is edited or the latest release is downloaded.
         And select <span class="guimenuitem"><strong><span class="accel">M</span>aven</strong></span> → <span class="guimenuitem"><strong>Update Project <span class="accel">C</span>onfiguration…
             Alt+F5</strong></span> for projects that were having errors with any newly

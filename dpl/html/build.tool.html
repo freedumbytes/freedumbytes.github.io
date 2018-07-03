@@ -11,12 +11,12 @@
             resources</a> for Apache Ant: Tasks, Compiler Implementations,
             IDE integration tools, Source Control Systems, loggers, you name
             it.</p></li></ul></div></section><section class="section" id="build.ant.install.guide"><div class="titlepage"><div><div><h3 class="title"><a id="build.ant.install.guide" class="anchor" href="#build.ant.install.guide"><span class="octicon octicon-link"/></a>4.1.2. Ant installation guide</h3></div></div></div><p><a class="link" href="http://ant.apache.org/bindownload.cgi">Download</a> the
-        archive: <code class="filename">apache-ant-1.9.6-bin.zip</code> [version <a class="link" href="http://ant.apache.org/antnews.html">1.9.6</a>].</p><p>Extract this <code class="filename">.zip</code> file to
+        archive: <code class="filename">apache-ant-1.10.4-bin.zip</code> [version <a class="link" href="http://ant.apache.org/antnews.html">1.10.4</a>].</p><p>Extract this <code class="filename">.zip</code> file to
         <code class="filename">P:\dev\apps\build</code>.</p><p id="build.ant.home"><a id="build.ant.home"><span style="display:none;">trick</span></a>Press <span class="keycap"><strong><span class="inlinemediaobject"><img src="images/os/windows/windows-key.gif"/></span></strong></span>+<span class="keycap"><strong>Break</strong></span> keys to open the Windows System Properties. Select
         <span class="guisubmenu"><strong>Advanced system settings</strong></span> → <span class="guibutton"><strong>Enviro<span class="accel">n</span>ment Variables</strong></span> and <span class="guibutton"><strong>Ed<span class="accel">i</span>t</strong></span> the
         <code class="envar">Path</code> to append <strong class="userinput"><code>%ANT_HOME%\bin;</code></strong>.
         Also add a <span class="guibutton"><strong>Ne<span class="accel">w</span></strong></span> system variable
-        <code class="envar">ANT_HOME</code> pointing to <strong class="userinput"><code><code class="filename">P:\dev\apps\build\apache-ant-1.9.6</code></code></strong>.</p><p>Verify the installation with <code class="command">ant
+        <code class="envar">ANT_HOME</code> pointing to <strong class="userinput"><code><code class="filename">P:\dev\apps\build\apache-ant-1.10.4</code></code></strong>.</p><p>Verify the installation with <code class="command">ant
         -version</code>.</p></section></section><section class="section" id="build.maven"><div class="titlepage"><div><div><h2 class="title"><a id="build.maven" class="anchor" href="#build.maven"><span class="octicon octicon-link"/></a>4.2. Maven</h2></div></div></div><p><span class="inlinemediaobject"><img src="images/icons/maven.png"/></span> <a class="link" href="https://maven.apache.org/">Maven</a> is a software
       project management and comprehension tool. Based on the concept of a
       project object model (POM), Maven can manage a project's build,
@@ -24,18 +24,21 @@
             a binary distribution of <a class="link" href="https://maven.apache.org/ref/current/">Maven</a>.</p></li><li class="listitem"><p>Upgrade checklist:</p><div class="itemizedlist"><ul class="itemizedlist compact"><li class="listitem"><p>Related products: -.</p></li><li class="listitem"><p>References: <a class="link" href="continuous.integration.html#ci.jenkins.config" title="14.1.4. Jenkins configuration">Jenkins -
                 configuration <code class="code">Maven</code></a>, <a class="link" href="integrated.development.environment.html#ide.eclipse.plugin.config.maven" title="15.1.5.5.1. Maven configuration">Eclipse -
                 configuration <code class="code">Maven</code></a> and <a class="link" href="project.html#prj.maven.m2e.lifecycle.config.eclipse">Project -
-                M2Eclipse <code class="code">lifecycle configuration</code></a>.</p></li><li class="listitem"><p>Integration configuration changes: <a class="link" href="build.tool.html#build.maven.install.guide" title="4.2.2. Maven installation guide">Maven - settings
-                <code class="code">localRepository</code></a>, <a class="link" href="build.tool.html#build.maven.logging" title="4.2.3. Logging">Maven - logging
+                M2Eclipse <code class="code">lifecycle configuration</code></a>.</p></li><li class="listitem"><p>Integration configuration changes: <a class="link" href="build.tool.html#build.maven.install.guide" title="4.2.2. Maven installation guide">Maven - settings.xml
+                <code class="code">localRepository</code></a>, <a class="link" href="build.tool.html#build.maven.logging" title="4.2.3. Logging">Maven - Logging
                 <code class="filename">simplelogger.properties</code></a>, <a class="link" href="build.tool.html#build.maven.password.encryption" title="4.2.5. Password Encryption">Maven - Password
-                Encryption server <code class="code">nexus</code></a>, <a class="link" href="repository.manager.html#repo.nexus.maven.integration" title="13.1.6. Maven integration">Nexus - Maven
-                integration - <code class="code">mirrors</code> / <code class="code">profiles</code> /
-                <code class="code">activeProfiles</code> / <code class="code">servers</code></a>,
+                Encryption <code class="code">server nexus</code></a>, <a class="link" href="repository.manager.html#repo.nexus.maven.integration" title="13.1.6. Maven integration">Nexus - Maven
+                integration - <code class="code">mirror nexus-central</code> /
+                <code class="code">profile development</code> / <code class="code">activeProfile
+                development</code> / <code class="code">server nexus+ossrh</code></a>,
                 <a class="link" href="project.html#prj.maven.deploy.site" title="16.1.6.1. Site">Project - Site WebDAV
-                server <code class="code">mvn-sites</code></a> and <a class="link" href="quality.assurance.html#qa.sonar.login.token" title="17.2.5.1. Login Token">SonarQube <code class="code">profile
-                sonarCloud</code></a>.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>Or just run
-                  <code class="command">p:\dev\apps\editor\winmerge\WinMergeU.exe
-                  P:\dev\apps\build\apache-maven-3.3.9\conf\
-                  P:\dev\apps\build\apache-maven-3.5.2\conf\</code> to copy
+                <code class="code">server mvn-sites</code></a>, <a class="link" href="project.html#prj.maven.deploy.pgp" title="16.1.6.5. PGP Signatures">Project - PGP Signatures -
+                <code class="code">profile gnupg</code> / <code class="code">server gpg.keyname</code>
+                </a> and <a class="link" href="quality.assurance.html#qa.sonar.login.token" title="17.2.5.1. Login Token">SonarQube -
+                Login Token <code class="code">profile sonarCloud</code></a>.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p>Or just run
+                  <code class="command">P:\dev\apps\editor\winmerge\WinMergeU.exe
+                  P:\dev\apps\build\apache-maven-3.5.2\conf\
+                  P:\dev\apps\build\apache-maven-3.5.4\conf\</code> to copy
                   the changes in for example <code class="filename">settings.xml</code>
                   and
                   <code class="filename">logging\simplelogger.properties</code>.</p></div></li></ul></div></li><li class="listitem"><p>Maven <a class="link" href="https://maven.apache.org/ref/current/">Reference</a>
@@ -51,20 +54,20 @@
             Command Line Options</a>) and <a class="link" href="http://www.sonatype.com/resources/books/maven-by-example">Maven
             by Example</a>.</p></li><li class="listitem"><p>For some examples of upgrading direct and transitive
             dependencies of a plugin see also <a class="xref" href="quality.assurance.html#qa.jdocbook.fop" title="17.3.5. Upgrade FOP">Section 17.3.5, “Upgrade FOP”</a> and <a class="xref" href="quality.assurance.html#qa.jdocbook.xsl" title="17.3.4. Upgrade DocBook XSL stylesheets">Section 17.3.4, “Upgrade DocBook XSL stylesheets”</a>.</p></li></ul></div></section><section class="section" id="build.maven.install.guide"><div class="titlepage"><div><div><h3 class="title"><a id="build.maven.install.guide" class="anchor" href="#build.maven.install.guide"><span class="octicon octicon-link"/></a>4.2.2. Maven installation guide</h3></div></div></div><p><a class="link" href="https://maven.apache.org/download.html">Download</a>
-        the archive: <code class="filename">apache-maven-3.5.2-bin.zip</code> [version
-        <a class="link" href="https://maven.apache.org/docs/history.html">3.5.2</a>].</p><p>Extract this <code class="filename">.zip</code> file to
+        the archive: <code class="filename">apache-maven-3.5.4-bin.zip</code> [version
+        <a class="link" href="https://maven.apache.org/docs/history.html">3.5.4</a>].</p><p>Extract this <code class="filename">.zip</code> file to
         <code class="filename">P:\dev\apps\build</code>.</p><p id="build.m2.home"><a id="build.m2.home"><span style="display:none;">trick</span></a>Press <span class="keycap"><strong><span class="inlinemediaobject"><img src="images/os/windows/windows-key.gif"/></span></strong></span>+<span class="keycap"><strong>Break</strong></span> keys to open the Windows System Properties. Select
         <span class="guisubmenu"><strong>Advanced system settings</strong></span> → <span class="guibutton"><strong>Enviro<span class="accel">n</span>ment Variables</strong></span> and <span class="guibutton"><strong>Ed<span class="accel">i</span>t</strong></span> the
         <code class="envar">Path</code> to append <strong class="userinput"><code>%MVN_HOME%\bin;</code></strong>.
         Also add a <span class="guibutton"><strong>Ne<span class="accel">w</span></strong></span> system variable
-        <code class="envar">MVN_HOME</code> pointing to <strong class="userinput"><code><code class="filename">P:\dev\apps\build\apache-maven-3.5.2</code></code></strong>.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p><code class="envar">MAVEN_HOME</code>, <code class="envar">M2_HOME</code> or
+        <code class="envar">MVN_HOME</code> pointing to <strong class="userinput"><code><code class="filename">P:\dev\apps\build\apache-maven-3.5.4</code></code></strong>.</p><div style="margin-left: 0.5in; margin-right: 0.5in;" class="note"><h2>Note</h2><p><code class="envar">MAVEN_HOME</code>, <code class="envar">M2_HOME</code> or
           <code class="envar">M3_HOME</code> (see also issue <a class="link" href="https://issues.apache.org/jira/browse/MNG-5607">MNG-5607</a>)
           don't seem to matter since <code class="envar">MAVEN_HOME</code> is set in
           <code class="filename">mvn.cmd</code> anyway. In that case we are only using
           <code class="envar">MVN_HOME</code> to point to the Maven installation location
           and thus introduce a different one altogether.</p></div><p>The location of your local repository <a class="xref" href="build.tool.html#build.maven.local.repo"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a> can be changed in the Maven
         configuration file
-        <code class="filename">P:\dev\apps\build\apache-maven-3.5.2\conf\settings.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+        <code class="filename">P:\dev\apps\build\apache-maven-3.5.4\conf\settings.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
 
 &lt;settings xmlns="https://maven.apache.org/settings/1.0.0" 
           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
@@ -100,7 +103,7 @@
         <code class="command">mvn -v</code>.</p></section><section class="section" id="build.maven.logging"><div class="titlepage"><div><div><h3 class="title"><a id="build.maven.logging" class="anchor" href="#build.maven.logging"><span class="octicon octicon-link"/></a>4.2.3. Logging</h3></div></div></div><p>Configure Maven to include the current date and time in the
         output in the <a class="link" href="https://maven.apache.org/maven-logging.html">Maven logging
         configuration</a> file
-        <code class="filename">P:\dev\apps\build\apache-maven-3.5.2\conf\logging\simplelogger.properties</code>:</p><pre xmlns="" class="language-provided"><code class="language-ini"> org.slf4j.simpleLogger.defaultLogLevel=info
+        <code class="filename">P:\dev\apps\build\apache-maven-3.5.4\conf\logging\simplelogger.properties</code>:</p><pre xmlns="" class="language-provided"><code class="language-ini"> org.slf4j.simpleLogger.defaultLogLevel=info
 -org.slf4j.simpleLogger.showDateTime=false
 +org.slf4j.simpleLogger.showDateTime=true
 +org.slf4j.simpleLogger.dateTimeFormat=EEE yyyy-MM-dd  HH:mm:ss.SSS z
@@ -147,7 +150,7 @@ qa-sandbox&gt;mvn build-helper:remove-project-artifact
 </code></pre><p>Now encrypt for example the nexus server password <a class="xref" href="build.tool.html#build.maven.server.password"><img src="images/community/docbook/callouts/1.png" alt="1" border="0" height="17px" width="17px" class="callout"/></a> with <code class="command">mvn
         --encrypt-password <em class="replaceable"><code>password</code></em></code> and
         place it in the Maven configuration file
-        <code class="filename">P:\dev\apps\build\apache-maven-3.5.2\conf\settings.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">  &lt;servers&gt;
+        <code class="filename">P:\dev\apps\build\apache-maven-3.5.4\conf\settings.xml</code>:</p><pre xmlns="" class="language-provided"><code class="language-xml">  &lt;servers&gt;
     &lt;server&gt;
       &lt;id&gt;nexus&lt;/id&gt;
       &lt;username&gt;deployment&lt;/username&gt;
