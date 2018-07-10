@@ -8,6 +8,7 @@
 # These files are text and should be normalized (Convert crlf => lf)
 .gitattributes  text
 .gitignore      text
+.gitkeep        text
 .gitconfig      text
 
 *.bat           text
@@ -25,12 +26,17 @@ Dockerfile      text
 *.tagx          text
 *.tld           text
 *.ldif          text
+*.ctl           text
 *.sql           text
 *.feature       text
+*.plantuml      text
+*.graphml       text
 Jenkinsfile     text
 *.yml           text
 *.yaml          text
-*.diff          text
+*.raml          text
+*.diff          text diff -merge
+*.patch         text diff -merge
 *.properties    text
 *.MF            text
 *.mapping       text
@@ -39,6 +45,7 @@ Jenkinsfile     text
 *.conf          text
 *.config        text
 *.pageflow      text
+*.launch        text
 
 *.txt           text
 *.apt           text
@@ -52,10 +59,13 @@ Jenkinsfile     text
 *.xsd           text
 *.wsdl          text
 *.wsdd          text
+*.xjb           text
+*.php           text
 *.md            text
 *.adoc          text
 *.csv           text
 *.ftl           text
+*.jrxml         text
 *.dwt           text
 *.pu            text
 *.archimate     text
@@ -64,11 +74,13 @@ Jenkinsfile     text
 .editorconfig   text
 *.dia           binary
 *.doc           binary
+*.docm          binary
 *.docx          binary
 *.dot           binary
 *.dotx          binary
 *.msg           binary
 *.ppt           binary
+*.pptm          binary
 *.pptx          binary
 *.pdf           binary
 *.odt           binary
@@ -80,6 +92,7 @@ Jenkinsfile     text
 *.xlsx          binary
 
 *.asp           text
+*.h             text
 *.css           text
 *.less          text
 *.sass          text
@@ -87,7 +100,9 @@ Jenkinsfile     text
 *.htm           text
 *.html          text
 *.xhtml         text
+*.faces         text
 *.mht           text
+*.ts            text
 *.js            text
 *.jsx           text
 *.json          text
@@ -112,7 +127,7 @@ Jenkinsfile     text
 *.png           binary
 *.psb           binary
 *.psd           binary
-*.svg           binary
+*.svg           -text diff -merge
 *.svgz          binary
 *.tif           binary
 *.tiff          binary
@@ -168,11 +183,16 @@ Thumbs.db       binary
 *.zip           binary
 *.gz            binary
 *.tgz           binary
+*.cab           binary
 
 #certificate
+*.pem           text
 *.p12           binary
 *.pfx           binary
 *.jks           binary
 *.jceks         binary
 cacerts         binary
 jssecacerts     binary
+
+# Project Specific ###
+# Project Specific ###
