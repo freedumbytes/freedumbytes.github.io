@@ -93,7 +93,7 @@
 +
 +  &lt;properties&gt;
 +    &lt;devHost&gt;http://freedumbytes.dev.net&lt;/devHost&gt;
-+    &lt;homeHost&gt;http://www.shadowland.demon.nl&lt;/homeHost&gt;
++    &lt;homeHost&gt;http://localhost&lt;/homeHost&gt;
 +    &lt;bitbucketHost&gt;https://freedumbytes.bitbucket.io&lt;/bitbucketHost&gt;
 +    &lt;githubHost&gt;https://freedumbytes.github.io&lt;/githubHost&gt;
 +    &lt;gitlabHost&gt;https://freedumbytes.gitlab.io&lt;/gitlabHost&gt;
@@ -127,7 +127,7 @@
 </code></pre><pre xmlns="" class="language-provided"><code class="language-xml">   &lt;properties&gt;
        &lt;!-- Define hosting servers --&gt;
      &lt;devHost&gt;http://freedumbytes.dev.net&lt;/devHost&gt;
-     &lt;homeHost&gt;http://www.shadowland.demon.nl&lt;/homeHost&gt;
+     &lt;homeHost&gt;http://localhost&lt;/homeHost&gt;
      &lt;bitbucketHost&gt;https://freedumbytes.bitbucket.io&lt;/bitbucketHost&gt;
      &lt;githubHost&gt;https://freedumbytes.github.io&lt;/githubHost&gt;
      &lt;gitlabHost&gt;https://freedumbytes.gitlab.io&lt;/gitlabHost&gt;
@@ -483,7 +483,7 @@
      …
 </code></pre><pre xmlns="" class="language-provided"><code class="language-markdown">+ To create the site with the default LAN tools FishEye, JIRA and Jenkins run &lt;&lt;&lt;mvn site-deploy&gt;&gt;&gt;.
 +
-+ To create the site with the Open Source tools {{{${gitlabHost}/index.xhtml}GitLab.io}},
++ To create the site with the Open Source tools {{{${gitlabHost}/index.html}GitLab.io}},
 + {{{${ossrhHost}/#nexus-search;quick~nl.demon.shadowland}OSS.Sonatype.org}} (OSS Repository Hosting)
 + and {{{${sonarCloudRepo}/projects}SonarCloud.io}} (Continuous Code Quality) 
 + run &lt;&lt;&lt;mvn site -PopenSource&gt;&gt;&gt;.
