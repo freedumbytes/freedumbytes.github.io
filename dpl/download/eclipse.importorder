@@ -1,8 +1,0 @@
-#Organize Import Order
-#Sun Jan 21 13:19:32 CET 2018
-5=nl.demon.shadowland
-4=net.dev.freedumbytes
-3=com
-2=org
-1=javax
-0=java
